@@ -6,7 +6,7 @@
       "id": "DMA_DeInit",
       "name": "DMA_DeInit",
       "peripheral": "DMA",
-      "sectionId": "DMA#sec1",
+      "sectionId": "DMA@spl#sec1",
       "prototype": "void DMA_DeInit(DMA_Channel_TypeDef* DMAy_Channelx);",
       "returnType": "void",
       "params": [
@@ -79,7 +79,7 @@
       "id": "DMA_Init",
       "name": "DMA_Init",
       "peripheral": "DMA",
-      "sectionId": "DMA#sec1",
+      "sectionId": "DMA@spl#sec1",
       "prototype": "void DMA_Init(DMA_Channel_TypeDef* DMAy_Channelx, DMA_InitTypeDef* DMA_InitStruct);",
       "returnType": "void",
       "params": [
@@ -196,7 +196,7 @@
       "id": "DMA_StructInit",
       "name": "DMA_StructInit",
       "peripheral": "DMA",
-      "sectionId": "DMA#sec1",
+      "sectionId": "DMA@spl#sec1",
       "prototype": "void DMA_StructInit(DMA_InitTypeDef* DMA_InitStruct);",
       "returnType": "void",
       "params": [
@@ -251,7 +251,7 @@
       "id": "DMA_Cmd",
       "name": "DMA_Cmd",
       "peripheral": "DMA",
-      "sectionId": "DMA#sec2",
+      "sectionId": "DMA@spl#sec2",
       "prototype": "void DMA_Cmd(DMA_Channel_TypeDef* DMAy_Channelx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -335,7 +335,7 @@
       "id": "DMA_ITConfig",
       "name": "DMA_ITConfig",
       "peripheral": "DMA",
-      "sectionId": "DMA#sec3",
+      "sectionId": "DMA@spl#sec3",
       "prototype": "void DMA_ITConfig(DMA_Channel_TypeDef* DMAy_Channelx, uint32_t DMA_IT, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -430,7 +430,7 @@
       "id": "DMA_SetCurrDataCounter",
       "name": "DMA_SetCurrDataCounter",
       "peripheral": "DMA",
-      "sectionId": "DMA#sec4",
+      "sectionId": "DMA@spl#sec4",
       "prototype": "void DMA_SetCurrDataCounter(DMA_Channel_TypeDef* DMAy_Channelx, uint16_t DataNumber);",
       "returnType": "void",
       "params": [
@@ -512,7 +512,7 @@
       "id": "DMA_GetCurrDataCounter",
       "name": "DMA_GetCurrDataCounter",
       "peripheral": "DMA",
-      "sectionId": "DMA#sec5",
+      "sectionId": "DMA@spl#sec5",
       "prototype": "uint16_t DMA_GetCurrDataCounter(DMA_Channel_TypeDef* DMAy_Channelx);",
       "returnType": "uint16_t",
       "params": [
@@ -585,7 +585,7 @@
       "id": "DMA_GetFlagStatus",
       "name": "DMA_GetFlagStatus",
       "peripheral": "DMA",
-      "sectionId": "DMA#sec6",
+      "sectionId": "DMA@spl#sec6",
       "prototype": "FlagStatus DMA_GetFlagStatus(uint32_t DMAy_FLAG);",
       "returnType": "FlagStatus",
       "params": [
@@ -667,7 +667,7 @@
       "id": "DMA_ClearFlag",
       "name": "DMA_ClearFlag",
       "peripheral": "DMA",
-      "sectionId": "DMA#sec6",
+      "sectionId": "DMA@spl#sec6",
       "prototype": "void DMA_ClearFlag(uint32_t DMAy_FLAG);",
       "returnType": "void",
       "params": [
@@ -744,7 +744,7 @@
       "id": "DMA_GetITStatus",
       "name": "DMA_GetITStatus",
       "peripheral": "DMA",
-      "sectionId": "DMA#sec3",
+      "sectionId": "DMA@spl#sec3",
       "prototype": "ITStatus DMA_GetITStatus(uint32_t DMAy_IT);",
       "returnType": "ITStatus",
       "params": [
@@ -826,7 +826,7 @@
       "id": "DMA_ClearITPendingBit",
       "name": "DMA_ClearITPendingBit",
       "peripheral": "DMA",
-      "sectionId": "DMA#sec3",
+      "sectionId": "DMA@spl#sec3",
       "prototype": "void DMA_ClearITPendingBit(uint32_t DMAy_IT);",
       "returnType": "void",
       "params": [

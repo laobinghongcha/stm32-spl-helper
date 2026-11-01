@@ -1,0 +1,2395 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "DMA",
+  "library": "reg",
+  "functions": [
+    {
+      "id": "REG_DMA_CCR1",
+      "name": "DMA_CCR1",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel1->CCR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CCR_EN",
+          "type": "bit 0（整个位域）",
+          "descEn": "Channel enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_TCIE",
+          "type": "bit 1（整个位域）",
+          "descEn": "Transfer complete interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_HTIE",
+          "type": "bit 2（整个位域）",
+          "descEn": "Half Transfer interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_TEIE",
+          "type": "bit 3（整个位域）",
+          "descEn": "Transfer error interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_DIR",
+          "type": "bit 4（整个位域）",
+          "descEn": "Data transfer direction",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_CIRC",
+          "type": "bit 5（整个位域）",
+          "descEn": "Circular mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PINC",
+          "type": "bit 6（整个位域）",
+          "descEn": "Peripheral increment mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MINC",
+          "type": "bit 7（整个位域）",
+          "descEn": "Memory increment mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PSIZE",
+          "type": "bits[9:8]（整个位域）",
+          "descEn": "PSIZE[1:0] bits (Peripheral size)",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MSIZE",
+          "type": "bits[11:10]（整个位域）",
+          "descEn": "MSIZE[1:0] bits (Memory size)",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PL",
+          "type": "bits[13:12]（整个位域）",
+          "descEn": "PL[1:0] bits(Channel Priority level)",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MEM2MEM",
+          "type": "bit 14（整个位域）",
+          "descEn": "Memory to memory mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PSIZE_0",
+          "type": "bit 8",
+          "descEn": "0x00000100",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PSIZE_1",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MSIZE_0",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MSIZE_1",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PL_0",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PL_1",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Channel enable",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CCR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CCR1，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel1->CCR;  /* 读回当前值 */\nv &= ~DMA_CCR_EN_Msk;  /* 先清掉 DMA_CCR_EN：bit 0（整个位域） */\nv |= (1u << DMA_CCR_EN_Pos) & DMA_CCR_EN_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel1->CCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3216,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CCR2",
+      "name": "DMA_CCR2",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel2->CCR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CCR_EN",
+          "type": "bit 0（整个位域）",
+          "descEn": "Channel enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_TCIE",
+          "type": "bit 1（整个位域）",
+          "descEn": "Transfer complete interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_HTIE",
+          "type": "bit 2（整个位域）",
+          "descEn": "Half Transfer interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_TEIE",
+          "type": "bit 3（整个位域）",
+          "descEn": "Transfer error interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_DIR",
+          "type": "bit 4（整个位域）",
+          "descEn": "Data transfer direction",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_CIRC",
+          "type": "bit 5（整个位域）",
+          "descEn": "Circular mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PINC",
+          "type": "bit 6（整个位域）",
+          "descEn": "Peripheral increment mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MINC",
+          "type": "bit 7（整个位域）",
+          "descEn": "Memory increment mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PSIZE",
+          "type": "bits[9:8]（整个位域）",
+          "descEn": "PSIZE[1:0] bits (Peripheral size)",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MSIZE",
+          "type": "bits[11:10]（整个位域）",
+          "descEn": "MSIZE[1:0] bits (Memory size)",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PL",
+          "type": "bits[13:12]（整个位域）",
+          "descEn": "PL[1:0] bits(Channel Priority level)",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MEM2MEM",
+          "type": "bit 14（整个位域）",
+          "descEn": "Memory to memory mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PSIZE_0",
+          "type": "bit 8",
+          "descEn": "0x00000100",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PSIZE_1",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MSIZE_0",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MSIZE_1",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PL_0",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PL_1",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Channel enable",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CCR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CCR2，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel2->CCR;  /* 读回当前值 */\nv &= ~DMA_CCR_EN_Msk;  /* 先清掉 DMA_CCR_EN：bit 0（整个位域） */\nv |= (1u << DMA_CCR_EN_Pos) & DMA_CCR_EN_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel2->CCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3216,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CCR3",
+      "name": "DMA_CCR3",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel3->CCR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CCR_EN",
+          "type": "bit 0（整个位域）",
+          "descEn": "Channel enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_TCIE",
+          "type": "bit 1（整个位域）",
+          "descEn": "Transfer complete interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_HTIE",
+          "type": "bit 2（整个位域）",
+          "descEn": "Half Transfer interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_TEIE",
+          "type": "bit 3（整个位域）",
+          "descEn": "Transfer error interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_DIR",
+          "type": "bit 4（整个位域）",
+          "descEn": "Data transfer direction",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_CIRC",
+          "type": "bit 5（整个位域）",
+          "descEn": "Circular mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PINC",
+          "type": "bit 6（整个位域）",
+          "descEn": "Peripheral increment mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MINC",
+          "type": "bit 7（整个位域）",
+          "descEn": "Memory increment mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PSIZE",
+          "type": "bits[9:8]（整个位域）",
+          "descEn": "PSIZE[1:0] bits (Peripheral size)",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MSIZE",
+          "type": "bits[11:10]（整个位域）",
+          "descEn": "MSIZE[1:0] bits (Memory size)",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PL",
+          "type": "bits[13:12]（整个位域）",
+          "descEn": "PL[1:0] bits(Channel Priority level)",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MEM2MEM",
+          "type": "bit 14（整个位域）",
+          "descEn": "Memory to memory mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PSIZE_0",
+          "type": "bit 8",
+          "descEn": "0x00000100",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PSIZE_1",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MSIZE_0",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MSIZE_1",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PL_0",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PL_1",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Channel enable",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CCR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CCR3，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel3->CCR;  /* 读回当前值 */\nv &= ~DMA_CCR_EN_Msk;  /* 先清掉 DMA_CCR_EN：bit 0（整个位域） */\nv |= (1u << DMA_CCR_EN_Pos) & DMA_CCR_EN_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel3->CCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3216,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CCR4",
+      "name": "DMA_CCR4",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel4->CCR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CCR_EN",
+          "type": "bit 0（整个位域）",
+          "descEn": "Channel enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_TCIE",
+          "type": "bit 1（整个位域）",
+          "descEn": "Transfer complete interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_HTIE",
+          "type": "bit 2（整个位域）",
+          "descEn": "Half Transfer interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_TEIE",
+          "type": "bit 3（整个位域）",
+          "descEn": "Transfer error interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_DIR",
+          "type": "bit 4（整个位域）",
+          "descEn": "Data transfer direction",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_CIRC",
+          "type": "bit 5（整个位域）",
+          "descEn": "Circular mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PINC",
+          "type": "bit 6（整个位域）",
+          "descEn": "Peripheral increment mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MINC",
+          "type": "bit 7（整个位域）",
+          "descEn": "Memory increment mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PSIZE",
+          "type": "bits[9:8]（整个位域）",
+          "descEn": "PSIZE[1:0] bits (Peripheral size)",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MSIZE",
+          "type": "bits[11:10]（整个位域）",
+          "descEn": "MSIZE[1:0] bits (Memory size)",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PL",
+          "type": "bits[13:12]（整个位域）",
+          "descEn": "PL[1:0] bits(Channel Priority level)",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MEM2MEM",
+          "type": "bit 14（整个位域）",
+          "descEn": "Memory to memory mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PSIZE_0",
+          "type": "bit 8",
+          "descEn": "0x00000100",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PSIZE_1",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MSIZE_0",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MSIZE_1",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PL_0",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PL_1",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Channel enable",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CCR4"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CCR4，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel4->CCR;  /* 读回当前值 */\nv &= ~DMA_CCR_EN_Msk;  /* 先清掉 DMA_CCR_EN：bit 0（整个位域） */\nv |= (1u << DMA_CCR_EN_Pos) & DMA_CCR_EN_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel4->CCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3216,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CCR5",
+      "name": "DMA_CCR5",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel5->CCR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CCR_EN",
+          "type": "bit 0（整个位域）",
+          "descEn": "Channel enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_TCIE",
+          "type": "bit 1（整个位域）",
+          "descEn": "Transfer complete interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_HTIE",
+          "type": "bit 2（整个位域）",
+          "descEn": "Half Transfer interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_TEIE",
+          "type": "bit 3（整个位域）",
+          "descEn": "Transfer error interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_DIR",
+          "type": "bit 4（整个位域）",
+          "descEn": "Data transfer direction",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_CIRC",
+          "type": "bit 5（整个位域）",
+          "descEn": "Circular mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PINC",
+          "type": "bit 6（整个位域）",
+          "descEn": "Peripheral increment mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MINC",
+          "type": "bit 7（整个位域）",
+          "descEn": "Memory increment mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PSIZE",
+          "type": "bits[9:8]（整个位域）",
+          "descEn": "PSIZE[1:0] bits (Peripheral size)",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MSIZE",
+          "type": "bits[11:10]（整个位域）",
+          "descEn": "MSIZE[1:0] bits (Memory size)",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PL",
+          "type": "bits[13:12]（整个位域）",
+          "descEn": "PL[1:0] bits(Channel Priority level)",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MEM2MEM",
+          "type": "bit 14（整个位域）",
+          "descEn": "Memory to memory mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PSIZE_0",
+          "type": "bit 8",
+          "descEn": "0x00000100",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PSIZE_1",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MSIZE_0",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MSIZE_1",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PL_0",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PL_1",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Channel enable",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CCR5"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CCR5，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel5->CCR;  /* 读回当前值 */\nv &= ~DMA_CCR_EN_Msk;  /* 先清掉 DMA_CCR_EN：bit 0（整个位域） */\nv |= (1u << DMA_CCR_EN_Pos) & DMA_CCR_EN_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel5->CCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3216,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CCR6",
+      "name": "DMA_CCR6",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel6->CCR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CCR_EN",
+          "type": "bit 0（整个位域）",
+          "descEn": "Channel enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_TCIE",
+          "type": "bit 1（整个位域）",
+          "descEn": "Transfer complete interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_HTIE",
+          "type": "bit 2（整个位域）",
+          "descEn": "Half Transfer interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_TEIE",
+          "type": "bit 3（整个位域）",
+          "descEn": "Transfer error interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_DIR",
+          "type": "bit 4（整个位域）",
+          "descEn": "Data transfer direction",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_CIRC",
+          "type": "bit 5（整个位域）",
+          "descEn": "Circular mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PINC",
+          "type": "bit 6（整个位域）",
+          "descEn": "Peripheral increment mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MINC",
+          "type": "bit 7（整个位域）",
+          "descEn": "Memory increment mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PSIZE",
+          "type": "bits[9:8]（整个位域）",
+          "descEn": "PSIZE[1:0] bits (Peripheral size)",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MSIZE",
+          "type": "bits[11:10]（整个位域）",
+          "descEn": "MSIZE[1:0] bits (Memory size)",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PL",
+          "type": "bits[13:12]（整个位域）",
+          "descEn": "PL[1:0] bits(Channel Priority level)",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MEM2MEM",
+          "type": "bit 14（整个位域）",
+          "descEn": "Memory to memory mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PSIZE_0",
+          "type": "bit 8",
+          "descEn": "0x00000100",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PSIZE_1",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MSIZE_0",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MSIZE_1",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PL_0",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PL_1",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Channel enable",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CCR6"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CCR6，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel6->CCR;  /* 读回当前值 */\nv &= ~DMA_CCR_EN_Msk;  /* 先清掉 DMA_CCR_EN：bit 0（整个位域） */\nv |= (1u << DMA_CCR_EN_Pos) & DMA_CCR_EN_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel6->CCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3216,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CCR7",
+      "name": "DMA_CCR7",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel7->CCR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CCR_EN",
+          "type": "bit 0（整个位域）",
+          "descEn": "Channel enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_TCIE",
+          "type": "bit 1（整个位域）",
+          "descEn": "Transfer complete interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_HTIE",
+          "type": "bit 2（整个位域）",
+          "descEn": "Half Transfer interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_TEIE",
+          "type": "bit 3（整个位域）",
+          "descEn": "Transfer error interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_DIR",
+          "type": "bit 4（整个位域）",
+          "descEn": "Data transfer direction",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_CIRC",
+          "type": "bit 5（整个位域）",
+          "descEn": "Circular mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PINC",
+          "type": "bit 6（整个位域）",
+          "descEn": "Peripheral increment mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MINC",
+          "type": "bit 7（整个位域）",
+          "descEn": "Memory increment mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PSIZE",
+          "type": "bits[9:8]（整个位域）",
+          "descEn": "PSIZE[1:0] bits (Peripheral size)",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MSIZE",
+          "type": "bits[11:10]（整个位域）",
+          "descEn": "MSIZE[1:0] bits (Memory size)",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PL",
+          "type": "bits[13:12]（整个位域）",
+          "descEn": "PL[1:0] bits(Channel Priority level)",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MEM2MEM",
+          "type": "bit 14（整个位域）",
+          "descEn": "Memory to memory mode",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PSIZE_0",
+          "type": "bit 8",
+          "descEn": "0x00000100",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PSIZE_1",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MSIZE_0",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_MSIZE_1",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PL_0",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_CCR_PL_1",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Channel enable",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CCR7"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CCR7，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel7->CCR;  /* 读回当前值 */\nv &= ~DMA_CCR_EN_Msk;  /* 先清掉 DMA_CCR_EN：bit 0（整个位域） */\nv |= (1u << DMA_CCR_EN_Pos) & DMA_CCR_EN_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel7->CCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3216,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CMAR1",
+      "name": "DMA_CMAR1",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel1->CMAR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CMAR_MA",
+          "type": "bits[31:0]（整个位域）",
+          "descEn": "Memory Address",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Memory Address",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CMAR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CMAR1，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel1->CMAR;  /* 读回当前值 */\nv &= ~DMA_CMAR_MA_Msk;  /* 先清掉 DMA_CMAR_MA：bits[31:0]（整个位域） */\nv |= (1u << DMA_CMAR_MA_Pos) & DMA_CMAR_MA_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel1->CMAR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3274,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CMAR2",
+      "name": "DMA_CMAR2",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel2->CMAR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CMAR_MA",
+          "type": "bits[31:0]（整个位域）",
+          "descEn": "Memory Address",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Memory Address",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CMAR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CMAR2，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel2->CMAR;  /* 读回当前值 */\nv &= ~DMA_CMAR_MA_Msk;  /* 先清掉 DMA_CMAR_MA：bits[31:0]（整个位域） */\nv |= (1u << DMA_CMAR_MA_Pos) & DMA_CMAR_MA_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel2->CMAR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3274,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CMAR3",
+      "name": "DMA_CMAR3",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel3->CMAR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CMAR_MA",
+          "type": "bits[31:0]（整个位域）",
+          "descEn": "Memory Address",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Memory Address",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CMAR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CMAR3，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel3->CMAR;  /* 读回当前值 */\nv &= ~DMA_CMAR_MA_Msk;  /* 先清掉 DMA_CMAR_MA：bits[31:0]（整个位域） */\nv |= (1u << DMA_CMAR_MA_Pos) & DMA_CMAR_MA_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel3->CMAR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3274,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CMAR4",
+      "name": "DMA_CMAR4",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel4->CMAR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CMAR_MA",
+          "type": "bits[31:0]（整个位域）",
+          "descEn": "Memory Address",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Memory Address",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CMAR4"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CMAR4，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel4->CMAR;  /* 读回当前值 */\nv &= ~DMA_CMAR_MA_Msk;  /* 先清掉 DMA_CMAR_MA：bits[31:0]（整个位域） */\nv |= (1u << DMA_CMAR_MA_Pos) & DMA_CMAR_MA_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel4->CMAR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3274,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CMAR5",
+      "name": "DMA_CMAR5",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel5->CMAR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CMAR_MA",
+          "type": "bits[31:0]（整个位域）",
+          "descEn": "Memory Address",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Memory Address",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CMAR5"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CMAR5，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel5->CMAR;  /* 读回当前值 */\nv &= ~DMA_CMAR_MA_Msk;  /* 先清掉 DMA_CMAR_MA：bits[31:0]（整个位域） */\nv |= (1u << DMA_CMAR_MA_Pos) & DMA_CMAR_MA_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel5->CMAR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3274,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CMAR6",
+      "name": "DMA_CMAR6",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel6->CMAR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CMAR_MA",
+          "type": "bits[31:0]（整个位域）",
+          "descEn": "Memory Address",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Memory Address",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CMAR6"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CMAR6，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel6->CMAR;  /* 读回当前值 */\nv &= ~DMA_CMAR_MA_Msk;  /* 先清掉 DMA_CMAR_MA：bits[31:0]（整个位域） */\nv |= (1u << DMA_CMAR_MA_Pos) & DMA_CMAR_MA_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel6->CMAR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3274,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CMAR7",
+      "name": "DMA_CMAR7",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel7->CMAR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CMAR_MA",
+          "type": "bits[31:0]（整个位域）",
+          "descEn": "Memory Address",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Memory Address",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CMAR7"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CMAR7，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel7->CMAR;  /* 读回当前值 */\nv &= ~DMA_CMAR_MA_Msk;  /* 先清掉 DMA_CMAR_MA：bits[31:0]（整个位域） */\nv |= (1u << DMA_CMAR_MA_Pos) & DMA_CMAR_MA_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel7->CMAR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3274,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CNDTR1",
+      "name": "DMA_CNDTR1",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel1->CNDTR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CNDTR_NDT",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Number of data to Transfer",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Number of data to Transfer",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CNDTR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CNDTR1，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel1->CNDTR;  /* 读回当前值 */\nv &= ~DMA_CNDTR_NDT_Msk;  /* 先清掉 DMA_CNDTR_NDT：bits[15:0]（整个位域） */\nv |= (1u << DMA_CNDTR_NDT_Pos) & DMA_CNDTR_NDT_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel1->CNDTR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3264,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CNDTR2",
+      "name": "DMA_CNDTR2",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel2->CNDTR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CNDTR_NDT",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Number of data to Transfer",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Number of data to Transfer",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CNDTR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CNDTR2，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel2->CNDTR;  /* 读回当前值 */\nv &= ~DMA_CNDTR_NDT_Msk;  /* 先清掉 DMA_CNDTR_NDT：bits[15:0]（整个位域） */\nv |= (1u << DMA_CNDTR_NDT_Pos) & DMA_CNDTR_NDT_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel2->CNDTR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3264,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CNDTR3",
+      "name": "DMA_CNDTR3",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel3->CNDTR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CNDTR_NDT",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Number of data to Transfer",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Number of data to Transfer",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CNDTR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CNDTR3，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel3->CNDTR;  /* 读回当前值 */\nv &= ~DMA_CNDTR_NDT_Msk;  /* 先清掉 DMA_CNDTR_NDT：bits[15:0]（整个位域） */\nv |= (1u << DMA_CNDTR_NDT_Pos) & DMA_CNDTR_NDT_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel3->CNDTR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3264,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CNDTR4",
+      "name": "DMA_CNDTR4",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel4->CNDTR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CNDTR_NDT",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Number of data to Transfer",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Number of data to Transfer",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CNDTR4"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CNDTR4，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel4->CNDTR;  /* 读回当前值 */\nv &= ~DMA_CNDTR_NDT_Msk;  /* 先清掉 DMA_CNDTR_NDT：bits[15:0]（整个位域） */\nv |= (1u << DMA_CNDTR_NDT_Pos) & DMA_CNDTR_NDT_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel4->CNDTR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3264,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CNDTR5",
+      "name": "DMA_CNDTR5",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel5->CNDTR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CNDTR_NDT",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Number of data to Transfer",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Number of data to Transfer",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CNDTR5"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CNDTR5，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel5->CNDTR;  /* 读回当前值 */\nv &= ~DMA_CNDTR_NDT_Msk;  /* 先清掉 DMA_CNDTR_NDT：bits[15:0]（整个位域） */\nv |= (1u << DMA_CNDTR_NDT_Pos) & DMA_CNDTR_NDT_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel5->CNDTR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3264,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CNDTR6",
+      "name": "DMA_CNDTR6",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel6->CNDTR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CNDTR_NDT",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Number of data to Transfer",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Number of data to Transfer",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CNDTR6"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CNDTR6，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel6->CNDTR;  /* 读回当前值 */\nv &= ~DMA_CNDTR_NDT_Msk;  /* 先清掉 DMA_CNDTR_NDT：bits[15:0]（整个位域） */\nv |= (1u << DMA_CNDTR_NDT_Pos) & DMA_CNDTR_NDT_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel6->CNDTR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3264,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CNDTR7",
+      "name": "DMA_CNDTR7",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel7->CNDTR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CNDTR_NDT",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Number of data to Transfer",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Number of data to Transfer",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CNDTR7"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CNDTR7，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel7->CNDTR;  /* 读回当前值 */\nv &= ~DMA_CNDTR_NDT_Msk;  /* 先清掉 DMA_CNDTR_NDT：bits[15:0]（整个位域） */\nv |= (1u << DMA_CNDTR_NDT_Pos) & DMA_CNDTR_NDT_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel7->CNDTR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3264,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CPAR1",
+      "name": "DMA_CPAR1",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel1->CPAR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CPAR_PA",
+          "type": "bits[31:0]（整个位域）",
+          "descEn": "Peripheral Address",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Peripheral Address",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CPAR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CPAR1，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel1->CPAR;  /* 读回当前值 */\nv &= ~DMA_CPAR_PA_Msk;  /* 先清掉 DMA_CPAR_PA：bits[31:0]（整个位域） */\nv |= (1u << DMA_CPAR_PA_Pos) & DMA_CPAR_PA_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel1->CPAR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3269,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CPAR2",
+      "name": "DMA_CPAR2",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel2->CPAR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CPAR_PA",
+          "type": "bits[31:0]（整个位域）",
+          "descEn": "Peripheral Address",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Peripheral Address",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CPAR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CPAR2，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel2->CPAR;  /* 读回当前值 */\nv &= ~DMA_CPAR_PA_Msk;  /* 先清掉 DMA_CPAR_PA：bits[31:0]（整个位域） */\nv |= (1u << DMA_CPAR_PA_Pos) & DMA_CPAR_PA_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel2->CPAR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3269,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CPAR3",
+      "name": "DMA_CPAR3",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel3->CPAR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CPAR_PA",
+          "type": "bits[31:0]（整个位域）",
+          "descEn": "Peripheral Address",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Peripheral Address",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CPAR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CPAR3，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel3->CPAR;  /* 读回当前值 */\nv &= ~DMA_CPAR_PA_Msk;  /* 先清掉 DMA_CPAR_PA：bits[31:0]（整个位域） */\nv |= (1u << DMA_CPAR_PA_Pos) & DMA_CPAR_PA_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel3->CPAR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3269,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CPAR4",
+      "name": "DMA_CPAR4",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel4->CPAR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CPAR_PA",
+          "type": "bits[31:0]（整个位域）",
+          "descEn": "Peripheral Address",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Peripheral Address",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CPAR4"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CPAR4，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel4->CPAR;  /* 读回当前值 */\nv &= ~DMA_CPAR_PA_Msk;  /* 先清掉 DMA_CPAR_PA：bits[31:0]（整个位域） */\nv |= (1u << DMA_CPAR_PA_Pos) & DMA_CPAR_PA_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel4->CPAR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3269,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CPAR5",
+      "name": "DMA_CPAR5",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel5->CPAR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CPAR_PA",
+          "type": "bits[31:0]（整个位域）",
+          "descEn": "Peripheral Address",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Peripheral Address",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CPAR5"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CPAR5，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel5->CPAR;  /* 读回当前值 */\nv &= ~DMA_CPAR_PA_Msk;  /* 先清掉 DMA_CPAR_PA：bits[31:0]（整个位域） */\nv |= (1u << DMA_CPAR_PA_Pos) & DMA_CPAR_PA_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel5->CPAR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3269,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CPAR6",
+      "name": "DMA_CPAR6",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel6->CPAR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CPAR_PA",
+          "type": "bits[31:0]（整个位域）",
+          "descEn": "Peripheral Address",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Peripheral Address",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CPAR6"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CPAR6，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel6->CPAR;  /* 读回当前值 */\nv &= ~DMA_CPAR_PA_Msk;  /* 先清掉 DMA_CPAR_PA：bits[31:0]（整个位域） */\nv |= (1u << DMA_CPAR_PA_Pos) & DMA_CPAR_PA_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel6->CPAR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3269,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_CPAR7",
+      "name": "DMA_CPAR7",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec2",
+      "prototype": "DMA1_Channel7->CPAR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_CPAR_PA",
+          "type": "bits[31:0]（整个位域）",
+          "descEn": "Peripheral Address",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Peripheral Address",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_CPAR7"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_Channel_TypeDef.CPAR7，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1_Channel7->CPAR;  /* 读回当前值 */\nv &= ~DMA_CPAR_PA_Msk;  /* 先清掉 DMA_CPAR_PA：bits[31:0]（整个位域） */\nv |= (1u << DMA_CPAR_PA_Pos) & DMA_CPAR_PA_Msk;  /* 置位，实际取值看参考手册 */\nDMA1_Channel7->CPAR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3269,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_IFCR",
+      "name": "DMA_IFCR",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec1",
+      "prototype": "DMA1->IFCR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_IFCR_CGIF1",
+          "type": "bit 0（整个位域）",
+          "descEn": "Channel 1 Global interrupt clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CTCIF1",
+          "type": "bit 1（整个位域）",
+          "descEn": "Channel 1 Transfer Complete clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CHTIF1",
+          "type": "bit 2（整个位域）",
+          "descEn": "Channel 1 Half Transfer clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CTEIF1",
+          "type": "bit 3（整个位域）",
+          "descEn": "Channel 1 Transfer Error clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CGIF2",
+          "type": "bit 4（整个位域）",
+          "descEn": "Channel 2 Global interrupt clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CTCIF2",
+          "type": "bit 5（整个位域）",
+          "descEn": "Channel 2 Transfer Complete clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CHTIF2",
+          "type": "bit 6（整个位域）",
+          "descEn": "Channel 2 Half Transfer clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CTEIF2",
+          "type": "bit 7（整个位域）",
+          "descEn": "Channel 2 Transfer Error clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CGIF3",
+          "type": "bit 8（整个位域）",
+          "descEn": "Channel 3 Global interrupt clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CTCIF3",
+          "type": "bit 9（整个位域）",
+          "descEn": "Channel 3 Transfer Complete clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CHTIF3",
+          "type": "bit 10（整个位域）",
+          "descEn": "Channel 3 Half Transfer clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CTEIF3",
+          "type": "bit 11（整个位域）",
+          "descEn": "Channel 3 Transfer Error clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CGIF4",
+          "type": "bit 12（整个位域）",
+          "descEn": "Channel 4 Global interrupt clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CTCIF4",
+          "type": "bit 13（整个位域）",
+          "descEn": "Channel 4 Transfer Complete clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CHTIF4",
+          "type": "bit 14（整个位域）",
+          "descEn": "Channel 4 Half Transfer clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CTEIF4",
+          "type": "bit 15（整个位域）",
+          "descEn": "Channel 4 Transfer Error clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CGIF5",
+          "type": "bit 16（整个位域）",
+          "descEn": "Channel 5 Global interrupt clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CTCIF5",
+          "type": "bit 17（整个位域）",
+          "descEn": "Channel 5 Transfer Complete clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CHTIF5",
+          "type": "bit 18（整个位域）",
+          "descEn": "Channel 5 Half Transfer clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CTEIF5",
+          "type": "bit 19（整个位域）",
+          "descEn": "Channel 5 Transfer Error clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CGIF6",
+          "type": "bit 20（整个位域）",
+          "descEn": "Channel 6 Global interrupt clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CTCIF6",
+          "type": "bit 21（整个位域）",
+          "descEn": "Channel 6 Transfer Complete clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CHTIF6",
+          "type": "bit 22（整个位域）",
+          "descEn": "Channel 6 Half Transfer clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CTEIF6",
+          "type": "bit 23（整个位域）",
+          "descEn": "Channel 6 Transfer Error clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CGIF7",
+          "type": "bit 24（整个位域）",
+          "descEn": "Channel 7 Global interrupt clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CTCIF7",
+          "type": "bit 25（整个位域）",
+          "descEn": "Channel 7 Transfer Complete clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CHTIF7",
+          "type": "bit 26（整个位域）",
+          "descEn": "Channel 7 Half Transfer clear",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_IFCR_CTEIF7",
+          "type": "bit 27（整个位域）",
+          "descEn": "Channel 7 Transfer Error clear",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Channel 1 Global interrupt clear",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_TypeDef.IFCR，偏移 0x04"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1->IFCR;  /* 读回当前值 */\nv &= ~DMA_IFCR_CGIF1_Msk;  /* 先清掉 DMA_IFCR_CGIF1：bit 0（整个位域） */\nv |= (1u << DMA_IFCR_CGIF1_Pos) & DMA_IFCR_CGIF1_Msk;  /* 置位，实际取值看参考手册 */\nDMA1->IFCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3130,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DMA_ISR",
+      "name": "DMA_ISR",
+      "peripheral": "DMA",
+      "library": "reg",
+      "sectionId": "DMA@reg#sec1",
+      "prototype": "DMA1->ISR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMA_ISR_GIF1",
+          "type": "bit 0（整个位域）",
+          "descEn": "Channel 1 Global interrupt flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_TCIF1",
+          "type": "bit 1（整个位域）",
+          "descEn": "Channel 1 Transfer Complete flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_HTIF1",
+          "type": "bit 2（整个位域）",
+          "descEn": "Channel 1 Half Transfer flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_TEIF1",
+          "type": "bit 3（整个位域）",
+          "descEn": "Channel 1 Transfer Error flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_GIF2",
+          "type": "bit 4（整个位域）",
+          "descEn": "Channel 2 Global interrupt flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_TCIF2",
+          "type": "bit 5（整个位域）",
+          "descEn": "Channel 2 Transfer Complete flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_HTIF2",
+          "type": "bit 6（整个位域）",
+          "descEn": "Channel 2 Half Transfer flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_TEIF2",
+          "type": "bit 7（整个位域）",
+          "descEn": "Channel 2 Transfer Error flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_GIF3",
+          "type": "bit 8（整个位域）",
+          "descEn": "Channel 3 Global interrupt flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_TCIF3",
+          "type": "bit 9（整个位域）",
+          "descEn": "Channel 3 Transfer Complete flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_HTIF3",
+          "type": "bit 10（整个位域）",
+          "descEn": "Channel 3 Half Transfer flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_TEIF3",
+          "type": "bit 11（整个位域）",
+          "descEn": "Channel 3 Transfer Error flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_GIF4",
+          "type": "bit 12（整个位域）",
+          "descEn": "Channel 4 Global interrupt flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_TCIF4",
+          "type": "bit 13（整个位域）",
+          "descEn": "Channel 4 Transfer Complete flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_HTIF4",
+          "type": "bit 14（整个位域）",
+          "descEn": "Channel 4 Half Transfer flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_TEIF4",
+          "type": "bit 15（整个位域）",
+          "descEn": "Channel 4 Transfer Error flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_GIF5",
+          "type": "bit 16（整个位域）",
+          "descEn": "Channel 5 Global interrupt flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_TCIF5",
+          "type": "bit 17（整个位域）",
+          "descEn": "Channel 5 Transfer Complete flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_HTIF5",
+          "type": "bit 18（整个位域）",
+          "descEn": "Channel 5 Half Transfer flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_TEIF5",
+          "type": "bit 19（整个位域）",
+          "descEn": "Channel 5 Transfer Error flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_GIF6",
+          "type": "bit 20（整个位域）",
+          "descEn": "Channel 6 Global interrupt flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_TCIF6",
+          "type": "bit 21（整个位域）",
+          "descEn": "Channel 6 Transfer Complete flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_HTIF6",
+          "type": "bit 22（整个位域）",
+          "descEn": "Channel 6 Half Transfer flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_TEIF6",
+          "type": "bit 23（整个位域）",
+          "descEn": "Channel 6 Transfer Error flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_GIF7",
+          "type": "bit 24（整个位域）",
+          "descEn": "Channel 7 Global interrupt flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_TCIF7",
+          "type": "bit 25（整个位域）",
+          "descEn": "Channel 7 Transfer Complete flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_HTIF7",
+          "type": "bit 26（整个位域）",
+          "descEn": "Channel 7 Half Transfer flag",
+          "descZh": ""
+        },
+        {
+          "name": "DMA_ISR_TEIF7",
+          "type": "bit 27（整个位域）",
+          "descEn": "Channel 7 Transfer Error flag",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Channel 1 Global interrupt flag",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMA_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DMA_TypeDef.ISR，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DMA1->ISR;  /* 读回当前值 */\nv &= ~DMA_ISR_GIF1_Msk;  /* 先清掉 DMA_ISR_GIF1：bit 0（整个位域） */\nv |= (1u << DMA_ISR_GIF1_Pos) & DMA_ISR_GIF1_Msk;  /* 置位，实际取值看参考手册 */\nDMA1->ISR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3044,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    }
+  ]
+}

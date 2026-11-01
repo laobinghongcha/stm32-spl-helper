@@ -1,0 +1,1241 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "RCC",
+  "library": "hal",
+  "functions": [
+    {
+      "id": "HAL_RCC_DeInit",
+      "name": "HAL_RCC_DeInit",
+      "peripheral": "RCC",
+      "library": "hal",
+      "sectionId": "RCC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_RCC_DeInit(void);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [],
+      "returnDescEn": "HAL_StatusTypeDef",
+      "returnDescZh": "",
+      "briefEn": "Resets the RCC clock configuration to the default reset state.",
+      "briefZh": "把 RCC 配置恢复成复位默认状态（HSI 作 SYSCLK、所有分频复位、外设时钟关闭）。",
+      "usageZh": "想在运行时彻底重配时钟树、或者从 STOP 模式回来后要完全重来一遍时用。会把 PLL 关掉、SYSCLK 切回 HSI。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick",
+        "HAL_InitTick"
+      ],
+      "remarks": [
+        "The default reset state of the clock configuration is given below: - HSI ON and used as system clock source - HSE, PLL, PLL2 and PLL3 are OFF - AHB, APB1 and APB2 prescaler set to 1. - CSS and MCO1 OFF - All interrupts disabled - All flags are cleared",
+        "This function does not modify the configuration of the - Peripheral clocks - LSI, LSE and RTC clocks"
+      ],
+      "notesZh": [
+        "调完系统就跑在 8MHz HSI 上了，所有依赖主频的配置（波特率、定时器）都要重算",
+        "通常只在特殊情况用；正常初始化不需要先 DeInit"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "HSI_TIMEOUT_VALUE",
+        "HAL_TIMEOUT",
+        "CLOCKSWITCH_TIMEOUT_VALUE",
+        "HAL_OK",
+        "HAL_ERROR",
+        "PLL_TIMEOUT_VALUE",
+        "HSE_TIMEOUT_VALUE",
+        "PLL2_TIMEOUT_VALUE",
+        "PLLI2S_TIMEOUT_VALUE"
+      ],
+      "headerLine": 1154,
+      "definedIn": "stm32f1xx_hal_rcc.h",
+      "sourceLine": 200,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RCC_OscConfig",
+      "name": "HAL_RCC_OscConfig",
+      "peripheral": "RCC",
+      "library": "hal",
+      "sectionId": "RCC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_RCC_OscConfig(RCC_OscInitTypeDef  *RCC_OscInitStruct);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "RCC_OscInitStruct",
+          "type": "RCC_OscInitTypeDef *",
+          "descEn": "pointer to an RCC_OscInitTypeDef structure that contains the configuration information for the RCC Oscillators.",
+          "descZh": "振荡器配置结构体：OscillatorType 选择要配置哪些源（RCC_OSCILLATORTYPE_HSE|HSI|LSE|LSI 位或）；HSEState / HSICalibrationValue / LSEState / LSIState 各自开关；PLL.PLLState 决定是否配置 PLL，PLL.PLLSource 选 PLLSOURCE_HSE 或 PLLSOURCE_HSI_DIV2，PLL.PLLMUL 选 RCC_PLL_MUL9 等倍频。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Initializes the RCC Oscillators according to the specified parameters in the RCC_OscInitTypeDef.",
+      "briefZh": "配置时钟振荡器：选 HSE/HSI/LSE/LSI 的开关与旁路，并配置 PLL 的倍频与来源。",
+      "usageZh": "系统时钟初始化的第一步。整个 72MHz 配置的核心就在这里——把 HSE 打开并等它稳定，再把 PLL 源设为 HSE、倍频设为 9。函数内部会自己做「等待起振」的轮询（带超时），所以不需要像 SPL 那样手动 while 等 RCC_WaitForHSEStartUp。",
+      "prerequisites": [
+        "HAL_Init() 已完成（SysTick 与优先级分组就绪）"
+      ],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [
+        "The PLL is not disabled when used as system clock.",
+        "The PLL is not disabled when USB OTG FS clock is enabled (specific to devices with USB FS)",
+        "Transitions LSE Bypass to LSE On and LSE On to LSE Bypass are not supported by this macro. User should request a transition to LSE Off first and then LSE On or LSE Bypass.",
+        "Transition HSE Bypass to HSE On and HSE On to HSE Bypass are not supported by this macro. User should request a transition to HSE Off first and then HSE On or HSE Bypass."
+      ],
+      "notesZh": [
+        "F1 的 PLL 输入只有 HSE 或 HSI/2 两种（没有 F4 的 PLLM），8MHz HSE 想上 72MHz 就是 PLLMUL=9",
+        "HSE 起振失败会返回 HAL_ERROR，实际原因多半是晶振没接、负载电容不对、或者板子上根本没焊晶振——此时应回退到 HSI",
+        "F1 的 HSE 还有 HSEPredivValue（2 分频选项），用 16MHz 晶振时要设成 RCC_HSE_PREDIV_DIV2 才能得到 8MHz 进 PLL",
+        "调 PLL 前必须先切回 HSI 做 SYSCLK，否则会死机；一般来说 HAL_RCC_ClockConfig 会处理好，但手动改 PLL 参数时要自己先切"
+      ],
+      "exampleCode": "RCC_OscInitTypeDef RCC_OscInitStruct = {0};\n\n/* HSE 8MHz 晶振 + PLL 9 倍频 = 72MHz */\nRCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;\nRCC_OscInitStruct.HSEState       = RCC_HSE_ON;\nRCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;\nRCC_OscInitStruct.PLL.PLLState   = RCC_PLL_ON;\nRCC_OscInitStruct.PLL.PLLSource  = RCC_PLLSOURCE_HSE;\nRCC_OscInitStruct.PLL.PLLMUL     = RCC_PLL_MUL9;\nif (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)\n{\n  Error_Handler();   /* 晶振没起振或参数非法 */\n}",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RCC_OscInitTypeDef",
+        "HAL_ERROR",
+        "IS_RCC_OSCILLATORTYPE",
+        "RCC_OSCILLATORTYPE_HSE",
+        "IS_RCC_HSE",
+        "__HAL_RCC_GET_SYSCLK_SOURCE",
+        "RCC_SYSCLKSOURCE_STATUS_HSE",
+        "RCC_SYSCLKSOURCE_STATUS_PLLCLK",
+        "__HAL_RCC_GET_PLL_OSCSOURCE",
+        "RCC_PLLSOURCE_HSE",
+        "__HAL_RCC_GET_FLAG",
+        "RCC_FLAG_HSERDY",
+        "RCC_HSE_OFF",
+        "__HAL_RCC_HSE_CONFIG",
+        "HSE_TIMEOUT_VALUE",
+        "HAL_TIMEOUT",
+        "RCC_OSCILLATORTYPE_HSI",
+        "IS_RCC_HSI",
+        "IS_RCC_CALIBRATION_VALUE",
+        "RCC_SYSCLKSOURCE_STATUS_HSI",
+        "RCC_PLLSOURCE_HSI_DIV2",
+        "RCC_FLAG_HSIRDY",
+        "RCC_HSI_ON",
+        "__HAL_RCC_HSI_CALIBRATIONVALUE_ADJUST",
+        "RCC_HSI_OFF",
+        "__HAL_RCC_HSI_ENABLE",
+        "HSI_TIMEOUT_VALUE",
+        "__HAL_RCC_HSI_DISABLE",
+        "RCC_OSCILLATORTYPE_LSI",
+        "IS_RCC_LSI",
+        "RCC_LSI_OFF",
+        "__HAL_RCC_LSI_ENABLE",
+        "RCC_FLAG_LSIRDY",
+        "LSI_TIMEOUT_VALUE",
+        "__HAL_RCC_LSI_DISABLE",
+        "RCC_OSCILLATORTYPE_LSE",
+        "IS_RCC_LSE",
+        "__HAL_RCC_PWR_IS_CLK_DISABLED",
+        "__HAL_RCC_PWR_CLK_ENABLE",
+        "HAL_IS_BIT_CLR",
+        "RCC_DBP_TIMEOUT_VALUE",
+        "__HAL_RCC_LSE_CONFIG",
+        "RCC_LSE_OFF",
+        "RCC_FLAG_LSERDY",
+        "RCC_LSE_TIMEOUT_VALUE",
+        "__HAL_RCC_PWR_CLK_DISABLE",
+        "IS_RCC_PLL2",
+        "RCC_PLL2_NONE",
+        "RCC_PLL2_ON",
+        "IS_RCC_PLL2_MUL",
+        "IS_RCC_HSE_PREDIV2",
+        "HAL_IS_BIT_SET",
+        "__HAL_RCC_HSE_GET_PREDIV2",
+        "__HAL_RCC_PLL2_DISABLE",
+        "RCC_FLAG_PLL2RDY",
+        "PLL2_TIMEOUT_VALUE",
+        "__HAL_RCC_HSE_PREDIV2_CONFIG",
+        "__HAL_RCC_PLL2_CONFIG",
+        "__HAL_RCC_PLL2_ENABLE",
+        "IS_RCC_PLL",
+        "RCC_PLL_NONE",
+        "RCC_PLL_ON",
+        "IS_RCC_PLLSOURCE",
+        "IS_RCC_PLL_MUL",
+        "__HAL_RCC_PLL_DISABLE",
+        "RCC_FLAG_PLLRDY",
+        "PLL_TIMEOUT_VALUE",
+        "IS_RCC_HSE_PREDIV",
+        "IS_RCC_PREDIV1_SOURCE",
+        "__HAL_RCC_HSE_PREDIV_CONFIG",
+        "__HAL_RCC_PLL_CONFIG",
+        "__HAL_RCC_PLL_ENABLE",
+        "RCC_PLL_OFF",
+        "HAL_OK"
+      ],
+      "headerLine": 1155,
+      "definedIn": "stm32f1xx_hal_rcc.h",
+      "sourceLine": 345,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RCC_ClockConfig",
+      "name": "HAL_RCC_ClockConfig",
+      "peripheral": "RCC",
+      "library": "hal",
+      "sectionId": "RCC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_RCC_ClockConfig(RCC_ClkInitTypeDef  *RCC_ClkInitStruct, uint32_t FLatency);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "RCC_ClkInitStruct",
+          "type": "RCC_ClkInitTypeDef *",
+          "descEn": "pointer to an RCC_OscInitTypeDef structure that contains the configuration information for the RCC peripheral.",
+          "descZh": "ClockType 选择要配哪些（SYSCLK|HCLK|PCLK1|PCLK2 位或）；SYSCLKSource 选 RCC_SYSCLKSOURCE_PLLCLK；AHBCLKDivider 通常用 RCC_SYSCLK_DIV1；APB1CLKDivider 用 RCC_HCLK_DIV2（APB1 上限 36MHz）；APB2CLKDivider 用 RCC_HCLK_DIV1。"
+        },
+        {
+          "name": "FLatency",
+          "type": "uint32_t",
+          "descEn": "FLASH Latency The value of this parameter depend on device used within the same series",
+          "descZh": "Flash 等待周期：24MHz 以下用 FLASH_LATENCY_0，24~48MHz 用 1，48~72MHz 用 2。F1 最高 72MHz 所以最常见是 2。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Initializes the CPU, AHB and APB buses clocks according to the specified parameters in the RCC_ClkInitStruct.",
+      "briefZh": "配置 SYSCLK 来源、AHB/APB1/APB2 分频，并同时设置对应的 Flash 等待周期。",
+      "usageZh": "系统时钟初始化的第二步，在 HAL_RCC_OscConfig 之后调用。它把 SYSCLK 从 HSI 切到 PLL，并按分频算出 HCLK/PCLK1/PCLK2。**Flash 等待周期（FLatency）也在这一步设**，72MHz 必须传 FLASH_LATENCY_2，传少了会跑飞、传多了只是慢一点。",
+      "prerequisites": [
+        "已用 HAL_RCC_OscConfig 打开 HSE 并配置好 PLL"
+      ],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick",
+        "HAL_RCC_GetSysClockFreq",
+        "HAL_InitTick"
+      ],
+      "remarks": [
+        "The SystemCoreClock CMSIS variable is used to store System Clock Frequency and updated by @ref HAL_RCC_GetHCLKFreq() function called within this function",
+        "The HSI is used (enabled by hardware) as system clock source after start-up from Reset, wake-up from STOP and STANDBY mode, or in case of failure of the HSE used directly or indirectly as system clock (if the Clock Security System CSS is enabled).",
+        "A switch from one clock source to another occurs only if the target clock source is ready (clock stable after start-up delay or PLL locked). If a clock source which is not yet ready is selected, the switch will occur when the clock source will be ready. You can use @ref HAL_RCC_GetClockConfig() function to know which clock is currently used as system clock source."
+      ],
+      "notesZh": [
+        "APB1 最高只能 36MHz，分频配成 DIV1 跑 72MHz 会读数异常甚至死机",
+        "调完必须调 SystemCoreClockUpdate()，否则 HAL_Delay 之外的很多基于 SystemCoreClock 的计算（串口波特率、定时器分频）全部错",
+        "FLatency 与主频不匹配是最隐蔽的错误：表现为偶发死机或读 Flash 数据错乱"
+      ],
+      "exampleCode": "RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};\n\nRCC_ClkInitStruct.ClockType      = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK\n                                 | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;\nRCC_ClkInitStruct.SYSCLKSource   = RCC_SYSCLKSOURCE_PLLCLK;\nRCC_ClkInitStruct.AHBCLKDivider  = RCC_SYSCLK_DIV1;\nRCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;   /* 36MHz 上限 */\nRCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;   /* 72MHz */\nHAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2);\n\n/* 关键：把 SystemCoreClock 变量同步成实际频率 */\nSystemCoreClockUpdate();",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RCC_ClkInitTypeDef",
+        "RCC_OscInitTypeDef",
+        "HAL_ERROR",
+        "IS_RCC_CLOCKTYPE",
+        "IS_FLASH_LATENCY",
+        "__HAL_FLASH_GET_LATENCY",
+        "__HAL_FLASH_SET_LATENCY",
+        "RCC_CLOCKTYPE_HCLK",
+        "RCC_CLOCKTYPE_PCLK1",
+        "RCC_HCLK_DIV16",
+        "RCC_CLOCKTYPE_PCLK2",
+        "IS_RCC_HCLK",
+        "RCC_CLOCKTYPE_SYSCLK",
+        "IS_RCC_SYSCLKSOURCE",
+        "RCC_SYSCLKSOURCE_HSE",
+        "__HAL_RCC_GET_FLAG",
+        "RCC_FLAG_HSERDY",
+        "RCC_SYSCLKSOURCE_PLLCLK",
+        "RCC_FLAG_PLLRDY",
+        "RCC_FLAG_HSIRDY",
+        "__HAL_RCC_SYSCLK_CONFIG",
+        "__HAL_RCC_GET_SYSCLK_SOURCE",
+        "CLOCKSWITCH_TIMEOUT_VALUE",
+        "HAL_TIMEOUT",
+        "IS_RCC_PCLK",
+        "HAL_OK"
+      ],
+      "headerLine": 1156,
+      "definedIn": "stm32f1xx_hal_rcc.h",
+      "sourceLine": 811,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RCC_MCOConfig",
+      "name": "HAL_RCC_MCOConfig",
+      "peripheral": "RCC",
+      "library": "hal",
+      "sectionId": "RCC@hal#sec2",
+      "prototype": "void              HAL_RCC_MCOConfig(uint32_t RCC_MCOx, uint32_t RCC_MCOSource, uint32_t RCC_MCODiv);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "RCC_MCOx",
+          "type": "uint32_t",
+          "descEn": "specifies the output direction for the clock source. This parameter can be one of the following values:",
+          "descZh": "MCO 输出引脚，F1 上只有 RCC_MCO1（PA8）。"
+        },
+        {
+          "name": "RCC_MCOSource",
+          "type": "uint32_t",
+          "descEn": "specifies the clock source to output. This parameter can be one of the following values:",
+          "descZh": "要输出的时钟源：RCC_MCO1SOURCE_SYSCLK / HSI / HSE / PLLCLK_DIV2。"
+        },
+        {
+          "name": "RCC_MCODiv",
+          "type": "uint32_t",
+          "descEn": "specifies the MCO DIV. This parameter can be one of the following values:",
+          "descZh": "输出分频，RCC_MCODIV_1 ~ RCC_MCODIV_4。频率太高示波器探头会失真，建议至少 /2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Selects the clock source to output on MCO pin.",
+      "briefZh": "把内部时钟信号从 MCO 引脚（PA8）输出，用于示波器测量实际频率。",
+      "usageZh": "验证时钟树是否真的跑在你以为的频率上——这是最直接的调试手段。可以选输出 SYSCLK、HSI、HSE 或 PLL/2。",
+      "prerequisites": [
+        "PA8 已配成复用推挽输出（GPIO_MODE_AF_PP）"
+      ],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GPIO_Init"
+      ],
+      "remarks": [
+        "MCO pin should be configured in alternate function mode."
+      ],
+      "notesZh": [
+        "PA8 被 MCO 占用后不能再当普通 GPIO 用；测完记得关掉"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "GPIO_InitTypeDef",
+        "IS_RCC_MCO",
+        "IS_RCC_MCODIV",
+        "IS_RCC_MCO1SOURCE",
+        "UNUSED",
+        "GPIO_MODE_AF_PP",
+        "GPIO_SPEED_FREQ_HIGH",
+        "GPIO_NOPULL",
+        "__HAL_RCC_MCO1_CONFIG"
+      ],
+      "headerLine": 1167,
+      "definedIn": "stm32f1xx_hal_rcc.h",
+      "sourceLine": 1000,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RCC_EnableCSS",
+      "name": "HAL_RCC_EnableCSS",
+      "peripheral": "RCC",
+      "library": "hal",
+      "sectionId": "RCC@hal#sec2",
+      "prototype": "void              HAL_RCC_EnableCSS(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enables the Clock Security System.",
+      "briefZh": "使能时钟安全系统（CSS）：HSE 一旦失效自动切回 HSI 并触发 NMI 中断。",
+      "usageZh": "产品级代码的保护措施。晶振因振动、虚焊、温漂停振时，CSS 能保证系统继续跑（切到内部 8MHz RC），而不是直接死机。使能后要重写 HAL_RCC_CSSCallback 在 NMI 里做降级处理。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "If a failure is detected on the HSE oscillator clock, this oscillator is automatically disabled and an interrupt is generated to inform the software about the failure (Clock Security System Interrupt, CSSI), allowing the MCU to perform rescue operations. The CSSI is linked to the Cortex-M3 NMI (Non-Maskable Interrupt) exception vector."
+      ],
+      "notesZh": [
+        "CSS 中断是 NMI（不可屏蔽），优先级最高，回调里不能做耗时操作",
+        "触发后 PLL 也被关掉，系统退到 HSI 8MHz，需要重新配置时钟",
+        "只在 HSE 作为系统时钟源时有意义"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "RCC_CR_CSSON_BB"
+      ],
+      "headerLine": 1168,
+      "definedIn": "stm32f1xx_hal_rcc.h",
+      "sourceLine": 1037,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RCC_DisableCSS",
+      "name": "HAL_RCC_DisableCSS",
+      "peripheral": "RCC",
+      "library": "hal",
+      "sectionId": "RCC@hal#sec2",
+      "prototype": "void              HAL_RCC_DisableCSS(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disables the Clock Security System.",
+      "briefZh": "关闭时钟安全系统。",
+      "usageZh": "调试阶段不想被 NMI 打断时临时关掉；量产代码建议保持开启。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "RCC_CR_CSSON_BB"
+      ],
+      "headerLine": 1169,
+      "definedIn": "stm32f1xx_hal_rcc.h",
+      "sourceLine": 1046,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RCC_GetSysClockFreq",
+      "name": "HAL_RCC_GetSysClockFreq",
+      "peripheral": "RCC",
+      "library": "hal",
+      "sectionId": "RCC@hal#sec2",
+      "prototype": "uint32_t          HAL_RCC_GetSysClockFreq(void);",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "SYSCLK frequency",
+      "returnDescZh": "",
+      "briefEn": "Returns the SYSCLK frequency",
+      "briefZh": "返回当前 SYSCLK 的实际频率（单位 Hz）。",
+      "usageZh": "写通用驱动（尤其是需要按主频算波特率/定时器分频的库）时用它取实际频率，比硬编码 72000000 更稳妥。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "The system frequency computed by this function is not the real frequency in the chip. It is calculated based on the predefined constant and the selected clock source:",
+        "If SYSCLK source is HSI, function returns values based on HSI_VALUE(*)",
+        "If SYSCLK source is HSE, function returns a value based on HSE_VALUE divided by PREDIV factor(**)",
+        "If SYSCLK source is PLL, function returns a value based on HSE_VALUE divided by PREDIV factor(**) or HSI_VALUE(*) multiplied by the PLL factor.",
+        "(*) HSI_VALUE is a constant defined in stm32f1xx_hal_conf.h file (default value 8 MHz) but the real value may vary depending on the variations in voltage and temperature.",
+        "(**) HSE_VALUE is a constant defined in stm32f1xx_hal_conf.h file (default value 8 MHz), user has to ensure that HSE_VALUE is same as the real frequency of the crystal used. Otherwise, this function may have wrong result.",
+        "The result of this function could be not correct when using fractional value for HSE crystal.",
+        "This function can be used by the user application to compute the baud-rate for the communication peripherals or configure other parameters.",
+        "Each time SYSCLK changes, this function must be called to update the right SYSCLK value. Otherwise, any configuration based on this function will be incorrect."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "RCC_SYSCLKSOURCE_STATUS_HSE",
+        "RCC_SYSCLKSOURCE_STATUS_PLLCLK",
+        "RCC_PLLSOURCE_HSI_DIV2",
+        "HAL_IS_BIT_SET",
+        "RCC_SYSCLKSOURCE_STATUS_HSI"
+      ],
+      "headerLine": 1170,
+      "definedIn": "stm32f1xx_hal_rcc.h",
+      "sourceLine": 1080,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RCC_GetHCLKFreq",
+      "name": "HAL_RCC_GetHCLKFreq",
+      "peripheral": "RCC",
+      "library": "hal",
+      "sectionId": "RCC@hal#sec2",
+      "prototype": "uint32_t          HAL_RCC_GetHCLKFreq(void);",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "HCLK frequency",
+      "returnDescZh": "",
+      "briefEn": "Returns the HCLK frequency",
+      "briefZh": "返回 AHB 总线（HCLK）频率，即内核实际运行的频率。",
+      "usageZh": "算 SysTick、DWT 周期计数、以及任何「每周期多少」的场合都用它。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "Each time HCLK changes, this function must be called to update the right HCLK value. Otherwise, any configuration based on this function will be incorrect.",
+        "The SystemCoreClock CMSIS variable is used to store System Clock Frequency and updated within this function"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1171,
+      "definedIn": "stm32f1xx_hal_rcc.h",
+      "sourceLine": 1174,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RCC_GetPCLK1Freq",
+      "name": "HAL_RCC_GetPCLK1Freq",
+      "peripheral": "RCC",
+      "library": "hal",
+      "sectionId": "RCC@hal#sec2",
+      "prototype": "uint32_t          HAL_RCC_GetPCLK1Freq(void);",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "PCLK1 frequency",
+      "returnDescZh": "",
+      "briefEn": "Returns the PCLK1 frequency",
+      "briefZh": "返回 APB1 总线频率（PCLK1）。",
+      "usageZh": "配置挂在 APB1 上的外设（USART2/3、TIM2~7、I2C、SPI2、PWR、BKP）时需要用它算波特率或定时器时基。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_RCC_GetHCLKFreq"
+      ],
+      "remarks": [
+        "Each time PCLK1 changes, this function must be called to update the right PCLK1 value. Otherwise, any configuration based on this function will be incorrect."
+      ],
+      "notesZh": [
+        "注意定时器时钟不是 PCLK1：APB 分频不为 1 时，定时器时钟是 PCLK1 × 2"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1172,
+      "definedIn": "stm32f1xx_hal_rcc.h",
+      "sourceLine": 1185,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RCC_GetPCLK2Freq",
+      "name": "HAL_RCC_GetPCLK2Freq",
+      "peripheral": "RCC",
+      "library": "hal",
+      "sectionId": "RCC@hal#sec2",
+      "prototype": "uint32_t          HAL_RCC_GetPCLK2Freq(void);",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "PCLK2 frequency",
+      "returnDescZh": "",
+      "briefEn": "Returns the PCLK2 frequency",
+      "briefZh": "返回 APB2 总线频率（PCLK2）。",
+      "usageZh": "配置 USART1、SPI1、ADC1、GPIO、TIM1、AFIO 这些 APB2 外设时用它算分频。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_RCC_GetHCLKFreq"
+      ],
+      "remarks": [
+        "Each time PCLK2 changes, this function must be called to update the right PCLK2 value. Otherwise, any configuration based on this function will be incorrect."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1173,
+      "definedIn": "stm32f1xx_hal_rcc.h",
+      "sourceLine": 1197,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RCC_GetOscConfig",
+      "name": "HAL_RCC_GetOscConfig",
+      "peripheral": "RCC",
+      "library": "hal",
+      "sectionId": "RCC@hal#sec2",
+      "prototype": "void              HAL_RCC_GetOscConfig(RCC_OscInitTypeDef  *RCC_OscInitStruct);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "RCC_OscInitStruct",
+          "type": "RCC_OscInitTypeDef *",
+          "descEn": "pointer to an RCC_OscInitTypeDef structure that will be configured.",
+          "descZh": "输出参数，传入结构体地址由函数填回当前配置。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Configures the RCC_OscInitStruct according to the internal RCC configuration registers.",
+      "briefZh": "把当前 RCC 振荡器与 PLL 的实际配置读回到结构体里。",
+      "usageZh": "想在运行时复制一份时钟配置（比如做低功耗前后对比、或者把配置打印出来核对）时用，避免手动逐位解析寄存器。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "RCC_OscInitTypeDef",
+        "RCC_OSCILLATORTYPE_HSE",
+        "RCC_OSCILLATORTYPE_HSI",
+        "RCC_OSCILLATORTYPE_LSE",
+        "RCC_OSCILLATORTYPE_LSI",
+        "RCC_HSE_BYPASS",
+        "RCC_HSE_ON",
+        "RCC_HSE_OFF",
+        "__HAL_RCC_HSE_GET_PREDIV",
+        "RCC_HSI_ON",
+        "RCC_HSI_OFF",
+        "RCC_LSE_BYPASS",
+        "RCC_LSE_ON",
+        "RCC_LSE_OFF",
+        "RCC_LSI_ON",
+        "RCC_LSI_OFF",
+        "RCC_PLL_ON",
+        "RCC_PLL_OFF",
+        "RCC_PLL2_ON",
+        "RCC_PLL2_OFF",
+        "__HAL_RCC_HSE_GET_PREDIV2"
+      ],
+      "headerLine": 1174,
+      "definedIn": "stm32f1xx_hal_rcc.h",
+      "sourceLine": 1210,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RCC_GetClockConfig",
+      "name": "HAL_RCC_GetClockConfig",
+      "peripheral": "RCC",
+      "library": "hal",
+      "sectionId": "RCC@hal#sec2",
+      "prototype": "void              HAL_RCC_GetClockConfig(RCC_ClkInitTypeDef  *RCC_ClkInitStruct, uint32_t *pFLatency);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "RCC_ClkInitStruct",
+          "type": "RCC_ClkInitTypeDef *",
+          "descEn": "pointer to an RCC_ClkInitTypeDef structure that contains the current clock configuration.",
+          "descZh": "输出参数，接收 SYSCLKSource 与各分频值。"
+        },
+        {
+          "name": "pFLatency",
+          "type": "uint32_t *",
+          "descEn": "Pointer on the Flash Latency.",
+          "descZh": "输出参数，接收当前 Flash 等待周期。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Get the RCC_ClkInitStruct according to the internal RCC configuration registers.",
+      "briefZh": "把当前的 SYSCLK 源与各总线分频读回到结构体里。",
+      "usageZh": "和 HAL_RCC_GetOscConfig 配合，能完整还原时钟树配置。STOP 模式唤醒后常先读一次再决定怎么恢复。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "RCC_ClkInitTypeDef",
+        "RCC_CLOCKTYPE_SYSCLK",
+        "RCC_CLOCKTYPE_HCLK",
+        "RCC_CLOCKTYPE_PCLK1",
+        "RCC_CLOCKTYPE_PCLK2",
+        "FLASH_LATENCY_0"
+      ],
+      "headerLine": 1175,
+      "definedIn": "stm32f1xx_hal_rcc.h",
+      "sourceLine": 1310,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RCC_NMI_IRQHandler",
+      "name": "HAL_RCC_NMI_IRQHandler",
+      "peripheral": "RCC",
+      "library": "hal",
+      "sectionId": "RCC@hal#sec2",
+      "prototype": "void              HAL_RCC_NMI_IRQHandler(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "This function handles the RCC CSS interrupt request.",
+      "briefZh": "CSS（时钟安全系统）中断的服务程序，内部清 CSS 标志并调用 HAL_RCC_CSSCallback。",
+      "usageZh": "在 NMI_Handler() 里调用它。必须重写 HAL_RCC_CSSCallback 才有实际动作，否则 HSE 挂了系统会静默降频到 8MHz。",
+      "prerequisites": [
+        "已 HAL_RCC_EnableCSS() 使能 CSS"
+      ],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_RCC_CSSCallback"
+      ],
+      "remarks": [
+        "This API should be called under the NMI_Handler()."
+      ],
+      "notesZh": [
+        "NMI 优先级最高且不可屏蔽，回调里只能做很短的降级处理"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__HAL_RCC_GET_IT",
+        "RCC_IT_CSS",
+        "__HAL_RCC_CLEAR_IT"
+      ],
+      "headerLine": 1178,
+      "definedIn": "stm32f1xx_hal_rcc.h",
+      "sourceLine": 1345,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RCC_CSSCallback",
+      "name": "HAL_RCC_CSSCallback",
+      "peripheral": "RCC",
+      "library": "hal",
+      "sectionId": "RCC@hal#sec2",
+      "prototype": "void              HAL_RCC_CSSCallback(void);",
+      "returnType": "__weak void",
+      "params": [],
+      "returnDescEn": "none",
+      "returnDescZh": "",
+      "briefEn": "RCC Clock Security System interrupt callback",
+      "briefZh": "时钟安全系统的用户回调，__weak 空实现，HSE 失效时被调用。",
+      "usageZh": "在这里做降级处理：把外设全部停掉、重新按 HSI 8MHz 配置时钟、必要时点亮故障灯或记录日志。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "此时 PLL 已自动关闭，系统跑在 HSI 8MHz，所有按 72MHz 算的波特率/定时器参数都要重配",
+        "回调在 NMI 上下文，不要调用 HAL_Delay"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak"
+      ],
+      "headerLine": 1181,
+      "definedIn": "stm32f1xx_hal_rcc.h",
+      "sourceLine": 1377,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RCCEx_PeriphCLKConfig",
+      "name": "HAL_RCCEx_PeriphCLKConfig",
+      "peripheral": "RCC",
+      "library": "hal",
+      "sectionId": "RCC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_RCCEx_PeriphCLKConfig(RCC_PeriphCLKInitTypeDef  *PeriphClkInit);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "PeriphClkInit",
+          "type": "RCC_PeriphCLKInitTypeDef *",
+          "descEn": "pointer to an RCC_PeriphCLKInitTypeDef structure that contains the configuration information for the Extended Peripherals clocks(RTC clock).",
+          "descZh": "结构体：PeriphClockSelection 选要配哪一项（RCC_PERIPHCLK_ADC / USB / RTC / I2S）；AdcClockSelection 取 RCC_ADCPCLK2_DIV2/4/6/8；RTCClockSelection 取 RCC_RTCCLKSOURCE_LSE/LSI/HSE_RTC；UsbClockSelection 取 RCC_USBCLKSOURCE_PLL_DIV1_5。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Initializes the RCC extended peripherals clocks according to the specified parameters in the RCC_PeriphCLKInitTypeDef.",
+      "briefZh": "配置外设专用时钟源：ADC 预分频、USB 分频、RTC 时钟源、I2S 时钟源。",
+      "usageZh": "F1 里这些外设挂的不是普通总线时钟，需要单独选源与分频。最常用的是给 RTC 选 LSE、给 ADC 设 /6 分频让 ADC 时钟不超过 14MHz。",
+      "prerequisites": [
+        "对应的源时钟（LSE/HSE）已由 HAL_RCC_OscConfig 打开"
+      ],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [
+        "Care must be taken when HAL_RCCEx_PeriphCLKConfig() is used to select the RTC clock source; in this case the Backup domain will be reset in order to modify the RTC Clock source, as consequence RTC registers (including the backup registers) are set to their reset values.",
+        "In case of STM32F105xC or STM32F107xC devices, PLLI2S will be enabled if requested on one of 2 I2S interfaces. When PLLI2S is enabled, you need to call HAL_RCCEx_DisablePLLI2S to manually disable it."
+      ],
+      "notesZh": [
+        "ADC 时钟不能超过 14MHz，72MHz 下至少 /6（12MHz）",
+        "USB 要求精确 48MHz，只能用 PLL/1.5",
+        "改 RTC 时钟源前要先 HAL_RCC_DisableRTC 并备份域可写"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RCC_PeriphCLKInitTypeDef",
+        "IS_RCC_PERIPHCLOCK",
+        "RCC_PERIPHCLK_RTC",
+        "IS_RCC_RTCCLKSOURCE",
+        "__HAL_RCC_PWR_IS_CLK_DISABLED",
+        "__HAL_RCC_PWR_CLK_ENABLE",
+        "HAL_IS_BIT_CLR",
+        "RCC_DBP_TIMEOUT_VALUE",
+        "HAL_TIMEOUT",
+        "__HAL_RCC_BACKUPRESET_FORCE",
+        "__HAL_RCC_BACKUPRESET_RELEASE",
+        "HAL_IS_BIT_SET",
+        "__HAL_RCC_GET_FLAG",
+        "RCC_FLAG_LSERDY",
+        "RCC_LSE_TIMEOUT_VALUE",
+        "__HAL_RCC_RTC_CONFIG",
+        "__HAL_RCC_PWR_CLK_DISABLE",
+        "RCC_PERIPHCLK_ADC",
+        "IS_RCC_ADCPLLCLK_DIV",
+        "__HAL_RCC_ADC_CONFIG",
+        "RCC_PERIPHCLK_I2S2",
+        "IS_RCC_I2S2CLKSOURCE",
+        "__HAL_RCC_I2S2_CONFIG",
+        "RCC_PERIPHCLK_I2S3",
+        "IS_RCC_I2S3CLKSOURCE",
+        "__HAL_RCC_I2S3_CONFIG",
+        "IS_RCC_PLLI2S_MUL",
+        "IS_RCC_HSE_PREDIV2",
+        "__HAL_RCC_HSE_GET_PREDIV2",
+        "HAL_ERROR",
+        "__HAL_RCC_HSE_PREDIV2_CONFIG",
+        "__HAL_RCC_PLLI2S_CONFIG",
+        "__HAL_RCC_PLLI2S_ENABLE",
+        "RCC_FLAG_PLLI2SRDY",
+        "PLLI2S_TIMEOUT_VALUE",
+        "RCC_PERIPHCLK_USB",
+        "IS_RCC_USBPLLCLK_DIV",
+        "__HAL_RCC_USB_CONFIG",
+        "HAL_OK"
+      ],
+      "headerLine": 1857,
+      "definedIn": "stm32f1xx_hal_rcc_ex.h",
+      "sourceLine": 98,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RCCEx_GetPeriphCLKConfig",
+      "name": "HAL_RCCEx_GetPeriphCLKConfig",
+      "peripheral": "RCC",
+      "library": "hal",
+      "sectionId": "RCC@hal#sec2",
+      "prototype": "void              HAL_RCCEx_GetPeriphCLKConfig(RCC_PeriphCLKInitTypeDef  *PeriphClkInit);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "PeriphClkInit",
+          "type": "RCC_PeriphCLKInitTypeDef *",
+          "descEn": "pointer to an RCC_PeriphCLKInitTypeDef structure that returns the configuration information for the Extended Peripherals clocks(RTC, I2S, ADC clocks).",
+          "descZh": "输出参数，接收当前的外设时钟配置。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Get the PeriphClkInit according to the internal RCC configuration registers.",
+      "briefZh": "把外设专用时钟的当前配置读回到结构体里。",
+      "usageZh": "核对 ADC/USB/RTC 的时钟源到底被设成了什么，排查「ADC 读数偏小」「USB 枚举不上」这类问题时必用。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "RCC_PeriphCLKInitTypeDef",
+        "RCC_PERIPHCLK_RTC",
+        "__HAL_RCC_GET_RTC_SOURCE",
+        "RCC_PERIPHCLK_ADC",
+        "__HAL_RCC_GET_ADC_SOURCE",
+        "RCC_PERIPHCLK_I2S2",
+        "__HAL_RCC_GET_I2S2_SOURCE",
+        "RCC_PERIPHCLK_I2S3",
+        "__HAL_RCC_GET_I2S3_SOURCE",
+        "RCC_I2S2CLKSOURCE_SYSCLK",
+        "RCC_I2S3CLKSOURCE_SYSCLK",
+        "RCC_PERIPHCLK_USB",
+        "__HAL_RCC_GET_USB_SOURCE"
+      ],
+      "headerLine": 1858,
+      "definedIn": "stm32f1xx_hal_rcc_ex.h",
+      "sourceLine": 292,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RCCEx_GetPeriphCLKFreq",
+      "name": "HAL_RCCEx_GetPeriphCLKFreq",
+      "peripheral": "RCC",
+      "library": "hal",
+      "sectionId": "RCC@hal#sec2",
+      "prototype": "uint32_t          HAL_RCCEx_GetPeriphCLKFreq(uint32_t PeriphClk);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "PeriphClk",
+          "type": "uint32_t",
+          "descEn": "Peripheral clock identifier This parameter can be one of the following values:",
+          "descZh": "外设时钟标识，如 RCC_PERIPHCLK_ADC、RCC_PERIPHCLK_USB、RCC_PERIPHCLK_RTC。"
+        }
+      ],
+      "returnDescEn": "Frequency in Hz (0: means that no available frequency for the peripheral)",
+      "returnDescZh": "",
+      "briefEn": "Returns the peripheral clock frequency",
+      "briefZh": "返回指定外设时钟的实际频率（单位 Hz）。",
+      "usageZh": "算 ADC 采样时间、USB 时序、I2S 分频时直接取真实值，比手算可靠。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_RCC_GetSysClockFreq",
+        "HAL_RCC_GetPCLK2Freq"
+      ],
+      "remarks": [
+        "Returns 0 if peripheral clock is unknown"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "IS_RCC_PERIPHCLOCK",
+        "RCC_PERIPHCLK_USB",
+        "HAL_IS_BIT_SET",
+        "RCC_PLLSOURCE_HSI_DIV2",
+        "__HAL_RCC_GET_USB_SOURCE",
+        "RCC_USBCLKSOURCE_PLL_DIV2",
+        "RCC_USBCLKSOURCE_PLL",
+        "RCC_PERIPHCLK_I2S2",
+        "__HAL_RCC_GET_I2S2_SOURCE",
+        "RCC_I2S2CLKSOURCE_SYSCLK",
+        "RCC_PERIPHCLK_I2S3",
+        "__HAL_RCC_GET_I2S3_SOURCE",
+        "RCC_I2S3CLKSOURCE_SYSCLK",
+        "RCC_PERIPHCLK_RTC",
+        "RCC_RTCCLKSOURCE_LSE",
+        "RCC_RTCCLKSOURCE_LSI",
+        "RCC_RTCCLKSOURCE_HSE_DIV128",
+        "RCC_PERIPHCLK_ADC",
+        "__HAL_RCC_GET_ADC_SOURCE"
+      ],
+      "headerLine": 1859,
+      "definedIn": "stm32f1xx_hal_rcc_ex.h",
+      "sourceLine": 385,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RCCEx_EnablePLLI2S",
+      "name": "HAL_RCCEx_EnablePLLI2S",
+      "peripheral": "RCC",
+      "library": "hal",
+      "sectionId": "RCC@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_RCCEx_EnablePLLI2S(RCC_PLLI2SInitTypeDef  *PLLI2SInit);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "PLLI2SInit",
+          "type": "RCC_PLLI2SInitTypeDef *",
+          "descEn": "pointer to an RCC_PLLI2SInitTypeDef structure that contains the configuration information for the PLLI2S",
+          "descZh": "结构体：PLLI2SM / PLLI2SN / PLLI2SR 决定 I2S 时钟频率。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Enable PLLI2S",
+      "briefZh": "使能 I2S 专用 PLL（PLLI2S），为 I2S 提供音频主时钟。",
+      "usageZh": "F1 只有大容量型号带 I2S 专用 PLL。要把 I2S 配到 44.1kHz/48kHz 采样率时用它。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [
+        "The PLLI2S configuration not modified if used by I2S2 or I2S3 Interface."
+      ],
+      "notesZh": [
+        "普通 F103C8T6 的中容量芯片没有 I2S PLL，这个函数对它无意义"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RCC_PLLI2SInitTypeDef",
+        "HAL_IS_BIT_CLR",
+        "IS_RCC_PLLI2S_MUL",
+        "IS_RCC_HSE_PREDIV2",
+        "HAL_IS_BIT_SET",
+        "__HAL_RCC_HSE_GET_PREDIV2",
+        "HAL_ERROR",
+        "__HAL_RCC_PLLI2S_DISABLE",
+        "__HAL_RCC_GET_FLAG",
+        "RCC_FLAG_PLLI2SRDY",
+        "PLLI2S_TIMEOUT_VALUE",
+        "HAL_TIMEOUT",
+        "__HAL_RCC_HSE_PREDIV2_CONFIG",
+        "__HAL_RCC_PLLI2S_CONFIG",
+        "__HAL_RCC_PLLI2S_ENABLE",
+        "HAL_OK"
+      ],
+      "headerLine": 1869,
+      "definedIn": "stm32f1xx_hal_rcc_ex.h",
+      "sourceLine": 611,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RCCEx_DisablePLLI2S",
+      "name": "HAL_RCCEx_DisablePLLI2S",
+      "peripheral": "RCC",
+      "library": "hal",
+      "sectionId": "RCC@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_RCCEx_DisablePLLI2S(void);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Disable PLLI2S",
+      "briefZh": "关闭 I2S 专用 PLL。",
+      "usageZh": "不再用 I2S 时关闭以省电。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [
+        "PLLI2S is not disabled if used by I2S2 or I2S3 Interface."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "HAL_IS_BIT_CLR",
+        "__HAL_RCC_PLLI2S_DISABLE",
+        "__HAL_RCC_GET_FLAG",
+        "RCC_FLAG_PLLI2SRDY",
+        "PLLI2S_TIMEOUT_VALUE",
+        "HAL_TIMEOUT",
+        "HAL_ERROR",
+        "HAL_OK"
+      ],
+      "headerLine": 1870,
+      "definedIn": "stm32f1xx_hal_rcc_ex.h",
+      "sourceLine": 681,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RCCEx_EnablePLL2",
+      "name": "HAL_RCCEx_EnablePLL2",
+      "peripheral": "RCC",
+      "library": "hal",
+      "sectionId": "RCC@hal#sec4",
+      "prototype": "HAL_StatusTypeDef HAL_RCCEx_EnablePLL2(RCC_PLL2InitTypeDef  *PLL2Init);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "PLL2Init",
+          "type": "RCC_PLL2InitTypeDef *",
+          "descEn": "pointer to an RCC_PLL2InitTypeDef structure that contains the configuration information for the PLL2",
+          "descZh": "结构体：PLL2M / PLL2N / PLL2P / PLL2R 决定输出频率。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Enable PLL2",
+      "briefZh": "使能第二路 PLL（PLL2），供 I2S 等外设使用。",
+      "usageZh": "大容量型号才有。用法与 PLLI2S 类似，用于需要额外时钟域的场合。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [
+        "The PLL2 configuration not modified if used indirectly as system clock."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RCC_PLL2InitTypeDef",
+        "__HAL_RCC_GET_PLL_OSCSOURCE",
+        "RCC_PLLSOURCE_HSE",
+        "__HAL_RCC_GET_SYSCLK_SOURCE",
+        "RCC_SYSCLKSOURCE_STATUS_PLLCLK",
+        "HAL_ERROR",
+        "IS_RCC_PLL2_MUL",
+        "IS_RCC_HSE_PREDIV2",
+        "HAL_IS_BIT_SET",
+        "__HAL_RCC_HSE_GET_PREDIV2",
+        "__HAL_RCC_PLL2_DISABLE",
+        "__HAL_RCC_GET_FLAG",
+        "RCC_FLAG_PLL2RDY",
+        "PLL2_TIMEOUT_VALUE",
+        "HAL_TIMEOUT",
+        "__HAL_RCC_HSE_PREDIV2_CONFIG",
+        "__HAL_RCC_PLL2_CONFIG",
+        "__HAL_RCC_PLL2_ENABLE",
+        "HAL_OK"
+      ],
+      "headerLine": 1879,
+      "definedIn": "stm32f1xx_hal_rcc_ex.h",
+      "sourceLine": 737,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RCCEx_DisablePLL2",
+      "name": "HAL_RCCEx_DisablePLL2",
+      "peripheral": "RCC",
+      "library": "hal",
+      "sectionId": "RCC@hal#sec4",
+      "prototype": "HAL_StatusTypeDef HAL_RCCEx_DisablePLL2(void);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Disable PLL2",
+      "briefZh": "关闭第二路 PLL（PLL2）。",
+      "usageZh": "不再需要时关闭省电。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [
+        "PLL2 is not disabled if used indirectly as system clock."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "__HAL_RCC_GET_PLL_OSCSOURCE",
+        "RCC_PLLSOURCE_HSE",
+        "__HAL_RCC_GET_SYSCLK_SOURCE",
+        "RCC_SYSCLKSOURCE_STATUS_PLLCLK",
+        "HAL_ERROR",
+        "__HAL_RCC_PLL2_DISABLE",
+        "__HAL_RCC_GET_FLAG",
+        "RCC_FLAG_PLL2RDY",
+        "PLL2_TIMEOUT_VALUE",
+        "HAL_TIMEOUT",
+        "HAL_OK"
+      ],
+      "headerLine": 1880,
+      "definedIn": "stm32f1xx_hal_rcc_ex.h",
+      "sourceLine": 808,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

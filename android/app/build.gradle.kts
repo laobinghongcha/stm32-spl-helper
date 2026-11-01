@@ -24,7 +24,7 @@ if (hasReleaseKeystore) {
 }
 
 android {
-    namespace = "com.example.stm32_spl_helper"
+    namespace = "io.github.laobinghongcha.stm32helper"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -34,7 +34,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.stm32_spl_helper"
+        applicationId = "io.github.laobinghongcha.stm32helper"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode

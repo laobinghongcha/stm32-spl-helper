@@ -4,6 +4,7 @@ import '../models/chip.dart';
 import '../models/compile_error.dart';
 import '../models/function_item.dart';
 import '../models/item_ref.dart';
+import '../models/library_kind.dart';
 import '../models/pin.dart';
 import '../models/spl_data.dart';
 import '../models/symbol_item.dart';
@@ -48,6 +49,17 @@ class SearchHit {
   /// 命中的字段名（用于结果项上显示"匹配到哪里"）
   final String matchedField;
 
+  /// 这条结果所属的库（v2.0.3 新增）。
+  ///
+  /// 为 null 表示"与库无关"（引脚、编译错误、外设本身不属于任何库）。
+  ///
+  /// 为什么必须有这个字段：设置页可以关掉某个库，搜索结果要跟着过滤。
+  /// 早先是靠「id 是否以 HAL_/LL_/REG_ 开头」反推的，但 HAL 里有 3313 个
+  /// 符号并不带这些前缀（`GPIO_InitTypeDef@hal`、`ADC_HandleTypeDef`…），
+  /// 一律被误判成标准库——关掉 SPL 想只看 HAL 时，这些符号会整片消失。
+  /// 现在索引构建时直接从数据里取库属性，不再猜。
+  final LibraryKind? library;
+
   const SearchHit({
     required this.itemType,
     required this.id,
@@ -57,6 +69,7 @@ class SearchHit {
     this.peripheralId = '',
     this.score = 0,
     this.matchedField = '',
+    this.library,
   });
 
   /// 转成可收藏/可记录的引用
@@ -101,6 +114,9 @@ class _IndexEntry {
   /// 是否内部符号（IS_* 断言宏），默认搜索时过滤
   final bool internal;
 
+  /// 所属库；null 表示与库无关（引脚/编译错误/外设本身）
+  final LibraryKind? library;
+
   const _IndexEntry({
     required this.itemType,
     required this.id,
@@ -111,6 +127,7 @@ class _IndexEntry {
     required this.keyLower,
     required this.haystack,
     this.internal = false,
+    this.library,
   });
 }
 
@@ -168,8 +185,13 @@ class SearchIndex {
       ));
     }
 
-    // 符号
-    for (final s in data.symbols) {
+    // 符号：SPL + HAL/LL 两批都要进索引。
+    //
+    // `data.symbols` 只是 SPL 那份，HAL/LL 的 5021 个符号在 `data.halSymbols`。
+    // 早先这里只遍历了前者，导致 `ADC_HandleTypeDef`、`ConvCpltCallback`、
+    // `GPIO_InitTypeDef@hal` 这类 HAL 类型**搜不到**——而它们恰恰是查 HAL 时
+    // 最常要找的东西。两批合并后再建条目，`_symbolEntry` 会带上各自库属性。
+    for (final s in <SymbolItem>[...data.symbols, ...data.halSymbols]) {
       entries.add(_symbolEntry(s, periphNames));
     }
 
@@ -220,22 +242,28 @@ class SearchIndex {
     final detailed = {for (final f in functions) f.id: f};
     final seenFn = <String>{};
     for (final p in data.peripherals) {
-      for (final fid in p.allFunctionIds) {
-        if (!seenFn.add(fid)) continue;
-        final f = detailed[fid];
-        if (f != null) {
-          entries.add(_functionEntry(f, periphNames));
-        } else {
-          entries.add(_IndexEntry(
-            itemType: ItemType.function,
-            id: fid,
-            title: fid,
-            subtitle: periphNames[p.id] ?? p.id,
-            description: '',
-            peripheralId: p.id,
-            keyLower: fid.toLowerCase(),
-            haystack: fid.toLowerCase(),
-          ));
+      // 按 section 遍历而不是 p.allFunctionIds：
+      // 只有 section 带 library，靠它给每个函数结果打上库标签，
+      // 设置页关掉某个库时搜索结果才能准确过滤。
+      for (final sec in p.sections) {
+        for (final fid in sec.functionIds) {
+          if (!seenFn.add(fid)) continue;
+          final f = detailed[fid];
+          if (f != null) {
+            entries.add(_functionEntry(f, periphNames));
+          } else {
+            entries.add(_IndexEntry(
+              itemType: ItemType.function,
+              id: fid,
+              title: fid,
+              subtitle: periphNames[p.id] ?? p.id,
+              description: '',
+              peripheralId: p.id,
+              keyLower: fid.toLowerCase(),
+              haystack: fid.toLowerCase(),
+              library: sec.library,
+            ));
+          }
         }
       }
     }
@@ -255,7 +283,10 @@ class SearchIndex {
         s.members.map((m) => '${m.descEn} ${m.descZh}').join(' ');
     return _IndexEntry(
       itemType: ItemType.symbol,
-      id: s.name,
+      // 用 s.id 而不是 s.name：HAL/SPL 同名但定义不同的类型靠库限定 id 区分
+      // （`GPIO_InitTypeDef@hal` 与 `GPIO_InitTypeDef`）。早先这里用 name，
+      // 结果搜到 HAL 的类型点进去打开的是 SPL 那份，成员完全不同。
+      id: s.id,
       title: s.name,
       subtitle: '${s.kindLabelZh} · ${periphNames[s.peripheral] ?? s.peripheral}',
       description: s.displayBrief,
@@ -272,6 +303,7 @@ class SearchIndex {
         membersDesc,
       ].join(' ').toLowerCase(),
       internal: s.isInternal,
+      library: s.library,
     );
   }
 
@@ -296,6 +328,7 @@ class SearchIndex {
         ...f.prerequisites,
         ...f.params.map((p) => '${p.name} ${p.type} ${p.descZh}'),
       ].join(' ').toLowerCase(),
+      library: f.library,
     );
   }
 
@@ -394,6 +427,7 @@ class SearchIndex {
         peripheralId: e.peripheralId,
         score: score,
         matchedField: field,
+        library: e.library,
       ));
     }
 
@@ -474,12 +508,16 @@ class SearchIndex {
             subtitle: e.subtitle,
             description: e.description,
             peripheralId: e.peripheralId,
+            library: e.library,
           ))
       .toList();
 
   /// 便捷查询：取符号条目（用于 KeywordText 的跳转判断兜底）。
+  ///
+  /// 同时匹配 id 与显示名：库限定符号的 id 是 `GPIO_InitTypeDef@hal`，
+  /// 而调用方手里通常只有源码里的裸名字 `GPIO_InitTypeDef`。
   bool hasSymbol(String name) => _entries.any(
-        (e) => e.itemType == ItemType.symbol && e.id == name,
+        (e) => e.itemType == ItemType.symbol && (e.id == name || e.title == name),
       );
 
   /// 便捷查询：取编译错误分类。

@@ -1,0 +1,1483 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "FLASH",
+  "library": "reg",
+  "functions": [
+    {
+      "id": "REG_FLASH_ACR",
+      "name": "FLASH_ACR",
+      "peripheral": "FLASH",
+      "library": "reg",
+      "sectionId": "FLASH@reg#sec2",
+      "prototype": "FLASH->ACR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "FLASH_ACR_LATENCY",
+          "type": "bits[2:0]（整个位域）",
+          "descEn": "LATENCY[2:0] bits (Latency)",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_ACR_HLFCYA",
+          "type": "bit 3（整个位域）",
+          "descEn": "Flash Half Cycle Access Enable",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_ACR_PRFTBE",
+          "type": "bit 4（整个位域）",
+          "descEn": "Prefetch Buffer Enable",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_ACR_PRFTBS",
+          "type": "bit 5（整个位域）",
+          "descEn": "Prefetch Buffer Status",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_ACR_LATENCY_0",
+          "type": "bit 0",
+          "descEn": "0x00000001",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_ACR_LATENCY_1",
+          "type": "bit 1",
+          "descEn": "0x00000002",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_ACR_LATENCY_2",
+          "type": "bit 2",
+          "descEn": "0x00000004",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "LATENCY[2:0] bits (Latency)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "FLASH_ACR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 FLASH_TypeDef.ACR，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = FLASH->ACR;  /* 读回当前值 */\nv &= ~FLASH_ACR_LATENCY_Msk;  /* 先清掉 FLASH_ACR_LATENCY：bits[2:0]（整个位域） */\nv |= (1u << FLASH_ACR_LATENCY_Pos) & FLASH_ACR_LATENCY_Msk;  /* 置位，实际取值看参考手册 */\nFLASH->ACR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9685,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_FLASH_AR",
+      "name": "FLASH_AR",
+      "peripheral": "FLASH",
+      "library": "reg",
+      "sectionId": "FLASH@reg#sec2",
+      "prototype": "FLASH->AR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "FLASH_AR_FAR",
+          "type": "bits[31:0]（整个位域）",
+          "descEn": "Flash Address",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Flash Address",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "FLASH_AR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 FLASH_TypeDef.AR，偏移 0x14"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = FLASH->AR;  /* 读回当前值 */\nv &= ~FLASH_AR_FAR_Msk;  /* 先清掉 FLASH_AR_FAR：bits[31:0]（整个位域） */\nv |= (1u << FLASH_AR_FAR_Pos) & FLASH_AR_FAR_Msk;  /* 置位，实际取值看参考手册 */\nFLASH->AR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9772,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_FLASH_CR",
+      "name": "FLASH_CR",
+      "peripheral": "FLASH",
+      "library": "reg",
+      "sectionId": "FLASH@reg#sec2",
+      "prototype": "FLASH->CR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "FLASH_CR_PG",
+          "type": "bit 0（整个位域）",
+          "descEn": "Programming",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_CR_PER",
+          "type": "bit 1（整个位域）",
+          "descEn": "Page Erase",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_CR_MER",
+          "type": "bit 2（整个位域）",
+          "descEn": "Mass Erase",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_CR_OPTPG",
+          "type": "bit 4（整个位域）",
+          "descEn": "Option Byte Programming",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_CR_OPTER",
+          "type": "bit 5（整个位域）",
+          "descEn": "Option Byte Erase",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_CR_STRT",
+          "type": "bit 6（整个位域）",
+          "descEn": "Start",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_CR_LOCK",
+          "type": "bit 7（整个位域）",
+          "descEn": "Lock",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_CR_OPTWRE",
+          "type": "bit 9（整个位域）",
+          "descEn": "Option Bytes Write Enable",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_CR_ERRIE",
+          "type": "bit 10（整个位域）",
+          "descEn": "Error Interrupt Enable",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_CR_EOPIE",
+          "type": "bit 12（整个位域）",
+          "descEn": "End of operation interrupt enable",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Programming",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "FLASH_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 FLASH_TypeDef.CR，偏移 0x10"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = FLASH->CR;  /* 读回当前值 */\nv &= ~FLASH_CR_PG_Msk;  /* 先清掉 FLASH_CR_PG：bit 0（整个位域） */\nv |= (1u << FLASH_CR_PG_Pos) & FLASH_CR_PG_Msk;  /* 置位，实际取值看参考手册 */\nFLASH->CR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9740,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_FLASH_Data0",
+      "name": "FLASH_Data0",
+      "peripheral": "FLASH",
+      "library": "reg",
+      "sectionId": "FLASH@reg#sec2",
+      "prototype": "OB->Data0",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "FLASH_DATA0_DATA0",
+          "type": "bits[7:0]（整个位域）",
+          "descEn": "User data storage option byte",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_DATA0_nDATA0",
+          "type": "bits[15:8]（整个位域）",
+          "descEn": "User data storage complemented option byte",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "User data storage option byte",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "FLASH_Data0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 OB_TypeDef.Data0，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = OB->Data0;  /* 读回当前值 */\nv &= ~FLASH_DATA0_DATA0_Msk;  /* 先清掉 FLASH_DATA0_DATA0：bits[7:0]（整个位域） */\nv |= (1u << FLASH_DATA0_DATA0_Pos) & FLASH_DATA0_DATA0_Msk;  /* 置位，实际取值看参考手册 */\nOB->Data0 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9827,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_FLASH_Data1",
+      "name": "FLASH_Data1",
+      "peripheral": "FLASH",
+      "library": "reg",
+      "sectionId": "FLASH@reg#sec2",
+      "prototype": "OB->Data1",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "FLASH_DATA1_DATA1",
+          "type": "bits[23:16]（整个位域）",
+          "descEn": "User data storage option byte",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_DATA1_nDATA1",
+          "type": "bits[31:24]（整个位域）",
+          "descEn": "User data storage complemented option byte",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "User data storage option byte",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "FLASH_Data1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 OB_TypeDef.Data1，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = OB->Data1;  /* 读回当前值 */\nv &= ~FLASH_DATA1_DATA1_Msk;  /* 先清掉 FLASH_DATA1_DATA1：bits[23:16]（整个位域） */\nv |= (1u << FLASH_DATA1_DATA1_Pos) & FLASH_DATA1_DATA1_Msk;  /* 置位，实际取值看参考手册 */\nOB->Data1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9835,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_FLASH_KEYR",
+      "name": "FLASH_KEYR",
+      "peripheral": "FLASH",
+      "library": "reg",
+      "sectionId": "FLASH@reg#sec2",
+      "prototype": "FLASH->KEYR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "FLASH_KEYR_FKEYR",
+          "type": "bits[31:0]（整个位域）",
+          "descEn": "FPEC Key",
+          "descZh": ""
+        },
+        {
+          "name": "RDP_KEY",
+          "type": "0x000000A5（整个位域）",
+          "descEn": "RDP Key",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_KEY1",
+          "type": "0x45670123（整个位域）",
+          "descEn": "FPEC Key1",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_KEY2",
+          "type": "0xCDEF89AB（整个位域）",
+          "descEn": "FPEC Key2",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "FPEC Key",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "FLASH_KEYR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 FLASH_TypeDef.KEYR，偏移 0x04"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = FLASH->KEYR;  /* 读回当前值 */\nv &= ~FLASH_KEYR_FKEYR_Msk;  /* 先清掉 FLASH_KEYR_FKEYR：bits[31:0]（整个位域） */\nv |= (1u << FLASH_KEYR_FKEYR_Pos) & FLASH_KEYR_FKEYR_Msk;  /* 置位，实际取值看参考手册 */\nFLASH->KEYR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9703,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_FLASH_OBR",
+      "name": "FLASH_OBR",
+      "peripheral": "FLASH",
+      "library": "reg",
+      "sectionId": "FLASH@reg#sec2",
+      "prototype": "FLASH->OBR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "FLASH_OBR_OPTERR",
+          "type": "bit 0（整个位域）",
+          "descEn": "Option Byte Error",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_OBR_RDPRT",
+          "type": "bit 1（整个位域）",
+          "descEn": "Read protection",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_OBR_IWDG_SW",
+          "type": "bit 2（整个位域）",
+          "descEn": "IWDG SW",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_OBR_nRST_STOP",
+          "type": "bit 3（整个位域）",
+          "descEn": "nRST_STOP",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_OBR_nRST_STDBY",
+          "type": "bit 4（整个位域）",
+          "descEn": "nRST_STDBY",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_OBR_USER",
+          "type": "bits[4:2]（整个位域）",
+          "descEn": "User Option Bytes",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_OBR_DATA0",
+          "type": "bits[17:10]（整个位域）",
+          "descEn": "Data0",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_OBR_DATA1",
+          "type": "bits[25:18]（整个位域）",
+          "descEn": "Data1",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Option Byte Error",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "FLASH_OBR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 FLASH_TypeDef.OBR，偏移 0x1C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = FLASH->OBR;  /* 读回当前值 */\nv &= ~FLASH_OBR_OPTERR_Msk;  /* 先清掉 FLASH_OBR_OPTERR：bit 0（整个位域） */\nv |= (1u << FLASH_OBR_OPTERR_Pos) & FLASH_OBR_OPTERR_Msk;  /* 置位，实际取值看参考手册 */\nFLASH->OBR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9777,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_FLASH_OPTKEYR",
+      "name": "FLASH_OPTKEYR",
+      "peripheral": "FLASH",
+      "library": "reg",
+      "sectionId": "FLASH@reg#sec2",
+      "prototype": "FLASH->OPTKEYR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "FLASH_OPTKEYR_OPTKEYR",
+          "type": "bits[31:0]（整个位域）",
+          "descEn": "Option Byte Key",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_OPTKEY1",
+          "type": "FLASH_KEY1",
+          "descEn": "Option Byte Key1",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_OPTKEY2",
+          "type": "FLASH_KEY2",
+          "descEn": "Option Byte Key2",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Option Byte Key",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "FLASH_OPTKEYR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 FLASH_TypeDef.OPTKEYR，偏移 0x08"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = FLASH->OPTKEYR;  /* 读回当前值 */\nv &= ~FLASH_OPTKEYR_OPTKEYR_Msk;  /* 先清掉 FLASH_OPTKEYR_OPTKEYR：bits[31:0]（整个位域） */\nv |= (1u << FLASH_OPTKEYR_OPTKEYR_Pos) & FLASH_OPTKEYR_OPTKEYR_Msk;  /* 置位，实际取值看参考手册 */\nFLASH->OPTKEYR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9718,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_FLASH_RDP",
+      "name": "FLASH_RDP",
+      "peripheral": "FLASH",
+      "library": "reg",
+      "sectionId": "FLASH@reg#sec2",
+      "prototype": "OB->RDP",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "FLASH_RDP_RDP",
+          "type": "bits[7:0]（整个位域）",
+          "descEn": "Read protection option byte",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_RDP_nRDP",
+          "type": "bits[15:8]（整个位域）",
+          "descEn": "Read protection complemented option byte",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Read protection option byte",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "FLASH_RDP"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 OB_TypeDef.RDP，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = OB->RDP;  /* 读回当前值 */\nv &= ~FLASH_RDP_RDP_Msk;  /* 先清掉 FLASH_RDP_RDP：bits[7:0]（整个位域） */\nv |= (1u << FLASH_RDP_RDP_Pos) & FLASH_RDP_RDP_Msk;  /* 置位，实际取值看参考手册 */\nOB->RDP = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9811,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_FLASH_SR",
+      "name": "FLASH_SR",
+      "peripheral": "FLASH",
+      "library": "reg",
+      "sectionId": "FLASH@reg#sec1",
+      "prototype": "FLASH->SR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "FLASH_SR_BSY",
+          "type": "bit 0（整个位域）",
+          "descEn": "Busy",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_SR_PGERR",
+          "type": "bit 2（整个位域）",
+          "descEn": "Programming Error",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_SR_WRPRTERR",
+          "type": "bit 4（整个位域）",
+          "descEn": "Write Protection Error",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_SR_EOP",
+          "type": "bit 5（整个位域）",
+          "descEn": "End of operation",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Busy",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "FLASH_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 FLASH_TypeDef.SR，偏移 0x0C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = FLASH->SR;  /* 读回当前值 */\nv &= ~FLASH_SR_BSY_Msk;  /* 先清掉 FLASH_SR_BSY：bit 0（整个位域） */\nv |= (1u << FLASH_SR_BSY_Pos) & FLASH_SR_BSY_Msk;  /* 置位，实际取值看参考手册 */\nFLASH->SR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9726,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_FLASH_USER",
+      "name": "FLASH_USER",
+      "peripheral": "FLASH",
+      "library": "reg",
+      "sectionId": "FLASH@reg#sec2",
+      "prototype": "OB->USER",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "FLASH_USER_USER",
+          "type": "bits[23:16]（整个位域）",
+          "descEn": "User option byte",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_USER_nUSER",
+          "type": "bits[31:24]（整个位域）",
+          "descEn": "User complemented option byte",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "User option byte",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "FLASH_USER"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 OB_TypeDef.USER，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = OB->USER;  /* 读回当前值 */\nv &= ~FLASH_USER_USER_Msk;  /* 先清掉 FLASH_USER_USER：bits[23:16]（整个位域） */\nv |= (1u << FLASH_USER_USER_Pos) & FLASH_USER_USER_Msk;  /* 置位，实际取值看参考手册 */\nOB->USER = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9819,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_FLASH_WRP0",
+      "name": "FLASH_WRP0",
+      "peripheral": "FLASH",
+      "library": "reg",
+      "sectionId": "FLASH@reg#sec2",
+      "prototype": "OB->WRP0",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "FLASH_WRP0_WRP0",
+          "type": "bits[7:0]（整个位域）",
+          "descEn": "Flash memory write protection option bytes",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_WRP0_nWRP0",
+          "type": "bits[15:8]（整个位域）",
+          "descEn": "Flash memory write protection complemented option bytes",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Flash memory write protection option bytes",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "FLASH_WRP0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 OB_TypeDef.WRP0，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = OB->WRP0;  /* 读回当前值 */\nv &= ~FLASH_WRP0_WRP0_Msk;  /* 先清掉 FLASH_WRP0_WRP0：bits[7:0]（整个位域） */\nv |= (1u << FLASH_WRP0_WRP0_Pos) & FLASH_WRP0_WRP0_Msk;  /* 置位，实际取值看参考手册 */\nOB->WRP0 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9843,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_FLASH_WRP1",
+      "name": "FLASH_WRP1",
+      "peripheral": "FLASH",
+      "library": "reg",
+      "sectionId": "FLASH@reg#sec2",
+      "prototype": "OB->WRP1",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "FLASH_WRP1_WRP1",
+          "type": "bits[23:16]（整个位域）",
+          "descEn": "Flash memory write protection option bytes",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_WRP1_nWRP1",
+          "type": "bits[31:24]（整个位域）",
+          "descEn": "Flash memory write protection complemented option bytes",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Flash memory write protection option bytes",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "FLASH_WRP1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 OB_TypeDef.WRP1，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = OB->WRP1;  /* 读回当前值 */\nv &= ~FLASH_WRP1_WRP1_Msk;  /* 先清掉 FLASH_WRP1_WRP1：bits[23:16]（整个位域） */\nv |= (1u << FLASH_WRP1_WRP1_Pos) & FLASH_WRP1_WRP1_Msk;  /* 置位，实际取值看参考手册 */\nOB->WRP1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9851,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_FLASH_WRP2",
+      "name": "FLASH_WRP2",
+      "peripheral": "FLASH",
+      "library": "reg",
+      "sectionId": "FLASH@reg#sec2",
+      "prototype": "OB->WRP2",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "FLASH_WRP2_WRP2",
+          "type": "bits[7:0]（整个位域）",
+          "descEn": "Flash memory write protection option bytes",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_WRP2_nWRP2",
+          "type": "bits[15:8]（整个位域）",
+          "descEn": "Flash memory write protection complemented option bytes",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Flash memory write protection option bytes",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "FLASH_WRP2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 OB_TypeDef.WRP2，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = OB->WRP2;  /* 读回当前值 */\nv &= ~FLASH_WRP2_WRP2_Msk;  /* 先清掉 FLASH_WRP2_WRP2：bits[7:0]（整个位域） */\nv |= (1u << FLASH_WRP2_WRP2_Pos) & FLASH_WRP2_WRP2_Msk;  /* 置位，实际取值看参考手册 */\nOB->WRP2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9859,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_FLASH_WRP3",
+      "name": "FLASH_WRP3",
+      "peripheral": "FLASH",
+      "library": "reg",
+      "sectionId": "FLASH@reg#sec2",
+      "prototype": "OB->WRP3",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "FLASH_WRP3_WRP3",
+          "type": "bits[23:16]（整个位域）",
+          "descEn": "Flash memory write protection option bytes",
+          "descZh": ""
+        },
+        {
+          "name": "FLASH_WRP3_nWRP3",
+          "type": "bits[31:24]（整个位域）",
+          "descEn": "Flash memory write protection complemented option bytes",
+          "descZh": ""
+        },
+        {
+          "name": "IS_SMBUS_ALL_INSTANCE",
+          "type": "IS_I2C_ALL_INSTANCE",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_HSE_MIN",
+          "type": "0x003D0900",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_HSE_MAX",
+          "type": "0x00F42400",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_MAX_FREQUENCY",
+          "type": "0x044AA200",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "ADC1_IRQn",
+          "type": "ADC1_2_IRQn",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "TIM9_IRQn",
+          "type": "TIM1_BRK_IRQn",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "TIM1_BRK_TIM9_IRQn",
+          "type": "TIM1_BRK_IRQn",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "TIM1_BRK_TIM15_IRQn",
+          "type": "TIM1_BRK_IRQn",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "TIM1_TRG_COM_TIM17_IRQn",
+          "type": "TIM1_TRG_COM_IRQn",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "TIM1_TRG_COM_TIM11_IRQn",
+          "type": "TIM1_TRG_COM_IRQn",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "TIM11_IRQn",
+          "type": "TIM1_TRG_COM_IRQn",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "TIM10_IRQn",
+          "type": "TIM1_UP_IRQn",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "TIM1_UP_TIM10_IRQn",
+          "type": "TIM1_UP_IRQn",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "TIM1_UP_TIM16_IRQn",
+          "type": "TIM1_UP_IRQn",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "OTG_FS_WKUP_IRQn",
+          "type": "USBWakeUp_IRQn",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "CEC_IRQn",
+          "type": "USBWakeUp_IRQn",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "USB_HP_IRQn",
+          "type": "USB_HP_CAN1_TX_IRQn",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "CAN1_TX_IRQn",
+          "type": "USB_HP_CAN1_TX_IRQn",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "CAN1_RX0_IRQn",
+          "type": "USB_LP_CAN1_RX0_IRQn",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "USB_LP_IRQn",
+          "type": "USB_LP_CAN1_RX0_IRQn",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "ADC1_IRQHandler",
+          "type": "ADC1_2_IRQHandler",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "TIM9_IRQHandler",
+          "type": "TIM1_BRK_IRQHandler",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "TIM1_BRK_TIM9_IRQHandler",
+          "type": "TIM1_BRK_IRQHandler",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "TIM1_BRK_TIM15_IRQHandler",
+          "type": "TIM1_BRK_IRQHandler",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "TIM1_TRG_COM_TIM17_IRQHandler",
+          "type": "TIM1_TRG_COM_IRQHandler",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "TIM1_TRG_COM_TIM11_IRQHandler",
+          "type": "TIM1_TRG_COM_IRQHandler",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "TIM11_IRQHandler",
+          "type": "TIM1_TRG_COM_IRQHandler",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "TIM10_IRQHandler",
+          "type": "TIM1_UP_IRQHandler",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "TIM1_UP_TIM10_IRQHandler",
+          "type": "TIM1_UP_IRQHandler",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "TIM1_UP_TIM16_IRQHandler",
+          "type": "TIM1_UP_IRQHandler",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "OTG_FS_WKUP_IRQHandler",
+          "type": "USBWakeUp_IRQHandler",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "CEC_IRQHandler",
+          "type": "USBWakeUp_IRQHandler",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "USB_HP_IRQHandler",
+          "type": "USB_HP_CAN1_TX_IRQHandler",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "CAN1_TX_IRQHandler",
+          "type": "USB_HP_CAN1_TX_IRQHandler",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "CAN1_RX0_IRQHandler",
+          "type": "USB_LP_CAN1_RX0_IRQHandler",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "USB_LP_IRQHandler",
+          "type": "USB_LP_CAN1_RX0_IRQHandler",
+          "descEn": "",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Flash memory write protection option bytes",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "FLASH_WRP3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 OB_TypeDef.WRP3，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = OB->WRP3;  /* 读回当前值 */\nv &= ~FLASH_WRP3_WRP3_Msk;  /* 先清掉 FLASH_WRP3_WRP3：bits[23:16]（整个位域） */\nv |= (1u << FLASH_WRP3_WRP3_Pos) & FLASH_WRP3_WRP3_Msk;  /* 置位，实际取值看参考手册 */\nOB->WRP3 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9867,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_FLASH_WRPR",
+      "name": "FLASH_WRPR",
+      "peripheral": "FLASH",
+      "library": "reg",
+      "sectionId": "FLASH@reg#sec2",
+      "prototype": "FLASH->WRPR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "FLASH_WRPR_WRP",
+          "type": "bits[31:0]（整个位域）",
+          "descEn": "Write Protect",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Write Protect",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "FLASH_WRPR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 FLASH_TypeDef.WRPR，偏移 0x20"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = FLASH->WRPR;  /* 读回当前值 */\nv &= ~FLASH_WRPR_WRP_Msk;  /* 先清掉 FLASH_WRPR_WRP：bits[31:0]（整个位域） */\nv |= (1u << FLASH_WRPR_WRP_Pos) & FLASH_WRPR_WRP_Msk;  /* 置位，实际取值看参考手册 */\nFLASH->WRPR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9804,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_OB_Data0",
+      "name": "OB_Data0",
+      "peripheral": "FLASH",
+      "library": "reg",
+      "sectionId": "FLASH@reg#sec2",
+      "prototype": "OB->Data0",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Option Bytes Registers",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "OB_Data0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 OB_TypeDef.Data0，偏移 0x04",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = OB->Data0;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nOB->Data0 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_OB_Data1",
+      "name": "OB_Data1",
+      "peripheral": "FLASH",
+      "library": "reg",
+      "sectionId": "FLASH@reg#sec2",
+      "prototype": "OB->Data1",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Option Bytes Registers",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "OB_Data1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 OB_TypeDef.Data1，偏移 0x06",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = OB->Data1;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nOB->Data1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_OB_RDP",
+      "name": "OB_RDP",
+      "peripheral": "FLASH",
+      "library": "reg",
+      "sectionId": "FLASH@reg#sec2",
+      "prototype": "OB->RDP",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Option Bytes Registers",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "OB_RDP"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 OB_TypeDef.RDP，偏移 0x00",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = OB->RDP;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nOB->RDP = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_OB_USER",
+      "name": "OB_USER",
+      "peripheral": "FLASH",
+      "library": "reg",
+      "sectionId": "FLASH@reg#sec2",
+      "prototype": "OB->USER",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Option Bytes Registers",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "OB_USER"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 OB_TypeDef.USER，偏移 0x02",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = OB->USER;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nOB->USER = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_OB_WRP0",
+      "name": "OB_WRP0",
+      "peripheral": "FLASH",
+      "library": "reg",
+      "sectionId": "FLASH@reg#sec2",
+      "prototype": "OB->WRP0",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Option Bytes Registers",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "OB_WRP0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 OB_TypeDef.WRP0，偏移 0x08",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = OB->WRP0;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nOB->WRP0 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_OB_WRP1",
+      "name": "OB_WRP1",
+      "peripheral": "FLASH",
+      "library": "reg",
+      "sectionId": "FLASH@reg#sec2",
+      "prototype": "OB->WRP1",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Option Bytes Registers",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "OB_WRP1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 OB_TypeDef.WRP1，偏移 0x0A",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = OB->WRP1;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nOB->WRP1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_OB_WRP2",
+      "name": "OB_WRP2",
+      "peripheral": "FLASH",
+      "library": "reg",
+      "sectionId": "FLASH@reg#sec2",
+      "prototype": "OB->WRP2",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Option Bytes Registers",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "OB_WRP2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 OB_TypeDef.WRP2，偏移 0x0C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = OB->WRP2;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nOB->WRP2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_OB_WRP3",
+      "name": "OB_WRP3",
+      "peripheral": "FLASH",
+      "library": "reg",
+      "sectionId": "FLASH@reg#sec2",
+      "prototype": "OB->WRP3",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Option Bytes Registers",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "OB_WRP3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 OB_TypeDef.WRP3，偏移 0x0E",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = OB->WRP3;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nOB->WRP3 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    }
+  ]
+}

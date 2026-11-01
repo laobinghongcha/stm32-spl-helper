@@ -1,0 +1,1631 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "DAC",
+  "library": "hal",
+  "functions": [
+    {
+      "id": "HAL_DAC_Init",
+      "name": "HAL_DAC_Init",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_DAC_Init(DAC_HandleTypeDef *hdac);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Initialize the DAC peripheral according to the specified parameters in the DAC_InitStruct and initialize the associated handle.",
+      "briefZh": "按 InitTypeDef 中的参数初始化 DAC，并完成状态机初始化。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_DAC_ConvCpltCallbackCh1",
+        "HAL_DAC_ConvHalfCpltCallbackCh1",
+        "HAL_DAC_ErrorCallbackCh1",
+        "HAL_DAC_DMAUnderrunCallbackCh1",
+        "HAL_DACEx_ConvCpltCallbackCh2",
+        "HAL_DACEx_ConvHalfCpltCallbackCh2",
+        "HAL_DACEx_ErrorCallbackCh2",
+        "HAL_DACEx_DMAUnderrunCallbackCh2",
+        "HAL_DAC_MspInit"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "DAC_HandleTypeDef",
+        "HAL_ERROR",
+        "HAL_DAC_STATE_RESET",
+        "ConvCpltCallbackCh1",
+        "MspInitCallback",
+        "HAL_UNLOCKED",
+        "HAL_DAC_ERROR_NONE",
+        "HAL_OK"
+      ],
+      "headerLine": 369,
+      "definedIn": "stm32f1xx_hal_dac.h",
+      "sourceLine": 291,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DAC_DeInit",
+      "name": "HAL_DAC_DeInit",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_DAC_DeInit(DAC_HandleTypeDef *hdac);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Deinitialize the DAC peripheral registers to their default reset values.",
+      "briefZh": "把 DAC 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_DAC_MspDeInit"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "DAC_HandleTypeDef",
+        "HAL_ERROR",
+        "HAL_DAC_ERROR_NONE",
+        "HAL_DAC_STATE_RESET",
+        "__HAL_UNLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 370,
+      "definedIn": "stm32f1xx_hal_dac.h",
+      "sourceLine": 352,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DAC_MspInit",
+      "name": "HAL_DAC_MspInit",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec1",
+      "prototype": "void HAL_DAC_MspInit(DAC_HandleTypeDef *hdac);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Initialize the DAC MSP.",
+      "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "DAC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 371,
+      "definedIn": "stm32f1xx_hal_dac.h",
+      "sourceLine": 397,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DAC_MspDeInit",
+      "name": "HAL_DAC_MspDeInit",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec1",
+      "prototype": "void HAL_DAC_MspDeInit(DAC_HandleTypeDef *hdac);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "DeInitialize the DAC MSP.",
+      "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "DAC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 372,
+      "definedIn": "stm32f1xx_hal_dac.h",
+      "sourceLine": 413,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DAC_Start",
+      "name": "HAL_DAC_Start",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_DAC_Start(DAC_HandleTypeDef *hdac, uint32_t Channel);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "The selected DAC channel. This parameter can be one of the following values:",
+          "descZh": "DAC 通道：DAC_CHANNEL_1 或 DAC_CHANNEL_2（双通道型号才有 2）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Enables DAC and starts conversion of channel.",
+      "briefZh": "启动 DAC。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "DAC_HandleTypeDef",
+        "HAL_ERROR",
+        "IS_DAC_CHANNEL",
+        "__HAL_LOCK",
+        "__HAL_DAC_ENABLE",
+        "DAC_CHANNEL_1",
+        "DAC_TRIGGER_SOFTWARE",
+        "__HAL_UNLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 382,
+      "definedIn": "stm32f1xx_hal_dac.h",
+      "sourceLine": 455,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DAC_Stop",
+      "name": "HAL_DAC_Stop",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_DAC_Stop(DAC_HandleTypeDef *hdac, uint32_t Channel);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "The selected DAC channel. This parameter can be one of the following values:",
+          "descZh": "DAC 通道：DAC_CHANNEL_1 或 DAC_CHANNEL_2（双通道型号才有 2）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Disables DAC and stop conversion of channel.",
+      "briefZh": "停止 DAC。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "DAC_HandleTypeDef",
+        "HAL_ERROR",
+        "IS_DAC_CHANNEL",
+        "__HAL_DAC_DISABLE",
+        "HAL_OK"
+      ],
+      "headerLine": 383,
+      "definedIn": "stm32f1xx_hal_dac.h",
+      "sourceLine": 516,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DAC_Start_DMA",
+      "name": "HAL_DAC_Start_DMA",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_DAC_Start_DMA(DAC_HandleTypeDef *hdac, uint32_t Channel, const uint32_t *pData, uint32_t Length, uint32_t Alignment);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "The selected DAC channel. This parameter can be one of the following values:",
+          "descZh": "DAC 通道：DAC_CHANNEL_1 或 DAC_CHANNEL_2（双通道型号才有 2）。"
+        },
+        {
+          "name": "pData",
+          "type": "const uint32_t *",
+          "descEn": "The source Buffer address.",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Length",
+          "type": "uint32_t",
+          "descEn": "The length of data to be transferred from memory to DAC peripheral",
+          "descZh": "DMA 方式输出的数据个数（每个数据项对应一次 DAC 转换）。"
+        },
+        {
+          "name": "Alignment",
+          "type": "uint32_t",
+          "descEn": "Specifies the data alignment for DAC channel. This parameter can be one of the following values:",
+          "descZh": "数据对齐方式：DAC_ALIGN_12B_R（12 位右对齐，最常用）、12B_L、8B_R。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Enables DAC and starts conversion of channel.",
+      "briefZh": "以 DMA 方式启动 DAC，搬运过程不占用 CPU。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_DMA_Start_IT"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "DAC_HandleTypeDef",
+        "HAL_ERROR",
+        "IS_DAC_CHANNEL",
+        "IS_DAC_ALIGN",
+        "__HAL_LOCK",
+        "DAC_CHANNEL_1",
+        "XferCpltCallback",
+        "DAC_ALIGN_12B_R",
+        "DAC_ALIGN_12B_L",
+        "__HAL_DAC_ENABLE_IT",
+        "DAC_IT_DMAUDR1",
+        "DAC_IT_DMAUDR2",
+        "__HAL_UNLOCK",
+        "HAL_OK",
+        "__HAL_DAC_ENABLE",
+        "HAL_DAC_ERROR_DMA"
+      ],
+      "headerLine": 384,
+      "definedIn": "stm32f1xx_hal_dac.h",
+      "sourceLine": 554,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DAC_Stop_DMA",
+      "name": "HAL_DAC_Stop_DMA",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_DAC_Stop_DMA(DAC_HandleTypeDef *hdac, uint32_t Channel);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "The selected DAC channel. This parameter can be one of the following values:",
+          "descZh": "DAC 通道：DAC_CHANNEL_1 或 DAC_CHANNEL_2（双通道型号才有 2）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Disables DAC and stop conversion of channel.",
+      "briefZh": "停止 DAC 的 DMA 方式运行，并关闭 DMA 通道。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_DMA_Abort"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "DAC_HandleTypeDef",
+        "HAL_ERROR",
+        "IS_DAC_CHANNEL",
+        "__HAL_DAC_DISABLE",
+        "DAC_CHANNEL_1",
+        "__HAL_DAC_DISABLE_IT",
+        "DAC_IT_DMAUDR1",
+        "DAC_IT_DMAUDR2",
+        "HAL_OK"
+      ],
+      "headerLine": 386,
+      "definedIn": "stm32f1xx_hal_dac.h",
+      "sourceLine": 690,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DAC_IRQHandler",
+      "name": "HAL_DAC_IRQHandler",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec2",
+      "prototype": "void HAL_DAC_IRQHandler(DAC_HandleTypeDef *hdac);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Handles DAC interrupt request This function uses the interruption of DMA underrun.",
+      "briefZh": "DAC 的中断统一入口。在 stm32f1xx_it.c 的对应 IRQHandler 里调用，内部会清标志并分派到各回调。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_DAC_DMAUnderrunCallbackCh1",
+        "HAL_DACEx_DMAUnderrunCallbackCh2"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_HandleTypeDef",
+        "UNUSED",
+        "DAC_IT_DMAUDR1",
+        "DAC_FLAG_DMAUDR1",
+        "HAL_DAC_ERROR_DMAUNDERRUNCH1",
+        "__HAL_DAC_CLEAR_FLAG",
+        "__HAL_DAC_DISABLE_IT",
+        "DAC_IT_DMAUDR2",
+        "DAC_FLAG_DMAUDR2",
+        "HAL_DAC_ERROR_DMAUNDERRUNCH2"
+      ],
+      "headerLine": 387,
+      "definedIn": "stm32f1xx_hal_dac.h",
+      "sourceLine": 748,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DAC_SetValue",
+      "name": "HAL_DAC_SetValue",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_DAC_SetValue(DAC_HandleTypeDef *hdac, uint32_t Channel, uint32_t Alignment, uint32_t Data);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "The selected DAC channel. This parameter can be one of the following values:",
+          "descZh": "DAC 通道：DAC_CHANNEL_1 或 DAC_CHANNEL_2（双通道型号才有 2）。"
+        },
+        {
+          "name": "Alignment",
+          "type": "uint32_t",
+          "descEn": "Specifies the data alignment. This parameter can be one of the following values:",
+          "descZh": "数据对齐方式：DAC_ALIGN_12B_R（12 位右对齐，最常用）、12B_L、8B_R。"
+        },
+        {
+          "name": "Data",
+          "type": "uint32_t",
+          "descEn": "Data to be loaded in the selected data holding register.",
+          "descZh": "输出数值 0~4095（12 位），对应 0 到 VREF+ 的电压。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Set the specified data holding register value for DAC channel.",
+      "briefZh": "设置 DAC 通道的输出数值。value 为 0~4095（12 位），对应 0 到 VREF+ 的电压。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "DAC_HandleTypeDef",
+        "HAL_ERROR",
+        "IS_DAC_CHANNEL",
+        "IS_DAC_ALIGN",
+        "IS_DAC_DATA",
+        "DAC_CHANNEL_1",
+        "DAC_DHR12R1_ALIGNMENT",
+        "DAC_DHR12R2_ALIGNMENT",
+        "HAL_OK"
+      ],
+      "headerLine": 388,
+      "definedIn": "stm32f1xx_hal_dac.h",
+      "sourceLine": 830,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DAC_ConvCpltCallbackCh1",
+      "name": "HAL_DAC_ConvCpltCallbackCh1",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec2",
+      "prototype": "void HAL_DAC_ConvCpltCallbackCh1(DAC_HandleTypeDef *hdac);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Conversion complete callback in non-blocking mode for Channel1",
+      "briefZh": "通道 1 转换完成回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "DAC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 390,
+      "definedIn": "stm32f1xx_hal_dac.h",
+      "sourceLine": 870,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DAC_ConvHalfCpltCallbackCh1",
+      "name": "HAL_DAC_ConvHalfCpltCallbackCh1",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec2",
+      "prototype": "void HAL_DAC_ConvHalfCpltCallbackCh1(DAC_HandleTypeDef *hdac);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Conversion half DMA transfer callback in non-blocking mode for Channel1",
+      "briefZh": "通道 1 转换过半回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "DAC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 391,
+      "definedIn": "stm32f1xx_hal_dac.h",
+      "sourceLine": 886,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DAC_ErrorCallbackCh1",
+      "name": "HAL_DAC_ErrorCallbackCh1",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec2",
+      "prototype": "void HAL_DAC_ErrorCallbackCh1(DAC_HandleTypeDef *hdac);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Error DAC callback for Channel1.",
+      "briefZh": "通道 1 错误回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "DAC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 392,
+      "definedIn": "stm32f1xx_hal_dac.h",
+      "sourceLine": 902,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DAC_DMAUnderrunCallbackCh1",
+      "name": "HAL_DAC_DMAUnderrunCallbackCh1",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec2",
+      "prototype": "void HAL_DAC_DMAUnderrunCallbackCh1(DAC_HandleTypeDef *hdac);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "DMA underrun DAC callback for channel1.",
+      "briefZh": "通道 1 DMA 下溢回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "DAC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 393,
+      "definedIn": "stm32f1xx_hal_dac.h",
+      "sourceLine": 918,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DAC_GetValue",
+      "name": "HAL_DAC_GetValue",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec3",
+      "prototype": "uint32_t HAL_DAC_GetValue(const DAC_HandleTypeDef *hdac, uint32_t Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "const DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "The selected DAC channel. This parameter can be one of the following values:",
+          "descZh": "DAC 通道：DAC_CHANNEL_1 或 DAC_CHANNEL_2（双通道型号才有 2）。"
+        }
+      ],
+      "returnDescEn": "The selected DAC channel data output value.",
+      "returnDescZh": "",
+      "briefEn": "Returns the last data output value of the selected DAC channel.",
+      "briefZh": "读取最近一次转换结果。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_HandleTypeDef",
+        "IS_DAC_CHANNEL",
+        "DAC_CHANNEL_1"
+      ],
+      "headerLine": 410,
+      "definedIn": "stm32f1xx_hal_dac.h",
+      "sourceLine": 957,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DAC_ConfigChannel",
+      "name": "HAL_DAC_ConfigChannel",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_DAC_ConfigChannel(DAC_HandleTypeDef *hdac, const DAC_ChannelConfTypeDef *sConfig, uint32_t Channel);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        },
+        {
+          "name": "sConfig",
+          "type": "const DAC_ChannelConfTypeDef *",
+          "descEn": "DAC configuration structure.",
+          "descZh": "DAC 通道配置结构体：DAC_Trigger（触发源）、DAC_OutputBuffer（是否使能输出缓冲）、DAC_LFSRUnmask_TriangleAmplitude（波形参数）。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "The selected DAC channel. This parameter can be one of the following values:",
+          "descZh": "DAC 通道：DAC_CHANNEL_1 或 DAC_CHANNEL_2（双通道型号才有 2）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Configures the selected DAC channel.",
+      "briefZh": "配置指定通道并挂到对应的组（规则组或注入组）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "DAC_HandleTypeDef",
+        "DAC_ChannelConfTypeDef",
+        "HAL_OK",
+        "HAL_ERROR",
+        "IS_DAC_TRIGGER",
+        "IS_DAC_OUTPUT_BUFFER_STATE",
+        "IS_DAC_CHANNEL",
+        "__HAL_LOCK",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 411,
+      "definedIn": "stm32f1xx_hal_dac.h",
+      "sourceLine": 992,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DAC_GetState",
+      "name": "HAL_DAC_GetState",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec4",
+      "prototype": "HAL_DAC_StateTypeDef HAL_DAC_GetState(const DAC_HandleTypeDef *hdac);",
+      "returnType": "HAL_DAC_StateTypeDef",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "const DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL state",
+      "returnDescZh": "",
+      "briefEn": "return the DAC handle state",
+      "briefZh": "读取 DAC 的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_DAC_StateTypeDef",
+        "DAC_HandleTypeDef"
+      ],
+      "headerLine": 421,
+      "definedIn": "stm32f1xx_hal_dac.h",
+      "sourceLine": 1068,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DAC_GetError",
+      "name": "HAL_DAC_GetError",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec4",
+      "prototype": "uint32_t HAL_DAC_GetError(const DAC_HandleTypeDef *hdac);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "const DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "DAC Error Code",
+      "returnDescZh": "",
+      "briefEn": "Return the DAC error code",
+      "briefZh": "读取 DAC 累计的错误码位掩码。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_HandleTypeDef"
+      ],
+      "headerLine": 422,
+      "definedIn": "stm32f1xx_hal_dac.h",
+      "sourceLine": 1081,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DAC_RegisterCallback",
+      "name": "HAL_DAC_RegisterCallback",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef     HAL_DAC_RegisterCallback(DAC_HandleTypeDef *hdac, HAL_DAC_CallbackIDTypeDef CallbackID, pDAC_CallbackTypeDef pCallback);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "DAC handle",
+          "descZh": "DAC 句柄指针。"
+        },
+        {
+          "name": "CallbackID",
+          "type": "HAL_DAC_CallbackIDTypeDef",
+          "descEn": "ID of the callback to be registered This parameter can be one of the following values:",
+          "descZh": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。"
+        },
+        {
+          "name": "pCallback",
+          "type": "pDAC_CallbackTypeDef",
+          "descEn": "pointer to the Callback function",
+          "descZh": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+        }
+      ],
+      "returnDescEn": "status",
+      "returnDescZh": "",
+      "briefEn": "Register a User DAC Callback To be used instead of the weak (overridden) predefined callback",
+      "briefZh": "为 DAC 注册指定事件的回调，替代默认的 __weak 空实现。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "The HAL_DAC_RegisterCallback() may be called before HAL_DAC_Init() in HAL_DAC_STATE_RESET to register callbacks for HAL_DAC_MSPINIT_CB_ID and HAL_DAC_MSPDEINIT_CB_ID"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "DAC_HandleTypeDef",
+        "HAL_DAC_CallbackIDTypeDef",
+        "pDAC_CallbackTypeDef",
+        "HAL_DAC_STATE_RESET",
+        "HAL_OK",
+        "HAL_ERROR",
+        "HAL_DAC_ERROR_INVALID_CALLBACK",
+        "HAL_DAC_CH1_COMPLETE_CB_ID",
+        "ConvCpltCallbackCh1",
+        "MspInitCallback"
+      ],
+      "headerLine": 397,
+      "definedIn": "stm32f1xx_hal_dac.h",
+      "sourceLine": 1125,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DAC_UnRegisterCallback",
+      "name": "HAL_DAC_UnRegisterCallback",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef     HAL_DAC_UnRegisterCallback(DAC_HandleTypeDef *hdac, HAL_DAC_CallbackIDTypeDef CallbackID);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "DAC handle",
+          "descZh": "DAC 句柄指针。"
+        },
+        {
+          "name": "CallbackID",
+          "type": "HAL_DAC_CallbackIDTypeDef",
+          "descEn": "ID of the callback to be unregistered This parameter can be one of the following values:",
+          "descZh": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。"
+        }
+      ],
+      "returnDescEn": "status",
+      "returnDescZh": "",
+      "briefEn": "Unregister a User DAC Callback DAC Callback is redirected to the weak (overridden) predefined callback",
+      "briefZh": "注销 DAC 已注册的回调，恢复成默认的 __weak 空实现。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_DAC_ConvCpltCallbackCh1",
+        "HAL_DAC_ConvHalfCpltCallbackCh1",
+        "HAL_DAC_ErrorCallbackCh1",
+        "HAL_DAC_DMAUnderrunCallbackCh1",
+        "HAL_DACEx_ConvCpltCallbackCh2",
+        "HAL_DACEx_ConvHalfCpltCallbackCh2",
+        "HAL_DACEx_ErrorCallbackCh2",
+        "HAL_DACEx_DMAUnderrunCallbackCh2",
+        "HAL_DAC_MspInit",
+        "HAL_DAC_MspDeInit"
+      ],
+      "remarks": [
+        "The HAL_DAC_UnRegisterCallback() may be called before HAL_DAC_Init() in HAL_DAC_STATE_RESET to un-register callbacks for HAL_DAC_MSPINIT_CB_ID and HAL_DAC_MSPDEINIT_CB_ID"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "DAC_HandleTypeDef",
+        "HAL_DAC_CallbackIDTypeDef",
+        "HAL_DAC_STATE_RESET",
+        "HAL_OK",
+        "HAL_ERROR",
+        "HAL_DAC_CH1_COMPLETE_CB_ID",
+        "ConvCpltCallbackCh1",
+        "MspInitCallback",
+        "HAL_DAC_ERROR_INVALID_CALLBACK"
+      ],
+      "headerLine": 399,
+      "definedIn": "stm32f1xx_hal_dac.h",
+      "sourceLine": 1237,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DACEx_DualStart",
+      "name": "HAL_DACEx_DualStart",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_DACEx_DualStart(DAC_HandleTypeDef *hdac);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Enables DAC and starts conversion of both channels.",
+      "briefZh": "启动双 DAC 通道同步输出（两个通道同时更新）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "DAC_HandleTypeDef",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "__HAL_DAC_ENABLE",
+        "DAC_CHANNEL_1",
+        "DAC_CHANNEL_2",
+        "DAC_TRIGGER_SOFTWARE",
+        "__HAL_UNLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 225,
+      "definedIn": "stm32f1xx_hal_dac_ex.h",
+      "sourceLine": 91,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DACEx_DualStop",
+      "name": "HAL_DACEx_DualStop",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_DACEx_DualStop(DAC_HandleTypeDef *hdac);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Disables DAC and stop conversion of both channels.",
+      "briefZh": "停止双 DAC 通道同步输出。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "DAC_HandleTypeDef",
+        "HAL_ERROR",
+        "__HAL_DAC_DISABLE",
+        "DAC_CHANNEL_1",
+        "DAC_CHANNEL_2",
+        "HAL_OK"
+      ],
+      "headerLine": 226,
+      "definedIn": "stm32f1xx_hal_dac_ex.h",
+      "sourceLine": 140,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DACEx_TriangleWaveGenerate",
+      "name": "HAL_DACEx_TriangleWaveGenerate",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_DACEx_TriangleWaveGenerate(DAC_HandleTypeDef *hdac, uint32_t Channel, uint32_t Amplitude);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "The selected DAC channel. This parameter can be one of the following values:",
+          "descZh": "DAC 通道：DAC_CHANNEL_1 或 DAC_CHANNEL_2（双通道型号才有 2）。"
+        },
+        {
+          "name": "Amplitude",
+          "type": "uint32_t",
+          "descEn": "Select max triangle amplitude. This parameter can be one of the following values:",
+          "descZh": "波形幅度（DAC_TRIANGLE_AMPLITUDE_1 ~ _4095），决定三角波/噪声波的峰值偏移量。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Enable or disable the selected DAC channel wave generation.",
+      "briefZh": "让 DAC 通道自动生成三角波，只需设定最大幅度，波形由硬件推演，不占用 CPU。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "DAC_HandleTypeDef",
+        "HAL_ERROR",
+        "IS_DAC_CHANNEL",
+        "IS_DAC_LFSR_UNMASK_TRIANGLE_AMPLITUDE",
+        "__HAL_LOCK",
+        "__HAL_UNLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 222,
+      "definedIn": "stm32f1xx_hal_dac_ex.h",
+      "sourceLine": 185,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DACEx_NoiseWaveGenerate",
+      "name": "HAL_DACEx_NoiseWaveGenerate",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_DACEx_NoiseWaveGenerate(DAC_HandleTypeDef *hdac, uint32_t Channel, uint32_t Amplitude);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "The selected DAC channel. This parameter can be one of the following values:",
+          "descZh": "DAC 通道：DAC_CHANNEL_1 或 DAC_CHANNEL_2（双通道型号才有 2）。"
+        },
+        {
+          "name": "Amplitude",
+          "type": "uint32_t",
+          "descEn": "Unmask DAC channel LFSR for noise wave generation. This parameter can be one of the following values:",
+          "descZh": "波形幅度（DAC_TRIANGLE_AMPLITUDE_1 ~ _4095），决定三角波/噪声波的峰值偏移量。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Enable or disable the selected DAC channel wave generation.",
+      "briefZh": "让 DAC 通道自动生成噪声波，噪声的「频率」由 LFSR 掩码决定。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "DAC_HandleTypeDef",
+        "HAL_ERROR",
+        "IS_DAC_CHANNEL",
+        "IS_DAC_LFSR_UNMASK_TRIANGLE_AMPLITUDE",
+        "__HAL_LOCK",
+        "__HAL_UNLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 223,
+      "definedIn": "stm32f1xx_hal_dac_ex.h",
+      "sourceLine": 241,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DACEx_DualSetValue",
+      "name": "HAL_DACEx_DualSetValue",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_DACEx_DualSetValue(DAC_HandleTypeDef *hdac, uint32_t Alignment, uint32_t Data1, uint32_t Data2);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        },
+        {
+          "name": "Alignment",
+          "type": "uint32_t",
+          "descEn": "Specifies the data alignment for dual channel DAC. This parameter can be one of the following values: DAC_ALIGN_8B_R: 8bit right data alignment selected DAC_ALIGN_12B_L: 12bit left data alignment selected DAC_ALIGN_12B_R: 12bit right data alignment selected",
+          "descZh": "数据对齐方式：DAC_ALIGN_12B_R（12 位右对齐，最常用）、12B_L、8B_R。"
+        },
+        {
+          "name": "Data1",
+          "type": "uint32_t",
+          "descEn": "Data for DAC Channel1 to be loaded in the selected data holding register.",
+          "descZh": "通道 1 的输出数值（0~4095）。"
+        },
+        {
+          "name": "Data2",
+          "type": "uint32_t",
+          "descEn": "Data for DAC Channel2 to be loaded in the selected data holding register.",
+          "descZh": "通道 2 的输出数值（0~4095）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Set the specified data holding register value for dual DAC channel.",
+      "briefZh": "同时设置两个 DAC 通道的输出值（双通道模式下用，保证两路同步更新）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "In dual mode, a unique register access is required to write in both DAC channels at the same time."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "DAC_HandleTypeDef",
+        "DAC_ALIGN_8B_R",
+        "DAC_ALIGN_12B_L",
+        "DAC_ALIGN_12B_R",
+        "HAL_ERROR",
+        "IS_DAC_ALIGN",
+        "IS_DAC_DATA",
+        "DAC_DHR12RD_ALIGNMENT",
+        "HAL_OK"
+      ],
+      "headerLine": 227,
+      "definedIn": "stm32f1xx_hal_dac_ex.h",
+      "sourceLine": 289,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DACEx_ConvCpltCallbackCh2",
+      "name": "HAL_DACEx_ConvCpltCallbackCh2",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec2",
+      "prototype": "void HAL_DACEx_ConvCpltCallbackCh2(DAC_HandleTypeDef *hdac);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Conversion complete callback in non-blocking mode for Channel2.",
+      "briefZh": "通道 2 转换完成回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "DAC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 230,
+      "definedIn": "stm32f1xx_hal_dac_ex.h",
+      "sourceLine": 331,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DACEx_ConvHalfCpltCallbackCh2",
+      "name": "HAL_DACEx_ConvHalfCpltCallbackCh2",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec2",
+      "prototype": "void HAL_DACEx_ConvHalfCpltCallbackCh2(DAC_HandleTypeDef *hdac);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Conversion half DMA transfer callback in non-blocking mode for Channel2.",
+      "briefZh": "通道 2 转换过半回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "DAC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 231,
+      "definedIn": "stm32f1xx_hal_dac_ex.h",
+      "sourceLine": 347,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DACEx_ErrorCallbackCh2",
+      "name": "HAL_DACEx_ErrorCallbackCh2",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec2",
+      "prototype": "void HAL_DACEx_ErrorCallbackCh2(DAC_HandleTypeDef *hdac);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Error DAC callback for Channel2.",
+      "briefZh": "通道 2 错误回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "DAC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 232,
+      "definedIn": "stm32f1xx_hal_dac_ex.h",
+      "sourceLine": 363,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DACEx_DMAUnderrunCallbackCh2",
+      "name": "HAL_DACEx_DMAUnderrunCallbackCh2",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec2",
+      "prototype": "void HAL_DACEx_DMAUnderrunCallbackCh2(DAC_HandleTypeDef *hdac);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "DMA underrun DAC callback for Channel2.",
+      "briefZh": "通道 2 DMA 下溢回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "DAC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 233,
+      "definedIn": "stm32f1xx_hal_dac_ex.h",
+      "sourceLine": 379,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DACEx_DualGetValue",
+      "name": "HAL_DACEx_DualGetValue",
+      "peripheral": "DAC",
+      "library": "hal",
+      "sectionId": "DAC@hal#sec3",
+      "prototype": "uint32_t HAL_DACEx_DualGetValue(const DAC_HandleTypeDef *hdac);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hdac",
+          "type": "const DAC_HandleTypeDef *",
+          "descEn": "pointer to a DAC_HandleTypeDef structure that contains the configuration information for the specified DAC.",
+          "descZh": "DAC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "The selected DAC channel data output value.",
+      "returnDescZh": "",
+      "briefEn": "Return the last data output value of the selected DAC channel.",
+      "briefZh": "读取双 DAC 通道当前的输出数值。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_HandleTypeDef"
+      ],
+      "headerLine": 228,
+      "definedIn": "stm32f1xx_hal_dac_ex.h",
+      "sourceLine": 415,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

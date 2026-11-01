@@ -1,0 +1,95 @@
+{
+  "LL_CPUID_GetConstant": {
+    "briefZh": "读取 CPUID 的 CPUID 的常量字段。"
+  },
+  "LL_CPUID_GetImplementer": {
+    "briefZh": "读取 CPUID 的 CPUID 的厂商字段。"
+  },
+  "LL_CPUID_GetParNo": {
+    "briefZh": "读取 CPUID 的 CPUID 的产品编号。"
+  },
+  "LL_CPUID_GetRevision": {
+    "briefZh": "读取 CPUID 的 CPUID 的版本号。"
+  },
+  "LL_CPUID_GetVariant": {
+    "briefZh": "读取 CPUID 的 CPUID 的变体字段。"
+  },
+  "LL_HANDLER_DisableFault": {
+    "briefZh": "在 SHCSR 里关闭指定的系统异常。",
+    "paramsZh": {
+      "Fault": "要控制的系统异常：BusFault / MemManage / UsageFault。"
+    }
+  },
+  "LL_HANDLER_EnableFault": {
+    "briefZh": "在 SHCSR 里使能指定的系统异常（BusFault / MemManage / UsageFault），让它们单独进各自的处理函数而不是笼统地进 HardFault，便于定位问题。",
+    "paramsZh": {
+      "Fault": "要控制的系统异常：BusFault / MemManage / UsageFault。"
+    }
+  },
+  "LL_LPM_DisableEventOnPend": {
+    "briefZh": "失能低功耗管理的挂起时发送事件（SEVONPEND）。"
+  },
+  "LL_LPM_DisableSleepOnExit": {
+    "briefZh": "失能低功耗管理的退出中断后进入睡眠（SLEEPONEXIT）。"
+  },
+  "LL_LPM_EnableDeepSleep": {
+    "briefZh": "置 SLEEPDEEP 位，让内核进入深度睡眠——配合 __WFI 时进入 STOP 模式，所有时钟停止但 SRAM 保留。"
+  },
+  "LL_LPM_EnableEventOnPend": {
+    "briefZh": "使能低功耗管理的挂起时发送事件（SEVONPEND）。"
+  },
+  "LL_LPM_EnableSleep": {
+    "briefZh": "清除 SLEEPDEEP 位，让内核使用普通睡眠（SLEEP）——配合 __WFI 时只停 CPU 时钟，外设继续运行。"
+  },
+  "LL_LPM_EnableSleepOnExit": {
+    "briefZh": "使能低功耗管理的退出中断后进入睡眠（SLEEPONEXIT）。"
+  },
+  "LL_MPU_ConfigRegion": {
+    "briefZh": "配置一个 MPU 区域的基地址、大小与访问权限。区域大小必须是 2 的幂且基地址按大小对齐。",
+    "paramsZh": {
+      "Region": "MPU 区域编号 0~7。"
+    }
+  },
+  "LL_MPU_Disable": {
+    "briefZh": "关闭 MPU。"
+  },
+  "LL_MPU_DisableRegion": {
+    "briefZh": "关闭某个 MPU 区域。",
+    "paramsZh": {
+      "Region": "MPU 区域编号 0~7。"
+    }
+  },
+  "LL_MPU_Enable": {
+    "briefZh": "使能 MPU（内存保护单元）。使能前须先配置好区域。"
+  },
+  "LL_MPU_EnableRegion": {
+    "briefZh": "使能一个已配置好的 MPU 区域。",
+    "paramsZh": {
+      "Region": "MPU 区域编号 0~7。"
+    }
+  },
+  "LL_MPU_IsEnabled": {
+    "briefZh": "查询 MPU 是否已使能。"
+  },
+  "LL_SYSTICK_DisableIT": {
+    "briefZh": "关闭 SysTick 中断。"
+  },
+  "LL_SYSTICK_EnableIT": {
+    "briefZh": "使能 SysTick 中断。"
+  },
+  "LL_SYSTICK_GetClkSource": {
+    "briefZh": "读取 SysTick 当前时钟源。"
+  },
+  "LL_SYSTICK_IsActiveCounterFlag": {
+    "briefZh": "查询 SysTick 的 COUNTFLAG：上次读取后是否发生过计数回绕。"
+  },
+  "LL_SYSTICK_IsEnabledIT": {
+    "briefZh": "查询 SysTick 中断是否已使能。"
+  },
+  "LL_SYSTICK_SetClkSource": {
+    "briefZh": "选择 SysTick 时钟源（HCLK 或 HCLK/8）。",
+    "paramsZh": {
+      "Source": "来源选择值，具体取值域随函数而定。"
+    }
+  }
+}

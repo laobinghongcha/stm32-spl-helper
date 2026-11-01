@@ -1,4 +1,4 @@
-param(
+﻿param(
     # 版本号递增方式：build 只加 versionCode，patch/minor/major 同时改 versionName
     [ValidateSet("build", "patch", "minor", "major")]
     [string]$Bump = "patch",

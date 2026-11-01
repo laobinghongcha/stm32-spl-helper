@@ -1,0 +1,498 @@
+{
+  "LL_ADC_ClearFlag_AWD1": {
+    "briefZh": "清除模拟看门狗 1 标志。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_ClearFlag_EOS": {
+    "briefZh": "清除规则组转换结束标志。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_ClearFlag_JEOS": {
+    "briefZh": "清除注入组转换结束标志。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_DMA_GetRegAddr": {
+    "briefZh": "返回 ADC 数据寄存器（DR）地址，供 DMA 搬运时作为源地址。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。",
+      "Register": "寄存器编号（如备份寄存器、突发传输起始寄存器）。"
+    }
+  },
+  "LL_ADC_Disable": {
+    "briefZh": "关闭 ADC。转换过程中关闭会立即中止当前转换。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_DisableIT_AWD1": {
+    "briefZh": "失能 ADC 的模拟看门狗 1 中断。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_DisableIT_EOS": {
+    "briefZh": "失能 ADC 的规则组转换结束中断。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_DisableIT_JEOS": {
+    "briefZh": "失能 ADC 的注入组转换结束中断。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_Enable": {
+    "briefZh": "使能 ADC（置 ADON 位）。得到准确结果前必须先完成自校准。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_EnableIT_AWD1": {
+    "briefZh": "使能 ADC 的模拟看门狗 1 中断。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_EnableIT_EOS": {
+    "briefZh": "使能 ADC 的规则组转换结束中断。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_EnableIT_JEOS": {
+    "briefZh": "使能 ADC 的注入组转换结束中断。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_GetAnalogWDMonitChannels": {
+    "briefZh": "读取 ADC 的模拟看门狗监视的通道。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_GetAnalogWDThresholds": {
+    "briefZh": "读取 ADC 的模拟看门狗的高/低阈值。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。",
+      "AWDThresholdsHighLow": "模拟看门狗阈值选择位（选高阈值还是低阈值）。"
+    }
+  },
+  "LL_ADC_GetChannelSamplingTime": {
+    "briefZh": "读取 ADC 的通道采样时间。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。",
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+    }
+  },
+  "LL_ADC_GetCommonPathInternalCh": {
+    "briefZh": "读取 ADC 公共内部信号通路当前使能了哪些（温度传感器 / VREFINT / VBAT）。",
+    "paramsZh": {
+      "ADCxy_COMMON": "ADC 公共寄存器指针（ADC1_2_COMMON），用于多重 ADC 模式。"
+    }
+  },
+  "LL_ADC_GetDataAlignment": {
+    "briefZh": "读取 ADC 的数据对齐方式。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_GetMultimode": {
+    "briefZh": "读取 ADC 的多重 ADC 模式。",
+    "paramsZh": {
+      "ADCxy_COMMON": "ADC 公共寄存器指针（ADC1_2_COMMON），用于多重 ADC 模式。"
+    }
+  },
+  "LL_ADC_GetSequencersScanMode": {
+    "briefZh": "读取规则组的扫描模式设置。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_INJ_GetOffset": {
+    "briefZh": "读取 ADC 注入组的偏移量。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。",
+      "Rank": "在转换序列中的位置，取 LL_ADC_REG_RANK_1 ~ 16（注入组是 RANK_1 ~ 4）。"
+    }
+  },
+  "LL_ADC_INJ_GetSequencerDiscont": {
+    "briefZh": "读取 ADC 注入组的不连续转换模式。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_INJ_GetSequencerLength": {
+    "briefZh": "读取 ADC 注入组的序列长度。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_INJ_GetSequencerRanks": {
+    "briefZh": "读取 ADC 注入组的序列中各通道的排序。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。",
+      "Rank": "在转换序列中的位置，取 LL_ADC_REG_RANK_1 ~ 16（注入组是 RANK_1 ~ 4）。"
+    }
+  },
+  "LL_ADC_INJ_GetTrigAuto": {
+    "briefZh": "读取 ADC 注入组的注入组触发后的自动行为。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_INJ_GetTriggerSource": {
+    "briefZh": "读取 ADC 注入组的触发源。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_INJ_IsTriggerSourceSWStart": {
+    "briefZh": "查询 ADC 注入组的转换触发源是否为软件启动。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_INJ_ReadConversionData12": {
+    "briefZh": "读取 ADC 注入组的转换结果（12 位）。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。",
+      "Rank": "在转换序列中的位置，取 LL_ADC_REG_RANK_1 ~ 16（注入组是 RANK_1 ~ 4）。"
+    }
+  },
+  "LL_ADC_INJ_ReadConversionData32": {
+    "briefZh": "读取 ADC 注入组的转换结果（32 位读取）。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。",
+      "Rank": "在转换序列中的位置，取 LL_ADC_REG_RANK_1 ~ 16（注入组是 RANK_1 ~ 4）。"
+    }
+  },
+  "LL_ADC_INJ_SetOffset": {
+    "briefZh": "设置 ADC 注入组的偏移量。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。",
+      "Rank": "在转换序列中的位置，取 LL_ADC_REG_RANK_1 ~ 16（注入组是 RANK_1 ~ 4）。"
+    }
+  },
+  "LL_ADC_INJ_SetSequencerDiscont": {
+    "briefZh": "设置 ADC 注入组的不连续转换模式。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。",
+      "SeqDiscont": "不连续转换模式设置。"
+    }
+  },
+  "LL_ADC_INJ_SetSequencerLength": {
+    "briefZh": "设置 ADC 注入组的序列长度。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。",
+      "SequencerNbRanks": "序列长度（要转换几个通道）。"
+    }
+  },
+  "LL_ADC_INJ_SetSequencerRanks": {
+    "briefZh": "设置注入序列中某一级的通道。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。",
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "Rank": "在转换序列中的位置，取 LL_ADC_REG_RANK_1 ~ 16（注入组是 RANK_1 ~ 4）。"
+    }
+  },
+  "LL_ADC_INJ_SetTrigAuto": {
+    "briefZh": "设置 ADC 注入组的注入组触发后的自动行为。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。",
+      "TrigAuto": "注入组被触发后对规则组的自动处理方式。"
+    }
+  },
+  "LL_ADC_INJ_SetTriggerSource": {
+    "briefZh": "设置 ADC 注入组的触发源。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。",
+      "TriggerSource": "触发源，取 LL_TIM_TS_* 系列（内部互联 ITR、TIx、ETR 等）。"
+    }
+  },
+  "LL_ADC_INJ_StartConversionExtTrig": {
+    "briefZh": "允许外部触发启动注入组转换。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。",
+      "ExternalTriggerEdge": "外部触发边沿：上升沿 / 下降沿 / 双边沿。"
+    }
+  },
+  "LL_ADC_INJ_StartConversionSWStart": {
+    "briefZh": "软件启动注入组转换（置 JSWSTART 位）。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_INJ_StopConversionExtTrig": {
+    "briefZh": "禁止外部触发启动注入组转换。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_IsActiveFlag_AWD1": {
+    "briefZh": "查询模拟看门狗 1 标志是否置位。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_IsActiveFlag_EOS": {
+    "briefZh": "查询规则组转换结束标志（EOC）是否置位。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_IsActiveFlag_JEOS": {
+    "briefZh": "查询注入组转换结束标志（JEOC）是否置位。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_IsActiveFlag_MST_AWD1": {
+    "briefZh": "查询多重模式下 ADC 主器件的模拟看门狗 1 标志。",
+    "paramsZh": {
+      "ADCxy_COMMON": "ADC 公共寄存器指针（ADC1_2_COMMON），用于多重 ADC 模式。"
+    }
+  },
+  "LL_ADC_IsActiveFlag_MST_EOS": {
+    "briefZh": "查询多重模式下 ADC 主器件的规则组转换结束标志。",
+    "paramsZh": {
+      "ADCxy_COMMON": "ADC 公共寄存器指针（ADC1_2_COMMON），用于多重 ADC 模式。"
+    }
+  },
+  "LL_ADC_IsActiveFlag_MST_JEOS": {
+    "briefZh": "查询多重模式下 ADC 主器件的注入组转换结束标志。",
+    "paramsZh": {
+      "ADCxy_COMMON": "ADC 公共寄存器指针（ADC1_2_COMMON），用于多重 ADC 模式。"
+    }
+  },
+  "LL_ADC_IsActiveFlag_SLV_AWD1": {
+    "briefZh": "查询多重模式下 ADC 从器件的模拟看门狗 1 标志。",
+    "paramsZh": {
+      "ADCxy_COMMON": "ADC 公共寄存器指针（ADC1_2_COMMON），用于多重 ADC 模式。"
+    }
+  },
+  "LL_ADC_IsActiveFlag_SLV_EOS": {
+    "briefZh": "查询多重模式下 ADC 从器件的规则组转换结束标志。",
+    "paramsZh": {
+      "ADCxy_COMMON": "ADC 公共寄存器指针（ADC1_2_COMMON），用于多重 ADC 模式。"
+    }
+  },
+  "LL_ADC_IsActiveFlag_SLV_JEOS": {
+    "briefZh": "查询多重模式下 ADC 从器件的注入组转换结束标志。",
+    "paramsZh": {
+      "ADCxy_COMMON": "ADC 公共寄存器指针（ADC1_2_COMMON），用于多重 ADC 模式。"
+    }
+  },
+  "LL_ADC_IsCalibrationOnGoing": {
+    "briefZh": "查询 ADC 自校准是否仍在进行中。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_IsEnabled": {
+    "briefZh": "查询 ADC 是否已使能（ADON 位状态）。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_IsEnabledIT_AWD1": {
+    "briefZh": "查询 ADC 的模拟看门狗 1 中断是否已使能。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_IsEnabledIT_EOS": {
+    "briefZh": "查询 ADC 的规则组转换结束中断是否已使能。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_IsEnabledIT_JEOS": {
+    "briefZh": "查询 ADC 的注入组转换结束中断是否已使能。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_REG_GetContinuousMode": {
+    "briefZh": "读取 ADC 规则组的连续转换模式。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_REG_GetDMATransfer": {
+    "briefZh": "读取 ADC 规则组的 DMA 传输。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_REG_GetSequencerDiscont": {
+    "briefZh": "读取 ADC 规则组的不连续转换模式。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_REG_GetSequencerLength": {
+    "briefZh": "读取 ADC 规则组的序列长度。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_REG_GetSequencerRanks": {
+    "briefZh": "读取 ADC 规则组的序列中各通道的排序。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。",
+      "Rank": "在转换序列中的位置，取 LL_ADC_REG_RANK_1 ~ 16（注入组是 RANK_1 ~ 4）。"
+    }
+  },
+  "LL_ADC_REG_GetTriggerSource": {
+    "briefZh": "读取 ADC 规则组的触发源。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_REG_IsTriggerSourceSWStart": {
+    "briefZh": "查询 ADC 规则组的转换触发源是否为软件启动。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_REG_ReadConversionData12": {
+    "briefZh": "读取 ADC 规则组的转换结果（12 位）。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_REG_ReadConversionData32": {
+    "briefZh": "读取 ADC 规则组的转换结果（32 位读取）。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_REG_ReadMultiConversionData32": {
+    "briefZh": "读取 ADC 规则组的多重模式转换结果（32 位）。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_REG_SetContinuousMode": {
+    "briefZh": "设置 ADC 规则组的连续转换模式。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_REG_SetDMATransfer": {
+    "briefZh": "设置 ADC 规则组的 DMA 传输。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_REG_SetSequencerDiscont": {
+    "briefZh": "设置 ADC 规则组的不连续转换模式。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。",
+      "SeqDiscont": "不连续转换模式设置。"
+    }
+  },
+  "LL_ADC_REG_SetSequencerLength": {
+    "briefZh": "设置 ADC 规则组的序列长度。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。",
+      "SequencerNbRanks": "序列长度（要转换几个通道）。"
+    }
+  },
+  "LL_ADC_REG_SetSequencerRanks": {
+    "briefZh": "设置规则序列中某一级的通道，把通道号与转换次序对应起来。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。",
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "Rank": "在转换序列中的位置，取 LL_ADC_REG_RANK_1 ~ 16（注入组是 RANK_1 ~ 4）。"
+    }
+  },
+  "LL_ADC_REG_SetTriggerSource": {
+    "briefZh": "设置 ADC 规则组的触发源。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。",
+      "TriggerSource": "触发源，取 LL_TIM_TS_* 系列（内部互联 ITR、TIx、ETR 等）。"
+    }
+  },
+  "LL_ADC_REG_StartConversionExtTrig": {
+    "briefZh": "允许外部触发启动规则组转换。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。",
+      "ExternalTriggerEdge": "外部触发边沿：上升沿 / 下降沿 / 双边沿。"
+    }
+  },
+  "LL_ADC_REG_StartConversionSWStart": {
+    "briefZh": "软件启动规则组转换（置 SWSTART 位）。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_REG_StopConversionExtTrig": {
+    "briefZh": "禁止外部触发启动规则组转换。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_SetAnalogWDMonitChannels": {
+    "briefZh": "设置 ADC 的模拟看门狗监视的通道。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_SetAnalogWDThresholds": {
+    "briefZh": "设置 ADC 的模拟看门狗的高/低阈值。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。",
+      "AWDThresholdValue": "模拟看门狗阈值数值。",
+      "AWDThresholdsHighLow": "模拟看门狗阈值选择位（选高阈值还是低阈值）。"
+    }
+  },
+  "LL_ADC_SetChannelSamplingTime": {
+    "briefZh": "设置 ADC 的通道采样时间。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。",
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "SamplingTime": "采样时间，以 ADC 时钟周期数表示。信号源阻抗越高，需要的采样时间越长。"
+    }
+  },
+  "LL_ADC_SetCommonPathInternalCh": {
+    "briefZh": "使能 ADC 的公共内部信号通路（把温度传感器、VREFINT、VBAT 接到转换通道）。",
+    "paramsZh": {
+      "ADCxy_COMMON": "ADC 公共寄存器指针（ADC1_2_COMMON），用于多重 ADC 模式。"
+    }
+  },
+  "LL_ADC_SetDataAlignment": {
+    "briefZh": "设置 ADC 的数据对齐方式。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。",
+      "DataAlignment": "数据对齐方式：左对齐或右对齐。"
+    }
+  },
+  "LL_ADC_SetMultimode": {
+    "briefZh": "设置多重 ADC 模式（双 ADC 交替 / 同步 / 交错等），仅有多 ADC 的型号有效。",
+    "paramsZh": {
+      "ADCxy_COMMON": "ADC 公共寄存器指针（ADC1_2_COMMON），用于多重 ADC 模式。",
+      "Multimode": "多重 ADC 模式：独立 / 规则同步 / 注入同步 / 交错 / 交替触发。"
+    }
+  },
+  "LL_ADC_SetSequencersScanMode": {
+    "briefZh": "设置规则组的扫描模式：开启后按序列一次转换多个通道。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_ADC_StartCalibration": {
+    "briefZh": "启动 ADC 自校准。必须在 ADC 已使能、且没有转换进行中时调用。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  }
+}

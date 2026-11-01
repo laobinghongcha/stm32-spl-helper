@@ -1,0 +1,149 @@
+{
+  "HAL_DMA_Abort": {
+    "briefZh": "立即中止正在进行的 DMA 传输（阻塞式，等通道真正关掉才返回）。",
+    "usageZh": "传输过程中要紧急停止（收到中止命令、协议超时、要释放通道给别的外设）时用。会在关闭通道后把状态机复位，因此可以再次调用 HAL_DMA_Start。",
+    "paramsZh": {
+      "hdma": "DMA 句柄。"
+    },
+    "notesZh": [
+      "阻塞式，内部有超时等待；在中断里调用要谨慎",
+      "中止后不会触发传输完成回调，也不会调用错误回调"
+    ]
+  },
+  "HAL_DMA_Abort_IT": {
+    "briefZh": "以中断方式中止 DMA 传输，中止完成后回调 XferAbortCallback。",
+    "usageZh": "在中断上下文里需要停掉 DMA 时用它（HAL_DMA_Abort 是阻塞的，不适合 ISR）。中止动作本身在后台完成，完成后通知你。",
+    "paramsZh": {
+      "hdma": "DMA 句柄。"
+    },
+    "notesZh": [
+      "必须先通过 HAL_DMA_RegisterCallback 注册 HAL_DMA_XFER_ABORT_CB_ID 对应的回调，否则中止完成后无人知晓",
+      "和外设的 xxx_Abort_IT 不同，这里只停 DMA 通道，不涉及外设状态"
+    ]
+  },
+  "HAL_DMA_DeInit": {
+    "briefZh": "把 DMA 通道寄存器恢复到复位默认值。",
+    "usageZh": "通道要改作他用、或者严重异常（传输卡死）需要硬复位时调用。也会顺带关掉该通道的中断。",
+    "paramsZh": {
+      "hdma": "要复位的 DMA 句柄。"
+    }
+  },
+  "HAL_DMA_GetError": {
+    "briefZh": "读取 DMA 通道累计的错误码。",
+    "usageZh": "传输失败后判断具体原因（传输错误 TE、FIFO 错误 FE、直接模式错误 DME）。只有 F4/F7 有 FIFO 相关错误，F1 主要看 TE。",
+    "paramsZh": {
+      "hdma": "DMA 句柄。"
+    },
+    "notesZh": [
+      "读之前通常先 HAL_DMA_Abort 或重新 Init 清状态，错误码不会自动清零"
+    ]
+  },
+  "HAL_DMA_GetState": {
+    "briefZh": "读取 DMA 通道当前的状态机状态。",
+    "usageZh": "判断通道是空闲、忙还是出错。写状态机驱动的代码时用它做前置检查，避免重复 Start 返回 HAL_BUSY。",
+    "paramsZh": {
+      "hdma": "DMA 句柄。"
+    }
+  },
+  "HAL_DMA_IRQHandler": {
+    "briefZh": "DMA 通道中断的统一入口，按标志位分发到传输完成/半完成/错误回调。",
+    "usageZh": "在 stm32f1xx_it.c 的 DMA1_ChannelX_IRQHandler 里调用它，把 hdma 传进去。它负责清标志、更新状态机、再调用对应的用户回调，所以**不要自己再清标志**，否则回调可能不触发。",
+    "paramsZh": {
+      "hdma": "对应通道的 DMA 句柄。"
+    },
+    "notesZh": [
+      "一个 DMA 通道只有这一个入口，多个外设共用同一通道会互相干扰，务必确认通道归属",
+      "错误中断（TE）触发后通道会自动关闭，需要重新 HAL_DMA_Start 才能继续"
+    ],
+    "prerequisites": [
+      "该通道中断已在 NVIC 使能",
+      "已在 MspInit 里把 hdma 与中断向量对应起来"
+    ]
+  },
+  "HAL_DMA_Init": {
+    "briefZh": "按 DMA_HandleTypeDef 里的 Init 配置初始化一条 DMA 通道。",
+    "usageZh": "HAL 下 DMA 一般不单独初始化——调用 HAL_UART_Transmit_DMA / HAL_ADC_Start_DMA 这类函数时，HAL 会通过 MspInit 回调代你把通道配好。只有两种场合需要自己调它：一是要在外设之外单独用 DMA（纯内存搬运），二是要改通道参数（比如动态调整数据宽度）。配置内容包括方向、自增模式、数据宽度、循环/单次模式、优先级，以及 SrcAddress/DstAddress 和 Length。",
+    "paramsZh": {
+      "hdma": "指向 DMA_HandleTypeDef 的指针。它的 Instance 字段必须指向具体通道（如 DMA1_Channel4），Init 子结构里放搬运参数。"
+    },
+    "notesZh": [
+      "DMA1 有 7 个通道，每个通道固定对应若干外设请求，不能随意互换——USART1_TX 只能用 DMA1_Channel4，看参考手册的请求映射表",
+      "F1 的 DMA 是「通道」而不是 F4 那样的「流 + 请求」，所以没有 HAL_DMA_ConfigChannel 之类的选请求函数",
+      "同一个 DMA 通道不能同时服务两个外设；需要并发就换通道或者分时复用"
+    ],
+    "prerequisites": [
+      "已调用 __HAL_RCC_DMA1_CLK_ENABLE() 使能 DMA1 时钟",
+      "hdma->Instance 已赋值（CubeMX 在 MspInit 里做这件事）"
+    ],
+    "exampleCode": "DMA_HandleTypeDef hdma_usart1_tx;\n\n/* USART1_TX 固定绑 DMA1_Channel4 */\nhdma_usart1_tx.Instance                 = DMA1_Channel4;\nhdma_usart1_tx.Init.Direction           = DMA_MEMORY_TO_PERIPH;\nhdma_usart1_tx.Init.PeriphInc           = DMA_PINC_DISABLE;\nhdma_usart1_tx.Init.MemInc              = DMA_MINC_ENABLE;\nhdma_usart1_tx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;\nhdma_usart1_tx.Init.MemDataAlignment    = DMA_MDATAALIGN_BYTE;\nhdma_usart1_tx.Init.Mode                = DMA_NORMAL;\nhdma_usart1_tx.Init.Priority            = DMA_PRIORITY_LOW;\nif (HAL_DMA_Init(&hdma_usart1_tx) != HAL_OK)\n{\n  Error_Handler();\n}\n\n/* 把 DMA 句柄挂到串口句柄上 */\n__HAL_LINKDMA(&huart1, hdmatx, hdma_usart1_tx);"
+  },
+  "HAL_DMA_PollForTransfer": {
+    "briefZh": "轮询等待 DMA 传输结束，可带超时。",
+    "usageZh": "在 HAL_DMA_Start 之后需要自己确认完成、或者调试时手动等一次搬运结束时用。会处理传输错误并把错误码写进 hdma->ErrorCode。",
+    "paramsZh": {
+      "CompleteLevel": "等待到哪个阶段：DMA_FULL_TRANSFER（全部完成）或 DMA_HALF_TRANSFER（过半）。",
+      "Timeout": "超时毫秒数，用 HAL_MAX_DELAY 表示无限等待。",
+      "hdma": "DMA 句柄。"
+    },
+    "notesZh": [
+      "超时后建议调 HAL_DMA_Abort 收拾残局，否则通道可能停在半途占着资源"
+    ]
+  },
+  "HAL_DMA_RegisterCallback": {
+    "briefZh": "为 DMA 句柄注册指定事件的回调函数。",
+    "usageZh": "HAL 默认提供 __weak 的空回调，想在不改 HAL 源码的前提下挂钩子就用它。可注册的事件包括传输完成、半完成、传输错误、中止完成。",
+    "paramsZh": {
+      "CallbackID": "事件编号：HAL_DMA_XFER_CPLT_CB_ID / XFER_HALFCPLT_CB_ID / XFER_ERROR_CB_ID / XFER_ABORT_CB_ID。",
+      "hdma": "DMA 句柄。",
+      "pCallback": "回调函数指针，签名 void (*)(DMA_HandleTypeDef *hdma)。"
+    },
+    "notesZh": [
+      "同一事件重复注册会返回 HAL_ERROR（BUSY 状态），先 UnRegister 再注册",
+      "注册的回调优先于 __weak 版本，两者不会同时被调用"
+    ]
+  },
+  "HAL_DMA_Start": {
+    "briefZh": "启动一次阻塞式 DMA 传输，函数会一直等到传输完成或出错才返回。",
+    "usageZh": "纯内存到内存 / 外设到内存的搬运，且**不需要中断通知**时用。它是阻塞的：内部轮询传输完成标志，期间 CPU 空转。做串口收发更应该用 HAL_DMA_Start_IT，否则等于没用 DMA 的并行优势。",
+    "paramsZh": {
+      "DataLength": "要搬运的数据项个数（不是字节数）。数据宽度 16 位时，Length=10 表示搬 20 字节。",
+      "DstAddress": "目的地址。",
+      "SrcAddress": "源地址。内存端传数组名（会自动退化成指针），外设端传外设数据寄存器地址。",
+      "hdma": "DMA 句柄。"
+    },
+    "notesZh": [
+      "阻塞期间不能做别的事；超时行为取决于通道是否配了中断，没有内建超时机制",
+      "DataLength 是「数据项数」，和 HAL_UART_Transmit 的 Size（字节数）语义不同，容易搞混"
+    ],
+    "prerequisites": [
+      "已调用 HAL_DMA_Init 配好通道"
+    ]
+  },
+  "HAL_DMA_Start_IT": {
+    "briefZh": "启动 DMA 传输并使能传输完成/半完成/错误中断，非阻塞。",
+    "usageZh": "HAL 各外设的 xxx_DMA 系列函数内部就是调它。要自己接管 DMA 中断回调时直接用它。启动前会清掉旧的传输完成标志，避免立刻误触发一次回调。",
+    "paramsZh": {
+      "DataLength": "数据项个数。",
+      "DstAddress": "目的地址。",
+      "SrcAddress": "源地址。",
+      "hdma": "DMA 句柄。"
+    },
+    "notesZh": [
+      "中断使能位由 HAL 在内部打开，但 NVIC 这一层要自己开，否则回调永远不来",
+      "循环模式下传输完成回调会周期性反复触发"
+    ],
+    "prerequisites": [
+      "已调用 HAL_DMA_Init 配好通道",
+      "已在 NVIC 里使能对应 DMA 通道中断（如 DMA1_Channel4_IRQn）"
+    ],
+    "exampleCode": "/* 纯内存搬运：把 src 的 32 个字搬到 dst */\nHAL_DMA_Start_IT(&hdma_mem2mem,\n                 (uint32_t)src, (uint32_t)dst,\n                 32);          /* 数据项个数，不是字节数 */\n\n/* 想挂钩子就用注册接口，回调签名必须一致 */\nstatic void OnXferDone(DMA_HandleTypeDef *hdma)\n{\n  /* 搬运完成 */\n}\nHAL_DMA_RegisterCallback(&hdma_mem2mem, HAL_DMA_XFER_CPLT_CB_ID, OnXferDone);"
+  },
+  "HAL_DMA_UnRegisterCallback": {
+    "briefZh": "注销已注册的 DMA 回调，恢复成默认的 __weak 空实现。",
+    "usageZh": "动态切换驱动、或者在模块卸载时清理钩子。",
+    "paramsZh": {
+      "CallbackID": "要注销的事件编号；传 HAL_DMA_XFER_ALL_CALLBACKS 可一次注销全部。",
+      "hdma": "DMA 句柄。"
+    }
+  }
+}

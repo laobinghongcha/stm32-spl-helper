@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "CRC",
+  "library": "ll",
+  "functions": [
+    {
+      "id": "LL_CRC_ResetCRCCalculationUnit",
+      "name": "LL_CRC_ResetCRCCalculationUnit",
+      "peripheral": "CRC",
+      "library": "ll",
+      "sectionId": "CRC@ll#sec1",
+      "prototype": "void LL_CRC_ResetCRCCalculationUnit(CRC_TypeDef * CRCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "CRCx",
+          "type": "CRC_TypeDef *",
+          "descEn": "CRC Instance",
+          "descZh": "CRC 实例指针（F1 上固定是 CRC）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Reset the CRC calculation unit.",
+      "briefZh": "复位 CRC 计算单元，把数据寄存器恢复成 0xFFFFFFFF。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "CRCx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "If Programmable Initial CRC value feature is available, also set the Data Register to the value stored in the CRC_INIT register, otherwise, reset Data Register to its default value."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 107,
+      "definedIn": "stm32f1xx_ll_crc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_CRC_FeedData32",
+      "name": "LL_CRC_FeedData32",
+      "peripheral": "CRC",
+      "library": "ll",
+      "sectionId": "CRC@ll#sec2",
+      "prototype": "void LL_CRC_FeedData32(CRC_TypeDef * CRCx, uint32_t InData);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "CRCx",
+          "type": "CRC_TypeDef *",
+          "descEn": "CRC Instance",
+          "descZh": "CRC 实例指针（F1 上固定是 CRC）。"
+        },
+        {
+          "name": "InData",
+          "type": "uint32_t",
+          "descEn": "value to be provided to CRC calculator between between Min_Data=0 and Max_Data=0xFFFFFFFF",
+          "descZh": "要发送的数据。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Write given 32-bit data to the CRC calculator",
+      "briefZh": "把一个 32 位数据送入 CRC 计算单元累加。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "CRCx_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 127,
+      "definedIn": "stm32f1xx_ll_crc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_CRC_ReadData32",
+      "name": "LL_CRC_ReadData32",
+      "peripheral": "CRC",
+      "library": "ll",
+      "sectionId": "CRC@ll#sec2",
+      "prototype": "uint32_t LL_CRC_ReadData32(const CRC_TypeDef * CRCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "CRCx",
+          "type": "const CRC_TypeDef *",
+          "descEn": "CRC Instance",
+          "descZh": "CRC 实例指针（F1 上固定是 CRC）。"
+        }
+      ],
+      "returnDescEn": "Current CRC calculation result as stored in CRC_DR register (32 bits).",
+      "returnDescZh": "",
+      "briefEn": "Return current CRC calculation result. 32 bits value is returned.",
+      "briefZh": "读取当前 CRC 计算结果。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "CRCx_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 138,
+      "definedIn": "stm32f1xx_ll_crc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_CRC_Read_IDR",
+      "name": "LL_CRC_Read_IDR",
+      "peripheral": "CRC",
+      "library": "ll",
+      "sectionId": "CRC@ll#sec2",
+      "prototype": "uint32_t LL_CRC_Read_IDR(CRC_TypeDef * CRCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "CRCx",
+          "type": "CRC_TypeDef *",
+          "descEn": "CRC Instance",
+          "descZh": "CRC 实例指针（F1 上固定是 CRC）。"
+        }
+      ],
+      "returnDescEn": "Value stored in CRC_IDR register (General-purpose 8-bit data register).",
+      "returnDescZh": "",
+      "briefEn": "Return data stored in the Independent Data(IDR) register.",
+      "briefZh": "读取 CRC 独立数据寄存器（IDR）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "CRCx_IDR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This register can be used as a temporary storage location for one byte."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 150,
+      "definedIn": "stm32f1xx_ll_crc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_CRC_Write_IDR",
+      "name": "LL_CRC_Write_IDR",
+      "peripheral": "CRC",
+      "library": "ll",
+      "sectionId": "CRC@ll#sec2",
+      "prototype": "void LL_CRC_Write_IDR(CRC_TypeDef * CRCx, uint32_t InData);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "CRCx",
+          "type": "CRC_TypeDef *",
+          "descEn": "CRC Instance",
+          "descZh": "CRC 实例指针（F1 上固定是 CRC）。"
+        },
+        {
+          "name": "InData",
+          "type": "uint32_t",
+          "descEn": "value to be stored in CRC_IDR register (8-bit) between Min_Data=0 and Max_Data=0xFF",
+          "descZh": "要发送的数据。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Store data in the Independent Data(IDR) register.",
+      "briefZh": "写入 CRC 独立数据寄存器（IDR）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "CRCx_IDR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This register can be used as a temporary storage location for one byte."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 163,
+      "definedIn": "stm32f1xx_ll_crc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

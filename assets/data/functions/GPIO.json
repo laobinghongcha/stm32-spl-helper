@@ -6,7 +6,7 @@
       "id": "GPIO_DeInit",
       "name": "GPIO_DeInit",
       "peripheral": "GPIO",
-      "sectionId": "GPIO#sec1",
+      "sectionId": "GPIO@spl#sec1",
       "prototype": "void GPIO_DeInit(GPIO_TypeDef* GPIOx);",
       "returnType": "void",
       "params": [
@@ -70,7 +70,7 @@
       "id": "GPIO_AFIODeInit",
       "name": "GPIO_AFIODeInit",
       "peripheral": "GPIO",
-      "sectionId": "GPIO#sec1",
+      "sectionId": "GPIO@spl#sec1",
       "prototype": "void GPIO_AFIODeInit(void);",
       "returnType": "void",
       "params": [],
@@ -122,7 +122,7 @@
       "id": "GPIO_Init",
       "name": "GPIO_Init",
       "peripheral": "GPIO",
-      "sectionId": "GPIO#sec1",
+      "sectionId": "GPIO@spl#sec1",
       "prototype": "void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct);",
       "returnType": "void",
       "params": [
@@ -201,7 +201,7 @@
       "id": "GPIO_StructInit",
       "name": "GPIO_StructInit",
       "peripheral": "GPIO",
-      "sectionId": "GPIO#sec1",
+      "sectionId": "GPIO@spl#sec1",
       "prototype": "void GPIO_StructInit(GPIO_InitTypeDef* GPIO_InitStruct);",
       "returnType": "void",
       "params": [
@@ -253,7 +253,7 @@
       "id": "GPIO_ReadInputDataBit",
       "name": "GPIO_ReadInputDataBit",
       "peripheral": "GPIO",
-      "sectionId": "GPIO#sec2",
+      "sectionId": "GPIO@spl#sec2",
       "prototype": "uint8_t GPIO_ReadInputDataBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);",
       "returnType": "uint8_t",
       "params": [
@@ -319,7 +319,7 @@
       "id": "GPIO_ReadInputData",
       "name": "GPIO_ReadInputData",
       "peripheral": "GPIO",
-      "sectionId": "GPIO#sec2",
+      "sectionId": "GPIO@spl#sec2",
       "prototype": "uint16_t GPIO_ReadInputData(GPIO_TypeDef* GPIOx);",
       "returnType": "uint16_t",
       "params": [
@@ -375,7 +375,7 @@
       "id": "GPIO_ReadOutputDataBit",
       "name": "GPIO_ReadOutputDataBit",
       "peripheral": "GPIO",
-      "sectionId": "GPIO#sec2",
+      "sectionId": "GPIO@spl#sec2",
       "prototype": "uint8_t GPIO_ReadOutputDataBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);",
       "returnType": "uint8_t",
       "params": [
@@ -442,7 +442,7 @@
       "id": "GPIO_ReadOutputData",
       "name": "GPIO_ReadOutputData",
       "peripheral": "GPIO",
-      "sectionId": "GPIO#sec2",
+      "sectionId": "GPIO@spl#sec2",
       "prototype": "uint16_t GPIO_ReadOutputData(GPIO_TypeDef* GPIOx);",
       "returnType": "uint16_t",
       "params": [
@@ -496,7 +496,7 @@
       "id": "GPIO_SetBits",
       "name": "GPIO_SetBits",
       "peripheral": "GPIO",
-      "sectionId": "GPIO#sec3",
+      "sectionId": "GPIO@spl#sec3",
       "prototype": "void GPIO_SetBits(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);",
       "returnType": "void",
       "params": [
@@ -565,7 +565,7 @@
       "id": "GPIO_ResetBits",
       "name": "GPIO_ResetBits",
       "peripheral": "GPIO",
-      "sectionId": "GPIO#sec3",
+      "sectionId": "GPIO@spl#sec3",
       "prototype": "void GPIO_ResetBits(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);",
       "returnType": "void",
       "params": [
@@ -628,7 +628,7 @@
       "id": "GPIO_WriteBit",
       "name": "GPIO_WriteBit",
       "peripheral": "GPIO",
-      "sectionId": "GPIO#sec3",
+      "sectionId": "GPIO@spl#sec3",
       "prototype": "void GPIO_WriteBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, BitAction BitVal);",
       "returnType": "void",
       "params": [
@@ -701,7 +701,7 @@
       "id": "GPIO_Write",
       "name": "GPIO_Write",
       "peripheral": "GPIO",
-      "sectionId": "GPIO#sec3",
+      "sectionId": "GPIO@spl#sec3",
       "prototype": "void GPIO_Write(GPIO_TypeDef* GPIOx, uint16_t PortVal);",
       "returnType": "void",
       "params": [
@@ -765,7 +765,7 @@
       "id": "GPIO_PinLockConfig",
       "name": "GPIO_PinLockConfig",
       "peripheral": "GPIO",
-      "sectionId": "GPIO#sec4",
+      "sectionId": "GPIO@spl#sec4",
       "prototype": "void GPIO_PinLockConfig(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);",
       "returnType": "void",
       "params": [
@@ -830,7 +830,7 @@
       "id": "GPIO_EventOutputConfig",
       "name": "GPIO_EventOutputConfig",
       "peripheral": "GPIO",
-      "sectionId": "GPIO#sec4",
+      "sectionId": "GPIO@spl#sec4",
       "prototype": "void GPIO_EventOutputConfig(uint8_t GPIO_PortSource, uint8_t GPIO_PinSource);",
       "returnType": "void",
       "params": [
@@ -898,7 +898,7 @@
       "id": "GPIO_EventOutputCmd",
       "name": "GPIO_EventOutputCmd",
       "peripheral": "GPIO",
-      "sectionId": "GPIO#sec5",
+      "sectionId": "GPIO@spl#sec5",
       "prototype": "void GPIO_EventOutputCmd(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -950,7 +950,7 @@
       "id": "GPIO_PinRemapConfig",
       "name": "GPIO_PinRemapConfig",
       "peripheral": "GPIO",
-      "sectionId": "GPIO#sec4",
+      "sectionId": "GPIO@spl#sec4",
       "prototype": "void GPIO_PinRemapConfig(uint32_t GPIO_Remap, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1022,7 +1022,7 @@
       "id": "GPIO_EXTILineConfig",
       "name": "GPIO_EXTILineConfig",
       "peripheral": "GPIO",
-      "sectionId": "GPIO#sec4",
+      "sectionId": "GPIO@spl#sec4",
       "prototype": "void GPIO_EXTILineConfig(uint8_t GPIO_PortSource, uint8_t GPIO_PinSource);",
       "returnType": "void",
       "params": [
@@ -1110,7 +1110,7 @@
       "id": "GPIO_ETH_MediaInterfaceConfig",
       "name": "GPIO_ETH_MediaInterfaceConfig",
       "peripheral": "GPIO",
-      "sectionId": "GPIO#sec4",
+      "sectionId": "GPIO@spl#sec4",
       "prototype": "void GPIO_ETH_MediaInterfaceConfig(uint32_t GPIO_ETH_MediaInterface);",
       "returnType": "void",
       "params": [

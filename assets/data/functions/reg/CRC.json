@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "CRC",
+  "library": "reg",
+  "functions": [
+    {
+      "id": "REG_CRC_CR",
+      "name": "CRC_CR",
+      "peripheral": "CRC",
+      "library": "reg",
+      "sectionId": "CRC@reg#sec2",
+      "prototype": "CRC->CR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "CRC_CR_RESET",
+          "type": "bit 0（整个位域）",
+          "descEn": "RESET bit",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "CRC Control register, Address offset: 0x08",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "CRC_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 CRC_TypeDef.CR，偏移 0x08"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = CRC->CR;  /* 读回当前值 */\nv &= ~CRC_CR_RESET_Msk;  /* 先清掉 CRC_CR_RESET：bit 0（整个位域） */\nv |= (1u << CRC_CR_RESET_Pos) & CRC_CR_RESET_Msk;  /* 置位，实际取值看参考手册 */\nCRC->CR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 732,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_CRC_DR",
+      "name": "CRC_DR",
+      "peripheral": "CRC",
+      "library": "reg",
+      "sectionId": "CRC@reg#sec1",
+      "prototype": "CRC->DR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "CRC_DR_DR",
+          "type": "bits[31:0]（整个位域）",
+          "descEn": "Data register bits",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "CRC Data register, Address offset: 0x00",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "CRC_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 CRC_TypeDef.DR，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = CRC->DR;  /* 读回当前值 */\nv &= ~CRC_DR_DR_Msk;  /* 先清掉 CRC_DR_DR：bits[31:0]（整个位域） */\nv |= (1u << CRC_DR_DR_Pos) & CRC_DR_DR_Msk;  /* 置位，实际取值看参考手册 */\nCRC->DR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 722,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_CRC_IDR",
+      "name": "CRC_IDR",
+      "peripheral": "CRC",
+      "library": "reg",
+      "sectionId": "CRC@reg#sec1",
+      "prototype": "CRC->IDR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "CRC_IDR_IDR",
+          "type": "bits[7:0]（整个位域）",
+          "descEn": "General-purpose 8-bit data register bits",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "CRC Independent data register, Address offset: 0x04",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "CRC_IDR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 CRC_TypeDef.IDR，偏移 0x04"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = CRC->IDR;  /* 读回当前值 */\nv &= ~CRC_IDR_IDR_Msk;  /* 先清掉 CRC_IDR_IDR：bits[7:0]（整个位域） */\nv |= (1u << CRC_IDR_IDR_Pos) & CRC_IDR_IDR_Msk;  /* 置位，实际取值看参考手册 */\nCRC->IDR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 727,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    }
+  ]
+}

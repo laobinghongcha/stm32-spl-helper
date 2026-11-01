@@ -1,0 +1,1896 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "RTC",
+  "library": "hal",
+  "functions": [
+    {
+      "id": "HAL_RTC_Init",
+      "name": "HAL_RTC_Init",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_RTC_Init(RTC_HandleTypeDef *hrtc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Initializes the RTC peripheral",
+      "briefZh": "按 RTC_InitTypeDef 初始化 RTC（异步/同步预分频、小时格式）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_RTC_AlarmAEventCallback",
+        "HAL_RTCEx_Tamper1EventCallback",
+        "HAL_RTC_MspInit",
+        "HAL_RTC_MspDeInit",
+        "HAL_RTC_WaitForSynchro",
+        "HAL_RCCEx_GetPeriphCLKFreq"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RTC_HandleTypeDef",
+        "HAL_ERROR",
+        "IS_RTC_CALIB_OUTPUT",
+        "IS_RTC_ASYNCH_PREDIV",
+        "HAL_RTC_STATE_RESET",
+        "HAL_UNLOCKED",
+        "AlarmAEventCallback",
+        "MspInitCallback",
+        "HAL_OK",
+        "RTC_FLAG_OW",
+        "RTC_FLAG_ALRAF",
+        "RTC_FLAG_SEC",
+        "RTC_OUTPUTSOURCE_NONE",
+        "RTC_AUTO_1_SECOND",
+        "RCC_PERIPHCLK_RTC",
+        "RTC_MONTH_JANUARY"
+      ],
+      "headerLine": 529,
+      "definedIn": "stm32f1xx_hal_rtc.h",
+      "sourceLine": 276,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTC_DeInit",
+      "name": "HAL_RTC_DeInit",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_RTC_DeInit(RTC_HandleTypeDef *hrtc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "DeInitializes the RTC peripheral",
+      "briefZh": "把 RTC 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_RTC_WaitForSynchro",
+        "HAL_RTC_MspDeInit"
+      ],
+      "remarks": [
+        "This function does not reset the RTC Backup Data registers."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RTC_HandleTypeDef",
+        "HAL_ERROR",
+        "HAL_OK",
+        "__HAL_UNLOCK",
+        "RTC_FLAG_RSF",
+        "HAL_RTC_STATE_RESET"
+      ],
+      "headerLine": 530,
+      "definedIn": "stm32f1xx_hal_rtc.h",
+      "sourceLine": 412,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTC_RegisterCallback",
+      "name": "HAL_RTC_RegisterCallback",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_RTC_RegisterCallback(RTC_HandleTypeDef *hrtc, HAL_RTC_CallbackIDTypeDef CallbackID, pRTC_CallbackTypeDef pCallback);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "RTC handle",
+          "descZh": "RTC 句柄指针。"
+        },
+        {
+          "name": "CallbackID",
+          "type": "HAL_RTC_CallbackIDTypeDef",
+          "descEn": "ID of the callback to be registered This parameter can be one of the following values:",
+          "descZh": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。"
+        },
+        {
+          "name": "pCallback",
+          "type": "pRTC_CallbackTypeDef",
+          "descEn": "pointer to the Callback function",
+          "descZh": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Register a User RTC Callback To be used instead of the weak predefined callback",
+      "briefZh": "为 RTC 注册指定事件的回调，替代默认的 __weak 空实现。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RTC_HandleTypeDef",
+        "HAL_RTC_CallbackIDTypeDef",
+        "pRTC_CallbackTypeDef",
+        "HAL_OK",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "HAL_RTC_ALARM_A_EVENT_CB_ID",
+        "AlarmAEventCallback",
+        "MspInitCallback",
+        "HAL_RTC_STATE_RESET",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 536,
+      "definedIn": "stm32f1xx_hal_rtc.h",
+      "sourceLine": 501,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTC_UnRegisterCallback",
+      "name": "HAL_RTC_UnRegisterCallback",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_RTC_UnRegisterCallback(RTC_HandleTypeDef *hrtc, HAL_RTC_CallbackIDTypeDef CallbackID);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "RTC handle",
+          "descZh": "RTC 句柄指针。"
+        },
+        {
+          "name": "CallbackID",
+          "type": "HAL_RTC_CallbackIDTypeDef",
+          "descEn": "ID of the callback to be unregistered This parameter can be one of the following values:",
+          "descZh": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Unregister an RTC Callback RTC callback is redirected to the weak predefined callback",
+      "briefZh": "注销 RTC 已注册的回调，恢复成默认的 __weak 空实现。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_RTC_AlarmAEventCallback",
+        "HAL_RTCEx_Tamper1EventCallback",
+        "HAL_RTC_MspInit",
+        "HAL_RTC_MspDeInit"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RTC_HandleTypeDef",
+        "HAL_RTC_CallbackIDTypeDef",
+        "HAL_OK",
+        "__HAL_LOCK",
+        "HAL_RTC_ALARM_A_EVENT_CB_ID",
+        "AlarmAEventCallback",
+        "MspInitCallback",
+        "HAL_ERROR",
+        "HAL_RTC_STATE_RESET",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 537,
+      "definedIn": "stm32f1xx_hal_rtc.h",
+      "sourceLine": 581,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTC_MspInit",
+      "name": "HAL_RTC_MspInit",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec1",
+      "prototype": "void              HAL_RTC_MspInit(RTC_HandleTypeDef *hrtc);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Initializes the RTC MSP.",
+      "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "RTC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 531,
+      "definedIn": "stm32f1xx_hal_rtc.h",
+      "sourceLine": 651,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTC_MspDeInit",
+      "name": "HAL_RTC_MspDeInit",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec1",
+      "prototype": "void              HAL_RTC_MspDeInit(RTC_HandleTypeDef *hrtc);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "DeInitializes the RTC MSP.",
+      "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "RTC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 532,
+      "definedIn": "stm32f1xx_hal_rtc.h",
+      "sourceLine": 666,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTC_SetTime",
+      "name": "HAL_RTC_SetTime",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_RTC_SetTime(RTC_HandleTypeDef *hrtc, RTC_TimeTypeDef *sTime, uint32_t Format);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        },
+        {
+          "name": "sTime",
+          "type": "RTC_TimeTypeDef *",
+          "descEn": "Pointer to Time structure",
+          "descZh": "时间结构体（RTC_TimeTypeDef），字段是 **BCD 格式**：0x30 表示 30 秒，不要写十进制。"
+        },
+        {
+          "name": "Format",
+          "type": "uint32_t",
+          "descEn": "Specifies the format of the entered parameters. This parameter can be one of the following values:",
+          "descZh": "时间格式：RTC_HOURFORMAT_24 或 RTC_HOURFORMAT_12。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Sets RTC current time.",
+      "briefZh": "设置 RTC 当前时间。结构体字段是 BCD 格式（0x30 表示 30 秒），不要直接写十进制。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RTC_HandleTypeDef",
+        "RTC_TimeTypeDef",
+        "HAL_ERROR",
+        "IS_RTC_FORMAT",
+        "__HAL_LOCK",
+        "RTC_FORMAT_BIN",
+        "IS_RTC_HOUR24",
+        "IS_RTC_MINUTES",
+        "IS_RTC_SECONDS",
+        "HAL_OK",
+        "__HAL_UNLOCK",
+        "RTC_FLAG_SEC",
+        "RTC_FLAG_OW"
+      ],
+      "headerLine": 547,
+      "definedIn": "stm32f1xx_hal_rtc.h",
+      "sourceLine": 704,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTC_GetTime",
+      "name": "HAL_RTC_GetTime",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_RTC_GetTime(RTC_HandleTypeDef *hrtc, RTC_TimeTypeDef *sTime, uint32_t Format);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        },
+        {
+          "name": "sTime",
+          "type": "RTC_TimeTypeDef *",
+          "descEn": "Pointer to Time structure",
+          "descZh": "时间结构体（RTC_TimeTypeDef），字段是 **BCD 格式**：0x30 表示 30 秒，不要写十进制。"
+        },
+        {
+          "name": "Format",
+          "type": "uint32_t",
+          "descEn": "Specifies the format of the entered parameters. This parameter can be one of the following values:",
+          "descZh": "时间格式：RTC_HOURFORMAT_24 或 RTC_HOURFORMAT_12。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Gets RTC current time.",
+      "briefZh": "读取 RTC 当前时间（BCD 格式）。必须与 HAL_RTC_GetDate 成对调用，只读时间不读日期会导致时间停止更新。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RTC_HandleTypeDef",
+        "RTC_TimeTypeDef",
+        "HAL_ERROR",
+        "IS_RTC_FORMAT",
+        "__HAL_RTC_OVERFLOW_GET_FLAG",
+        "RTC_FLAG_OW",
+        "HAL_OK",
+        "RTC_FORMAT_BIN"
+      ],
+      "headerLine": 548,
+      "definedIn": "stm32f1xx_hal_rtc.h",
+      "sourceLine": 803,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTC_SetDate",
+      "name": "HAL_RTC_SetDate",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_RTC_SetDate(RTC_HandleTypeDef *hrtc, RTC_DateTypeDef *sDate, uint32_t Format);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        },
+        {
+          "name": "sDate",
+          "type": "RTC_DateTypeDef *",
+          "descEn": "Pointer to date structure",
+          "descZh": "日期结构体（RTC_DateTypeDef），同样是 BCD 格式，包含年、月、日、星期。"
+        },
+        {
+          "name": "Format",
+          "type": "uint32_t",
+          "descEn": "specifies the format of the entered parameters. This parameter can be one of the following values:",
+          "descZh": "时间格式：RTC_HOURFORMAT_24 或 RTC_HOURFORMAT_12。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Sets RTC current date.",
+      "briefZh": "设置 RTC 当前日期（BCD 格式）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RTC_HandleTypeDef",
+        "RTC_DateTypeDef",
+        "HAL_ERROR",
+        "IS_RTC_FORMAT",
+        "__HAL_LOCK",
+        "RTC_FORMAT_BIN",
+        "IS_RTC_YEAR",
+        "IS_RTC_MONTH",
+        "IS_RTC_DATE",
+        "HAL_OK",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 549,
+      "definedIn": "stm32f1xx_hal_rtc.h",
+      "sourceLine": 914,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTC_GetDate",
+      "name": "HAL_RTC_GetDate",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_RTC_GetDate(RTC_HandleTypeDef *hrtc, RTC_DateTypeDef *sDate, uint32_t Format);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        },
+        {
+          "name": "sDate",
+          "type": "RTC_DateTypeDef *",
+          "descEn": "Pointer to Date structure",
+          "descZh": "日期结构体（RTC_DateTypeDef），同样是 BCD 格式，包含年、月、日、星期。"
+        },
+        {
+          "name": "Format",
+          "type": "uint32_t",
+          "descEn": "Specifies the format of the entered parameters. This parameter can be one of the following values:",
+          "descZh": "时间格式：RTC_HOURFORMAT_24 或 RTC_HOURFORMAT_12。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Gets RTC current date.",
+      "briefZh": "读取 RTC 当前日期（BCD 格式）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_RTC_GetTime"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RTC_HandleTypeDef",
+        "RTC_DateTypeDef",
+        "RTC_TimeTypeDef",
+        "HAL_ERROR",
+        "IS_RTC_FORMAT",
+        "RTC_FORMAT_BIN",
+        "HAL_OK"
+      ],
+      "headerLine": 550,
+      "definedIn": "stm32f1xx_hal_rtc.h",
+      "sourceLine": 1028,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTC_SetAlarm",
+      "name": "HAL_RTC_SetAlarm",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_RTC_SetAlarm(RTC_HandleTypeDef *hrtc, RTC_AlarmTypeDef *sAlarm, uint32_t Format);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        },
+        {
+          "name": "sAlarm",
+          "type": "RTC_AlarmTypeDef *",
+          "descEn": "Pointer to Alarm structure",
+          "descZh": "闹钟结构体：Alarm（时间）、AlarmDate（可选日期）、AlarmMask（屏蔽哪些字段）。"
+        },
+        {
+          "name": "Format",
+          "type": "uint32_t",
+          "descEn": "Specifies the format of the entered parameters. This parameter can be one of the following values:",
+          "descZh": "时间格式：RTC_HOURFORMAT_24 或 RTC_HOURFORMAT_12。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Sets the specified RTC Alarm.",
+      "briefZh": "设置闹钟并启动（阻塞配置，本身不等待事件）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_RTC_GetTime"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RTC_HandleTypeDef",
+        "RTC_AlarmTypeDef",
+        "RTC_TimeTypeDef",
+        "HAL_ERROR",
+        "IS_RTC_FORMAT",
+        "IS_RTC_ALARM",
+        "__HAL_LOCK",
+        "RTC_FORMAT_BIN",
+        "HAL_OK",
+        "IS_RTC_HOUR24",
+        "IS_RTC_MINUTES",
+        "IS_RTC_SECONDS",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 559,
+      "definedIn": "stm32f1xx_hal_rtc.h",
+      "sourceLine": 1093,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTC_SetAlarm_IT",
+      "name": "HAL_RTC_SetAlarm_IT",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_RTC_SetAlarm_IT(RTC_HandleTypeDef *hrtc, RTC_AlarmTypeDef *sAlarm, uint32_t Format);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        },
+        {
+          "name": "sAlarm",
+          "type": "RTC_AlarmTypeDef *",
+          "descEn": "Pointer to Alarm structure",
+          "descZh": "闹钟结构体：Alarm（时间）、AlarmDate（可选日期）、AlarmMask（屏蔽哪些字段）。"
+        },
+        {
+          "name": "Format",
+          "type": "uint32_t",
+          "descEn": "Specifies the format of the entered parameters. This parameter can be one of the following values:",
+          "descZh": "时间格式：RTC_HOURFORMAT_24 或 RTC_HOURFORMAT_12。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Sets the specified RTC Alarm with Interrupt",
+      "briefZh": "设置闹钟并以中断方式启动，到点后进 AlarmAEventCallback。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_RTC_GetTime"
+      ],
+      "remarks": [
+        "The HAL_RTC_SetTime() must be called before enabling the Alarm feature."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RTC_HandleTypeDef",
+        "RTC_AlarmTypeDef",
+        "RTC_TimeTypeDef",
+        "HAL_ERROR",
+        "IS_RTC_FORMAT",
+        "IS_RTC_ALARM",
+        "__HAL_LOCK",
+        "RTC_FORMAT_BIN",
+        "HAL_OK",
+        "IS_RTC_HOUR24",
+        "IS_RTC_MINUTES",
+        "IS_RTC_SECONDS",
+        "__HAL_UNLOCK",
+        "__HAL_RTC_ALARM_CLEAR_FLAG",
+        "RTC_FLAG_ALRAF",
+        "__HAL_RTC_ALARM_ENABLE_IT",
+        "RTC_IT_ALRA",
+        "__HAL_RTC_ALARM_EXTI_ENABLE_IT",
+        "__HAL_RTC_ALARM_EXTI_ENABLE_RISING_EDGE"
+      ],
+      "headerLine": 560,
+      "definedIn": "stm32f1xx_hal_rtc.h",
+      "sourceLine": 1185,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTC_GetAlarm",
+      "name": "HAL_RTC_GetAlarm",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_RTC_GetAlarm(RTC_HandleTypeDef *hrtc, RTC_AlarmTypeDef *sAlarm, uint32_t Alarm, uint32_t Format);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        },
+        {
+          "name": "sAlarm",
+          "type": "RTC_AlarmTypeDef *",
+          "descEn": "Pointer to Date structure",
+          "descZh": "闹钟结构体：Alarm（时间）、AlarmDate（可选日期）、AlarmMask（屏蔽哪些字段）。"
+        },
+        {
+          "name": "Alarm",
+          "type": "uint32_t",
+          "descEn": "Specifies the Alarm. This parameter can be one of the following values:",
+          "descZh": "闹钟标识：RTC_ALARM_A 或 RTC_ALARM_B。"
+        },
+        {
+          "name": "Format",
+          "type": "uint32_t",
+          "descEn": "Specifies the format of the entered parameters. This parameter can be one of the following values:",
+          "descZh": "时间格式：RTC_HOURFORMAT_24 或 RTC_HOURFORMAT_12。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Gets the RTC Alarm value and masks.",
+      "briefZh": "读取已设置的闹钟值。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RTC_HandleTypeDef",
+        "RTC_AlarmTypeDef",
+        "UNUSED",
+        "HAL_ERROR",
+        "IS_RTC_FORMAT",
+        "IS_RTC_ALARM",
+        "RTC_FORMAT_BIN",
+        "HAL_OK"
+      ],
+      "headerLine": 562,
+      "definedIn": "stm32f1xx_hal_rtc.h",
+      "sourceLine": 1290,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTC_DeactivateAlarm",
+      "name": "HAL_RTC_DeactivateAlarm",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_RTC_DeactivateAlarm(RTC_HandleTypeDef *hrtc, uint32_t Alarm);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        },
+        {
+          "name": "Alarm",
+          "type": "uint32_t",
+          "descEn": "Specifies the Alarm. This parameter can be one of the following values:",
+          "descZh": "闹钟标识：RTC_ALARM_A 或 RTC_ALARM_B。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Deactivate the specified RTC Alarm",
+      "briefZh": "关闭闹钟。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RTC_HandleTypeDef",
+        "UNUSED",
+        "IS_RTC_ALARM",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "__HAL_RTC_ALARM_DISABLE_IT",
+        "RTC_IT_ALRA",
+        "HAL_OK",
+        "__HAL_UNLOCK",
+        "__HAL_RTC_ALARM_CLEAR_FLAG",
+        "RTC_FLAG_ALRAF",
+        "__HAL_RTC_ALARM_EXTI_DISABLE_IT"
+      ],
+      "headerLine": 561,
+      "definedIn": "stm32f1xx_hal_rtc.h",
+      "sourceLine": 1335,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTC_AlarmIRQHandler",
+      "name": "HAL_RTC_AlarmIRQHandler",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec3",
+      "prototype": "void              HAL_RTC_AlarmIRQHandler(RTC_HandleTypeDef *hrtc);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "This function handles Alarm interrupt request.",
+      "briefZh": "闹钟中断的统一入口。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_RTC_AlarmAEventCallback"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "RTC_HandleTypeDef",
+        "__HAL_RTC_ALARM_GET_IT_SOURCE",
+        "RTC_IT_ALRA",
+        "__HAL_RTC_ALARM_GET_FLAG",
+        "RTC_FLAG_ALRAF",
+        "AlarmAEventCallback",
+        "__HAL_RTC_ALARM_CLEAR_FLAG",
+        "__HAL_RTC_ALARM_EXTI_CLEAR_FLAG"
+      ],
+      "headerLine": 563,
+      "definedIn": "stm32f1xx_hal_rtc.h",
+      "sourceLine": 1405,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTC_AlarmAEventCallback",
+      "name": "HAL_RTC_AlarmAEventCallback",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec3",
+      "prototype": "void              HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Alarm A callback.",
+      "briefZh": "闹钟 A 触发回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "RTC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 565,
+      "definedIn": "stm32f1xx_hal_rtc.h",
+      "sourceLine": 1437,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTC_PollForAlarmAEvent",
+      "name": "HAL_RTC_PollForAlarmAEvent",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_RTC_PollForAlarmAEvent(RTC_HandleTypeDef *hrtc, uint32_t Timeout);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        },
+        {
+          "name": "Timeout",
+          "type": "uint32_t",
+          "descEn": "Timeout duration",
+          "descZh": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "This function handles AlarmA Polling request.",
+      "briefZh": "轮询等待闹钟 A 事件，带超时。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RTC_HandleTypeDef",
+        "HAL_ERROR",
+        "__HAL_RTC_ALARM_GET_FLAG",
+        "RTC_FLAG_ALRAF",
+        "HAL_MAX_DELAY",
+        "HAL_TIMEOUT",
+        "__HAL_RTC_ALARM_CLEAR_FLAG",
+        "HAL_OK"
+      ],
+      "headerLine": 564,
+      "definedIn": "stm32f1xx_hal_rtc.h",
+      "sourceLine": 1453,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTC_GetState",
+      "name": "HAL_RTC_GetState",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec4",
+      "prototype": "HAL_RTCStateTypeDef HAL_RTC_GetState(RTC_HandleTypeDef *hrtc);",
+      "returnType": "HAL_RTCStateTypeDef",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL state",
+      "returnDescZh": "",
+      "briefEn": "Returns the RTC state.",
+      "briefZh": "读取 RTC 的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_RTCStateTypeDef",
+        "RTC_HandleTypeDef"
+      ],
+      "headerLine": 574,
+      "definedIn": "stm32f1xx_hal_rtc.h",
+      "sourceLine": 1508,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTC_WaitForSynchro",
+      "name": "HAL_RTC_WaitForSynchro",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec5",
+      "prototype": "HAL_StatusTypeDef   HAL_RTC_WaitForSynchro(RTC_HandleTypeDef *hrtc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Waits until the RTC registers (RTC_CNT, RTC_ALR and RTC_PRL) are synchronized with RTC APB clock.",
+      "briefZh": "等待 RTC 寄存器同步完成。读写 RTC 前必须先同步，否则读数可能是旧的。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [
+        "This function must be called before any read operation after an APB reset or an APB clock stop."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RTC_HandleTypeDef",
+        "HAL_ERROR",
+        "RTC_FLAG_RSF",
+        "RTC_TIMEOUT_VALUE",
+        "HAL_TIMEOUT",
+        "HAL_OK"
+      ],
+      "headerLine": 583,
+      "definedIn": "stm32f1xx_hal_rtc.h",
+      "sourceLine": 1541,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTCEx_SetTamper",
+      "name": "HAL_RTCEx_SetTamper",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec6",
+      "prototype": "HAL_StatusTypeDef HAL_RTCEx_SetTamper(RTC_HandleTypeDef *hrtc, RTC_TamperTypeDef *sTamper);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        },
+        {
+          "name": "sTamper",
+          "type": "RTC_TamperTypeDef *",
+          "descEn": "Pointer to Tamper Structure.",
+          "descZh": "篡改检测配置结构体：Tamper（用哪个引脚）、Trigger（触发边沿）、NoErase（触发后是否清除备份寄存器）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Sets Tamper",
+      "briefZh": "配置篡改检测引脚（有效电平、触发后是否清除备份寄存器）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "By calling this API we disable the tamper interrupt for all tampers.",
+        "Tamper can be enabled only if ASOE and CCO bit are reset"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RTC_HandleTypeDef",
+        "RTC_TamperTypeDef",
+        "HAL_ERROR",
+        "IS_RTC_TAMPER",
+        "IS_RTC_TAMPER_TRIGGER",
+        "__HAL_LOCK",
+        "HAL_IS_BIT_SET",
+        "__HAL_UNLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 356,
+      "definedIn": "stm32f1xx_hal_rtc_ex.h",
+      "sourceLine": 80,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTCEx_SetTamper_IT",
+      "name": "HAL_RTCEx_SetTamper_IT",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec6",
+      "prototype": "HAL_StatusTypeDef HAL_RTCEx_SetTamper_IT(RTC_HandleTypeDef *hrtc, RTC_TamperTypeDef *sTamper);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        },
+        {
+          "name": "sTamper",
+          "type": "RTC_TamperTypeDef *",
+          "descEn": "Pointer to RTC Tamper.",
+          "descZh": "篡改检测配置结构体：Tamper（用哪个引脚）、Trigger（触发边沿）、NoErase（触发后是否清除备份寄存器）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Sets Tamper with interrupt.",
+      "briefZh": "配置篡改检测并以中断方式触发。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "By calling this API we force the tamper interrupt for all tampers.",
+        "Tamper can be enabled only if ASOE and CCO bit are reset"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RTC_HandleTypeDef",
+        "RTC_TamperTypeDef",
+        "HAL_ERROR",
+        "IS_RTC_TAMPER",
+        "IS_RTC_TAMPER_TRIGGER",
+        "__HAL_LOCK",
+        "HAL_IS_BIT_SET",
+        "__HAL_UNLOCK",
+        "__HAL_RTC_TAMPER_ENABLE_IT",
+        "RTC_IT_TAMP1",
+        "HAL_OK"
+      ],
+      "headerLine": 357,
+      "definedIn": "stm32f1xx_hal_rtc_ex.h",
+      "sourceLine": 126,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTCEx_DeactivateTamper",
+      "name": "HAL_RTCEx_DeactivateTamper",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec6",
+      "prototype": "HAL_StatusTypeDef HAL_RTCEx_DeactivateTamper(RTC_HandleTypeDef *hrtc, uint32_t Tamper);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        },
+        {
+          "name": "Tamper",
+          "type": "uint32_t",
+          "descEn": "Selected tamper pin. This parameter can be a value of @ref RTCEx_Tamper_Pins_Definitions",
+          "descZh": "篡改检测引脚编号：RTC_TAMPER_1。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Deactivates Tamper.",
+      "briefZh": "关闭篡改检测。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RTC_HandleTypeDef",
+        "HAL_ERROR",
+        "UNUSED",
+        "IS_RTC_TAMPER",
+        "__HAL_LOCK",
+        "__HAL_RTC_TAMPER_DISABLE_IT",
+        "RTC_IT_TAMP1",
+        "__HAL_RTC_TAMPER_CLEAR_FLAG",
+        "RTC_FLAG_TAMP1F",
+        "__HAL_UNLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 358,
+      "definedIn": "stm32f1xx_hal_rtc_ex.h",
+      "sourceLine": 174,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTCEx_TamperIRQHandler",
+      "name": "HAL_RTCEx_TamperIRQHandler",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec6",
+      "prototype": "void              HAL_RTCEx_TamperIRQHandler(RTC_HandleTypeDef *hrtc);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "This function handles Tamper interrupt request.",
+      "briefZh": "篡改中断的统一入口。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_RTCEx_Tamper1EventCallback"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "RTC_HandleTypeDef",
+        "__HAL_RTC_TAMPER_GET_IT_SOURCE",
+        "RTC_IT_TAMP1",
+        "__HAL_RTC_TAMPER_GET_FLAG",
+        "RTC_FLAG_TAMP1F",
+        "__HAL_RTC_TAMPER_CLEAR_FLAG"
+      ],
+      "headerLine": 359,
+      "definedIn": "stm32f1xx_hal_rtc_ex.h",
+      "sourceLine": 216,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTCEx_Tamper1EventCallback",
+      "name": "HAL_RTCEx_Tamper1EventCallback",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec6",
+      "prototype": "void              HAL_RTCEx_Tamper1EventCallback(RTC_HandleTypeDef *hrtc);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Tamper 1 callback.",
+      "briefZh": "篡改 1 事件回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "RTC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 360,
+      "definedIn": "stm32f1xx_hal_rtc_ex.h",
+      "sourceLine": 246,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTCEx_PollForTamper1Event",
+      "name": "HAL_RTCEx_PollForTamper1Event",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec6",
+      "prototype": "HAL_StatusTypeDef HAL_RTCEx_PollForTamper1Event(RTC_HandleTypeDef *hrtc, uint32_t Timeout);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        },
+        {
+          "name": "Timeout",
+          "type": "uint32_t",
+          "descEn": "Timeout duration",
+          "descZh": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "This function handles Tamper1 Polling.",
+      "briefZh": "轮询等待篡改 1 事件，带超时。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RTC_HandleTypeDef",
+        "HAL_ERROR",
+        "__HAL_RTC_TAMPER_GET_FLAG",
+        "RTC_FLAG_TAMP1F",
+        "HAL_MAX_DELAY",
+        "HAL_TIMEOUT",
+        "__HAL_RTC_TAMPER_CLEAR_FLAG",
+        "HAL_OK"
+      ],
+      "headerLine": 361,
+      "definedIn": "stm32f1xx_hal_rtc_ex.h",
+      "sourceLine": 262,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTCEx_SetSecond_IT",
+      "name": "HAL_RTCEx_SetSecond_IT",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec7",
+      "prototype": "HAL_StatusTypeDef HAL_RTCEx_SetSecond_IT(RTC_HandleTypeDef *hrtc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Sets Interrupt for second",
+      "briefZh": "使能秒中断，每秒进一次 RTCEventCallback。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RTC_HandleTypeDef",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "__HAL_RTC_SECOND_ENABLE_IT",
+        "RTC_IT_SEC",
+        "__HAL_UNLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 371,
+      "definedIn": "stm32f1xx_hal_rtc_ex.h",
+      "sourceLine": 318,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTCEx_DeactivateSecond",
+      "name": "HAL_RTCEx_DeactivateSecond",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec7",
+      "prototype": "HAL_StatusTypeDef HAL_RTCEx_DeactivateSecond(RTC_HandleTypeDef *hrtc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Deactivates Second.",
+      "briefZh": "关闭秒中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RTC_HandleTypeDef",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "__HAL_RTC_SECOND_DISABLE_IT",
+        "RTC_IT_SEC",
+        "__HAL_UNLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 372,
+      "definedIn": "stm32f1xx_hal_rtc_ex.h",
+      "sourceLine": 348,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTCEx_RTCIRQHandler",
+      "name": "HAL_RTCEx_RTCIRQHandler",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec7",
+      "prototype": "void              HAL_RTCEx_RTCIRQHandler(RTC_HandleTypeDef *hrtc);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "This function handles second interrupt request.",
+      "briefZh": "RTC 全局中断（秒/闹钟/溢出）的统一入口。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_RTCEx_RTCEventErrorCallback",
+        "HAL_RTCEx_RTCEventCallback"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "RTC_HandleTypeDef",
+        "__HAL_RTC_SECOND_GET_IT_SOURCE",
+        "RTC_IT_SEC",
+        "__HAL_RTC_SECOND_GET_FLAG",
+        "RTC_FLAG_SEC",
+        "RTC_FLAG_OW",
+        "__HAL_RTC_OVERFLOW_CLEAR_FLAG",
+        "__HAL_RTC_SECOND_CLEAR_FLAG"
+      ],
+      "headerLine": 373,
+      "definedIn": "stm32f1xx_hal_rtc_ex.h",
+      "sourceLine": 378,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTCEx_RTCEventCallback",
+      "name": "HAL_RTCEx_RTCEventCallback",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec7",
+      "prototype": "void              HAL_RTCEx_RTCEventCallback(RTC_HandleTypeDef *hrtc);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Second event callback.",
+      "briefZh": "RTC 事件回调（__weak 空实现，需自己重写），秒中断走这里。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "RTC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 374,
+      "definedIn": "stm32f1xx_hal_rtc_ex.h",
+      "sourceLine": 418,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTCEx_RTCEventErrorCallback",
+      "name": "HAL_RTCEx_RTCEventErrorCallback",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec7",
+      "prototype": "void              HAL_RTCEx_RTCEventErrorCallback(RTC_HandleTypeDef *hrtc);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Second event error callback.",
+      "briefZh": "RTC 事件错误回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "RTC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 375,
+      "definedIn": "stm32f1xx_hal_rtc_ex.h",
+      "sourceLine": 433,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTCEx_BKUPWrite",
+      "name": "HAL_RTCEx_BKUPWrite",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec8",
+      "prototype": "void              HAL_RTCEx_BKUPWrite(RTC_HandleTypeDef *hrtc, uint32_t BackupRegister, uint32_t Data);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        },
+        {
+          "name": "BackupRegister",
+          "type": "uint32_t",
+          "descEn": "RTC Backup data Register number. This parameter can be: RTC_BKP_DRx where x can be from 1 to 10 (or 42) to specify the register (depending devices).",
+          "descZh": "备份寄存器编号，取 RTC_BKP_DR1 ~ RTC_BKP_DR10（F1 有 10 个）。"
+        },
+        {
+          "name": "Data",
+          "type": "uint32_t",
+          "descEn": "Data to be written in the specified RTC Backup data register.",
+          "descZh": "要写入备份寄存器的 32 位数据。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Writes a data in a specified RTC Backup data register.",
+      "briefZh": "写备份寄存器（复位与待机唤醒后内容保留，常用来跨复位传状态）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "RTC_HandleTypeDef",
+        "UNUSED",
+        "IS_RTC_BKP"
+      ],
+      "headerLine": 385,
+      "definedIn": "stm32f1xx_hal_rtc_ex.h",
+      "sourceLine": 473,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTCEx_BKUPRead",
+      "name": "HAL_RTCEx_BKUPRead",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec8",
+      "prototype": "uint32_t          HAL_RTCEx_BKUPRead(RTC_HandleTypeDef *hrtc, uint32_t BackupRegister);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "pointer to a RTC_HandleTypeDef structure that contains the configuration information for RTC.",
+          "descZh": "RTC 句柄指针。"
+        },
+        {
+          "name": "BackupRegister",
+          "type": "uint32_t",
+          "descEn": "RTC Backup data Register number. This parameter can be: RTC_BKP_DRx where x can be from 1 to 10 (or 42) to specify the register (depending devices).",
+          "descZh": "备份寄存器编号，取 RTC_BKP_DR1 ~ RTC_BKP_DR10（F1 有 10 个）。"
+        }
+      ],
+      "returnDescEn": "Read value",
+      "returnDescZh": "",
+      "briefEn": "Reads data from the specified RTC Backup data Register.",
+      "briefZh": "读备份寄存器。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "RTC_HandleTypeDef",
+        "UNUSED",
+        "IS_RTC_BKP"
+      ],
+      "headerLine": 386,
+      "definedIn": "stm32f1xx_hal_rtc_ex.h",
+      "sourceLine": 498,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_RTCEx_SetSmoothCalib",
+      "name": "HAL_RTCEx_SetSmoothCalib",
+      "peripheral": "RTC",
+      "library": "hal",
+      "sectionId": "RTC@hal#sec8",
+      "prototype": "HAL_StatusTypeDef HAL_RTCEx_SetSmoothCalib(RTC_HandleTypeDef *hrtc, uint32_t SmoothCalibPeriod, uint32_t SmoothCalibPlusPulses, uint32_t SmouthCalibMinusPulsesValue);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hrtc",
+          "type": "RTC_HandleTypeDef *",
+          "descEn": "RTC handle",
+          "descZh": "RTC 句柄指针。"
+        },
+        {
+          "name": "SmoothCalibPeriod",
+          "type": "uint32_t",
+          "descEn": "Not used (only present for compatibility with another families)",
+          "descZh": "平滑校准周期（1s / 2s / 4s / 8s / 16s）。"
+        },
+        {
+          "name": "SmoothCalibPlusPulses",
+          "type": "uint32_t",
+          "descEn": "Not used (only present for compatibility with another families)",
+          "descZh": "校准脉冲的加减方向设置。"
+        },
+        {
+          "name": "SmouthCalibMinusPulsesValue",
+          "type": "uint32_t",
+          "descEn": "specifies the RTC Clock Calibration value. This parameter must be a number between 0 and 0x7F.",
+          "descZh": "每次校准要减去的脉冲数（0~511）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Sets the Smooth calibration parameters.",
+      "briefZh": "设置 RTC 平滑数字校准值，用于微调走时精度。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "RTC_HandleTypeDef",
+        "HAL_ERROR",
+        "UNUSED",
+        "IS_RTC_SMOOTH_CALIB_MINUS",
+        "__HAL_LOCK",
+        "__HAL_UNLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 388,
+      "definedIn": "stm32f1xx_hal_rtc_ex.h",
+      "sourceLine": 528,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

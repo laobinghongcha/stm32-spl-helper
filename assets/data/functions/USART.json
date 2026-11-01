@@ -6,7 +6,7 @@
       "id": "USART_DeInit",
       "name": "USART_DeInit",
       "peripheral": "USART",
-      "sectionId": "USART#sec1",
+      "sectionId": "USART@spl#sec1",
       "prototype": "void USART_DeInit(USART_TypeDef* USARTx);",
       "returnType": "void",
       "params": [
@@ -73,7 +73,7 @@
       "id": "USART_Init",
       "name": "USART_Init",
       "peripheral": "USART",
-      "sectionId": "USART#sec1",
+      "sectionId": "USART@spl#sec1",
       "prototype": "void USART_Init(USART_TypeDef* USARTx, USART_InitTypeDef* USART_InitStruct);",
       "returnType": "void",
       "params": [
@@ -180,7 +180,7 @@
       "id": "USART_StructInit",
       "name": "USART_StructInit",
       "peripheral": "USART",
-      "sectionId": "USART#sec1",
+      "sectionId": "USART@spl#sec1",
       "prototype": "void USART_StructInit(USART_InitTypeDef* USART_InitStruct);",
       "returnType": "void",
       "params": [
@@ -236,7 +236,7 @@
       "id": "USART_ClockInit",
       "name": "USART_ClockInit",
       "peripheral": "USART",
-      "sectionId": "USART#sec2",
+      "sectionId": "USART@spl#sec2",
       "prototype": "void USART_ClockInit(USART_TypeDef* USARTx, USART_ClockInitTypeDef* USART_ClockInitStruct);",
       "returnType": "void",
       "params": [
@@ -311,7 +311,7 @@
       "id": "USART_ClockStructInit",
       "name": "USART_ClockStructInit",
       "peripheral": "USART",
-      "sectionId": "USART#sec2",
+      "sectionId": "USART@spl#sec2",
       "prototype": "void USART_ClockStructInit(USART_ClockInitTypeDef* USART_ClockInitStruct);",
       "returnType": "void",
       "params": [
@@ -363,7 +363,7 @@
       "id": "USART_Cmd",
       "name": "USART_Cmd",
       "peripheral": "USART",
-      "sectionId": "USART#sec3",
+      "sectionId": "USART@spl#sec3",
       "prototype": "void USART_Cmd(USART_TypeDef* USARTx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -436,7 +436,7 @@
       "id": "USART_ITConfig",
       "name": "USART_ITConfig",
       "peripheral": "USART",
-      "sectionId": "USART#sec4",
+      "sectionId": "USART@spl#sec4",
       "prototype": "void USART_ITConfig(USART_TypeDef* USARTx, uint16_t USART_IT, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -534,7 +534,7 @@
       "id": "USART_DMACmd",
       "name": "USART_DMACmd",
       "peripheral": "USART",
-      "sectionId": "USART#sec3",
+      "sectionId": "USART@spl#sec3",
       "prototype": "void USART_DMACmd(USART_TypeDef* USARTx, uint16_t USART_DMAReq, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -645,7 +645,7 @@
       "id": "USART_SetAddress",
       "name": "USART_SetAddress",
       "peripheral": "USART",
-      "sectionId": "USART#sec5",
+      "sectionId": "USART@spl#sec5",
       "prototype": "void USART_SetAddress(USART_TypeDef* USARTx, uint8_t USART_Address);",
       "returnType": "void",
       "params": [
@@ -715,7 +715,7 @@
       "id": "USART_WakeUpConfig",
       "name": "USART_WakeUpConfig",
       "peripheral": "USART",
-      "sectionId": "USART#sec6",
+      "sectionId": "USART@spl#sec6",
       "prototype": "void USART_WakeUpConfig(USART_TypeDef* USARTx, uint16_t USART_WakeUp);",
       "returnType": "void",
       "params": [
@@ -785,7 +785,7 @@
       "id": "USART_ReceiverWakeUpCmd",
       "name": "USART_ReceiverWakeUpCmd",
       "peripheral": "USART",
-      "sectionId": "USART#sec7",
+      "sectionId": "USART@spl#sec7",
       "prototype": "void USART_ReceiverWakeUpCmd(USART_TypeDef* USARTx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -851,7 +851,7 @@
       "id": "USART_LINBreakDetectLengthConfig",
       "name": "USART_LINBreakDetectLengthConfig",
       "peripheral": "USART",
-      "sectionId": "USART#sec6",
+      "sectionId": "USART@spl#sec6",
       "prototype": "void USART_LINBreakDetectLengthConfig(USART_TypeDef* USARTx, uint16_t USART_LINBreakDetectLength);",
       "returnType": "void",
       "params": [
@@ -926,7 +926,7 @@
       "id": "USART_LINCmd",
       "name": "USART_LINCmd",
       "peripheral": "USART",
-      "sectionId": "USART#sec3",
+      "sectionId": "USART@spl#sec3",
       "prototype": "void USART_LINCmd(USART_TypeDef* USARTx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -997,7 +997,7 @@
       "id": "USART_SendData",
       "name": "USART_SendData",
       "peripheral": "USART",
-      "sectionId": "USART#sec8",
+      "sectionId": "USART@spl#sec8",
       "prototype": "void USART_SendData(USART_TypeDef* USARTx, uint16_t Data);",
       "returnType": "void",
       "params": [
@@ -1078,7 +1078,7 @@
       "id": "USART_ReceiveData",
       "name": "USART_ReceiveData",
       "peripheral": "USART",
-      "sectionId": "USART#sec7",
+      "sectionId": "USART@spl#sec7",
       "prototype": "uint16_t USART_ReceiveData(USART_TypeDef* USARTx);",
       "returnType": "uint16_t",
       "params": [
@@ -1155,7 +1155,7 @@
       "id": "USART_SendBreak",
       "name": "USART_SendBreak",
       "peripheral": "USART",
-      "sectionId": "USART#sec8",
+      "sectionId": "USART@spl#sec8",
       "prototype": "void USART_SendBreak(USART_TypeDef* USARTx);",
       "returnType": "void",
       "params": [
@@ -1225,7 +1225,7 @@
       "id": "USART_SetGuardTime",
       "name": "USART_SetGuardTime",
       "peripheral": "USART",
-      "sectionId": "USART#sec5",
+      "sectionId": "USART@spl#sec5",
       "prototype": "void USART_SetGuardTime(USART_TypeDef* USARTx, uint8_t USART_GuardTime);",
       "returnType": "void",
       "params": [
@@ -1298,7 +1298,7 @@
       "id": "USART_SetPrescaler",
       "name": "USART_SetPrescaler",
       "peripheral": "USART",
-      "sectionId": "USART#sec5",
+      "sectionId": "USART@spl#sec5",
       "prototype": "void USART_SetPrescaler(USART_TypeDef* USARTx, uint8_t USART_Prescaler);",
       "returnType": "void",
       "params": [
@@ -1371,7 +1371,7 @@
       "id": "USART_SmartCardCmd",
       "name": "USART_SmartCardCmd",
       "peripheral": "USART",
-      "sectionId": "USART#sec3",
+      "sectionId": "USART@spl#sec3",
       "prototype": "void USART_SmartCardCmd(USART_TypeDef* USARTx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1445,7 +1445,7 @@
       "id": "USART_SmartCardNACKCmd",
       "name": "USART_SmartCardNACKCmd",
       "peripheral": "USART",
-      "sectionId": "USART#sec3",
+      "sectionId": "USART@spl#sec3",
       "prototype": "void USART_SmartCardNACKCmd(USART_TypeDef* USARTx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1514,7 +1514,7 @@
       "id": "USART_HalfDuplexCmd",
       "name": "USART_HalfDuplexCmd",
       "peripheral": "USART",
-      "sectionId": "USART#sec3",
+      "sectionId": "USART@spl#sec3",
       "prototype": "void USART_HalfDuplexCmd(USART_TypeDef* USARTx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1593,7 +1593,7 @@
       "id": "USART_OverSampling8Cmd",
       "name": "USART_OverSampling8Cmd",
       "peripheral": "USART",
-      "sectionId": "USART#sec3",
+      "sectionId": "USART@spl#sec3",
       "prototype": "void USART_OverSampling8Cmd(USART_TypeDef* USARTx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1664,7 +1664,7 @@
       "id": "USART_OneBitMethodCmd",
       "name": "USART_OneBitMethodCmd",
       "peripheral": "USART",
-      "sectionId": "USART#sec3",
+      "sectionId": "USART@spl#sec3",
       "prototype": "void USART_OneBitMethodCmd(USART_TypeDef* USARTx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1730,7 +1730,7 @@
       "id": "USART_IrDAConfig",
       "name": "USART_IrDAConfig",
       "peripheral": "USART",
-      "sectionId": "USART#sec6",
+      "sectionId": "USART@spl#sec6",
       "prototype": "void USART_IrDAConfig(USART_TypeDef* USARTx, uint16_t USART_IrDAMode);",
       "returnType": "void",
       "params": [
@@ -1802,7 +1802,7 @@
       "id": "USART_IrDACmd",
       "name": "USART_IrDACmd",
       "peripheral": "USART",
-      "sectionId": "USART#sec3",
+      "sectionId": "USART@spl#sec3",
       "prototype": "void USART_IrDACmd(USART_TypeDef* USARTx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1872,7 +1872,7 @@
       "id": "USART_GetFlagStatus",
       "name": "USART_GetFlagStatus",
       "peripheral": "USART",
-      "sectionId": "USART#sec9",
+      "sectionId": "USART@spl#sec9",
       "prototype": "FlagStatus USART_GetFlagStatus(USART_TypeDef* USARTx, uint16_t USART_FLAG);",
       "returnType": "FlagStatus",
       "params": [
@@ -1956,7 +1956,7 @@
       "id": "USART_ClearFlag",
       "name": "USART_ClearFlag",
       "peripheral": "USART",
-      "sectionId": "USART#sec9",
+      "sectionId": "USART@spl#sec9",
       "prototype": "void USART_ClearFlag(USART_TypeDef* USARTx, uint16_t USART_FLAG);",
       "returnType": "void",
       "params": [
@@ -2036,7 +2036,7 @@
       "id": "USART_GetITStatus",
       "name": "USART_GetITStatus",
       "peripheral": "USART",
-      "sectionId": "USART#sec4",
+      "sectionId": "USART@spl#sec4",
       "prototype": "ITStatus USART_GetITStatus(USART_TypeDef* USARTx, uint16_t USART_IT);",
       "returnType": "ITStatus",
       "params": [
@@ -2127,7 +2127,7 @@
       "id": "USART_ClearITPendingBit",
       "name": "USART_ClearITPendingBit",
       "peripheral": "USART",
-      "sectionId": "USART#sec4",
+      "sectionId": "USART@spl#sec4",
       "prototype": "void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);",
       "returnType": "void",
       "params": [

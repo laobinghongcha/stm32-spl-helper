@@ -4,10 +4,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../data/search_history.dart';
 import '../data/search_index.dart';
 import '../models/item_ref.dart';
+import '../models/library_kind.dart';
 import '../providers/app_providers.dart';
 import '../utils/highlighter.dart';
 import '../utils/theme.dart';
 import '../widgets/block_label.dart';
+import '../widgets/library_chip.dart';
 import 'compile_error_detail_page.dart';
 import 'function_detail_page.dart';
 import 'peripheral_detail_page.dart';
@@ -98,16 +100,25 @@ class _SearchPageState extends ConsumerState<SearchPage> {
     final index = ref.watch(searchIndexProvider);
     final dataAsync = ref.watch(splDataProvider);
     final includeInternal = ref.watch(includeInternalSymbolsProvider);
+    final enabled = ref.watch(enabledLibrariesProvider);
     final scheme = Theme.of(context).colorScheme;
 
     if (dataAsync.isLoading) {
       return const Center(child: CircularProgressIndicator());
     }
 
+    // 按设置里启用的库过滤（用户明确要求：关掉 HAL 后不该再搜出 HAL_ 的函数）。
+    //
+    // 过滤放在"类型筛选之前"，这样顶部"N 条结果"和各类型角标都是
+    // "过滤后还剩多少"，不会出现"显示 88 条、列表里只有 50 条"的错位。
+    final byLibrary = _filterByLibrary(_hits, enabled);
+
     // 类型筛选后的结果
     final visible = _filter == null
-        ? _hits
-        : _hits.where((h) => h.category == _filter).toList(growable: false);
+        ? byLibrary
+        : byLibrary
+            .where((h) => h.category == _filter)
+            .toList(growable: false);
     final grouped = index == null
         ? const <SearchCategory, List<SearchHit>>{}
         : index.groupByCategory(visible);
@@ -171,11 +182,11 @@ class _SearchPageState extends ConsumerState<SearchPage> {
         ),
         if (_keyword.isNotEmpty) ...<Widget>[
           _ResultSummary(
-            total: _hits.length,
+            total: byLibrary.length,
             visible: visible.length,
             filter: _filter,
             onFilterChanged: (c) => setState(() => _filter = c),
-            counts: _countsByCategory(_hits),
+            counts: _countsByCategory(byLibrary),
           ),
         ],
         Expanded(
@@ -187,7 +198,7 @@ class _SearchPageState extends ConsumerState<SearchPage> {
               : visible.isEmpty
                   ? _EmptyResult(
                       keyword: _keyword,
-                      hasAnyHit: _hits.isNotEmpty,
+                      hasAnyHit: byLibrary.isNotEmpty,
                       onClearFilter: _filter == null
                           ? null
                           : () => setState(() => _filter = null),
@@ -203,6 +214,28 @@ class _SearchPageState extends ConsumerState<SearchPage> {
       ],
     );
   }
+
+  /// 按「设置里启用的库」过滤搜索结果。
+  ///
+  /// 只对**有库属性的条目**生效：函数（按 id 前缀判断）与符号。
+  /// 引脚、编译错误、外设本身不属于任何库，永远显示——否则用户关掉
+  /// HAL 后连 PA9 都搜不到了，那是明显不合理的。
+  List<SearchHit> _filterByLibrary(List<SearchHit> hits, Set<String> enabled) {
+    if (enabled.length >= LibraryKind.ordered.length) return hits;
+    return hits.where((h) {
+      final lib = _libraryOfHit(h);
+      // lib 为 null：这条结果与库无关，照常显示
+      return lib == null || enabled.contains(lib.raw);
+    }).toList(growable: false);
+  }
+
+  /// 判断一条搜索结果属于哪个库；不属于任何库时返回 null。
+  ///
+  /// v2.0.3 起直接用索引里带的 `library` 字段，不再按 id 前缀猜。
+  /// 前缀推断的问题：HAL 里 3313 个符号并不带 `HAL_` 前缀
+  /// （`GPIO_InitTypeDef@hal`、`ADC_HandleTypeDef`、各类 Callback typedef…），
+  /// 会被一律算成标准库；用户关掉 SPL 想只看 HAL 时这些符号会整片消失。
+  static LibraryKind? _libraryOfHit(SearchHit h) => h.library;
 
   /// 统计每类结果数，用于筛选条上的角标。
   Map<SearchCategory, int> _countsByCategory(List<SearchHit> hits) {
@@ -270,6 +303,8 @@ class _SearchPageState extends ConsumerState<SearchPage> {
       ItemType.pin => (Icons.grid_on, const Color(0xFF3E9C5A)),
       ItemType.compileError => (Icons.error_outline, scheme.error),
     };
+    // 该结果属于哪个库（与过滤逻辑用同一个判定，保证"能显示"与"标对了"一致）
+    final lib = _libraryOfHit(h);
 
     return Padding(
       padding: const EdgeInsets.fromLTRB(
@@ -311,19 +346,35 @@ class _SearchPageState extends ConsumerState<SearchPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      HighlightedText(
-                        h.title,
-                        _keyword,
-                        // 库里有 41 字符的长函数名
-                        // （ADC_GetSoftwareStartInjectedConvCmdStatus），
-                        // 不限制的话会被 trailing 挤压成多行。
-                        // 标题保持单行省略，完整名字在详情页标题栏里能看全。
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: AppFonts.monoStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.w600,
-                        ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Expanded(
+                            child: HighlightedText(
+                              h.title,
+                              _keyword,
+                              // 库里有 41 字符的长函数名
+                              // （ADC_GetSoftwareStartInjectedConvCmdStatus），
+                              // 不限制的话会被 trailing 挤压成多行。
+                              // 标题保持单行省略，完整名字在详情页标题栏里能看全。
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: AppFonts.monoStyle(
+                                fontSize: 13,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                          // 库徽标紧贴标题右侧：HAL_GPIO_Init 与 GPIO_Init
+                          // 在结果列表里只差三个字母，色块比字母更快
+                          if (lib != null) ...<Widget>[
+                            const SizedBox(width: 6),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 1),
+                              child: LibraryChip(library: lib, compact: true),
+                            ),
+                          ],
+                        ],
                       ),
                       const SizedBox(height: 2),
                       _buildSubtitle(h, scheme),

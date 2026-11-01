@@ -1,0 +1,1999 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "DAC",
+  "library": "ll",
+  "functions": [
+    {
+      "id": "LL_DAC_SetTriggerSource",
+      "name": "LL_DAC_SetTriggerSource",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec1",
+      "prototype": "void LL_DAC_SetTriggerSource(DAC_TypeDef * DACx, uint32_t DAC_Channel, uint32_t TriggerSource);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        },
+        {
+          "name": "TriggerSource",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "触发源，取 LL_TIM_TS_* 系列（内部互联 ITR、TIx、ETR 等）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set the conversion trigger source for the selected DAC channel.",
+      "briefZh": "设置 DAC 通道的触发源（定时器 TRGO / EXTI 等）。触发源决定何时把保持寄存器的值搬到输出。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "For conversion trigger source to be effective, DAC trigger must be enabled using function @ref LL_DAC_EnableTrigger().",
+        "To set conversion trigger source, DAC channel must be disabled. Otherwise, the setting is discarded.",
+        "Availability of parameters of trigger sources from timer depends on timers availability on the selected device."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_CR_CHX_BITOFFSET_MASK"
+      ],
+      "headerLine": 520,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_GetTriggerSource",
+      "name": "LL_DAC_GetTriggerSource",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec1",
+      "prototype": "uint32_t LL_DAC_GetTriggerSource(const DAC_TypeDef * DACx, uint32_t DAC_Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "const DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get the conversion trigger source for the selected DAC channel.",
+      "briefZh": "读取 DAC 通道当前配置的触发源。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "For conversion trigger source to be effective, DAC trigger must be enabled using function @ref LL_DAC_EnableTrigger().",
+        "Availability of parameters of trigger sources from timer depends on timers availability on the selected device."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_CR_CHX_BITOFFSET_MASK"
+      ],
+      "headerLine": 550,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_SetWaveAutoGeneration",
+      "name": "LL_DAC_SetWaveAutoGeneration",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec1",
+      "prototype": "void LL_DAC_SetWaveAutoGeneration(DAC_TypeDef * DACx, uint32_t DAC_Channel, uint32_t WaveAutoGeneration);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        },
+        {
+          "name": "WaveAutoGeneration",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set the waveform automatic generation mode for the selected DAC channel.",
+      "briefZh": "设置 DAC 通道的波形自动生成模式（三角波 / 噪声波）。生成波形后 DAC 数据由硬件自动推演，不需要软件写数据。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_CR_CHX_BITOFFSET_MASK"
+      ],
+      "headerLine": 572,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_GetWaveAutoGeneration",
+      "name": "LL_DAC_GetWaveAutoGeneration",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec1",
+      "prototype": "uint32_t LL_DAC_GetWaveAutoGeneration(const DAC_TypeDef * DACx, uint32_t DAC_Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "const DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get the waveform automatic generation mode for the selected DAC channel.",
+      "briefZh": "读取 DAC 通道当前配置的波形自动生成模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_CR_CHX_BITOFFSET_MASK"
+      ],
+      "headerLine": 593,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_SetWaveNoiseLFSR",
+      "name": "LL_DAC_SetWaveNoiseLFSR",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec1",
+      "prototype": "void LL_DAC_SetWaveNoiseLFSR(DAC_TypeDef * DACx, uint32_t DAC_Channel, uint32_t NoiseLFSRMask);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        },
+        {
+          "name": "NoiseLFSRMask",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set the noise waveform generation for the selected DAC channel: Noise mode and parameters LFSR (linear feedback shift register).",
+      "briefZh": "设置噪声波形的 LFSR 参数（噪声的「频率」由 LFSR 掩码与移位决定）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "For wave generation to be effective, DAC channel wave generation mode must be enabled using function @ref LL_DAC_SetWaveAutoGeneration().",
+        "This setting can be set when the selected DAC channel is disabled (otherwise, the setting operation is ignored)."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_CR_CHX_BITOFFSET_MASK"
+      ],
+      "headerLine": 629,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_GetWaveNoiseLFSR",
+      "name": "LL_DAC_GetWaveNoiseLFSR",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec1",
+      "prototype": "uint32_t LL_DAC_GetWaveNoiseLFSR(const DAC_TypeDef * DACx, uint32_t DAC_Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "const DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get the noise waveform generation for the selected DAC channel: Noise mode and parameters LFSR (linear feedback shift register).",
+      "briefZh": "读取噪声波形的 LFSR 参数。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_CR_CHX_BITOFFSET_MASK"
+      ],
+      "headerLine": 659,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_SetWaveTriangleAmplitude",
+      "name": "LL_DAC_SetWaveTriangleAmplitude",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec1",
+      "prototype": "void LL_DAC_SetWaveTriangleAmplitude(DAC_TypeDef * DACx, uint32_t DAC_Channel, uint32_t TriangleAmplitude);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        },
+        {
+          "name": "TriangleAmplitude",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set the triangle waveform generation for the selected DAC channel: triangle mode and amplitude.",
+      "briefZh": "设置三角波形的幅度（决定三角波的最大值）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "For wave generation to be effective, DAC channel wave generation mode must be enabled using function @ref LL_DAC_SetWaveAutoGeneration().",
+        "This setting can be set when the selected DAC channel is disabled (otherwise, the setting operation is ignored)."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_CR_CHX_BITOFFSET_MASK"
+      ],
+      "headerLine": 695,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_GetWaveTriangleAmplitude",
+      "name": "LL_DAC_GetWaveTriangleAmplitude",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec1",
+      "prototype": "uint32_t LL_DAC_GetWaveTriangleAmplitude(const DAC_TypeDef * DACx, uint32_t DAC_Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "const DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get the triangle waveform generation for the selected DAC channel: triangle mode and amplitude.",
+      "briefZh": "读取三角波形的幅度设置。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_CR_CHX_BITOFFSET_MASK"
+      ],
+      "headerLine": 726,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_SetOutputBuffer",
+      "name": "LL_DAC_SetOutputBuffer",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec1",
+      "prototype": "void LL_DAC_SetOutputBuffer(DAC_TypeDef * DACx, uint32_t DAC_Channel, uint32_t OutputBuffer);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        },
+        {
+          "name": "OutputBuffer",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set the output buffer for the selected DAC channel.",
+      "briefZh": "设置 DAC 通道的输出缓冲器是否使能。缓冲器能提高驱动能力，但会限制输出范围（无法完全到 0V/VREF+）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_CR_CHX_BITOFFSET_MASK"
+      ],
+      "headerLine": 746,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_GetOutputBuffer",
+      "name": "LL_DAC_GetOutputBuffer",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec1",
+      "prototype": "uint32_t LL_DAC_GetOutputBuffer(const DAC_TypeDef * DACx, uint32_t DAC_Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "const DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get the output buffer state for the selected DAC channel.",
+      "briefZh": "读取 DAC 通道输出缓冲器的使能状态。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_CR_CHX_BITOFFSET_MASK"
+      ],
+      "headerLine": 765,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_EnableDMAReq",
+      "name": "LL_DAC_EnableDMAReq",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec2",
+      "prototype": "void LL_DAC_EnableDMAReq(DAC_TypeDef * DACx, uint32_t DAC_Channel);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable DAC DMA transfer request of the selected channel.",
+      "briefZh": "使能该 DAC 通道的 DMA 传输请求。做波形输出时必须打开。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "To configure DMA source address (peripheral address), use function @ref LL_DAC_DMA_GetRegAddr()."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_CR_CHX_BITOFFSET_MASK"
+      ],
+      "headerLine": 792,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_DisableDMAReq",
+      "name": "LL_DAC_DisableDMAReq",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec2",
+      "prototype": "void LL_DAC_DisableDMAReq(DAC_TypeDef * DACx, uint32_t DAC_Channel);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable DAC DMA transfer request of the selected channel.",
+      "briefZh": "关闭该 DAC 通道的 DMA 传输请求。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "To configure DMA source address (peripheral address), use function @ref LL_DAC_DMA_GetRegAddr()."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_CR_CHX_BITOFFSET_MASK"
+      ],
+      "headerLine": 810,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_IsDMAReqEnabled",
+      "name": "LL_DAC_IsDMAReqEnabled",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec2",
+      "prototype": "uint32_t LL_DAC_IsDMAReqEnabled(const DAC_TypeDef * DACx, uint32_t DAC_Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "const DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get DAC DMA transfer request state of the selected channel. (0: DAC DMA transfer request is disabled, 1: DAC DMA transfer request is enabled)",
+      "briefZh": "查询 DAC 的 DMA 请求是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_CR_CHX_BITOFFSET_MASK"
+      ],
+      "headerLine": 827,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_DMA_GetRegAddr",
+      "name": "LL_DAC_DMA_GetRegAddr",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec2",
+      "prototype": "uint32_t LL_DAC_DMA_GetRegAddr(const DAC_TypeDef * DACx, uint32_t DAC_Channel, uint32_t Register);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "const DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        },
+        {
+          "name": "Register",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "寄存器编号（如备份寄存器、突发传输起始寄存器）。"
+        }
+      ],
+      "returnDescEn": "DAC register address",
+      "returnDescZh": "",
+      "briefEn": "Function to help to configure DMA transfer to DAC: retrieve the DAC register address from DAC instance and a list of DAC registers intended to be used (most commonly) with DMA transfer.",
+      "briefZh": "返回 DAC 数据寄存器地址，供 DMA 搬运波形数据时作为目的地址。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "These DAC registers are data holding registers: when DAC conversion is requested, DAC generates a DMA transfer request to have data available in DAC data holding registers.",
+        "This macro is intended to be used with LL DMA driver, refer to function \"LL_DMA_ConfigAddresses()\". Example: LL_DMA_ConfigAddresses(DMA1, LL_DMA_CHANNEL_1, (uint32_t)&< array or variable >, LL_DAC_DMA_GetRegAddr(DAC1, LL_DAC_CHANNEL_1, LL_DAC_DMA_REG_DATA_12BITS_RIGHT_ALIGNED), LL_DMA_DIRECTION_MEMORY_TO_PERIPH);"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_DMA_CHANNEL_1",
+        "LL_DAC_CHANNEL_1",
+        "LL_DAC_DMA_REG_DATA_12BITS_RIGHT_ALIGNED",
+        "LL_DMA_DIRECTION_MEMORY_TO_PERIPH",
+        "__DAC_PTR_REG_OFFSET",
+        "DAC_REG_DHR_REGOFFSET_MASK_POSBIT0"
+      ],
+      "headerLine": 866,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_Enable",
+      "name": "LL_DAC_Enable",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec3",
+      "prototype": "void LL_DAC_Enable(DAC_TypeDef * DACx, uint32_t DAC_Channel);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable DAC selected channel.",
+      "briefZh": "使能 DAC。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "After enable from off state, DAC channel requires a delay for output voltage to reach accuracy +/- 1 LSB. Refer to device datasheet, parameter \"tWAKEUP\"."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_CR_CHX_BITOFFSET_MASK"
+      ],
+      "headerLine": 894,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_Disable",
+      "name": "LL_DAC_Disable",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec3",
+      "prototype": "void LL_DAC_Disable(DAC_TypeDef * DACx, uint32_t DAC_Channel);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable DAC selected channel.",
+      "briefZh": "失能 DAC。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_CR_CHX_BITOFFSET_MASK"
+      ],
+      "headerLine": 910,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_IsEnabled",
+      "name": "LL_DAC_IsEnabled",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec3",
+      "prototype": "uint32_t LL_DAC_IsEnabled(const DAC_TypeDef * DACx, uint32_t DAC_Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "const DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get DAC enable state of the selected channel. (0: DAC channel is disabled, 1: DAC channel is enabled)",
+      "briefZh": "查询 DAC 是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_CR_CHX_BITOFFSET_MASK"
+      ],
+      "headerLine": 927,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_EnableTrigger",
+      "name": "LL_DAC_EnableTrigger",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec3",
+      "prototype": "void LL_DAC_EnableTrigger(DAC_TypeDef * DACx, uint32_t DAC_Channel);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable DAC trigger of the selected channel.",
+      "briefZh": "使能 DAC 通道的外部触发，转换由触发信号启动。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "- If DAC trigger is disabled, DAC conversion is performed automatically once the data holding register is updated, using functions \"LL_DAC_ConvertData{8; 12}{Right; Left} Aligned()\":"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_CR_CHX_BITOFFSET_MASK"
+      ],
+      "headerLine": 952,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_DisableTrigger",
+      "name": "LL_DAC_DisableTrigger",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec3",
+      "prototype": "void LL_DAC_DisableTrigger(DAC_TypeDef * DACx, uint32_t DAC_Channel);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable DAC trigger of the selected channel.",
+      "briefZh": "关闭 DAC 通道的外部触发，改回软件写数据即输出。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_CR_CHX_BITOFFSET_MASK"
+      ],
+      "headerLine": 968,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_IsTriggerEnabled",
+      "name": "LL_DAC_IsTriggerEnabled",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec3",
+      "prototype": "uint32_t LL_DAC_IsTriggerEnabled(const DAC_TypeDef * DACx, uint32_t DAC_Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "const DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get DAC trigger state of the selected channel. (0: DAC trigger is disabled, 1: DAC trigger is enabled)",
+      "briefZh": "查询 DAC 通道的外部触发是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_CR_CHX_BITOFFSET_MASK"
+      ],
+      "headerLine": 985,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_TrigSWConversion",
+      "name": "LL_DAC_TrigSWConversion",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec3",
+      "prototype": "void LL_DAC_TrigSWConversion(DAC_TypeDef * DACx, uint32_t DAC_Channel);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can a combination of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Trig DAC conversion by software for the selected DAC channel.",
+      "briefZh": "软件触发一次 DAC 转换（需先把触发源设为软件触发）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_SWTRIGR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Preliminarily, DAC trigger must be set to software trigger using function",
+        "For devices featuring DAC with 2 channels: this function can perform a SW start of both DAC channels simultaneously. Two channels can be selected as parameter. Example: (LL_DAC_CHANNEL_1 | LL_DAC_CHANNEL_2)"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_DAC_CHANNEL_1",
+        "LL_DAC_CHANNEL_2",
+        "DAC_SWTR_CHX_MASK"
+      ],
+      "headerLine": 1013,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_ConvertData12RightAligned",
+      "name": "LL_DAC_ConvertData12RightAligned",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec3",
+      "prototype": "void LL_DAC_ConvertData12RightAligned(DAC_TypeDef * DACx, uint32_t DAC_Channel, uint32_t Data);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        },
+        {
+          "name": "Data",
+          "type": "uint32_t",
+          "descEn": "Value between Min_Data=0x000 and Max_Data=0xFFF",
+          "descZh": "要写入的数据值。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set the data to be loaded in the data holding register in format 12 bits left alignment (LSB aligned on bit 0), for the selected DAC channel.",
+      "briefZh": "按 12 位右对齐格式把数据写入 DAC 保持寄存器（低 12 位有效）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_DHR12R1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__DAC_PTR_REG_OFFSET",
+        "DAC_REG_DHR12RX_REGOFFSET_BITOFFSET_POS",
+        "DAC_REG_DHR_REGOFFSET_MASK_POSBIT0"
+      ],
+      "headerLine": 1032,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_ConvertData12LeftAligned",
+      "name": "LL_DAC_ConvertData12LeftAligned",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec3",
+      "prototype": "void LL_DAC_ConvertData12LeftAligned(DAC_TypeDef * DACx, uint32_t DAC_Channel, uint32_t Data);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        },
+        {
+          "name": "Data",
+          "type": "uint32_t",
+          "descEn": "Value between Min_Data=0x000 and Max_Data=0xFFF",
+          "descZh": "要写入的数据值。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set the data to be loaded in the data holding register in format 12 bits left alignment (MSB aligned on bit 15), for the selected DAC channel.",
+      "briefZh": "按 12 位左对齐格式把数据写入 DAC 保持寄存器（高 12 位有效）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_DHR12R1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__DAC_PTR_REG_OFFSET",
+        "DAC_REG_DHR12LX_REGOFFSET_BITOFFSET_POS",
+        "DAC_REG_DHR_REGOFFSET_MASK_POSBIT0"
+      ],
+      "headerLine": 1053,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_ConvertData8RightAligned",
+      "name": "LL_DAC_ConvertData8RightAligned",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec3",
+      "prototype": "void LL_DAC_ConvertData8RightAligned(DAC_TypeDef * DACx, uint32_t DAC_Channel, uint32_t Data);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        },
+        {
+          "name": "Data",
+          "type": "uint32_t",
+          "descEn": "Value between Min_Data=0x00 and Max_Data=0xFF",
+          "descZh": "要写入的数据值。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set the data to be loaded in the data holding register in format 8 bits left alignment (LSB aligned on bit 0), for the selected DAC channel.",
+      "briefZh": "按 8 位右对齐格式把数据写入 DAC 保持寄存器（低 8 位有效）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_DHR12R1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__DAC_PTR_REG_OFFSET",
+        "DAC_REG_DHR8RX_REGOFFSET_BITOFFSET_POS",
+        "DAC_REG_DHR_REGOFFSET_MASK_POSBIT0"
+      ],
+      "headerLine": 1074,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_ConvertDualData12RightAligned",
+      "name": "LL_DAC_ConvertDualData12RightAligned",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec3",
+      "prototype": "void LL_DAC_ConvertDualData12RightAligned(DAC_TypeDef * DACx, uint32_t DataChannel1, uint32_t DataChannel2);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DataChannel1",
+          "type": "uint32_t",
+          "descEn": "Value between Min_Data=0x000 and Max_Data=0xFFF",
+          "descZh": "通道 1 的数据（双通道同步写入）。"
+        },
+        {
+          "name": "DataChannel2",
+          "type": "uint32_t",
+          "descEn": "Value between Min_Data=0x000 and Max_Data=0xFFF",
+          "descZh": "通道 2 的数据。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set the data to be loaded in the data holding register in format 12 bits left alignment (LSB aligned on bit 0), for both DAC channels.",
+      "briefZh": "按 12 位右对齐格式同时写入两个 DAC 通道（双通道模式用）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_DHR12RD"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_DHR12RD_DACC2DHR_BITOFFSET_POS"
+      ],
+      "headerLine": 1094,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_ConvertDualData12LeftAligned",
+      "name": "LL_DAC_ConvertDualData12LeftAligned",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec3",
+      "prototype": "void LL_DAC_ConvertDualData12LeftAligned(DAC_TypeDef * DACx, uint32_t DataChannel1, uint32_t DataChannel2);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DataChannel1",
+          "type": "uint32_t",
+          "descEn": "Value between Min_Data=0x000 and Max_Data=0xFFF",
+          "descZh": "通道 1 的数据（双通道同步写入）。"
+        },
+        {
+          "name": "DataChannel2",
+          "type": "uint32_t",
+          "descEn": "Value between Min_Data=0x000 and Max_Data=0xFFF",
+          "descZh": "通道 2 的数据。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set the data to be loaded in the data holding register in format 12 bits left alignment (MSB aligned on bit 15), for both DAC channels.",
+      "briefZh": "按 12 位左对齐格式同时写入两个 DAC 通道。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_DHR12LD"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_DHR12LD_DACC2DHR_BITOFFSET_POS"
+      ],
+      "headerLine": 1113,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_ConvertDualData8RightAligned",
+      "name": "LL_DAC_ConvertDualData8RightAligned",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec3",
+      "prototype": "void LL_DAC_ConvertDualData8RightAligned(DAC_TypeDef * DACx, uint32_t DataChannel1, uint32_t DataChannel2);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DataChannel1",
+          "type": "uint32_t",
+          "descEn": "Value between Min_Data=0x00 and Max_Data=0xFF",
+          "descZh": "通道 1 的数据（双通道同步写入）。"
+        },
+        {
+          "name": "DataChannel2",
+          "type": "uint32_t",
+          "descEn": "Value between Min_Data=0x00 and Max_Data=0xFF",
+          "descZh": "通道 2 的数据。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set the data to be loaded in the data holding register in format 8 bits left alignment (LSB aligned on bit 0), for both DAC channels.",
+      "briefZh": "按 8 位右对齐格式同时写入两个 DAC 通道。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_DHR8RD"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DAC_DHR8RD_DACC2DHR_BITOFFSET_POS"
+      ],
+      "headerLine": 1135,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_RetrieveOutputData",
+      "name": "LL_DAC_RetrieveOutputData",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec3",
+      "prototype": "uint32_t LL_DAC_RetrieveOutputData(const DAC_TypeDef * DACx, uint32_t DAC_Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "const DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        },
+        {
+          "name": "DAC_Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。"
+        }
+      ],
+      "returnDescEn": "Value between Min_Data=0x000 and Max_Data=0xFFF",
+      "returnDescZh": "",
+      "briefEn": "Retrieve output data currently generated for the selected DAC channel.",
+      "briefZh": "读取 DAC 数据输出寄存器（DOR），即当前实际输出的数值。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_DOR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Whatever alignment and resolution settings (using functions \"LL_DAC_ConvertData{8; 12}{Right; Left} Aligned()\":"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__DAC_PTR_REG_OFFSET",
+        "DAC_REG_DORX_REGOFFSET_BITOFFSET_POS",
+        "DAC_REG_DORX_REGOFFSET_MASK_POSBIT0"
+      ],
+      "headerLine": 1158,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_IsActiveFlag_DMAUDR1",
+      "name": "LL_DAC_IsActiveFlag_DMAUDR1",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec4",
+      "prototype": "uint32_t LL_DAC_IsActiveFlag_DMAUDR1(const DAC_TypeDef * DACx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "const DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get DAC underrun flag for DAC channel 1",
+      "briefZh": "查询 DAC 的通道 1 DMA 下溢标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_DAC_FLAG_DMAUDR1"
+      ],
+      "headerLine": 1181,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_IsActiveFlag_DMAUDR2",
+      "name": "LL_DAC_IsActiveFlag_DMAUDR2",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec4",
+      "prototype": "uint32_t LL_DAC_IsActiveFlag_DMAUDR2(const DAC_TypeDef * DACx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "const DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get DAC underrun flag for DAC channel 2",
+      "briefZh": "查询 DAC 的通道 2 DMA 下溢标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_DAC_FLAG_DMAUDR2"
+      ],
+      "headerLine": 1194,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_ClearFlag_DMAUDR1",
+      "name": "LL_DAC_ClearFlag_DMAUDR1",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec4",
+      "prototype": "void LL_DAC_ClearFlag_DMAUDR1(DAC_TypeDef * DACx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear DAC underrun flag for DAC channel 1",
+      "briefZh": "清除 DAC 的通道 1 DMA 下溢标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_DAC_FLAG_DMAUDR1"
+      ],
+      "headerLine": 1207,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_ClearFlag_DMAUDR2",
+      "name": "LL_DAC_ClearFlag_DMAUDR2",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec4",
+      "prototype": "void LL_DAC_ClearFlag_DMAUDR2(DAC_TypeDef * DACx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear DAC underrun flag for DAC channel 2",
+      "briefZh": "清除 DAC 的通道 2 DMA 下溢标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_DAC_FLAG_DMAUDR2"
+      ],
+      "headerLine": 1220,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_EnableIT_DMAUDR1",
+      "name": "LL_DAC_EnableIT_DMAUDR1",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec5",
+      "prototype": "void LL_DAC_EnableIT_DMAUDR1(DAC_TypeDef * DACx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable DMA underrun interrupt for DAC channel 1",
+      "briefZh": "使能 DAC 的通道 1 DMA 下溢中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_DAC_IT_DMAUDRIE1"
+      ],
+      "headerLine": 1241,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_EnableIT_DMAUDR2",
+      "name": "LL_DAC_EnableIT_DMAUDR2",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec5",
+      "prototype": "void LL_DAC_EnableIT_DMAUDR2(DAC_TypeDef * DACx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable DMA underrun interrupt for DAC channel 2",
+      "briefZh": "使能 DAC 的通道 2 DMA 下溢中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_DAC_IT_DMAUDRIE2"
+      ],
+      "headerLine": 1254,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_DisableIT_DMAUDR1",
+      "name": "LL_DAC_DisableIT_DMAUDR1",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec5",
+      "prototype": "void LL_DAC_DisableIT_DMAUDR1(DAC_TypeDef * DACx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable DMA underrun interrupt for DAC channel 1",
+      "briefZh": "失能 DAC 的通道 1 DMA 下溢中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_DAC_IT_DMAUDRIE1"
+      ],
+      "headerLine": 1267,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_DisableIT_DMAUDR2",
+      "name": "LL_DAC_DisableIT_DMAUDR2",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec5",
+      "prototype": "void LL_DAC_DisableIT_DMAUDR2(DAC_TypeDef * DACx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable DMA underrun interrupt for DAC channel 2",
+      "briefZh": "失能 DAC 的通道 2 DMA 下溢中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_DAC_IT_DMAUDRIE2"
+      ],
+      "headerLine": 1280,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_IsEnabledIT_DMAUDR1",
+      "name": "LL_DAC_IsEnabledIT_DMAUDR1",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec5",
+      "prototype": "uint32_t LL_DAC_IsEnabledIT_DMAUDR1(const DAC_TypeDef * DACx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "const DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get DMA underrun interrupt for DAC channel 1",
+      "briefZh": "查询 DAC 的通道 1 DMA 下溢中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_DAC_IT_DMAUDRIE1"
+      ],
+      "headerLine": 1293,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DAC_IsEnabledIT_DMAUDR2",
+      "name": "LL_DAC_IsEnabledIT_DMAUDR2",
+      "peripheral": "DAC",
+      "library": "ll",
+      "sectionId": "DAC@ll#sec5",
+      "prototype": "uint32_t LL_DAC_IsEnabledIT_DMAUDR2(const DAC_TypeDef * DACx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DACx",
+          "type": "const DAC_TypeDef *",
+          "descEn": "DAC instance",
+          "descZh": "DAC 实例指针，通常是 DAC1。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get DMA underrun interrupt for DAC channel 2",
+      "briefZh": "查询 DAC 的通道 2 DMA 下溢中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DACx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_DAC_IT_DMAUDRIE2"
+      ],
+      "headerLine": 1306,
+      "definedIn": "stm32f1xx_ll_dac.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

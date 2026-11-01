@@ -1,4 +1,4 @@
-package com.example.stm32_spl_helper
+package io.github.laobinghongcha.stm32helper
 
 import io.flutter.embedding.android.FlutterActivity
 

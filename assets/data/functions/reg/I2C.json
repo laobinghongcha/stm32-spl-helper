@@ -1,0 +1,760 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "I2C",
+  "library": "reg",
+  "functions": [
+    {
+      "id": "REG_I2C_CCR",
+      "name": "I2C_CCR",
+      "peripheral": "I2C",
+      "library": "reg",
+      "sectionId": "I2C@reg#sec2",
+      "prototype": "I2C1->CCR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2C_CCR_CCR",
+          "type": "bits[11:0]（整个位域）",
+          "descEn": "Clock Control Register in Fast/Standard mode (Master mode)",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CCR_DUTY",
+          "type": "bit 14（整个位域）",
+          "descEn": "Fast Mode Duty Cycle",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CCR_FS",
+          "type": "bit 15（整个位域）",
+          "descEn": "I2C Master Mode Selection",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Clock Control Register in Fast/Standard mode (Master mode)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2C_CCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 I2C_TypeDef.CCR，偏移 0x1C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = I2C1->CCR;  /* 读回当前值 */\nv &= ~I2C_CCR_CCR_Msk;  /* 先清掉 I2C_CCR_CCR：bits[11:0]（整个位域） */\nv |= (1u << I2C_CCR_CCR_Pos) & I2C_CCR_CCR_Msk;  /* 置位，实际取值看参考手册 */\nI2C1->CCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9405,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_I2C_CR1",
+      "name": "I2C_CR1",
+      "peripheral": "I2C",
+      "library": "reg",
+      "sectionId": "I2C@reg#sec3",
+      "prototype": "I2C1->CR1",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2C_CR1_PE",
+          "type": "bit 0（整个位域）",
+          "descEn": "Peripheral Enable",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CR1_SMBUS",
+          "type": "bit 1（整个位域）",
+          "descEn": "SMBus Mode",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CR1_SMBTYPE",
+          "type": "bit 3（整个位域）",
+          "descEn": "SMBus Type",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CR1_ENARP",
+          "type": "bit 4（整个位域）",
+          "descEn": "ARP Enable",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CR1_ENPEC",
+          "type": "bit 5（整个位域）",
+          "descEn": "PEC Enable",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CR1_ENGC",
+          "type": "bit 6（整个位域）",
+          "descEn": "General Call Enable",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CR1_NOSTRETCH",
+          "type": "bit 7（整个位域）",
+          "descEn": "Clock Stretching Disable (Slave mode)",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CR1_START",
+          "type": "bit 8（整个位域）",
+          "descEn": "Start Generation",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CR1_STOP",
+          "type": "bit 9（整个位域）",
+          "descEn": "Stop Generation",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CR1_ACK",
+          "type": "bit 10（整个位域）",
+          "descEn": "Acknowledge Enable",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CR1_POS",
+          "type": "bit 11（整个位域）",
+          "descEn": "Acknowledge/PEC Position (for data reception)",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CR1_ALERT",
+          "type": "bit 13（整个位域）",
+          "descEn": "SMBus Alert",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CR1_SWRST",
+          "type": "bit 15（整个位域）",
+          "descEn": "Software Reset",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Peripheral Enable",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2C_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 I2C_TypeDef.CR1，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = I2C1->CR1;  /* 读回当前值 */\nv &= ~I2C_CR1_PE_Msk;  /* 先清掉 I2C_CR1_PE：bit 0（整个位域） */\nv |= (1u << I2C_CR1_PE_Pos) & I2C_CR1_PE_Msk;  /* 置位，实际取值看参考手册 */\nI2C1->CR1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9212,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_I2C_CR2",
+      "name": "I2C_CR2",
+      "peripheral": "I2C",
+      "library": "reg",
+      "sectionId": "I2C@reg#sec3",
+      "prototype": "I2C1->CR2",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2C_CR2_FREQ",
+          "type": "bits[5:0]（整个位域）",
+          "descEn": "FREQ[5:0] bits (Peripheral Clock Frequency)",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CR2_ITERREN",
+          "type": "bit 8（整个位域）",
+          "descEn": "Error Interrupt Enable",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CR2_ITEVTEN",
+          "type": "bit 9（整个位域）",
+          "descEn": "Event Interrupt Enable",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CR2_ITBUFEN",
+          "type": "bit 10（整个位域）",
+          "descEn": "Buffer Interrupt Enable",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CR2_DMAEN",
+          "type": "bit 11（整个位域）",
+          "descEn": "DMA Requests Enable",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CR2_LAST",
+          "type": "bit 12（整个位域）",
+          "descEn": "DMA Last Transfer",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CR2_FREQ_0",
+          "type": "bit 0",
+          "descEn": "0x00000001",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CR2_FREQ_1",
+          "type": "bit 1",
+          "descEn": "0x00000002",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CR2_FREQ_2",
+          "type": "bit 2",
+          "descEn": "0x00000004",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CR2_FREQ_3",
+          "type": "bit 3",
+          "descEn": "0x00000008",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CR2_FREQ_4",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_CR2_FREQ_5",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "FREQ[5:0] bits (Peripheral Clock Frequency)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2C_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 I2C_TypeDef.CR2，偏移 0x04"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = I2C1->CR2;  /* 读回当前值 */\nv &= ~I2C_CR2_FREQ_Msk;  /* 先清掉 I2C_CR2_FREQ：bits[5:0]（整个位域） */\nv |= (1u << I2C_CR2_FREQ_Pos) & I2C_CR2_FREQ_Msk;  /* 置位，实际取值看参考手册 */\nI2C1->CR2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9256,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_I2C_DR",
+      "name": "I2C_DR",
+      "peripheral": "I2C",
+      "library": "reg",
+      "sectionId": "I2C@reg#sec2",
+      "prototype": "I2C1->DR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2C_DR_DR",
+          "type": "bits[7:0]（整个位域）",
+          "descEn": "8-bit Data Register",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "8-bit Data Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2C_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 I2C_TypeDef.DR，偏移 0x10"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = I2C1->DR;  /* 读回当前值 */\nv &= ~I2C_DR_DR_Msk;  /* 先清掉 I2C_DR_DR：bits[7:0]（整个位域） */\nv |= (1u << I2C_DR_DR_Pos) & I2C_DR_DR_Msk;  /* 置位，实际取值看参考手册 */\nI2C1->DR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9330,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_I2C_OAR1",
+      "name": "I2C_OAR1",
+      "peripheral": "I2C",
+      "library": "reg",
+      "sectionId": "I2C@reg#sec3",
+      "prototype": "I2C1->OAR1",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2C_OAR1_ADD0",
+          "type": "bit 0（整个位域）",
+          "descEn": "Bit 0",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_OAR1_ADD1",
+          "type": "bit 1（整个位域）",
+          "descEn": "Bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_OAR1_ADD2",
+          "type": "bit 2（整个位域）",
+          "descEn": "Bit 2",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_OAR1_ADD3",
+          "type": "bit 3（整个位域）",
+          "descEn": "Bit 3",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_OAR1_ADD4",
+          "type": "bit 4（整个位域）",
+          "descEn": "Bit 4",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_OAR1_ADD5",
+          "type": "bit 5（整个位域）",
+          "descEn": "Bit 5",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_OAR1_ADD6",
+          "type": "bit 6（整个位域）",
+          "descEn": "Bit 6",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_OAR1_ADD7",
+          "type": "bit 7（整个位域）",
+          "descEn": "Bit 7",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_OAR1_ADD8",
+          "type": "bit 8（整个位域）",
+          "descEn": "Bit 8",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_OAR1_ADD9",
+          "type": "bit 9（整个位域）",
+          "descEn": "Bit 9",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_OAR1_ADDMODE",
+          "type": "bit 15（整个位域）",
+          "descEn": "Addressing Mode (Slave mode)",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_OAR1_ADD1_7",
+          "type": "bits[14:8]",
+          "descEn": "Interface Address",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_OAR1_ADD8_9",
+          "type": "bits[18:17]",
+          "descEn": "Interface Address",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Bit 0",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2C_OAR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 I2C_TypeDef.OAR1，偏移 0x08"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = I2C1->OAR1;  /* 读回当前值 */\nv &= ~I2C_OAR1_ADD0_Msk;  /* 先清掉 I2C_OAR1_ADD0：bit 0（整个位域） */\nv |= (1u << I2C_OAR1_ADD0_Pos) & I2C_OAR1_ADD0_Msk;  /* 置位，实际取值看参考手册 */\nI2C1->OAR1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9286,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_I2C_OAR2",
+      "name": "I2C_OAR2",
+      "peripheral": "I2C",
+      "library": "reg",
+      "sectionId": "I2C@reg#sec3",
+      "prototype": "I2C1->OAR2",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2C_OAR2_ENDUAL",
+          "type": "bit 0（整个位域）",
+          "descEn": "Dual addressing mode enable",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_OAR2_ADD2",
+          "type": "bits[7:1]（整个位域）",
+          "descEn": "Interface address",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Dual addressing mode enable",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2C_OAR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 I2C_TypeDef.OAR2，偏移 0x0C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = I2C1->OAR2;  /* 读回当前值 */\nv &= ~I2C_OAR2_ENDUAL_Msk;  /* 先清掉 I2C_OAR2_ENDUAL：bit 0（整个位域） */\nv |= (1u << I2C_OAR2_ENDUAL_Pos) & I2C_OAR2_ENDUAL_Msk;  /* 置位，实际取值看参考手册 */\nI2C1->OAR2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9322,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_I2C_SR1",
+      "name": "I2C_SR1",
+      "peripheral": "I2C",
+      "library": "reg",
+      "sectionId": "I2C@reg#sec1",
+      "prototype": "I2C1->SR1",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2C_SR1_SB",
+          "type": "bit 0（整个位域）",
+          "descEn": "Start Bit (Master mode)",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_SR1_ADDR",
+          "type": "bit 1（整个位域）",
+          "descEn": "Address sent (master mode)/matched (slave mode)",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_SR1_BTF",
+          "type": "bit 2（整个位域）",
+          "descEn": "Byte Transfer Finished",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_SR1_ADD10",
+          "type": "bit 3（整个位域）",
+          "descEn": "10-bit header sent (Master mode)",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_SR1_STOPF",
+          "type": "bit 4（整个位域）",
+          "descEn": "Stop detection (Slave mode)",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_SR1_RXNE",
+          "type": "bit 6（整个位域）",
+          "descEn": "Data Register not Empty (receivers)",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_SR1_TXE",
+          "type": "bit 7（整个位域）",
+          "descEn": "Data Register Empty (transmitters)",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_SR1_BERR",
+          "type": "bit 8（整个位域）",
+          "descEn": "Bus Error",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_SR1_ARLO",
+          "type": "bit 9（整个位域）",
+          "descEn": "Arbitration Lost (master mode)",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_SR1_AF",
+          "type": "bit 10（整个位域）",
+          "descEn": "Acknowledge Failure",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_SR1_OVR",
+          "type": "bit 11（整个位域）",
+          "descEn": "Overrun/Underrun",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_SR1_PECERR",
+          "type": "bit 12（整个位域）",
+          "descEn": "PEC Error in reception",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_SR1_TIMEOUT",
+          "type": "bit 14（整个位域）",
+          "descEn": "Timeout or Tlow Error",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_SR1_SMBALERT",
+          "type": "bit 15（整个位域）",
+          "descEn": "SMBus Alert",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Start Bit (Master mode)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2C_SR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 I2C_TypeDef.SR1，偏移 0x14"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = I2C1->SR1;  /* 读回当前值 */\nv &= ~I2C_SR1_SB_Msk;  /* 先清掉 I2C_SR1_SB：bit 0（整个位域） */\nv |= (1u << I2C_SR1_SB_Pos) & I2C_SR1_SB_Msk;  /* 置位，实际取值看参考手册 */\nI2C1->SR1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9335,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_I2C_SR2",
+      "name": "I2C_SR2",
+      "peripheral": "I2C",
+      "library": "reg",
+      "sectionId": "I2C@reg#sec1",
+      "prototype": "I2C1->SR2",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2C_SR2_MSL",
+          "type": "bit 0（整个位域）",
+          "descEn": "Master/Slave",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_SR2_BUSY",
+          "type": "bit 1（整个位域）",
+          "descEn": "Bus Busy",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_SR2_TRA",
+          "type": "bit 2（整个位域）",
+          "descEn": "Transmitter/Receiver",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_SR2_GENCALL",
+          "type": "bit 4（整个位域）",
+          "descEn": "General Call Address (Slave mode)",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_SR2_SMBDEFAULT",
+          "type": "bit 5（整个位域）",
+          "descEn": "SMBus Device Default Address (Slave mode)",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_SR2_SMBHOST",
+          "type": "bit 6（整个位域）",
+          "descEn": "SMBus Host Header (Slave mode)",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_SR2_DUALF",
+          "type": "bit 7（整个位域）",
+          "descEn": "Dual Flag (Slave mode)",
+          "descZh": ""
+        },
+        {
+          "name": "I2C_SR2_PEC",
+          "type": "bits[15:8]（整个位域）",
+          "descEn": "Packet Error Checking Register",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Master/Slave",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2C_SR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 I2C_TypeDef.SR2，偏移 0x18"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = I2C1->SR2;  /* 读回当前值 */\nv &= ~I2C_SR2_MSL_Msk;  /* 先清掉 I2C_SR2_MSL：bit 0（整个位域） */\nv |= (1u << I2C_SR2_MSL_Pos) & I2C_SR2_MSL_Msk;  /* 置位，实际取值看参考手册 */\nI2C1->SR2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9379,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_I2C_TRISE",
+      "name": "I2C_TRISE",
+      "peripheral": "I2C",
+      "library": "reg",
+      "sectionId": "I2C@reg#sec3",
+      "prototype": "I2C1->TRISE",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2C_TRISE_TRISE",
+          "type": "bits[5:0]（整个位域）",
+          "descEn": "Maximum Rise Time in Fast/Standard mode (Master mode)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Maximum Rise Time in Fast/Standard mode (Master mode)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2C_TRISE"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 I2C_TypeDef.TRISE，偏移 0x20"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = I2C1->TRISE;  /* 读回当前值 */\nv &= ~I2C_TRISE_TRISE_Msk;  /* 先清掉 I2C_TRISE_TRISE：bits[5:0]（整个位域） */\nv |= (1u << I2C_TRISE_TRISE_Pos) & I2C_TRISE_TRISE_Msk;  /* 置位，实际取值看参考手册 */\nI2C1->TRISE = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9416,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    }
+  ]
+}

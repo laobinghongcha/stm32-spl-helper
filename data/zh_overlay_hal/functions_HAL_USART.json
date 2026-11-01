@@ -1,0 +1,914 @@
+{
+  "HAL_HalfDuplex_EnableReceiver": {
+    "briefZh": "半双工模式下把引脚切成接收方向（发送完切回）。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_HalfDuplex_EnableTransmitter": {
+    "briefZh": "半双工模式下把引脚切成发送方向（发送前切换）。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_HalfDuplex_Init": {
+    "briefZh": "把 UART 初始化成单线半双工模式（TX 与 RX 共用一个引脚），常用于单总线传感器与 485 收发器。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_IRDA_Abort": {
+    "briefZh": "中止正在进行的传输（阻塞式，等外设真正停下才返回）。",
+    "paramsZh": {
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_IRDA_AbortCpltCallback": {
+    "briefZh": "中止完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_IRDA_AbortReceive": {
+    "briefZh": "只中止接收方向，发送不受影响。",
+    "paramsZh": {
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_IRDA_AbortReceiveCpltCallback": {
+    "briefZh": "接收中止完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_IRDA_AbortReceive_IT": {
+    "briefZh": "以中断方式只中止接收方向。",
+    "paramsZh": {
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_IRDA_AbortTransmit": {
+    "briefZh": "只中止发送方向，接收不受影响。",
+    "paramsZh": {
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_IRDA_AbortTransmitCpltCallback": {
+    "briefZh": "发送中止完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_IRDA_AbortTransmit_IT": {
+    "briefZh": "以中断方式只中止发送方向。",
+    "paramsZh": {
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_IRDA_Abort_IT": {
+    "briefZh": "以中断方式中止传输，中止完成后回调 AbortCpltCallback。",
+    "paramsZh": {
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_IRDA_DMAPause": {
+    "briefZh": "暂停 DMA 传输（保留当前进度，可 Resume 继续）。",
+    "paramsZh": {
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_IRDA_DMAResume": {
+    "briefZh": "恢复之前暂停的 DMA 传输。",
+    "paramsZh": {
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_IRDA_DMAStop": {
+    "briefZh": "终止 DMA 传输并清理状态。",
+    "paramsZh": {
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_IRDA_DeInit": {
+    "briefZh": "把 IrDA 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+    "paramsZh": {
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_IRDA_ErrorCallback": {
+    "briefZh": "错误回调（__weak 空实现，需自己重写）。溢出、噪声、帧错误等异常会走到这里。",
+    "paramsZh": {
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_IRDA_GetError": {
+    "briefZh": "读取 IrDA 累计的错误码位掩码。",
+    "paramsZh": {
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_IRDA_GetState": {
+    "briefZh": "读取 IrDA 的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+    "paramsZh": {
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_IRDA_IRQHandler": {
+    "briefZh": "IrDA 的中断统一入口。在 stm32f1xx_it.c 的对应 IRQHandler 里调用，内部会清标志并分派到各回调。",
+    "paramsZh": {
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_IRDA_Init": {
+    "briefZh": "按 InitTypeDef 中的参数初始化 IrDA，并完成状态机初始化。",
+    "paramsZh": {
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_IRDA_MspDeInit": {
+    "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+    "paramsZh": {
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_IRDA_MspInit": {
+    "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+    "paramsZh": {
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_IRDA_Receive": {
+    "briefZh": "以阻塞方式接收一批数据。函数返回时已收满指定长度（或超时）。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_IRDA_Receive_DMA": {
+    "briefZh": "以 DMA 方式接收一批数据，非阻塞。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_IRDA_Receive_IT": {
+    "briefZh": "以中断方式接收一批数据，非阻塞。收满后进 RxCpltCallback，注意中断方式收满后会停，需要在回调里再次调用。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_IRDA_RegisterCallback": {
+    "briefZh": "为 IrDA 注册指定事件的回调，替代默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。",
+      "pCallback": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+    }
+  },
+  "HAL_IRDA_RxCpltCallback": {
+    "briefZh": "接收完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_IRDA_RxHalfCpltCallback": {
+    "briefZh": "接收过半回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_IRDA_Transmit": {
+    "briefZh": "以阻塞方式发送一批数据。函数返回时数据已全部发出（或超时）。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_IRDA_Transmit_DMA": {
+    "briefZh": "以 DMA 方式发送一批数据，非阻塞。发送完成进 TxCpltCallback。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_IRDA_Transmit_IT": {
+    "briefZh": "以中断方式发送一批数据，非阻塞。发送完成进 TxCpltCallback。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_IRDA_TxCpltCallback": {
+    "briefZh": "发送完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_IRDA_TxHalfCpltCallback": {
+    "briefZh": "发送过半回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_IRDA_UnRegisterCallback": {
+    "briefZh": "注销 IrDA 已注册的回调，恢复成默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "hirda": "IrDA 句柄指针（Instance 复用 USART 外设，但配置不同）。"
+    }
+  },
+  "HAL_LIN_Init": {
+    "briefZh": "把 UART 初始化成 LIN 模式（主/从机，带断路检测长度设置）。",
+    "paramsZh": {
+      "BreakDetectLength": "LIN 模式下的断路检测长度：10 位或 11 位。",
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_LIN_SendBreak": {
+    "briefZh": "在 LIN 模式下发送一个断路（Break）字符，作为帧同步头。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_MultiProcessor_EnterMuteMode": {
+    "briefZh": "进入静默模式：只接收地址帧，数据帧被硬件忽略。多处理器总线上从机平时都在这个状态。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_MultiProcessor_ExitMuteMode": {
+    "briefZh": "退出静默模式，开始接收完整数据帧。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_MultiProcessor_Init": {
+    "briefZh": "把 UART 初始化成多处理器模式（一对多总线：从机靠地址帧唤醒，用于 RS485 一主多从）。",
+    "paramsZh": {
+      "Address": "多处理器模式下本机/目标的节点地址（0~255）。",
+      "WakeUpMethod": "多处理器模式的唤醒方式：地址位唤醒（UART_WAKEUPMETHOD_ADDRESSBIT）或空闲线路唤醒。",
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_SMARTCARD_Abort": {
+    "briefZh": "中止正在进行的传输（阻塞式，等外设真正停下才返回）。",
+    "paramsZh": {
+      "hsc": "智能卡句柄指针。"
+    }
+  },
+  "HAL_SMARTCARD_AbortCpltCallback": {
+    "briefZh": "中止完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hsc": "智能卡句柄指针。"
+    }
+  },
+  "HAL_SMARTCARD_AbortReceive": {
+    "briefZh": "只中止接收方向，发送不受影响。",
+    "paramsZh": {
+      "hsc": "智能卡句柄指针。"
+    }
+  },
+  "HAL_SMARTCARD_AbortReceiveCpltCallback": {
+    "briefZh": "接收中止完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hsc": "智能卡句柄指针。"
+    }
+  },
+  "HAL_SMARTCARD_AbortReceive_IT": {
+    "briefZh": "以中断方式只中止接收方向。",
+    "paramsZh": {
+      "hsc": "智能卡句柄指针。"
+    }
+  },
+  "HAL_SMARTCARD_AbortTransmit": {
+    "briefZh": "只中止发送方向，接收不受影响。",
+    "paramsZh": {
+      "hsc": "智能卡句柄指针。"
+    }
+  },
+  "HAL_SMARTCARD_AbortTransmitCpltCallback": {
+    "briefZh": "发送中止完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hsc": "智能卡句柄指针。"
+    }
+  },
+  "HAL_SMARTCARD_AbortTransmit_IT": {
+    "briefZh": "以中断方式只中止发送方向。",
+    "paramsZh": {
+      "hsc": "智能卡句柄指针。"
+    }
+  },
+  "HAL_SMARTCARD_Abort_IT": {
+    "briefZh": "以中断方式中止传输，中止完成后回调 AbortCpltCallback。",
+    "paramsZh": {
+      "hsc": "智能卡句柄指针。"
+    }
+  },
+  "HAL_SMARTCARD_DeInit": {
+    "briefZh": "把智能卡的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+    "paramsZh": {
+      "hsc": "智能卡句柄指针。"
+    }
+  },
+  "HAL_SMARTCARD_ErrorCallback": {
+    "briefZh": "错误回调（__weak 空实现，需自己重写）。溢出、噪声、帧错误等异常会走到这里。",
+    "paramsZh": {
+      "hsc": "智能卡句柄指针。"
+    }
+  },
+  "HAL_SMARTCARD_GetError": {
+    "briefZh": "读取智能卡累计的错误码位掩码。",
+    "paramsZh": {
+      "hsc": "智能卡句柄指针。"
+    }
+  },
+  "HAL_SMARTCARD_GetState": {
+    "briefZh": "读取智能卡的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+    "paramsZh": {
+      "hsc": "智能卡句柄指针。"
+    }
+  },
+  "HAL_SMARTCARD_IRQHandler": {
+    "briefZh": "智能卡的中断统一入口。在 stm32f1xx_it.c 的对应 IRQHandler 里调用，内部会清标志并分派到各回调。",
+    "paramsZh": {
+      "hsc": "智能卡句柄指针。"
+    }
+  },
+  "HAL_SMARTCARD_Init": {
+    "briefZh": "按 InitTypeDef 中的参数初始化智能卡，并完成状态机初始化。",
+    "paramsZh": {
+      "hsc": "智能卡句柄指针。"
+    }
+  },
+  "HAL_SMARTCARD_MspDeInit": {
+    "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+    "paramsZh": {
+      "hsc": "智能卡句柄指针。"
+    }
+  },
+  "HAL_SMARTCARD_MspInit": {
+    "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+    "paramsZh": {
+      "hsc": "智能卡句柄指针。"
+    }
+  },
+  "HAL_SMARTCARD_Receive": {
+    "briefZh": "以阻塞方式接收一批数据。函数返回时已收满指定长度（或超时）。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hsc": "智能卡句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_SMARTCARD_Receive_DMA": {
+    "briefZh": "以 DMA 方式接收一批数据，非阻塞。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hsc": "智能卡句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_SMARTCARD_Receive_IT": {
+    "briefZh": "以中断方式接收一批数据，非阻塞。收满后进 RxCpltCallback，注意中断方式收满后会停，需要在回调里再次调用。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hsc": "智能卡句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_SMARTCARD_RegisterCallback": {
+    "briefZh": "为智能卡注册指定事件的回调，替代默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "hsc": "智能卡句柄指针。",
+      "pCallback": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+    }
+  },
+  "HAL_SMARTCARD_RxCpltCallback": {
+    "briefZh": "接收完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hsc": "智能卡句柄指针。"
+    }
+  },
+  "HAL_SMARTCARD_Transmit": {
+    "briefZh": "以阻塞方式发送一批数据。函数返回时数据已全部发出（或超时）。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hsc": "智能卡句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_SMARTCARD_Transmit_DMA": {
+    "briefZh": "以 DMA 方式发送一批数据，非阻塞。发送完成进 TxCpltCallback。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hsc": "智能卡句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_SMARTCARD_Transmit_IT": {
+    "briefZh": "以中断方式发送一批数据，非阻塞。发送完成进 TxCpltCallback。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hsc": "智能卡句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_SMARTCARD_TxCpltCallback": {
+    "briefZh": "发送完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hsc": "智能卡句柄指针。"
+    }
+  },
+  "HAL_SMARTCARD_UnRegisterCallback": {
+    "briefZh": "注销智能卡已注册的回调，恢复成默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "hsc": "智能卡句柄指针。"
+    }
+  },
+  "HAL_UARTEx_GetRxEventType": {
+    "briefZh": "读取本次接收事件的类型：收到数据 / 检测到空闲 / 出错。回调里据此区分处理。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UARTEx_ReceiveToIdle": {
+    "briefZh": "以阻塞方式接收数据，直到总线空闲或收满指定长度，通过 RxLen 返回实际收到的字节数。适合不定长协议帧。",
+    "paramsZh": {
+      "RxLen": "输出参数，返回本帧实际收到的字节数（用于不定长接收）。",
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_UARTEx_ReceiveToIdle_DMA": {
+    "briefZh": "以 DMA 方式接收直到总线空闲，CPU 全程不参与。配合 HAL_UARTEx_RxEventCallback 处理每一帧。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    },
+    "exampleCode": "/* 不定长接收：DMA + 空闲中断，最省心的写法 */\nuint8_t rx_buf[128];\n\nHAL_UARTEx_ReceiveToIdle_DMA(&huart1, rx_buf, sizeof(rx_buf));\n\nvoid HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)\n{\n  if (huart->Instance == USART1)\n  {\n    /* Size 是本帧实际收到的字节数 */\n    Handle_Frame(rx_buf, Size);\n    HAL_UARTEx_ReceiveToIdle_DMA(&huart1, rx_buf, sizeof(rx_buf));\n  }\n}"
+  },
+  "HAL_UARTEx_ReceiveToIdle_IT": {
+    "briefZh": "以中断方式接收直到总线空闲，收到长度不定的一帧就把 Size 参数更新为实际字节数并进 RxEventCallback。这是解析不定长串口帧最省心的写法。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_UARTEx_RxEventCallback": {
+    "briefZh": "接收事件回调（__weak 空实现，需自己重写）。收到数据、检测到空闲或出错时都会进来，用 HAL_UARTEx_GetRxEventType 判断类型。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_Abort": {
+    "briefZh": "中止正在进行的传输（阻塞式，等外设真正停下才返回）。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_AbortCpltCallback": {
+    "briefZh": "中止完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_AbortReceive": {
+    "briefZh": "只中止接收方向，发送不受影响。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_AbortReceiveCpltCallback": {
+    "briefZh": "接收中止完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_AbortReceive_IT": {
+    "briefZh": "以中断方式只中止接收方向。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_AbortTransmit": {
+    "briefZh": "只中止发送方向，接收不受影响。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_AbortTransmitCpltCallback": {
+    "briefZh": "发送中止完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_AbortTransmit_IT": {
+    "briefZh": "以中断方式只中止发送方向。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_Abort_IT": {
+    "briefZh": "以中断方式中止传输，中止完成后回调 AbortCpltCallback。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_DMAPause": {
+    "briefZh": "暂停 DMA 传输（保留当前进度，可 Resume 继续）。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_DMAResume": {
+    "briefZh": "恢复之前暂停的 DMA 传输。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_DMAStop": {
+    "briefZh": "终止 DMA 传输并清理状态。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_DeInit": {
+    "briefZh": "把 UART 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_ErrorCallback": {
+    "briefZh": "错误回调（__weak 空实现，需自己重写）。溢出、噪声、帧错误等异常会走到这里。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_GetError": {
+    "briefZh": "读取 UART 累计的错误码位掩码。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_GetState": {
+    "briefZh": "读取 UART 的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_IRQHandler": {
+    "briefZh": "UART 的中断统一入口。在 stm32f1xx_it.c 的对应 IRQHandler 里调用，内部会清标志并分派到各回调。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_Init": {
+    "briefZh": "按 InitTypeDef 中的参数初始化 UART，并完成状态机初始化。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    },
+    "exampleCode": "/* 115200 8N1，收发双向 */\nUART_HandleTypeDef huart1;\n\nhuart1.Instance          = USART1;\nhuart1.Init.BaudRate     = 115200;\nhuart1.Init.WordLength   = UART_WORDLENGTH_8B;\nhuart1.Init.StopBits     = UART_STOPBITS_1;\nhuart1.Init.Parity       = UART_PARITY_NONE;\nhuart1.Init.Mode         = UART_MODE_TX_RX;\nhuart1.Init.HwFlowCtl    = UART_HWCONTROL_NONE;\nhuart1.Init.OverSampling = UART_OVERSAMPLING_16;\nif (HAL_UART_Init(&huart1) != HAL_OK)\n{\n  Error_Handler();\n}"
+  },
+  "HAL_UART_MspDeInit": {
+    "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_MspInit": {
+    "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_Receive": {
+    "briefZh": "以阻塞方式接收一批数据。函数返回时已收满指定长度（或超时）。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_UART_Receive_DMA": {
+    "briefZh": "以 DMA 方式接收一批数据，非阻塞。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_UART_Receive_IT": {
+    "briefZh": "以中断方式接收一批数据，非阻塞。收满后进 RxCpltCallback，注意中断方式收满后会停，需要在回调里再次调用。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    },
+    "exampleCode": "uint8_t rx_byte;\n\n/* 开一次接收中断（收满 1 字节触发回调） */\nHAL_UART_Receive_IT(&huart1, &rx_byte, 1);\n\n/* 回调里必须再次调用，否则只能收到第一字节 */\nvoid HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)\n{\n  if (huart->Instance == USART1)\n  {\n    /* 处理 rx_byte */\n    HAL_UART_Receive_IT(&huart1, &rx_byte, 1);\n  }\n}"
+  },
+  "HAL_UART_RegisterCallback": {
+    "briefZh": "为 UART 注册指定事件的回调，替代默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。",
+      "pCallback": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+    }
+  },
+  "HAL_UART_RegisterRxEventCallback": {
+    "briefZh": "注册接收事件回调（区别于普通的接收完成回调，用于空闲中断等场景）。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。",
+      "pCallback": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+    }
+  },
+  "HAL_UART_RxCpltCallback": {
+    "briefZh": "接收完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_RxHalfCpltCallback": {
+    "briefZh": "接收过半回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_Transmit": {
+    "briefZh": "以阻塞方式发送一批数据。函数返回时数据已全部发出（或超时）。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    },
+    "exampleCode": "uint8_t msg[] = \"Hello STM32\\r\\n\";\n\n/* 阻塞发送：函数返回时数据已全部写入发送寄存器 */\nHAL_UART_Transmit(&huart1, msg, sizeof(msg) - 1, HAL_MAX_DELAY);\n\n/* 注意 Size 是字节数，不含结尾的 '\\0'，所以减 1 */"
+  },
+  "HAL_UART_Transmit_DMA": {
+    "briefZh": "以 DMA 方式发送一批数据，非阻塞。发送完成进 TxCpltCallback。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_UART_Transmit_IT": {
+    "briefZh": "以中断方式发送一批数据，非阻塞。发送完成进 TxCpltCallback。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    },
+    "exampleCode": "uint8_t buf[] = \"IT mode\\r\\n\";\n\n/* 非阻塞：函数立刻返回，发完进 TxCpltCallback */\nHAL_UART_Transmit_IT(&huart1, buf, sizeof(buf) - 1);\n\nvoid HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)\n{\n  /* 发送完成，可以启动下一批 */\n}"
+  },
+  "HAL_UART_TxCpltCallback": {
+    "briefZh": "发送完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_TxHalfCpltCallback": {
+    "briefZh": "发送过半回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_UnRegisterCallback": {
+    "briefZh": "注销 UART 已注册的回调，恢复成默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_UART_UnRegisterRxEventCallback": {
+    "briefZh": "注销接收事件回调，恢复默认行为。",
+    "paramsZh": {
+      "huart": "UART 句柄指针。它的 Instance 指向 USART1/2/3，Init 子结构里是波特率等参数。"
+    }
+  },
+  "HAL_USART_Abort": {
+    "briefZh": "中止正在进行的传输（阻塞式，等外设真正停下才返回）。",
+    "paramsZh": {
+      "husart": "USART 句柄指针（同步模式使用）。"
+    }
+  },
+  "HAL_USART_AbortCpltCallback": {
+    "briefZh": "中止完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "husart": "USART 句柄指针（同步模式使用）。"
+    }
+  },
+  "HAL_USART_Abort_IT": {
+    "briefZh": "以中断方式中止传输，中止完成后回调 AbortCpltCallback。",
+    "paramsZh": {
+      "husart": "USART 句柄指针（同步模式使用）。"
+    }
+  },
+  "HAL_USART_DMAPause": {
+    "briefZh": "暂停 DMA 传输（保留当前进度，可 Resume 继续）。",
+    "paramsZh": {
+      "husart": "USART 句柄指针（同步模式使用）。"
+    }
+  },
+  "HAL_USART_DMAResume": {
+    "briefZh": "恢复之前暂停的 DMA 传输。",
+    "paramsZh": {
+      "husart": "USART 句柄指针（同步模式使用）。"
+    }
+  },
+  "HAL_USART_DMAStop": {
+    "briefZh": "终止 DMA 传输并清理状态。",
+    "paramsZh": {
+      "husart": "USART 句柄指针（同步模式使用）。"
+    }
+  },
+  "HAL_USART_DeInit": {
+    "briefZh": "把 USART 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+    "paramsZh": {
+      "husart": "USART 句柄指针（同步模式使用）。"
+    }
+  },
+  "HAL_USART_ErrorCallback": {
+    "briefZh": "错误回调（__weak 空实现，需自己重写）。溢出、噪声、帧错误等异常会走到这里。",
+    "paramsZh": {
+      "husart": "USART 句柄指针（同步模式使用）。"
+    }
+  },
+  "HAL_USART_GetError": {
+    "briefZh": "读取 USART 累计的错误码位掩码。",
+    "paramsZh": {
+      "husart": "USART 句柄指针（同步模式使用）。"
+    }
+  },
+  "HAL_USART_GetState": {
+    "briefZh": "读取 USART 的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+    "paramsZh": {
+      "husart": "USART 句柄指针（同步模式使用）。"
+    }
+  },
+  "HAL_USART_IRQHandler": {
+    "briefZh": "USART 的中断统一入口。在 stm32f1xx_it.c 的对应 IRQHandler 里调用，内部会清标志并分派到各回调。",
+    "paramsZh": {
+      "husart": "USART 句柄指针（同步模式使用）。"
+    }
+  },
+  "HAL_USART_Init": {
+    "briefZh": "按 InitTypeDef 中的参数初始化 USART，并完成状态机初始化。",
+    "paramsZh": {
+      "husart": "USART 句柄指针（同步模式使用）。"
+    }
+  },
+  "HAL_USART_MspDeInit": {
+    "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+    "paramsZh": {
+      "husart": "USART 句柄指针（同步模式使用）。"
+    }
+  },
+  "HAL_USART_MspInit": {
+    "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+    "paramsZh": {
+      "husart": "USART 句柄指针（同步模式使用）。"
+    }
+  },
+  "HAL_USART_Receive": {
+    "briefZh": "以阻塞方式接收一批数据。函数返回时已收满指定长度（或超时）。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "husart": "USART 句柄指针（同步模式使用）。",
+      "pRxData": "接收缓冲区指针，长度由 Size 指定。中断方式收满后要在回调里重新调用接收函数才能继续。"
+    }
+  },
+  "HAL_USART_Receive_DMA": {
+    "briefZh": "以 DMA 方式接收一批数据，非阻塞。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "husart": "USART 句柄指针（同步模式使用）。",
+      "pRxData": "接收缓冲区指针，长度由 Size 指定。中断方式收满后要在回调里重新调用接收函数才能继续。"
+    }
+  },
+  "HAL_USART_Receive_IT": {
+    "briefZh": "以中断方式接收一批数据，非阻塞。收满后进 RxCpltCallback，注意中断方式收满后会停，需要在回调里再次调用。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "husart": "USART 句柄指针（同步模式使用）。",
+      "pRxData": "接收缓冲区指针，长度由 Size 指定。中断方式收满后要在回调里重新调用接收函数才能继续。"
+    }
+  },
+  "HAL_USART_RegisterCallback": {
+    "briefZh": "为 USART 注册指定事件的回调，替代默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "husart": "USART 句柄指针（同步模式使用）。",
+      "pCallback": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+    }
+  },
+  "HAL_USART_RxCpltCallback": {
+    "briefZh": "接收完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "husart": "USART 句柄指针（同步模式使用）。"
+    }
+  },
+  "HAL_USART_RxHalfCpltCallback": {
+    "briefZh": "接收过半回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "husart": "USART 句柄指针（同步模式使用）。"
+    }
+  },
+  "HAL_USART_Transmit": {
+    "briefZh": "以阻塞方式发送一批数据。函数返回时数据已全部发出（或超时）。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "husart": "USART 句柄指针（同步模式使用）。",
+      "pTxData": "发送缓冲区指针，传输期间不能被改写。"
+    }
+  },
+  "HAL_USART_TransmitReceive": {
+    "briefZh": "以阻塞方式同时收发（全双工）。发的同时就在收，适合读写 SPI 从机寄存器。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "husart": "USART 句柄指针（同步模式使用）。",
+      "pRxData": "接收缓冲区指针，长度由 Size 指定。中断方式收满后要在回调里重新调用接收函数才能继续。",
+      "pTxData": "发送缓冲区指针，传输期间不能被改写。"
+    }
+  },
+  "HAL_USART_TransmitReceive_DMA": {
+    "briefZh": "以 DMA 方式同时收发，非阻塞。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "husart": "USART 句柄指针（同步模式使用）。",
+      "pRxData": "接收缓冲区指针，长度由 Size 指定。中断方式收满后要在回调里重新调用接收函数才能继续。",
+      "pTxData": "发送缓冲区指针，传输期间不能被改写。"
+    }
+  },
+  "HAL_USART_TransmitReceive_IT": {
+    "briefZh": "以中断方式同时收发，非阻塞。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "husart": "USART 句柄指针（同步模式使用）。",
+      "pRxData": "接收缓冲区指针，长度由 Size 指定。中断方式收满后要在回调里重新调用接收函数才能继续。",
+      "pTxData": "发送缓冲区指针，传输期间不能被改写。"
+    }
+  },
+  "HAL_USART_Transmit_DMA": {
+    "briefZh": "以 DMA 方式发送一批数据，非阻塞。发送完成进 TxCpltCallback。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "husart": "USART 句柄指针（同步模式使用）。",
+      "pTxData": "发送缓冲区指针，传输期间不能被改写。"
+    }
+  },
+  "HAL_USART_Transmit_IT": {
+    "briefZh": "以中断方式发送一批数据，非阻塞。发送完成进 TxCpltCallback。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "husart": "USART 句柄指针（同步模式使用）。",
+      "pTxData": "发送缓冲区指针，传输期间不能被改写。"
+    }
+  },
+  "HAL_USART_TxCpltCallback": {
+    "briefZh": "发送完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "husart": "USART 句柄指针（同步模式使用）。"
+    }
+  },
+  "HAL_USART_TxHalfCpltCallback": {
+    "briefZh": "发送过半回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "husart": "USART 句柄指针（同步模式使用）。"
+    }
+  },
+  "HAL_USART_TxRxCpltCallback": {
+    "briefZh": "收发同时完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "husart": "USART 句柄指针（同步模式使用）。"
+    }
+  },
+  "HAL_USART_UnRegisterCallback": {
+    "briefZh": "注销 USART 已注册的回调，恢复成默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "husart": "USART 句柄指针（同步模式使用）。"
+    }
+  }
+}

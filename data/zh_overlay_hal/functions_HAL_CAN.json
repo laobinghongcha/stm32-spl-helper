@@ -1,0 +1,246 @@
+{
+  "HAL_CAN_AbortTxRequest": {
+    "briefZh": "请求中止某个发送邮箱里待发的报文。",
+    "paramsZh": {
+      "TxMailboxes": "发送邮箱位掩码：CAN_TX_MAILBOX0 | CAN_TX_MAILBOX1 | CAN_TX_MAILBOX2。",
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_ActivateNotification": {
+    "briefZh": "使能指定的 CAN 通知（发送完成 / 接收挂起 / 错误等），对应回调才会被调用。",
+    "paramsZh": {
+      "ActiveITs": "要启用的通知位掩码，如 CAN_IT_RX_FIFO0_MSG_PENDING | CAN_IT_TX_MAILBOX_EMPTY。",
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_AddTxMessage": {
+    "briefZh": "把一个报文放进发送邮箱，由硬件自动仲裁发送。",
+    "paramsZh": {
+      "aData": "数据数组指针。CAN 每帧最多 8 字节（标准帧）。",
+      "hcan": "CAN 句柄指针。",
+      "pHeader": "报文头结构体：StdId/ExtId（标识符）、IDE（标准帧/扩展帧）、RTR（数据帧/远程帧）、DLC（数据长度 0~8）。",
+      "pTxMailbox": "输出参数，返回本次使用的发送邮箱编号（0~2）。"
+    }
+  },
+  "HAL_CAN_ConfigFilter": {
+    "briefZh": "配置接收过滤器。不配置过滤器时所有报文都会被丢弃——这是 CAN 收不到数据的头号原因。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。",
+      "sFilterConfig": "过滤器配置结构体：FilterBank、FilterMode（掩码/列表）、FilterScale、FilterIdHigh/Low、FilterMaskIdHigh/Low、FilterFIFOAssignment、FilterActivation。"
+    }
+  },
+  "HAL_CAN_DeInit": {
+    "briefZh": "把 CAN 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_DeactivateNotification": {
+    "briefZh": "关闭指定的 CAN 通知。",
+    "paramsZh": {
+      "InactiveITs": "要关闭的通知位掩码。",
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_ErrorCallback": {
+    "briefZh": "错误回调（__weak 空实现，需自己重写）。溢出、噪声、帧错误等异常会走到这里。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_GetError": {
+    "briefZh": "读取 CAN 累计的错误码位掩码。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_GetRxFifoFillLevel": {
+    "briefZh": "读取接收 FIFO 中待处理报文的个数。",
+    "paramsZh": {
+      "RxFifo": "接收 FIFO 编号：CAN_RX_FIFO0 或 CAN_RX_FIFO1。",
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_GetRxMessage": {
+    "briefZh": "从接收 FIFO 取出一个报文。",
+    "paramsZh": {
+      "RxFifo": "接收 FIFO 编号：CAN_RX_FIFO0 或 CAN_RX_FIFO1。",
+      "aData": "数据数组指针。CAN 每帧最多 8 字节（标准帧）。",
+      "hcan": "CAN 句柄指针。",
+      "pHeader": "报文头结构体：StdId/ExtId（标识符）、IDE（标准帧/扩展帧）、RTR（数据帧/远程帧）、DLC（数据长度 0~8）。"
+    }
+  },
+  "HAL_CAN_GetState": {
+    "briefZh": "读取 CAN 的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_GetTxMailboxesFreeLevel": {
+    "briefZh": "读取还有几个发送邮箱空闲。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_GetTxTimestamp": {
+    "briefZh": "读取某个发送邮箱的发送时间戳。",
+    "paramsZh": {
+      "TxMailbox": "发送邮箱编号（CAN_TX_MAILBOX0 ~ 2）。",
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_IRQHandler": {
+    "briefZh": "CAN 的中断统一入口。在 stm32f1xx_it.c 的对应 IRQHandler 里调用，内部会清标志并分派到各回调。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_Init": {
+    "briefZh": "按 InitTypeDef 中的参数初始化 CAN，并完成状态机初始化。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_IsSleepActive": {
+    "briefZh": "查询 CAN 是否已进入睡眠状态。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_IsTxMessagePending": {
+    "briefZh": "查询指定发送邮箱里的报文是否还没发出去。",
+    "paramsZh": {
+      "TxMailboxes": "发送邮箱位掩码：CAN_TX_MAILBOX0 | CAN_TX_MAILBOX1 | CAN_TX_MAILBOX2。",
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_MspDeInit": {
+    "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_MspInit": {
+    "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_RegisterCallback": {
+    "briefZh": "为 CAN 注册指定事件的回调，替代默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "hcan": "CAN 句柄指针。",
+      "pCallback": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+    }
+  },
+  "HAL_CAN_RequestSleep": {
+    "briefZh": "请求进入睡眠模式（总线空闲后生效）。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_ResetError": {
+    "briefZh": "清除错误码与错误计数器状态。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_RxFifo0FullCallback": {
+    "briefZh": "FIFO0 满回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_RxFifo0MsgPendingCallback": {
+    "briefZh": "FIFO0 收到新报文回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_RxFifo1FullCallback": {
+    "briefZh": "FIFO1 满回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_RxFifo1MsgPendingCallback": {
+    "briefZh": "FIFO1 收到新报文回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_SleepCallback": {
+    "briefZh": "进入睡眠回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_Start": {
+    "briefZh": "启动 CAN。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_Stop": {
+    "briefZh": "停止 CAN。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_TxMailbox0AbortCallback": {
+    "briefZh": "发送邮箱 0 中止回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_TxMailbox0CompleteCallback": {
+    "briefZh": "发送邮箱 0 完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_TxMailbox1AbortCallback": {
+    "briefZh": "发送邮箱 1 中止回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_TxMailbox1CompleteCallback": {
+    "briefZh": "发送邮箱 1 完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_TxMailbox2AbortCallback": {
+    "briefZh": "发送邮箱 2 中止回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_TxMailbox2CompleteCallback": {
+    "briefZh": "发送邮箱 2 完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_UnRegisterCallback": {
+    "briefZh": "注销 CAN 已注册的回调，恢复成默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_WakeUp": {
+    "briefZh": "请求从睡眠模式唤醒。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  },
+  "HAL_CAN_WakeUpFromRxMsgCallback": {
+    "briefZh": "收到报文唤醒回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hcan": "CAN 句柄指针。"
+    }
+  }
+}

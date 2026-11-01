@@ -1,0 +1,88 @@
+{
+  "HAL_FLASHEx_Erase": {
+    "briefZh": "擦除指定页/扇区。擦除的最小单位是整页，会丢掉该页原有数据。",
+    "paramsZh": {
+      "PageError": "输出参数，擦除失败时返回出错的页码；传 0xFFFFFFFF 表示全部成功。",
+      "pEraseInit": "擦除配置结构体：TypeErase（页擦除/整片擦除）、PageAddress（起始页地址）、NbPages（页数）。"
+    },
+    "exampleCode": "uint32_t page_error = 0;\nFLASH_EraseInitTypeDef erase = {0};\n\nerase.TypeErase   = FLASH_TYPEERASE_PAGES;\nerase.PageAddress = 0x0801F000;   /* 目标页起始地址 */\nerase.NbPages     = 1;\n\nif (HAL_FLASHEx_Erase(&erase, &page_error) != HAL_OK)\n{\n  /* page_error 是出错的页号，0xFFFFFFFF 表示全部成功 */\n}"
+  },
+  "HAL_FLASHEx_Erase_IT": {
+    "briefZh": "以中断方式擦除，擦完后进 EndOfOperationCallback。",
+    "paramsZh": {
+      "pEraseInit": "擦除配置结构体：TypeErase（页擦除/整片擦除）、PageAddress（起始页地址）、NbPages（页数）。"
+    }
+  },
+  "HAL_FLASHEx_OBErase": {
+    "briefZh": "擦除选项字节。"
+  },
+  "HAL_FLASHEx_OBGetConfig": {
+    "briefZh": "读取当前选项字节配置。",
+    "paramsZh": {
+      "pOBInit": "选项字节配置结构体：OptionType（要改哪一项）、WRPState、RDPLevel、USERConfig 等。"
+    }
+  },
+  "HAL_FLASHEx_OBGetUserData": {
+    "briefZh": "读取选项字节里的用户数据区（4 字节自由使用）。",
+    "paramsZh": {
+      "DATAAdress": "目标地址。"
+    }
+  },
+  "HAL_FLASHEx_OBProgram": {
+    "briefZh": "编程选项字节（读写保护、复位后启动方式、看门狗硬件使能等）。",
+    "paramsZh": {
+      "pOBInit": "选项字节配置结构体：OptionType（要改哪一项）、WRPState、RDPLevel、USERConfig 等。"
+    }
+  },
+  "HAL_FLASH_EndOfOperationCallback": {
+    "briefZh": "擦除/编程完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "ReturnValue": "输出参数，接收函数返回的状态。"
+    }
+  },
+  "HAL_FLASH_GetError": {
+    "briefZh": "读取 FLASH 累计的错误码位掩码。"
+  },
+  "HAL_FLASH_IRQHandler": {
+    "briefZh": "FLASH 的中断统一入口。在 stm32f1xx_it.c 的对应 IRQHandler 里调用，内部会清标志并分派到各回调。"
+  },
+  "HAL_FLASH_Lock": {
+    "briefZh": "重新锁定 FLASH 控制寄存器，防止误写。"
+  },
+  "HAL_FLASH_OB_Launch": {
+    "briefZh": "执行选项字节重装载。改完选项字节必须调它，会触发一次复位让新配置生效。"
+  },
+  "HAL_FLASH_OB_Lock": {
+    "briefZh": "锁定选项字节。"
+  },
+  "HAL_FLASH_OB_Unlock": {
+    "briefZh": "解锁选项字节（Option Bytes）。"
+  },
+  "HAL_FLASH_OperationErrorCallback": {
+    "briefZh": "擦除/编程失败回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "ReturnValue": "输出参数，接收函数返回的状态。"
+    }
+  },
+  "HAL_FLASH_Program": {
+    "briefZh": "按指定的编程宽度向目标地址写入数据。目标地址必须是已擦除状态（0xFFFF）。",
+    "paramsZh": {
+      "Address": "目标地址。必须按编程宽度对齐（半字 2 字节、字 4 字节），且该位置已擦除为 0xFFFF。",
+      "Data": "要写入的数据，宽度要与 TypeProgram 一致。",
+      "TypeProgram": "编程宽度：FLASH_TYPEPROGRAM_HALFWORD（16 位）或 FLASH_TYPEPROGRAM_WORD（32 位）。F1 不支持按字节编程。"
+    },
+    "exampleCode": "/* 写入前必须确保该地址已擦除（0xFFFF） */\nHAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD,   /* 32 位编程 */\n                  0x0801F000,\n                  0x12345678);"
+  },
+  "HAL_FLASH_Program_IT": {
+    "briefZh": "以中断方式编程 FLASH，写完后进 EndOfOperationCallback。",
+    "paramsZh": {
+      "Address": "目标地址。必须按编程宽度对齐（半字 2 字节、字 4 字节），且该位置已擦除为 0xFFFF。",
+      "Data": "要写入的数据，宽度要与 TypeProgram 一致。",
+      "TypeProgram": "编程宽度：FLASH_TYPEPROGRAM_HALFWORD（16 位）或 FLASH_TYPEPROGRAM_WORD（32 位）。F1 不支持按字节编程。"
+    }
+  },
+  "HAL_FLASH_Unlock": {
+    "briefZh": "解锁 FLASH 控制寄存器，之后才能擦除/编程。",
+    "exampleCode": "HAL_FLASH_Unlock();\n\n/* 擦除 + 写入（详见 HAL_FLASHEx_Erase / HAL_FLASH_Program） */\nuint32_t page_error = 0;\nFLASH_EraseInitTypeDef erase = {0};\nerase.TypeErase   = FLASH_TYPEERASE_PAGES;\nerase.PageAddress = 0x0801F000;\nerase.NbPages     = 1;\nHAL_FLASHEx_Erase(&erase, &page_error);\n\n/* F1 只支持半字或字编程 */\nHAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, 0x0801F000, 0x12345678);\n\nHAL_FLASH_Lock();"
+  }
+}

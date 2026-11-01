@@ -1,0 +1,17 @@
+{
+  "LL_GetFlashSize": {
+    "briefZh": "读取芯片 Flash 容量寄存器（单位 KB）。"
+  },
+  "LL_GetUID_Word0": {
+    "briefZh": "读取 96 位唯一 ID 的第 0 个 32 位字。"
+  },
+  "LL_GetUID_Word1": {
+    "briefZh": "读取 96 位唯一 ID 的第 1 个 32 位字。"
+  },
+  "LL_GetUID_Word2": {
+    "briefZh": "读取 96 位唯一 ID 的第 2 个 32 位字。"
+  },
+  "LL_InitTick": {
+    "briefZh": "用给定的主频与目标频率初始化 SysTick 重装载值（HAL 与 LL 混用时由 HAL_InitTick 调用）。"
+  }
+}

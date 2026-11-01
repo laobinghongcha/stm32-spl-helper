@@ -1,5 +1,6 @@
 import '../utils/json_parse.dart';
 import 'ai_reserved.dart';
+import 'library_kind.dart';
 
 /// 符号种类。
 ///
@@ -56,6 +57,9 @@ class SymbolItem {
 
   /// 所属外设 id，如 "GPIO"
   final String peripheral;
+
+  /// 所属库（v2 新增；v1 数据缺字段时按 spl 处理）
+  final LibraryKind library;
 
   /// 值：宏的替换体、枚举值的数值；结构体/typedef 为 null
   final String? value;
@@ -122,6 +126,7 @@ class SymbolItem {
     required this.name,
     required this.kind,
     required this.peripheral,
+    this.library = LibraryKind.spl,
     this.value,
     this.valueKind,
     this.enumType,
@@ -172,6 +177,8 @@ class SymbolItem {
         name: asString(json['name']),
         kind: SymbolKind.fromRaw(asString(json['kind'])),
         peripheral: asString(json['peripheral']),
+        library: LibraryKind.tryParse(asStringOrNull(json['library'])) ??
+            LibraryKind.spl,
         value: asStringOrNull(json['value']),
         valueKind: asStringOrNull(json['valueKind']),
         enumType: asStringOrNull(json['enumType']),
@@ -202,6 +209,7 @@ class SymbolItem {
         'name': name,
         'kind': kind.raw,
         'peripheral': peripheral,
+        'library': library.raw,
         'value': value,
         'valueKind': valueKind,
         'enumType': enumType,

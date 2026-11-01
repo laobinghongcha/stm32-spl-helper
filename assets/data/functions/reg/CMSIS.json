@@ -1,0 +1,5398 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "CMSIS",
+  "library": "reg",
+  "functions": [
+    {
+      "id": "REG_USB_ADDR0_RX",
+      "name": "USB_ADDR0_RX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_ADDR0_RX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_ADDR0_RX_ADDR0_RX",
+          "type": "bits[15:1]（整个位域）",
+          "descEn": "Reception Buffer Address 0",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Buffer Address 0",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_ADDR0_RX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_ADDR0_RX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5215,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_ADDR0_TX",
+      "name": "USB_ADDR0_TX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_ADDR0_TX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_ADDR0_TX_ADDR0_TX",
+          "type": "bits[15:1]（整个位域）",
+          "descEn": "Transmission Buffer Address 0",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Buffer Address 0",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_ADDR0_TX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_ADDR0_TX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5081,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_ADDR1_RX",
+      "name": "USB_ADDR1_RX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_ADDR1_RX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_ADDR1_RX_ADDR1_RX",
+          "type": "bits[15:1]（整个位域）",
+          "descEn": "Reception Buffer Address 1",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Buffer Address 1",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_ADDR1_RX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_ADDR1_RX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5220,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_ADDR1_TX",
+      "name": "USB_ADDR1_TX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_ADDR1_TX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_ADDR1_TX_ADDR1_TX",
+          "type": "bits[15:1]（整个位域）",
+          "descEn": "Transmission Buffer Address 1",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Buffer Address 1",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_ADDR1_TX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_ADDR1_TX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5086,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_ADDR2_RX",
+      "name": "USB_ADDR2_RX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_ADDR2_RX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_ADDR2_RX_ADDR2_RX",
+          "type": "bits[15:1]（整个位域）",
+          "descEn": "Reception Buffer Address 2",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Buffer Address 2",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_ADDR2_RX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_ADDR2_RX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5225,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_ADDR2_TX",
+      "name": "USB_ADDR2_TX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_ADDR2_TX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_ADDR2_TX_ADDR2_TX",
+          "type": "bits[15:1]（整个位域）",
+          "descEn": "Transmission Buffer Address 2",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Buffer Address 2",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_ADDR2_TX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_ADDR2_TX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5091,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_ADDR3_RX",
+      "name": "USB_ADDR3_RX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_ADDR3_RX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_ADDR3_RX_ADDR3_RX",
+          "type": "bits[15:1]（整个位域）",
+          "descEn": "Reception Buffer Address 3",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Buffer Address 3",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_ADDR3_RX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_ADDR3_RX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5230,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_ADDR3_TX",
+      "name": "USB_ADDR3_TX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_ADDR3_TX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_ADDR3_TX_ADDR3_TX",
+          "type": "bits[15:1]（整个位域）",
+          "descEn": "Transmission Buffer Address 3",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Buffer Address 3",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_ADDR3_TX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_ADDR3_TX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5096,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_ADDR4_RX",
+      "name": "USB_ADDR4_RX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_ADDR4_RX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_ADDR4_RX_ADDR4_RX",
+          "type": "bits[15:1]（整个位域）",
+          "descEn": "Reception Buffer Address 4",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Buffer Address 4",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_ADDR4_RX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_ADDR4_RX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5235,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_ADDR4_TX",
+      "name": "USB_ADDR4_TX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_ADDR4_TX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_ADDR4_TX_ADDR4_TX",
+          "type": "bits[15:1]（整个位域）",
+          "descEn": "Transmission Buffer Address 4",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Buffer Address 4",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_ADDR4_TX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_ADDR4_TX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5101,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_ADDR5_RX",
+      "name": "USB_ADDR5_RX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_ADDR5_RX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_ADDR5_RX_ADDR5_RX",
+          "type": "bits[15:1]（整个位域）",
+          "descEn": "Reception Buffer Address 5",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Buffer Address 5",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_ADDR5_RX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_ADDR5_RX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5240,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_ADDR5_TX",
+      "name": "USB_ADDR5_TX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_ADDR5_TX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_ADDR5_TX_ADDR5_TX",
+          "type": "bits[15:1]（整个位域）",
+          "descEn": "Transmission Buffer Address 5",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Buffer Address 5",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_ADDR5_TX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_ADDR5_TX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5106,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_ADDR6_RX",
+      "name": "USB_ADDR6_RX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_ADDR6_RX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_ADDR6_RX_ADDR6_RX",
+          "type": "bits[15:1]（整个位域）",
+          "descEn": "Reception Buffer Address 6",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Buffer Address 6",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_ADDR6_RX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_ADDR6_RX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5245,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_ADDR6_TX",
+      "name": "USB_ADDR6_TX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_ADDR6_TX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_ADDR6_TX_ADDR6_TX",
+          "type": "bits[15:1]（整个位域）",
+          "descEn": "Transmission Buffer Address 6",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Buffer Address 6",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_ADDR6_TX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_ADDR6_TX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5111,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_ADDR7_RX",
+      "name": "USB_ADDR7_RX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_ADDR7_RX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_ADDR7_RX_ADDR7_RX",
+          "type": "bits[15:1]（整个位域）",
+          "descEn": "Reception Buffer Address 7",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Buffer Address 7",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_ADDR7_RX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_ADDR7_RX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5250,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_ADDR7_TX",
+      "name": "USB_ADDR7_TX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_ADDR7_TX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_ADDR7_TX_ADDR7_TX",
+          "type": "bits[15:1]（整个位域）",
+          "descEn": "Transmission Buffer Address 7",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Buffer Address 7",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_ADDR7_TX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_ADDR7_TX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5116,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_BTABLE",
+      "name": "USB_BTABLE",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec2",
+      "prototype": "USB->BTABLE",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_BTABLE_BTABLE",
+          "type": "bits[15:3]（整个位域）",
+          "descEn": "Buffer Table",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Buffer Table address register, Address offset: 0x50",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_BTABLE"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 USB_TypeDef.BTABLE，偏移 0x50"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = USB->BTABLE;  /* 读回当前值 */\nv &= ~USB_BTABLE_BTABLE_Msk;  /* 先清掉 USB_BTABLE_BTABLE：bits[15:3]（整个位域） */\nv |= (1u << USB_BTABLE_BTABLE_Pos) & USB_BTABLE_BTABLE_Msk;  /* 置位，实际取值看参考手册 */\nUSB->BTABLE = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5075,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_CNTR",
+      "name": "USB_CNTR",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec2",
+      "prototype": "USB->CNTR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_CNTR_FRES",
+          "type": "bit 0（整个位域）",
+          "descEn": "Force USB Reset",
+          "descZh": ""
+        },
+        {
+          "name": "USB_CNTR_PDWN",
+          "type": "bit 1（整个位域）",
+          "descEn": "Power down",
+          "descZh": ""
+        },
+        {
+          "name": "USB_CNTR_LP_MODE",
+          "type": "bit 2（整个位域）",
+          "descEn": "Low-power mode",
+          "descZh": ""
+        },
+        {
+          "name": "USB_CNTR_FSUSP",
+          "type": "bit 3（整个位域）",
+          "descEn": "Force suspend",
+          "descZh": ""
+        },
+        {
+          "name": "USB_CNTR_RESUME",
+          "type": "bit 4（整个位域）",
+          "descEn": "Resume request",
+          "descZh": ""
+        },
+        {
+          "name": "USB_CNTR_ESOFM",
+          "type": "bit 8（整个位域）",
+          "descEn": "Expected Start Of Frame Interrupt Mask",
+          "descZh": ""
+        },
+        {
+          "name": "USB_CNTR_SOFM",
+          "type": "bit 9（整个位域）",
+          "descEn": "Start Of Frame Interrupt Mask",
+          "descZh": ""
+        },
+        {
+          "name": "USB_CNTR_RESETM",
+          "type": "bit 10（整个位域）",
+          "descEn": "RESET Interrupt Mask",
+          "descZh": ""
+        },
+        {
+          "name": "USB_CNTR_SUSPM",
+          "type": "bit 11（整个位域）",
+          "descEn": "Suspend mode Interrupt Mask",
+          "descZh": ""
+        },
+        {
+          "name": "USB_CNTR_WKUPM",
+          "type": "bit 12（整个位域）",
+          "descEn": "Wakeup Interrupt Mask",
+          "descZh": ""
+        },
+        {
+          "name": "USB_CNTR_ERRM",
+          "type": "bit 13（整个位域）",
+          "descEn": "Error Interrupt Mask",
+          "descZh": ""
+        },
+        {
+          "name": "USB_CNTR_PMAOVRM",
+          "type": "bit 14（整个位域）",
+          "descEn": "Packet Memory Area Over / Underrun Interrupt Mask",
+          "descZh": ""
+        },
+        {
+          "name": "USB_CNTR_CTRM",
+          "type": "bit 15（整个位域）",
+          "descEn": "Correct Transfer Interrupt Mask",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Control register, Address offset: 0x40",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_CNTR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 USB_TypeDef.CNTR，偏移 0x40"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = USB->CNTR;  /* 读回当前值 */\nv &= ~USB_CNTR_FRES_Msk;  /* 先清掉 USB_CNTR_FRES：bit 0（整个位域） */\nv |= (1u << USB_CNTR_FRES_Pos) & USB_CNTR_FRES_Msk;  /* 置位，实际取值看参考手册 */\nUSB->CNTR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4955,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT0_RX",
+      "name": "USB_COUNT0_RX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT0_RX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT0_RX_COUNT0_RX",
+          "type": "bits[9:0]（整个位域）",
+          "descEn": "Reception Byte Count",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT0_RX_NUM_BLOCK",
+          "type": "bits[14:10]（整个位域）",
+          "descEn": "NUM_BLOCK[4:0] bits (Number of blocks)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT0_RX_BLSIZE",
+          "type": "bit 15（整个位域）",
+          "descEn": "BLock SIZE",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT0_RX_NUM_BLOCK_0",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT0_RX_NUM_BLOCK_1",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT0_RX_NUM_BLOCK_2",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT0_RX_NUM_BLOCK_3",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT0_RX_NUM_BLOCK_4",
+          "type": "bit 14",
+          "descEn": "0x00004000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Byte Count",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT0_RX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT0_RX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5257,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT0_RX_0",
+      "name": "USB_COUNT0_RX_0",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT0_RX_0 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT0_RX_0_COUNT0_RX_0",
+          "type": "bits[9:0]",
+          "descEn": "Reception Byte Count (low)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT0_RX_0_NUM_BLOCK_0",
+          "type": "bits[4:0]",
+          "descEn": "NUM_BLOCK_0[4:0] bits (Number of blocks) (low)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT0_RX_0_NUM_BLOCK_0_0",
+          "type": "bit 0",
+          "descEn": "Bit 0",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT0_RX_0_NUM_BLOCK_0_1",
+          "type": "bit 1",
+          "descEn": "Bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT0_RX_0_NUM_BLOCK_0_2",
+          "type": "bit 2",
+          "descEn": "Bit 2",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT0_RX_0_NUM_BLOCK_0_3",
+          "type": "bit 3",
+          "descEn": "Bit 3",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT0_RX_0_NUM_BLOCK_0_4",
+          "type": "bit 4",
+          "descEn": "Bit 4",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT0_RX_0_BLSIZE_0",
+          "type": "bit 15",
+          "descEn": "BLock SIZE (low)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Byte Count (low)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT0_RX_0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT0_RX_0 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5402,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT0_RX_1",
+      "name": "USB_COUNT0_RX_1",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT0_RX_1 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT0_RX_1_COUNT0_RX_1",
+          "type": "bits[25:16]",
+          "descEn": "Reception Byte Count (high)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT0_RX_1_NUM_BLOCK_1",
+          "type": "bits[4:0]",
+          "descEn": "NUM_BLOCK_1[4:0] bits (Number of blocks) (high)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT0_RX_1_NUM_BLOCK_1_0",
+          "type": "bit 1",
+          "descEn": "Bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT0_RX_1_NUM_BLOCK_1_1",
+          "type": "bit 1",
+          "descEn": "Bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT0_RX_1_NUM_BLOCK_1_2",
+          "type": "bit 2",
+          "descEn": "Bit 2",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT0_RX_1_NUM_BLOCK_1_3",
+          "type": "bit 3",
+          "descEn": "Bit 3",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT0_RX_1_NUM_BLOCK_1_4",
+          "type": "bit 4",
+          "descEn": "Bit 4",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT0_RX_1_BLSIZE_1",
+          "type": "bit 31",
+          "descEn": "BLock SIZE (high)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Byte Count (high)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT0_RX_1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT0_RX_1 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5414,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT0_TX",
+      "name": "USB_COUNT0_TX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT0_TX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT0_TX_COUNT0_TX",
+          "type": "bits[9:0]（整个位域）",
+          "descEn": "Transmission Byte Count 0",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Byte Count 0",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT0_TX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT0_TX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5123,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT0_TX_0",
+      "name": "USB_COUNT0_TX_0",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT0_TX_0 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT0_TX_0_COUNT0_TX_0",
+          "type": "bits[9:0]",
+          "descEn": "Transmission Byte Count 0 (low)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Byte Count 0 (low)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT0_TX_0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT0_TX_0 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5164,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT0_TX_1",
+      "name": "USB_COUNT0_TX_1",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT0_TX_1 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT0_TX_1_COUNT0_TX_1",
+          "type": "bits[25:16]",
+          "descEn": "Transmission Byte Count 0 (high)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Byte Count 0 (high)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT0_TX_1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT0_TX_1 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5167,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT1_RX",
+      "name": "USB_COUNT1_RX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT1_RX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT1_RX_COUNT1_RX",
+          "type": "bits[9:0]（整个位域）",
+          "descEn": "Reception Byte Count",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT1_RX_NUM_BLOCK",
+          "type": "bits[14:10]（整个位域）",
+          "descEn": "NUM_BLOCK[4:0] bits (Number of blocks)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT1_RX_BLSIZE",
+          "type": "bit 15（整个位域）",
+          "descEn": "BLock SIZE",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT1_RX_NUM_BLOCK_0",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT1_RX_NUM_BLOCK_1",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT1_RX_NUM_BLOCK_2",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT1_RX_NUM_BLOCK_3",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT1_RX_NUM_BLOCK_4",
+          "type": "bit 14",
+          "descEn": "0x00004000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Byte Count",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT1_RX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT1_RX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5275,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT1_RX_0",
+      "name": "USB_COUNT1_RX_0",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT1_RX_0 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT1_RX_0_COUNT1_RX_0",
+          "type": "bits[9:0]",
+          "descEn": "Reception Byte Count (low)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT1_RX_0_NUM_BLOCK_0",
+          "type": "bits[4:0]",
+          "descEn": "NUM_BLOCK_0[4:0] bits (Number of blocks) (low)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT1_RX_0_NUM_BLOCK_0_0",
+          "type": "bit 0",
+          "descEn": "Bit 0",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT1_RX_0_NUM_BLOCK_0_1",
+          "type": "bit 1",
+          "descEn": "Bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT1_RX_0_NUM_BLOCK_0_2",
+          "type": "bit 2",
+          "descEn": "Bit 2",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT1_RX_0_NUM_BLOCK_0_3",
+          "type": "bit 3",
+          "descEn": "Bit 3",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT1_RX_0_NUM_BLOCK_0_4",
+          "type": "bit 4",
+          "descEn": "Bit 4",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT1_RX_0_BLSIZE_0",
+          "type": "bit 15",
+          "descEn": "BLock SIZE (low)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Byte Count (low)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT1_RX_0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT1_RX_0 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5426,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT1_RX_1",
+      "name": "USB_COUNT1_RX_1",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT1_RX_1 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT1_RX_1_COUNT1_RX_1",
+          "type": "bits[25:16]",
+          "descEn": "Reception Byte Count (high)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT1_RX_1_NUM_BLOCK_1",
+          "type": "bits[4:0]",
+          "descEn": "NUM_BLOCK_1[4:0] bits (Number of blocks) (high)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT1_RX_1_NUM_BLOCK_1_0",
+          "type": "bit 0",
+          "descEn": "Bit 0",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT1_RX_1_NUM_BLOCK_1_1",
+          "type": "bit 1",
+          "descEn": "Bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT1_RX_1_NUM_BLOCK_1_2",
+          "type": "bit 2",
+          "descEn": "Bit 2",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT1_RX_1_NUM_BLOCK_1_3",
+          "type": "bit 3",
+          "descEn": "Bit 3",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT1_RX_1_NUM_BLOCK_1_4",
+          "type": "bit 4",
+          "descEn": "Bit 4",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT1_RX_1_BLSIZE_1",
+          "type": "bit 31",
+          "descEn": "BLock SIZE (high)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Byte Count (high)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT1_RX_1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT1_RX_1 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5438,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT1_TX",
+      "name": "USB_COUNT1_TX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT1_TX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT1_TX_COUNT1_TX",
+          "type": "bits[9:0]（整个位域）",
+          "descEn": "Transmission Byte Count 1",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Byte Count 1",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT1_TX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT1_TX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5128,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT1_TX_0",
+      "name": "USB_COUNT1_TX_0",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT1_TX_0 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT1_TX_0_COUNT1_TX_0",
+          "type": "bits[9:0]",
+          "descEn": "Transmission Byte Count 1 (low)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Byte Count 1 (low)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT1_TX_0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT1_TX_0 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5170,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT1_TX_1",
+      "name": "USB_COUNT1_TX_1",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT1_TX_1 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT1_TX_1_COUNT1_TX_1",
+          "type": "bits[25:16]",
+          "descEn": "Transmission Byte Count 1 (high)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Byte Count 1 (high)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT1_TX_1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT1_TX_1 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5173,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT2_RX",
+      "name": "USB_COUNT2_RX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT2_RX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT2_RX_COUNT2_RX",
+          "type": "bits[9:0]（整个位域）",
+          "descEn": "Reception Byte Count",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT2_RX_NUM_BLOCK",
+          "type": "bits[14:10]（整个位域）",
+          "descEn": "NUM_BLOCK[4:0] bits (Number of blocks)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT2_RX_BLSIZE",
+          "type": "bit 15（整个位域）",
+          "descEn": "BLock SIZE",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT2_RX_NUM_BLOCK_0",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT2_RX_NUM_BLOCK_1",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT2_RX_NUM_BLOCK_2",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT2_RX_NUM_BLOCK_3",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT2_RX_NUM_BLOCK_4",
+          "type": "bit 14",
+          "descEn": "0x00004000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Byte Count",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT2_RX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT2_RX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5293,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT2_RX_0",
+      "name": "USB_COUNT2_RX_0",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT2_RX_0 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT2_RX_0_COUNT2_RX_0",
+          "type": "bits[9:0]",
+          "descEn": "Reception Byte Count (low)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT2_RX_0_NUM_BLOCK_0",
+          "type": "bits[4:0]",
+          "descEn": "NUM_BLOCK_0[4:0] bits (Number of blocks) (low)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT2_RX_0_NUM_BLOCK_0_0",
+          "type": "bit 0",
+          "descEn": "Bit 0",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT2_RX_0_NUM_BLOCK_0_1",
+          "type": "bit 1",
+          "descEn": "Bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT2_RX_0_NUM_BLOCK_0_2",
+          "type": "bit 2",
+          "descEn": "Bit 2",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT2_RX_0_NUM_BLOCK_0_3",
+          "type": "bit 3",
+          "descEn": "Bit 3",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT2_RX_0_NUM_BLOCK_0_4",
+          "type": "bit 4",
+          "descEn": "Bit 4",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT2_RX_0_BLSIZE_0",
+          "type": "bit 15",
+          "descEn": "BLock SIZE (low)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Byte Count (low)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT2_RX_0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT2_RX_0 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5450,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT2_RX_1",
+      "name": "USB_COUNT2_RX_1",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT2_RX_1 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT2_RX_1_COUNT2_RX_1",
+          "type": "bits[25:16]",
+          "descEn": "Reception Byte Count (high)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT2_RX_1_NUM_BLOCK_1",
+          "type": "bits[4:0]",
+          "descEn": "NUM_BLOCK_1[4:0] bits (Number of blocks) (high)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT2_RX_1_NUM_BLOCK_1_0",
+          "type": "bit 0",
+          "descEn": "Bit 0",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT2_RX_1_NUM_BLOCK_1_1",
+          "type": "bit 1",
+          "descEn": "Bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT2_RX_1_NUM_BLOCK_1_2",
+          "type": "bit 2",
+          "descEn": "Bit 2",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT2_RX_1_NUM_BLOCK_1_3",
+          "type": "bit 3",
+          "descEn": "Bit 3",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT2_RX_1_NUM_BLOCK_1_4",
+          "type": "bit 4",
+          "descEn": "Bit 4",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT2_RX_1_BLSIZE_1",
+          "type": "bit 31",
+          "descEn": "BLock SIZE (high)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Byte Count (high)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT2_RX_1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT2_RX_1 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5462,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT2_TX",
+      "name": "USB_COUNT2_TX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT2_TX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT2_TX_COUNT2_TX",
+          "type": "bits[9:0]（整个位域）",
+          "descEn": "Transmission Byte Count 2",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Byte Count 2",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT2_TX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT2_TX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5133,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT2_TX_0",
+      "name": "USB_COUNT2_TX_0",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT2_TX_0 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT2_TX_0_COUNT2_TX_0",
+          "type": "bits[9:0]",
+          "descEn": "Transmission Byte Count 2 (low)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Byte Count 2 (low)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT2_TX_0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT2_TX_0 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5176,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT2_TX_1",
+      "name": "USB_COUNT2_TX_1",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT2_TX_1 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT2_TX_1_COUNT2_TX_1",
+          "type": "bits[25:16]",
+          "descEn": "Transmission Byte Count 2 (high)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Byte Count 2 (high)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT2_TX_1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT2_TX_1 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5179,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT3_RX",
+      "name": "USB_COUNT3_RX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT3_RX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT3_RX_COUNT3_RX",
+          "type": "bits[9:0]（整个位域）",
+          "descEn": "Reception Byte Count",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT3_RX_NUM_BLOCK",
+          "type": "bits[14:10]（整个位域）",
+          "descEn": "NUM_BLOCK[4:0] bits (Number of blocks)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT3_RX_BLSIZE",
+          "type": "bit 15（整个位域）",
+          "descEn": "BLock SIZE",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT3_RX_NUM_BLOCK_0",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT3_RX_NUM_BLOCK_1",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT3_RX_NUM_BLOCK_2",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT3_RX_NUM_BLOCK_3",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT3_RX_NUM_BLOCK_4",
+          "type": "bit 14",
+          "descEn": "0x00004000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Byte Count",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT3_RX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT3_RX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5311,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT3_RX_0",
+      "name": "USB_COUNT3_RX_0",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT3_RX_0 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT3_RX_0_COUNT3_RX_0",
+          "type": "bits[9:0]",
+          "descEn": "Reception Byte Count (low)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT3_RX_0_NUM_BLOCK_0",
+          "type": "bits[4:0]",
+          "descEn": "NUM_BLOCK_0[4:0] bits (Number of blocks) (low)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT3_RX_0_NUM_BLOCK_0_0",
+          "type": "bit 0",
+          "descEn": "Bit 0",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT3_RX_0_NUM_BLOCK_0_1",
+          "type": "bit 1",
+          "descEn": "Bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT3_RX_0_NUM_BLOCK_0_2",
+          "type": "bit 2",
+          "descEn": "Bit 2",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT3_RX_0_NUM_BLOCK_0_3",
+          "type": "bit 3",
+          "descEn": "Bit 3",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT3_RX_0_NUM_BLOCK_0_4",
+          "type": "bit 4",
+          "descEn": "Bit 4",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT3_RX_0_BLSIZE_0",
+          "type": "bit 15",
+          "descEn": "BLock SIZE (low)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Byte Count (low)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT3_RX_0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT3_RX_0 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5474,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT3_RX_1",
+      "name": "USB_COUNT3_RX_1",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT3_RX_1 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT3_RX_1_COUNT3_RX_1",
+          "type": "bits[25:16]",
+          "descEn": "Reception Byte Count (high)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT3_RX_1_NUM_BLOCK_1",
+          "type": "bits[4:0]",
+          "descEn": "NUM_BLOCK_1[4:0] bits (Number of blocks) (high)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT3_RX_1_NUM_BLOCK_1_0",
+          "type": "bit 0",
+          "descEn": "Bit 0",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT3_RX_1_NUM_BLOCK_1_1",
+          "type": "bit 1",
+          "descEn": "Bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT3_RX_1_NUM_BLOCK_1_2",
+          "type": "bit 2",
+          "descEn": "Bit 2",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT3_RX_1_NUM_BLOCK_1_3",
+          "type": "bit 3",
+          "descEn": "Bit 3",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT3_RX_1_NUM_BLOCK_1_4",
+          "type": "bit 4",
+          "descEn": "Bit 4",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT3_RX_1_BLSIZE_1",
+          "type": "bit 31",
+          "descEn": "BLock SIZE (high)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Byte Count (high)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT3_RX_1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT3_RX_1 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5486,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT3_TX",
+      "name": "USB_COUNT3_TX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT3_TX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT3_TX_COUNT3_TX",
+          "type": "bits[9:0]（整个位域）",
+          "descEn": "Transmission Byte Count 3",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Byte Count 3",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT3_TX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT3_TX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5138,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT3_TX_0",
+      "name": "USB_COUNT3_TX_0",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT3_TX_0 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT3_TX_0_COUNT3_TX_0",
+          "type": "bits[9:0]",
+          "descEn": "Transmission Byte Count 3 (low)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Byte Count 3 (low)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT3_TX_0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT3_TX_0 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5182,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT3_TX_1",
+      "name": "USB_COUNT3_TX_1",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT3_TX_1 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT3_TX_1_COUNT3_TX_1",
+          "type": "bits[25:16]",
+          "descEn": "Transmission Byte Count 3 (high)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Byte Count 3 (high)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT3_TX_1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT3_TX_1 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5185,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT4_RX",
+      "name": "USB_COUNT4_RX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT4_RX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT4_RX_COUNT4_RX",
+          "type": "bits[9:0]（整个位域）",
+          "descEn": "Reception Byte Count",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT4_RX_NUM_BLOCK",
+          "type": "bits[14:10]（整个位域）",
+          "descEn": "NUM_BLOCK[4:0] bits (Number of blocks)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT4_RX_BLSIZE",
+          "type": "bit 15（整个位域）",
+          "descEn": "BLock SIZE",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT4_RX_NUM_BLOCK_0",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT4_RX_NUM_BLOCK_1",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT4_RX_NUM_BLOCK_2",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT4_RX_NUM_BLOCK_3",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT4_RX_NUM_BLOCK_4",
+          "type": "bit 14",
+          "descEn": "0x00004000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Byte Count",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT4_RX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT4_RX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5329,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT4_RX_0",
+      "name": "USB_COUNT4_RX_0",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT4_RX_0 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT4_RX_0_COUNT4_RX_0",
+          "type": "bits[9:0]",
+          "descEn": "Reception Byte Count (low)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT4_RX_0_NUM_BLOCK_0",
+          "type": "bits[4:0]",
+          "descEn": "NUM_BLOCK_0[4:0] bits (Number of blocks) (low)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT4_RX_0_NUM_BLOCK_0_0",
+          "type": "bit 0",
+          "descEn": "Bit 0",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT4_RX_0_NUM_BLOCK_0_1",
+          "type": "bit 1",
+          "descEn": "Bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT4_RX_0_NUM_BLOCK_0_2",
+          "type": "bit 2",
+          "descEn": "Bit 2",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT4_RX_0_NUM_BLOCK_0_3",
+          "type": "bit 3",
+          "descEn": "Bit 3",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT4_RX_0_NUM_BLOCK_0_4",
+          "type": "bit 4",
+          "descEn": "Bit 4",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT4_RX_0_BLSIZE_0",
+          "type": "bit 15",
+          "descEn": "BLock SIZE (low)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Byte Count (low)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT4_RX_0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT4_RX_0 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5498,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT4_RX_1",
+      "name": "USB_COUNT4_RX_1",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT4_RX_1 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT4_RX_1_COUNT4_RX_1",
+          "type": "bits[25:16]",
+          "descEn": "Reception Byte Count (high)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT4_RX_1_NUM_BLOCK_1",
+          "type": "bits[4:0]",
+          "descEn": "NUM_BLOCK_1[4:0] bits (Number of blocks) (high)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT4_RX_1_NUM_BLOCK_1_0",
+          "type": "bit 0",
+          "descEn": "Bit 0",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT4_RX_1_NUM_BLOCK_1_1",
+          "type": "bit 1",
+          "descEn": "Bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT4_RX_1_NUM_BLOCK_1_2",
+          "type": "bit 2",
+          "descEn": "Bit 2",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT4_RX_1_NUM_BLOCK_1_3",
+          "type": "bit 3",
+          "descEn": "Bit 3",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT4_RX_1_NUM_BLOCK_1_4",
+          "type": "bit 4",
+          "descEn": "Bit 4",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT4_RX_1_BLSIZE_1",
+          "type": "bit 31",
+          "descEn": "BLock SIZE (high)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Byte Count (high)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT4_RX_1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT4_RX_1 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5510,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT4_TX",
+      "name": "USB_COUNT4_TX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT4_TX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT4_TX_COUNT4_TX",
+          "type": "bits[9:0]（整个位域）",
+          "descEn": "Transmission Byte Count 4",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Byte Count 4",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT4_TX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT4_TX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5143,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT4_TX_0",
+      "name": "USB_COUNT4_TX_0",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT4_TX_0 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT4_TX_0_COUNT4_TX_0",
+          "type": "bits[9:0]",
+          "descEn": "Transmission Byte Count 4 (low)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Byte Count 4 (low)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT4_TX_0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT4_TX_0 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5188,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT4_TX_1",
+      "name": "USB_COUNT4_TX_1",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT4_TX_1 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT4_TX_1_COUNT4_TX_1",
+          "type": "bits[25:16]",
+          "descEn": "Transmission Byte Count 4 (high)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Byte Count 4 (high)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT4_TX_1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT4_TX_1 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5191,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT5_RX",
+      "name": "USB_COUNT5_RX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT5_RX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT5_RX_COUNT5_RX",
+          "type": "bits[9:0]（整个位域）",
+          "descEn": "Reception Byte Count",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT5_RX_NUM_BLOCK",
+          "type": "bits[14:10]（整个位域）",
+          "descEn": "NUM_BLOCK[4:0] bits (Number of blocks)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT5_RX_BLSIZE",
+          "type": "bit 15（整个位域）",
+          "descEn": "BLock SIZE",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT5_RX_NUM_BLOCK_0",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT5_RX_NUM_BLOCK_1",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT5_RX_NUM_BLOCK_2",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT5_RX_NUM_BLOCK_3",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT5_RX_NUM_BLOCK_4",
+          "type": "bit 14",
+          "descEn": "0x00004000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Byte Count",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT5_RX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT5_RX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5347,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT5_RX_0",
+      "name": "USB_COUNT5_RX_0",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT5_RX_0 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT5_RX_0_COUNT5_RX_0",
+          "type": "bits[9:0]",
+          "descEn": "Reception Byte Count (low)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT5_RX_0_NUM_BLOCK_0",
+          "type": "bits[4:0]",
+          "descEn": "NUM_BLOCK_0[4:0] bits (Number of blocks) (low)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT5_RX_0_NUM_BLOCK_0_0",
+          "type": "bit 0",
+          "descEn": "Bit 0",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT5_RX_0_NUM_BLOCK_0_1",
+          "type": "bit 1",
+          "descEn": "Bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT5_RX_0_NUM_BLOCK_0_2",
+          "type": "bit 2",
+          "descEn": "Bit 2",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT5_RX_0_NUM_BLOCK_0_3",
+          "type": "bit 3",
+          "descEn": "Bit 3",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT5_RX_0_NUM_BLOCK_0_4",
+          "type": "bit 4",
+          "descEn": "Bit 4",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT5_RX_0_BLSIZE_0",
+          "type": "bit 15",
+          "descEn": "BLock SIZE (low)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Byte Count (low)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT5_RX_0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT5_RX_0 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5522,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT5_RX_1",
+      "name": "USB_COUNT5_RX_1",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT5_RX_1 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT5_RX_1_COUNT5_RX_1",
+          "type": "bits[25:16]",
+          "descEn": "Reception Byte Count (high)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT5_RX_1_NUM_BLOCK_1",
+          "type": "bits[4:0]",
+          "descEn": "NUM_BLOCK_1[4:0] bits (Number of blocks) (high)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT5_RX_1_NUM_BLOCK_1_0",
+          "type": "bit 0",
+          "descEn": "Bit 0",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT5_RX_1_NUM_BLOCK_1_1",
+          "type": "bit 1",
+          "descEn": "Bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT5_RX_1_NUM_BLOCK_1_2",
+          "type": "bit 2",
+          "descEn": "Bit 2",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT5_RX_1_NUM_BLOCK_1_3",
+          "type": "bit 3",
+          "descEn": "Bit 3",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT5_RX_1_NUM_BLOCK_1_4",
+          "type": "bit 4",
+          "descEn": "Bit 4",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT5_RX_1_BLSIZE_1",
+          "type": "bit 31",
+          "descEn": "BLock SIZE (high)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Byte Count (high)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT5_RX_1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT5_RX_1 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5534,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT5_TX",
+      "name": "USB_COUNT5_TX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT5_TX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT5_TX_COUNT5_TX",
+          "type": "bits[9:0]（整个位域）",
+          "descEn": "Transmission Byte Count 5",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Byte Count 5",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT5_TX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT5_TX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5148,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT5_TX_0",
+      "name": "USB_COUNT5_TX_0",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT5_TX_0 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT5_TX_0_COUNT5_TX_0",
+          "type": "bits[9:0]",
+          "descEn": "Transmission Byte Count 5 (low)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Byte Count 5 (low)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT5_TX_0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT5_TX_0 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5194,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT5_TX_1",
+      "name": "USB_COUNT5_TX_1",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT5_TX_1 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT5_TX_1_COUNT5_TX_1",
+          "type": "bits[25:16]",
+          "descEn": "Transmission Byte Count 5 (high)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Byte Count 5 (high)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT5_TX_1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT5_TX_1 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5197,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT6_RX",
+      "name": "USB_COUNT6_RX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT6_RX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT6_RX_COUNT6_RX",
+          "type": "bits[9:0]（整个位域）",
+          "descEn": "Reception Byte Count",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT6_RX_NUM_BLOCK",
+          "type": "bits[14:10]（整个位域）",
+          "descEn": "NUM_BLOCK[4:0] bits (Number of blocks)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT6_RX_BLSIZE",
+          "type": "bit 15（整个位域）",
+          "descEn": "BLock SIZE",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT6_RX_NUM_BLOCK_0",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT6_RX_NUM_BLOCK_1",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT6_RX_NUM_BLOCK_2",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT6_RX_NUM_BLOCK_3",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT6_RX_NUM_BLOCK_4",
+          "type": "bit 14",
+          "descEn": "0x00004000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Byte Count",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT6_RX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT6_RX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5365,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT6_RX_0",
+      "name": "USB_COUNT6_RX_0",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT6_RX_0 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT6_RX_0_COUNT6_RX_0",
+          "type": "bits[9:0]",
+          "descEn": "Reception Byte Count (low)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT6_RX_0_NUM_BLOCK_0",
+          "type": "bits[4:0]",
+          "descEn": "NUM_BLOCK_0[4:0] bits (Number of blocks) (low)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT6_RX_0_NUM_BLOCK_0_0",
+          "type": "bit 0",
+          "descEn": "Bit 0",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT6_RX_0_NUM_BLOCK_0_1",
+          "type": "bit 1",
+          "descEn": "Bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT6_RX_0_NUM_BLOCK_0_2",
+          "type": "bit 2",
+          "descEn": "Bit 2",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT6_RX_0_NUM_BLOCK_0_3",
+          "type": "bit 3",
+          "descEn": "Bit 3",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT6_RX_0_NUM_BLOCK_0_4",
+          "type": "bit 4",
+          "descEn": "Bit 4",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT6_RX_0_BLSIZE_0",
+          "type": "bit 15",
+          "descEn": "BLock SIZE (low)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Byte Count (low)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT6_RX_0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT6_RX_0 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5546,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT6_RX_1",
+      "name": "USB_COUNT6_RX_1",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT6_RX_1 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT6_RX_1_COUNT6_RX_1",
+          "type": "bits[25:16]",
+          "descEn": "Reception Byte Count (high)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT6_RX_1_NUM_BLOCK_1",
+          "type": "bits[4:0]",
+          "descEn": "NUM_BLOCK_1[4:0] bits (Number of blocks) (high)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT6_RX_1_NUM_BLOCK_1_0",
+          "type": "bit 0",
+          "descEn": "Bit 0",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT6_RX_1_NUM_BLOCK_1_1",
+          "type": "bit 1",
+          "descEn": "Bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT6_RX_1_NUM_BLOCK_1_2",
+          "type": "bit 2",
+          "descEn": "Bit 2",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT6_RX_1_NUM_BLOCK_1_3",
+          "type": "bit 3",
+          "descEn": "Bit 3",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT6_RX_1_NUM_BLOCK_1_4",
+          "type": "bit 4",
+          "descEn": "Bit 4",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT6_RX_1_BLSIZE_1",
+          "type": "bit 31",
+          "descEn": "BLock SIZE (high)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Byte Count (high)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT6_RX_1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT6_RX_1 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5558,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT6_TX",
+      "name": "USB_COUNT6_TX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT6_TX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT6_TX_COUNT6_TX",
+          "type": "bits[9:0]（整个位域）",
+          "descEn": "Transmission Byte Count 6",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Byte Count 6",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT6_TX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT6_TX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5153,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT6_TX_0",
+      "name": "USB_COUNT6_TX_0",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT6_TX_0 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT6_TX_0_COUNT6_TX_0",
+          "type": "bits[9:0]",
+          "descEn": "Transmission Byte Count 6 (low)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Byte Count 6 (low)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT6_TX_0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT6_TX_0 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5200,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT6_TX_1",
+      "name": "USB_COUNT6_TX_1",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT6_TX_1 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT6_TX_1_COUNT6_TX_1",
+          "type": "bits[25:16]",
+          "descEn": "Transmission Byte Count 6 (high)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Byte Count 6 (high)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT6_TX_1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT6_TX_1 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5203,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT7_RX",
+      "name": "USB_COUNT7_RX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT7_RX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT7_RX_COUNT7_RX",
+          "type": "bits[9:0]（整个位域）",
+          "descEn": "Reception Byte Count",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT7_RX_NUM_BLOCK",
+          "type": "bits[14:10]（整个位域）",
+          "descEn": "NUM_BLOCK[4:0] bits (Number of blocks)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT7_RX_BLSIZE",
+          "type": "bit 15（整个位域）",
+          "descEn": "BLock SIZE",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT7_RX_NUM_BLOCK_0",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT7_RX_NUM_BLOCK_1",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT7_RX_NUM_BLOCK_2",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT7_RX_NUM_BLOCK_3",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT7_RX_NUM_BLOCK_4",
+          "type": "bit 14",
+          "descEn": "0x00004000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Byte Count",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT7_RX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT7_RX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5383,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT7_RX_0",
+      "name": "USB_COUNT7_RX_0",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT7_RX_0 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT7_RX_0_COUNT7_RX_0",
+          "type": "bits[9:0]",
+          "descEn": "Reception Byte Count (low)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT7_RX_0_NUM_BLOCK_0",
+          "type": "bits[4:0]",
+          "descEn": "NUM_BLOCK_0[4:0] bits (Number of blocks) (low)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT7_RX_0_NUM_BLOCK_0_0",
+          "type": "bit 0",
+          "descEn": "Bit 0",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT7_RX_0_NUM_BLOCK_0_1",
+          "type": "bit 1",
+          "descEn": "Bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT7_RX_0_NUM_BLOCK_0_2",
+          "type": "bit 2",
+          "descEn": "Bit 2",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT7_RX_0_NUM_BLOCK_0_3",
+          "type": "bit 3",
+          "descEn": "Bit 3",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT7_RX_0_NUM_BLOCK_0_4",
+          "type": "bit 4",
+          "descEn": "Bit 4",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT7_RX_0_BLSIZE_0",
+          "type": "bit 15",
+          "descEn": "BLock SIZE (low)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Byte Count (low)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT7_RX_0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT7_RX_0 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5570,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT7_RX_1",
+      "name": "USB_COUNT7_RX_1",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT7_RX_1 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT7_RX_1_COUNT7_RX_1",
+          "type": "bits[25:16]",
+          "descEn": "Reception Byte Count (high)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT7_RX_1_NUM_BLOCK_1",
+          "type": "bits[4:0]",
+          "descEn": "NUM_BLOCK_1[4:0] bits (Number of blocks) (high)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT7_RX_1_NUM_BLOCK_1_0",
+          "type": "bit 0",
+          "descEn": "Bit 0",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT7_RX_1_NUM_BLOCK_1_1",
+          "type": "bit 1",
+          "descEn": "Bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT7_RX_1_NUM_BLOCK_1_2",
+          "type": "bit 2",
+          "descEn": "Bit 2",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT7_RX_1_NUM_BLOCK_1_3",
+          "type": "bit 3",
+          "descEn": "Bit 3",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT7_RX_1_NUM_BLOCK_1_4",
+          "type": "bit 4",
+          "descEn": "Bit 4",
+          "descZh": ""
+        },
+        {
+          "name": "USB_COUNT7_RX_1_BLSIZE_1",
+          "type": "bit 31",
+          "descEn": "BLock SIZE (high)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reception Byte Count (high)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT7_RX_1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT7_RX_1 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5582,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT7_TX",
+      "name": "USB_COUNT7_TX",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT7_TX */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT7_TX_COUNT7_TX",
+          "type": "bits[9:0]（整个位域）",
+          "descEn": "Transmission Byte Count 7",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Byte Count 7",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT7_TX"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT7_TX 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5158,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT7_TX_0",
+      "name": "USB_COUNT7_TX_0",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT7_TX_0 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT7_TX_0_COUNT7_TX_0",
+          "type": "bits[9:0]",
+          "descEn": "Transmission Byte Count 7 (low)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Byte Count 7 (low)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT7_TX_0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT7_TX_0 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5206,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_COUNT7_TX_1",
+      "name": "USB_COUNT7_TX_1",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "*(volatile uint32_t *)(USB_PMAADDR + pma_off)  /* USB_COUNT7_TX_1 */",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_COUNT7_TX_1_COUNT7_TX_1",
+          "type": "bits[25:16]",
+          "descEn": "Transmission Byte Count 7 (high)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Transmission Byte Count 7 (high)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_COUNT7_TX_1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "USB 包缓冲区（PMA）表项：地址 = USB_PMAADDR + 由 USB_BTABLE 寄存器给出的表内偏移，不是固定成员访问"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t btable = USB->BTABLE;  /* 包缓冲表基址（相对 PMA 起始） */\nuint16_t pma_off = (uint16_t)(btable + 0x0000u);  /* USB_COUNT7_TX_1 的表内偏移 */\nuint32_t v = *(volatile uint32_t *)(USB_PMAADDR + pma_off);  /* 读 */\n*(volatile uint32_t *)(USB_PMAADDR + pma_off) = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5209,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_DADDR",
+      "name": "USB_DADDR",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "USB->DADDR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_DADDR_ADD",
+          "type": "bits[6:0]（整个位域）",
+          "descEn": "ADD[6:0] bits (Device Address)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_DADDR_ADD0",
+          "type": "bit 0（整个位域）",
+          "descEn": "Bit 0",
+          "descZh": ""
+        },
+        {
+          "name": "USB_DADDR_ADD1",
+          "type": "bit 1（整个位域）",
+          "descEn": "Bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "USB_DADDR_ADD2",
+          "type": "bit 2（整个位域）",
+          "descEn": "Bit 2",
+          "descZh": ""
+        },
+        {
+          "name": "USB_DADDR_ADD3",
+          "type": "bit 3（整个位域）",
+          "descEn": "Bit 3",
+          "descZh": ""
+        },
+        {
+          "name": "USB_DADDR_ADD4",
+          "type": "bit 4（整个位域）",
+          "descEn": "Bit 4",
+          "descZh": ""
+        },
+        {
+          "name": "USB_DADDR_ADD5",
+          "type": "bit 5（整个位域）",
+          "descEn": "Bit 5",
+          "descZh": ""
+        },
+        {
+          "name": "USB_DADDR_ADD6",
+          "type": "bit 6（整个位域）",
+          "descEn": "Bit 6",
+          "descZh": ""
+        },
+        {
+          "name": "USB_DADDR_EF",
+          "type": "bit 7（整个位域）",
+          "descEn": "Enable Function",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Device address register, Address offset: 0x4C",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_DADDR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 USB_TypeDef.DADDR，偏移 0x4C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = USB->DADDR;  /* 读回当前值 */\nv &= ~USB_DADDR_ADD_Msk;  /* 先清掉 USB_DADDR_ADD：bits[6:0]（整个位域） */\nv |= (1u << USB_DADDR_ADD_Pos) & USB_DADDR_ADD_Msk;  /* 置位，实际取值看参考手册 */\nUSB->DADDR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5045,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_EP0R",
+      "name": "USB_EP0R",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec2",
+      "prototype": "USB->EP0R",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_EP0R_EA",
+          "type": "bits[3:0]（整个位域）",
+          "descEn": "Endpoint Address",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP0R_STAT_TX",
+          "type": "bits[5:4]（整个位域）",
+          "descEn": "STAT_TX[1:0] bits (Status bits, for transmission transfers)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP0R_DTOG_TX",
+          "type": "bit 6（整个位域）",
+          "descEn": "Data Toggle, for transmission transfers",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP0R_CTR_TX",
+          "type": "bit 7（整个位域）",
+          "descEn": "Correct Transfer for transmission",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP0R_EP_KIND",
+          "type": "bit 8（整个位域）",
+          "descEn": "Endpoint Kind",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP0R_EP_TYPE",
+          "type": "bits[10:9]（整个位域）",
+          "descEn": "EP_TYPE[1:0] bits (Endpoint type)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP0R_SETUP",
+          "type": "bit 11（整个位域）",
+          "descEn": "Setup transaction completed",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP0R_STAT_RX",
+          "type": "bits[13:12]（整个位域）",
+          "descEn": "STAT_RX[1:0] bits (Status bits, for reception transfers)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP0R_DTOG_RX",
+          "type": "bit 14（整个位域）",
+          "descEn": "Data Toggle, for reception transfers",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP0R_CTR_RX",
+          "type": "bit 15（整个位域）",
+          "descEn": "Correct Transfer for reception",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP0R_STAT_TX_0",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP0R_STAT_TX_1",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP0R_EP_TYPE_0",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP0R_EP_TYPE_1",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP0R_STAT_RX_0",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP0R_STAT_RX_1",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "USB Endpoint 0 register, Address offset: 0x00",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_EP0R"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 USB_TypeDef.EP0R，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = USB->EP0R;  /* 读回当前值 */\nv &= ~USB_EP0R_EA_Msk;  /* 先清掉 USB_EP0R_EA：bits[3:0]（整个位域） */\nv |= (1u << USB_EP0R_EA_Pos) & USB_EP0R_EA_Msk;  /* 置位，实际取值看参考手册 */\nUSB->EP0R = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4602,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_EP1R",
+      "name": "USB_EP1R",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec2",
+      "prototype": "USB->EP1R",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_EP1R_EA",
+          "type": "bits[3:0]（整个位域）",
+          "descEn": "Endpoint Address",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP1R_STAT_TX",
+          "type": "bits[5:4]（整个位域）",
+          "descEn": "STAT_TX[1:0] bits (Status bits, for transmission transfers)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP1R_DTOG_TX",
+          "type": "bit 6（整个位域）",
+          "descEn": "Data Toggle, for transmission transfers",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP1R_CTR_TX",
+          "type": "bit 7（整个位域）",
+          "descEn": "Correct Transfer for transmission",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP1R_EP_KIND",
+          "type": "bit 8（整个位域）",
+          "descEn": "Endpoint Kind",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP1R_EP_TYPE",
+          "type": "bits[10:9]（整个位域）",
+          "descEn": "EP_TYPE[1:0] bits (Endpoint type)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP1R_SETUP",
+          "type": "bit 11（整个位域）",
+          "descEn": "Setup transaction completed",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP1R_STAT_RX",
+          "type": "bits[13:12]（整个位域）",
+          "descEn": "STAT_RX[1:0] bits (Status bits, for reception transfers)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP1R_DTOG_RX",
+          "type": "bit 14（整个位域）",
+          "descEn": "Data Toggle, for reception transfers",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP1R_CTR_RX",
+          "type": "bit 15（整个位域）",
+          "descEn": "Correct Transfer for reception",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP1R_STAT_TX_0",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP1R_STAT_TX_1",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP1R_EP_TYPE_0",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP1R_EP_TYPE_1",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP1R_STAT_RX_0",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP1R_STAT_RX_1",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "USB Endpoint 1 register, Address offset: 0x04",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_EP1R"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 USB_TypeDef.EP1R，偏移 0x04"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = USB->EP1R;  /* 读回当前值 */\nv &= ~USB_EP1R_EA_Msk;  /* 先清掉 USB_EP1R_EA：bits[3:0]（整个位域） */\nv |= (1u << USB_EP1R_EA_Pos) & USB_EP1R_EA_Msk;  /* 置位，实际取值看参考手册 */\nUSB->EP1R = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4646,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_EP2R",
+      "name": "USB_EP2R",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec2",
+      "prototype": "USB->EP2R",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_EP2R_EA",
+          "type": "bits[3:0]（整个位域）",
+          "descEn": "Endpoint Address",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP2R_STAT_TX",
+          "type": "bits[5:4]（整个位域）",
+          "descEn": "STAT_TX[1:0] bits (Status bits, for transmission transfers)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP2R_DTOG_TX",
+          "type": "bit 6（整个位域）",
+          "descEn": "Data Toggle, for transmission transfers",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP2R_CTR_TX",
+          "type": "bit 7（整个位域）",
+          "descEn": "Correct Transfer for transmission",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP2R_EP_KIND",
+          "type": "bit 8（整个位域）",
+          "descEn": "Endpoint Kind",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP2R_EP_TYPE",
+          "type": "bits[10:9]（整个位域）",
+          "descEn": "EP_TYPE[1:0] bits (Endpoint type)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP2R_SETUP",
+          "type": "bit 11（整个位域）",
+          "descEn": "Setup transaction completed",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP2R_STAT_RX",
+          "type": "bits[13:12]（整个位域）",
+          "descEn": "STAT_RX[1:0] bits (Status bits, for reception transfers)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP2R_DTOG_RX",
+          "type": "bit 14（整个位域）",
+          "descEn": "Data Toggle, for reception transfers",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP2R_CTR_RX",
+          "type": "bit 15（整个位域）",
+          "descEn": "Correct Transfer for reception",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP2R_STAT_TX_0",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP2R_STAT_TX_1",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP2R_EP_TYPE_0",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP2R_EP_TYPE_1",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP2R_STAT_RX_0",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP2R_STAT_RX_1",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "USB Endpoint 2 register, Address offset: 0x08",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_EP2R"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 USB_TypeDef.EP2R，偏移 0x08"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = USB->EP2R;  /* 读回当前值 */\nv &= ~USB_EP2R_EA_Msk;  /* 先清掉 USB_EP2R_EA：bits[3:0]（整个位域） */\nv |= (1u << USB_EP2R_EA_Pos) & USB_EP2R_EA_Msk;  /* 置位，实际取值看参考手册 */\nUSB->EP2R = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4690,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_EP3R",
+      "name": "USB_EP3R",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec2",
+      "prototype": "USB->EP3R",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_EP3R_EA",
+          "type": "bits[3:0]（整个位域）",
+          "descEn": "Endpoint Address",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP3R_STAT_TX",
+          "type": "bits[5:4]（整个位域）",
+          "descEn": "STAT_TX[1:0] bits (Status bits, for transmission transfers)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP3R_DTOG_TX",
+          "type": "bit 6（整个位域）",
+          "descEn": "Data Toggle, for transmission transfers",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP3R_CTR_TX",
+          "type": "bit 7（整个位域）",
+          "descEn": "Correct Transfer for transmission",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP3R_EP_KIND",
+          "type": "bit 8（整个位域）",
+          "descEn": "Endpoint Kind",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP3R_EP_TYPE",
+          "type": "bits[10:9]（整个位域）",
+          "descEn": "EP_TYPE[1:0] bits (Endpoint type)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP3R_SETUP",
+          "type": "bit 11（整个位域）",
+          "descEn": "Setup transaction completed",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP3R_STAT_RX",
+          "type": "bits[13:12]（整个位域）",
+          "descEn": "STAT_RX[1:0] bits (Status bits, for reception transfers)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP3R_DTOG_RX",
+          "type": "bit 14（整个位域）",
+          "descEn": "Data Toggle, for reception transfers",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP3R_CTR_RX",
+          "type": "bit 15（整个位域）",
+          "descEn": "Correct Transfer for reception",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP3R_STAT_TX_0",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP3R_STAT_TX_1",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP3R_EP_TYPE_0",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP3R_EP_TYPE_1",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP3R_STAT_RX_0",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP3R_STAT_RX_1",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "USB Endpoint 3 register, Address offset: 0x0C",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_EP3R"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 USB_TypeDef.EP3R，偏移 0x0C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = USB->EP3R;  /* 读回当前值 */\nv &= ~USB_EP3R_EA_Msk;  /* 先清掉 USB_EP3R_EA：bits[3:0]（整个位域） */\nv |= (1u << USB_EP3R_EA_Pos) & USB_EP3R_EA_Msk;  /* 置位，实际取值看参考手册 */\nUSB->EP3R = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4734,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_EP4R",
+      "name": "USB_EP4R",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec2",
+      "prototype": "USB->EP4R",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_EP4R_EA",
+          "type": "bits[3:0]（整个位域）",
+          "descEn": "Endpoint Address",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP4R_STAT_TX",
+          "type": "bits[5:4]（整个位域）",
+          "descEn": "STAT_TX[1:0] bits (Status bits, for transmission transfers)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP4R_DTOG_TX",
+          "type": "bit 6（整个位域）",
+          "descEn": "Data Toggle, for transmission transfers",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP4R_CTR_TX",
+          "type": "bit 7（整个位域）",
+          "descEn": "Correct Transfer for transmission",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP4R_EP_KIND",
+          "type": "bit 8（整个位域）",
+          "descEn": "Endpoint Kind",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP4R_EP_TYPE",
+          "type": "bits[10:9]（整个位域）",
+          "descEn": "EP_TYPE[1:0] bits (Endpoint type)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP4R_SETUP",
+          "type": "bit 11（整个位域）",
+          "descEn": "Setup transaction completed",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP4R_STAT_RX",
+          "type": "bits[13:12]（整个位域）",
+          "descEn": "STAT_RX[1:0] bits (Status bits, for reception transfers)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP4R_DTOG_RX",
+          "type": "bit 14（整个位域）",
+          "descEn": "Data Toggle, for reception transfers",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP4R_CTR_RX",
+          "type": "bit 15（整个位域）",
+          "descEn": "Correct Transfer for reception",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP4R_STAT_TX_0",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP4R_STAT_TX_1",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP4R_EP_TYPE_0",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP4R_EP_TYPE_1",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP4R_STAT_RX_0",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP4R_STAT_RX_1",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "USB Endpoint 4 register, Address offset: 0x10",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_EP4R"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 USB_TypeDef.EP4R，偏移 0x10"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = USB->EP4R;  /* 读回当前值 */\nv &= ~USB_EP4R_EA_Msk;  /* 先清掉 USB_EP4R_EA：bits[3:0]（整个位域） */\nv |= (1u << USB_EP4R_EA_Pos) & USB_EP4R_EA_Msk;  /* 置位，实际取值看参考手册 */\nUSB->EP4R = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4778,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_EP5R",
+      "name": "USB_EP5R",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec2",
+      "prototype": "USB->EP5R",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_EP5R_EA",
+          "type": "bits[3:0]（整个位域）",
+          "descEn": "Endpoint Address",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP5R_STAT_TX",
+          "type": "bits[5:4]（整个位域）",
+          "descEn": "STAT_TX[1:0] bits (Status bits, for transmission transfers)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP5R_DTOG_TX",
+          "type": "bit 6（整个位域）",
+          "descEn": "Data Toggle, for transmission transfers",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP5R_CTR_TX",
+          "type": "bit 7（整个位域）",
+          "descEn": "Correct Transfer for transmission",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP5R_EP_KIND",
+          "type": "bit 8（整个位域）",
+          "descEn": "Endpoint Kind",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP5R_EP_TYPE",
+          "type": "bits[10:9]（整个位域）",
+          "descEn": "EP_TYPE[1:0] bits (Endpoint type)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP5R_SETUP",
+          "type": "bit 11（整个位域）",
+          "descEn": "Setup transaction completed",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP5R_STAT_RX",
+          "type": "bits[13:12]（整个位域）",
+          "descEn": "STAT_RX[1:0] bits (Status bits, for reception transfers)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP5R_DTOG_RX",
+          "type": "bit 14（整个位域）",
+          "descEn": "Data Toggle, for reception transfers",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP5R_CTR_RX",
+          "type": "bit 15（整个位域）",
+          "descEn": "Correct Transfer for reception",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP5R_STAT_TX_0",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP5R_STAT_TX_1",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP5R_EP_TYPE_0",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP5R_EP_TYPE_1",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP5R_STAT_RX_0",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP5R_STAT_RX_1",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "USB Endpoint 5 register, Address offset: 0x14",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_EP5R"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 USB_TypeDef.EP5R，偏移 0x14"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = USB->EP5R;  /* 读回当前值 */\nv &= ~USB_EP5R_EA_Msk;  /* 先清掉 USB_EP5R_EA：bits[3:0]（整个位域） */\nv |= (1u << USB_EP5R_EA_Pos) & USB_EP5R_EA_Msk;  /* 置位，实际取值看参考手册 */\nUSB->EP5R = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4822,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_EP6R",
+      "name": "USB_EP6R",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec2",
+      "prototype": "USB->EP6R",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_EP6R_EA",
+          "type": "bits[3:0]（整个位域）",
+          "descEn": "Endpoint Address",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP6R_STAT_TX",
+          "type": "bits[5:4]（整个位域）",
+          "descEn": "STAT_TX[1:0] bits (Status bits, for transmission transfers)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP6R_DTOG_TX",
+          "type": "bit 6（整个位域）",
+          "descEn": "Data Toggle, for transmission transfers",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP6R_CTR_TX",
+          "type": "bit 7（整个位域）",
+          "descEn": "Correct Transfer for transmission",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP6R_EP_KIND",
+          "type": "bit 8（整个位域）",
+          "descEn": "Endpoint Kind",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP6R_EP_TYPE",
+          "type": "bits[10:9]（整个位域）",
+          "descEn": "EP_TYPE[1:0] bits (Endpoint type)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP6R_SETUP",
+          "type": "bit 11（整个位域）",
+          "descEn": "Setup transaction completed",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP6R_STAT_RX",
+          "type": "bits[13:12]（整个位域）",
+          "descEn": "STAT_RX[1:0] bits (Status bits, for reception transfers)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP6R_DTOG_RX",
+          "type": "bit 14（整个位域）",
+          "descEn": "Data Toggle, for reception transfers",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP6R_CTR_RX",
+          "type": "bit 15（整个位域）",
+          "descEn": "Correct Transfer for reception",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP6R_STAT_TX_0",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP6R_STAT_TX_1",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP6R_EP_TYPE_0",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP6R_EP_TYPE_1",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP6R_STAT_RX_0",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP6R_STAT_RX_1",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "USB Endpoint 6 register, Address offset: 0x18",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_EP6R"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 USB_TypeDef.EP6R，偏移 0x18"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = USB->EP6R;  /* 读回当前值 */\nv &= ~USB_EP6R_EA_Msk;  /* 先清掉 USB_EP6R_EA：bits[3:0]（整个位域） */\nv |= (1u << USB_EP6R_EA_Pos) & USB_EP6R_EA_Msk;  /* 置位，实际取值看参考手册 */\nUSB->EP6R = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4866,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_EP7R",
+      "name": "USB_EP7R",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec2",
+      "prototype": "USB->EP7R",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_EP7R_EA",
+          "type": "bits[3:0]（整个位域）",
+          "descEn": "Endpoint Address",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP7R_STAT_TX",
+          "type": "bits[5:4]（整个位域）",
+          "descEn": "STAT_TX[1:0] bits (Status bits, for transmission transfers)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP7R_DTOG_TX",
+          "type": "bit 6（整个位域）",
+          "descEn": "Data Toggle, for transmission transfers",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP7R_CTR_TX",
+          "type": "bit 7（整个位域）",
+          "descEn": "Correct Transfer for transmission",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP7R_EP_KIND",
+          "type": "bit 8（整个位域）",
+          "descEn": "Endpoint Kind",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP7R_EP_TYPE",
+          "type": "bits[10:9]（整个位域）",
+          "descEn": "EP_TYPE[1:0] bits (Endpoint type)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP7R_SETUP",
+          "type": "bit 11（整个位域）",
+          "descEn": "Setup transaction completed",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP7R_STAT_RX",
+          "type": "bits[13:12]（整个位域）",
+          "descEn": "STAT_RX[1:0] bits (Status bits, for reception transfers)",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP7R_DTOG_RX",
+          "type": "bit 14（整个位域）",
+          "descEn": "Data Toggle, for reception transfers",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP7R_CTR_RX",
+          "type": "bit 15（整个位域）",
+          "descEn": "Correct Transfer for reception",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP7R_STAT_TX_0",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP7R_STAT_TX_1",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP7R_EP_TYPE_0",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP7R_EP_TYPE_1",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP7R_STAT_RX_0",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP7R_STAT_RX_1",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "USB Endpoint 7 register, Address offset: 0x1C",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_EP7R"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 USB_TypeDef.EP7R，偏移 0x1C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = USB->EP7R;  /* 读回当前值 */\nv &= ~USB_EP7R_EA_Msk;  /* 先清掉 USB_EP7R_EA：bits[3:0]（整个位域） */\nv |= (1u << USB_EP7R_EA_Pos) & USB_EP7R_EA_Msk;  /* 置位，实际取值看参考手册 */\nUSB->EP7R = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4910,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_FNR",
+      "name": "USB_FNR",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec3",
+      "prototype": "USB->FNR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_FNR_FN",
+          "type": "bits[10:0]（整个位域）",
+          "descEn": "Frame Number",
+          "descZh": ""
+        },
+        {
+          "name": "USB_FNR_LSOF",
+          "type": "bits[12:11]（整个位域）",
+          "descEn": "Lost SOF",
+          "descZh": ""
+        },
+        {
+          "name": "USB_FNR_LCK",
+          "type": "bit 13（整个位域）",
+          "descEn": "Locked",
+          "descZh": ""
+        },
+        {
+          "name": "USB_FNR_RXDM",
+          "type": "bit 14（整个位域）",
+          "descEn": "Receive Data - Line Status",
+          "descZh": ""
+        },
+        {
+          "name": "USB_FNR_RXDP",
+          "type": "bit 15（整个位域）",
+          "descEn": "Receive Data + Line Status",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Frame number register, Address offset: 0x48",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_FNR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 USB_TypeDef.FNR，偏移 0x48"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = USB->FNR;  /* 读回当前值 */\nv &= ~USB_FNR_FN_Msk;  /* 先清掉 USB_FNR_FN：bits[10:0]（整个位域） */\nv |= (1u << USB_FNR_FN_Pos) & USB_FNR_FN_Msk;  /* 置位，实际取值看参考手册 */\nUSB->FNR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 5028,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USB_ISTR",
+      "name": "USB_ISTR",
+      "peripheral": "CMSIS",
+      "library": "reg",
+      "sectionId": "CMSIS@reg#sec1",
+      "prototype": "USB->ISTR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USB_ISTR_EP_ID",
+          "type": "bits[3:0]（整个位域）",
+          "descEn": "Endpoint Identifier",
+          "descZh": ""
+        },
+        {
+          "name": "USB_ISTR_DIR",
+          "type": "bit 4（整个位域）",
+          "descEn": "Direction of transaction",
+          "descZh": ""
+        },
+        {
+          "name": "USB_ISTR_ESOF",
+          "type": "bit 8（整个位域）",
+          "descEn": "Expected Start Of Frame",
+          "descZh": ""
+        },
+        {
+          "name": "USB_ISTR_SOF",
+          "type": "bit 9（整个位域）",
+          "descEn": "Start Of Frame",
+          "descZh": ""
+        },
+        {
+          "name": "USB_ISTR_RESET",
+          "type": "bit 10（整个位域）",
+          "descEn": "USB RESET request",
+          "descZh": ""
+        },
+        {
+          "name": "USB_ISTR_SUSP",
+          "type": "bit 11（整个位域）",
+          "descEn": "Suspend mode request",
+          "descZh": ""
+        },
+        {
+          "name": "USB_ISTR_WKUP",
+          "type": "bit 12（整个位域）",
+          "descEn": "Wake up",
+          "descZh": ""
+        },
+        {
+          "name": "USB_ISTR_ERR",
+          "type": "bit 13（整个位域）",
+          "descEn": "Error",
+          "descZh": ""
+        },
+        {
+          "name": "USB_ISTR_PMAOVR",
+          "type": "bit 14（整个位域）",
+          "descEn": "Packet Memory Area Over / Underrun",
+          "descZh": ""
+        },
+        {
+          "name": "USB_ISTR_CTR",
+          "type": "bit 15（整个位域）",
+          "descEn": "Correct Transfer",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Interrupt status register, Address offset: 0x44",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USB_ISTR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 USB_TypeDef.ISTR，偏移 0x44"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = USB->ISTR;  /* 读回当前值 */\nv &= ~USB_ISTR_EP_ID_Msk;  /* 先清掉 USB_ISTR_EP_ID：bits[3:0]（整个位域） */\nv |= (1u << USB_ISTR_EP_ID_Pos) & USB_ISTR_EP_ID_Msk;  /* 置位，实际取值看参考手册 */\nUSB->ISTR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4996,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    }
+  ]
+}

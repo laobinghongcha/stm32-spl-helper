@@ -1,0 +1,4659 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "I2C",
+  "library": "ll",
+  "functions": [
+    {
+      "id": "LL_I2C_Enable",
+      "name": "LL_I2C_Enable",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_Enable(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable I2C peripheral (PE = 1).",
+      "briefZh": "使能 I2C。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 348,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_Disable",
+      "name": "LL_I2C_Disable",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_Disable(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable I2C peripheral (PE = 0).",
+      "briefZh": "失能 I2C。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 359,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsEnabled",
+      "name": "LL_I2C_IsEnabled",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "uint32_t LL_I2C_IsEnabled(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the I2C peripheral is enabled or disabled.",
+      "briefZh": "查询 I2C 是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 370,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_EnableDMAReq_TX",
+      "name": "LL_I2C_EnableDMAReq_TX",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_EnableDMAReq_TX(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable DMA transmission requests.",
+      "briefZh": "使能 I2C 的发送 DMA 请求。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 382,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_DisableDMAReq_TX",
+      "name": "LL_I2C_DisableDMAReq_TX",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_DisableDMAReq_TX(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable DMA transmission requests.",
+      "briefZh": "失能 I2C 的发送 DMA 请求。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 393,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsEnabledDMAReq_TX",
+      "name": "LL_I2C_IsEnabledDMAReq_TX",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "uint32_t LL_I2C_IsEnabledDMAReq_TX(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if DMA transmission requests are enabled or disabled.",
+      "briefZh": "查询 I2C 的发送 DMA 请求是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 404,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_EnableDMAReq_RX",
+      "name": "LL_I2C_EnableDMAReq_RX",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_EnableDMAReq_RX(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable DMA reception requests.",
+      "briefZh": "使能 I2C 的接收 DMA 请求。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 415,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_DisableDMAReq_RX",
+      "name": "LL_I2C_DisableDMAReq_RX",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_DisableDMAReq_RX(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable DMA reception requests.",
+      "briefZh": "失能 I2C 的接收 DMA 请求。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 426,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsEnabledDMAReq_RX",
+      "name": "LL_I2C_IsEnabledDMAReq_RX",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "uint32_t LL_I2C_IsEnabledDMAReq_RX(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if DMA reception requests are enabled or disabled.",
+      "briefZh": "查询 I2C 的接收 DMA 请求是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 437,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_DMA_GetRegAddr",
+      "name": "LL_I2C_DMA_GetRegAddr",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "uint32_t LL_I2C_DMA_GetRegAddr(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "Address of data register",
+      "returnDescZh": "",
+      "briefEn": "Get the data register address used for DMA transfer.",
+      "briefZh": "返回 I2C 数据寄存器（DR）地址，供 DMA 搬运时使用。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 448,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_EnableClockStretching",
+      "name": "LL_I2C_EnableClockStretching",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_EnableClockStretching(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable Clock stretching.",
+      "briefZh": "使能 I2C 的时钟延展。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This bit can only be programmed when the I2C is disabled (PE = 0)."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 460,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_DisableClockStretching",
+      "name": "LL_I2C_DisableClockStretching",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_DisableClockStretching(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable Clock stretching.",
+      "briefZh": "失能 I2C 的时钟延展。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This bit can only be programmed when the I2C is disabled (PE = 0)."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 472,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsEnabledClockStretching",
+      "name": "LL_I2C_IsEnabledClockStretching",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "uint32_t LL_I2C_IsEnabledClockStretching(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if Clock stretching is enabled or disabled.",
+      "briefZh": "查询 I2C 是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 483,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_EnableGeneralCall",
+      "name": "LL_I2C_EnableGeneralCall",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_EnableGeneralCall(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable General Call.",
+      "briefZh": "使能 I2C 的通用呼叫。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "When enabled the Address 0x00 is ACKed."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 495,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_DisableGeneralCall",
+      "name": "LL_I2C_DisableGeneralCall",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_DisableGeneralCall(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable General Call.",
+      "briefZh": "失能 I2C 的通用呼叫。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "When disabled the Address 0x00 is NACKed."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 507,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsEnabledGeneralCall",
+      "name": "LL_I2C_IsEnabledGeneralCall",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "uint32_t LL_I2C_IsEnabledGeneralCall(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if General Call is enabled or disabled.",
+      "briefZh": "查询 I2C 是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 518,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_SetOwnAddress1",
+      "name": "LL_I2C_SetOwnAddress1",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_SetOwnAddress1(I2C_TypeDef * I2Cx, uint32_t OwnAddress1, uint32_t OwnAddrSize);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        },
+        {
+          "name": "OwnAddress1",
+          "type": "uint32_t",
+          "descEn": "This parameter must be a value between Min_Data=0 and Max_Data=0x3FF.",
+          "descZh": "本机地址 1（从机模式用）。"
+        },
+        {
+          "name": "OwnAddrSize",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set the Own Address1.",
+      "briefZh": "设置 I2C 的本机地址 1。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_OAR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 536,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_SetOwnAddress2",
+      "name": "LL_I2C_SetOwnAddress2",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_SetOwnAddress2(I2C_TypeDef * I2Cx, uint32_t OwnAddress2);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        },
+        {
+          "name": "OwnAddress2",
+          "type": "uint32_t",
+          "descEn": "This parameter must be a value between Min_Data=0 and Max_Data=0x7F.",
+          "descZh": "本机地址 2（双地址模式用）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set the 7bits Own Address2.",
+      "briefZh": "设置 I2C 的本机地址 2。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_OAR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This action has no effect if own address2 is enabled."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 549,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_EnableOwnAddress2",
+      "name": "LL_I2C_EnableOwnAddress2",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_EnableOwnAddress2(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable acknowledge on Own Address2 match address.",
+      "briefZh": "使能 I2C 的本机地址 2。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_OAR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 560,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_DisableOwnAddress2",
+      "name": "LL_I2C_DisableOwnAddress2",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_DisableOwnAddress2(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable acknowledge on Own Address2 match address.",
+      "briefZh": "失能 I2C 的本机地址 2。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_OAR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 571,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsEnabledOwnAddress2",
+      "name": "LL_I2C_IsEnabledOwnAddress2",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "uint32_t LL_I2C_IsEnabledOwnAddress2(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if Own Address1 acknowledge is enabled or disabled.",
+      "briefZh": "查询 I2C 是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_OAR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 582,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_SetPeriphClock",
+      "name": "LL_I2C_SetPeriphClock",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_SetPeriphClock(I2C_TypeDef * I2Cx, uint32_t PeriphClock);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        },
+        {
+          "name": "PeriphClock",
+          "type": "uint32_t",
+          "descEn": "Peripheral Clock (in Hz)",
+          "descZh": "外设总线时钟频率（Hz）。算波特率时必须传对外设所在的 PCLK1 或 PCLK2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Configure the Peripheral clock frequency.",
+      "briefZh": "设置 I2C 的外设时钟频率。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__LL_I2C_FREQ_HZ_TO_MHZ"
+      ],
+      "headerLine": 594,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_GetPeriphClock",
+      "name": "LL_I2C_GetPeriphClock",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "uint32_t LL_I2C_GetPeriphClock(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "Value of Peripheral Clock (in Hz)",
+      "returnDescZh": "",
+      "briefEn": "Get the Peripheral clock frequency.",
+      "briefZh": "读取 I2C 的外设时钟频率。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__LL_I2C_FREQ_MHZ_TO_HZ"
+      ],
+      "headerLine": 605,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_SetDutyCycle",
+      "name": "LL_I2C_SetDutyCycle",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_SetDutyCycle(I2C_TypeDef * I2Cx, uint32_t DutyCycle);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        },
+        {
+          "name": "DutyCycle",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "I2C 快速模式的占空比（2:1 或 16:9）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Configure the Duty cycle (Fast mode only).",
+      "briefZh": "设置 I2C 的占空比。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 619,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_GetDutyCycle",
+      "name": "LL_I2C_GetDutyCycle",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "uint32_t LL_I2C_GetDutyCycle(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get the Duty cycle (Fast mode only).",
+      "briefZh": "读取 I2C 的占空比。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 632,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_SetClockSpeedMode",
+      "name": "LL_I2C_SetClockSpeedMode",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_SetClockSpeedMode(I2C_TypeDef * I2Cx, uint32_t ClockSpeedMode);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        },
+        {
+          "name": "ClockSpeedMode",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Configure the I2C master clock speed mode.",
+      "briefZh": "设置 I2C 的时钟速度模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 646,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_GetClockSpeedMode",
+      "name": "LL_I2C_GetClockSpeedMode",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "uint32_t LL_I2C_GetClockSpeedMode(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get the the I2C master speed mode.",
+      "briefZh": "读取 I2C 的时钟速度模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 659,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_SetRiseTime",
+      "name": "LL_I2C_SetRiseTime",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_SetRiseTime(I2C_TypeDef * I2Cx, uint32_t RiseTime);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        },
+        {
+          "name": "RiseTime",
+          "type": "uint32_t",
+          "descEn": "This parameter must be a value between Min_Data=0x02 and Max_Data=0x3F.",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Configure the SCL, SDA rising time.",
+      "briefZh": "设置 I2C 的上升时间。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_TRISE"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This bit can only be programmed when the I2C is disabled (PE = 0)."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 672,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_GetRiseTime",
+      "name": "LL_I2C_GetRiseTime",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "uint32_t LL_I2C_GetRiseTime(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "Value between Min_Data=0x02 and Max_Data=0x3F",
+      "returnDescZh": "",
+      "briefEn": "Get the SCL, SDA rising time.",
+      "briefZh": "读取 I2C 的上升时间。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_TRISE"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 683,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_SetClockPeriod",
+      "name": "LL_I2C_SetClockPeriod",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_SetClockPeriod(I2C_TypeDef * I2Cx, uint32_t ClockPeriod);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        },
+        {
+          "name": "ClockPeriod",
+          "type": "uint32_t",
+          "descEn": "This parameter must be a value between Min_Data=0x004 and Max_Data=0xFFF, except in FAST DUTY mode where Min_Data=0x001.",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Configure the SCL high and low period.",
+      "briefZh": "设置 I2C 的时钟周期。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This bit can only be programmed when the I2C is disabled (PE = 0)."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 696,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_GetClockPeriod",
+      "name": "LL_I2C_GetClockPeriod",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "uint32_t LL_I2C_GetClockPeriod(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "Value between Min_Data=0x004 and Max_Data=0xFFF, except in FAST DUTY mode where Min_Data=0x001.",
+      "returnDescZh": "",
+      "briefEn": "Get the SCL high and low period.",
+      "briefZh": "读取 I2C 的时钟周期。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 707,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_ConfigSpeed",
+      "name": "LL_I2C_ConfigSpeed",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_ConfigSpeed(I2C_TypeDef * I2Cx, uint32_t PeriphClock, uint32_t ClockSpeed, uint32_t DutyCycle);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        },
+        {
+          "name": "PeriphClock",
+          "type": "uint32_t",
+          "descEn": "Peripheral Clock (in Hz)",
+          "descZh": "外设总线时钟频率（Hz）。算波特率时必须传对外设所在的 PCLK1 或 PCLK2。"
+        },
+        {
+          "name": "ClockSpeed",
+          "type": "uint32_t",
+          "descEn": "This parameter must be a value lower than 400kHz (in Hz).",
+          "descZh": ""
+        },
+        {
+          "name": "DutyCycle",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "I2C 快速模式的占空比（2:1 或 16:9）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Configure the SCL speed.",
+      "briefZh": "一次性配置 I2C 的时钟频率、占空比与上升时间并算出 CCR 值。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2",
+        "I2Cx_TRISE",
+        "I2Cx_CCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This bit can only be programmed when the I2C is disabled (PE = 0)."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__LL_I2C_FREQ_HZ_TO_MHZ",
+        "__LL_I2C_RISE_TIME",
+        "LL_I2C_MAX_SPEED_STANDARD",
+        "LL_I2C_CLOCK_SPEED_FAST_MODE",
+        "__LL_I2C_SPEED_FAST_TO_CCR",
+        "LL_I2C_CLOCK_SPEED_STANDARD_MODE",
+        "__LL_I2C_SPEED_STANDARD_TO_CCR"
+      ],
+      "headerLine": 728,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_SetMode",
+      "name": "LL_I2C_SetMode",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_SetMode(I2C_TypeDef * I2Cx, uint32_t PeripheralMode);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        },
+        {
+          "name": "PeripheralMode",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Configure peripheral mode.",
+      "briefZh": "设置 I2C 的工作模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 777,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_GetMode",
+      "name": "LL_I2C_GetMode",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "uint32_t LL_I2C_GetMode(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get peripheral mode.",
+      "briefZh": "读取 I2C 的工作模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 796,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_EnableSMBusAlert",
+      "name": "LL_I2C_EnableSMBusAlert",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_EnableSMBusAlert(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable SMBus alert (Host or Device mode)",
+      "briefZh": "使能 I2C 的 SMBus 告警。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance.",
+        "SMBus Device mode: - SMBus Alert pin is drived low and Alert Response Address Header acknowledge is enabled. SMBus Host mode: - SMBus Alert pin management is supported."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 814,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_DisableSMBusAlert",
+      "name": "LL_I2C_DisableSMBusAlert",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_DisableSMBusAlert(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable SMBus alert (Host or Device mode)",
+      "briefZh": "失能 I2C 的 SMBus 告警。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance.",
+        "SMBus Device mode: - SMBus Alert pin is not drived (can be used as a standard GPIO) and Alert Response Address Header acknowledge is disabled. SMBus Host mode: - SMBus Alert pin management is not supported."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 832,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsEnabledSMBusAlert",
+      "name": "LL_I2C_IsEnabledSMBusAlert",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "uint32_t LL_I2C_IsEnabledSMBusAlert(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if SMBus alert (Host or Device mode) is enabled or disabled.",
+      "briefZh": "查询 I2C 是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 845,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_EnableSMBusPEC",
+      "name": "LL_I2C_EnableSMBusPEC",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_EnableSMBusPEC(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable SMBus Packet Error Calculation (PEC).",
+      "briefZh": "使能 I2C 的 SMBus 数据包校验（PEC）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 858,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_DisableSMBusPEC",
+      "name": "LL_I2C_DisableSMBusPEC",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "void LL_I2C_DisableSMBusPEC(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable SMBus Packet Error Calculation (PEC).",
+      "briefZh": "失能 I2C 的 SMBus 数据包校验（PEC）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 871,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsEnabledSMBusPEC",
+      "name": "LL_I2C_IsEnabledSMBusPEC",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec1",
+      "prototype": "uint32_t LL_I2C_IsEnabledSMBusPEC(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if SMBus Packet Error Calculation (PEC) is enabled or disabled.",
+      "briefZh": "查询 I2C 是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 884,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_EnableIT_TX",
+      "name": "LL_I2C_EnableIT_TX",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec2",
+      "prototype": "void LL_I2C_EnableIT_TX(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable TXE interrupt.",
+      "briefZh": "使能 I2C 的发送中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 904,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_DisableIT_TX",
+      "name": "LL_I2C_DisableIT_TX",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec2",
+      "prototype": "void LL_I2C_DisableIT_TX(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable TXE interrupt.",
+      "briefZh": "失能 I2C 的发送中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 916,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsEnabledIT_TX",
+      "name": "LL_I2C_IsEnabledIT_TX",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec2",
+      "prototype": "uint32_t LL_I2C_IsEnabledIT_TX(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the TXE Interrupt is enabled or disabled.",
+      "briefZh": "查询 I2C 的发送中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 928,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_EnableIT_RX",
+      "name": "LL_I2C_EnableIT_RX",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec2",
+      "prototype": "void LL_I2C_EnableIT_RX(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable RXNE interrupt.",
+      "briefZh": "使能 I2C 的接收中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 940,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_DisableIT_RX",
+      "name": "LL_I2C_DisableIT_RX",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec2",
+      "prototype": "void LL_I2C_DisableIT_RX(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable RXNE interrupt.",
+      "briefZh": "失能 I2C 的接收中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 952,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsEnabledIT_RX",
+      "name": "LL_I2C_IsEnabledIT_RX",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec2",
+      "prototype": "uint32_t LL_I2C_IsEnabledIT_RX(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the RXNE Interrupt is enabled or disabled.",
+      "briefZh": "查询 I2C 的接收中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 964,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_EnableIT_EVT",
+      "name": "LL_I2C_EnableIT_EVT",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec2",
+      "prototype": "void LL_I2C_EnableIT_EVT(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable Events interrupts.",
+      "briefZh": "使能 I2C 的事件中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Any of these events will generate interrupt : Start Bit (SB) Address sent, Address matched (ADDR) 10-bit header sent (ADD10) Stop detection (STOPF) Byte transfer finished (BTF)",
+        "Any of these events will generate interrupt if Buffer interrupts are enabled too(using unitary function @ref LL_I2C_EnableIT_BUF()) : Receive buffer not empty (RXNE) Transmit buffer empty (TXE)"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 985,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_DisableIT_EVT",
+      "name": "LL_I2C_DisableIT_EVT",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec2",
+      "prototype": "void LL_I2C_DisableIT_EVT(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable Events interrupts.",
+      "briefZh": "失能 I2C 的事件中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Any of these events will generate interrupt : Start Bit (SB) Address sent, Address matched (ADDR) 10-bit header sent (ADD10) Stop detection (STOPF) Byte transfer finished (BTF) Receive buffer not empty (RXNE) Transmit buffer empty (TXE)"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1004,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsEnabledIT_EVT",
+      "name": "LL_I2C_IsEnabledIT_EVT",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec2",
+      "prototype": "uint32_t LL_I2C_IsEnabledIT_EVT(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if Events interrupts are enabled or disabled.",
+      "briefZh": "查询 I2C 的事件中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1015,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_EnableIT_BUF",
+      "name": "LL_I2C_EnableIT_BUF",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec2",
+      "prototype": "void LL_I2C_EnableIT_BUF(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable Buffer interrupts.",
+      "briefZh": "使能 I2C 的缓冲区中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Any of these Buffer events will generate interrupt if Events interrupts are enabled too(using unitary function @ref LL_I2C_EnableIT_EVT()) : Receive buffer not empty (RXNE) Transmit buffer empty (TXE)"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1029,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_DisableIT_BUF",
+      "name": "LL_I2C_DisableIT_BUF",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec2",
+      "prototype": "void LL_I2C_DisableIT_BUF(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable Buffer interrupts.",
+      "briefZh": "失能 I2C 的缓冲区中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Any of these Buffer events will generate interrupt : Receive buffer not empty (RXNE) Transmit buffer empty (TXE)"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1043,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsEnabledIT_BUF",
+      "name": "LL_I2C_IsEnabledIT_BUF",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec2",
+      "prototype": "uint32_t LL_I2C_IsEnabledIT_BUF(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if Buffer interrupts are enabled or disabled.",
+      "briefZh": "查询 I2C 的缓冲区中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1054,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_EnableIT_ERR",
+      "name": "LL_I2C_EnableIT_ERR",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec2",
+      "prototype": "void LL_I2C_EnableIT_ERR(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable Error interrupts.",
+      "briefZh": "使能 I2C 的错误中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance.",
+        "Any of these errors will generate interrupt : Bus Error detection (BERR) Arbitration Loss (ARLO) Acknowledge Failure(AF) Overrun/Underrun (OVR) SMBus Timeout detection (TIMEOUT) SMBus PEC error detection (PECERR) SMBus Alert pin event detection (SMBALERT)"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1075,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_DisableIT_ERR",
+      "name": "LL_I2C_DisableIT_ERR",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec2",
+      "prototype": "void LL_I2C_DisableIT_ERR(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable Error interrupts.",
+      "briefZh": "失能 I2C 的错误中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance.",
+        "Any of these errors will generate interrupt : Bus Error detection (BERR) Arbitration Loss (ARLO) Acknowledge Failure(AF) Overrun/Underrun (OVR) SMBus Timeout detection (TIMEOUT) SMBus PEC error detection (PECERR) SMBus Alert pin event detection (SMBALERT)"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1096,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsEnabledIT_ERR",
+      "name": "LL_I2C_IsEnabledIT_ERR",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec2",
+      "prototype": "uint32_t LL_I2C_IsEnabledIT_ERR(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if Error interrupts are enabled or disabled.",
+      "briefZh": "查询 I2C 的错误中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1107,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsActiveFlag_TXE",
+      "name": "LL_I2C_IsActiveFlag_TXE",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "uint32_t LL_I2C_IsActiveFlag_TXE(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate the status of Transmit data register empty flag.",
+      "briefZh": "查询 I2C 的发送数据寄存器空标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "RESET: When next data is written in Transmit data register. SET: When Transmit data register is empty."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1128,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsActiveFlag_BTF",
+      "name": "LL_I2C_IsActiveFlag_BTF",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "uint32_t LL_I2C_IsActiveFlag_BTF(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate the status of Byte Transfer Finished flag. RESET: When Data byte transfer not done. SET: When Data byte transfer succeeded.",
+      "briefZh": "查询 I2C 的字节传输完成标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1141,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsActiveFlag_RXNE",
+      "name": "LL_I2C_IsActiveFlag_RXNE",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "uint32_t LL_I2C_IsActiveFlag_RXNE(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate the status of Receive data register not empty flag.",
+      "briefZh": "查询 I2C 的接收数据寄存器非空标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "RESET: When Receive data register is read. SET: When the received data is copied in Receive data register."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1154,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsActiveFlag_SB",
+      "name": "LL_I2C_IsActiveFlag_SB",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "uint32_t LL_I2C_IsActiveFlag_SB(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate the status of Start Bit (master mode).",
+      "briefZh": "查询 I2C 的起始位已发送标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "RESET: When No Start condition. SET: When Start condition is generated."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1167,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsActiveFlag_ADDR",
+      "name": "LL_I2C_IsActiveFlag_ADDR",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "uint32_t LL_I2C_IsActiveFlag_ADDR(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate the status of Address sent (master mode) or Address matched flag (slave mode).",
+      "briefZh": "查询 I2C 的地址匹配标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "RESET: Clear default value. SET: When the address is fully sent (master mode) or when the received slave address matched with one of the enabled slave address (slave mode)."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1180,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsActiveFlag_ADD10",
+      "name": "LL_I2C_IsActiveFlag_ADD10",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "uint32_t LL_I2C_IsActiveFlag_ADD10(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate the status of 10-bit header sent (master mode).",
+      "briefZh": "查询 I2C 的 10 位地址头已发送标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "RESET: When no ADD10 event occurred. SET: When the master has sent the first address byte (header)."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1193,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsActiveFlag_AF",
+      "name": "LL_I2C_IsActiveFlag_AF",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "uint32_t LL_I2C_IsActiveFlag_AF(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate the status of Acknowledge failure flag.",
+      "briefZh": "查询 I2C 的应答失败（NACK）标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "RESET: No acknowledge failure. SET: When an acknowledge failure is received after a byte transmission."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1206,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsActiveFlag_STOP",
+      "name": "LL_I2C_IsActiveFlag_STOP",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "uint32_t LL_I2C_IsActiveFlag_STOP(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate the status of Stop detection flag (slave mode).",
+      "briefZh": "查询 I2C 的停止条件（检测到 STOP）标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "RESET: Clear default value. SET: When a Stop condition is detected."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1219,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsActiveFlag_BERR",
+      "name": "LL_I2C_IsActiveFlag_BERR",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "uint32_t LL_I2C_IsActiveFlag_BERR(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate the status of Bus error flag.",
+      "briefZh": "查询 I2C 的总线错误标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "RESET: Clear default value. SET: When a misplaced Start or Stop condition is detected."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1232,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsActiveFlag_ARLO",
+      "name": "LL_I2C_IsActiveFlag_ARLO",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "uint32_t LL_I2C_IsActiveFlag_ARLO(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate the status of Arbitration lost flag.",
+      "briefZh": "查询 I2C 的仲裁丢失标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "RESET: Clear default value. SET: When arbitration lost."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1245,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsActiveFlag_OVR",
+      "name": "LL_I2C_IsActiveFlag_OVR",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "uint32_t LL_I2C_IsActiveFlag_OVR(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate the status of Overrun/Underrun flag.",
+      "briefZh": "查询 I2C 的溢出标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "RESET: Clear default value. SET: When an overrun/underrun error occurs (Clock Stretching Disabled)."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1258,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsActiveSMBusFlag_PECERR",
+      "name": "LL_I2C_IsActiveSMBusFlag_PECERR",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "uint32_t LL_I2C_IsActiveSMBusFlag_PECERR(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate the status of SMBus PEC error flag in reception.",
+      "briefZh": "查询 I2C 的 SMBus PEC 校验错误标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1271,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsActiveSMBusFlag_TIMEOUT",
+      "name": "LL_I2C_IsActiveSMBusFlag_TIMEOUT",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "uint32_t LL_I2C_IsActiveSMBusFlag_TIMEOUT(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate the status of SMBus Timeout detection flag.",
+      "briefZh": "查询 I2C 的 SMBus 超时标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1284,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsActiveSMBusFlag_ALERT",
+      "name": "LL_I2C_IsActiveSMBusFlag_ALERT",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "uint32_t LL_I2C_IsActiveSMBusFlag_ALERT(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate the status of SMBus alert flag.",
+      "briefZh": "查询 I2C 的 SMBus SMBus 告警标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1297,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsActiveFlag_BUSY",
+      "name": "LL_I2C_IsActiveFlag_BUSY",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "uint32_t LL_I2C_IsActiveFlag_BUSY(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate the status of Bus Busy flag.",
+      "briefZh": "查询 I2C 的总线忙标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "RESET: Clear default value. SET: When a Start condition is detected."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1310,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsActiveFlag_DUAL",
+      "name": "LL_I2C_IsActiveFlag_DUAL",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "uint32_t LL_I2C_IsActiveFlag_DUAL(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate the status of Dual flag.",
+      "briefZh": "查询 I2C 的双地址模式标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "RESET: Received address matched with OAR1. SET: Received address matched with OAR2."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1323,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsActiveSMBusFlag_SMBHOST",
+      "name": "LL_I2C_IsActiveSMBusFlag_SMBHOST",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "uint32_t LL_I2C_IsActiveSMBusFlag_SMBHOST(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate the status of SMBus Host address reception (Slave mode).",
+      "briefZh": "查询 I2C 的 SMBus SMBus 主机头标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance.",
+        "RESET: No SMBus Host address SET: SMBus Host address received.",
+        "This status is cleared by hardware after a STOP condition or repeated START condition."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1339,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsActiveSMBusFlag_SMBDEFAULT",
+      "name": "LL_I2C_IsActiveSMBusFlag_SMBDEFAULT",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "uint32_t LL_I2C_IsActiveSMBusFlag_SMBDEFAULT(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate the status of SMBus Device default address reception (Slave mode).",
+      "briefZh": "查询 I2C 的 SMBus SMBus 默认地址标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance.",
+        "RESET: No SMBus Device default address SET: SMBus Device default address received.",
+        "This status is cleared by hardware after a STOP condition or repeated START condition."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1355,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsActiveFlag_GENCALL",
+      "name": "LL_I2C_IsActiveFlag_GENCALL",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "uint32_t LL_I2C_IsActiveFlag_GENCALL(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate the status of General call address reception (Slave mode).",
+      "briefZh": "查询 I2C 的通用呼叫地址标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "RESET: No General call address SET: General call address received.",
+        "This status is cleared by hardware after a STOP condition or repeated START condition."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1369,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsActiveFlag_MSL",
+      "name": "LL_I2C_IsActiveFlag_MSL",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "uint32_t LL_I2C_IsActiveFlag_MSL(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate the status of Master/Slave flag.",
+      "briefZh": "查询 I2C 的主机模式标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "RESET: Slave Mode. SET: Master Mode."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1382,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_ClearFlag_ADDR",
+      "name": "LL_I2C_ClearFlag_ADDR",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "void LL_I2C_ClearFlag_ADDR(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Address Matched flag.",
+      "briefZh": "清除 I2C 的地址匹配标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR1",
+        "I2Cx_SR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Clearing this flag is done by a read access to the I2Cx_SR1 register followed by a read access to the I2Cx_SR2 register."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1395,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_ClearFlag_AF",
+      "name": "LL_I2C_ClearFlag_AF",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "void LL_I2C_ClearFlag_AF(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Acknowledge failure flag.",
+      "briefZh": "清除 I2C 的应答失败（NACK）标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1410,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_ClearFlag_STOP",
+      "name": "LL_I2C_ClearFlag_STOP",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "void LL_I2C_ClearFlag_STOP(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Stop detection flag.",
+      "briefZh": "清除 I2C 的停止条件（检测到 STOP）标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR1",
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Clearing this flag is done by a read access to the I2Cx_SR1 register followed by a write access to I2Cx_CR1 register."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1424,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_ClearFlag_BERR",
+      "name": "LL_I2C_ClearFlag_BERR",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "void LL_I2C_ClearFlag_BERR(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Bus error flag.",
+      "briefZh": "清除 I2C 的总线错误标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1438,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_ClearFlag_ARLO",
+      "name": "LL_I2C_ClearFlag_ARLO",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "void LL_I2C_ClearFlag_ARLO(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Arbitration lost flag.",
+      "briefZh": "清除 I2C 的仲裁丢失标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1449,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_ClearFlag_OVR",
+      "name": "LL_I2C_ClearFlag_OVR",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "void LL_I2C_ClearFlag_OVR(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Overrun/Underrun flag.",
+      "briefZh": "清除 I2C 的溢出标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1460,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_ClearSMBusFlag_PECERR",
+      "name": "LL_I2C_ClearSMBusFlag_PECERR",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "void LL_I2C_ClearSMBusFlag_PECERR(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear SMBus PEC error flag.",
+      "briefZh": "清除 I2C 的 SMBus PEC 校验错误标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1471,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_ClearSMBusFlag_TIMEOUT",
+      "name": "LL_I2C_ClearSMBusFlag_TIMEOUT",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "void LL_I2C_ClearSMBusFlag_TIMEOUT(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear SMBus Timeout detection flag.",
+      "briefZh": "清除 I2C 的 SMBus 超时标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1484,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_ClearSMBusFlag_ALERT",
+      "name": "LL_I2C_ClearSMBusFlag_ALERT",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec3",
+      "prototype": "void LL_I2C_ClearSMBusFlag_ALERT(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear SMBus Alert flag.",
+      "briefZh": "清除 I2C 的 SMBus SMBus 告警标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1497,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_EnableReset",
+      "name": "LL_I2C_EnableReset",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec4",
+      "prototype": "void LL_I2C_EnableReset(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable Reset of I2C peripheral.",
+      "briefZh": "使能 I2C 的复位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1516,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_DisableReset",
+      "name": "LL_I2C_DisableReset",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec4",
+      "prototype": "void LL_I2C_DisableReset(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable Reset of I2C peripheral.",
+      "briefZh": "失能 I2C 的复位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1527,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsResetEnabled",
+      "name": "LL_I2C_IsResetEnabled",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec4",
+      "prototype": "uint32_t LL_I2C_IsResetEnabled(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the I2C peripheral is under reset state or not.",
+      "briefZh": "查询 I2C 外设当前是否处于复位状态。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1538,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_AcknowledgeNextData",
+      "name": "LL_I2C_AcknowledgeNextData",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec4",
+      "prototype": "void LL_I2C_AcknowledgeNextData(I2C_TypeDef * I2Cx, uint32_t TypeAcknowledge);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        },
+        {
+          "name": "TypeAcknowledge",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Prepare the generation of a ACKnowledge or Non ACKnowledge condition after the address receive match code or next received byte.",
+      "briefZh": "设置下一次接收后是否回 ACK。读最后一个字节前要设成不回应答（NACK）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Usage in Slave or Master mode."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1553,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_GenerateStartCondition",
+      "name": "LL_I2C_GenerateStartCondition",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec4",
+      "prototype": "void LL_I2C_GenerateStartCondition(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Generate a START or RESTART condition",
+      "briefZh": "产生起始条件（START），主机模式下发起传输。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "The START bit can be set even if bus is BUSY or I2C is in slave mode. This action has no effect when RELOAD is set."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1566,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_GenerateStopCondition",
+      "name": "LL_I2C_GenerateStopCondition",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec4",
+      "prototype": "void LL_I2C_GenerateStopCondition(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Generate a STOP condition after the current byte transfer (master mode).",
+      "briefZh": "产生停止条件（STOP），结束本次传输。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1577,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_EnableBitPOS",
+      "name": "LL_I2C_EnableBitPOS",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec4",
+      "prototype": "void LL_I2C_EnableBitPOS(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable bit POS (master/host mode).",
+      "briefZh": "使能 I2C 的 POS 位（第 N 个数据字节后应答）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "In that case, the ACK bit controls the (N)ACK of the next byte received or the PEC bit indicates that the next byte in shift register is a PEC."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1589,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_DisableBitPOS",
+      "name": "LL_I2C_DisableBitPOS",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec4",
+      "prototype": "void LL_I2C_DisableBitPOS(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable bit POS (master/host mode).",
+      "briefZh": "失能 I2C 的 POS 位（第 N 个数据字节后应答）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "In that case, the ACK bit controls the (N)ACK of the current byte received or the PEC bit indicates that the current byte in shift register is a PEC."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1601,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsEnabledBitPOS",
+      "name": "LL_I2C_IsEnabledBitPOS",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec4",
+      "prototype": "uint32_t LL_I2C_IsEnabledBitPOS(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if bit POS is enabled or disabled.",
+      "briefZh": "查询 I2C 是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1612,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_GetTransferDirection",
+      "name": "LL_I2C_GetTransferDirection",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec4",
+      "prototype": "uint32_t LL_I2C_GetTransferDirection(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Indicate the value of transfer direction.",
+      "briefZh": "读取当前传输方向（发送 / 接收）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "RESET: Bus is in read transfer (peripheral point of view). SET: Bus is in write transfer (peripheral point of view)."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1627,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_EnableLastDMA",
+      "name": "LL_I2C_EnableLastDMA",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec4",
+      "prototype": "void LL_I2C_EnableLastDMA(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable DMA last transfer.",
+      "briefZh": "使能 I2C 的最后一个 DMA 传输标志。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This action mean that next DMA EOT is the last transfer."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1639,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_DisableLastDMA",
+      "name": "LL_I2C_DisableLastDMA",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec4",
+      "prototype": "void LL_I2C_DisableLastDMA(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable DMA last transfer.",
+      "briefZh": "失能 I2C 的最后一个 DMA 传输标志。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This action mean that next DMA EOT is not the last transfer."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1651,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsEnabledLastDMA",
+      "name": "LL_I2C_IsEnabledLastDMA",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec4",
+      "prototype": "uint32_t LL_I2C_IsEnabledLastDMA(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if DMA last transfer is enabled or disabled.",
+      "briefZh": "查询 I2C 是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1662,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_EnableSMBusPECCompare",
+      "name": "LL_I2C_EnableSMBusPECCompare",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec4",
+      "prototype": "void LL_I2C_EnableSMBusPECCompare(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable transfer or internal comparison of the SMBus Packet Error byte (transmission or reception mode).",
+      "briefZh": "使能 I2C 的 SMBus PEC 校验比较。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance.",
+        "This feature is cleared by hardware when the PEC byte is transferred or compared, or by a START or STOP condition, it is also cleared by software."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1677,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_DisableSMBusPECCompare",
+      "name": "LL_I2C_DisableSMBusPECCompare",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec4",
+      "prototype": "void LL_I2C_DisableSMBusPECCompare(I2C_TypeDef * I2Cx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable transfer or internal comparison of the SMBus Packet Error byte (transmission or reception mode).",
+      "briefZh": "失能 I2C 的 SMBus PEC 校验比较。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1690,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_IsEnabledSMBusPECCompare",
+      "name": "LL_I2C_IsEnabledSMBusPECCompare",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec4",
+      "prototype": "uint32_t LL_I2C_IsEnabledSMBusPECCompare(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the SMBus Packet Error byte transfer or internal comparison is requested or not.",
+      "briefZh": "查询 I2C 是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1703,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_GetSMBusPEC",
+      "name": "LL_I2C_GetSMBusPEC",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec4",
+      "prototype": "uint32_t LL_I2C_GetSMBusPEC(I2C_TypeDef * I2Cx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "Value between Min_Data=0x00 and Max_Data=0xFF",
+      "returnDescZh": "",
+      "briefEn": "Get the SMBus Packet Error byte calculated.",
+      "briefZh": "读取 I2C 的 SMBus 数据包校验（PEC）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_SR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMBUS_ALL_INSTANCE(I2Cx) can be used to check whether or not SMBus feature is supported by the I2Cx Instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1716,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_ReceiveData8",
+      "name": "LL_I2C_ReceiveData8",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec4",
+      "prototype": "uint8_t LL_I2C_ReceiveData8(I2C_TypeDef * I2Cx);",
+      "returnType": "uint8_t",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        }
+      ],
+      "returnDescEn": "Value between Min_Data=0x0 and Max_Data=0xFF",
+      "returnDescZh": "",
+      "briefEn": "Read Receive Data register.",
+      "briefZh": "从数据寄存器读一个字节。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1727,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2C_TransmitData8",
+      "name": "LL_I2C_TransmitData8",
+      "peripheral": "I2C",
+      "library": "ll",
+      "sectionId": "I2C@ll#sec4",
+      "prototype": "void LL_I2C_TransmitData8(I2C_TypeDef * I2Cx, uint8_t Data);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "I2Cx",
+          "type": "I2C_TypeDef *",
+          "descEn": "I2C Instance.",
+          "descZh": "I2C 实例指针，如 I2C1 / I2C2。"
+        },
+        {
+          "name": "Data",
+          "type": "uint8_t",
+          "descEn": "Value between Min_Data=0x0 and Max_Data=0xFF",
+          "descZh": "要写入的数据值。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Write in Transmit Data Register .",
+      "briefZh": "向数据寄存器写一个字节。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "I2Cx_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1739,
+      "definedIn": "stm32f1xx_ll_i2c.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

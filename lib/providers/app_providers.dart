@@ -54,7 +54,12 @@ final symbolMatcherProvider = Provider<SymbolMatcher?>((ref) {
 
   return SymbolMatcher(
     functions: functionNames,
-    symbols: data.symbols.map((s) => s.name),
+    // SPL 与 HAL/LL 的符号都要收：只给 SPL 的话，HAL 函数页正文里的
+    // `GPIO_InitTypeDef`、`HAL_StatusTypeDef` 这些类型名全点不动。
+    symbols: <String>[
+      ...data.symbols.map((s) => s.name),
+      ...data.halSymbols.map((s) => s.name),
+    ],
   );
 });
 
@@ -127,6 +132,27 @@ class SettingsNotifier extends AsyncNotifier<AppSettings> {
   Future<void> setOnlySupported(bool value) =>
       _update((s) => s.copyWith(onlySupported: value));
 
+  /// 开关某一个函数库（`spl` / `hal` / `ll` / `reg`）。
+  ///
+  /// 认识的库之外的值直接忽略——避免上游传了个拼错的 raw 之后，
+  /// 设置里多出一个永远不会生效的项。
+  Future<void> setLibraryEnabled(String raw, bool on) async {
+    final key = raw.trim().toLowerCase();
+    if (!AppSettings.defaultLibraries.contains(key)) {
+      debugPrint('[Settings] 忽略未知函数库标识：$raw');
+      return;
+    }
+    await _update((s) => s.withLibrary(key, on));
+  }
+
+  /// 四库全开 / 全关。
+  ///
+  /// 全关会得到空集合；[SettingsStore.load] 会把空集合回退成全开，
+  /// 所以 UI 侧必须拦住"关掉最后一个"，否则重启后设置又变回全开，
+  /// 表现为"关不掉"。设置页的"全部启用"开关负责这层拦截。
+  Future<void> setAllLibraries(bool on) =>
+      _update((s) => s.withAllLibraries(on: on));
+
   /// 恢复默认设置
   Future<void> resetToDefaults() async {
     await _store.save(AppSettings.defaults);
@@ -171,6 +197,31 @@ final codeFontSizeProvider = Provider<double>((ref) {
 final onlySupportedProvider = Provider<bool>((ref) {
   return ref.watch(settingsProvider).valueOrNull?.onlySupported ??
       AppSettings.defaults.onlySupported;
+});
+
+/// 当前启用（要显示）的函数库集合，元素是 raw 字符串
+/// （`spl` / `hal` / `ll` / `reg`，见契约 §1）。
+///
+/// 用 `Set<String>` 而不是 `Set<LibraryKind>`：设置层不依赖 models 层，
+/// 页面侧如果要 LibraryKind 可自己 `LibraryKind.fromRaw(...)` 映射。
+///
+/// 设置还没加载完时给"全开"——首屏不该因为读设置慢而闪一下空列表。
+final enabledLibrariesProvider = Provider<Set<String>>((ref) {
+  return ref.watch(settingsProvider).valueOrNull?.enabledLibraries ??
+      AppSettings.defaults.enabledLibraries;
+});
+
+/// 某个库是否要显示。`libraryVisibleProvider('hal')`。
+///
+/// 列表/详情/搜索页都用它做过滤，保证"关掉某个库"在一个地方定义、
+/// 全站一致。family 的 key 是 raw 字符串。
+final libraryVisibleProvider = Provider.family<bool, String>((ref, raw) {
+  return ref.watch(enabledLibrariesProvider).contains(raw.trim().toLowerCase());
+});
+
+/// 是否有任一库可用（正常流程恒为 true，设置页用它兜住"全关"）。
+final hasAnyLibraryProvider = Provider<bool>((ref) {
+  return ref.watch(enabledLibrariesProvider).isNotEmpty;
 });
 
 /// 搜索是否包含内部断言宏（IS_* 共 350 个，默认不返回）。

@@ -1,0 +1,690 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "PWR",
+  "library": "hal",
+  "functions": [
+    {
+      "id": "HAL_PWR_DeInit",
+      "name": "HAL_PWR_DeInit",
+      "peripheral": "PWR",
+      "library": "hal",
+      "sectionId": "PWR@hal#sec1",
+      "prototype": "void HAL_PWR_DeInit(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Deinitializes the PWR peripheral registers to their default reset values.",
+      "briefZh": "把 PWR 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__HAL_RCC_PWR_FORCE_RESET",
+        "__HAL_RCC_PWR_RELEASE_RESET"
+      ],
+      "headerLine": 328,
+      "definedIn": "stm32f1xx_hal_pwr.h",
+      "sourceLine": 155,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PWR_EnableBkUpAccess",
+      "name": "HAL_PWR_EnableBkUpAccess",
+      "peripheral": "PWR",
+      "library": "hal",
+      "sectionId": "PWR@hal#sec1",
+      "prototype": "void HAL_PWR_EnableBkUpAccess(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enables access to the backup domain (RTC registers, RTC backup data registers ).",
+      "briefZh": "使能备份域（RTC + 备份寄存器）的写访问。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "If the HSE divided by 128 is used as the RTC clock, the Backup Domain Access should be kept enabled."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 329,
+      "definedIn": "stm32f1xx_hal_pwr.h",
+      "sourceLine": 168,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PWR_DisableBkUpAccess",
+      "name": "HAL_PWR_DisableBkUpAccess",
+      "peripheral": "PWR",
+      "library": "hal",
+      "sectionId": "PWR@hal#sec1",
+      "prototype": "void HAL_PWR_DisableBkUpAccess(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disables access to the backup domain (RTC registers, RTC backup data registers).",
+      "briefZh": "关闭备份域写访问。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "If the HSE divided by 128 is used as the RTC clock, the Backup Domain Access should be kept enabled."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 330,
+      "definedIn": "stm32f1xx_hal_pwr.h",
+      "sourceLine": 181,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PWR_ConfigPVD",
+      "name": "HAL_PWR_ConfigPVD",
+      "peripheral": "PWR",
+      "library": "hal",
+      "sectionId": "PWR@hal#sec2",
+      "prototype": "void HAL_PWR_ConfigPVD(PWR_PVDTypeDef *sConfigPVD);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "sConfigPVD",
+          "type": "PWR_PVDTypeDef *",
+          "descEn": "pointer to an PWR_PVDTypeDef structure that contains the configuration information for the PVD.",
+          "descZh": "PVD 配置结构体：PVDLevel（电压阈值）、Mode（中断或事件触发）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Configures the voltage threshold detected by the Power Voltage Detector(PVD).",
+      "briefZh": "配置可编程电压检测器（PVD）：电压阈值与触发方式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "Refer to the electrical characteristics of your device datasheet for more details about the voltage threshold corresponding to each detection level."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "PWR_PVDTypeDef",
+        "IS_PWR_PVD_LEVEL",
+        "IS_PWR_PVD_MODE",
+        "__HAL_PWR_PVD_EXTI_DISABLE_EVENT",
+        "__HAL_PWR_PVD_EXTI_DISABLE_IT",
+        "__HAL_PWR_PVD_EXTI_DISABLE_FALLING_EDGE",
+        "__HAL_PWR_PVD_EXTI_DISABLE_RISING_EDGE",
+        "__HAL_PWR_PVD_EXTI_ENABLE_IT",
+        "__HAL_PWR_PVD_EXTI_ENABLE_EVENT",
+        "__HAL_PWR_PVD_EXTI_ENABLE_RISING_EDGE",
+        "__HAL_PWR_PVD_EXTI_ENABLE_FALLING_EDGE"
+      ],
+      "headerLine": 341,
+      "definedIn": "stm32f1xx_hal_pwr.h",
+      "sourceLine": 315,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PWR_EnablePVD",
+      "name": "HAL_PWR_EnablePVD",
+      "peripheral": "PWR",
+      "library": "hal",
+      "sectionId": "PWR@hal#sec2",
+      "prototype": "void HAL_PWR_EnablePVD(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enables the Power Voltage Detector(PVD).",
+      "briefZh": "使能可编程电压检测器（PVD）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 343,
+      "definedIn": "stm32f1xx_hal_pwr.h",
+      "sourceLine": 358,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PWR_DisablePVD",
+      "name": "HAL_PWR_DisablePVD",
+      "peripheral": "PWR",
+      "library": "hal",
+      "sectionId": "PWR@hal#sec2",
+      "prototype": "void HAL_PWR_DisablePVD(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disables the Power Voltage Detector(PVD).",
+      "briefZh": "关闭可编程电压检测器（PVD）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 344,
+      "definedIn": "stm32f1xx_hal_pwr.h",
+      "sourceLine": 368,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PWR_EnableWakeUpPin",
+      "name": "HAL_PWR_EnableWakeUpPin",
+      "peripheral": "PWR",
+      "library": "hal",
+      "sectionId": "PWR@hal#sec2",
+      "prototype": "void HAL_PWR_EnableWakeUpPin(uint32_t WakeUpPinx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "WakeUpPinx",
+          "type": "uint32_t",
+          "descEn": "Specifies the Power Wake-Up pin to enable. This parameter can be one of the following values:",
+          "descZh": "唤醒引脚编号，取 PWR_WAKEUP_PIN1。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enables the WakeUp PINx functionality.",
+      "briefZh": "使能唤醒引脚（WKUP），供待机模式唤醒使用。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "/* 用 WKUP 引脚（PA0）唤醒待机模式 */\nHAL_PWR_EnableWakeUpPin(PWR_WAKEUP_PIN1);\nHAL_PWR_EnterSTANDBYMode();",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "IS_PWR_WAKEUP_PIN"
+      ],
+      "headerLine": 347,
+      "definedIn": "stm32f1xx_hal_pwr.h",
+      "sourceLine": 381,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PWR_DisableWakeUpPin",
+      "name": "HAL_PWR_DisableWakeUpPin",
+      "peripheral": "PWR",
+      "library": "hal",
+      "sectionId": "PWR@hal#sec2",
+      "prototype": "void HAL_PWR_DisableWakeUpPin(uint32_t WakeUpPinx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "WakeUpPinx",
+          "type": "uint32_t",
+          "descEn": "Specifies the Power Wake-Up pin to disable. This parameter can be one of the following values:",
+          "descZh": "唤醒引脚编号，取 PWR_WAKEUP_PIN1。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disables the WakeUp PINx functionality.",
+      "briefZh": "关闭唤醒引脚。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "IS_PWR_WAKEUP_PIN"
+      ],
+      "headerLine": 348,
+      "definedIn": "stm32f1xx_hal_pwr.h",
+      "sourceLine": 396,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PWR_EnterSLEEPMode",
+      "name": "HAL_PWR_EnterSLEEPMode",
+      "peripheral": "PWR",
+      "library": "hal",
+      "sectionId": "PWR@hal#sec2",
+      "prototype": "void HAL_PWR_EnterSLEEPMode(uint32_t Regulator, uint8_t SLEEPEntry);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "Regulator",
+          "type": "uint32_t",
+          "descEn": "Regulator state as no effect in SLEEP mode - allows to support portability from legacy software",
+          "descZh": "调压器状态：PWR_MAINREGULATOR_ON（主调压器，唤醒快）或 PWR_LOWPOWERREGULATOR_ON（低功耗，更省电）。"
+        },
+        {
+          "name": "SLEEPEntry",
+          "type": "uint8_t",
+          "descEn": "Specifies if SLEEP mode is entered with WFI or WFE instruction. When WFI entry is used, tick interrupt have to be disabled if not desired as the interrupt wake up source. This parameter can be one of the following values:",
+          "descZh": "进入睡眠的方式：PWR_SLEEPENTRY_WFI（等中断）或 WFE（等事件）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enters Sleep mode.",
+      "briefZh": "进入睡眠模式：只关 CPU 时钟，外设仍在运行，任意中断可唤醒。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "In Sleep mode, all I/O pins keep the same state as in Run mode."
+      ],
+      "notesZh": [],
+      "exampleCode": "/* 睡眠：只停 CPU 时钟，任意中断可唤醒 */\nHAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "UNUSED",
+        "IS_PWR_SLEEP_ENTRY",
+        "PWR_SLEEPENTRY_WFI"
+      ],
+      "headerLine": 352,
+      "definedIn": "stm32f1xx_hal_pwr.h",
+      "sourceLine": 416,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PWR_EnterSTOPMode",
+      "name": "HAL_PWR_EnterSTOPMode",
+      "peripheral": "PWR",
+      "library": "hal",
+      "sectionId": "PWR@hal#sec2",
+      "prototype": "void HAL_PWR_EnterSTOPMode(uint32_t Regulator, uint8_t STOPEntry);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "Regulator",
+          "type": "uint32_t",
+          "descEn": "Specifies the regulator state in Stop mode. This parameter can be one of the following values:",
+          "descZh": "调压器状态：PWR_MAINREGULATOR_ON（主调压器，唤醒快）或 PWR_LOWPOWERREGULATOR_ON（低功耗，更省电）。"
+        },
+        {
+          "name": "STOPEntry",
+          "type": "uint8_t",
+          "descEn": "Specifies if Stop mode in entered with WFI or WFE instruction. This parameter can be one of the following values:",
+          "descZh": "进入停止的方式：PWR_STOPENTRY_WFI 或 WFE。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enters Stop mode.",
+      "briefZh": "进入停止模式：所有时钟停止但 SRAM 保留，唤醒后需重新配置系统时钟。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "In Stop mode, all I/O pins keep the same state as in Run mode.",
+        "When exiting Stop mode by using an interrupt or a wakeup event, HSI RC oscillator is selected as system clock.",
+        "When the voltage regulator operates in low power mode, an additional startup delay is incurred when waking up from Stop mode. By keeping the internal regulator ON during Stop mode, the consumption is higher although the startup time is reduced."
+      ],
+      "notesZh": [],
+      "exampleCode": "/* 进入 STOP 模式，等中断唤醒 */\nHAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);\n\n/* 唤醒后时钟退回 HSI，必须重配时钟树！ */\nSystemClock_Config();",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "IS_PWR_REGULATOR",
+        "IS_PWR_STOP_ENTRY",
+        "PWR_STOPENTRY_WFI"
+      ],
+      "headerLine": 351,
+      "definedIn": "stm32f1xx_hal_pwr.h",
+      "sourceLine": 462,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PWR_EnterSTANDBYMode",
+      "name": "HAL_PWR_EnterSTANDBYMode",
+      "peripheral": "PWR",
+      "library": "hal",
+      "sectionId": "PWR@hal#sec2",
+      "prototype": "void HAL_PWR_EnterSTANDBYMode(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enters Standby mode.",
+      "briefZh": "进入待机模式：功耗最低，SRAM 内容丢失，唤醒等同复位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "In Standby mode, all I/O pins are high impedance except for: - Reset pad (still available) - TAMPER pin if configured for tamper or calibration out. - WKUP pin (PA0) if enabled."
+      ],
+      "notesZh": [],
+      "exampleCode": "/* 待机：功耗最低，SRAM 丢失，唤醒等同复位 */\nHAL_PWR_EnterSTANDBYMode();\n/* 这行永远不会执行到（除非被复位唤醒后重新跑 main） */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 353,
+      "definedIn": "stm32f1xx_hal_pwr.h",
+      "sourceLine": 502,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PWR_EnableSleepOnExit",
+      "name": "HAL_PWR_EnableSleepOnExit",
+      "peripheral": "PWR",
+      "library": "hal",
+      "sectionId": "PWR@hal#sec2",
+      "prototype": "void HAL_PWR_EnableSleepOnExit(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Indicates Sleep-On-Exit when returning from Handler mode to Thread mode.",
+      "briefZh": "使能「退出中断后自动进入睡眠」（SLEEPONEXIT）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "Set SLEEPONEXIT bit of SCR register. When this bit is set, the processor re-enters SLEEP mode when an interruption handling is over. Setting this bit is useful when the processor is expected to run only on interruptions handling."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 355,
+      "definedIn": "stm32f1xx_hal_pwr.h",
+      "sourceLine": 527,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PWR_DisableSleepOnExit",
+      "name": "HAL_PWR_DisableSleepOnExit",
+      "peripheral": "PWR",
+      "library": "hal",
+      "sectionId": "PWR@hal#sec2",
+      "prototype": "void HAL_PWR_DisableSleepOnExit(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disables Sleep-On-Exit feature when returning from Handler mode to Thread mode.",
+      "briefZh": "关闭「退出中断后自动进入睡眠」。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "Clears SLEEPONEXIT bit of SCR register. When this bit is set, the processor re-enters SLEEP mode when an interruption handling is over."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 356,
+      "definedIn": "stm32f1xx_hal_pwr.h",
+      "sourceLine": 540,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PWR_EnableSEVOnPend",
+      "name": "HAL_PWR_EnableSEVOnPend",
+      "peripheral": "PWR",
+      "library": "hal",
+      "sectionId": "PWR@hal#sec2",
+      "prototype": "void HAL_PWR_EnableSEVOnPend(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enables CORTEX M3 SEVONPEND bit.",
+      "briefZh": "使能「有挂起中断时也发送事件」（SEVONPEND）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "Sets SEVONPEND bit of SCR register. When this bit is set, this causes WFE to wake up when an interrupt moves from inactive to pended."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 357,
+      "definedIn": "stm32f1xx_hal_pwr.h",
+      "sourceLine": 553,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PWR_DisableSEVOnPend",
+      "name": "HAL_PWR_DisableSEVOnPend",
+      "peripheral": "PWR",
+      "library": "hal",
+      "sectionId": "PWR@hal#sec2",
+      "prototype": "void HAL_PWR_DisableSEVOnPend(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disables CORTEX M3 SEVONPEND bit.",
+      "briefZh": "关闭 SEVONPEND。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "Clears SEVONPEND bit of SCR register. When this bit is set, this causes WFE to wake up when an interrupt moves from inactive to pended."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 358,
+      "definedIn": "stm32f1xx_hal_pwr.h",
+      "sourceLine": 566,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PWR_PVD_IRQHandler",
+      "name": "HAL_PWR_PVD_IRQHandler",
+      "peripheral": "PWR",
+      "library": "hal",
+      "sectionId": "PWR@hal#sec2",
+      "prototype": "void HAL_PWR_PVD_IRQHandler(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "This function handles the PWR PVD interrupt request.",
+      "briefZh": "PVD 中断的统一入口。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_PWR_PVDCallback"
+      ],
+      "remarks": [
+        "This API should be called under the PVD_IRQHandler()."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__HAL_PWR_PVD_EXTI_GET_FLAG",
+        "__HAL_PWR_PVD_EXTI_CLEAR_FLAG"
+      ],
+      "headerLine": 362,
+      "definedIn": "stm32f1xx_hal_pwr.h",
+      "sourceLine": 579,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PWR_PVDCallback",
+      "name": "HAL_PWR_PVDCallback",
+      "peripheral": "PWR",
+      "library": "hal",
+      "sectionId": "PWR@hal#sec2",
+      "prototype": "void HAL_PWR_PVDCallback(void);",
+      "returnType": "__weak void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "PWR PVD interrupt callback",
+      "briefZh": "PVD 触发回调（__weak 空实现，需自己重写）。电压跌到阈值以下时调用。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak"
+      ],
+      "headerLine": 363,
+      "definedIn": "stm32f1xx_hal_pwr.h",
+      "sourceLine": 596,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

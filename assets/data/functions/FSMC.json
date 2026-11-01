@@ -6,7 +6,7 @@
       "id": "FSMC_NORSRAMDeInit",
       "name": "FSMC_NORSRAMDeInit",
       "peripheral": "FSMC",
-      "sectionId": "FSMC#sec1",
+      "sectionId": "FSMC@spl#sec1",
       "prototype": "void FSMC_NORSRAMDeInit(uint32_t FSMC_Bank);",
       "returnType": "void",
       "params": [
@@ -88,7 +88,7 @@
       "id": "FSMC_NANDDeInit",
       "name": "FSMC_NANDDeInit",
       "peripheral": "FSMC",
-      "sectionId": "FSMC#sec1",
+      "sectionId": "FSMC@spl#sec1",
       "prototype": "void FSMC_NANDDeInit(uint32_t FSMC_Bank);",
       "returnType": "void",
       "params": [
@@ -163,7 +163,7 @@
       "id": "FSMC_PCCARDDeInit",
       "name": "FSMC_PCCARDDeInit",
       "peripheral": "FSMC",
-      "sectionId": "FSMC#sec1",
+      "sectionId": "FSMC@spl#sec1",
       "prototype": "void FSMC_PCCARDDeInit(void);",
       "returnType": "void",
       "params": [],
@@ -219,7 +219,7 @@
       "id": "FSMC_NORSRAMInit",
       "name": "FSMC_NORSRAMInit",
       "peripheral": "FSMC",
-      "sectionId": "FSMC#sec2",
+      "sectionId": "FSMC@spl#sec2",
       "prototype": "void FSMC_NORSRAMInit(FSMC_NORSRAMInitTypeDef* FSMC_NORSRAMInitStruct);",
       "returnType": "void",
       "params": [
@@ -325,7 +325,7 @@
       "id": "FSMC_NANDInit",
       "name": "FSMC_NANDInit",
       "peripheral": "FSMC",
-      "sectionId": "FSMC#sec2",
+      "sectionId": "FSMC@spl#sec2",
       "prototype": "void FSMC_NANDInit(FSMC_NANDInitTypeDef* FSMC_NANDInitStruct);",
       "returnType": "void",
       "params": [
@@ -406,7 +406,7 @@
       "id": "FSMC_PCCARDInit",
       "name": "FSMC_PCCARDInit",
       "peripheral": "FSMC",
-      "sectionId": "FSMC#sec2",
+      "sectionId": "FSMC@spl#sec2",
       "prototype": "void FSMC_PCCARDInit(FSMC_PCCARDInitTypeDef* FSMC_PCCARDInitStruct);",
       "returnType": "void",
       "params": [
@@ -472,7 +472,7 @@
       "id": "FSMC_NORSRAMStructInit",
       "name": "FSMC_NORSRAMStructInit",
       "peripheral": "FSMC",
-      "sectionId": "FSMC#sec2",
+      "sectionId": "FSMC@spl#sec2",
       "prototype": "void FSMC_NORSRAMStructInit(FSMC_NORSRAMInitTypeDef* FSMC_NORSRAMInitStruct);",
       "returnType": "void",
       "params": [
@@ -527,7 +527,7 @@
       "id": "FSMC_NANDStructInit",
       "name": "FSMC_NANDStructInit",
       "peripheral": "FSMC",
-      "sectionId": "FSMC#sec2",
+      "sectionId": "FSMC@spl#sec2",
       "prototype": "void FSMC_NANDStructInit(FSMC_NANDInitTypeDef* FSMC_NANDInitStruct);",
       "returnType": "void",
       "params": [
@@ -582,7 +582,7 @@
       "id": "FSMC_PCCARDStructInit",
       "name": "FSMC_PCCARDStructInit",
       "peripheral": "FSMC",
-      "sectionId": "FSMC#sec2",
+      "sectionId": "FSMC@spl#sec2",
       "prototype": "void FSMC_PCCARDStructInit(FSMC_PCCARDInitTypeDef* FSMC_PCCARDInitStruct);",
       "returnType": "void",
       "params": [
@@ -631,7 +631,7 @@
       "id": "FSMC_NORSRAMCmd",
       "name": "FSMC_NORSRAMCmd",
       "peripheral": "FSMC",
-      "sectionId": "FSMC#sec3",
+      "sectionId": "FSMC@spl#sec3",
       "prototype": "void FSMC_NORSRAMCmd(uint32_t FSMC_Bank, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -704,7 +704,7 @@
       "id": "FSMC_NANDCmd",
       "name": "FSMC_NANDCmd",
       "peripheral": "FSMC",
-      "sectionId": "FSMC#sec3",
+      "sectionId": "FSMC@spl#sec3",
       "prototype": "void FSMC_NANDCmd(uint32_t FSMC_Bank, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -776,7 +776,7 @@
       "id": "FSMC_PCCARDCmd",
       "name": "FSMC_PCCARDCmd",
       "peripheral": "FSMC",
-      "sectionId": "FSMC#sec3",
+      "sectionId": "FSMC@spl#sec3",
       "prototype": "void FSMC_PCCARDCmd(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -837,7 +837,7 @@
       "id": "FSMC_NANDECCCmd",
       "name": "FSMC_NANDECCCmd",
       "peripheral": "FSMC",
-      "sectionId": "FSMC#sec3",
+      "sectionId": "FSMC@spl#sec3",
       "prototype": "void FSMC_NANDECCCmd(uint32_t FSMC_Bank, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -918,7 +918,7 @@
       "id": "FSMC_GetECC",
       "name": "FSMC_GetECC",
       "peripheral": "FSMC",
-      "sectionId": "FSMC#sec4",
+      "sectionId": "FSMC@spl#sec4",
       "prototype": "uint32_t FSMC_GetECC(uint32_t FSMC_Bank);",
       "returnType": "uint32_t",
       "params": [
@@ -986,7 +986,7 @@
       "id": "FSMC_ITConfig",
       "name": "FSMC_ITConfig",
       "peripheral": "FSMC",
-      "sectionId": "FSMC#sec5",
+      "sectionId": "FSMC@spl#sec5",
       "prototype": "void FSMC_ITConfig(uint32_t FSMC_Bank, uint32_t FSMC_IT, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1077,7 +1077,7 @@
       "id": "FSMC_GetFlagStatus",
       "name": "FSMC_GetFlagStatus",
       "peripheral": "FSMC",
-      "sectionId": "FSMC#sec6",
+      "sectionId": "FSMC@spl#sec6",
       "prototype": "FlagStatus FSMC_GetFlagStatus(uint32_t FSMC_Bank, uint32_t FSMC_FLAG);",
       "returnType": "FlagStatus",
       "params": [
@@ -1153,7 +1153,7 @@
       "id": "FSMC_ClearFlag",
       "name": "FSMC_ClearFlag",
       "peripheral": "FSMC",
-      "sectionId": "FSMC#sec6",
+      "sectionId": "FSMC@spl#sec6",
       "prototype": "void FSMC_ClearFlag(uint32_t FSMC_Bank, uint32_t FSMC_FLAG);",
       "returnType": "void",
       "params": [
@@ -1224,7 +1224,7 @@
       "id": "FSMC_GetITStatus",
       "name": "FSMC_GetITStatus",
       "peripheral": "FSMC",
-      "sectionId": "FSMC#sec5",
+      "sectionId": "FSMC@spl#sec5",
       "prototype": "ITStatus FSMC_GetITStatus(uint32_t FSMC_Bank, uint32_t FSMC_IT);",
       "returnType": "ITStatus",
       "params": [
@@ -1302,7 +1302,7 @@
       "id": "FSMC_ClearITPendingBit",
       "name": "FSMC_ClearITPendingBit",
       "peripheral": "FSMC",
-      "sectionId": "FSMC#sec5",
+      "sectionId": "FSMC@spl#sec5",
       "prototype": "void FSMC_ClearITPendingBit(uint32_t FSMC_Bank, uint32_t FSMC_IT);",
       "returnType": "void",
       "params": [

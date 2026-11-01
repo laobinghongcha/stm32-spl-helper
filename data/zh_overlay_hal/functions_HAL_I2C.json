@@ -1,0 +1,428 @@
+{
+  "HAL_I2C_AbortCpltCallback": {
+    "briefZh": "中止完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hi2c": "I2C 句柄指针。"
+    }
+  },
+  "HAL_I2C_AddrCallback": {
+    "briefZh": "从机地址匹配回调（__weak 空实现，需自己重写）。主机来寻址时触发。",
+    "paramsZh": {
+      "AddrMatchCode": "从机地址匹配码（双地址模式下的第二个地址）。",
+      "TransferDirection": "传输方向：I2C_DIRECTION_TRANSMIT 或 I2C_DIRECTION_RECEIVE。",
+      "hi2c": "I2C 句柄指针。"
+    }
+  },
+  "HAL_I2C_DeInit": {
+    "briefZh": "把 I2C 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+    "paramsZh": {
+      "hi2c": "I2C 句柄指针。"
+    }
+  },
+  "HAL_I2C_DisableListen_IT": {
+    "briefZh": "退出地址监听模式。",
+    "paramsZh": {
+      "hi2c": "I2C 句柄指针。"
+    }
+  },
+  "HAL_I2C_ER_IRQHandler": {
+    "briefZh": "I2C 错误中断的入口，处理 NACK、总线错误、仲裁丢失、溢出等异常。",
+    "paramsZh": {
+      "hi2c": "I2C 句柄指针。"
+    }
+  },
+  "HAL_I2C_EV_IRQHandler": {
+    "briefZh": "I2C 事件中断的入口，内部处理地址/数据阶段的状态机并分派回调。",
+    "paramsZh": {
+      "hi2c": "I2C 句柄指针。"
+    }
+  },
+  "HAL_I2C_EnableListen_IT": {
+    "briefZh": "以中断方式进入地址监听模式（从机等待主机寻址）。",
+    "paramsZh": {
+      "hi2c": "I2C 句柄指针。"
+    }
+  },
+  "HAL_I2C_ErrorCallback": {
+    "briefZh": "错误回调（__weak 空实现，需自己重写）。溢出、噪声、帧错误等异常会走到这里。",
+    "paramsZh": {
+      "hi2c": "I2C 句柄指针。"
+    }
+  },
+  "HAL_I2C_GetError": {
+    "briefZh": "读取 I2C 累计的错误码位掩码。",
+    "paramsZh": {
+      "hi2c": "I2C 句柄指针。"
+    }
+  },
+  "HAL_I2C_GetMode": {
+    "briefZh": "读取当前工作模式（主机 / 从机 / 存储器 / 空闲）。",
+    "paramsZh": {
+      "hi2c": "I2C 句柄指针。"
+    }
+  },
+  "HAL_I2C_GetState": {
+    "briefZh": "读取 I2C 的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+    "paramsZh": {
+      "hi2c": "I2C 句柄指针。"
+    }
+  },
+  "HAL_I2C_Init": {
+    "briefZh": "按 InitTypeDef 中的参数初始化 I2C，并完成状态机初始化。",
+    "paramsZh": {
+      "hi2c": "I2C 句柄指针。"
+    }
+  },
+  "HAL_I2C_IsDeviceReady": {
+    "briefZh": "探测目标器件是否应答，返回 HAL_OK 表示在线。比直接收发更容易定位问题。",
+    "paramsZh": {
+      "DevAddress": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "Trials": "探测重试次数。器件刚上电时需要一段时间就绪，建议给 3 次以上。",
+      "hi2c": "I2C 句柄指针。"
+    },
+    "exampleCode": "/* 先探测器件在不在，比直接收发更容易定位问题 */\nif (HAL_I2C_IsDeviceReady(&hi2c1, 0x50 << 1, 3, 100) == HAL_OK)\n{\n  /* 器件在线 */\n}\nelse\n{\n  /* 没应答：查接线、上拉电阻、地址 */\n}"
+  },
+  "HAL_I2C_ListenCpltCallback": {
+    "briefZh": "监听完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hi2c": "I2C 句柄指针。"
+    }
+  },
+  "HAL_I2C_MasterRxCpltCallback": {
+    "briefZh": "主机接收完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hi2c": "I2C 句柄指针。"
+    }
+  },
+  "HAL_I2C_MasterTxCpltCallback": {
+    "briefZh": "主机发送完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hi2c": "I2C 句柄指针。"
+    }
+  },
+  "HAL_I2C_Master_Abort_IT": {
+    "briefZh": "以中断方式中止主机模式的传输。",
+    "paramsZh": {
+      "DevAddress": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。",
+      "hi2c": "I2C 句柄指针。"
+    }
+  },
+  "HAL_I2C_Master_Receive": {
+    "briefZh": "主机模式阻塞接收一批数据。",
+    "paramsZh": {
+      "DevAddress": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。",
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2C_Master_Receive_DMA": {
+    "briefZh": "主机模式以 DMA 方式接收。",
+    "paramsZh": {
+      "DevAddress": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。",
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2C_Master_Receive_IT": {
+    "briefZh": "主机模式以中断方式接收，非阻塞，完成后进 MasterRxCpltCallback。",
+    "paramsZh": {
+      "DevAddress": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。",
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2C_Master_Seq_Receive_DMA": {
+    "briefZh": "主机模式以 DMA 方式做续传接收。",
+    "paramsZh": {
+      "DevAddress": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。",
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "XferOptions": "续传选项（I2C_FIRST_FRAME / NEXT_FRAME / FIRST_AND_LAST_FRAME 等），用于控制是否产生 STOP。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2C_Master_Seq_Receive_IT": {
+    "briefZh": "主机模式以中断方式做续传接收。",
+    "paramsZh": {
+      "DevAddress": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。",
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "XferOptions": "续传选项（I2C_FIRST_FRAME / NEXT_FRAME / FIRST_AND_LAST_FRAME 等），用于控制是否产生 STOP。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2C_Master_Seq_Transmit_DMA": {
+    "briefZh": "主机模式以 DMA 方式做续传发送。",
+    "paramsZh": {
+      "DevAddress": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。",
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "XferOptions": "续传选项（I2C_FIRST_FRAME / NEXT_FRAME / FIRST_AND_LAST_FRAME 等），用于控制是否产生 STOP。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2C_Master_Seq_Transmit_IT": {
+    "briefZh": "主机模式以中断方式做「续传」发送：不产生 STOP，可在多次调用之间保持总线占用（用于带重复起始的复杂时序）。",
+    "paramsZh": {
+      "DevAddress": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。",
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "XferOptions": "续传选项（I2C_FIRST_FRAME / NEXT_FRAME / FIRST_AND_LAST_FRAME 等），用于控制是否产生 STOP。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2C_Master_Transmit": {
+    "briefZh": "主机模式阻塞发送一批数据。每传 1 字节 CPU 都要等，适合低速小数据量；大批量用 DMA 版本。",
+    "paramsZh": {
+      "DevAddress": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。",
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    },
+    "exampleCode": "uint8_t cmd[2] = {0x01, 0x02};\n\n/* 主机阻塞发送，DevAddress 同样要左移一位 */\nHAL_I2C_Master_Transmit(&hi2c1, 0x50 << 1, cmd, sizeof(cmd), 100);"
+  },
+  "HAL_I2C_Master_Transmit_DMA": {
+    "briefZh": "主机模式以 DMA 方式发送，非阻塞，完成后进 MasterTxCpltCallback。",
+    "paramsZh": {
+      "DevAddress": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。",
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2C_Master_Transmit_IT": {
+    "briefZh": "主机模式以中断方式发送，非阻塞，完成后进 MasterTxCpltCallback。",
+    "paramsZh": {
+      "DevAddress": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。",
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2C_MemRxCpltCallback": {
+    "briefZh": "存储器读完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hi2c": "I2C 句柄指针。"
+    }
+  },
+  "HAL_I2C_MemTxCpltCallback": {
+    "briefZh": "存储器写完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hi2c": "I2C 句柄指针。"
+    }
+  },
+  "HAL_I2C_Mem_Read": {
+    "briefZh": "从从机器件的指定寄存器地址读一批数据。内部流程是「写地址 → 重复起始 → 读数据」，不需要你手动拼接。",
+    "paramsZh": {
+      "DevAddress": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。",
+      "MemAddSize": "寄存器地址位宽：I2C_MEMADD_SIZE_8BIT 或 I2C_MEMADD_SIZE_16BIT。填错会读到错位的数据。",
+      "MemAddress": "器件内部寄存器/存储器地址。",
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    },
+    "exampleCode": "uint8_t buf[2] = {0};\n\nHAL_I2C_Mem_Read(&hi2c1,\n                 0x50 << 1,\n                 0x10,\n                 I2C_MEMADD_SIZE_8BIT,\n                 buf, sizeof(buf),\n                 100);"
+  },
+  "HAL_I2C_Mem_Read_DMA": {
+    "briefZh": "以 DMA 方式从器件寄存器读数据。",
+    "paramsZh": {
+      "DevAddress": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。",
+      "MemAddSize": "寄存器地址位宽：I2C_MEMADD_SIZE_8BIT 或 I2C_MEMADD_SIZE_16BIT。填错会读到错位的数据。",
+      "MemAddress": "器件内部寄存器/存储器地址。",
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2C_Mem_Read_IT": {
+    "briefZh": "以中断方式从器件寄存器读数据，非阻塞，完成后进 MemRxCpltCallback。",
+    "paramsZh": {
+      "DevAddress": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。",
+      "MemAddSize": "寄存器地址位宽：I2C_MEMADD_SIZE_8BIT 或 I2C_MEMADD_SIZE_16BIT。填错会读到错位的数据。",
+      "MemAddress": "器件内部寄存器/存储器地址。",
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2C_Mem_Write": {
+    "briefZh": "向从机器件的指定寄存器地址写一批数据。先用 MemAddressSize 指定地址位宽（8 位或 16 位），再发数据——这是读写 EEPROM、传感器寄存器的标准写法。",
+    "paramsZh": {
+      "DevAddress": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。",
+      "MemAddSize": "寄存器地址位宽：I2C_MEMADD_SIZE_8BIT 或 I2C_MEMADD_SIZE_16BIT。填错会读到错位的数据。",
+      "MemAddress": "器件内部寄存器/存储器地址。",
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    },
+    "exampleCode": "/* 向器件 0x50 的寄存器 0x10 写 2 字节 */\nuint8_t data[2] = {0xAA, 0xBB};\n\nHAL_I2C_Mem_Write(&hi2c1,\n                  0x50 << 1,                  /* 7 位地址要左移一位 */\n                  0x10,                        /* 寄存器地址 */\n                  I2C_MEMADD_SIZE_8BIT,        /* 地址宽度 */\n                  data, sizeof(data),\n                  100);                        /* 超时 ms */"
+  },
+  "HAL_I2C_Mem_Write_DMA": {
+    "briefZh": "以 DMA 方式向器件寄存器写数据。",
+    "paramsZh": {
+      "DevAddress": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。",
+      "MemAddSize": "寄存器地址位宽：I2C_MEMADD_SIZE_8BIT 或 I2C_MEMADD_SIZE_16BIT。填错会读到错位的数据。",
+      "MemAddress": "器件内部寄存器/存储器地址。",
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2C_Mem_Write_IT": {
+    "briefZh": "以中断方式向器件寄存器写数据，非阻塞，完成后进 MemTxCpltCallback。",
+    "paramsZh": {
+      "DevAddress": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。",
+      "MemAddSize": "寄存器地址位宽：I2C_MEMADD_SIZE_8BIT 或 I2C_MEMADD_SIZE_16BIT。填错会读到错位的数据。",
+      "MemAddress": "器件内部寄存器/存储器地址。",
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2C_MspDeInit": {
+    "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+    "paramsZh": {
+      "hi2c": "I2C 句柄指针。"
+    }
+  },
+  "HAL_I2C_MspInit": {
+    "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+    "paramsZh": {
+      "hi2c": "I2C 句柄指针。"
+    }
+  },
+  "HAL_I2C_RegisterAddrCallback": {
+    "briefZh": "注册从机地址匹配回调，替代默认的 __weak 版本。",
+    "paramsZh": {
+      "hi2c": "I2C 句柄指针。",
+      "pCallback": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+    }
+  },
+  "HAL_I2C_RegisterCallback": {
+    "briefZh": "为 I2C 注册指定事件的回调，替代默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "hi2c": "I2C 句柄指针。",
+      "pCallback": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+    }
+  },
+  "HAL_I2C_SlaveRxCpltCallback": {
+    "briefZh": "从机接收完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hi2c": "I2C 句柄指针。"
+    }
+  },
+  "HAL_I2C_SlaveTxCpltCallback": {
+    "briefZh": "从机发送完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hi2c": "I2C 句柄指针。"
+    }
+  },
+  "HAL_I2C_Slave_Receive": {
+    "briefZh": "从机模式阻塞接收数据（等待主机写入）。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2C_Slave_Receive_DMA": {
+    "briefZh": "从机模式以 DMA 方式接收。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2C_Slave_Receive_IT": {
+    "briefZh": "从机模式以中断方式接收。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2C_Slave_Seq_Receive_DMA": {
+    "briefZh": "从机模式以 DMA 方式做续传接收。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "XferOptions": "续传选项（I2C_FIRST_FRAME / NEXT_FRAME / FIRST_AND_LAST_FRAME 等），用于控制是否产生 STOP。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2C_Slave_Seq_Receive_IT": {
+    "briefZh": "从机模式以中断方式做续传接收。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "XferOptions": "续传选项（I2C_FIRST_FRAME / NEXT_FRAME / FIRST_AND_LAST_FRAME 等），用于控制是否产生 STOP。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2C_Slave_Seq_Transmit_DMA": {
+    "briefZh": "从机模式以 DMA 方式做续传发送。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "XferOptions": "续传选项（I2C_FIRST_FRAME / NEXT_FRAME / FIRST_AND_LAST_FRAME 等），用于控制是否产生 STOP。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2C_Slave_Seq_Transmit_IT": {
+    "briefZh": "从机模式以中断方式做续传发送。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "XferOptions": "续传选项（I2C_FIRST_FRAME / NEXT_FRAME / FIRST_AND_LAST_FRAME 等），用于控制是否产生 STOP。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2C_Slave_Transmit": {
+    "briefZh": "从机模式阻塞发送数据（等待主机来读）。注意从机发送没有超时兜底，主机不来读会一直等。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2C_Slave_Transmit_DMA": {
+    "briefZh": "从机模式以 DMA 方式发送。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2C_Slave_Transmit_IT": {
+    "briefZh": "从机模式以中断方式发送。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hi2c": "I2C 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2C_UnRegisterAddrCallback": {
+    "briefZh": "注销从机地址匹配回调。",
+    "paramsZh": {
+      "hi2c": "I2C 句柄指针。"
+    }
+  },
+  "HAL_I2C_UnRegisterCallback": {
+    "briefZh": "注销 I2C 已注册的回调，恢复成默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "hi2c": "I2C 句柄指针。"
+    }
+  }
+}

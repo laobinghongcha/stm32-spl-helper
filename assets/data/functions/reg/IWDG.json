@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "IWDG",
+  "library": "reg",
+  "functions": [
+    {
+      "id": "REG_IWDG_KR",
+      "name": "IWDG_KR",
+      "peripheral": "IWDG",
+      "library": "reg",
+      "sectionId": "IWDG@reg#sec2",
+      "prototype": "IWDG->KR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "IWDG_KR_KEY",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Key value (write only, read 0000h)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Key register, Address offset: 0x00",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "IWDG_KR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 IWDG_TypeDef.KR，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = IWDG->KR;  /* 读回当前值 */\nv &= ~IWDG_KR_KEY_Msk;  /* 先清掉 IWDG_KR_KEY：bits[15:0]（整个位域） */\nv |= (1u << IWDG_KR_KEY_Pos) & IWDG_KR_KEY_Msk;  /* 置位，实际取值看参考手册 */\nIWDG->KR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4427,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_IWDG_PR",
+      "name": "IWDG_PR",
+      "peripheral": "IWDG",
+      "library": "reg",
+      "sectionId": "IWDG@reg#sec1",
+      "prototype": "IWDG->PR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "IWDG_PR_PR",
+          "type": "bits[2:0]（整个位域）",
+          "descEn": "PR[2:0] (Prescaler divider)",
+          "descZh": ""
+        },
+        {
+          "name": "IWDG_PR_PR_0",
+          "type": "bit 0",
+          "descEn": "0x00000001",
+          "descZh": ""
+        },
+        {
+          "name": "IWDG_PR_PR_1",
+          "type": "bit 1",
+          "descEn": "0x00000002",
+          "descZh": ""
+        },
+        {
+          "name": "IWDG_PR_PR_2",
+          "type": "bit 2",
+          "descEn": "0x00000004",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Prescaler register, Address offset: 0x04",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "IWDG_PR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 IWDG_TypeDef.PR，偏移 0x04"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = IWDG->PR;  /* 读回当前值 */\nv &= ~IWDG_PR_PR_Msk;  /* 先清掉 IWDG_PR_PR：bits[2:0]（整个位域） */\nv |= (1u << IWDG_PR_PR_Pos) & IWDG_PR_PR_Msk;  /* 置位，实际取值看参考手册 */\nIWDG->PR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4432,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_IWDG_RLR",
+      "name": "IWDG_RLR",
+      "peripheral": "IWDG",
+      "library": "reg",
+      "sectionId": "IWDG@reg#sec2",
+      "prototype": "IWDG->RLR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "IWDG_RLR_RL",
+          "type": "bits[11:0]（整个位域）",
+          "descEn": "Watchdog counter reload value",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Reload register, Address offset: 0x08",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "IWDG_RLR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 IWDG_TypeDef.RLR，偏移 0x08"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = IWDG->RLR;  /* 读回当前值 */\nv &= ~IWDG_RLR_RL_Msk;  /* 先清掉 IWDG_RLR_RL：bits[11:0]（整个位域） */\nv |= (1u << IWDG_RLR_RL_Pos) & IWDG_RLR_RL_Msk;  /* 置位，实际取值看参考手册 */\nIWDG->RLR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4440,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_IWDG_SR",
+      "name": "IWDG_SR",
+      "peripheral": "IWDG",
+      "library": "reg",
+      "sectionId": "IWDG@reg#sec1",
+      "prototype": "IWDG->SR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "IWDG_SR_PVU",
+          "type": "bit 0（整个位域）",
+          "descEn": "Watchdog prescaler value update",
+          "descZh": ""
+        },
+        {
+          "name": "IWDG_SR_RVU",
+          "type": "bit 1（整个位域）",
+          "descEn": "Watchdog counter reload value update",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Status register, Address offset: 0x0C",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "IWDG_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 IWDG_TypeDef.SR，偏移 0x0C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = IWDG->SR;  /* 读回当前值 */\nv &= ~IWDG_SR_PVU_Msk;  /* 先清掉 IWDG_SR_PVU：bit 0（整个位域） */\nv |= (1u << IWDG_SR_PVU_Pos) & IWDG_SR_PVU_Msk;  /* 置位，实际取值看参考手册 */\nIWDG->SR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4445,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    }
+  ]
+}

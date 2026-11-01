@@ -6,7 +6,7 @@
       "id": "PWR_DeInit",
       "name": "PWR_DeInit",
       "peripheral": "PWR",
-      "sectionId": "PWR#sec1",
+      "sectionId": "PWR@spl#sec1",
       "prototype": "void PWR_DeInit(void);",
       "returnType": "void",
       "params": [],
@@ -60,7 +60,7 @@
       "id": "PWR_BackupAccessCmd",
       "name": "PWR_BackupAccessCmd",
       "peripheral": "PWR",
-      "sectionId": "PWR#sec2",
+      "sectionId": "PWR@spl#sec2",
       "prototype": "void PWR_BackupAccessCmd(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -126,7 +126,7 @@
       "id": "PWR_PVDCmd",
       "name": "PWR_PVDCmd",
       "peripheral": "PWR",
-      "sectionId": "PWR#sec2",
+      "sectionId": "PWR@spl#sec2",
       "prototype": "void PWR_PVDCmd(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -201,7 +201,7 @@
       "id": "PWR_PVDLevelConfig",
       "name": "PWR_PVDLevelConfig",
       "peripheral": "PWR",
-      "sectionId": "PWR#sec3",
+      "sectionId": "PWR@spl#sec3",
       "prototype": "void PWR_PVDLevelConfig(uint32_t PWR_PVDLevel);",
       "returnType": "void",
       "params": [
@@ -269,7 +269,7 @@
       "id": "PWR_WakeUpPinCmd",
       "name": "PWR_WakeUpPinCmd",
       "peripheral": "PWR",
-      "sectionId": "PWR#sec2",
+      "sectionId": "PWR@spl#sec2",
       "prototype": "void PWR_WakeUpPinCmd(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -336,7 +336,7 @@
       "id": "PWR_EnterSTOPMode",
       "name": "PWR_EnterSTOPMode",
       "peripheral": "PWR",
-      "sectionId": "PWR#sec4",
+      "sectionId": "PWR@spl#sec4",
       "prototype": "void PWR_EnterSTOPMode(uint32_t PWR_Regulator, uint8_t PWR_STOPEntry);",
       "returnType": "void",
       "params": [
@@ -438,7 +438,7 @@
       "id": "PWR_EnterSTANDBYMode",
       "name": "PWR_EnterSTANDBYMode",
       "peripheral": "PWR",
-      "sectionId": "PWR#sec4",
+      "sectionId": "PWR@spl#sec4",
       "prototype": "void PWR_EnterSTANDBYMode(void);",
       "returnType": "void",
       "params": [],
@@ -512,7 +512,7 @@
       "id": "PWR_GetFlagStatus",
       "name": "PWR_GetFlagStatus",
       "peripheral": "PWR",
-      "sectionId": "PWR#sec5",
+      "sectionId": "PWR@spl#sec5",
       "prototype": "FlagStatus PWR_GetFlagStatus(uint32_t PWR_FLAG);",
       "returnType": "FlagStatus",
       "params": [
@@ -577,7 +577,7 @@
       "id": "PWR_ClearFlag",
       "name": "PWR_ClearFlag",
       "peripheral": "PWR",
-      "sectionId": "PWR#sec5",
+      "sectionId": "PWR@spl#sec5",
       "prototype": "void PWR_ClearFlag(uint32_t PWR_FLAG);",
       "returnType": "void",
       "params": [

@@ -1,0 +1,4348 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "DMA",
+  "library": "ll",
+  "functions": [
+    {
+      "id": "LL_DMA_EnableChannel",
+      "name": "LL_DMA_EnableChannel",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "void LL_DMA_EnableChannel(DMA_TypeDef * DMAx, uint32_t Channel);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable DMA channel.",
+      "briefZh": "使能指定 DMA 通道，通道打开后才开始搬运数据。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 453,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_DisableChannel",
+      "name": "LL_DMA_DisableChannel",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "void LL_DMA_DisableChannel(DMA_TypeDef * DMAx, uint32_t Channel);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable DMA channel.",
+      "briefZh": "关闭指定 DMA 通道。任何正在进行的传输会立即停止。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 472,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsEnabledChannel",
+      "name": "LL_DMA_IsEnabledChannel",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "uint32_t LL_DMA_IsEnabledChannel(DMA_TypeDef * DMAx, uint32_t Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if DMA channel is enabled or disabled.",
+      "briefZh": "查询指定 DMA 通道是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 491,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ConfigTransfer",
+      "name": "LL_DMA_ConfigTransfer",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "void LL_DMA_ConfigTransfer(DMA_TypeDef * DMAx, uint32_t Channel, uint32_t Configuration);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        },
+        {
+          "name": "Configuration",
+          "type": "uint32_t",
+          "descEn": "This parameter must be a combination of all the following values:",
+          "descZh": "配置值，具体取值域随函数而定。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Configure all parameters link to DMA transfer.",
+      "briefZh": "一次性配置 DMA 传输方向、自增模式、数据宽度、循环模式与优先级。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 526,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_SetDataTransferDirection",
+      "name": "LL_DMA_SetDataTransferDirection",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "void LL_DMA_SetDataTransferDirection(DMA_TypeDef * DMAx, uint32_t Channel, uint32_t Direction);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        },
+        {
+          "name": "Direction",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "方向或模式取值，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set Data transfer direction (read from peripheral or from memory).",
+      "briefZh": "设置 DMA 传输方向（外设到存储器 / 存储器到外设 / 存储器到存储器）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 552,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_GetDataTransferDirection",
+      "name": "LL_DMA_GetDataTransferDirection",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "uint32_t LL_DMA_GetDataTransferDirection(DMA_TypeDef * DMAx, uint32_t Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get Data transfer direction (read from peripheral or from memory).",
+      "briefZh": "读取 DMA 的数据传输方向。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 576,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_SetMode",
+      "name": "LL_DMA_SetMode",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "void LL_DMA_SetMode(DMA_TypeDef * DMAx, uint32_t Channel, uint32_t Mode);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        },
+        {
+          "name": "Mode",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "模式取值，如 LL_GPIO_MODE_OUTPUT / LL_GPIO_MODE_INPUT / LL_GPIO_MODE_ALTERNATE / LL_GPIO_MODE_ANALOG。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set DMA mode circular or normal.",
+      "briefZh": "设置 DMA 的工作模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "The circular buffer mode cannot be used if the memory-to-memory data transfer is configured on the selected Channel."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 601,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_GetMode",
+      "name": "LL_DMA_GetMode",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "uint32_t LL_DMA_GetMode(DMA_TypeDef * DMAx, uint32_t Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get DMA mode circular or normal.",
+      "briefZh": "读取 DMA 的工作模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 623,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_SetPeriphIncMode",
+      "name": "LL_DMA_SetPeriphIncMode",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "void LL_DMA_SetPeriphIncMode(DMA_TypeDef * DMAx, uint32_t Channel, uint32_t PeriphOrM2MSrcIncMode);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        },
+        {
+          "name": "PeriphOrM2MSrcIncMode",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set Peripheral increment mode.",
+      "briefZh": "设置 DMA 的外设地址自增模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 646,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_GetPeriphIncMode",
+      "name": "LL_DMA_GetPeriphIncMode",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "uint32_t LL_DMA_GetPeriphIncMode(DMA_TypeDef * DMAx, uint32_t Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get Peripheral increment mode.",
+      "briefZh": "读取 DMA 的外设地址自增模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 668,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_SetMemoryIncMode",
+      "name": "LL_DMA_SetMemoryIncMode",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "void LL_DMA_SetMemoryIncMode(DMA_TypeDef * DMAx, uint32_t Channel, uint32_t MemoryOrM2MDstIncMode);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        },
+        {
+          "name": "MemoryOrM2MDstIncMode",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set Memory increment mode.",
+      "briefZh": "设置 DMA 的存储器地址自增模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 691,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_GetMemoryIncMode",
+      "name": "LL_DMA_GetMemoryIncMode",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "uint32_t LL_DMA_GetMemoryIncMode(DMA_TypeDef * DMAx, uint32_t Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get Memory increment mode.",
+      "briefZh": "读取 DMA 的存储器地址自增模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 713,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_SetPeriphSize",
+      "name": "LL_DMA_SetPeriphSize",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "void LL_DMA_SetPeriphSize(DMA_TypeDef * DMAx, uint32_t Channel, uint32_t PeriphOrM2MSrcDataSize);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        },
+        {
+          "name": "PeriphOrM2MSrcDataSize",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set Peripheral size.",
+      "briefZh": "设置 DMA 的外设数据宽度。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 737,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_GetPeriphSize",
+      "name": "LL_DMA_GetPeriphSize",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "uint32_t LL_DMA_GetPeriphSize(DMA_TypeDef * DMAx, uint32_t Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get Peripheral size.",
+      "briefZh": "读取 DMA 的外设数据宽度。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 760,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_SetMemorySize",
+      "name": "LL_DMA_SetMemorySize",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "void LL_DMA_SetMemorySize(DMA_TypeDef * DMAx, uint32_t Channel, uint32_t MemoryOrM2MDstDataSize);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        },
+        {
+          "name": "MemoryOrM2MDstDataSize",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set Memory size.",
+      "briefZh": "设置 DMA 的存储器数据宽度。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 784,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_GetMemorySize",
+      "name": "LL_DMA_GetMemorySize",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "uint32_t LL_DMA_GetMemorySize(DMA_TypeDef * DMAx, uint32_t Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get Memory size.",
+      "briefZh": "读取 DMA 的存储器数据宽度。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 807,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_SetChannelPriorityLevel",
+      "name": "LL_DMA_SetChannelPriorityLevel",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "void LL_DMA_SetChannelPriorityLevel(DMA_TypeDef * DMAx, uint32_t Channel, uint32_t Priority);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        },
+        {
+          "name": "Priority",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set Channel priority level.",
+      "briefZh": "设置 DMA 的通道优先级。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 832,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_GetChannelPriorityLevel",
+      "name": "LL_DMA_GetChannelPriorityLevel",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "uint32_t LL_DMA_GetChannelPriorityLevel(DMA_TypeDef * DMAx, uint32_t Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get Channel priority level.",
+      "briefZh": "读取 DMA 的通道优先级。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 856,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_SetDataLength",
+      "name": "LL_DMA_SetDataLength",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "void LL_DMA_SetDataLength(DMA_TypeDef * DMAx, uint32_t Channel, uint32_t NbData);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        },
+        {
+          "name": "NbData",
+          "type": "uint32_t",
+          "descEn": "Between Min_Data = 0 and Max_Data = 0x0000FFFF",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set Number of data to transfer.",
+      "briefZh": "设置本次 DMA 传输的数据项个数（不是字节数）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "This action has no effect if channel is enabled."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 879,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_GetDataLength",
+      "name": "LL_DMA_GetDataLength",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "uint32_t LL_DMA_GetDataLength(DMA_TypeDef * DMAx, uint32_t Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "Between Min_Data = 0 and Max_Data = 0xFFFFFFFF",
+      "returnDescZh": "",
+      "briefEn": "Get Number of data to transfer.",
+      "briefZh": "读取 DMA 通道当前剩余待传输的数据项个数。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "Once the channel is enabled, the return value indicate the remaining bytes to be transmitted."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 901,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ConfigAddresses",
+      "name": "LL_DMA_ConfigAddresses",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "void LL_DMA_ConfigAddresses(DMA_TypeDef * DMAx, uint32_t Channel, uint32_t SrcAddress, uint32_t DstAddress, uint32_t Direction);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        },
+        {
+          "name": "SrcAddress",
+          "type": "uint32_t",
+          "descEn": "Between Min_Data = 0 and Max_Data = 0xFFFFFFFF",
+          "descZh": "源地址。"
+        },
+        {
+          "name": "DstAddress",
+          "type": "uint32_t",
+          "descEn": "Between Min_Data = 0 and Max_Data = 0xFFFFFFFF",
+          "descZh": "目的地址。"
+        },
+        {
+          "name": "Direction",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "方向或模式取值，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Configure the Source and Destination addresses.",
+      "briefZh": "同时设置 DMA 的源地址与目的地址。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "This API must not be called when the DMA channel is enabled.",
+        "Each IP using DMA provides an API to get directly the register address (LL_PPP_DMA_GetRegAddr)."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_DMA_DIRECTION_MEMORY_TO_PERIPH"
+      ],
+      "headerLine": 930,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_SetMemoryAddress",
+      "name": "LL_DMA_SetMemoryAddress",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "void LL_DMA_SetMemoryAddress(DMA_TypeDef * DMAx, uint32_t Channel, uint32_t MemoryAddress);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        },
+        {
+          "name": "MemoryAddress",
+          "type": "uint32_t",
+          "descEn": "Between Min_Data = 0 and Max_Data = 0xFFFFFFFF",
+          "descZh": "存储器侧地址（你的缓冲区）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set the Memory address.",
+      "briefZh": "设置 DMA 的存储器地址。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "Interface used for direction LL_DMA_DIRECTION_PERIPH_TO_MEMORY or LL_DMA_DIRECTION_MEMORY_TO_PERIPH only.",
+        "This API must not be called when the DMA channel is enabled."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_DMA_DIRECTION_PERIPH_TO_MEMORY",
+        "LL_DMA_DIRECTION_MEMORY_TO_PERIPH"
+      ],
+      "headerLine": 964,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_SetPeriphAddress",
+      "name": "LL_DMA_SetPeriphAddress",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "void LL_DMA_SetPeriphAddress(DMA_TypeDef * DMAx, uint32_t Channel, uint32_t PeriphAddress);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        },
+        {
+          "name": "PeriphAddress",
+          "type": "uint32_t",
+          "descEn": "Between Min_Data = 0 and Max_Data = 0xFFFFFFFF",
+          "descZh": "外设侧地址（如 USART1->DR、SPI1->DR）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set the Peripheral address.",
+      "briefZh": "设置 DMA 的外设地址。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "Interface used for direction LL_DMA_DIRECTION_PERIPH_TO_MEMORY or LL_DMA_DIRECTION_MEMORY_TO_PERIPH only.",
+        "This API must not be called when the DMA channel is enabled."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_DMA_DIRECTION_PERIPH_TO_MEMORY",
+        "LL_DMA_DIRECTION_MEMORY_TO_PERIPH"
+      ],
+      "headerLine": 986,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_GetMemoryAddress",
+      "name": "LL_DMA_GetMemoryAddress",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "uint32_t LL_DMA_GetMemoryAddress(DMA_TypeDef * DMAx, uint32_t Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "Between Min_Data = 0 and Max_Data = 0xFFFFFFFF",
+      "returnDescZh": "",
+      "briefEn": "Get Memory address.",
+      "briefZh": "读取 DMA 的存储器地址。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "Interface used for direction LL_DMA_DIRECTION_PERIPH_TO_MEMORY or LL_DMA_DIRECTION_MEMORY_TO_PERIPH only."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_DMA_DIRECTION_PERIPH_TO_MEMORY",
+        "LL_DMA_DIRECTION_MEMORY_TO_PERIPH"
+      ],
+      "headerLine": 1006,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_GetPeriphAddress",
+      "name": "LL_DMA_GetPeriphAddress",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "uint32_t LL_DMA_GetPeriphAddress(DMA_TypeDef * DMAx, uint32_t Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "Between Min_Data = 0 and Max_Data = 0xFFFFFFFF",
+      "returnDescZh": "",
+      "briefEn": "Get Peripheral address.",
+      "briefZh": "读取 DMA 的外设地址。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "Interface used for direction LL_DMA_DIRECTION_PERIPH_TO_MEMORY or LL_DMA_DIRECTION_MEMORY_TO_PERIPH only."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_DMA_DIRECTION_PERIPH_TO_MEMORY",
+        "LL_DMA_DIRECTION_MEMORY_TO_PERIPH"
+      ],
+      "headerLine": 1026,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_SetM2MSrcAddress",
+      "name": "LL_DMA_SetM2MSrcAddress",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "void LL_DMA_SetM2MSrcAddress(DMA_TypeDef * DMAx, uint32_t Channel, uint32_t MemoryAddress);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        },
+        {
+          "name": "MemoryAddress",
+          "type": "uint32_t",
+          "descEn": "Between Min_Data = 0 and Max_Data = 0xFFFFFFFF",
+          "descZh": "存储器侧地址（你的缓冲区）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set the Memory to Memory Source address.",
+      "briefZh": "设置 DMA 的存储器到存储器模式的源地址。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "Interface used for direction LL_DMA_DIRECTION_MEMORY_TO_MEMORY only.",
+        "This API must not be called when the DMA channel is enabled."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_DMA_DIRECTION_MEMORY_TO_MEMORY"
+      ],
+      "headerLine": 1048,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_SetM2MDstAddress",
+      "name": "LL_DMA_SetM2MDstAddress",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "void LL_DMA_SetM2MDstAddress(DMA_TypeDef * DMAx, uint32_t Channel, uint32_t MemoryAddress);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        },
+        {
+          "name": "MemoryAddress",
+          "type": "uint32_t",
+          "descEn": "Between Min_Data = 0 and Max_Data = 0xFFFFFFFF",
+          "descZh": "存储器侧地址（你的缓冲区）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set the Memory to Memory Destination address.",
+      "briefZh": "设置 DMA 的存储器到存储器模式的目的地址。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "Interface used for direction LL_DMA_DIRECTION_MEMORY_TO_MEMORY only.",
+        "This API must not be called when the DMA channel is enabled."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_DMA_DIRECTION_MEMORY_TO_MEMORY"
+      ],
+      "headerLine": 1070,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_GetM2MSrcAddress",
+      "name": "LL_DMA_GetM2MSrcAddress",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "uint32_t LL_DMA_GetM2MSrcAddress(DMA_TypeDef * DMAx, uint32_t Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "Between Min_Data = 0 and Max_Data = 0xFFFFFFFF",
+      "returnDescZh": "",
+      "briefEn": "Get the Memory to Memory Source address.",
+      "briefZh": "读取 DMA 的存储器到存储器模式的源地址。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "Interface used for direction LL_DMA_DIRECTION_MEMORY_TO_MEMORY only."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_DMA_DIRECTION_MEMORY_TO_MEMORY"
+      ],
+      "headerLine": 1090,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_GetM2MDstAddress",
+      "name": "LL_DMA_GetM2MDstAddress",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec1",
+      "prototype": "uint32_t LL_DMA_GetM2MDstAddress(DMA_TypeDef * DMAx, uint32_t Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "Between Min_Data = 0 and Max_Data = 0xFFFFFFFF",
+      "returnDescZh": "",
+      "briefEn": "Get the Memory to Memory Destination address.",
+      "briefZh": "读取 DMA 的存储器到存储器模式的目的地址。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "Interface used for direction LL_DMA_DIRECTION_MEMORY_TO_MEMORY only."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_DMA_DIRECTION_MEMORY_TO_MEMORY"
+      ],
+      "headerLine": 1110,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_GI1",
+      "name": "LL_DMA_IsActiveFlag_GI1",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_GI1(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 1 global interrupt flag.",
+      "briefZh": "查询 DMA 的通道 1 的全局中断标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1129,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_GI2",
+      "name": "LL_DMA_IsActiveFlag_GI2",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_GI2(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 2 global interrupt flag.",
+      "briefZh": "查询 DMA 的通道 2 的全局中断标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1140,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_GI3",
+      "name": "LL_DMA_IsActiveFlag_GI3",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_GI3(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 3 global interrupt flag.",
+      "briefZh": "查询 DMA 的通道 3 的全局中断标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1151,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_GI4",
+      "name": "LL_DMA_IsActiveFlag_GI4",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_GI4(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 4 global interrupt flag.",
+      "briefZh": "查询 DMA 的通道 4 的全局中断标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1162,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_GI5",
+      "name": "LL_DMA_IsActiveFlag_GI5",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_GI5(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 5 global interrupt flag.",
+      "briefZh": "查询 DMA 的通道 5 的全局中断标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1173,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_GI6",
+      "name": "LL_DMA_IsActiveFlag_GI6",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_GI6(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 6 global interrupt flag.",
+      "briefZh": "查询 DMA 的通道 6 的全局中断标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1184,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_GI7",
+      "name": "LL_DMA_IsActiveFlag_GI7",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_GI7(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 7 global interrupt flag.",
+      "briefZh": "查询 DMA 的通道 7 的全局中断标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1195,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_TC1",
+      "name": "LL_DMA_IsActiveFlag_TC1",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_TC1(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 1 transfer complete flag.",
+      "briefZh": "查询 DMA 的通道 1 的传输完成标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1206,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_TC2",
+      "name": "LL_DMA_IsActiveFlag_TC2",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_TC2(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 2 transfer complete flag.",
+      "briefZh": "查询 DMA 的通道 2 的传输完成标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1217,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_TC3",
+      "name": "LL_DMA_IsActiveFlag_TC3",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_TC3(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 3 transfer complete flag.",
+      "briefZh": "查询 DMA 的通道 3 的传输完成标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1228,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_TC4",
+      "name": "LL_DMA_IsActiveFlag_TC4",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_TC4(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 4 transfer complete flag.",
+      "briefZh": "查询 DMA 的通道 4 的传输完成标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1239,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_TC5",
+      "name": "LL_DMA_IsActiveFlag_TC5",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_TC5(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 5 transfer complete flag.",
+      "briefZh": "查询 DMA 的通道 5 的传输完成标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1250,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_TC6",
+      "name": "LL_DMA_IsActiveFlag_TC6",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_TC6(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 6 transfer complete flag.",
+      "briefZh": "查询 DMA 的通道 6 的传输完成标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1261,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_TC7",
+      "name": "LL_DMA_IsActiveFlag_TC7",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_TC7(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 7 transfer complete flag.",
+      "briefZh": "查询 DMA 的通道 7 的传输完成标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1272,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_HT1",
+      "name": "LL_DMA_IsActiveFlag_HT1",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_HT1(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 1 half transfer flag.",
+      "briefZh": "查询 DMA 的通道 1 的传输过半标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1283,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_HT2",
+      "name": "LL_DMA_IsActiveFlag_HT2",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_HT2(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 2 half transfer flag.",
+      "briefZh": "查询 DMA 的通道 2 的传输过半标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1294,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_HT3",
+      "name": "LL_DMA_IsActiveFlag_HT3",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_HT3(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 3 half transfer flag.",
+      "briefZh": "查询 DMA 的通道 3 的传输过半标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1305,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_HT4",
+      "name": "LL_DMA_IsActiveFlag_HT4",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_HT4(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 4 half transfer flag.",
+      "briefZh": "查询 DMA 的通道 4 的传输过半标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1316,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_HT5",
+      "name": "LL_DMA_IsActiveFlag_HT5",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_HT5(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 5 half transfer flag.",
+      "briefZh": "查询 DMA 的通道 5 的传输过半标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1327,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_HT6",
+      "name": "LL_DMA_IsActiveFlag_HT6",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_HT6(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 6 half transfer flag.",
+      "briefZh": "查询 DMA 的通道 6 的传输过半标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1338,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_HT7",
+      "name": "LL_DMA_IsActiveFlag_HT7",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_HT7(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 7 half transfer flag.",
+      "briefZh": "查询 DMA 的通道 7 的传输过半标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1349,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_TE1",
+      "name": "LL_DMA_IsActiveFlag_TE1",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_TE1(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 1 transfer error flag.",
+      "briefZh": "查询 DMA 的通道 1 的传输错误标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1360,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_TE2",
+      "name": "LL_DMA_IsActiveFlag_TE2",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_TE2(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 2 transfer error flag.",
+      "briefZh": "查询 DMA 的通道 2 的传输错误标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1371,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_TE3",
+      "name": "LL_DMA_IsActiveFlag_TE3",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_TE3(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 3 transfer error flag.",
+      "briefZh": "查询 DMA 的通道 3 的传输错误标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1382,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_TE4",
+      "name": "LL_DMA_IsActiveFlag_TE4",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_TE4(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 4 transfer error flag.",
+      "briefZh": "查询 DMA 的通道 4 的传输错误标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1393,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_TE5",
+      "name": "LL_DMA_IsActiveFlag_TE5",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_TE5(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 5 transfer error flag.",
+      "briefZh": "查询 DMA 的通道 5 的传输错误标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1404,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_TE6",
+      "name": "LL_DMA_IsActiveFlag_TE6",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_TE6(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 6 transfer error flag.",
+      "briefZh": "查询 DMA 的通道 6 的传输错误标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1415,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsActiveFlag_TE7",
+      "name": "LL_DMA_IsActiveFlag_TE7",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "uint32_t LL_DMA_IsActiveFlag_TE7(DMA_TypeDef * DMAx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Channel 7 transfer error flag.",
+      "briefZh": "查询 DMA 的通道 7 的传输错误标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_ISR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1426,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_GI1",
+      "name": "LL_DMA_ClearFlag_GI1",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_GI1(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 1 global interrupt flag.",
+      "briefZh": "清除 DMA 的通道 1 的全局中断标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1437,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_GI2",
+      "name": "LL_DMA_ClearFlag_GI2",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_GI2(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 2 global interrupt flag.",
+      "briefZh": "清除 DMA 的通道 2 的全局中断标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1448,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_GI3",
+      "name": "LL_DMA_ClearFlag_GI3",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_GI3(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 3 global interrupt flag.",
+      "briefZh": "清除 DMA 的通道 3 的全局中断标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1459,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_GI4",
+      "name": "LL_DMA_ClearFlag_GI4",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_GI4(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 4 global interrupt flag.",
+      "briefZh": "清除 DMA 的通道 4 的全局中断标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1470,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_GI5",
+      "name": "LL_DMA_ClearFlag_GI5",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_GI5(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 5 global interrupt flag.",
+      "briefZh": "清除 DMA 的通道 5 的全局中断标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1481,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_GI6",
+      "name": "LL_DMA_ClearFlag_GI6",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_GI6(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 6 global interrupt flag.",
+      "briefZh": "清除 DMA 的通道 6 的全局中断标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1492,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_GI7",
+      "name": "LL_DMA_ClearFlag_GI7",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_GI7(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 7 global interrupt flag.",
+      "briefZh": "清除 DMA 的通道 7 的全局中断标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1503,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_TC1",
+      "name": "LL_DMA_ClearFlag_TC1",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_TC1(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 1 transfer complete flag.",
+      "briefZh": "清除 DMA 的通道 1 的传输完成标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1514,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_TC2",
+      "name": "LL_DMA_ClearFlag_TC2",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_TC2(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 2 transfer complete flag.",
+      "briefZh": "清除 DMA 的通道 2 的传输完成标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1525,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_TC3",
+      "name": "LL_DMA_ClearFlag_TC3",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_TC3(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 3 transfer complete flag.",
+      "briefZh": "清除 DMA 的通道 3 的传输完成标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1536,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_TC4",
+      "name": "LL_DMA_ClearFlag_TC4",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_TC4(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 4 transfer complete flag.",
+      "briefZh": "清除 DMA 的通道 4 的传输完成标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1547,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_TC5",
+      "name": "LL_DMA_ClearFlag_TC5",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_TC5(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 5 transfer complete flag.",
+      "briefZh": "清除 DMA 的通道 5 的传输完成标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1558,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_TC6",
+      "name": "LL_DMA_ClearFlag_TC6",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_TC6(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 6 transfer complete flag.",
+      "briefZh": "清除 DMA 的通道 6 的传输完成标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1569,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_TC7",
+      "name": "LL_DMA_ClearFlag_TC7",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_TC7(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 7 transfer complete flag.",
+      "briefZh": "清除 DMA 的通道 7 的传输完成标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1580,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_HT1",
+      "name": "LL_DMA_ClearFlag_HT1",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_HT1(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 1 half transfer flag.",
+      "briefZh": "清除 DMA 的通道 1 的传输过半标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1591,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_HT2",
+      "name": "LL_DMA_ClearFlag_HT2",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_HT2(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 2 half transfer flag.",
+      "briefZh": "清除 DMA 的通道 2 的传输过半标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1602,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_HT3",
+      "name": "LL_DMA_ClearFlag_HT3",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_HT3(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 3 half transfer flag.",
+      "briefZh": "清除 DMA 的通道 3 的传输过半标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1613,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_HT4",
+      "name": "LL_DMA_ClearFlag_HT4",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_HT4(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 4 half transfer flag.",
+      "briefZh": "清除 DMA 的通道 4 的传输过半标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1624,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_HT5",
+      "name": "LL_DMA_ClearFlag_HT5",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_HT5(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 5 half transfer flag.",
+      "briefZh": "清除 DMA 的通道 5 的传输过半标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1635,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_HT6",
+      "name": "LL_DMA_ClearFlag_HT6",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_HT6(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 6 half transfer flag.",
+      "briefZh": "清除 DMA 的通道 6 的传输过半标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1646,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_HT7",
+      "name": "LL_DMA_ClearFlag_HT7",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_HT7(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 7 half transfer flag.",
+      "briefZh": "清除 DMA 的通道 7 的传输过半标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1657,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_TE1",
+      "name": "LL_DMA_ClearFlag_TE1",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_TE1(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 1 transfer error flag.",
+      "briefZh": "清除 DMA 的通道 1 的传输错误标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1668,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_TE2",
+      "name": "LL_DMA_ClearFlag_TE2",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_TE2(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 2 transfer error flag.",
+      "briefZh": "清除 DMA 的通道 2 的传输错误标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1679,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_TE3",
+      "name": "LL_DMA_ClearFlag_TE3",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_TE3(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 3 transfer error flag.",
+      "briefZh": "清除 DMA 的通道 3 的传输错误标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1690,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_TE4",
+      "name": "LL_DMA_ClearFlag_TE4",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_TE4(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 4 transfer error flag.",
+      "briefZh": "清除 DMA 的通道 4 的传输错误标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1701,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_TE5",
+      "name": "LL_DMA_ClearFlag_TE5",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_TE5(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 5 transfer error flag.",
+      "briefZh": "清除 DMA 的通道 5 的传输错误标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1712,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_TE6",
+      "name": "LL_DMA_ClearFlag_TE6",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_TE6(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 6 transfer error flag.",
+      "briefZh": "清除 DMA 的通道 6 的传输错误标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1723,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_ClearFlag_TE7",
+      "name": "LL_DMA_ClearFlag_TE7",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec2",
+      "prototype": "void LL_DMA_ClearFlag_TE7(DMA_TypeDef * DMAx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Channel 7 transfer error flag.",
+      "briefZh": "清除 DMA 的通道 7 的传输错误标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DMAx_IFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1734,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_EnableIT_TC",
+      "name": "LL_DMA_EnableIT_TC",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec3",
+      "prototype": "void LL_DMA_EnableIT_TC(DMA_TypeDef * DMAx, uint32_t Channel);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable Transfer complete interrupt.",
+      "briefZh": "使能 DMA 的传输完成中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1761,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_EnableIT_HT",
+      "name": "LL_DMA_EnableIT_HT",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec3",
+      "prototype": "void LL_DMA_EnableIT_HT(DMA_TypeDef * DMAx, uint32_t Channel);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable Half transfer interrupt.",
+      "briefZh": "使能该 DMA 通道的传输过半（HT）中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1780,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_EnableIT_TE",
+      "name": "LL_DMA_EnableIT_TE",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec3",
+      "prototype": "void LL_DMA_EnableIT_TE(DMA_TypeDef * DMAx, uint32_t Channel);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable Transfer error interrupt.",
+      "briefZh": "使能该 DMA 通道的传输错误（TE）中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1799,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_DisableIT_TC",
+      "name": "LL_DMA_DisableIT_TC",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec3",
+      "prototype": "void LL_DMA_DisableIT_TC(DMA_TypeDef * DMAx, uint32_t Channel);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable Transfer complete interrupt.",
+      "briefZh": "失能 DMA 的传输完成中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1818,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_DisableIT_HT",
+      "name": "LL_DMA_DisableIT_HT",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec3",
+      "prototype": "void LL_DMA_DisableIT_HT(DMA_TypeDef * DMAx, uint32_t Channel);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable Half transfer interrupt.",
+      "briefZh": "关闭该 DMA 通道的传输过半（HT）中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1837,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_DisableIT_TE",
+      "name": "LL_DMA_DisableIT_TE",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec3",
+      "prototype": "void LL_DMA_DisableIT_TE(DMA_TypeDef * DMAx, uint32_t Channel);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable Transfer error interrupt.",
+      "briefZh": "关闭该 DMA 通道的传输错误（TE）中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1856,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsEnabledIT_TC",
+      "name": "LL_DMA_IsEnabledIT_TC",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec3",
+      "prototype": "uint32_t LL_DMA_IsEnabledIT_TC(DMA_TypeDef * DMAx, uint32_t Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if Transfer complete Interrupt is enabled.",
+      "briefZh": "查询 DMA 的传输完成中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1875,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsEnabledIT_HT",
+      "name": "LL_DMA_IsEnabledIT_HT",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec3",
+      "prototype": "uint32_t LL_DMA_IsEnabledIT_HT(DMA_TypeDef * DMAx, uint32_t Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if Half transfer Interrupt is enabled.",
+      "briefZh": "查询该 DMA 通道的传输过半（HT）中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1895,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_DMA_IsEnabledIT_TE",
+      "name": "LL_DMA_IsEnabledIT_TE",
+      "peripheral": "DMA",
+      "library": "ll",
+      "sectionId": "DMA@ll#sec3",
+      "prototype": "uint32_t LL_DMA_IsEnabledIT_TE(DMA_TypeDef * DMAx, uint32_t Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DMAx",
+          "type": "DMA_TypeDef *",
+          "descEn": "DMAx Instance",
+          "descZh": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if Transfer error Interrupt is enabled.",
+      "briefZh": "查询该 DMA 通道的传输错误（TE）中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1915,
+      "definedIn": "stm32f1xx_ll_dma.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

@@ -1,0 +1,646 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "BKP",
+  "library": "reg",
+  "functions": [
+    {
+      "id": "REG_BKP_CR",
+      "name": "BKP_CR",
+      "peripheral": "BKP",
+      "library": "reg",
+      "sectionId": "BKP@reg#sec3",
+      "prototype": "BKP->CR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "BKP_CR_TPE",
+          "type": "bit 0（整个位域）",
+          "descEn": "TAMPER pin enable",
+          "descZh": ""
+        },
+        {
+          "name": "BKP_CR_TPAL",
+          "type": "bit 1（整个位域）",
+          "descEn": "TAMPER pin active level",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "TAMPER pin enable",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKP_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 BKP_TypeDef.CR，偏移 0x30"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = BKP->CR;  /* 读回当前值 */\nv &= ~BKP_CR_TPE_Msk;  /* 先清掉 BKP_CR_TPE：bit 0（整个位域） */\nv |= (1u << BKP_CR_TPE_Pos) & BKP_CR_TPE_Msk;  /* 置位，实际取值看参考手册 */\nBKP->CR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 878,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_BKP_CSR",
+      "name": "BKP_CSR",
+      "peripheral": "BKP",
+      "library": "reg",
+      "sectionId": "BKP@reg#sec1",
+      "prototype": "BKP->CSR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "BKP_CSR_CTE",
+          "type": "bit 0（整个位域）",
+          "descEn": "Clear Tamper event",
+          "descZh": ""
+        },
+        {
+          "name": "BKP_CSR_CTI",
+          "type": "bit 1（整个位域）",
+          "descEn": "Clear Tamper Interrupt",
+          "descZh": ""
+        },
+        {
+          "name": "BKP_CSR_TPIE",
+          "type": "bit 2（整个位域）",
+          "descEn": "TAMPER Pin interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "BKP_CSR_TEF",
+          "type": "bit 8（整个位域）",
+          "descEn": "Tamper Event Flag",
+          "descZh": ""
+        },
+        {
+          "name": "BKP_CSR_TIF",
+          "type": "bit 9（整个位域）",
+          "descEn": "Tamper Interrupt Flag",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Clear Tamper event",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKP_CSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 BKP_TypeDef.CSR，偏移 0x34"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = BKP->CSR;  /* 读回当前值 */\nv &= ~BKP_CSR_CTE_Msk;  /* 先清掉 BKP_CSR_CTE：bit 0（整个位域） */\nv |= (1u << BKP_CSR_CTE_Pos) & BKP_CSR_CTE_Msk;  /* 置位，实际取值看参考手册 */\nBKP->CSR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 886,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_BKP_DR1",
+      "name": "BKP_DR1",
+      "peripheral": "BKP",
+      "library": "reg",
+      "sectionId": "BKP@reg#sec2",
+      "prototype": "BKP->DR1",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "BKP_DR1_D",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Backup data",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Backup data",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKP_DR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 BKP_TypeDef.DR1，偏移 0x04"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = BKP->DR1;  /* 读回当前值 */\nv &= ~BKP_DR1_D_Msk;  /* 先清掉 BKP_DR1_D：bits[15:0]（整个位域） */\nv |= (1u << BKP_DR1_D_Pos) & BKP_DR1_D_Msk;  /* 置位，实际取值看参考手册 */\nBKP->DR1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 812,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_BKP_DR10",
+      "name": "BKP_DR10",
+      "peripheral": "BKP",
+      "library": "reg",
+      "sectionId": "BKP@reg#sec2",
+      "prototype": "BKP->DR10",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "BKP_DR10_D",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Backup data",
+          "descZh": ""
+        },
+        {
+          "name": "RTC_BKP_NUMBER",
+          "type": "0x0000000A",
+          "descEn": "",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Backup data",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKP_DR10"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 BKP_TypeDef.DR10，偏移 0x28"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = BKP->DR10;  /* 读回当前值 */\nv &= ~BKP_DR10_D_Msk;  /* 先清掉 BKP_DR10_D：bits[15:0]（整个位域） */\nv |= (1u << BKP_DR10_D_Pos) & BKP_DR10_D_Msk;  /* 置位，实际取值看参考手册 */\nBKP->DR10 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 857,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_BKP_DR2",
+      "name": "BKP_DR2",
+      "peripheral": "BKP",
+      "library": "reg",
+      "sectionId": "BKP@reg#sec2",
+      "prototype": "BKP->DR2",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "BKP_DR2_D",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Backup data",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Backup data",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKP_DR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 BKP_TypeDef.DR2，偏移 0x08"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = BKP->DR2;  /* 读回当前值 */\nv &= ~BKP_DR2_D_Msk;  /* 先清掉 BKP_DR2_D：bits[15:0]（整个位域） */\nv |= (1u << BKP_DR2_D_Pos) & BKP_DR2_D_Msk;  /* 置位，实际取值看参考手册 */\nBKP->DR2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 817,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_BKP_DR3",
+      "name": "BKP_DR3",
+      "peripheral": "BKP",
+      "library": "reg",
+      "sectionId": "BKP@reg#sec2",
+      "prototype": "BKP->DR3",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "BKP_DR3_D",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Backup data",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Backup data",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKP_DR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 BKP_TypeDef.DR3，偏移 0x0C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = BKP->DR3;  /* 读回当前值 */\nv &= ~BKP_DR3_D_Msk;  /* 先清掉 BKP_DR3_D：bits[15:0]（整个位域） */\nv |= (1u << BKP_DR3_D_Pos) & BKP_DR3_D_Msk;  /* 置位，实际取值看参考手册 */\nBKP->DR3 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 822,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_BKP_DR4",
+      "name": "BKP_DR4",
+      "peripheral": "BKP",
+      "library": "reg",
+      "sectionId": "BKP@reg#sec2",
+      "prototype": "BKP->DR4",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "BKP_DR4_D",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Backup data",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Backup data",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKP_DR4"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 BKP_TypeDef.DR4，偏移 0x10"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = BKP->DR4;  /* 读回当前值 */\nv &= ~BKP_DR4_D_Msk;  /* 先清掉 BKP_DR4_D：bits[15:0]（整个位域） */\nv |= (1u << BKP_DR4_D_Pos) & BKP_DR4_D_Msk;  /* 置位，实际取值看参考手册 */\nBKP->DR4 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 827,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_BKP_DR5",
+      "name": "BKP_DR5",
+      "peripheral": "BKP",
+      "library": "reg",
+      "sectionId": "BKP@reg#sec2",
+      "prototype": "BKP->DR5",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "BKP_DR5_D",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Backup data",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Backup data",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKP_DR5"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 BKP_TypeDef.DR5，偏移 0x14"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = BKP->DR5;  /* 读回当前值 */\nv &= ~BKP_DR5_D_Msk;  /* 先清掉 BKP_DR5_D：bits[15:0]（整个位域） */\nv |= (1u << BKP_DR5_D_Pos) & BKP_DR5_D_Msk;  /* 置位，实际取值看参考手册 */\nBKP->DR5 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 832,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_BKP_DR6",
+      "name": "BKP_DR6",
+      "peripheral": "BKP",
+      "library": "reg",
+      "sectionId": "BKP@reg#sec2",
+      "prototype": "BKP->DR6",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "BKP_DR6_D",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Backup data",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Backup data",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKP_DR6"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 BKP_TypeDef.DR6，偏移 0x18"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = BKP->DR6;  /* 读回当前值 */\nv &= ~BKP_DR6_D_Msk;  /* 先清掉 BKP_DR6_D：bits[15:0]（整个位域） */\nv |= (1u << BKP_DR6_D_Pos) & BKP_DR6_D_Msk;  /* 置位，实际取值看参考手册 */\nBKP->DR6 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 837,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_BKP_DR7",
+      "name": "BKP_DR7",
+      "peripheral": "BKP",
+      "library": "reg",
+      "sectionId": "BKP@reg#sec2",
+      "prototype": "BKP->DR7",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "BKP_DR7_D",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Backup data",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Backup data",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKP_DR7"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 BKP_TypeDef.DR7，偏移 0x1C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = BKP->DR7;  /* 读回当前值 */\nv &= ~BKP_DR7_D_Msk;  /* 先清掉 BKP_DR7_D：bits[15:0]（整个位域） */\nv |= (1u << BKP_DR7_D_Pos) & BKP_DR7_D_Msk;  /* 置位，实际取值看参考手册 */\nBKP->DR7 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 842,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_BKP_DR8",
+      "name": "BKP_DR8",
+      "peripheral": "BKP",
+      "library": "reg",
+      "sectionId": "BKP@reg#sec2",
+      "prototype": "BKP->DR8",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "BKP_DR8_D",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Backup data",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Backup data",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKP_DR8"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 BKP_TypeDef.DR8，偏移 0x20"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = BKP->DR8;  /* 读回当前值 */\nv &= ~BKP_DR8_D_Msk;  /* 先清掉 BKP_DR8_D：bits[15:0]（整个位域） */\nv |= (1u << BKP_DR8_D_Pos) & BKP_DR8_D_Msk;  /* 置位，实际取值看参考手册 */\nBKP->DR8 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 847,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_BKP_DR9",
+      "name": "BKP_DR9",
+      "peripheral": "BKP",
+      "library": "reg",
+      "sectionId": "BKP@reg#sec2",
+      "prototype": "BKP->DR9",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "BKP_DR9_D",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Backup data",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Backup data",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKP_DR9"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 BKP_TypeDef.DR9，偏移 0x24"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = BKP->DR9;  /* 读回当前值 */\nv &= ~BKP_DR9_D_Msk;  /* 先清掉 BKP_DR9_D：bits[15:0]（整个位域） */\nv |= (1u << BKP_DR9_D_Pos) & BKP_DR9_D_Msk;  /* 置位，实际取值看参考手册 */\nBKP->DR9 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 852,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_BKP_RTCCR",
+      "name": "BKP_RTCCR",
+      "peripheral": "BKP",
+      "library": "reg",
+      "sectionId": "BKP@reg#sec3",
+      "prototype": "BKP->RTCCR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "BKP_RTCCR_CAL",
+          "type": "bits[6:0]（整个位域）",
+          "descEn": "Calibration value",
+          "descZh": ""
+        },
+        {
+          "name": "BKP_RTCCR_CCO",
+          "type": "bit 7（整个位域）",
+          "descEn": "Calibration Clock Output",
+          "descZh": ""
+        },
+        {
+          "name": "BKP_RTCCR_ASOE",
+          "type": "bit 8（整个位域）",
+          "descEn": "Alarm or Second Output Enable",
+          "descZh": ""
+        },
+        {
+          "name": "BKP_RTCCR_ASOS",
+          "type": "bit 9（整个位域）",
+          "descEn": "Alarm or Second Output Selection",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Calibration value",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKP_RTCCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 BKP_TypeDef.RTCCR，偏移 0x2C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = BKP->RTCCR;  /* 读回当前值 */\nv &= ~BKP_RTCCR_CAL_Msk;  /* 先清掉 BKP_RTCCR_CAL：bits[6:0]（整个位域） */\nv |= (1u << BKP_RTCCR_CAL_Pos) & BKP_RTCCR_CAL_Msk;  /* 置位，实际取值看参考手册 */\nBKP->RTCCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 864,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    }
+  ]
+}

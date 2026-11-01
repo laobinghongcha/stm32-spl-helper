@@ -1,0 +1,4506 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "SPI",
+  "library": "ll",
+  "functions": [
+    {
+      "id": "LL_SPI_Enable",
+      "name": "LL_SPI_Enable",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "void LL_SPI_Enable(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable SPI peripheral",
+      "briefZh": "使能 SPI 外设（置 SPE 位）。使能后 NSS 引脚行为才真正生效。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 302,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_Disable",
+      "name": "LL_SPI_Disable",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "void LL_SPI_Disable(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable SPI peripheral",
+      "briefZh": "关闭 SPI 外设。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "When disabling the SPI, follow the procedure described in the Reference Manual."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 314,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_IsEnabled",
+      "name": "LL_SPI_IsEnabled",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "uint32_t LL_SPI_IsEnabled(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if SPI peripheral is enabled",
+      "briefZh": "查询 SPI 外设是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 325,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_SetMode",
+      "name": "LL_SPI_SetMode",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "void LL_SPI_SetMode(SPI_TypeDef * SPIx, uint32_t Mode);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        },
+        {
+          "name": "Mode",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "模式取值，如 LL_GPIO_MODE_OUTPUT / LL_GPIO_MODE_INPUT / LL_GPIO_MODE_ALTERNATE / LL_GPIO_MODE_ANALOG。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set SPI operation mode to Master or Slave",
+      "briefZh": "设置 SPI 的工作模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This bit should not be changed when communication is ongoing."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 341,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_GetMode",
+      "name": "LL_SPI_GetMode",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "uint32_t LL_SPI_GetMode(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get SPI operation mode (Master or Slave)",
+      "briefZh": "读取 SPI 的工作模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 355,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_SetClockPhase",
+      "name": "LL_SPI_SetClockPhase",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "void LL_SPI_SetClockPhase(SPI_TypeDef * SPIx, uint32_t ClockPhase);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        },
+        {
+          "name": "ClockPhase",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "时钟相位（CPHA）：第一个边沿或第二个边沿采样。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set clock phase",
+      "briefZh": "设置 SPI 的时钟相位（CPHA）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This bit should not be changed when communication is ongoing. This bit is not used in SPI TI mode."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 372,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_GetClockPhase",
+      "name": "LL_SPI_GetClockPhase",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "uint32_t LL_SPI_GetClockPhase(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get clock phase",
+      "briefZh": "读取 SPI 的时钟相位（CPHA）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 385,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_SetClockPolarity",
+      "name": "LL_SPI_SetClockPolarity",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "void LL_SPI_SetClockPolarity(SPI_TypeDef * SPIx, uint32_t ClockPolarity);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        },
+        {
+          "name": "ClockPolarity",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "时钟极性（CPOL）：空闲时为高或为低。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set clock polarity",
+      "briefZh": "设置 SPI 的时钟极性（CPOL）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This bit should not be changed when communication is ongoing. This bit is not used in SPI TI mode."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 401,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_GetClockPolarity",
+      "name": "LL_SPI_GetClockPolarity",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "uint32_t LL_SPI_GetClockPolarity(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get clock polarity",
+      "briefZh": "读取 SPI 的时钟极性（CPOL）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 414,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_SetBaudRatePrescaler",
+      "name": "LL_SPI_SetBaudRatePrescaler",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "void LL_SPI_SetBaudRatePrescaler(SPI_TypeDef * SPIx, uint32_t BaudRate);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        },
+        {
+          "name": "BaudRate",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "波特率（如 115200）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set baud rate prescaler",
+      "briefZh": "设置 SPI 的波特率预分频。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "These bits should not be changed when communication is ongoing. SPI BaudRate = fPCLK/Prescaler."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 435,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_GetBaudRatePrescaler",
+      "name": "LL_SPI_GetBaudRatePrescaler",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "uint32_t LL_SPI_GetBaudRatePrescaler(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get baud rate prescaler",
+      "briefZh": "读取 SPI 的波特率预分频。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 454,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_SetTransferBitOrder",
+      "name": "LL_SPI_SetTransferBitOrder",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "void LL_SPI_SetTransferBitOrder(SPI_TypeDef * SPIx, uint32_t BitOrder);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        },
+        {
+          "name": "BitOrder",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "位序：MSB 优先或 LSB 优先。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set transfer bit order",
+      "briefZh": "设置 SPI 的位序（MSB/LSB 优先）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This bit should not be changed when communication is ongoing. This bit is not used in SPI TI mode."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 469,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_GetTransferBitOrder",
+      "name": "LL_SPI_GetTransferBitOrder",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "uint32_t LL_SPI_GetTransferBitOrder(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get transfer bit order",
+      "briefZh": "读取 SPI 的位序（MSB/LSB 优先）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 482,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_SetTransferDirection",
+      "name": "LL_SPI_SetTransferDirection",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "void LL_SPI_SetTransferDirection(SPI_TypeDef * SPIx, uint32_t TransferDirection);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        },
+        {
+          "name": "TransferDirection",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "传输方向：只收 / 只发 / 收发双向。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set transfer direction mode",
+      "briefZh": "设置 SPI 的传输方向。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "For Half-Duplex mode, Rx Direction is set by default. In master mode, the MOSI pin is used and in slave mode, the MISO pin is used for Half-Duplex."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 502,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_GetTransferDirection",
+      "name": "LL_SPI_GetTransferDirection",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "uint32_t LL_SPI_GetTransferDirection(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get transfer direction mode",
+      "briefZh": "读取 SPI 的传输方向。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 519,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_SetDataWidth",
+      "name": "LL_SPI_SetDataWidth",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "void LL_SPI_SetDataWidth(SPI_TypeDef * SPIx, uint32_t DataWidth);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        },
+        {
+          "name": "DataWidth",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "数据位宽：8 位或 9 位。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set frame data width",
+      "briefZh": "设置 SPI 的数据位宽。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 533,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_GetDataWidth",
+      "name": "LL_SPI_GetDataWidth",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "uint32_t LL_SPI_GetDataWidth(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get frame data width",
+      "briefZh": "读取 SPI 的数据位宽。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 546,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_EnableCRC",
+      "name": "LL_SPI_EnableCRC",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec2",
+      "prototype": "void LL_SPI_EnableCRC(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable CRC",
+      "briefZh": "使能 SPI 的硬件 CRC 校验。收发双方必须用同一个多项式和同一个 CRC 初值。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This bit should be written only when SPI is disabled (SPE = 0) for correct operation."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 566,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_DisableCRC",
+      "name": "LL_SPI_DisableCRC",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec2",
+      "prototype": "void LL_SPI_DisableCRC(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable CRC",
+      "briefZh": "关闭 SPI 的硬件 CRC 校验。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This bit should be written only when SPI is disabled (SPE = 0) for correct operation."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 578,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_IsEnabledCRC",
+      "name": "LL_SPI_IsEnabledCRC",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec2",
+      "prototype": "uint32_t LL_SPI_IsEnabledCRC(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if CRC is enabled",
+      "briefZh": "查询 SPI 是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This bit should be written only when SPI is disabled (SPE = 0) for correct operation."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 590,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_SetCRCNext",
+      "name": "LL_SPI_SetCRCNext",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec2",
+      "prototype": "void LL_SPI_SetCRCNext(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set CRCNext to transfer CRC on the line",
+      "briefZh": "设置 SPI 的下一个待发送的 CRC 值。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This bit has to be written as soon as the last data is written in the SPIx_DR register."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 602,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_SetCRCPolynomial",
+      "name": "LL_SPI_SetCRCPolynomial",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec2",
+      "prototype": "void LL_SPI_SetCRCPolynomial(SPI_TypeDef * SPIx, uint32_t CRCPoly);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        },
+        {
+          "name": "CRCPoly",
+          "type": "uint32_t",
+          "descEn": "This parameter must be a number between Min_Data = 0x00 and Max_Data = 0xFFFF",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set polynomial for CRC calculation",
+      "briefZh": "设置 SPI 的 CRC 多项式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CRCPR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 614,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_GetCRCPolynomial",
+      "name": "LL_SPI_GetCRCPolynomial",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec2",
+      "prototype": "uint32_t LL_SPI_GetCRCPolynomial(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "Returned value is a number between Min_Data = 0x00 and Max_Data = 0xFFFF",
+      "returnDescZh": "",
+      "briefEn": "Get polynomial for CRC calculation",
+      "briefZh": "读取 SPI 的 CRC 多项式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CRCPR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 625,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_GetRxCRC",
+      "name": "LL_SPI_GetRxCRC",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec2",
+      "prototype": "uint32_t LL_SPI_GetRxCRC(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "Returned value is a number between Min_Data = 0x00 and Max_Data = 0xFFFF",
+      "returnDescZh": "",
+      "briefEn": "Get Rx CRC",
+      "briefZh": "读取 SPI 的接收到的 CRC 值。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_RXCRCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 636,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_GetTxCRC",
+      "name": "LL_SPI_GetTxCRC",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec2",
+      "prototype": "uint32_t LL_SPI_GetTxCRC(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "Returned value is a number between Min_Data = 0x00 and Max_Data = 0xFFFF",
+      "returnDescZh": "",
+      "briefEn": "Get Tx CRC",
+      "briefZh": "读取 SPI 的发送的 CRC 值。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_TXCRCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 647,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_SetNSSMode",
+      "name": "LL_SPI_SetNSSMode",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec3",
+      "prototype": "void LL_SPI_SetNSSMode(SPI_TypeDef * SPIx, uint32_t NSS);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        },
+        {
+          "name": "NSS",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set NSS mode",
+      "briefZh": "设置 SPI 的 NSS 片选模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR1",
+        "SPIx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "LL_SPI_NSS_SOFT Mode is not used in SPI TI mode."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_SPI_NSS_SOFT"
+      ],
+      "headerLine": 672,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_GetNSSMode",
+      "name": "LL_SPI_GetNSSMode",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec3",
+      "prototype": "uint32_t LL_SPI_GetNSSMode(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get NSS mode",
+      "briefZh": "读取 SPI 的 NSS 片选模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR1",
+        "SPIx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 688,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_IsActiveFlag_RXNE",
+      "name": "LL_SPI_IsActiveFlag_RXNE",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec4",
+      "prototype": "uint32_t LL_SPI_IsActiveFlag_RXNE(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if Rx buffer is not empty",
+      "briefZh": "查询 SPI 的接收数据寄存器非空标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 709,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_IsActiveFlag_TXE",
+      "name": "LL_SPI_IsActiveFlag_TXE",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec4",
+      "prototype": "uint32_t LL_SPI_IsActiveFlag_TXE(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if Tx buffer is empty",
+      "briefZh": "查询 SPI 的发送数据寄存器空标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 720,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_IsActiveFlag_CRCERR",
+      "name": "LL_SPI_IsActiveFlag_CRCERR",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec4",
+      "prototype": "uint32_t LL_SPI_IsActiveFlag_CRCERR(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get CRC error flag",
+      "briefZh": "查询 SPI 的 CRC 校验错误标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 731,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_IsActiveFlag_MODF",
+      "name": "LL_SPI_IsActiveFlag_MODF",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec4",
+      "prototype": "uint32_t LL_SPI_IsActiveFlag_MODF(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get mode fault error flag",
+      "briefZh": "查询 SPI 的模式错误（NSS 冲突）标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 742,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_IsActiveFlag_OVR",
+      "name": "LL_SPI_IsActiveFlag_OVR",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec4",
+      "prototype": "uint32_t LL_SPI_IsActiveFlag_OVR(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get overrun error flag",
+      "briefZh": "查询 SPI 的溢出标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 753,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_IsActiveFlag_BSY",
+      "name": "LL_SPI_IsActiveFlag_BSY",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec4",
+      "prototype": "uint32_t LL_SPI_IsActiveFlag_BSY(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get busy flag",
+      "briefZh": "查询 SPI 的总线忙标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "The BSY flag is cleared under any one of the following conditions: -When the SPI is correctly disabled -When a fault is detected in Master mode (MODF bit set to 1) -In Master mode, when it finishes a data transmission and no new data is ready to be sent -In Slave mode, when the BSY flag is set to '0' for at least one SPI clock cycle between each data transfer."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 771,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_ClearFlag_CRCERR",
+      "name": "LL_SPI_ClearFlag_CRCERR",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec4",
+      "prototype": "void LL_SPI_ClearFlag_CRCERR(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear CRC error flag",
+      "briefZh": "清除 SPI 的 CRC 校验错误标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 783,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_ClearFlag_MODF",
+      "name": "LL_SPI_ClearFlag_MODF",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec4",
+      "prototype": "void LL_SPI_ClearFlag_MODF(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear mode fault error flag",
+      "briefZh": "清除 SPI 的模式错误（NSS 冲突）标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_SR",
+        "SPIx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Clearing this flag is done by a read access to the SPIx_SR register followed by a write access to the SPIx_CR1 register"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 796,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_ClearFlag_OVR",
+      "name": "LL_SPI_ClearFlag_OVR",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec4",
+      "prototype": "void LL_SPI_ClearFlag_OVR(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear overrun error flag",
+      "briefZh": "清除 SPI 的溢出标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_DR",
+        "SPIx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Clearing this flag is done by a read access to the SPIx_DR register followed by a read access to the SPIx_SR register"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 812,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_ClearFlag_FRE",
+      "name": "LL_SPI_ClearFlag_FRE",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec4",
+      "prototype": "void LL_SPI_ClearFlag_FRE(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear frame format error flag",
+      "briefZh": "清除 SPI 的帧格式错误标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Clearing this flag is done by reading SPIx_SR register"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 828,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_EnableIT_ERR",
+      "name": "LL_SPI_EnableIT_ERR",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec5",
+      "prototype": "void LL_SPI_EnableIT_ERR(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable error interrupt",
+      "briefZh": "使能 SPI 的错误中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This bit controls the generation of an interrupt when an error condition occurs (CRCERR, OVR, MODF in SPI mode, FRE at TI mode)."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 851,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_EnableIT_RXNE",
+      "name": "LL_SPI_EnableIT_RXNE",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec5",
+      "prototype": "void LL_SPI_EnableIT_RXNE(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable Rx buffer not empty interrupt",
+      "briefZh": "使能 SPI 的接收数据寄存器非空中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 862,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_EnableIT_TXE",
+      "name": "LL_SPI_EnableIT_TXE",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec5",
+      "prototype": "void LL_SPI_EnableIT_TXE(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable Tx buffer empty interrupt",
+      "briefZh": "使能 SPI 的发送数据寄存器空中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 873,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_DisableIT_ERR",
+      "name": "LL_SPI_DisableIT_ERR",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec5",
+      "prototype": "void LL_SPI_DisableIT_ERR(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable error interrupt",
+      "briefZh": "失能 SPI 的错误中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This bit controls the generation of an interrupt when an error condition occurs (CRCERR, OVR, MODF in SPI mode, FRE at TI mode)."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 886,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_DisableIT_RXNE",
+      "name": "LL_SPI_DisableIT_RXNE",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec5",
+      "prototype": "void LL_SPI_DisableIT_RXNE(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable Rx buffer not empty interrupt",
+      "briefZh": "失能 SPI 的接收数据寄存器非空中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 897,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_DisableIT_TXE",
+      "name": "LL_SPI_DisableIT_TXE",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec5",
+      "prototype": "void LL_SPI_DisableIT_TXE(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable Tx buffer empty interrupt",
+      "briefZh": "失能 SPI 的发送数据寄存器空中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 908,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_IsEnabledIT_ERR",
+      "name": "LL_SPI_IsEnabledIT_ERR",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec5",
+      "prototype": "uint32_t LL_SPI_IsEnabledIT_ERR(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if error interrupt is enabled",
+      "briefZh": "查询 SPI 的错误中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 919,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_IsEnabledIT_RXNE",
+      "name": "LL_SPI_IsEnabledIT_RXNE",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec5",
+      "prototype": "uint32_t LL_SPI_IsEnabledIT_RXNE(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if Rx buffer not empty interrupt is enabled",
+      "briefZh": "查询 SPI 的接收数据寄存器非空中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 930,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_IsEnabledIT_TXE",
+      "name": "LL_SPI_IsEnabledIT_TXE",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec5",
+      "prototype": "uint32_t LL_SPI_IsEnabledIT_TXE(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if Tx buffer empty interrupt",
+      "briefZh": "查询 SPI 的发送数据寄存器空中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 941,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_EnableDMAReq_RX",
+      "name": "LL_SPI_EnableDMAReq_RX",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec6",
+      "prototype": "void LL_SPI_EnableDMAReq_RX(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable DMA Rx",
+      "briefZh": "使能 SPI 的接收 DMA 请求。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 960,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_DisableDMAReq_RX",
+      "name": "LL_SPI_DisableDMAReq_RX",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec6",
+      "prototype": "void LL_SPI_DisableDMAReq_RX(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable DMA Rx",
+      "briefZh": "失能 SPI 的接收 DMA 请求。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 971,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_IsEnabledDMAReq_RX",
+      "name": "LL_SPI_IsEnabledDMAReq_RX",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec6",
+      "prototype": "uint32_t LL_SPI_IsEnabledDMAReq_RX(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if DMA Rx is enabled",
+      "briefZh": "查询 SPI 的接收 DMA 请求是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 982,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_EnableDMAReq_TX",
+      "name": "LL_SPI_EnableDMAReq_TX",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec6",
+      "prototype": "void LL_SPI_EnableDMAReq_TX(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable DMA Tx",
+      "briefZh": "使能 SPI 的发送 DMA 请求。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 993,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_DisableDMAReq_TX",
+      "name": "LL_SPI_DisableDMAReq_TX",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec6",
+      "prototype": "void LL_SPI_DisableDMAReq_TX(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable DMA Tx",
+      "briefZh": "失能 SPI 的发送 DMA 请求。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1004,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_IsEnabledDMAReq_TX",
+      "name": "LL_SPI_IsEnabledDMAReq_TX",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec6",
+      "prototype": "uint32_t LL_SPI_IsEnabledDMAReq_TX(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if DMA Tx is enabled",
+      "briefZh": "查询 SPI 的发送 DMA 请求是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1015,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_DMA_GetRegAddr",
+      "name": "LL_SPI_DMA_GetRegAddr",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec6",
+      "prototype": "uint32_t LL_SPI_DMA_GetRegAddr(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "Address of data register",
+      "returnDescZh": "",
+      "briefEn": "Get the data register address used for DMA transfer",
+      "briefZh": "返回 SPI 数据寄存器（DR）地址，供 DMA 搬运时使用。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1026,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_ReceiveData8",
+      "name": "LL_SPI_ReceiveData8",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec7",
+      "prototype": "uint8_t LL_SPI_ReceiveData8(SPI_TypeDef * SPIx);",
+      "returnType": "uint8_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "RxData Value between Min_Data=0x00 and Max_Data=0xFF",
+      "returnDescZh": "",
+      "briefEn": "Read 8-Bits in the data register",
+      "briefZh": "从数据寄存器读一个字节（8 位数据模式）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1045,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_ReceiveData16",
+      "name": "LL_SPI_ReceiveData16",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec7",
+      "prototype": "uint16_t LL_SPI_ReceiveData16(SPI_TypeDef * SPIx);",
+      "returnType": "uint16_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "RxData Value between Min_Data=0x00 and Max_Data=0xFFFF",
+      "returnDescZh": "",
+      "briefEn": "Read 16-Bits in the data register",
+      "briefZh": "从数据寄存器读 16 位数据（16 位数据模式）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1056,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_TransmitData8",
+      "name": "LL_SPI_TransmitData8",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec7",
+      "prototype": "void LL_SPI_TransmitData8(SPI_TypeDef * SPIx, uint8_t TxData);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        },
+        {
+          "name": "TxData",
+          "type": "uint8_t",
+          "descEn": "Value between Min_Data=0x00 and Max_Data=0xFF",
+          "descZh": "要发送的数据。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Write 8-Bits in the data register",
+      "briefZh": "向数据寄存器写一个字节（8 位数据模式）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1068,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_SPI_TransmitData16",
+      "name": "LL_SPI_TransmitData16",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec7",
+      "prototype": "void LL_SPI_TransmitData16(SPI_TypeDef * SPIx, uint16_t TxData);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        },
+        {
+          "name": "TxData",
+          "type": "uint16_t",
+          "descEn": "Value between Min_Data=0x00 and Max_Data=0xFFFF",
+          "descZh": "要发送的数据。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Write 16-Bits in the data register",
+      "briefZh": "向数据寄存器写 16 位数据（16 位数据模式）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1085,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_Enable",
+      "name": "LL_I2S_Enable",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "void LL_I2S_Enable(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Select I2S mode and Enable I2S peripheral",
+      "briefZh": "使能 I2S。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_I2SCFGR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1349,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_Disable",
+      "name": "LL_I2S_Disable",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "void LL_I2S_Disable(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable I2S peripheral",
+      "briefZh": "失能 I2S。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_I2SCFGR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1360,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_IsEnabled",
+      "name": "LL_I2S_IsEnabled",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "uint32_t LL_I2S_IsEnabled(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if I2S peripheral is enabled",
+      "briefZh": "查询 I2S 是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_I2SCFGR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1371,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_SetDataFormat",
+      "name": "LL_I2S_SetDataFormat",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "void LL_I2S_SetDataFormat(SPI_TypeDef * SPIx, uint32_t DataFormat);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        },
+        {
+          "name": "DataFormat",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "数据格式（I2S）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set I2S data frame length",
+      "briefZh": "设置 I2S 的数据格式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_I2SCFGR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1388,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_GetDataFormat",
+      "name": "LL_I2S_GetDataFormat",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "uint32_t LL_I2S_GetDataFormat(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get I2S data frame length",
+      "briefZh": "读取 I2S 的数据格式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_I2SCFGR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1404,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_SetClockPolarity",
+      "name": "LL_I2S_SetClockPolarity",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "void LL_I2S_SetClockPolarity(SPI_TypeDef * SPIx, uint32_t ClockPolarity);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        },
+        {
+          "name": "ClockPolarity",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "时钟极性（CPOL）：空闲时为高或为低。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set I2S clock polarity",
+      "briefZh": "设置 I2S 的时钟极性（CPOL）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_I2SCFGR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1418,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_GetClockPolarity",
+      "name": "LL_I2S_GetClockPolarity",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "uint32_t LL_I2S_GetClockPolarity(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get I2S clock polarity",
+      "briefZh": "读取 I2S 的时钟极性（CPOL）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_I2SCFGR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1431,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_SetStandard",
+      "name": "LL_I2S_SetStandard",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "void LL_I2S_SetStandard(SPI_TypeDef * SPIx, uint32_t Standard);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        },
+        {
+          "name": "Standard",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "I2S 标准：飞利浦 / MSB / LSB / PCM。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set I2S standard protocol",
+      "briefZh": "设置 I2S 的标准。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_I2SCFGR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1449,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_GetStandard",
+      "name": "LL_I2S_GetStandard",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "uint32_t LL_I2S_GetStandard(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get I2S standard protocol",
+      "briefZh": "读取 I2S 的标准。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_I2SCFGR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1466,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_SetTransferMode",
+      "name": "LL_I2S_SetTransferMode",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "void LL_I2S_SetTransferMode(SPI_TypeDef * SPIx, uint32_t Mode);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        },
+        {
+          "name": "Mode",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "模式取值，如 LL_GPIO_MODE_OUTPUT / LL_GPIO_MODE_INPUT / LL_GPIO_MODE_ALTERNATE / LL_GPIO_MODE_ANALOG。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set I2S transfer mode",
+      "briefZh": "设置 I2S 的传输模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_I2SCFGR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1482,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_GetTransferMode",
+      "name": "LL_I2S_GetTransferMode",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "uint32_t LL_I2S_GetTransferMode(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get I2S transfer mode",
+      "briefZh": "读取 I2S 的传输模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_I2SCFGR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1497,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_SetPrescalerLinear",
+      "name": "LL_I2S_SetPrescalerLinear",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "void LL_I2S_SetPrescalerLinear(SPI_TypeDef * SPIx, uint8_t PrescalerLinear);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        },
+        {
+          "name": "PrescalerLinear",
+          "type": "uint8_t",
+          "descEn": "Value between Min_Data=0x02 and Max_Data=0xFF",
+          "descZh": "线性预分频值。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set I2S linear prescaler",
+      "briefZh": "设置 I2S 的线性预分频。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_I2SPR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1509,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_GetPrescalerLinear",
+      "name": "LL_I2S_GetPrescalerLinear",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "uint32_t LL_I2S_GetPrescalerLinear(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "PrescalerLinear Value between Min_Data=0x02 and Max_Data=0xFF",
+      "returnDescZh": "",
+      "briefEn": "Get I2S linear prescaler",
+      "briefZh": "读取 I2S 的线性预分频。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_I2SPR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1520,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_SetPrescalerParity",
+      "name": "LL_I2S_SetPrescalerParity",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "void LL_I2S_SetPrescalerParity(SPI_TypeDef * SPIx, uint32_t PrescalerParity);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        },
+        {
+          "name": "PrescalerParity",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "奇偶预分频值。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set I2S parity prescaler",
+      "briefZh": "设置 I2S 的奇偶预分频。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_I2SPR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1534,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_GetPrescalerParity",
+      "name": "LL_I2S_GetPrescalerParity",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "uint32_t LL_I2S_GetPrescalerParity(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get I2S parity prescaler",
+      "briefZh": "读取 I2S 的奇偶预分频。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_I2SPR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1547,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_EnableMasterClock",
+      "name": "LL_I2S_EnableMasterClock",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "void LL_I2S_EnableMasterClock(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable the master clock output (Pin MCK)",
+      "briefZh": "使能 I2S 的主时钟输出（MCK）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_I2SPR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1558,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_DisableMasterClock",
+      "name": "LL_I2S_DisableMasterClock",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "void LL_I2S_DisableMasterClock(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable the master clock output (Pin MCK)",
+      "briefZh": "失能 I2S 的主时钟输出（MCK）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_I2SPR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1569,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_IsEnabledMasterClock",
+      "name": "LL_I2S_IsEnabledMasterClock",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec1",
+      "prototype": "uint32_t LL_I2S_IsEnabledMasterClock(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the master clock output (Pin MCK) is enabled",
+      "briefZh": "查询 I2S 是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_I2SPR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1580,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_IsActiveFlag_RXNE",
+      "name": "LL_I2S_IsActiveFlag_RXNE",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec4",
+      "prototype": "uint32_t LL_I2S_IsActiveFlag_RXNE(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if Rx buffer is not empty",
+      "briefZh": "查询 I2S 的接收数据寄存器非空标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "LL_SPI_IsActiveFlag_RXNE"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1599,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_IsActiveFlag_TXE",
+      "name": "LL_I2S_IsActiveFlag_TXE",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec4",
+      "prototype": "uint32_t LL_I2S_IsActiveFlag_TXE(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if Tx buffer is empty",
+      "briefZh": "查询 I2S 的发送数据寄存器空标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "LL_SPI_IsActiveFlag_TXE"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1610,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_IsActiveFlag_BSY",
+      "name": "LL_I2S_IsActiveFlag_BSY",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec4",
+      "prototype": "uint32_t LL_I2S_IsActiveFlag_BSY(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get busy flag",
+      "briefZh": "查询 I2S 的总线忙标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "LL_SPI_IsActiveFlag_BSY"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1621,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_IsActiveFlag_OVR",
+      "name": "LL_I2S_IsActiveFlag_OVR",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec4",
+      "prototype": "uint32_t LL_I2S_IsActiveFlag_OVR(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get overrun error flag",
+      "briefZh": "查询 I2S 的溢出标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "LL_SPI_IsActiveFlag_OVR"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1632,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_IsActiveFlag_UDR",
+      "name": "LL_I2S_IsActiveFlag_UDR",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec4",
+      "prototype": "uint32_t LL_I2S_IsActiveFlag_UDR(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get underrun error flag",
+      "briefZh": "查询 I2S 的下溢标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1643,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_IsActiveFlag_CHSIDE",
+      "name": "LL_I2S_IsActiveFlag_CHSIDE",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec4",
+      "prototype": "uint32_t LL_I2S_IsActiveFlag_CHSIDE(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get channel side flag.",
+      "briefZh": "查询 I2S 的声道指示标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "0: Channel Left has to be transmitted or has been received\\n 1: Channel Right has to be transmitted or has been received\\n It has no significance in PCM mode."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1658,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_ClearFlag_OVR",
+      "name": "LL_I2S_ClearFlag_OVR",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec4",
+      "prototype": "void LL_I2S_ClearFlag_OVR(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear overrun error flag",
+      "briefZh": "清除 I2S 的溢出标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "LL_SPI_ClearFlag_OVR"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1669,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_ClearFlag_UDR",
+      "name": "LL_I2S_ClearFlag_UDR",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec4",
+      "prototype": "void LL_I2S_ClearFlag_UDR(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear underrun error flag",
+      "briefZh": "清除 I2S 的下溢标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPIx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1680,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_ClearFlag_FRE",
+      "name": "LL_I2S_ClearFlag_FRE",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec4",
+      "prototype": "void LL_I2S_ClearFlag_FRE(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear frame format error flag",
+      "briefZh": "清除 I2S 的帧格式错误标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "LL_SPI_ClearFlag_FRE"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1693,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_EnableIT_ERR",
+      "name": "LL_I2S_EnableIT_ERR",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec5",
+      "prototype": "void LL_I2S_EnableIT_ERR(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable error IT",
+      "briefZh": "使能 I2S 的错误中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "LL_SPI_EnableIT_ERR"
+      ],
+      "remarks": [
+        "This bit controls the generation of an interrupt when an error condition occurs (OVR, UDR and FRE in I2S mode)."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1713,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_EnableIT_RXNE",
+      "name": "LL_I2S_EnableIT_RXNE",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec5",
+      "prototype": "void LL_I2S_EnableIT_RXNE(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable Rx buffer not empty IT",
+      "briefZh": "使能 I2S 的接收数据寄存器非空中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "LL_SPI_EnableIT_RXNE"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1724,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_EnableIT_TXE",
+      "name": "LL_I2S_EnableIT_TXE",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec5",
+      "prototype": "void LL_I2S_EnableIT_TXE(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable Tx buffer empty IT",
+      "briefZh": "使能 I2S 的发送数据寄存器空中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "LL_SPI_EnableIT_TXE"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1735,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_DisableIT_ERR",
+      "name": "LL_I2S_DisableIT_ERR",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec5",
+      "prototype": "void LL_I2S_DisableIT_ERR(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable error IT",
+      "briefZh": "失能 I2S 的错误中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "LL_SPI_DisableIT_ERR"
+      ],
+      "remarks": [
+        "This bit controls the generation of an interrupt when an error condition occurs (OVR, UDR and FRE in I2S mode)."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1747,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_DisableIT_RXNE",
+      "name": "LL_I2S_DisableIT_RXNE",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec5",
+      "prototype": "void LL_I2S_DisableIT_RXNE(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable Rx buffer not empty IT",
+      "briefZh": "失能 I2S 的接收数据寄存器非空中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "LL_SPI_DisableIT_RXNE"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1758,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_DisableIT_TXE",
+      "name": "LL_I2S_DisableIT_TXE",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec5",
+      "prototype": "void LL_I2S_DisableIT_TXE(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable Tx buffer empty IT",
+      "briefZh": "失能 I2S 的发送数据寄存器空中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "LL_SPI_DisableIT_TXE"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1769,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_IsEnabledIT_ERR",
+      "name": "LL_I2S_IsEnabledIT_ERR",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec5",
+      "prototype": "uint32_t LL_I2S_IsEnabledIT_ERR(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if ERR IT is enabled",
+      "briefZh": "查询 I2S 的错误中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "LL_SPI_IsEnabledIT_ERR"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1780,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_IsEnabledIT_RXNE",
+      "name": "LL_I2S_IsEnabledIT_RXNE",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec5",
+      "prototype": "uint32_t LL_I2S_IsEnabledIT_RXNE(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if RXNE IT is enabled",
+      "briefZh": "查询 I2S 的接收数据寄存器非空中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "LL_SPI_IsEnabledIT_RXNE"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1791,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_IsEnabledIT_TXE",
+      "name": "LL_I2S_IsEnabledIT_TXE",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec5",
+      "prototype": "uint32_t LL_I2S_IsEnabledIT_TXE(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if TXE IT is enabled",
+      "briefZh": "查询 I2S 的发送数据寄存器空中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "LL_SPI_IsEnabledIT_TXE"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1802,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_EnableDMAReq_RX",
+      "name": "LL_I2S_EnableDMAReq_RX",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec6",
+      "prototype": "void LL_I2S_EnableDMAReq_RX(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable DMA Rx",
+      "briefZh": "使能 I2S 的接收 DMA 请求。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "LL_SPI_EnableDMAReq_RX"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1821,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_DisableDMAReq_RX",
+      "name": "LL_I2S_DisableDMAReq_RX",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec6",
+      "prototype": "void LL_I2S_DisableDMAReq_RX(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable DMA Rx",
+      "briefZh": "失能 I2S 的接收 DMA 请求。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "LL_SPI_DisableDMAReq_RX"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1832,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_IsEnabledDMAReq_RX",
+      "name": "LL_I2S_IsEnabledDMAReq_RX",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec6",
+      "prototype": "uint32_t LL_I2S_IsEnabledDMAReq_RX(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if DMA Rx is enabled",
+      "briefZh": "查询 I2S 的接收 DMA 请求是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "LL_SPI_IsEnabledDMAReq_RX"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1843,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_EnableDMAReq_TX",
+      "name": "LL_I2S_EnableDMAReq_TX",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec6",
+      "prototype": "void LL_I2S_EnableDMAReq_TX(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable DMA Tx",
+      "briefZh": "使能 I2S 的发送 DMA 请求。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "LL_SPI_EnableDMAReq_TX"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1854,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_DisableDMAReq_TX",
+      "name": "LL_I2S_DisableDMAReq_TX",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec6",
+      "prototype": "void LL_I2S_DisableDMAReq_TX(SPI_TypeDef * SPIx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable DMA Tx",
+      "briefZh": "失能 I2S 的发送 DMA 请求。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "LL_SPI_DisableDMAReq_TX"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1865,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_IsEnabledDMAReq_TX",
+      "name": "LL_I2S_IsEnabledDMAReq_TX",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec6",
+      "prototype": "uint32_t LL_I2S_IsEnabledDMAReq_TX(const SPI_TypeDef * SPIx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "const SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if DMA Tx is enabled",
+      "briefZh": "查询 I2S 的发送 DMA 请求是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "LL_SPI_IsEnabledDMAReq_TX"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1876,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_ReceiveData16",
+      "name": "LL_I2S_ReceiveData16",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec7",
+      "prototype": "uint16_t LL_I2S_ReceiveData16(SPI_TypeDef * SPIx);",
+      "returnType": "uint16_t",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        }
+      ],
+      "returnDescEn": "RxData Value between Min_Data=0x0000 and Max_Data=0xFFFF",
+      "returnDescZh": "",
+      "briefEn": "Read 16-Bits in data register",
+      "briefZh": "从 I2S 数据寄存器读 16 位数据。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "LL_SPI_ReceiveData16"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1895,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_I2S_TransmitData16",
+      "name": "LL_I2S_TransmitData16",
+      "peripheral": "SPI",
+      "library": "ll",
+      "sectionId": "SPI@ll#sec7",
+      "prototype": "void LL_I2S_TransmitData16(SPI_TypeDef * SPIx, uint16_t TxData);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "SPIx",
+          "type": "SPI_TypeDef *",
+          "descEn": "SPI Instance",
+          "descZh": "SPI 实例指针，如 SPI1 / SPI2。"
+        },
+        {
+          "name": "TxData",
+          "type": "uint16_t",
+          "descEn": "Value between Min_Data=0x0000 and Max_Data=0xFFFF",
+          "descZh": "要发送的数据。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Write 16-Bits in data register",
+      "briefZh": "向 I2S 数据寄存器写 16 位数据。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "LL_SPI_TransmitData16"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1907,
+      "definedIn": "stm32f1xx_ll_spi.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

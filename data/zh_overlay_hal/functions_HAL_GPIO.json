@@ -1,0 +1,152 @@
+{
+  "HAL_GPIOEx_ConfigEventout": {
+    "briefZh": "配置 EVENTOUT 信号从哪个端口/引脚输出（Cortex-M3 的 TXEV 事件输出）。",
+    "usageZh": "调试或硬件同步用：让内核的 SEV 事件直接从一个引脚输出脉冲，可用示波器观察事件时序。日常业务代码基本用不到。配置后还要调 HAL_GPIOEx_EnableEventout 才真正输出。",
+    "paramsZh": {
+      "GPIO_PinSource": "引脚号，取 GPIO_PIN_SOURCE_0 等。",
+      "GPIO_PortSource": "端口号，取 GPIO_PORT_SOURCE_GPIOA 等。"
+    },
+    "notesZh": [
+      "C8T6 只引出 35 个 IO，可选端口有限；配置前先确认该引脚没被其它功能占用"
+    ],
+    "prerequisites": [
+      "已使能 AFIO 时钟（__HAL_RCC_AFIO_CLK_ENABLE）"
+    ]
+  },
+  "HAL_GPIOEx_DisableEventout": {
+    "briefZh": "关闭 EVENTOUT 输出，引脚恢复普通 GPIO 行为。",
+    "usageZh": "调试完或需要把该引脚改作他用时调用。"
+  },
+  "HAL_GPIOEx_EnableEventout": {
+    "briefZh": "使能 EVENTOUT 输出，让内核事件从已配置的引脚上输出脉冲。",
+    "usageZh": "配合 HAL_GPIOEx_ConfigEventout 使用。典型场景是调试时用示波器看中断响应延迟、或者让事件同步外部器件。",
+    "notesZh": [
+      "属于 AFIO_MAPR 的 MCO/EVENTOUT 控制位，只影响 EVENTOUT，不影响普通 GPIO"
+    ]
+  },
+  "HAL_GPIO_DeInit": {
+    "briefZh": "把指定引脚的配置寄存器恢复到复位默认值（模拟输入状态）。",
+    "usageZh": "想彻底放弃某个引脚的配置时用，比如低功耗前把外设引脚复位、或者引脚功能需要完全重配。只影响 GPIOx_CRL/CRH/ODR 里与该引脚相关的位，同端口的其它引脚不受影响。日常开发里用得不多——重新调一次 HAL_GPIO_Init 就能覆盖旧配置。",
+    "paramsZh": {
+      "GPIO_Pin": "要复位的引脚，用 GPIO_PIN_x 位或可一次复位多个。",
+      "GPIOx": "要操作的端口，取值 GPIOA~GPIOD 等。"
+    },
+    "notesZh": [
+      "复位后引脚处于模拟输入模式，不再响应任何数字电平",
+      "若该引脚正被 EXTI 使用，复位后中断配置仍在，需要另外调 HAL_NVIC_DisableIRQ 关掉中断"
+    ],
+    "prerequisites": [
+      "已使能 GPIOx 时钟"
+    ]
+  },
+  "HAL_GPIO_EXTI_Callback": {
+    "briefZh": "EXTI 中断的用户回调，HAL 里是空实现的 __weak 函数，需要你自己重写。",
+    "usageZh": "HAL_GPIO_EXTI_IRQHandler 清完标志后调用它，参数就是触发中断的引脚号。这是 HAL 推荐的「中断里只做最小处理」写法：回调里置个标志或往队列里塞数据，真正的业务放主循环。",
+    "paramsZh": {
+      "GPIO_Pin": "触发中断的引脚号。一个回调可能被多条 EXTI 线共用，必须用 if 判断是哪个引脚。"
+    },
+    "notesZh": [
+      "必须在用户代码里重新定义（不要加 static，也不要加 __weak），否则链接到的是 HAL 里的空函数，什么都不会发生",
+      "中断上下文，不要阻塞；也不要在这里调用 HAL_GPIO_TogglePin 之外的重活",
+      "如果开了多个 EXTI 线，务必逐个 if 判断 GPIO_Pin，遗漏会导致某条线的事件被静默丢弃"
+    ]
+  },
+  "HAL_GPIO_EXTI_IRQHandler": {
+    "briefZh": "EXTI 中断的公共处理入口，清掉对应引脚的挂起标志后回调 HAL_GPIO_EXTI_Callback。",
+    "usageZh": "在 stm32f1xx_it.c 的 EXTIx_IRQHandler 里调用它。它做两件事：清 EXTI->PR 的对应位（**必须清，否则会无限重进中断**），然后调用你重写的 HAL_GPIO_EXTI_Callback。注意它只处理「引脚号」，不区分钟是哪个端口——PA0 和 PB0 共用 EXTI0 这一条线，所以同一引脚号不能在两个端口上同时做中断源。",
+    "paramsZh": {
+      "GPIO_Pin": "触发中断的引脚号（GPIO_PIN_x），由 CubeMX 生成的 IRQHandler 传入。"
+    },
+    "notesZh": [
+      "回调在中断上下文里执行，不要在里面调 HAL_Delay（会用 SysTick 死等）或做耗时操作",
+      "EXTI0~EXTI4 各有独立中断向量，EXTI5~9 和 EXTI10~15 是共用的，所以一个 IRQHandler 里可能要判断多个引脚",
+      "机械按键会抖，中断方式下建议在回调里记时间戳做 20ms 软消抖，而不是直接响应"
+    ],
+    "exampleCode": "/* stm32f1xx_it.c 里由 CubeMX 生成 */\nvoid EXTI15_10_IRQHandler(void)\n{\n  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_13);\n}\n\n/* 用户自己实现，不要加 static，HAL 里是 __weak 的 */\nvoid HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)\n{\n  if (GPIO_Pin == GPIO_PIN_13)\n  {\n    /* 按键按下：这里只置标志，实际处理放主循环 */\n  }\n}",
+    "prerequisites": [
+      "该引脚已用 GPIO_MODE_IT_RISING 等模式初始化",
+      "已调用 HAL_NVIC_SetPriority + HAL_NVIC_EnableIRQ 使能对应 EXTI 中断"
+    ]
+  },
+  "HAL_GPIO_Init": {
+    "briefZh": "按 GPIO_InitTypeDef 的设定，初始化指定端口的一个或多个引脚（模式、上下拉、速度）。",
+    "usageZh": "引脚配置的唯一入口，HAL 下所有 GPIO 用法都要先经过它。和标准库最大的差别：**必须先调用 __HAL_RCC_GPIOx_CLK_ENABLE() 开时钟**（SPL 里叫 RCC_APB2PeriphClockCmd），且要手动把结构体四个字段都填好——HAL 不会替你填默认值，未赋值的字段是栈上随机值。一次可以配多个引脚（GPIO_PIN_0 | GPIO_PIN_1），但它们会共用同一套 Mode/Pull/Speed；要不同配置就分多次调用。函数内部会自己使能 AFIO 时钟（配置 EXTI 线时需要），不用另开。",
+    "paramsZh": {
+      "GPIO_Init": "指向 GPIO_InitTypeDef 的指针。Pin 用 GPIO_PIN_x 位或；Mode 取 GPIO_MODE_*（输入/输出/复用/模拟/EXTI 触发）；Pull 取 GPIO_NOPULL / GPIO_PULLUP / GPIO_PULLDOWN；Speed 取 GPIO_SPEED_FREQ_LOW/MEDIUM/HIGH。HAL 的 Mode 已经把「输入输出方向 + 上下拉 + EXTI」合并成一个字段，比 SPL 的 GPIO_Mode + GPIO_Speed 两段式更直观。",
+      "GPIOx": "要配置的端口，取值 GPIOA / GPIOB / GPIOC / GPIOD…（视芯片型号）。C8T6 上实际引出的是 GPIOA、GPIOB、GPIOC 三个。"
+    },
+    "notesZh": [
+      "GPIO_InitTypeDef 一定要整体清零或逐字段赋值，HAL 不像 SPL 有 GPIO_StructInit 那样的通用默认值可用；漏填 Pull 会导致引脚出现意料外的上下拉",
+      "PA13/PA14 复位后归 SWD 调试口（复用功能），直接当普通 GPIO 用会让下载器连不上芯片",
+      "复用功能（USART1_TX、SPI1_SCK 等）用 GPIO_MODE_AF_PP 或 GPIO_MODE_AF_OD，不要用 GPIO_MODE_OUTPUT_PP，否则收不到数据",
+      "输入模式下 Speed 无意义，但仍要赋值，否则结构体里是随机值",
+      "PC13/PC14/PC15 属于备份域，驱动能力很弱（最大 3mA），只适合点 LED 或做输入，不要直接驱动大负载",
+      "要配成 EXTI 中断源时 Mode 选 GPIO_MODE_IT_RISING / FALLING / RISING_FALLING，HAL 会自动把该引脚接到对应的 EXTI 线上，不再需要像 SPL 那样调 GPIO_EXTILineConfig"
+    ],
+    "exampleCode": "/* 1. 先开时钟：忘了这一步，下面的配置全部静默失效且不报错 */\n__HAL_RCC_GPIOA_CLK_ENABLE();\n__HAL_RCC_GPIOC_CLK_ENABLE();\n\n/* 2. PA5 推挽输出，驱动 LED */\nGPIO_InitTypeDef GPIO_InitStruct = {0};\nGPIO_InitStruct.Pin   = GPIO_PIN_5;\nGPIO_InitStruct.Mode  = GPIO_MODE_OUTPUT_PP;\nGPIO_InitStruct.Pull  = GPIO_NOPULL;\nGPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;\nHAL_GPIO_Init(GPIOA, &GPIO_InitStruct);\n\n/* 3. PC13 上拉输入，接按键（蓝板 KEY 按下为低） */\nGPIO_InitStruct.Pin  = GPIO_PIN_13;\nGPIO_InitStruct.Mode = GPIO_MODE_INPUT;\nGPIO_InitStruct.Pull = GPIO_PULLUP;\nHAL_GPIO_Init(GPIOC, &GPIO_InitStruct);",
+    "prerequisites": [
+      "已调用 __HAL_RCC_GPIOx_CLK_ENABLE() 使能端口时钟（最常漏的一步）",
+      "GPIO_InitTypeDef 的 Pin、Mode、Pull、Speed 四个字段全部已赋值"
+    ]
+  },
+  "HAL_GPIO_LockPin": {
+    "briefZh": "锁定引脚配置，直到下次芯片复位前都无法再修改该引脚的 CRL/CRH 设置。",
+    "usageZh": "防止程序跑飞后误改关键引脚的配置（比如电源控制脚、外部看门狗喂狗脚）。锁定是「一次性」的：调用后该引脚的配置寄存器进入只读状态，只有复位能解除，没有任何解锁函数。LOCK 位本身也是「只能置 1 不能清 0」，所以调试阶段别随便加，加了就得重新上电。",
+    "paramsZh": {
+      "GPIO_Pin": "要锁定的引脚，可位或一次锁多个。",
+      "GPIOx": "要锁定的端口。"
+    },
+    "notesZh": [
+      "锁定后 HAL_GPIO_Init 对该引脚静默无效，是排查「配置怎么都改不动」时的常见原因",
+      "只能靠复位解除，没有 HAL_GPIO_UnlockPin 这种函数",
+      "同一引脚重复调用会返回 HAL_ERROR，不是致命错误，可以忽略"
+    ]
+  },
+  "HAL_GPIO_ReadPin": {
+    "briefZh": "读取指定引脚当前的输入电平。",
+    "usageZh": "读 GPIOx_IDR 的对应位。注意它读的是引脚上的**实际电平**，而不是输出数据寄存器 ODR——所以即使引脚配成输出，用它也能读到引脚被外部拉成的电平。判断按键是否按下就用它，但机械按键必须自己做消抖（软件延时或定时器轮询），否则一次按下会读出十几次跳变。",
+    "paramsZh": {
+      "GPIO_Pin": "要读的引脚，用 GPIO_PIN_x。一次只能读一个引脚。",
+      "GPIOx": "要读的端口。"
+    },
+    "notesZh": [
+      "返回值是枚举不是布尔，判断写 `if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13) == GPIO_PIN_RESET)`，直接当 int 用虽然能编译但可读性差",
+      "引脚没配成输入（或没开时钟）时读到的是无效值，常见现象是恒为 0",
+      "做按键检测时建议配合 10~20ms 延时消抖，或放进 10ms 定时器中断里采样"
+    ]
+  },
+  "HAL_GPIO_TogglePin": {
+    "briefZh": "翻转指定引脚的输出电平（高变低、低变高）。",
+    "usageZh": "做 LED 闪烁最简洁的写法，比「读出来再取反再写回去」少一次读操作。内部读 ODR 再异或写回，**不是原子操作**——如果同一引脚会在中断里也被翻转，可能出现丢失翻转的情况。",
+    "paramsZh": {
+      "GPIO_Pin": "要翻转的引脚，可位或一次翻转多个。",
+      "GPIOx": "要翻转的端口。"
+    },
+    "notesZh": [
+      "读-改-写不是原子的：若同一引脚在 EXTI 中断里也被翻转，可能丢一次翻转。要求严格就用 HAL_GPIO_WritePin 显式写目标电平",
+      "翻转后引脚上的实际电平取决于外部电路，LED 接法不同看到的亮灭就相反"
+    ],
+    "exampleCode": "/* 主循环里配合 HAL_Delay 做 1Hz 闪烁 */\nwhile (1)\n{\n  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);\n  HAL_Delay(500);\n}",
+    "prerequisites": [
+      "该引脚已配成输出模式"
+    ]
+  },
+  "HAL_GPIO_WritePin": {
+    "briefZh": "把指定引脚置高或置低（写 BSRR 寄存器，单周期、不会被中断打断成半写状态）。",
+    "usageZh": "HAL 下输出电平的标准写法，取代 SPL 的 GPIO_SetBits / GPIO_ResetBits 两个函数。内部写的是 GPIOx->BSRR，属于**原子操作**：置位和复位分别写不同位，不会出现「先读-改-写 ODR」的竞态，所以中断和主循环同时操作不同引脚是安全的。",
+    "paramsZh": {
+      "GPIO_Pin": "要写的引脚，用 GPIO_PIN_x 位或可一次写多个。",
+      "GPIOx": "要写的端口。",
+      "PinState": "GPIO_PIN_SET 置高 / GPIO_PIN_RESET 置低。"
+    },
+    "notesZh": [
+      "输入模式下调用无效（BSRR 只影响输出），不会报错",
+      "一次写多个引脚时 PinState 对全部引脚相同，没法一次写出「有些高有些低」",
+      "需要翻转电平用 HAL_GPIO_TogglePin；需要读回输出状态用 HAL_GPIO_ReadPin（读的是引脚实际电平）"
+    ],
+    "exampleCode": "/* 点亮 LED（蓝板 PC13 低电平点亮） */\nHAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);\n\n/* 熄灭 */\nHAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);\n\n/* 同时置高 PA0~PA3 四个引脚 */\nHAL_GPIO_WritePin(GPIOA, GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3, GPIO_PIN_SET);",
+    "prerequisites": [
+      "该引脚已用 HAL_GPIO_Init 配成输出模式并已使能端口时钟"
+    ]
+  }
+}

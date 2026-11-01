@@ -1,0 +1,627 @@
+{
+  "LL_I2C_AcknowledgeNextData": {
+    "briefZh": "设置下一次接收后是否回 ACK。读最后一个字节前要设成不回应答（NACK）。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_ClearFlag_ADDR": {
+    "briefZh": "清除 I2C 的地址匹配标志位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_ClearFlag_AF": {
+    "briefZh": "清除 I2C 的应答失败（NACK）标志位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_ClearFlag_ARLO": {
+    "briefZh": "清除 I2C 的仲裁丢失标志位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_ClearFlag_BERR": {
+    "briefZh": "清除 I2C 的总线错误标志位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_ClearFlag_OVR": {
+    "briefZh": "清除 I2C 的溢出标志位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_ClearFlag_STOP": {
+    "briefZh": "清除 I2C 的停止条件（检测到 STOP）标志位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_ClearSMBusFlag_ALERT": {
+    "briefZh": "清除 I2C 的 SMBus SMBus 告警标志位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_ClearSMBusFlag_PECERR": {
+    "briefZh": "清除 I2C 的 SMBus PEC 校验错误标志位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_ClearSMBusFlag_TIMEOUT": {
+    "briefZh": "清除 I2C 的 SMBus 超时标志位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_ConfigSpeed": {
+    "briefZh": "一次性配置 I2C 的时钟频率、占空比与上升时间并算出 CCR 值。",
+    "paramsZh": {
+      "DutyCycle": "I2C 快速模式的占空比（2:1 或 16:9）。",
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。",
+      "PeriphClock": "外设总线时钟频率（Hz）。算波特率时必须传对外设所在的 PCLK1 或 PCLK2。"
+    }
+  },
+  "LL_I2C_DMA_GetRegAddr": {
+    "briefZh": "返回 I2C 数据寄存器（DR）地址，供 DMA 搬运时使用。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_Disable": {
+    "briefZh": "失能 I2C。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_DisableBitPOS": {
+    "briefZh": "失能 I2C 的 POS 位（第 N 个数据字节后应答）。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_DisableClockStretching": {
+    "briefZh": "失能 I2C 的时钟延展。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_DisableDMAReq_RX": {
+    "briefZh": "失能 I2C 的接收 DMA 请求。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_DisableDMAReq_TX": {
+    "briefZh": "失能 I2C 的发送 DMA 请求。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_DisableGeneralCall": {
+    "briefZh": "失能 I2C 的通用呼叫。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_DisableIT_BUF": {
+    "briefZh": "失能 I2C 的缓冲区中断。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_DisableIT_ERR": {
+    "briefZh": "失能 I2C 的错误中断。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_DisableIT_EVT": {
+    "briefZh": "失能 I2C 的事件中断。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_DisableIT_RX": {
+    "briefZh": "失能 I2C 的接收中断。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_DisableIT_TX": {
+    "briefZh": "失能 I2C 的发送中断。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_DisableLastDMA": {
+    "briefZh": "失能 I2C 的最后一个 DMA 传输标志。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_DisableOwnAddress2": {
+    "briefZh": "失能 I2C 的本机地址 2。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_DisableReset": {
+    "briefZh": "失能 I2C 的复位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_DisableSMBusAlert": {
+    "briefZh": "失能 I2C 的 SMBus 告警。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_DisableSMBusPEC": {
+    "briefZh": "失能 I2C 的 SMBus 数据包校验（PEC）。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_DisableSMBusPECCompare": {
+    "briefZh": "失能 I2C 的 SMBus PEC 校验比较。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_Enable": {
+    "briefZh": "使能 I2C。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_EnableBitPOS": {
+    "briefZh": "使能 I2C 的 POS 位（第 N 个数据字节后应答）。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_EnableClockStretching": {
+    "briefZh": "使能 I2C 的时钟延展。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_EnableDMAReq_RX": {
+    "briefZh": "使能 I2C 的接收 DMA 请求。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_EnableDMAReq_TX": {
+    "briefZh": "使能 I2C 的发送 DMA 请求。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_EnableGeneralCall": {
+    "briefZh": "使能 I2C 的通用呼叫。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_EnableIT_BUF": {
+    "briefZh": "使能 I2C 的缓冲区中断。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_EnableIT_ERR": {
+    "briefZh": "使能 I2C 的错误中断。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_EnableIT_EVT": {
+    "briefZh": "使能 I2C 的事件中断。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_EnableIT_RX": {
+    "briefZh": "使能 I2C 的接收中断。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_EnableIT_TX": {
+    "briefZh": "使能 I2C 的发送中断。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_EnableLastDMA": {
+    "briefZh": "使能 I2C 的最后一个 DMA 传输标志。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_EnableOwnAddress2": {
+    "briefZh": "使能 I2C 的本机地址 2。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_EnableReset": {
+    "briefZh": "使能 I2C 的复位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_EnableSMBusAlert": {
+    "briefZh": "使能 I2C 的 SMBus 告警。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_EnableSMBusPEC": {
+    "briefZh": "使能 I2C 的 SMBus 数据包校验（PEC）。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_EnableSMBusPECCompare": {
+    "briefZh": "使能 I2C 的 SMBus PEC 校验比较。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_GenerateStartCondition": {
+    "briefZh": "产生起始条件（START），主机模式下发起传输。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_GenerateStopCondition": {
+    "briefZh": "产生停止条件（STOP），结束本次传输。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_GetClockPeriod": {
+    "briefZh": "读取 I2C 的时钟周期。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_GetClockSpeedMode": {
+    "briefZh": "读取 I2C 的时钟速度模式。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_GetDutyCycle": {
+    "briefZh": "读取 I2C 的占空比。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_GetMode": {
+    "briefZh": "读取 I2C 的工作模式。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_GetPeriphClock": {
+    "briefZh": "读取 I2C 的外设时钟频率。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_GetRiseTime": {
+    "briefZh": "读取 I2C 的上升时间。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_GetSMBusPEC": {
+    "briefZh": "读取 I2C 的 SMBus 数据包校验（PEC）。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_GetTransferDirection": {
+    "briefZh": "读取当前传输方向（发送 / 接收）。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsActiveFlag_ADD10": {
+    "briefZh": "查询 I2C 的 10 位地址头已发送标志位是否置位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsActiveFlag_ADDR": {
+    "briefZh": "查询 I2C 的地址匹配标志位是否置位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsActiveFlag_AF": {
+    "briefZh": "查询 I2C 的应答失败（NACK）标志位是否置位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsActiveFlag_ARLO": {
+    "briefZh": "查询 I2C 的仲裁丢失标志位是否置位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsActiveFlag_BERR": {
+    "briefZh": "查询 I2C 的总线错误标志位是否置位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsActiveFlag_BTF": {
+    "briefZh": "查询 I2C 的字节传输完成标志位是否置位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsActiveFlag_BUSY": {
+    "briefZh": "查询 I2C 的总线忙标志位是否置位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsActiveFlag_DUAL": {
+    "briefZh": "查询 I2C 的双地址模式标志位是否置位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsActiveFlag_GENCALL": {
+    "briefZh": "查询 I2C 的通用呼叫地址标志位是否置位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsActiveFlag_MSL": {
+    "briefZh": "查询 I2C 的主机模式标志位是否置位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsActiveFlag_OVR": {
+    "briefZh": "查询 I2C 的溢出标志位是否置位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsActiveFlag_RXNE": {
+    "briefZh": "查询 I2C 的接收数据寄存器非空标志位是否置位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsActiveFlag_SB": {
+    "briefZh": "查询 I2C 的起始位已发送标志位是否置位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsActiveFlag_STOP": {
+    "briefZh": "查询 I2C 的停止条件（检测到 STOP）标志位是否置位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsActiveFlag_TXE": {
+    "briefZh": "查询 I2C 的发送数据寄存器空标志位是否置位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsActiveSMBusFlag_ALERT": {
+    "briefZh": "查询 I2C 的 SMBus SMBus 告警标志位是否置位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsActiveSMBusFlag_PECERR": {
+    "briefZh": "查询 I2C 的 SMBus PEC 校验错误标志位是否置位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsActiveSMBusFlag_SMBDEFAULT": {
+    "briefZh": "查询 I2C 的 SMBus SMBus 默认地址标志位是否置位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsActiveSMBusFlag_SMBHOST": {
+    "briefZh": "查询 I2C 的 SMBus SMBus 主机头标志位是否置位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsActiveSMBusFlag_TIMEOUT": {
+    "briefZh": "查询 I2C 的 SMBus 超时标志位是否置位。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsEnabled": {
+    "briefZh": "查询 I2C 是否已使能。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsEnabledBitPOS": {
+    "briefZh": "查询 I2C 是否已使能。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsEnabledClockStretching": {
+    "briefZh": "查询 I2C 是否已使能。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsEnabledDMAReq_RX": {
+    "briefZh": "查询 I2C 的接收 DMA 请求是否已使能。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsEnabledDMAReq_TX": {
+    "briefZh": "查询 I2C 的发送 DMA 请求是否已使能。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsEnabledGeneralCall": {
+    "briefZh": "查询 I2C 是否已使能。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsEnabledIT_BUF": {
+    "briefZh": "查询 I2C 的缓冲区中断是否已使能。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsEnabledIT_ERR": {
+    "briefZh": "查询 I2C 的错误中断是否已使能。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsEnabledIT_EVT": {
+    "briefZh": "查询 I2C 的事件中断是否已使能。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsEnabledIT_RX": {
+    "briefZh": "查询 I2C 的接收中断是否已使能。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsEnabledIT_TX": {
+    "briefZh": "查询 I2C 的发送中断是否已使能。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsEnabledLastDMA": {
+    "briefZh": "查询 I2C 是否已使能。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsEnabledOwnAddress2": {
+    "briefZh": "查询 I2C 是否已使能。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsEnabledSMBusAlert": {
+    "briefZh": "查询 I2C 是否已使能。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsEnabledSMBusPEC": {
+    "briefZh": "查询 I2C 是否已使能。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsEnabledSMBusPECCompare": {
+    "briefZh": "查询 I2C 是否已使能。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_IsResetEnabled": {
+    "briefZh": "查询 I2C 外设当前是否处于复位状态。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_ReceiveData8": {
+    "briefZh": "从数据寄存器读一个字节。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_SetClockPeriod": {
+    "briefZh": "设置 I2C 的时钟周期。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_SetClockSpeedMode": {
+    "briefZh": "设置 I2C 的时钟速度模式。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_SetDutyCycle": {
+    "briefZh": "设置 I2C 的占空比。",
+    "paramsZh": {
+      "DutyCycle": "I2C 快速模式的占空比（2:1 或 16:9）。",
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_SetMode": {
+    "briefZh": "设置 I2C 的工作模式。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_SetOwnAddress1": {
+    "briefZh": "设置 I2C 的本机地址 1。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。",
+      "OwnAddress1": "本机地址 1（从机模式用）。"
+    }
+  },
+  "LL_I2C_SetOwnAddress2": {
+    "briefZh": "设置 I2C 的本机地址 2。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。",
+      "OwnAddress2": "本机地址 2（双地址模式用）。"
+    }
+  },
+  "LL_I2C_SetPeriphClock": {
+    "briefZh": "设置 I2C 的外设时钟频率。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。",
+      "PeriphClock": "外设总线时钟频率（Hz）。算波特率时必须传对外设所在的 PCLK1 或 PCLK2。"
+    }
+  },
+  "LL_I2C_SetRiseTime": {
+    "briefZh": "设置 I2C 的上升时间。",
+    "paramsZh": {
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  },
+  "LL_I2C_TransmitData8": {
+    "briefZh": "向数据寄存器写一个字节。",
+    "paramsZh": {
+      "Data": "要写入的数据值。",
+      "I2Cx": "I2C 实例指针，如 I2C1 / I2C2。"
+    }
+  }
+}

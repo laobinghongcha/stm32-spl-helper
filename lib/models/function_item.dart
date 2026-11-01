@@ -1,12 +1,13 @@
 import '../utils/json_parse.dart';
 import 'ai_reserved.dart';
+import 'library_kind.dart';
 
-/// 库函数模型（对应 `assets/data/functions/<外设>.json` 里的一项）。
+/// 库函数模型（对应 `assets/data/functions/<库>/<外设>.json` 里的一项）。
 ///
-/// 英文内容来自 SPL 源码注释，中文内容来自 `data/zh_overlay/`。
+/// 英文内容来自源码注释（SPL / CubeF1），中文内容来自 overlay。
 /// 详情页从上到下的每个区块，都能在这里找到对应字段。
 class FunctionItem {
-  /// 唯一标识，等于函数名，如 "GPIO_Init"
+  /// 唯一标识，等于函数名，如 "GPIO_Init" / "HAL_GPIO_Init" / "REG_GPIO_CRL"
   final String id;
 
   /// 函数名
@@ -15,7 +16,16 @@ class FunctionItem {
   /// 所属外设 id，如 "GPIO"
   final String peripheral;
 
-  /// 所属分组 id，如 "GPIO#sec1"
+  /// 所属库（v2 新增；v1 数据缺字段时按 spl 处理）
+  final LibraryKind library;
+
+  /// 定义所在文件，如 "stm32f1xx_hal_gpio.h"（v2 新增；v1 为空）
+  ///
+  /// 与 [headerLine] 组合出详情页的定位条。HAL/LL/reg 的头文件名与 SPL 不同，
+  /// 所以不能借用外设上的 header 字段，必须由函数自己带着。
+  final String definedIn;
+
+  /// 所属分组 id，如 "GPIO@hal#sec1"
   final String sectionId;
 
   /// 完整原型字符串（用于代码块展示与复制）
@@ -107,7 +117,12 @@ class FunctionItem {
     required this.flags,
     required this.ai,
     required this.zhSource,
+    this.library = LibraryKind.spl,
+    this.definedIn = '',
   });
+
+  /// 所属库的中文名，如「HAL 库」。列表徽标与详情页副标题用。
+  String get libraryLabelZh => library.labelZh;
 
   /// 列表项显示用的简述：中文优先，其次英文，最后退回"暂无说明"。
   String get displayBrief {
@@ -151,6 +166,12 @@ class FunctionItem {
         id: asString(json['id']),
         name: asString(json['name']),
         peripheral: asString(json['peripheral']),
+        // library 缺失（v1 数据）→ spl；已有 sectionId 时优先按 id 推断，
+        // 避免生成器漏写 library 字段导致 HAL 函数被当成 SPL 函数。
+        library: LibraryKind.tryParse(asStringOrNull(json['library'])) ??
+            LibraryKind.fromSectionId(asString(json['sectionId'])) ??
+            LibraryKind.spl,
+        definedIn: asString(json['definedIn']),
         sectionId: asString(json['sectionId']),
         prototype: asString(json['prototype']),
         returnType: asString(json['returnType'], fallback: 'void'),
@@ -183,6 +204,8 @@ class FunctionItem {
         'id': id,
         'name': name,
         'peripheral': peripheral,
+        'library': library.raw,
+        'definedIn': definedIn,
         'sectionId': sectionId,
         'prototype': prototype,
         'returnType': returnType,
@@ -285,21 +308,43 @@ class FunctionFlags {
       };
 }
 
-/// `functions/<外设>.json` 顶层结构。
+/// `functions/<库>/<外设>.json` 顶层结构。
 class FunctionBundle {
   final int schemaVersion;
   final String peripheral;
+
+  /// 该文件所属库（v1 数据缺字段时按 spl）。
+  ///
+  /// 文件级 library 用于把整个 bundle 归到某个库；单个函数仍以自己的
+  /// [FunctionItem.library] 为准（两者正常一致，异常时以函数为准）。
+  final LibraryKind library;
+
   final List<FunctionItem> functions;
 
   const FunctionBundle({
     required this.schemaVersion,
     required this.peripheral,
     required this.functions,
+    this.library = LibraryKind.spl,
   });
+
+  /// 空 bundle：该外设没有这个库的实现时，仓库层返回它而不是抛异常。
+  ///
+  /// 带上 [peripheral] 与 [library]，这样调用方拿到空结果时仍知道"这是
+  /// GPIO 的 HAL 库没有内容"，而不是一个什么都不知道的空壳。
+  const FunctionBundle.empty({
+    this.peripheral = '',
+    this.library = LibraryKind.spl,
+  })  : schemaVersion = 2,
+        functions = const <FunctionItem>[];
+
+  bool get isEmpty => functions.isEmpty;
 
   factory FunctionBundle.fromJson(Map<String, dynamic> json) => FunctionBundle(
         schemaVersion: asInt(json['schemaVersion'], fallback: 1),
         peripheral: asString(json['peripheral']),
+        library: LibraryKind.tryParse(asStringOrNull(json['library'])) ??
+            LibraryKind.spl,
         functions: asMapList(json['functions'])
             .map(FunctionItem.fromJson)
             .toList(growable: false),
@@ -308,6 +353,7 @@ class FunctionBundle {
   Map<String, dynamic> toJson() => <String, dynamic>{
         'schemaVersion': schemaVersion,
         'peripheral': peripheral,
+        'library': library.raw,
         'functions': functions.map((f) => f.toJson()).toList(),
       };
 }

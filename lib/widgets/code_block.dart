@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../models/library_kind.dart';
 import '../providers/app_providers.dart';
 import '../utils/c_highlighter.dart';
 import '../utils/theme.dart';
@@ -32,6 +33,12 @@ class CodeBlock extends ConsumerWidget {
   /// 白名单：只把函数相关符号变成链接
   final Set<String>? whitelist;
 
+  /// 当前阅读上下文所属的库（v2.0.1 新增）。
+  ///
+  /// 传给跳转逻辑，解决 HAL 与 SPL 同名不同类型（如 `GPIO_InitTypeDef`）
+  /// 该打开哪一份的歧义。不传则退化为老行为（优先无后缀的那份 = SPL）。
+  final LibraryKind? library;
+
   const CodeBlock({
     super.key,
     required this.code,
@@ -39,6 +46,7 @@ class CodeBlock extends ConsumerWidget {
     this.title,
     this.horizontalScroll = false,
     this.whitelist,
+    this.library,
   });
 
   @override
@@ -68,7 +76,7 @@ class CodeBlock extends ConsumerWidget {
       baseStyle: baseStyle,
       onSymbolTap: matcher == null
           ? null
-          : (name) => openSymbol(context, ref, name),
+          : (name) => openSymbol(context, ref, name, preferredLib: library),
     );
 
     final content = SelectableText.rich(

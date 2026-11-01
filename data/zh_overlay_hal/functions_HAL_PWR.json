@@ -1,0 +1,74 @@
+{
+  "HAL_PWR_ConfigPVD": {
+    "briefZh": "配置可编程电压检测器（PVD）：电压阈值与触发方式。",
+    "paramsZh": {
+      "sConfigPVD": "PVD 配置结构体：PVDLevel（电压阈值）、Mode（中断或事件触发）。"
+    }
+  },
+  "HAL_PWR_DeInit": {
+    "briefZh": "把 PWR 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。"
+  },
+  "HAL_PWR_DisableBkUpAccess": {
+    "briefZh": "关闭备份域写访问。"
+  },
+  "HAL_PWR_DisablePVD": {
+    "briefZh": "关闭可编程电压检测器（PVD）。"
+  },
+  "HAL_PWR_DisableSEVOnPend": {
+    "briefZh": "关闭 SEVONPEND。"
+  },
+  "HAL_PWR_DisableSleepOnExit": {
+    "briefZh": "关闭「退出中断后自动进入睡眠」。"
+  },
+  "HAL_PWR_DisableWakeUpPin": {
+    "briefZh": "关闭唤醒引脚。",
+    "paramsZh": {
+      "WakeUpPinx": "唤醒引脚编号，取 PWR_WAKEUP_PIN1。"
+    }
+  },
+  "HAL_PWR_EnableBkUpAccess": {
+    "briefZh": "使能备份域（RTC + 备份寄存器）的写访问。"
+  },
+  "HAL_PWR_EnablePVD": {
+    "briefZh": "使能可编程电压检测器（PVD）。"
+  },
+  "HAL_PWR_EnableSEVOnPend": {
+    "briefZh": "使能「有挂起中断时也发送事件」（SEVONPEND）。"
+  },
+  "HAL_PWR_EnableSleepOnExit": {
+    "briefZh": "使能「退出中断后自动进入睡眠」（SLEEPONEXIT）。"
+  },
+  "HAL_PWR_EnableWakeUpPin": {
+    "briefZh": "使能唤醒引脚（WKUP），供待机模式唤醒使用。",
+    "paramsZh": {
+      "WakeUpPinx": "唤醒引脚编号，取 PWR_WAKEUP_PIN1。"
+    },
+    "exampleCode": "/* 用 WKUP 引脚（PA0）唤醒待机模式 */\nHAL_PWR_EnableWakeUpPin(PWR_WAKEUP_PIN1);\nHAL_PWR_EnterSTANDBYMode();"
+  },
+  "HAL_PWR_EnterSLEEPMode": {
+    "briefZh": "进入睡眠模式：只关 CPU 时钟，外设仍在运行，任意中断可唤醒。",
+    "paramsZh": {
+      "Regulator": "调压器状态：PWR_MAINREGULATOR_ON（主调压器，唤醒快）或 PWR_LOWPOWERREGULATOR_ON（低功耗，更省电）。",
+      "SLEEPEntry": "进入睡眠的方式：PWR_SLEEPENTRY_WFI（等中断）或 WFE（等事件）。"
+    },
+    "exampleCode": "/* 睡眠：只停 CPU 时钟，任意中断可唤醒 */\nHAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);"
+  },
+  "HAL_PWR_EnterSTANDBYMode": {
+    "briefZh": "进入待机模式：功耗最低，SRAM 内容丢失，唤醒等同复位。",
+    "exampleCode": "/* 待机：功耗最低，SRAM 丢失，唤醒等同复位 */\nHAL_PWR_EnterSTANDBYMode();\n/* 这行永远不会执行到（除非被复位唤醒后重新跑 main） */"
+  },
+  "HAL_PWR_EnterSTOPMode": {
+    "briefZh": "进入停止模式：所有时钟停止但 SRAM 保留，唤醒后需重新配置系统时钟。",
+    "paramsZh": {
+      "Regulator": "调压器状态：PWR_MAINREGULATOR_ON（主调压器，唤醒快）或 PWR_LOWPOWERREGULATOR_ON（低功耗，更省电）。",
+      "STOPEntry": "进入停止的方式：PWR_STOPENTRY_WFI 或 WFE。"
+    },
+    "exampleCode": "/* 进入 STOP 模式，等中断唤醒 */\nHAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);\n\n/* 唤醒后时钟退回 HSI，必须重配时钟树！ */\nSystemClock_Config();"
+  },
+  "HAL_PWR_PVDCallback": {
+    "briefZh": "PVD 触发回调（__weak 空实现，需自己重写）。电压跌到阈值以下时调用。"
+  },
+  "HAL_PWR_PVD_IRQHandler": {
+    "briefZh": "PVD 中断的统一入口。"
+  }
+}

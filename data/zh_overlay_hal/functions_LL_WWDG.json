@@ -1,0 +1,76 @@
+{
+  "LL_WWDG_ClearFlag_EWKUP": {
+    "briefZh": "清除 WWDG 的提前唤醒标志位。",
+    "paramsZh": {
+      "WWDGx": "窗口看门狗实例指针（F1 上固定是 WWDG）。"
+    }
+  },
+  "LL_WWDG_Enable": {
+    "briefZh": "使能窗口看门狗并开始计数。",
+    "paramsZh": {
+      "WWDGx": "窗口看门狗实例指针（F1 上固定是 WWDG）。"
+    }
+  },
+  "LL_WWDG_EnableIT_EWKUP": {
+    "briefZh": "使能 WWDG 的提前唤醒中断。",
+    "paramsZh": {
+      "WWDGx": "窗口看门狗实例指针（F1 上固定是 WWDG）。"
+    }
+  },
+  "LL_WWDG_GetCounter": {
+    "briefZh": "读取窗口看门狗当前计数值。",
+    "paramsZh": {
+      "WWDGx": "窗口看门狗实例指针（F1 上固定是 WWDG）。"
+    }
+  },
+  "LL_WWDG_GetPrescaler": {
+    "briefZh": "读取 WWDG 的预分频。",
+    "paramsZh": {
+      "WWDGx": "窗口看门狗实例指针（F1 上固定是 WWDG）。"
+    }
+  },
+  "LL_WWDG_GetWindow": {
+    "briefZh": "读取窗口值。",
+    "paramsZh": {
+      "WWDGx": "窗口看门狗实例指针（F1 上固定是 WWDG）。"
+    }
+  },
+  "LL_WWDG_IsActiveFlag_EWKUP": {
+    "briefZh": "查询 WWDG 的提前唤醒标志位是否置位。",
+    "paramsZh": {
+      "WWDGx": "窗口看门狗实例指针（F1 上固定是 WWDG）。"
+    }
+  },
+  "LL_WWDG_IsEnabled": {
+    "briefZh": "查询 WWDG 是否已使能。",
+    "paramsZh": {
+      "WWDGx": "窗口看门狗实例指针（F1 上固定是 WWDG）。"
+    }
+  },
+  "LL_WWDG_IsEnabledIT_EWKUP": {
+    "briefZh": "查询 WWDG 的提前唤醒中断是否已使能。",
+    "paramsZh": {
+      "WWDGx": "窗口看门狗实例指针（F1 上固定是 WWDG）。"
+    }
+  },
+  "LL_WWDG_SetCounter": {
+    "briefZh": "设置窗口看门狗的计数值（同时就是喂狗动作）。太早或太晚喂都会复位。",
+    "paramsZh": {
+      "Counter": "计数器数值（CNT）。",
+      "WWDGx": "窗口看门狗实例指针（F1 上固定是 WWDG）。"
+    }
+  },
+  "LL_WWDG_SetPrescaler": {
+    "briefZh": "设置 WWDG 的预分频。",
+    "paramsZh": {
+      "Prescaler": "预分频值。计数频率 = 输入时钟 / (Prescaler + 1)。",
+      "WWDGx": "窗口看门狗实例指针（F1 上固定是 WWDG）。"
+    }
+  },
+  "LL_WWDG_SetWindow": {
+    "briefZh": "设置窗口值。喂狗时计数值必须小于该值，否则视为喂得太早并复位。",
+    "paramsZh": {
+      "WWDGx": "窗口看门狗实例指针（F1 上固定是 WWDG）。"
+    }
+  }
+}

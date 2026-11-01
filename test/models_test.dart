@@ -6,6 +6,9 @@
 //   2. SearchIndex 的匹配与排序策略（前缀优先、大小写不敏感、中文子串）
 //   3. ItemRef 的主键编解码
 //   4. Pin 的引脚名解析
+//   5. v2 四库结构（LibraryKind / PeripheralLibrary / sections 归属）
+//      —— 数据由 task-1 并行生成，所以这里用契约文档里的小样本自测，
+//      不依赖 assets/data 当前是 v1 还是 v2。
 
 import 'package:flutter_test/flutter_test.dart';
 
@@ -13,6 +16,7 @@ import 'package:stm32_spl_helper/models/chip.dart';
 import 'package:stm32_spl_helper/models/compile_error.dart';
 import 'package:stm32_spl_helper/models/function_item.dart';
 import 'package:stm32_spl_helper/models/item_ref.dart';
+import 'package:stm32_spl_helper/models/library_kind.dart';
 import 'package:stm32_spl_helper/models/manifest.dart';
 import 'package:stm32_spl_helper/models/peripheral.dart';
 import 'package:stm32_spl_helper/models/pin.dart';
@@ -572,6 +576,618 @@ void main() {
       expect(f.params.first.name, 'GPIOx');
       expect(f.symbolRefs, <String>['GPIO_InitTypeDef']);
       expect(f.locationIn('stm32f10x_gpio.h'), 'stm32f10x_gpio.h:351');
+    });
+  });
+
+  // =========================================================================
+  // v2 四库结构（契约 docs/contract_v2.md）
+  //
+  // 这一组全部用「手写小样本」验证，不读 assets/data：
+  // 数据由 task-1 并行生成，测试不能假设它已经变成 v2；
+  // 而向后兼容（v1 数据照常可读）恰恰是最需要被测住的部分。
+  // =========================================================================
+
+  group('LibraryKind：四库标识', () {
+    test('ordered 顺序固定为 spl/hal/ll/reg（契约 §1）', () {
+      expect(
+        LibraryKind.ordered.map((l) => l.raw).toList(),
+        <String>['spl', 'hal', 'll', 'reg'],
+      );
+    });
+
+    test('raw / labelZh / shortEn 与契约一致', () {
+      expect(LibraryKind.spl.raw, 'spl');
+      expect(LibraryKind.spl.labelZh, '标准库');
+      expect(LibraryKind.spl.shortEn, 'SPL');
+      expect(LibraryKind.hal.raw, 'hal');
+      expect(LibraryKind.hal.labelZh, 'HAL 库');
+      expect(LibraryKind.hal.shortEn, 'HAL');
+      expect(LibraryKind.ll.labelZh, 'LL 库');
+      expect(LibraryKind.ll.shortEn, 'LL');
+      expect(LibraryKind.reg.labelZh, '寄存器');
+      expect(LibraryKind.reg.shortEn, 'REG');
+    });
+
+    test('fromRaw 未知值回退 spl（不能抛）', () {
+      expect(LibraryKind.fromRaw('hal'), LibraryKind.hal);
+      expect(LibraryKind.fromRaw('ll'), LibraryKind.ll);
+      expect(LibraryKind.fromRaw('reg'), LibraryKind.reg);
+      // 老数据没有 library 字段 → null → spl
+      expect(LibraryKind.fromRaw(null), LibraryKind.spl);
+      expect(LibraryKind.fromRaw(''), LibraryKind.spl);
+      expect(LibraryKind.fromRaw('brand_new_lib'), LibraryKind.spl);
+    });
+
+    test('fromSectionId 能从 id 的 @ 段推断库', () {
+      expect(
+        LibraryKind.fromSectionId('GPIO@hal#sec1'),
+        LibraryKind.hal,
+      );
+      expect(LibraryKind.fromSectionId('GPIO@ll#sec2'), LibraryKind.ll);
+      expect(LibraryKind.fromSectionId('GPIO@reg#sec1'), LibraryKind.reg);
+      expect(LibraryKind.fromSectionId('GPIO@spl#sec1'), LibraryKind.spl);
+      // v1 的 id 没有 @ 段 → null（由调用方回退）
+      expect(LibraryKind.fromSectionId('GPIO#sec1'), isNull);
+      expect(LibraryKind.fromSectionId(''), isNull);
+    });
+
+    test('orderIndex 反映 ordered 顺序', () {
+      expect(LibraryKind.spl.orderIndex, 0);
+      expect(LibraryKind.hal.orderIndex, 1);
+      expect(LibraryKind.ll.orderIndex, 2);
+      expect(LibraryKind.reg.orderIndex, 3);
+    });
+  });
+
+  group('FunctionItem / SymbolItem：库与 definedIn', () {
+    test('v1 数据缺 library/definedIn 时按 spl + 空串兜底', () {
+      final f = FunctionItem.fromJson(<String, dynamic>{
+        'id': 'GPIO_Init',
+        'name': 'GPIO_Init',
+      });
+      expect(f.library, LibraryKind.spl);
+      expect(f.definedIn, '');
+      expect(f.libraryLabelZh, '标准库');
+    });
+
+    test('v2 数据正确读出 library 与 definedIn（契约 §4）', () {
+      final f = FunctionItem.fromJson(<String, dynamic>{
+        'id': 'HAL_GPIO_Init',
+        'name': 'HAL_GPIO_Init',
+        'library': 'hal',
+        'definedIn': 'stm32f1xx_hal_gpio.h',
+        'sectionId': 'GPIO@hal#sec1',
+        'headerLine': 228,
+      });
+      expect(f.library, LibraryKind.hal);
+      expect(f.definedIn, 'stm32f1xx_hal_gpio.h');
+      expect(f.libraryLabelZh, 'HAL 库');
+      expect(f.locationIn(f.definedIn), 'stm32f1xx_hal_gpio.h:228');
+    });
+
+    test('漏写 library 但 sectionId 带 @hal 时按 id 推断', () {
+      // 生成器漏字段是常见的数据瑕疵，不能让 HAL 函数被当成 SPL 函数
+      final f = FunctionItem.fromJson(<String, dynamic>{
+        'id': 'HAL_GPIO_WritePin',
+        'name': 'HAL_GPIO_WritePin',
+        'sectionId': 'GPIO@hal#sec2',
+      });
+      expect(f.library, LibraryKind.hal);
+    });
+
+    test('toJson 往返保留 library 与 definedIn', () {
+      final src = FunctionItem.fromJson(<String, dynamic>{
+        'id': 'LL_GPIO_SetPinMode',
+        'name': 'LL_GPIO_SetPinMode',
+        'library': 'll',
+        'definedIn': 'stm32f1xx_ll_gpio.h',
+      });
+      final back = FunctionItem.fromJson(src.toJson());
+      expect(back.library, LibraryKind.ll);
+      expect(back.definedIn, 'stm32f1xx_ll_gpio.h');
+    });
+
+    test('SymbolItem 的 library 缺省为 spl、可读出 hal（契约 §5）', () {
+      final v1 = SymbolItem.fromJson(<String, dynamic>{
+        'id': 'GPIO_Mode_Out_PP',
+        'name': 'GPIO_Mode_Out_PP',
+        'kind': 'enum_value',
+      });
+      expect(v1.library, LibraryKind.spl);
+
+      final hal = SymbolItem.fromJson(<String, dynamic>{
+        'id': 'GPIO_InitTypeDef',
+        'name': 'GPIO_InitTypeDef',
+        'kind': 'struct',
+        'library': 'hal',
+      });
+      expect(hal.library, LibraryKind.hal);
+      expect(SymbolItem.fromJson(hal.toJson()).library, LibraryKind.hal);
+    });
+
+    test('FunctionBundle 读 library，缺省 spl；empty 带上外设与库', () {
+      final b = FunctionBundle.fromJson(<String, dynamic>{
+        'schemaVersion': 2,
+        'peripheral': 'GPIO',
+        'library': 'hal',
+        'functions': <dynamic>[],
+      });
+      expect(b.library, LibraryKind.hal);
+
+      final legacy = FunctionBundle.fromJson(<String, dynamic>{
+        'schemaVersion': 1,
+        'peripheral': 'GPIO',
+        'functions': <dynamic>[],
+      });
+      expect(legacy.library, LibraryKind.spl);
+
+      const empty = FunctionBundle.empty(
+        peripheral: 'GPIO',
+        library: LibraryKind.ll,
+      );
+      expect(empty.functions, isEmpty);
+      expect(empty.peripheral, 'GPIO');
+      expect(empty.library, LibraryKind.ll);
+    });
+  });
+
+  group('Peripheral：v2 libraries 与 v1 向后兼容', () {
+    /// 契约 §3 的 v2 样本（只留必要字段）
+    Map<String, dynamic> v2Sample() => <String, dynamic>{
+          'id': 'GPIO',
+          'name': 'GPIO',
+          'nameZh': '通用输入输出',
+          'orderIndex': 1,
+          'tags': <dynamic>['常用', '基础'],
+          'libraries': <String, dynamic>{
+            'spl': <String, dynamic>{
+              'header': 'stm32f10x_gpio.h',
+              'source': 'stm32f10x_gpio.c',
+              'file': 'functions/GPIO.json',
+              'functionCount': 18,
+              'symbolCount': 115,
+              'introZh': '标准库视角',
+              'usageOverviewZh': '标准调用顺序：① 开时钟；② 配置引脚。',
+              'usageSteps': <dynamic>['RCC_APB2PeriphClockCmd 使能时钟', '填结构体'],
+              'noteZh': '',
+            },
+            'hal': <String, dynamic>{
+              'header': 'stm32f1xx_hal_gpio.h',
+              'source': 'stm32f1xx_hal_gpio.c',
+              'file': 'functions/hal/GPIO.json',
+              'functionCount': 9,
+              'symbolCount': 20,
+              'introZh': 'HAL 视角',
+              'usageOverviewZh': '',
+              'usageSteps': <dynamic>[],
+              'noteZh': '需先 HAL_Init',
+            },
+          },
+          // 顶层字段是「主库」值
+          'header': 'stm32f10x_gpio.h',
+          'source': 'stm32f10x_gpio.c',
+          'file': 'functions/GPIO.json',
+          'introZh': '标准库视角',
+          'usageOverviewZh': '标准调用顺序：① 开时钟；② 配置引脚。',
+          'functionCount': 18,
+          'symbolCount': 115,
+          'sections': <dynamic>[
+            <String, dynamic>{
+              'id': 'GPIO@spl#sec1',
+              'title': '初始化与配置函数',
+              'titleEn': 'Initialization and Configuration functions',
+              'library': 'spl',
+              'functionIds': <dynamic>['GPIO_DeInit', 'GPIO_Init'],
+            },
+            <String, dynamic>{
+              'id': 'GPIO@hal#sec1',
+              'title': '初始化与配置',
+              'titleEn': 'Initialization and Configuration',
+              'library': 'hal',
+              'functionIds': <dynamic>['HAL_GPIO_Init', 'HAL_GPIO_DeInit'],
+            },
+          ],
+        };
+
+    test('v2：按库读出 header/file/usageSteps/noteZh', () {
+      final p = Peripheral.fromJson(v2Sample());
+      expect(p.libraries.length, 2);
+      expect(p.libraries[LibraryKind.hal]?.header, 'stm32f1xx_hal_gpio.h');
+      expect(p.libraries[LibraryKind.hal]?.file, 'functions/hal/GPIO.json');
+      expect(p.libraries[LibraryKind.hal]?.noteZh, '需先 HAL_Init');
+      expect(
+        p.libraries[LibraryKind.spl]?.usageSteps,
+        <String>['RCC_APB2PeriphClockCmd 使能时钟', '填结构体'],
+      );
+    });
+
+    test('v2：availableLibraries 按 ordered 排序', () {
+      final p = Peripheral.fromJson(v2Sample());
+      expect(
+        p.availableLibraries,
+        <LibraryKind>[LibraryKind.spl, LibraryKind.hal],
+      );
+      expect(p.hasLibrary(LibraryKind.hal), isTrue);
+      expect(p.hasLibrary(LibraryKind.ll), isFalse);
+    });
+
+    test('v2：按库取函数 id 与数量', () {
+      final p = Peripheral.fromJson(v2Sample());
+      expect(
+        p.functionIdsOf(LibraryKind.spl),
+        <String>['GPIO_DeInit', 'GPIO_Init'],
+      );
+      expect(
+        p.functionIdsOf(LibraryKind.hal),
+        <String>['HAL_GPIO_Init', 'HAL_GPIO_DeInit'],
+      );
+      expect(p.functionIdsOf(LibraryKind.ll), isEmpty);
+      // functionCountOf 优先用数据声明值
+      expect(p.functionCountOf(LibraryKind.spl), 18);
+      expect(p.functionCountOf(LibraryKind.hal), 9);
+      expect(p.functionCountOf(LibraryKind.ll), 0);
+    });
+
+    test('v2：sectionsOf 只给该库的分组', () {
+      final p = Peripheral.fromJson(v2Sample());
+      expect(p.sectionsOf(LibraryKind.hal).length, 1);
+      expect(p.sectionsOf(LibraryKind.hal).first.id, 'GPIO@hal#sec1');
+      expect(p.sectionsOf(LibraryKind.spl).first.id, 'GPIO@spl#sec1');
+      expect(p.sectionsOf(LibraryKind.reg), isEmpty);
+    });
+
+    test('v1 向后兼容：没有 libraries 键时自动包成 spl 一项', () {
+      final p = Peripheral.fromJson(<String, dynamic>{
+        'id': 'GPIO',
+        'name': 'GPIO',
+        'nameZh': '通用输入输出',
+        'header': 'stm32f10x_gpio.h',
+        'source': 'stm32f10x_gpio.c',
+        'file': 'functions/GPIO.json',
+        'orderIndex': 1,
+        'introZh': '老数据简介',
+        'usageOverviewZh': '老数据总览',
+        'functionCount': 18,
+        'symbolCount': 115,
+        'tags': <dynamic>[],
+        'sections': <dynamic>[
+          // v1 的 section 没有 library 字段，id 也没有 @ 段
+          <String, dynamic>{
+            'id': 'GPIO#sec1',
+            'title': '初始化与配置函数',
+            'functionIds': <dynamic>['GPIO_Init'],
+          },
+        ],
+      });
+
+      // 顶层旧字段原文保留
+      expect(p.header, 'stm32f10x_gpio.h');
+      expect(p.introZh, '老数据简介');
+      expect(p.functionCount, 18);
+
+      // 同时被包装成 spl 一项，UI 走 libraries[spl] 也能拿到
+      final spl = p.libraries[LibraryKind.spl];
+      expect(spl, isNotNull);
+      expect(spl!.header, 'stm32f10x_gpio.h');
+      expect(spl.file, 'functions/GPIO.json');
+      expect(spl.functionCount, 18);
+
+      // v1 的 section 归到 spl
+      expect(p.sections.first.library, LibraryKind.spl);
+      expect(p.availableLibraries, <LibraryKind>[LibraryKind.spl]);
+      expect(p.functionIdsOf(LibraryKind.spl), <String>['GPIO_Init']);
+      expect(p.functionCountOf(LibraryKind.spl), 18);
+    });
+
+    test('v1 兼容：section 漏 library 但 id 有 @hal 时按 id 推断', () {
+      final sec = PeripheralSection.fromJson(<String, dynamic>{
+        'id': 'GPIO@hal#sec2',
+        'title': '数据',
+        'functionIds': <dynamic>['HAL_GPIO_ReadPin'],
+      });
+      expect(sec.library, LibraryKind.hal);
+    });
+
+    test('分组 id 推断与显式 library 冲突时以显式字段为准', () {
+      final sec = PeripheralSection.fromJson(<String, dynamic>{
+        'id': 'GPIO@spl#sec1',
+        'library': 'hal',
+        'title': 'X',
+        'functionIds': <dynamic>[],
+      });
+      expect(sec.library, LibraryKind.hal);
+    });
+
+    test('libraries 里出现未知库名时忽略而不是崩', () {
+      final p = Peripheral.fromJson(<String, dynamic>{
+        'id': 'X',
+        'libraries': <String, dynamic>{
+          'cmsis': <String, dynamic>{'header': 'x.h'},
+          'hal': <String, dynamic>{'header': 'h.h'},
+        },
+      });
+      expect(p.libraries.length, 1);
+      expect(p.libraries.containsKey(LibraryKind.hal), isTrue);
+    });
+
+    test('全空的 libraries 项不进 availableLibraries', () {
+      final p = Peripheral.fromJson(<String, dynamic>{
+        'id': 'X',
+        'name': 'X',
+        'sections': <dynamic>[],
+      });
+      // v1 兜底项也是全空的（没有任何字段），不该凭空多出一个库页签
+      expect(p.availableLibraries, isEmpty);
+    });
+
+    test('PeripheralLibrary 的 isEmpty 判定', () {
+      expect(const PeripheralLibrary().isEmpty, isTrue);
+      expect(
+        const PeripheralLibrary(header: 'x.h').isEmpty,
+        isFalse,
+      );
+      expect(
+        const PeripheralLibrary(usageSteps: <String>['一步']).isEmpty,
+        isFalse,
+      );
+    });
+
+    test('toJson 往返保留 libraries 与 section 的 library', () {
+      final p = Peripheral.fromJson(v2Sample());
+      final back = Peripheral.fromJson(p.toJson());
+      expect(back.libraries.length, 2);
+      expect(back.libraries[LibraryKind.hal]?.noteZh, '需先 HAL_Init');
+      expect(back.sectionsOf(LibraryKind.hal).length, 1);
+    });
+  });
+
+  group('DataManifest：v2 版本与 functionDirs', () {
+    test('currentSchemaVersion 是 2', () {
+      expect(DataManifest.currentSchemaVersion, 2);
+    });
+
+    test('v2 数据读取 halVersion / functionDirs / 分库统计', () {
+      final m = DataManifest.fromJson(<String, dynamic>{
+        'schemaVersion': 2,
+        'dataVersion': '2.0.0',
+        'splVersion': 'STM32F10x_StdPeriph_Lib_V3.5.0',
+        'halVersion': 'STM32Cube_FW_F1_V1.8.7',
+        'functionDirs': <String, dynamic>{
+          'spl': 'functions/',
+          'hal': 'functions/hal/',
+          'll': 'functions/ll/',
+          'reg': 'functions/reg/',
+        },
+        'stats': <String, dynamic>{
+          'functionCount': 488,
+          'libraryFunctionCounts': <String, dynamic>{
+            'spl': 488,
+            'hal': 0,
+          },
+          'librarySymbolCounts': <String, dynamic>{'spl': 7337},
+        },
+      });
+
+      expect(m.halVersion, 'STM32Cube_FW_F1_V1.8.7');
+      expect(m.functionDirOf(LibraryKind.spl), 'functions/');
+      expect(m.functionDirOf(LibraryKind.hal), 'functions/hal/');
+      expect(m.functionDirOf(LibraryKind.ll), 'functions/ll/');
+      expect(m.functionDirOf(LibraryKind.reg), 'functions/reg/');
+      expect(m.hasFunctionDirOf(LibraryKind.hal), isTrue);
+      expect(m.stats.functionCountOf(LibraryKind.spl), 488);
+      expect(m.stats.symbolCountOf(LibraryKind.spl), 7337);
+      expect(m.stats.hasLibraryCounts, isTrue);
+    });
+
+    test('v1 数据（无 functionDirs/halVersion）照常可读且回退到 functions/', () {
+      final m = DataManifest.fromJson(<String, dynamic>{
+        'schemaVersion': 1,
+        'dataVersion': '1.0.0',
+        'splVersion': 'STM32F10x_StdPeriph_Lib_V3.5.0',
+        'files': <String, dynamic>{'functions': 'functions/'},
+      });
+
+      expect(m.isSchemaCompatible, isTrue, reason: 'v1 老数据必须仍能读');
+      expect(m.isLegacy, isTrue);
+      expect(m.halVersion, '');
+      expect(m.functionDirOf(LibraryKind.spl), 'functions/');
+      // hal/ll/reg 在 v1 里不存在，必须回退到契约的固定子目录——
+      // 绝不能回退到 functions/，否则会把 SPL 文件当成 HAL 函数读出来
+      expect(m.functionDirOf(LibraryKind.hal), 'functions/hal/');
+      expect(m.functionDirOf(LibraryKind.ll), 'functions/ll/');
+      expect(m.functionDirOf(LibraryKind.reg), 'functions/reg/');
+      expect(m.hasFunctionDirOf(LibraryKind.hal), isFalse);
+      expect(m.stats.hasLibraryCounts, isFalse);
+      expect(m.stats.functionCountOf(LibraryKind.hal), 0);
+    });
+
+    test('完全没有 files 时 spl 仍回退到 functions/', () {
+      final m = DataManifest.fromJson(<String, dynamic>{'schemaVersion': 1});
+      expect(m.functionDirOf(LibraryKind.spl), 'functions/');
+      expect(m.functionDirOf(LibraryKind.reg), 'functions/reg/');
+    });
+
+    test('functionDirs 缺结尾斜杠时自动补齐', () {
+      final m = DataManifest.fromJson(<String, dynamic>{
+        'schemaVersion': 2,
+        'functionDirs': <String, dynamic>{'hal': 'functions/hal'},
+      });
+      expect(m.functionDirOf(LibraryKind.hal), 'functions/hal/');
+    });
+
+    test('未来版本（v99）判定为不兼容，避免静默解析错', () {
+      final m = DataManifest.fromJson(<String, dynamic>{'schemaVersion': 99});
+      expect(m.isSchemaCompatible, isFalse);
+    });
+
+    test('v2 判定为最新且兼容', () {
+      final m = DataManifest.fromJson(<String, dynamic>{'schemaVersion': 2});
+      expect(m.isSchemaCompatible, isTrue);
+      expect(m.isLatest, isTrue);
+      expect(m.isLegacy, isFalse);
+    });
+  });
+
+  group('SplData：四库索引', () {
+    /// 造一个「GPIO 同时有 spl 与 hal」的 SplData，函数详情只加载部分
+    SplData buildMultiLibData() {
+      const gpio = Peripheral(
+        id: 'GPIO',
+        name: 'GPIO',
+        nameZh: '通用输入输出',
+        header: 'stm32f10x_gpio.h',
+        source: 'stm32f10x_gpio.c',
+        file: 'functions/GPIO.json',
+        orderIndex: 1,
+        introZh: '',
+        usageOverviewZh: '',
+        functionCount: 3,
+        symbolCount: 0,
+        tags: <String>[],
+        sections: <PeripheralSection>[
+          PeripheralSection(
+            id: 'GPIO@spl#sec1',
+            title: '初始化',
+            functionIds: <String>['GPIO_Init'],
+            library: LibraryKind.spl,
+          ),
+          PeripheralSection(
+            id: 'GPIO@hal#sec1',
+            title: '初始化',
+            functionIds: <String>['HAL_GPIO_Init', 'HAL_GPIO_DeInit'],
+            library: LibraryKind.hal,
+          ),
+        ],
+      );
+
+      // 注意：只加载了 spl 的 GPIO_Init，HAL 的两个尚未加载
+      final loaded = <FunctionItem>[
+        FunctionItem.fromJson(<String, dynamic>{
+          'id': 'GPIO_Init',
+          'name': 'GPIO_Init',
+          'peripheral': 'GPIO',
+          'library': 'spl',
+        }),
+      ];
+
+      return SplData(
+        manifest: const DataManifest(
+          schemaVersion: 2,
+          dataVersion: '2.0.0',
+          splVersion: 'x',
+          defaultChipId: 'stm32f103c8t6',
+          generatedAt: '',
+          generator: 'test',
+          stats: DataStats(),
+          files: <String, String>{},
+        ),
+        chip: const ChipSpec(
+          id: 'stm32f103c8t6',
+          name: 'STM32F103C8T6',
+          supportedPeripherals: <String>['GPIO'],
+        ),
+        peripherals: <Peripheral>[gpio],
+        functions: loaded,
+        symbols: const <SymbolItem>[],
+        pinout: PinoutData(
+          schemaVersion: 1,
+          chipId: 'stm32f103c8t6',
+          package: 'LQFP48',
+          source: 'test',
+          verified: false,
+          verifiedNote: '',
+          pins: const <Pin>[],
+        ),
+        compileErrors: const CompileErrorBundle(schemaVersion: 1),
+      );
+    }
+
+    test('单参 functionsOf 仍可用，返回跨库全部函数', () {
+      final d = buildMultiLibData();
+      final all = d.functionsOf('GPIO');
+      // 只加载了 1 个函数，所以这里是 1 个（按需加载的语义没变）
+      expect(all.length, 1);
+      expect(all.single.id, 'GPIO_Init');
+      expect(d.functionsOf('NOT_EXIST'), isEmpty);
+    });
+
+    test('双参 functionsOf 按库过滤', () {
+      final d = buildMultiLibData();
+      expect(d.functionsOf('GPIO', LibraryKind.spl).single.id, 'GPIO_Init');
+      expect(d.functionsOf('GPIO', LibraryKind.hal), isEmpty);
+      expect(d.functionsOf('GPIO', LibraryKind.ll), isEmpty);
+    });
+
+    test('isKnownFunction 覆盖 HAL/LL/reg 的 id（来自 sections）', () {
+      final d = buildMultiLibData();
+      // 未加载详情，但 sections 里登记了 → 必须可跳转
+      expect(d.isKnownFunction('HAL_GPIO_Init'), isTrue);
+      expect(d.isKnownFunction('HAL_GPIO_DeInit'), isTrue);
+      expect(d.isKnownFunction('GPIO_Init'), isTrue);
+      expect(d.isKnownFunction('NOPE'), isFalse);
+    });
+
+    test('peripheralIdOfFunction 对未加载的 HAL 函数也能定位', () {
+      final d = buildMultiLibData();
+      expect(d.peripheralIdOfFunction('HAL_GPIO_Init'), 'GPIO');
+      expect(d.peripheralIdOfFunction('NOPE'), isNull);
+    });
+
+    test('libraryOfFunction 未加载时也能看出该去哪个库找', () {
+      final d = buildMultiLibData();
+      expect(d.libraryOfFunction('GPIO_Init'), LibraryKind.spl);
+      expect(d.libraryOfFunction('HAL_GPIO_Init'), LibraryKind.hal);
+      expect(d.libraryOfFunction('NOPE'), isNull);
+    });
+
+    test('halSymbols 参与 symbolById 索引', () {
+      final base = buildMultiLibData();
+      final withHal = base.withHalSymbols(const <SymbolItem>[
+        SymbolItem(
+          id: 'GPIO_InitTypeDef',
+          name: 'GPIO_InitTypeDef',
+          kind: SymbolKind.struct,
+          peripheral: 'GPIO',
+          library: LibraryKind.hal,
+        ),
+      ]);
+      expect(withHal.isKnownSymbol('GPIO_InitTypeDef'), isTrue);
+      expect(withHal.symbolsOf('GPIO', LibraryKind.hal).length, 1);
+      // 原实例不受影响（不可变语义，provider 才能感知变化）
+      expect(base.isKnownSymbol('GPIO_InitTypeDef'), isFalse);
+    });
+
+    test('withFunctions 合并新加载的函数且不丢 HAL 符号', () {
+      final base = buildMultiLibData();
+      final merged = base.withFunctions(<FunctionItem>[
+        FunctionItem.fromJson(<String, dynamic>{
+          'id': 'HAL_GPIO_Init',
+          'name': 'HAL_GPIO_Init',
+          'peripheral': 'GPIO',
+          'library': 'hal',
+        }),
+      ]);
+      expect(merged.functions.length, 2);
+      expect(merged.functionsOf('GPIO', LibraryKind.hal).single.id,
+          'HAL_GPIO_Init');
+    });
+
+    test('多库函数按库顺序排序（spl 在前，hal 在后）', () {
+      final d = buildMultiLibData();
+      final merged = d.withFunctions(<FunctionItem>[
+        FunctionItem.fromJson(<String, dynamic>{
+          'id': 'HAL_GPIO_Init',
+          'name': 'HAL_GPIO_Init',
+          'peripheral': 'GPIO',
+          'library': 'hal',
+        }),
+      ]);
+      final all = merged.functionsOf('GPIO');
+      expect(
+        all.map((f) => f.id).toList(),
+        <String>['GPIO_Init', 'HAL_GPIO_Init'],
+        reason: 'spl（orderIndex 0）必须排在 hal（1）前面',
+      );
     });
   });
 }

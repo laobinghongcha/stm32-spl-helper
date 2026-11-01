@@ -1,0 +1,266 @@
+{
+  "LL_RTC_ALARM_Get": {
+    "briefZh": "读取闹钟 A 当前设定的时间与日期。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_ALARM_Set": {
+    "briefZh": "设置闹钟 A 的时间与日期。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_BKP_GetRegister": {
+    "briefZh": "读取 RTC 备份寄存器的备份寄存器。",
+    "paramsZh": {
+      "BKPx": "备份寄存器实例指针（F1 上是 BKP）。",
+      "BackupRegister": "备份寄存器编号，取 LL_RTC_BKP_DR1 ~ DR10。"
+    }
+  },
+  "LL_RTC_BKP_SetRegister": {
+    "briefZh": "设置 RTC 备份寄存器的备份寄存器。",
+    "paramsZh": {
+      "BKPx": "备份寄存器实例指针（F1 上是 BKP）。",
+      "BackupRegister": "备份寄存器编号，取 LL_RTC_BKP_DR1 ~ DR10。",
+      "Data": "要写入的数据值。"
+    }
+  },
+  "LL_RTC_CAL_GetCoarseDigital": {
+    "briefZh": "读取 RTC 校准的粗调数字校准值。",
+    "paramsZh": {
+      "BKPx": "备份寄存器实例指针（F1 上是 BKP）。"
+    }
+  },
+  "LL_RTC_CAL_SetCoarseDigital": {
+    "briefZh": "设置 RTC 校准的粗调数字校准值。",
+    "paramsZh": {
+      "BKPx": "备份寄存器实例指针（F1 上是 BKP）。",
+      "Value": "要设置的数值（含义随函数而定，如计数值、比较值、阈值）。"
+    }
+  },
+  "LL_RTC_ClearFlag_ALR": {
+    "briefZh": "清除 RTC 的闹钟标志位。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_ClearFlag_OW": {
+    "briefZh": "清除 RTC 的溢出（日历溢出）标志位。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_ClearFlag_RS": {
+    "briefZh": "清除 RTC 的寄存器同步标志位。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_ClearFlag_SEC": {
+    "briefZh": "清除 RTC 的秒标志位。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_ClearFlag_TAMPE": {
+    "briefZh": "清除 RTC 的篡改事件标志位。",
+    "paramsZh": {
+      "BKPx": "备份寄存器实例指针（F1 上是 BKP）。"
+    }
+  },
+  "LL_RTC_ClearFlag_TAMPI": {
+    "briefZh": "清除 RTC 的篡改中断标志位。",
+    "paramsZh": {
+      "BKPx": "备份寄存器实例指针（F1 上是 BKP）。"
+    }
+  },
+  "LL_RTC_DisableIT_ALR": {
+    "briefZh": "失能 RTC 的闹钟中断。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_DisableIT_OW": {
+    "briefZh": "失能 RTC 的溢出（日历溢出）中断。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_DisableIT_SEC": {
+    "briefZh": "失能 RTC 的秒中断。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_DisableIT_TAMP": {
+    "briefZh": "失能 RTC 的篡改中断。",
+    "paramsZh": {
+      "BKPx": "备份寄存器实例指针（F1 上是 BKP）。"
+    }
+  },
+  "LL_RTC_DisableWriteProtection": {
+    "briefZh": "失能 RTC 的写保护。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_EnableIT_ALR": {
+    "briefZh": "使能 RTC 的闹钟中断。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_EnableIT_OW": {
+    "briefZh": "使能 RTC 的溢出（日历溢出）中断。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_EnableIT_SEC": {
+    "briefZh": "使能 RTC 的秒中断。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_EnableIT_TAMP": {
+    "briefZh": "使能 RTC 的篡改中断。",
+    "paramsZh": {
+      "BKPx": "备份寄存器实例指针（F1 上是 BKP）。"
+    }
+  },
+  "LL_RTC_EnableWriteProtection": {
+    "briefZh": "使能 RTC 的写保护。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_GetDivider": {
+    "briefZh": "读取 RTC 的分频余数（DIV）。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_GetOutPutSource": {
+    "briefZh": "读取 RTC 的输出信号源。",
+    "paramsZh": {
+      "BKPx": "备份寄存器实例指针（F1 上是 BKP）。"
+    }
+  },
+  "LL_RTC_IsActiveFlag_ALR": {
+    "briefZh": "查询 RTC 的闹钟标志位是否置位。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_IsActiveFlag_OW": {
+    "briefZh": "查询 RTC 的溢出（日历溢出）标志位是否置位。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_IsActiveFlag_RS": {
+    "briefZh": "查询 RTC 的寄存器同步标志位是否置位。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_IsActiveFlag_RTOF": {
+    "briefZh": "查询 RTC 的 RTC 操作完成标志位是否置位。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_IsActiveFlag_SEC": {
+    "briefZh": "查询 RTC 的秒标志位是否置位。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_IsActiveFlag_TAMPE": {
+    "briefZh": "查询 RTC 的篡改事件标志位是否置位。",
+    "paramsZh": {
+      "BKPx": "备份寄存器实例指针（F1 上是 BKP）。"
+    }
+  },
+  "LL_RTC_IsActiveFlag_TAMPI": {
+    "briefZh": "查询 RTC 的篡改中断标志位是否置位。",
+    "paramsZh": {
+      "BKPx": "备份寄存器实例指针（F1 上是 BKP）。"
+    }
+  },
+  "LL_RTC_IsEnabledIT_ALR": {
+    "briefZh": "查询 RTC 的闹钟中断是否已使能。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_IsEnabledIT_OW": {
+    "briefZh": "查询 RTC 的溢出（日历溢出）中断是否已使能。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_IsEnabledIT_SEC": {
+    "briefZh": "查询 RTC 的秒中断是否已使能。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_IsEnabledIT_TAMP": {
+    "briefZh": "查询 RTC 的篡改中断是否已使能。",
+    "paramsZh": {
+      "BKPx": "备份寄存器实例指针（F1 上是 BKP）。"
+    }
+  },
+  "LL_RTC_SetAsynchPrescaler": {
+    "briefZh": "设置 RTC 的异步预分频。",
+    "paramsZh": {
+      "AsynchPrescaler": "异步预分频值。",
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_SetOutputSource": {
+    "briefZh": "设置 RTC 的输出信号源。",
+    "paramsZh": {
+      "BKPx": "备份寄存器实例指针（F1 上是 BKP）。"
+    }
+  },
+  "LL_RTC_TAMPER_Disable": {
+    "briefZh": "失能 RTC 篡改检测。",
+    "paramsZh": {
+      "BKPx": "备份寄存器实例指针（F1 上是 BKP）。"
+    }
+  },
+  "LL_RTC_TAMPER_Enable": {
+    "briefZh": "使能 RTC 篡改检测。",
+    "paramsZh": {
+      "BKPx": "备份寄存器实例指针（F1 上是 BKP）。"
+    }
+  },
+  "LL_RTC_TAMPER_GetActiveLevel": {
+    "briefZh": "读取篡改引脚当前设定的有效电平。",
+    "paramsZh": {
+      "BKPx": "备份寄存器实例指针（F1 上是 BKP）。"
+    }
+  },
+  "LL_RTC_TAMPER_SetActiveLevel": {
+    "briefZh": "设置篡改引脚的有效电平（高有效或低有效）。",
+    "paramsZh": {
+      "BKPx": "备份寄存器实例指针（F1 上是 BKP）。",
+      "Tamper": "篡改检测引脚编号。"
+    }
+  },
+  "LL_RTC_TIME_Get": {
+    "briefZh": "读取 RTC 当前时间（BCD 格式）。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  },
+  "LL_RTC_TIME_Set": {
+    "briefZh": "设置 RTC 当前时间（BCD 格式，写入时/分/秒寄存器）。",
+    "paramsZh": {
+      "RTCx": "RTC 实例指针（F1 上固定是 RTC）。"
+    }
+  }
+}

@@ -1,0 +1,614 @@
+{
+  "LL_DMA_ClearFlag_GI1": {
+    "briefZh": "清除 DMA 的通道 1 的全局中断标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_GI2": {
+    "briefZh": "清除 DMA 的通道 2 的全局中断标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_GI3": {
+    "briefZh": "清除 DMA 的通道 3 的全局中断标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_GI4": {
+    "briefZh": "清除 DMA 的通道 4 的全局中断标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_GI5": {
+    "briefZh": "清除 DMA 的通道 5 的全局中断标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_GI6": {
+    "briefZh": "清除 DMA 的通道 6 的全局中断标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_GI7": {
+    "briefZh": "清除 DMA 的通道 7 的全局中断标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_HT1": {
+    "briefZh": "清除 DMA 的通道 1 的传输过半标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_HT2": {
+    "briefZh": "清除 DMA 的通道 2 的传输过半标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_HT3": {
+    "briefZh": "清除 DMA 的通道 3 的传输过半标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_HT4": {
+    "briefZh": "清除 DMA 的通道 4 的传输过半标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_HT5": {
+    "briefZh": "清除 DMA 的通道 5 的传输过半标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_HT6": {
+    "briefZh": "清除 DMA 的通道 6 的传输过半标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_HT7": {
+    "briefZh": "清除 DMA 的通道 7 的传输过半标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_TC1": {
+    "briefZh": "清除 DMA 的通道 1 的传输完成标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_TC2": {
+    "briefZh": "清除 DMA 的通道 2 的传输完成标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_TC3": {
+    "briefZh": "清除 DMA 的通道 3 的传输完成标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_TC4": {
+    "briefZh": "清除 DMA 的通道 4 的传输完成标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_TC5": {
+    "briefZh": "清除 DMA 的通道 5 的传输完成标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_TC6": {
+    "briefZh": "清除 DMA 的通道 6 的传输完成标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_TC7": {
+    "briefZh": "清除 DMA 的通道 7 的传输完成标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_TE1": {
+    "briefZh": "清除 DMA 的通道 1 的传输错误标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_TE2": {
+    "briefZh": "清除 DMA 的通道 2 的传输错误标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_TE3": {
+    "briefZh": "清除 DMA 的通道 3 的传输错误标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_TE4": {
+    "briefZh": "清除 DMA 的通道 4 的传输错误标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_TE5": {
+    "briefZh": "清除 DMA 的通道 5 的传输错误标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_TE6": {
+    "briefZh": "清除 DMA 的通道 6 的传输错误标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ClearFlag_TE7": {
+    "briefZh": "清除 DMA 的通道 7 的传输错误标志位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_ConfigAddresses": {
+    "briefZh": "同时设置 DMA 的源地址与目的地址。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。",
+      "Direction": "方向或模式取值，具体取值域随外设而定。",
+      "DstAddress": "目的地址。",
+      "SrcAddress": "源地址。"
+    }
+  },
+  "LL_DMA_ConfigTransfer": {
+    "briefZh": "一次性配置 DMA 传输方向、自增模式、数据宽度、循环模式与优先级。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "Configuration": "配置值，具体取值域随函数而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_DisableChannel": {
+    "briefZh": "关闭指定 DMA 通道。任何正在进行的传输会立即停止。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_DisableIT_HT": {
+    "briefZh": "关闭该 DMA 通道的传输过半（HT）中断。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_DisableIT_TC": {
+    "briefZh": "失能 DMA 的传输完成中断。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_DisableIT_TE": {
+    "briefZh": "关闭该 DMA 通道的传输错误（TE）中断。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_EnableChannel": {
+    "briefZh": "使能指定 DMA 通道，通道打开后才开始搬运数据。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_EnableIT_HT": {
+    "briefZh": "使能该 DMA 通道的传输过半（HT）中断。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_EnableIT_TC": {
+    "briefZh": "使能 DMA 的传输完成中断。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_EnableIT_TE": {
+    "briefZh": "使能该 DMA 通道的传输错误（TE）中断。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_GetChannelPriorityLevel": {
+    "briefZh": "读取 DMA 的通道优先级。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_GetDataLength": {
+    "briefZh": "读取 DMA 通道当前剩余待传输的数据项个数。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_GetDataTransferDirection": {
+    "briefZh": "读取 DMA 的数据传输方向。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_GetM2MDstAddress": {
+    "briefZh": "读取 DMA 的存储器到存储器模式的目的地址。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_GetM2MSrcAddress": {
+    "briefZh": "读取 DMA 的存储器到存储器模式的源地址。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_GetMemoryAddress": {
+    "briefZh": "读取 DMA 的存储器地址。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_GetMemoryIncMode": {
+    "briefZh": "读取 DMA 的存储器地址自增模式。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_GetMemorySize": {
+    "briefZh": "读取 DMA 的存储器数据宽度。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_GetMode": {
+    "briefZh": "读取 DMA 的工作模式。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_GetPeriphAddress": {
+    "briefZh": "读取 DMA 的外设地址。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_GetPeriphIncMode": {
+    "briefZh": "读取 DMA 的外设地址自增模式。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_GetPeriphSize": {
+    "briefZh": "读取 DMA 的外设数据宽度。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_GI1": {
+    "briefZh": "查询 DMA 的通道 1 的全局中断标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_GI2": {
+    "briefZh": "查询 DMA 的通道 2 的全局中断标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_GI3": {
+    "briefZh": "查询 DMA 的通道 3 的全局中断标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_GI4": {
+    "briefZh": "查询 DMA 的通道 4 的全局中断标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_GI5": {
+    "briefZh": "查询 DMA 的通道 5 的全局中断标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_GI6": {
+    "briefZh": "查询 DMA 的通道 6 的全局中断标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_GI7": {
+    "briefZh": "查询 DMA 的通道 7 的全局中断标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_HT1": {
+    "briefZh": "查询 DMA 的通道 1 的传输过半标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_HT2": {
+    "briefZh": "查询 DMA 的通道 2 的传输过半标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_HT3": {
+    "briefZh": "查询 DMA 的通道 3 的传输过半标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_HT4": {
+    "briefZh": "查询 DMA 的通道 4 的传输过半标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_HT5": {
+    "briefZh": "查询 DMA 的通道 5 的传输过半标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_HT6": {
+    "briefZh": "查询 DMA 的通道 6 的传输过半标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_HT7": {
+    "briefZh": "查询 DMA 的通道 7 的传输过半标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_TC1": {
+    "briefZh": "查询 DMA 的通道 1 的传输完成标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_TC2": {
+    "briefZh": "查询 DMA 的通道 2 的传输完成标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_TC3": {
+    "briefZh": "查询 DMA 的通道 3 的传输完成标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_TC4": {
+    "briefZh": "查询 DMA 的通道 4 的传输完成标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_TC5": {
+    "briefZh": "查询 DMA 的通道 5 的传输完成标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_TC6": {
+    "briefZh": "查询 DMA 的通道 6 的传输完成标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_TC7": {
+    "briefZh": "查询 DMA 的通道 7 的传输完成标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_TE1": {
+    "briefZh": "查询 DMA 的通道 1 的传输错误标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_TE2": {
+    "briefZh": "查询 DMA 的通道 2 的传输错误标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_TE3": {
+    "briefZh": "查询 DMA 的通道 3 的传输错误标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_TE4": {
+    "briefZh": "查询 DMA 的通道 4 的传输错误标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_TE5": {
+    "briefZh": "查询 DMA 的通道 5 的传输错误标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_TE6": {
+    "briefZh": "查询 DMA 的通道 6 的传输错误标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsActiveFlag_TE7": {
+    "briefZh": "查询 DMA 的通道 7 的传输错误标志位是否置位。",
+    "paramsZh": {
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsEnabledChannel": {
+    "briefZh": "查询指定 DMA 通道是否已使能。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsEnabledIT_HT": {
+    "briefZh": "查询该 DMA 通道的传输过半（HT）中断是否已使能。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsEnabledIT_TC": {
+    "briefZh": "查询 DMA 的传输完成中断是否已使能。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_IsEnabledIT_TE": {
+    "briefZh": "查询该 DMA 通道的传输错误（TE）中断是否已使能。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_SetChannelPriorityLevel": {
+    "briefZh": "设置 DMA 的通道优先级。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_SetDataLength": {
+    "briefZh": "设置本次 DMA 传输的数据项个数（不是字节数）。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_SetDataTransferDirection": {
+    "briefZh": "设置 DMA 传输方向（外设到存储器 / 存储器到外设 / 存储器到存储器）。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。",
+      "Direction": "方向或模式取值，具体取值域随外设而定。"
+    }
+  },
+  "LL_DMA_SetM2MDstAddress": {
+    "briefZh": "设置 DMA 的存储器到存储器模式的目的地址。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。",
+      "MemoryAddress": "存储器侧地址（你的缓冲区）。"
+    }
+  },
+  "LL_DMA_SetM2MSrcAddress": {
+    "briefZh": "设置 DMA 的存储器到存储器模式的源地址。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。",
+      "MemoryAddress": "存储器侧地址（你的缓冲区）。"
+    }
+  },
+  "LL_DMA_SetMemoryAddress": {
+    "briefZh": "设置 DMA 的存储器地址。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。",
+      "MemoryAddress": "存储器侧地址（你的缓冲区）。"
+    }
+  },
+  "LL_DMA_SetMemoryIncMode": {
+    "briefZh": "设置 DMA 的存储器地址自增模式。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_SetMemorySize": {
+    "briefZh": "设置 DMA 的存储器数据宽度。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_SetMode": {
+    "briefZh": "设置 DMA 的工作模式。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。",
+      "Mode": "模式取值，如 LL_GPIO_MODE_OUTPUT / LL_GPIO_MODE_INPUT / LL_GPIO_MODE_ALTERNATE / LL_GPIO_MODE_ANALOG。"
+    }
+  },
+  "LL_DMA_SetPeriphAddress": {
+    "briefZh": "设置 DMA 的外设地址。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。",
+      "PeriphAddress": "外设侧地址（如 USART1->DR、SPI1->DR）。"
+    }
+  },
+  "LL_DMA_SetPeriphIncMode": {
+    "briefZh": "设置 DMA 的外设地址自增模式。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  },
+  "LL_DMA_SetPeriphSize": {
+    "briefZh": "设置 DMA 的外设数据宽度。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "DMAx": "DMA 控制器指针：DMA1（7 个通道），部分型号有 DMA2。"
+    }
+  }
+}

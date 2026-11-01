@@ -6,7 +6,7 @@
       "id": "TIM_DeInit",
       "name": "TIM_DeInit",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec1",
+      "sectionId": "TIM@spl#sec1",
       "prototype": "void TIM_DeInit(TIM_TypeDef* TIMx);",
       "returnType": "void",
       "params": [
@@ -72,7 +72,7 @@
       "id": "TIM_TimeBaseInit",
       "name": "TIM_TimeBaseInit",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_TimeBaseInit(TIM_TypeDef* TIMx, TIM_TimeBaseInitTypeDef* TIM_TimeBaseInitStruct);",
       "returnType": "void",
       "params": [
@@ -146,7 +146,7 @@
       "id": "TIM_OC1Init",
       "name": "TIM_OC1Init",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_OC1Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct);",
       "returnType": "void",
       "params": [
@@ -227,7 +227,7 @@
       "id": "TIM_OC2Init",
       "name": "TIM_OC2Init",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_OC2Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct);",
       "returnType": "void",
       "params": [
@@ -300,7 +300,7 @@
       "id": "TIM_OC3Init",
       "name": "TIM_OC3Init",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_OC3Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct);",
       "returnType": "void",
       "params": [
@@ -370,7 +370,7 @@
       "id": "TIM_OC4Init",
       "name": "TIM_OC4Init",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_OC4Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct);",
       "returnType": "void",
       "params": [
@@ -441,7 +441,7 @@
       "id": "TIM_ICInit",
       "name": "TIM_ICInit",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_ICInit(TIM_TypeDef* TIMx, TIM_ICInitTypeDef* TIM_ICInitStruct);",
       "returnType": "void",
       "params": [
@@ -516,7 +516,7 @@
       "id": "TIM_PWMIConfig",
       "name": "TIM_PWMIConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_PWMIConfig(TIM_TypeDef* TIMx, TIM_ICInitTypeDef* TIM_ICInitStruct);",
       "returnType": "void",
       "params": [
@@ -594,7 +594,7 @@
       "id": "TIM_BDTRConfig",
       "name": "TIM_BDTRConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_BDTRConfig(TIM_TypeDef* TIMx, TIM_BDTRInitTypeDef *TIM_BDTRInitStruct);",
       "returnType": "void",
       "params": [
@@ -664,7 +664,7 @@
       "id": "TIM_TimeBaseStructInit",
       "name": "TIM_TimeBaseStructInit",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_TimeBaseStructInit(TIM_TimeBaseInitTypeDef* TIM_TimeBaseInitStruct);",
       "returnType": "void",
       "params": [
@@ -713,7 +713,7 @@
       "id": "TIM_OCStructInit",
       "name": "TIM_OCStructInit",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_OCStructInit(TIM_OCInitTypeDef* TIM_OCInitStruct);",
       "returnType": "void",
       "params": [
@@ -766,7 +766,7 @@
       "id": "TIM_ICStructInit",
       "name": "TIM_ICStructInit",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_ICStructInit(TIM_ICInitTypeDef* TIM_ICInitStruct);",
       "returnType": "void",
       "params": [
@@ -816,7 +816,7 @@
       "id": "TIM_BDTRStructInit",
       "name": "TIM_BDTRStructInit",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_BDTRStructInit(TIM_BDTRInitTypeDef* TIM_BDTRInitStruct);",
       "returnType": "void",
       "params": [
@@ -865,7 +865,7 @@
       "id": "TIM_Cmd",
       "name": "TIM_Cmd",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec4",
+      "sectionId": "TIM@spl#sec4",
       "prototype": "void TIM_Cmd(TIM_TypeDef* TIMx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -929,7 +929,7 @@
       "id": "TIM_CtrlPWMOutputs",
       "name": "TIM_CtrlPWMOutputs",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_CtrlPWMOutputs(TIM_TypeDef* TIMx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -996,7 +996,7 @@
       "id": "TIM_ITConfig",
       "name": "TIM_ITConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec5",
+      "sectionId": "TIM@spl#sec5",
       "prototype": "void TIM_ITConfig(TIM_TypeDef* TIMx, uint16_t TIM_IT, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1092,7 +1092,7 @@
       "id": "TIM_GenerateEvent",
       "name": "TIM_GenerateEvent",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_GenerateEvent(TIM_TypeDef* TIMx, uint16_t TIM_EventSource);",
       "returnType": "void",
       "params": [
@@ -1162,7 +1162,7 @@
       "id": "TIM_DMAConfig",
       "name": "TIM_DMAConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_DMAConfig(TIM_TypeDef* TIMx, uint16_t TIM_DMABase, uint16_t TIM_DMABurstLength);",
       "returnType": "void",
       "params": [
@@ -1237,7 +1237,7 @@
       "id": "TIM_DMACmd",
       "name": "TIM_DMACmd",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec4",
+      "sectionId": "TIM@spl#sec4",
       "prototype": "void TIM_DMACmd(TIM_TypeDef* TIMx, uint16_t TIM_DMASource, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1314,7 +1314,7 @@
       "id": "TIM_InternalClockConfig",
       "name": "TIM_InternalClockConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_InternalClockConfig(TIM_TypeDef* TIMx);",
       "returnType": "void",
       "params": [
@@ -1364,7 +1364,7 @@
       "id": "TIM_ITRxExternalClockConfig",
       "name": "TIM_ITRxExternalClockConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_ITRxExternalClockConfig(TIM_TypeDef* TIMx, uint16_t TIM_InputTriggerSource);",
       "returnType": "void",
       "params": [
@@ -1429,7 +1429,7 @@
       "id": "TIM_TIxExternalClockConfig",
       "name": "TIM_TIxExternalClockConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_TIxExternalClockConfig(TIM_TypeDef* TIMx, uint16_t TIM_TIxExternalCLKSource, uint16_t TIM_ICPolarity, uint16_t ICFilter);",
       "returnType": "void",
       "params": [
@@ -1509,7 +1509,7 @@
       "id": "TIM_ETRClockMode1Config",
       "name": "TIM_ETRClockMode1Config",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_ETRClockMode1Config(TIM_TypeDef* TIMx, uint16_t TIM_ExtTRGPrescaler, uint16_t TIM_ExtTRGPolarity, uint16_t ExtTRGFilter);",
       "returnType": "void",
       "params": [
@@ -1585,7 +1585,7 @@
       "id": "TIM_ETRClockMode2Config",
       "name": "TIM_ETRClockMode2Config",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_ETRClockMode2Config(TIM_TypeDef* TIMx, uint16_t TIM_ExtTRGPrescaler, uint16_t TIM_ExtTRGPolarity, uint16_t ExtTRGFilter);",
       "returnType": "void",
       "params": [
@@ -1657,7 +1657,7 @@
       "id": "TIM_ETRConfig",
       "name": "TIM_ETRConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_ETRConfig(TIM_TypeDef* TIMx, uint16_t TIM_ExtTRGPrescaler, uint16_t TIM_ExtTRGPolarity, uint16_t ExtTRGFilter);",
       "returnType": "void",
       "params": [
@@ -1726,7 +1726,7 @@
       "id": "TIM_PrescalerConfig",
       "name": "TIM_PrescalerConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_PrescalerConfig(TIM_TypeDef* TIMx, uint16_t Prescaler, uint16_t TIM_PSCReloadMode);",
       "returnType": "void",
       "params": [
@@ -1796,7 +1796,7 @@
       "id": "TIM_CounterModeConfig",
       "name": "TIM_CounterModeConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_CounterModeConfig(TIM_TypeDef* TIMx, uint16_t TIM_CounterMode);",
       "returnType": "void",
       "params": [
@@ -1856,7 +1856,7 @@
       "id": "TIM_SelectInputTrigger",
       "name": "TIM_SelectInputTrigger",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_SelectInputTrigger(TIM_TypeDef* TIMx, uint16_t TIM_InputTriggerSource);",
       "returnType": "void",
       "params": [
@@ -1920,7 +1920,7 @@
       "id": "TIM_EncoderInterfaceConfig",
       "name": "TIM_EncoderInterfaceConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_EncoderInterfaceConfig(TIM_TypeDef* TIMx, uint16_t TIM_EncoderMode, uint16_t TIM_IC1Polarity, uint16_t TIM_IC2Polarity);",
       "returnType": "void",
       "params": [
@@ -2003,7 +2003,7 @@
       "id": "TIM_ForcedOC1Config",
       "name": "TIM_ForcedOC1Config",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_ForcedOC1Config(TIM_TypeDef* TIMx, uint16_t TIM_ForcedAction);",
       "returnType": "void",
       "params": [
@@ -2066,7 +2066,7 @@
       "id": "TIM_ForcedOC2Config",
       "name": "TIM_ForcedOC2Config",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_ForcedOC2Config(TIM_TypeDef* TIMx, uint16_t TIM_ForcedAction);",
       "returnType": "void",
       "params": [
@@ -2126,7 +2126,7 @@
       "id": "TIM_ForcedOC3Config",
       "name": "TIM_ForcedOC3Config",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_ForcedOC3Config(TIM_TypeDef* TIMx, uint16_t TIM_ForcedAction);",
       "returnType": "void",
       "params": [
@@ -2186,7 +2186,7 @@
       "id": "TIM_ForcedOC4Config",
       "name": "TIM_ForcedOC4Config",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_ForcedOC4Config(TIM_TypeDef* TIMx, uint16_t TIM_ForcedAction);",
       "returnType": "void",
       "params": [
@@ -2246,7 +2246,7 @@
       "id": "TIM_ARRPreloadConfig",
       "name": "TIM_ARRPreloadConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_ARRPreloadConfig(TIM_TypeDef* TIMx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -2311,7 +2311,7 @@
       "id": "TIM_SelectCOM",
       "name": "TIM_SelectCOM",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_SelectCOM(TIM_TypeDef* TIMx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -2375,7 +2375,7 @@
       "id": "TIM_SelectCCDMA",
       "name": "TIM_SelectCCDMA",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_SelectCCDMA(TIM_TypeDef* TIMx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -2437,7 +2437,7 @@
       "id": "TIM_CCPreloadControl",
       "name": "TIM_CCPreloadControl",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_CCPreloadControl(TIM_TypeDef* TIMx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -2497,7 +2497,7 @@
       "id": "TIM_OC1PreloadConfig",
       "name": "TIM_OC1PreloadConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_OC1PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload);",
       "returnType": "void",
       "params": [
@@ -2561,7 +2561,7 @@
       "id": "TIM_OC2PreloadConfig",
       "name": "TIM_OC2PreloadConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_OC2PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload);",
       "returnType": "void",
       "params": [
@@ -2621,7 +2621,7 @@
       "id": "TIM_OC3PreloadConfig",
       "name": "TIM_OC3PreloadConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_OC3PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload);",
       "returnType": "void",
       "params": [
@@ -2681,7 +2681,7 @@
       "id": "TIM_OC4PreloadConfig",
       "name": "TIM_OC4PreloadConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_OC4PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload);",
       "returnType": "void",
       "params": [
@@ -2741,7 +2741,7 @@
       "id": "TIM_OC1FastConfig",
       "name": "TIM_OC1FastConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_OC1FastConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCFast);",
       "returnType": "void",
       "params": [
@@ -2801,7 +2801,7 @@
       "id": "TIM_OC2FastConfig",
       "name": "TIM_OC2FastConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_OC2FastConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCFast);",
       "returnType": "void",
       "params": [
@@ -2860,7 +2860,7 @@
       "id": "TIM_OC3FastConfig",
       "name": "TIM_OC3FastConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_OC3FastConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCFast);",
       "returnType": "void",
       "params": [
@@ -2919,7 +2919,7 @@
       "id": "TIM_OC4FastConfig",
       "name": "TIM_OC4FastConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_OC4FastConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCFast);",
       "returnType": "void",
       "params": [
@@ -2978,7 +2978,7 @@
       "id": "TIM_ClearOC1Ref",
       "name": "TIM_ClearOC1Ref",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_ClearOC1Ref(TIM_TypeDef* TIMx, uint16_t TIM_OCClear);",
       "returnType": "void",
       "params": [
@@ -3041,7 +3041,7 @@
       "id": "TIM_ClearOC2Ref",
       "name": "TIM_ClearOC2Ref",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_ClearOC2Ref(TIM_TypeDef* TIMx, uint16_t TIM_OCClear);",
       "returnType": "void",
       "params": [
@@ -3103,7 +3103,7 @@
       "id": "TIM_ClearOC3Ref",
       "name": "TIM_ClearOC3Ref",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_ClearOC3Ref(TIM_TypeDef* TIMx, uint16_t TIM_OCClear);",
       "returnType": "void",
       "params": [
@@ -3165,7 +3165,7 @@
       "id": "TIM_ClearOC4Ref",
       "name": "TIM_ClearOC4Ref",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_ClearOC4Ref(TIM_TypeDef* TIMx, uint16_t TIM_OCClear);",
       "returnType": "void",
       "params": [
@@ -3227,7 +3227,7 @@
       "id": "TIM_OC1PolarityConfig",
       "name": "TIM_OC1PolarityConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_OC1PolarityConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPolarity);",
       "returnType": "void",
       "params": [
@@ -3288,7 +3288,7 @@
       "id": "TIM_OC1NPolarityConfig",
       "name": "TIM_OC1NPolarityConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_OC1NPolarityConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCNPolarity);",
       "returnType": "void",
       "params": [
@@ -3351,7 +3351,7 @@
       "id": "TIM_OC2PolarityConfig",
       "name": "TIM_OC2PolarityConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_OC2PolarityConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPolarity);",
       "returnType": "void",
       "params": [
@@ -3411,7 +3411,7 @@
       "id": "TIM_OC2NPolarityConfig",
       "name": "TIM_OC2NPolarityConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_OC2NPolarityConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCNPolarity);",
       "returnType": "void",
       "params": [
@@ -3469,7 +3469,7 @@
       "id": "TIM_OC3PolarityConfig",
       "name": "TIM_OC3PolarityConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_OC3PolarityConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPolarity);",
       "returnType": "void",
       "params": [
@@ -3529,7 +3529,7 @@
       "id": "TIM_OC3NPolarityConfig",
       "name": "TIM_OC3NPolarityConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_OC3NPolarityConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCNPolarity);",
       "returnType": "void",
       "params": [
@@ -3587,7 +3587,7 @@
       "id": "TIM_OC4PolarityConfig",
       "name": "TIM_OC4PolarityConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_OC4PolarityConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPolarity);",
       "returnType": "void",
       "params": [
@@ -3647,7 +3647,7 @@
       "id": "TIM_CCxCmd",
       "name": "TIM_CCxCmd",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec4",
+      "sectionId": "TIM@spl#sec4",
       "prototype": "void TIM_CCxCmd(TIM_TypeDef* TIMx, uint16_t TIM_Channel, uint16_t TIM_CCx);",
       "returnType": "void",
       "params": [
@@ -3717,7 +3717,7 @@
       "id": "TIM_CCxNCmd",
       "name": "TIM_CCxNCmd",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec4",
+      "sectionId": "TIM@spl#sec4",
       "prototype": "void TIM_CCxNCmd(TIM_TypeDef* TIMx, uint16_t TIM_Channel, uint16_t TIM_CCxN);",
       "returnType": "void",
       "params": [
@@ -3788,7 +3788,7 @@
       "id": "TIM_SelectOCxM",
       "name": "TIM_SelectOCxM",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_SelectOCxM(TIM_TypeDef* TIMx, uint16_t TIM_Channel, uint16_t TIM_OCMode);",
       "returnType": "void",
       "params": [
@@ -3862,7 +3862,7 @@
       "id": "TIM_UpdateDisableConfig",
       "name": "TIM_UpdateDisableConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_UpdateDisableConfig(TIM_TypeDef* TIMx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -3925,7 +3925,7 @@
       "id": "TIM_UpdateRequestConfig",
       "name": "TIM_UpdateRequestConfig",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec3",
+      "sectionId": "TIM@spl#sec3",
       "prototype": "void TIM_UpdateRequestConfig(TIM_TypeDef* TIMx, uint16_t TIM_UpdateSource);",
       "returnType": "void",
       "params": [
@@ -3986,7 +3986,7 @@
       "id": "TIM_SelectHallSensor",
       "name": "TIM_SelectHallSensor",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_SelectHallSensor(TIM_TypeDef* TIMx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -4047,7 +4047,7 @@
       "id": "TIM_SelectOnePulseMode",
       "name": "TIM_SelectOnePulseMode",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_SelectOnePulseMode(TIM_TypeDef* TIMx, uint16_t TIM_OPMode);",
       "returnType": "void",
       "params": [
@@ -4110,7 +4110,7 @@
       "id": "TIM_SelectOutputTrigger",
       "name": "TIM_SelectOutputTrigger",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_SelectOutputTrigger(TIM_TypeDef* TIMx, uint16_t TIM_TRGOSource);",
       "returnType": "void",
       "params": [
@@ -4172,7 +4172,7 @@
       "id": "TIM_SelectSlaveMode",
       "name": "TIM_SelectSlaveMode",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_SelectSlaveMode(TIM_TypeDef* TIMx, uint16_t TIM_SlaveMode);",
       "returnType": "void",
       "params": [
@@ -4234,7 +4234,7 @@
       "id": "TIM_SelectMasterSlaveMode",
       "name": "TIM_SelectMasterSlaveMode",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec2",
+      "sectionId": "TIM@spl#sec2",
       "prototype": "void TIM_SelectMasterSlaveMode(TIM_TypeDef* TIMx, uint16_t TIM_MasterSlaveMode);",
       "returnType": "void",
       "params": [
@@ -4293,7 +4293,7 @@
       "id": "TIM_SetCounter",
       "name": "TIM_SetCounter",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec6",
+      "sectionId": "TIM@spl#sec6",
       "prototype": "void TIM_SetCounter(TIM_TypeDef* TIMx, uint16_t Counter);",
       "returnType": "void",
       "params": [
@@ -4353,7 +4353,7 @@
       "id": "TIM_SetAutoreload",
       "name": "TIM_SetAutoreload",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec6",
+      "sectionId": "TIM@spl#sec6",
       "prototype": "void TIM_SetAutoreload(TIM_TypeDef* TIMx, uint16_t Autoreload);",
       "returnType": "void",
       "params": [
@@ -4415,7 +4415,7 @@
       "id": "TIM_SetCompare1",
       "name": "TIM_SetCompare1",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec6",
+      "sectionId": "TIM@spl#sec6",
       "prototype": "void TIM_SetCompare1(TIM_TypeDef* TIMx, uint16_t Compare1);",
       "returnType": "void",
       "params": [
@@ -4478,7 +4478,7 @@
       "id": "TIM_SetCompare2",
       "name": "TIM_SetCompare2",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec6",
+      "sectionId": "TIM@spl#sec6",
       "prototype": "void TIM_SetCompare2(TIM_TypeDef* TIMx, uint16_t Compare2);",
       "returnType": "void",
       "params": [
@@ -4538,7 +4538,7 @@
       "id": "TIM_SetCompare3",
       "name": "TIM_SetCompare3",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec6",
+      "sectionId": "TIM@spl#sec6",
       "prototype": "void TIM_SetCompare3(TIM_TypeDef* TIMx, uint16_t Compare3);",
       "returnType": "void",
       "params": [
@@ -4598,7 +4598,7 @@
       "id": "TIM_SetCompare4",
       "name": "TIM_SetCompare4",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec6",
+      "sectionId": "TIM@spl#sec6",
       "prototype": "void TIM_SetCompare4(TIM_TypeDef* TIMx, uint16_t Compare4);",
       "returnType": "void",
       "params": [
@@ -4658,7 +4658,7 @@
       "id": "TIM_SetIC1Prescaler",
       "name": "TIM_SetIC1Prescaler",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec6",
+      "sectionId": "TIM@spl#sec6",
       "prototype": "void TIM_SetIC1Prescaler(TIM_TypeDef* TIMx, uint16_t TIM_ICPSC);",
       "returnType": "void",
       "params": [
@@ -4718,7 +4718,7 @@
       "id": "TIM_SetIC2Prescaler",
       "name": "TIM_SetIC2Prescaler",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec6",
+      "sectionId": "TIM@spl#sec6",
       "prototype": "void TIM_SetIC2Prescaler(TIM_TypeDef* TIMx, uint16_t TIM_ICPSC);",
       "returnType": "void",
       "params": [
@@ -4778,7 +4778,7 @@
       "id": "TIM_SetIC3Prescaler",
       "name": "TIM_SetIC3Prescaler",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec6",
+      "sectionId": "TIM@spl#sec6",
       "prototype": "void TIM_SetIC3Prescaler(TIM_TypeDef* TIMx, uint16_t TIM_ICPSC);",
       "returnType": "void",
       "params": [
@@ -4838,7 +4838,7 @@
       "id": "TIM_SetIC4Prescaler",
       "name": "TIM_SetIC4Prescaler",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec6",
+      "sectionId": "TIM@spl#sec6",
       "prototype": "void TIM_SetIC4Prescaler(TIM_TypeDef* TIMx, uint16_t TIM_ICPSC);",
       "returnType": "void",
       "params": [
@@ -4898,7 +4898,7 @@
       "id": "TIM_SetClockDivision",
       "name": "TIM_SetClockDivision",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec6",
+      "sectionId": "TIM@spl#sec6",
       "prototype": "void TIM_SetClockDivision(TIM_TypeDef* TIMx, uint16_t TIM_CKD);",
       "returnType": "void",
       "params": [
@@ -4962,7 +4962,7 @@
       "id": "TIM_GetCapture1",
       "name": "TIM_GetCapture1",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec7",
+      "sectionId": "TIM@spl#sec7",
       "prototype": "uint16_t TIM_GetCapture1(TIM_TypeDef* TIMx);",
       "returnType": "uint16_t",
       "params": [
@@ -5021,7 +5021,7 @@
       "id": "TIM_GetCapture2",
       "name": "TIM_GetCapture2",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec7",
+      "sectionId": "TIM@spl#sec7",
       "prototype": "uint16_t TIM_GetCapture2(TIM_TypeDef* TIMx);",
       "returnType": "uint16_t",
       "params": [
@@ -5076,7 +5076,7 @@
       "id": "TIM_GetCapture3",
       "name": "TIM_GetCapture3",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec7",
+      "sectionId": "TIM@spl#sec7",
       "prototype": "uint16_t TIM_GetCapture3(TIM_TypeDef* TIMx);",
       "returnType": "uint16_t",
       "params": [
@@ -5129,7 +5129,7 @@
       "id": "TIM_GetCapture4",
       "name": "TIM_GetCapture4",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec7",
+      "sectionId": "TIM@spl#sec7",
       "prototype": "uint16_t TIM_GetCapture4(TIM_TypeDef* TIMx);",
       "returnType": "uint16_t",
       "params": [
@@ -5182,7 +5182,7 @@
       "id": "TIM_GetCounter",
       "name": "TIM_GetCounter",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec7",
+      "sectionId": "TIM@spl#sec7",
       "prototype": "uint16_t TIM_GetCounter(TIM_TypeDef* TIMx);",
       "returnType": "uint16_t",
       "params": [
@@ -5233,7 +5233,7 @@
       "id": "TIM_GetPrescaler",
       "name": "TIM_GetPrescaler",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec7",
+      "sectionId": "TIM@spl#sec7",
       "prototype": "uint16_t TIM_GetPrescaler(TIM_TypeDef* TIMx);",
       "returnType": "uint16_t",
       "params": [
@@ -5282,7 +5282,7 @@
       "id": "TIM_GetFlagStatus",
       "name": "TIM_GetFlagStatus",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec8",
+      "sectionId": "TIM@spl#sec8",
       "prototype": "FlagStatus TIM_GetFlagStatus(TIM_TypeDef* TIMx, uint16_t TIM_FLAG);",
       "returnType": "FlagStatus",
       "params": [
@@ -5368,7 +5368,7 @@
       "id": "TIM_ClearFlag",
       "name": "TIM_ClearFlag",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec8",
+      "sectionId": "TIM@spl#sec8",
       "prototype": "void TIM_ClearFlag(TIM_TypeDef* TIMx, uint16_t TIM_FLAG);",
       "returnType": "void",
       "params": [
@@ -5446,7 +5446,7 @@
       "id": "TIM_GetITStatus",
       "name": "TIM_GetITStatus",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec5",
+      "sectionId": "TIM@spl#sec5",
       "prototype": "ITStatus TIM_GetITStatus(TIM_TypeDef* TIMx, uint16_t TIM_IT);",
       "returnType": "ITStatus",
       "params": [
@@ -5536,7 +5536,7 @@
       "id": "TIM_ClearITPendingBit",
       "name": "TIM_ClearITPendingBit",
       "peripheral": "TIM",
-      "sectionId": "TIM#sec5",
+      "sectionId": "TIM@spl#sec5",
       "prototype": "void TIM_ClearITPendingBit(TIM_TypeDef* TIMx, uint16_t TIM_IT);",
       "returnType": "void",
       "params": [

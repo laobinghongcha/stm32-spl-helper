@@ -1,0 +1,1657 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "GPIO",
+  "library": "reg",
+  "functions": [
+    {
+      "id": "REG_AFIO_EVCR",
+      "name": "AFIO_EVCR",
+      "peripheral": "GPIO",
+      "library": "reg",
+      "sectionId": "GPIO@reg#sec2",
+      "prototype": "AFIO->EVCR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "AFIO_EVCR_PIN",
+          "type": "bits[3:0]（整个位域）",
+          "descEn": "PIN[3:0] bits (Pin selection)",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_EVCR_PORT",
+          "type": "bits[6:4]（整个位域）",
+          "descEn": "PORT[2:0] bits (Port selection)",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_EVCR_EVOE",
+          "type": "bit 7（整个位域）",
+          "descEn": "Event Output Enable",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_EVCR_PIN_0",
+          "type": "bit 0",
+          "descEn": "0x00000001",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_EVCR_PIN_1",
+          "type": "bit 1",
+          "descEn": "0x00000002",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_EVCR_PIN_2",
+          "type": "bit 2",
+          "descEn": "0x00000004",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_EVCR_PIN_3",
+          "type": "bit 3",
+          "descEn": "0x00000008",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_EVCR_PORT_0",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_EVCR_PORT_1",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_EVCR_PORT_2",
+          "type": "bit 6",
+          "descEn": "0x00000040",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "PIN[3:0] bits (Pin selection)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "AFIO_EVCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 AFIO_TypeDef.EVCR，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = AFIO->EVCR;  /* 读回当前值 */\nv &= ~AFIO_EVCR_PIN_Msk;  /* 先清掉 AFIO_EVCR_PIN：bits[3:0]（整个位域） */\nv |= (1u << AFIO_EVCR_PIN_Pos) & AFIO_EVCR_PIN_Msk;  /* 置位，实际取值看参考手册 */\nAFIO->EVCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1952,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_AFIO_EXTICR1",
+      "name": "AFIO_EXTICR1",
+      "peripheral": "GPIO",
+      "library": "reg",
+      "sectionId": "GPIO@reg#sec2",
+      "prototype": "AFIO->EXTICR[0]",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "AFIO_EXTICR1_EXTI0",
+          "type": "bits[3:0]（整个位域）",
+          "descEn": "EXTI 0 configuration",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_EXTICR1_EXTI1",
+          "type": "bits[7:4]（整个位域）",
+          "descEn": "EXTI 1 configuration",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_EXTICR1_EXTI2",
+          "type": "bits[11:8]（整个位域）",
+          "descEn": "EXTI 2 configuration",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_EXTICR1_EXTI3",
+          "type": "bits[15:12]（整个位域）",
+          "descEn": "EXTI 3 configuration",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "EXTI 0 configuration",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "AFIO_EXTICR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 AFIO_TypeDef.EXTICR1，偏移 0x08"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = AFIO->EXTICR[0];  /* 读回当前值 */\nv &= ~AFIO_EXTICR1_EXTI0_Msk;  /* 先清掉 AFIO_EXTICR1_EXTI0：bits[3:0]（整个位域） */\nv |= (1u << AFIO_EXTICR1_EXTI0_Pos) & AFIO_EXTICR1_EXTI0_Msk;  /* 置位，实际取值看参考手册 */\nAFIO->EXTICR[0] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2155,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_AFIO_EXTICR2",
+      "name": "AFIO_EXTICR2",
+      "peripheral": "GPIO",
+      "library": "reg",
+      "sectionId": "GPIO@reg#sec2",
+      "prototype": "AFIO->EXTICR[1]",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "AFIO_EXTICR2_EXTI4",
+          "type": "bits[3:0]（整个位域）",
+          "descEn": "EXTI 4 configuration",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_EXTICR2_EXTI5",
+          "type": "bits[7:4]（整个位域）",
+          "descEn": "EXTI 5 configuration",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_EXTICR2_EXTI6",
+          "type": "bits[11:8]（整个位域）",
+          "descEn": "EXTI 6 configuration",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_EXTICR2_EXTI7",
+          "type": "bits[15:12]（整个位域）",
+          "descEn": "EXTI 7 configuration",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "EXTI 4 configuration",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "AFIO_EXTICR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 AFIO_TypeDef.EXTICR2，偏移 0x0C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = AFIO->EXTICR[1];  /* 读回当前值 */\nv &= ~AFIO_EXTICR2_EXTI4_Msk;  /* 先清掉 AFIO_EXTICR2_EXTI4：bits[3:0]（整个位域） */\nv |= (1u << AFIO_EXTICR2_EXTI4_Pos) & AFIO_EXTICR2_EXTI4_Msk;  /* 置位，实际取值看参考手册 */\nAFIO->EXTICR[1] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2253,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_AFIO_EXTICR3",
+      "name": "AFIO_EXTICR3",
+      "peripheral": "GPIO",
+      "library": "reg",
+      "sectionId": "GPIO@reg#sec2",
+      "prototype": "AFIO->EXTICR[2]",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "AFIO_EXTICR3_EXTI8",
+          "type": "bits[3:0]（整个位域）",
+          "descEn": "EXTI 8 configuration",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_EXTICR3_EXTI9",
+          "type": "bits[7:4]（整个位域）",
+          "descEn": "EXTI 9 configuration",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_EXTICR3_EXTI10",
+          "type": "bits[11:8]（整个位域）",
+          "descEn": "EXTI 10 configuration",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_EXTICR3_EXTI11",
+          "type": "bits[15:12]（整个位域）",
+          "descEn": "EXTI 11 configuration",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "EXTI 8 configuration",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "AFIO_EXTICR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 AFIO_TypeDef.EXTICR3，偏移 0x10"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = AFIO->EXTICR[2];  /* 读回当前值 */\nv &= ~AFIO_EXTICR3_EXTI8_Msk;  /* 先清掉 AFIO_EXTICR3_EXTI8：bits[3:0]（整个位域） */\nv |= (1u << AFIO_EXTICR3_EXTI8_Pos) & AFIO_EXTICR3_EXTI8_Msk;  /* 置位，实际取值看参考手册 */\nAFIO->EXTICR[2] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2351,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_AFIO_EXTICR4",
+      "name": "AFIO_EXTICR4",
+      "peripheral": "GPIO",
+      "library": "reg",
+      "sectionId": "GPIO@reg#sec2",
+      "prototype": "AFIO->EXTICR[3]",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "AFIO_EXTICR4_EXTI12",
+          "type": "bits[3:0]（整个位域）",
+          "descEn": "EXTI 12 configuration",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_EXTICR4_EXTI13",
+          "type": "bits[7:4]（整个位域）",
+          "descEn": "EXTI 13 configuration",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_EXTICR4_EXTI14",
+          "type": "bits[11:8]（整个位域）",
+          "descEn": "EXTI 14 configuration",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_EXTICR4_EXTI15",
+          "type": "bits[15:12]（整个位域）",
+          "descEn": "EXTI 15 configuration",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "EXTI 12 configuration",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "AFIO_EXTICR4"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 AFIO_TypeDef.EXTICR4，偏移 0x14"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = AFIO->EXTICR[3];  /* 读回当前值 */\nv &= ~AFIO_EXTICR4_EXTI12_Msk;  /* 先清掉 AFIO_EXTICR4_EXTI12：bits[3:0]（整个位域） */\nv |= (1u << AFIO_EXTICR4_EXTI12_Pos) & AFIO_EXTICR4_EXTI12_Msk;  /* 置位，实际取值看参考手册 */\nAFIO->EXTICR[3] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2449,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_AFIO_MAPR",
+      "name": "AFIO_MAPR",
+      "peripheral": "GPIO",
+      "library": "reg",
+      "sectionId": "GPIO@reg#sec2",
+      "prototype": "AFIO->MAPR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "AFIO_MAPR_SPI1_REMAP",
+          "type": "bit 0（整个位域）",
+          "descEn": "SPI1 remapping",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_MAPR_I2C1_REMAP",
+          "type": "bit 1（整个位域）",
+          "descEn": "I2C1 remapping",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_MAPR_USART1_REMAP",
+          "type": "bit 2（整个位域）",
+          "descEn": "USART1 remapping",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_MAPR_USART2_REMAP",
+          "type": "bit 3（整个位域）",
+          "descEn": "USART2 remapping",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_MAPR_USART3_REMAP",
+          "type": "bits[5:4]（整个位域）",
+          "descEn": "USART3_REMAP[1:0] bits (USART3 remapping)",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_MAPR_TIM1_REMAP",
+          "type": "bits[7:6]（整个位域）",
+          "descEn": "TIM1_REMAP[1:0] bits (TIM1 remapping)",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_MAPR_TIM2_REMAP",
+          "type": "bits[9:8]（整个位域）",
+          "descEn": "TIM2_REMAP[1:0] bits (TIM2 remapping)",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_MAPR_TIM3_REMAP",
+          "type": "bits[11:10]（整个位域）",
+          "descEn": "TIM3_REMAP[1:0] bits (TIM3 remapping)",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_MAPR_TIM4_REMAP",
+          "type": "bit 12（整个位域）",
+          "descEn": "TIM4_REMAP bit (TIM4 remapping)",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_MAPR_CAN_REMAP",
+          "type": "bits[14:13]（整个位域）",
+          "descEn": "CAN_REMAP[1:0] bits (CAN Alternate function remapping)",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_MAPR_PD01_REMAP",
+          "type": "bit 15（整个位域）",
+          "descEn": "Port D0/Port D1 mapping on OSC_IN/OSC_OUT",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_MAPR_SWJ_CFG",
+          "type": "bits[26:24]（整个位域）",
+          "descEn": "SWJ_CFG[2:0] bits (Serial Wire JTAG configuration)",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_MAPR_USART3_REMAP_0",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_MAPR_USART3_REMAP_1",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_MAPR_TIM1_REMAP_0",
+          "type": "bit 6",
+          "descEn": "0x00000040",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_MAPR_TIM1_REMAP_1",
+          "type": "bit 7",
+          "descEn": "0x00000080",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_MAPR_TIM2_REMAP_0",
+          "type": "bit 8",
+          "descEn": "0x00000100",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_MAPR_TIM2_REMAP_1",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_MAPR_TIM3_REMAP_0",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_MAPR_TIM3_REMAP_1",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_MAPR_CAN_REMAP_0",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_MAPR_CAN_REMAP_1",
+          "type": "bit 14",
+          "descEn": "0x00004000",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_MAPR_SWJ_CFG_0",
+          "type": "bit 24",
+          "descEn": "0x01000000",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_MAPR_SWJ_CFG_1",
+          "type": "bit 25",
+          "descEn": "0x02000000",
+          "descZh": ""
+        },
+        {
+          "name": "AFIO_MAPR_SWJ_CFG_2",
+          "type": "bit 26",
+          "descEn": "0x04000000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "SPI1 remapping",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "AFIO_MAPR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 AFIO_TypeDef.MAPR，偏移 0x04"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = AFIO->MAPR;  /* 读回当前值 */\nv &= ~AFIO_MAPR_SPI1_REMAP_Msk;  /* 先清掉 AFIO_MAPR_SPI1_REMAP：bit 0（整个位域） */\nv |= (1u << AFIO_MAPR_SPI1_REMAP_Pos) & AFIO_MAPR_SPI1_REMAP_Msk;  /* 置位，实际取值看参考手册 */\nAFIO->MAPR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2035,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_AFIO_MAPR2",
+      "name": "AFIO_MAPR2",
+      "peripheral": "GPIO",
+      "library": "reg",
+      "sectionId": "GPIO@reg#sec2",
+      "prototype": "AFIO->MAPR2",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Alternate Function I/O",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "AFIO_MAPR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 AFIO_TypeDef.MAPR2，偏移 0x1C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = AFIO->MAPR2;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nAFIO->MAPR2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_GPIO_BRR",
+      "name": "GPIO_BRR",
+      "peripheral": "GPIO",
+      "library": "reg",
+      "sectionId": "GPIO@reg#sec2",
+      "prototype": "GPIOA->BRR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "GPIO_BRR_BR0",
+          "type": "bit 0（整个位域）",
+          "descEn": "Port x Reset bit 0",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BRR_BR1",
+          "type": "bit 1（整个位域）",
+          "descEn": "Port x Reset bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BRR_BR2",
+          "type": "bit 2（整个位域）",
+          "descEn": "Port x Reset bit 2",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BRR_BR3",
+          "type": "bit 3（整个位域）",
+          "descEn": "Port x Reset bit 3",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BRR_BR4",
+          "type": "bit 4（整个位域）",
+          "descEn": "Port x Reset bit 4",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BRR_BR5",
+          "type": "bit 5（整个位域）",
+          "descEn": "Port x Reset bit 5",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BRR_BR6",
+          "type": "bit 6（整个位域）",
+          "descEn": "Port x Reset bit 6",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BRR_BR7",
+          "type": "bit 7（整个位域）",
+          "descEn": "Port x Reset bit 7",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BRR_BR8",
+          "type": "bit 8（整个位域）",
+          "descEn": "Port x Reset bit 8",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BRR_BR9",
+          "type": "bit 9（整个位域）",
+          "descEn": "Port x Reset bit 9",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BRR_BR10",
+          "type": "bit 10（整个位域）",
+          "descEn": "Port x Reset bit 10",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BRR_BR11",
+          "type": "bit 11（整个位域）",
+          "descEn": "Port x Reset bit 11",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BRR_BR12",
+          "type": "bit 12（整个位域）",
+          "descEn": "Port x Reset bit 12",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BRR_BR13",
+          "type": "bit 13（整个位域）",
+          "descEn": "Port x Reset bit 13",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BRR_BR14",
+          "type": "bit 14（整个位域）",
+          "descEn": "Port x Reset bit 14",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BRR_BR15",
+          "type": "bit 15（整个位域）",
+          "descEn": "Port x Reset bit 15",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Port x Reset bit 0",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "GPIO_BRR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 GPIO_TypeDef.BRR，偏移 0x14"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = GPIOA->BRR;  /* 读回当前值 */\nv &= ~GPIO_BRR_BR0_Msk;  /* 先清掉 GPIO_BRR_BR0：bit 0（整个位域） */\nv |= (1u << GPIO_BRR_BR0_Pos) & GPIO_BRR_BR0_Msk;  /* 置位，实际取值看参考手册 */\nGPIOA->BRR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1847,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_GPIO_BSRR",
+      "name": "GPIO_BSRR",
+      "peripheral": "GPIO",
+      "library": "reg",
+      "sectionId": "GPIO@reg#sec2",
+      "prototype": "GPIOA->BSRR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "GPIO_BSRR_BS0",
+          "type": "bit 0（整个位域）",
+          "descEn": "Port x Set bit 0",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BS1",
+          "type": "bit 1（整个位域）",
+          "descEn": "Port x Set bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BS2",
+          "type": "bit 2（整个位域）",
+          "descEn": "Port x Set bit 2",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BS3",
+          "type": "bit 3（整个位域）",
+          "descEn": "Port x Set bit 3",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BS4",
+          "type": "bit 4（整个位域）",
+          "descEn": "Port x Set bit 4",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BS5",
+          "type": "bit 5（整个位域）",
+          "descEn": "Port x Set bit 5",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BS6",
+          "type": "bit 6（整个位域）",
+          "descEn": "Port x Set bit 6",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BS7",
+          "type": "bit 7（整个位域）",
+          "descEn": "Port x Set bit 7",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BS8",
+          "type": "bit 8（整个位域）",
+          "descEn": "Port x Set bit 8",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BS9",
+          "type": "bit 9（整个位域）",
+          "descEn": "Port x Set bit 9",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BS10",
+          "type": "bit 10（整个位域）",
+          "descEn": "Port x Set bit 10",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BS11",
+          "type": "bit 11（整个位域）",
+          "descEn": "Port x Set bit 11",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BS12",
+          "type": "bit 12（整个位域）",
+          "descEn": "Port x Set bit 12",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BS13",
+          "type": "bit 13（整个位域）",
+          "descEn": "Port x Set bit 13",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BS14",
+          "type": "bit 14（整个位域）",
+          "descEn": "Port x Set bit 14",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BS15",
+          "type": "bit 15（整个位域）",
+          "descEn": "Port x Set bit 15",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BR0",
+          "type": "bit 16（整个位域）",
+          "descEn": "Port x Reset bit 0",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BR1",
+          "type": "bit 17（整个位域）",
+          "descEn": "Port x Reset bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BR2",
+          "type": "bit 18（整个位域）",
+          "descEn": "Port x Reset bit 2",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BR3",
+          "type": "bit 19（整个位域）",
+          "descEn": "Port x Reset bit 3",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BR4",
+          "type": "bit 20（整个位域）",
+          "descEn": "Port x Reset bit 4",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BR5",
+          "type": "bit 21（整个位域）",
+          "descEn": "Port x Reset bit 5",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BR6",
+          "type": "bit 22（整个位域）",
+          "descEn": "Port x Reset bit 6",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BR7",
+          "type": "bit 23（整个位域）",
+          "descEn": "Port x Reset bit 7",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BR8",
+          "type": "bit 24（整个位域）",
+          "descEn": "Port x Reset bit 8",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BR9",
+          "type": "bit 25（整个位域）",
+          "descEn": "Port x Reset bit 9",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BR10",
+          "type": "bit 26（整个位域）",
+          "descEn": "Port x Reset bit 10",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BR11",
+          "type": "bit 27（整个位域）",
+          "descEn": "Port x Reset bit 11",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BR12",
+          "type": "bit 28（整个位域）",
+          "descEn": "Port x Reset bit 12",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BR13",
+          "type": "bit 29（整个位域）",
+          "descEn": "Port x Reset bit 13",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BR14",
+          "type": "bit 30（整个位域）",
+          "descEn": "Port x Reset bit 14",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_BSRR_BR15",
+          "type": "bit 31（整个位域）",
+          "descEn": "Port x Reset bit 15",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Port x Set bit 0",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "GPIO_BSRR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 GPIO_TypeDef.BSRR，偏移 0x10"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = GPIOA->BSRR;  /* 读回当前值 */\nv &= ~GPIO_BSRR_BS0_Msk;  /* 先清掉 GPIO_BSRR_BS0：bit 0（整个位域） */\nv |= (1u << GPIO_BSRR_BS0_Pos) & GPIO_BSRR_BS0_Msk;  /* 置位，实际取值看参考手册 */\nGPIOA->BSRR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1748,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_GPIO_CRH",
+      "name": "GPIO_CRH",
+      "peripheral": "GPIO",
+      "library": "reg",
+      "sectionId": "GPIO@reg#sec2",
+      "prototype": "GPIOA->CRH",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "GPIO_CRH_MODE",
+          "type": "0x33333333（整个位域）",
+          "descEn": "Port x mode bits",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRH_MODE8",
+          "type": "bits[1:0]（整个位域）",
+          "descEn": "MODE8[1:0] bits (Port x mode bits, pin 8)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRH_MODE9",
+          "type": "bits[5:4]（整个位域）",
+          "descEn": "MODE9[1:0] bits (Port x mode bits, pin 9)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRH_MODE10",
+          "type": "bits[9:8]（整个位域）",
+          "descEn": "MODE10[1:0] bits (Port x mode bits, pin 10)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRH_MODE11",
+          "type": "bits[13:12]（整个位域）",
+          "descEn": "MODE11[1:0] bits (Port x mode bits, pin 11)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRH_MODE12",
+          "type": "bits[17:16]（整个位域）",
+          "descEn": "MODE12[1:0] bits (Port x mode bits, pin 12)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRH_MODE13",
+          "type": "bits[21:20]（整个位域）",
+          "descEn": "MODE13[1:0] bits (Port x mode bits, pin 13)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRH_MODE14",
+          "type": "bits[25:24]（整个位域）",
+          "descEn": "MODE14[1:0] bits (Port x mode bits, pin 14)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRH_MODE15",
+          "type": "bits[29:28]（整个位域）",
+          "descEn": "MODE15[1:0] bits (Port x mode bits, pin 15)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRH_CNF",
+          "type": "0xCCCCCCCC（整个位域）",
+          "descEn": "Port x configuration bits",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRH_CNF8",
+          "type": "bits[3:2]（整个位域）",
+          "descEn": "CNF8[1:0] bits (Port x configuration bits, pin 8)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRH_CNF9",
+          "type": "bits[7:6]（整个位域）",
+          "descEn": "CNF9[1:0] bits (Port x configuration bits, pin 9)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRH_CNF10",
+          "type": "bits[11:10]（整个位域）",
+          "descEn": "CNF10[1:0] bits (Port x configuration bits, pin 10)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRH_CNF11",
+          "type": "bits[15:14]（整个位域）",
+          "descEn": "CNF11[1:0] bits (Port x configuration bits, pin 11)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRH_CNF12",
+          "type": "bits[19:18]（整个位域）",
+          "descEn": "CNF12[1:0] bits (Port x configuration bits, pin 12)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRH_CNF13",
+          "type": "bits[23:22]（整个位域）",
+          "descEn": "CNF13[1:0] bits (Port x configuration bits, pin 13)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRH_CNF14",
+          "type": "bits[27:26]（整个位域）",
+          "descEn": "CNF14[1:0] bits (Port x configuration bits, pin 14)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRH_CNF15",
+          "type": "bits[31:30]（整个位域）",
+          "descEn": "CNF15[1:0] bits (Port x configuration bits, pin 15)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Port x mode bits",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "GPIO_CRH"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 GPIO_TypeDef.CRH，偏移 0x04"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = GPIOA->CRH;  /* 读回当前值 */\nv &= ~GPIO_CRH_MODE8_Msk;  /* 先清掉 GPIO_CRH_MODE8：bits[1:0]（整个位域） */\nv |= (1u << GPIO_CRH_MODE8_Pos) & GPIO_CRH_MODE8_Msk;  /* 置位，实际取值看参考手册 */\nGPIOA->CRH = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1543,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_GPIO_CRL",
+      "name": "GPIO_CRL",
+      "peripheral": "GPIO",
+      "library": "reg",
+      "sectionId": "GPIO@reg#sec2",
+      "prototype": "GPIOA->CRL",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "GPIO_CRL_MODE",
+          "type": "0x33333333（整个位域）",
+          "descEn": "Port x mode bits",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRL_MODE0",
+          "type": "bits[1:0]（整个位域）",
+          "descEn": "MODE0[1:0] bits (Port x mode bits, pin 0)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRL_MODE1",
+          "type": "bits[5:4]（整个位域）",
+          "descEn": "MODE1[1:0] bits (Port x mode bits, pin 1)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRL_MODE2",
+          "type": "bits[9:8]（整个位域）",
+          "descEn": "MODE2[1:0] bits (Port x mode bits, pin 2)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRL_MODE3",
+          "type": "bits[13:12]（整个位域）",
+          "descEn": "MODE3[1:0] bits (Port x mode bits, pin 3)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRL_MODE4",
+          "type": "bits[17:16]（整个位域）",
+          "descEn": "MODE4[1:0] bits (Port x mode bits, pin 4)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRL_MODE5",
+          "type": "bits[21:20]（整个位域）",
+          "descEn": "MODE5[1:0] bits (Port x mode bits, pin 5)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRL_MODE6",
+          "type": "bits[25:24]（整个位域）",
+          "descEn": "MODE6[1:0] bits (Port x mode bits, pin 6)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRL_MODE7",
+          "type": "bits[29:28]（整个位域）",
+          "descEn": "MODE7[1:0] bits (Port x mode bits, pin 7)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRL_CNF",
+          "type": "0xCCCCCCCC（整个位域）",
+          "descEn": "Port x configuration bits",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRL_CNF0",
+          "type": "bits[3:2]（整个位域）",
+          "descEn": "CNF0[1:0] bits (Port x configuration bits, pin 0)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRL_CNF1",
+          "type": "bits[7:6]（整个位域）",
+          "descEn": "CNF1[1:0] bits (Port x configuration bits, pin 1)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRL_CNF2",
+          "type": "bits[11:10]（整个位域）",
+          "descEn": "CNF2[1:0] bits (Port x configuration bits, pin 2)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRL_CNF3",
+          "type": "bits[15:14]（整个位域）",
+          "descEn": "CNF3[1:0] bits (Port x configuration bits, pin 3)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRL_CNF4",
+          "type": "bits[19:18]（整个位域）",
+          "descEn": "CNF4[1:0] bits (Port x configuration bits, pin 4)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRL_CNF5",
+          "type": "bits[23:22]（整个位域）",
+          "descEn": "CNF5[1:0] bits (Port x configuration bits, pin 5)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRL_CNF6",
+          "type": "bits[27:26]（整个位域）",
+          "descEn": "CNF6[1:0] bits (Port x configuration bits, pin 6)",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_CRL_CNF7",
+          "type": "bits[31:30]（整个位域）",
+          "descEn": "CNF7[1:0] bits (Port x configuration bits, pin 7)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Port x mode bits",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "GPIO_CRL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 GPIO_TypeDef.CRL，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = GPIOA->CRL;  /* 读回当前值 */\nv &= ~GPIO_CRL_MODE0_Msk;  /* 先清掉 GPIO_CRL_MODE0：bits[1:0]（整个位域） */\nv |= (1u << GPIO_CRL_MODE0_Pos) & GPIO_CRL_MODE0_Msk;  /* 置位，实际取值看参考手册 */\nGPIOA->CRL = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1438,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_GPIO_IDR",
+      "name": "GPIO_IDR",
+      "peripheral": "GPIO",
+      "library": "reg",
+      "sectionId": "GPIO@reg#sec1",
+      "prototype": "GPIOA->IDR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "GPIO_IDR_IDR0",
+          "type": "bit 0（整个位域）",
+          "descEn": "Port input data, bit 0",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_IDR_IDR1",
+          "type": "bit 1（整个位域）",
+          "descEn": "Port input data, bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_IDR_IDR2",
+          "type": "bit 2（整个位域）",
+          "descEn": "Port input data, bit 2",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_IDR_IDR3",
+          "type": "bit 3（整个位域）",
+          "descEn": "Port input data, bit 3",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_IDR_IDR4",
+          "type": "bit 4（整个位域）",
+          "descEn": "Port input data, bit 4",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_IDR_IDR5",
+          "type": "bit 5（整个位域）",
+          "descEn": "Port input data, bit 5",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_IDR_IDR6",
+          "type": "bit 6（整个位域）",
+          "descEn": "Port input data, bit 6",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_IDR_IDR7",
+          "type": "bit 7（整个位域）",
+          "descEn": "Port input data, bit 7",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_IDR_IDR8",
+          "type": "bit 8（整个位域）",
+          "descEn": "Port input data, bit 8",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_IDR_IDR9",
+          "type": "bit 9（整个位域）",
+          "descEn": "Port input data, bit 9",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_IDR_IDR10",
+          "type": "bit 10（整个位域）",
+          "descEn": "Port input data, bit 10",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_IDR_IDR11",
+          "type": "bit 11（整个位域）",
+          "descEn": "Port input data, bit 11",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_IDR_IDR12",
+          "type": "bit 12（整个位域）",
+          "descEn": "Port input data, bit 12",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_IDR_IDR13",
+          "type": "bit 13（整个位域）",
+          "descEn": "Port input data, bit 13",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_IDR_IDR14",
+          "type": "bit 14（整个位域）",
+          "descEn": "Port input data, bit 14",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_IDR_IDR15",
+          "type": "bit 15（整个位域）",
+          "descEn": "Port input data, bit 15",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Port input data, bit 0",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "GPIO_IDR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 GPIO_TypeDef.IDR，偏移 0x08"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = GPIOA->IDR;  /* 读回当前值 */\nv &= ~GPIO_IDR_IDR0_Msk;  /* 先清掉 GPIO_IDR_IDR0：bit 0（整个位域） */\nv |= (1u << GPIO_IDR_IDR0_Pos) & GPIO_IDR_IDR0_Msk;  /* 置位，实际取值看参考手册 */\nGPIOA->IDR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1648,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_GPIO_LCKR",
+      "name": "GPIO_LCKR",
+      "peripheral": "GPIO",
+      "library": "reg",
+      "sectionId": "GPIO@reg#sec2",
+      "prototype": "GPIOA->LCKR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "GPIO_LCKR_LCK0",
+          "type": "bit 0（整个位域）",
+          "descEn": "Port x Lock bit 0",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_LCKR_LCK1",
+          "type": "bit 1（整个位域）",
+          "descEn": "Port x Lock bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_LCKR_LCK2",
+          "type": "bit 2（整个位域）",
+          "descEn": "Port x Lock bit 2",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_LCKR_LCK3",
+          "type": "bit 3（整个位域）",
+          "descEn": "Port x Lock bit 3",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_LCKR_LCK4",
+          "type": "bit 4（整个位域）",
+          "descEn": "Port x Lock bit 4",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_LCKR_LCK5",
+          "type": "bit 5（整个位域）",
+          "descEn": "Port x Lock bit 5",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_LCKR_LCK6",
+          "type": "bit 6（整个位域）",
+          "descEn": "Port x Lock bit 6",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_LCKR_LCK7",
+          "type": "bit 7（整个位域）",
+          "descEn": "Port x Lock bit 7",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_LCKR_LCK8",
+          "type": "bit 8（整个位域）",
+          "descEn": "Port x Lock bit 8",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_LCKR_LCK9",
+          "type": "bit 9（整个位域）",
+          "descEn": "Port x Lock bit 9",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_LCKR_LCK10",
+          "type": "bit 10（整个位域）",
+          "descEn": "Port x Lock bit 10",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_LCKR_LCK11",
+          "type": "bit 11（整个位域）",
+          "descEn": "Port x Lock bit 11",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_LCKR_LCK12",
+          "type": "bit 12（整个位域）",
+          "descEn": "Port x Lock bit 12",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_LCKR_LCK13",
+          "type": "bit 13（整个位域）",
+          "descEn": "Port x Lock bit 13",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_LCKR_LCK14",
+          "type": "bit 14（整个位域）",
+          "descEn": "Port x Lock bit 14",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_LCKR_LCK15",
+          "type": "bit 15（整个位域）",
+          "descEn": "Port x Lock bit 15",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_LCKR_LCKK",
+          "type": "bit 16（整个位域）",
+          "descEn": "Lock key",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Port x Lock bit 0",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "GPIO_LCKR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 GPIO_TypeDef.LCKR，偏移 0x18"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = GPIOA->LCKR;  /* 读回当前值 */\nv &= ~GPIO_LCKR_LCK0_Msk;  /* 先清掉 GPIO_LCKR_LCK0：bit 0（整个位域） */\nv |= (1u << GPIO_LCKR_LCK0_Pos) & GPIO_LCKR_LCK0_Msk;  /* 置位，实际取值看参考手册 */\nGPIOA->LCKR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1897,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_GPIO_ODR",
+      "name": "GPIO_ODR",
+      "peripheral": "GPIO",
+      "library": "reg",
+      "sectionId": "GPIO@reg#sec1",
+      "prototype": "GPIOA->ODR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "GPIO_ODR_ODR0",
+          "type": "bit 0（整个位域）",
+          "descEn": "Port output data, bit 0",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_ODR_ODR1",
+          "type": "bit 1（整个位域）",
+          "descEn": "Port output data, bit 1",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_ODR_ODR2",
+          "type": "bit 2（整个位域）",
+          "descEn": "Port output data, bit 2",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_ODR_ODR3",
+          "type": "bit 3（整个位域）",
+          "descEn": "Port output data, bit 3",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_ODR_ODR4",
+          "type": "bit 4（整个位域）",
+          "descEn": "Port output data, bit 4",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_ODR_ODR5",
+          "type": "bit 5（整个位域）",
+          "descEn": "Port output data, bit 5",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_ODR_ODR6",
+          "type": "bit 6（整个位域）",
+          "descEn": "Port output data, bit 6",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_ODR_ODR7",
+          "type": "bit 7（整个位域）",
+          "descEn": "Port output data, bit 7",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_ODR_ODR8",
+          "type": "bit 8（整个位域）",
+          "descEn": "Port output data, bit 8",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_ODR_ODR9",
+          "type": "bit 9（整个位域）",
+          "descEn": "Port output data, bit 9",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_ODR_ODR10",
+          "type": "bit 10（整个位域）",
+          "descEn": "Port output data, bit 10",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_ODR_ODR11",
+          "type": "bit 11（整个位域）",
+          "descEn": "Port output data, bit 11",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_ODR_ODR12",
+          "type": "bit 12（整个位域）",
+          "descEn": "Port output data, bit 12",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_ODR_ODR13",
+          "type": "bit 13（整个位域）",
+          "descEn": "Port output data, bit 13",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_ODR_ODR14",
+          "type": "bit 14（整个位域）",
+          "descEn": "Port output data, bit 14",
+          "descZh": ""
+        },
+        {
+          "name": "GPIO_ODR_ODR15",
+          "type": "bit 15（整个位域）",
+          "descEn": "Port output data, bit 15",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Port output data, bit 0",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "GPIO_ODR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 GPIO_TypeDef.ODR，偏移 0x0C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = GPIOA->ODR;  /* 读回当前值 */\nv &= ~GPIO_ODR_ODR0_Msk;  /* 先清掉 GPIO_ODR_ODR0：bit 0（整个位域） */\nv |= (1u << GPIO_ODR_ODR0_Pos) & GPIO_ODR_ODR0_Msk;  /* 置位，实际取值看参考手册 */\nGPIOA->ODR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1698,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    }
+  ]
+}

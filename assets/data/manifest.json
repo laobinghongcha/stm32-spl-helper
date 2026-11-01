@@ -1,18 +1,31 @@
 {
-  "schemaVersion": 1,
-  "dataVersion": "1.0.0",
+  "schemaVersion": 2,
+  "dataVersion": "2.0.0",
   "splVersion": "STM32F10x_StdPeriph_Lib_V3.5.0",
+  "halVersion": "STM32Cube_FW_F1_V1.8.7",
   "defaultChipId": "stm32f103c8t6",
-  "generatedAt": "2026-10-18T12:08:57+08:00",
-  "generator": "tools/merge_overlay.py",
+  "generatedAt": "2026-10-28T08:24:40+08:00",
+  "generator": "tools/build_multi_lib.py",
   "stats": {
     "peripheralCount": 25,
-    "functionCount": 488,
-    "symbolCount": 7337,
+    "functionCount": 2898,
+    "symbolCount": 12830,
     "apiSymbolCount": 2450,
     "registerSymbolCount": 4887,
     "pinCount": 48,
-    "compileErrorCount": 15
+    "compileErrorCount": 15,
+    "libraryFunctionCounts": {
+      "spl": 488,
+      "hal": 801,
+      "ll": 1137,
+      "reg": 472
+    },
+    "librarySymbolCounts": {
+      "spl": 7337,
+      "hal": 3148,
+      "ll": 1873,
+      "reg": 472
+    }
   },
   "files": {
     "peripherals": "peripherals.json",
@@ -21,6 +34,13 @@
     "registers": "registers.json",
     "pinout": "pinout_f103c8t6.json",
     "compileErrors": "compile_errors.json",
-    "chips": "chips/"
+    "chips": "chips/",
+    "symbolsHal": "symbols_hal.json"
+  },
+  "functionDirs": {
+    "spl": "functions/",
+    "hal": "functions/hal/",
+    "ll": "functions/ll/",
+    "reg": "functions/reg/"
   }
 }

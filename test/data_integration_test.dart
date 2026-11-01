@@ -11,11 +11,13 @@ import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:stm32_spl_helper/data/asset_repository.dart';
 import 'package:stm32_spl_helper/data/search_index.dart';
 import 'package:stm32_spl_helper/models/chip.dart';
 import 'package:stm32_spl_helper/models/compile_error.dart';
 import 'package:stm32_spl_helper/models/function_item.dart';
 import 'package:stm32_spl_helper/models/item_ref.dart';
+import 'package:stm32_spl_helper/models/library_kind.dart';
 import 'package:stm32_spl_helper/models/manifest.dart';
 import 'package:stm32_spl_helper/models/peripheral.dart';
 import 'package:stm32_spl_helper/models/pin.dart';
@@ -34,6 +36,9 @@ Map<String, dynamic> readJson(String relative) {
 }
 
 void main() {
+  // AssetRepository 走 rootBundle 读 assets，需要先初始化 binding。
+  TestWidgetsFlutterBinding.ensureInitialized();
+
   // 数据目录不存在时直接失败，避免"静默跳过"掩盖问题
   setUpAll(() {
     expect(
@@ -81,17 +86,48 @@ void main() {
     });
 
     test('分组里的函数 id 都能在函数文件里找到（无死链）', () {
+      // v2 起每个外设可以有多个库（spl/hal/ll/reg），函数正文分别放在
+      // functions/<库>/<外设>.json 里。所以校验时必须按 section 的 library
+      // 去对应的文件里找，不能一律读 functions/<外设>.json（那是 SPL 的）。
+      final manifest = readJson('manifest.json');
+      final functionDirs =
+          (manifest['functionDirs'] as Map<String, dynamic>? ?? <String, dynamic>{})
+              .map((k, v) => MapEntry(k, v as String));
+      String dirOf(String lib) =>
+          functionDirs[lib] ?? (lib == 'spl' ? 'functions/' : 'functions/$lib/');
+
+      Map<String, dynamic> readBundle(String peripheralId, String lib) {
+        var dir = dirOf(lib);
+        if (dir.endsWith('/')) dir = dir.substring(0, dir.length - 1);
+        try {
+          return readJson('$dir/$peripheralId.json');
+        } on Object {
+          // 该库在这个外设下没有数据文件：返回空包，等价于"没有函数"
+          return <String, dynamic>{'functions': <dynamic>[]};
+        }
+      }
+
       final peripherals = readJson('peripherals.json')['peripherals'] as List;
       for (final raw in peripherals) {
         final p = Peripheral.fromJson(raw as Map<String, dynamic>);
-        final bundle = readJson('functions/${p.id}.json');
-        final ids = {
-          for (final e in bundle['functions'] as List)
-            (e as Map<String, dynamic>)['id'] as String,
-        };
+        // 同一外设的同一库只读一次
+        final bundleCache = <String, Map<String, dynamic>>{};
         for (final sec in p.sections) {
+          final lib = sec.library.raw;
+          final bundle = bundleCache.putIfAbsent(
+            lib,
+            () => readBundle(p.id, lib),
+          );
+          final ids = <String>{
+            for (final e in bundle['functions'] as List)
+              (e as Map<String, dynamic>)['id'] as String,
+          };
           for (final fid in sec.functionIds) {
-            expect(ids, contains(fid), reason: '${p.id} 的分组引用了不存在的 $fid');
+            expect(
+              ids,
+              contains(fid),
+              reason: '${p.id}@$lib 的分组引用了不存在的 $fid',
+            );
           }
         }
       }
@@ -698,6 +734,384 @@ void main() {
       for (final kw in keywords) {
         expect(allText, contains(kw), reason: '缺少对「$kw」的覆盖');
       }
+    });
+  });
+
+  // =========================================================================
+  // v2 四库：数据层的向后兼容与降级
+  //
+  // 这一组测试**同时兼容 v1 与 v2 的 assets/data**：
+  // HAL 数据由 task-1 并行生成，跑测试时目录可能还是 v1。
+  // 所以断言写成"无论哪版都必须成立"的形式：
+  //   - SPL 数据永远可读（v1 就是 SPL）；
+  //   - 不存在的库文件返回空 bundle 而不是抛异常；
+  //   - manifest 版本校验不会把 v1 数据判死。
+  // =========================================================================
+  group('v2 数据层：向后兼容与降级', () {
+    test('manifest 的 schemaVersion 在兼容区间内（v1 也能读）', () {
+      final m = DataManifest.fromJson(readJson('manifest.json'));
+      expect(
+        m.isSchemaCompatible,
+        isTrue,
+        reason: '数据是 v${m.schemaVersion}，代码要求 '
+            'v${DataManifest.minCompatibleSchemaVersion}..'
+            'v${DataManifest.currentSchemaVersion}，不该判为不兼容',
+      );
+      expect(
+        m.schemaVersion,
+        anyOf(1, DataManifest.currentSchemaVersion),
+        reason: 'schemaVersion 只应是 1（旧）或 ${DataManifest.currentSchemaVersion}（新）',
+      );
+    });
+
+    test('每个外设至少有一个可用库（v1 里就是 spl）', () {
+      final peripherals = (readJson('peripherals.json')['peripherals'] as List)
+          .map((e) => Peripheral.fromJson(e as Map<String, dynamic>))
+          .toList();
+      final broken = <String>[];
+      for (final p in peripherals) {
+        // 只关心有函数的那些；纯符号外设本来就没有 sections
+        if (p.functionCount == 0 && p.allFunctionIds.isEmpty) continue;
+        if (p.availableLibraries.isEmpty) broken.add(p.id);
+      }
+      expect(broken, isEmpty,
+          reason: '这些外设解析后一个库都没有，UI 会显示"没有启用的函数库"：$broken');
+    });
+
+    test('v1 数据下 spl 库的元信息能由旧字段包装出来', () {
+      final m = DataManifest.fromJson(readJson('manifest.json'));
+      if (m.schemaVersion >= 2) return; // v2 数据另由下面的用例覆盖
+
+      final peripherals = (readJson('peripherals.json')['peripherals'] as List)
+          .map((e) => Peripheral.fromJson(e as Map<String, dynamic>))
+          .toList();
+      for (final p in peripherals) {
+        final spl = p.libraries[LibraryKind.spl];
+        expect(spl, isNotNull, reason: '${p.id} 的 v1 字段没被包装成 spl 库');
+        expect(spl!.header, p.header, reason: '${p.id} 的 spl.header 应与顶层一致');
+        expect(spl.functionCount, p.functionCount);
+        // v1 的所有 section 都该归到 spl
+        expect(p.sectionsOf(LibraryKind.spl).length, p.sections.length);
+        expect(p.functionIdsOf(LibraryKind.spl), p.allFunctionIds);
+      }
+    });
+
+    test('不存在的库文件：返回空 bundle 而不是抛异常', () async {
+      final repo = AssetRepository();
+      final core = await repo.loadCore();
+
+      // 找一个 v1 下就肯定没 HAL 文件的外设；就算将来数据变成 v2，
+      // 只要该外设的 HAL 函数数为 0，文件就不该存在。
+      final pid = core.peripherals
+          .firstWhere((p) => p.functionCountOf(LibraryKind.hal) == 0)
+          .id;
+
+      final bundle = await repo.loadFunctionsOf(pid, LibraryKind.hal);
+      expect(bundle.functions, isEmpty, reason: '$pid 不该有 HAL 函数');
+      expect(bundle.peripheral, pid);
+      expect(bundle.library, LibraryKind.hal);
+      // 关键：没有抛 AssetLoadException。若回退路径写错（比如退到
+      // functions/），这里会读到 SPL 函数而"看起来有内容"，所以再确认一次
+      expect(bundle.functions.length, 0);
+    });
+
+    test('loadFunctions 等价于 loadFunctionsOf(spl)，且读得到 SPL 函数', () async {
+      final repo = AssetRepository();
+      final core = await repo.loadCore();
+
+      // 找一个真正有 SPL 函数的外设（避免拿到纯符号外设）
+      final pid = core.peripherals
+          .firstWhere((p) => p.functionCountOf(LibraryKind.spl) > 0)
+          .id;
+
+      final legacy = await repo.loadFunctions(pid);
+      final explicit = await repo.loadFunctionsOf(pid, LibraryKind.spl);
+
+      expect(legacy.functions, isNotEmpty,
+          reason: '$pid 的 SPL 函数没读出来，v1 老入口坏了');
+      expect(
+        legacy.functions.map((f) => f.id).toList(),
+        explicit.functions.map((f) => f.id).toList(),
+        reason: 'loadFunctions 与 loadFunctionsOf(spl) 必须同源',
+      );
+      // v1 数据没有 library 字段，解析后应全是 spl
+      expect(
+        legacy.functions.every((f) => f.library == LibraryKind.spl),
+        isTrue,
+      );
+    });
+
+    test('函数缓存按「库:外设」分键，互不覆盖', () async {
+      final repo = AssetRepository();
+      final core = await repo.loadCore();
+      final pid = core.peripherals
+          .firstWhere((p) => p.functionCountOf(LibraryKind.spl) > 0)
+          .id;
+
+      await repo.loadFunctionsOf(pid, LibraryKind.spl);
+      await repo.loadFunctionsOf(pid, LibraryKind.hal);
+      await repo.loadFunctionsOf(pid, LibraryKind.ll);
+
+      expect(repo.hasFunctionsOf(pid, LibraryKind.spl), isTrue);
+      expect(repo.hasFunctionsOf(pid, LibraryKind.hal), isTrue);
+      expect(repo.hasFunctionsOf(pid, LibraryKind.ll), isTrue);
+      // 三个库各占一个缓存位，没有互相覆盖
+      expect(repo.cachedFunctionBundleCount, greaterThanOrEqualTo(3));
+    });
+
+    test('符号的 library 缺省为 spl（v1 数据全部归 spl）', () {
+      final m = DataManifest.fromJson(readJson('manifest.json'));
+      if (m.schemaVersion >= 2) return;
+
+      final symbols = (readJson('symbols.json')['symbols'] as List)
+          .map((e) => SymbolItem.fromJson(e as Map<String, dynamic>));
+      for (final s in symbols) {
+        expect(s.library, LibraryKind.spl, reason: '${s.name} 的库归错了');
+      }
+    });
+
+    test('SplData 的 HAL 符号默认为空，不影响 v1 行为', () {
+      final data = SplData(
+        manifest: DataManifest.fromJson(readJson('manifest.json')),
+        chip: ChipSpec.fromJson(readJson('chips/stm32f103c8t6.json')),
+        peripherals: const <Peripheral>[],
+        functions: const <FunctionItem>[],
+        symbols: const <SymbolItem>[],
+        pinout: PinoutData.fromJson(readJson('pinout_f103c8t6.json')),
+        compileErrors:
+            CompileErrorBundle.fromJson(readJson('compile_errors.json')),
+      );
+      expect(data.halSymbols, isEmpty);
+      expect(data.symbol('GPIO_Mode_Out_PP'), isNull);
+    });
+  });
+
+  // =========================================================================
+  // v2 数据层：四库链路（数据已经是 v2 时才逐项校验）
+  //
+  // 这些断言依赖 task-1 产出的 HAL/LL/reg 文件。数据还是 v1 时用
+  // `return` 跳过——不是"静默通过"，而是明确"这一层还没数据可测"，
+  // 由上面的兼容组保证 v1 下不回归。
+  // =========================================================================
+  group('v2 数据层：四库链路', () {
+    late DataManifest manifest;
+
+    setUpAll(() {
+      manifest = DataManifest.fromJson(readJson('manifest.json'));
+    });
+
+    test('v2 数据：functionDirs 覆盖 spl 且路径真实存在', () {
+      if (manifest.schemaVersion < 2) return;
+
+      for (final lib in LibraryKind.ordered) {
+        final dir = manifest.functionDirOf(lib);
+        final d = Directory('${dataDir.path}/$dir');
+        expect(d.existsSync(), isTrue,
+            reason: 'manifest 声明 ${lib.raw} 的目录是 $dir，但该目录不存在');
+      }
+    });
+
+    test('v2 数据：每个库声明的 functionCount 与文件实际一致', () {
+      if (manifest.schemaVersion < 2) return;
+
+      final peripherals = (readJson('peripherals.json')['peripherals'] as List)
+          .map((e) => Peripheral.fromJson(e as Map<String, dynamic>))
+          .toList();
+
+      final mismatch = <String>[];
+      for (final p in peripherals) {
+        for (final lib in p.availableLibraries) {
+          final file = '${manifest.functionDirOf(lib)}${p.id}.json';
+          final f = File('${dataDir.path}/$file');
+          if (!f.existsSync()) continue; // 该库没实现那个外设
+          final funcs =
+              (jsonDecode(f.readAsStringSync()) as Map<String, dynamic>)['functions']
+                  as List;
+          final declared = p.functionCountOf(lib);
+          if (declared > 0 && declared != funcs.length) {
+            mismatch.add('${p.id}@${lib.raw}: 声明 $declared / 实际 ${funcs.length}');
+          }
+        }
+      }
+      expect(mismatch, isEmpty, reason: '这些库的 functionCount 与实际不符：$mismatch');
+    });
+
+    test('v2 数据：函数 id 全局唯一（跨四库不冲突）', () {
+      if (manifest.schemaVersion < 2) return;
+
+      final seen = <String, String>{};
+      final dup = <String>[];
+      for (final lib in LibraryKind.ordered) {
+        final dir = Directory('${dataDir.path}/${manifest.functionDirOf(lib)}');
+        if (!dir.existsSync()) continue;
+        for (final f in dir.listSync()) {
+          if (f is! File || !f.path.endsWith('.json')) continue;
+          final json =
+              jsonDecode(f.readAsStringSync()) as Map<String, dynamic>;
+          for (final raw in (json['functions'] as List? ?? const <dynamic>[])) {
+            final id = (raw as Map<String, dynamic>)['id'] as String;
+            final prev = seen[id];
+            if (prev != null) {
+              dup.add('$id（$prev 与 ${lib.raw}）');
+            } else {
+              seen[id] = lib.raw;
+            }
+          }
+        }
+      }
+      expect(dup, isEmpty,
+          reason: '函数 id 重复会让 SplData.functionById 互相覆盖：${dup.take(10)}');
+    });
+
+    test('v2 数据：每个函数都标了 library，且与所在目录一致', () {
+      if (manifest.schemaVersion < 2) return;
+
+      final wrong = <String>[];
+      for (final lib in LibraryKind.ordered) {
+        final dir = Directory('${dataDir.path}/${manifest.functionDirOf(lib)}');
+        if (!dir.existsSync()) continue;
+        for (final f in dir.listSync()) {
+          if (f is! File || !f.path.endsWith('.json')) continue;
+          final json =
+              jsonDecode(f.readAsStringSync()) as Map<String, dynamic>;
+          for (final raw in (json['functions'] as List? ?? const <dynamic>[])) {
+            final fn = FunctionItem.fromJson(raw as Map<String, dynamic>);
+            if (fn.library != lib) {
+              wrong.add('${fn.id}: ${fn.library.raw} 却在 ${lib.raw} 目录');
+            }
+          }
+        }
+      }
+      expect(wrong, isEmpty, reason: '目录与 library 字段不一致：${wrong.take(10)}');
+    });
+
+    test('v2 数据：sections 的 id 符合 <外设>@<库>#<序号>（契约 §3）', () {
+      if (manifest.schemaVersion < 2) return;
+
+      final peripherals = (readJson('peripherals.json')['peripherals'] as List)
+          .map((e) => Peripheral.fromJson(e as Map<String, dynamic>))
+          .toList();
+
+      final bad = <String>[];
+      for (final p in peripherals) {
+        for (final sec in p.sections) {
+          final expected = '${p.id}@${sec.library.raw}#';
+          if (!sec.id.startsWith(expected)) bad.add(sec.id);
+          // 从 id 反推的库必须与字段一致
+          expect(LibraryKind.fromSectionId(sec.id), sec.library,
+              reason: '${sec.id} 的 @ 段与 library 字段不一致');
+        }
+      }
+      expect(bad, isEmpty, reason: 'section id 不合规：${bad.take(10)}');
+    });
+
+    test('v2 数据：sections 里的函数 id 都能在对应库文件里找到', () {
+      if (manifest.schemaVersion < 2) return;
+
+      final peripherals = (readJson('peripherals.json')['peripherals'] as List)
+          .map((e) => Peripheral.fromJson(e as Map<String, dynamic>))
+          .toList();
+
+      final dead = <String>[];
+      for (final p in peripherals) {
+        for (final sec in p.sections) {
+          final path =
+              '${manifest.functionDirOf(sec.library)}${p.id}.json';
+          final file = File('${dataDir.path}/$path');
+          if (!file.existsSync()) {
+            dead.add('${p.id}@${sec.library.raw}: 整个函数文件缺失（$path）');
+            continue;
+          }
+          final ids = {
+            for (final raw in (jsonDecode(file.readAsStringSync())
+                    as Map<String, dynamic>)['functions'] as List)
+              (raw as Map<String, dynamic>)['id'] as String,
+          };
+          for (final fid in sec.functionIds) {
+            if (!ids.contains(fid)) dead.add('${sec.id} -> $fid');
+          }
+        }
+      }
+      expect(dead, isEmpty, reason: '分组引用了不存在的函数：${dead.take(10)}');
+    });
+
+    test('v2 数据：SplData 能按库定位每个分区里的函数', () {
+      if (manifest.schemaVersion < 2) return;
+
+      final data = SplData(
+        manifest: manifest,
+        chip: ChipSpec.fromJson(readJson('chips/stm32f103c8t6.json')),
+        peripherals: (readJson('peripherals.json')['peripherals'] as List)
+            .map((e) => Peripheral.fromJson(e as Map<String, dynamic>))
+            .toList(),
+        functions: const <FunctionItem>[],
+        symbols: const <SymbolItem>[],
+        pinout: PinoutData.fromJson(readJson('pinout_f103c8t6.json')),
+        compileErrors:
+            CompileErrorBundle.fromJson(readJson('compile_errors.json')),
+      );
+
+      // 未加载任何函数详情时，仍须能判定 HAL/LL/reg 函数可跳转、
+      // 并知道它们属于哪个外设、哪个库。
+      final broken = <String>[];
+      for (final p in data.peripherals) {
+        for (final sec in p.sections) {
+          for (final fid in sec.functionIds) {
+            if (!data.isKnownFunction(fid)) broken.add('$fid 不可跳转');
+            if (data.peripheralIdOfFunction(fid) != p.id) {
+              broken.add('$fid 定位不到外设 ${p.id}');
+            }
+            if (data.libraryOfFunction(fid) != sec.library) {
+              broken.add('$fid 的库判定错了');
+            }
+          }
+        }
+      }
+      expect(broken, isEmpty, reason: '${broken.take(10)}');
+    });
+
+    test('v2 数据：symbols_hal.json 可读且符号 id 唯一', () {
+      if (manifest.schemaVersion < 2) return;
+
+      final path = manifest.fileOf('symbolsHal', fallback: 'symbols_hal.json');
+      final f = File('${dataDir.path}/$path');
+      expect(f.existsSync(), isTrue, reason: 'manifest 声明了 $path 但文件不存在');
+
+      final bundle = SymbolBundle.fromJson(
+        jsonDecode(f.readAsStringSync()) as Map<String, dynamic>,
+      );
+      expect(bundle.symbols, isNotEmpty);
+
+      final seen = <String>{};
+      final dup = <String>[];
+      for (final s in bundle.symbols) {
+        // v2.0.1 起 id 允许是「库限定 id」——当 HAL/LL 与 SPL 定义同名但
+        // 成员完全不同的类型时（GPIO_InitTypeDef 的 Pin/Mode/Pull/Speed
+        // vs GPIO_Pin/GPIO_Speed/GPIO_Mode），必须保留两者且能区分，
+        // 于是 HAL 那份的 id 记作 GPIO_InitTypeDef@hal，name 仍是原名。
+        final isQualified = s.id == '${s.name}@${s.library.raw}';
+        expect(
+          isQualified || s.id == s.name,
+          isTrue,
+          reason: 'symbols_hal 里 id 既不是 name 也不是 name@lib：'
+              'id=${s.id} name=${s.name} lib=${s.library.raw}',
+        );
+        if (!seen.add(s.id)) dup.add(s.id);
+        // 只允许 hal / ll 两类
+        expect(
+          s.library,
+          anyOf(LibraryKind.hal, LibraryKind.ll),
+          reason: '${s.name} 的库是 ${s.library.raw}，symbols_hal 里只该有 hal/ll',
+        );
+      }
+      expect(dup, isEmpty, reason: 'symbols_hal 的 id 重复：${dup.take(10)}');
+
+      // 库限定 id 必须确实带有库后缀，别写成别的形状
+      final badSuffix = bundle.symbols
+          .where((s) => s.id != s.name && !s.id.endsWith('@${s.library.raw}'))
+          .map((s) => s.id)
+          .toList();
+      expect(badSuffix, isEmpty, reason: '库限定 id 的后缀与 library 不符：$badSuffix');
     });
   });
 }

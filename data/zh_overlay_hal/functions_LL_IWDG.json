@@ -1,0 +1,70 @@
+{
+  "LL_IWDG_DisableWriteAccess": {
+    "briefZh": "关闭 IWDG 的寄存器写访问。",
+    "paramsZh": {
+      "IWDGx": "独立看门狗实例指针（F1 上固定是 IWDG）。"
+    }
+  },
+  "LL_IWDG_Enable": {
+    "briefZh": "使能独立看门狗（写 0xCCCC 到 KR）。调用后立即开始计数，必须按时喂狗。",
+    "paramsZh": {
+      "IWDGx": "独立看门狗实例指针（F1 上固定是 IWDG）。"
+    }
+  },
+  "LL_IWDG_EnableWriteAccess": {
+    "briefZh": "打开 IWDG 的寄存器写访问（PR/RLR 才能改）。",
+    "paramsZh": {
+      "IWDGx": "独立看门狗实例指针（F1 上固定是 IWDG）。"
+    }
+  },
+  "LL_IWDG_GetPrescaler": {
+    "briefZh": "读取 IWDG 当前预分频值。",
+    "paramsZh": {
+      "IWDGx": "独立看门狗实例指针（F1 上固定是 IWDG）。"
+    }
+  },
+  "LL_IWDG_GetReloadCounter": {
+    "briefZh": "读取 IWDG 的重装载值。",
+    "paramsZh": {
+      "IWDGx": "独立看门狗实例指针（F1 上固定是 IWDG）。"
+    }
+  },
+  "LL_IWDG_IsActiveFlag_PVU": {
+    "briefZh": "查询 IWDG 的预分频更新进行中标志位是否置位。",
+    "paramsZh": {
+      "IWDGx": "独立看门狗实例指针（F1 上固定是 IWDG）。"
+    }
+  },
+  "LL_IWDG_IsActiveFlag_RVU": {
+    "briefZh": "查询 IWDG 的重装载值更新进行中标志位是否置位。",
+    "paramsZh": {
+      "IWDGx": "独立看门狗实例指针（F1 上固定是 IWDG）。"
+    }
+  },
+  "LL_IWDG_IsReady": {
+    "briefZh": "查询 IWDG 的 PR/RLR 更新是否完成（PVU/RVU 标志）。",
+    "paramsZh": {
+      "IWDGx": "独立看门狗实例指针（F1 上固定是 IWDG）。"
+    }
+  },
+  "LL_IWDG_ReloadCounter": {
+    "briefZh": "喂狗：把重装载值装入计数器（写 0xAAAA 到 KR）。",
+    "paramsZh": {
+      "IWDGx": "独立看门狗实例指针（F1 上固定是 IWDG）。"
+    }
+  },
+  "LL_IWDG_SetPrescaler": {
+    "briefZh": "设置 IWDG 预分频。只在 IWDG 尚未启动时有效。",
+    "paramsZh": {
+      "IWDGx": "独立看门狗实例指针（F1 上固定是 IWDG）。",
+      "Prescaler": "预分频值。计数频率 = 输入时钟 / (Prescaler + 1)。"
+    }
+  },
+  "LL_IWDG_SetReloadCounter": {
+    "briefZh": "设置 IWDG 的重装载值（决定超时时间）。",
+    "paramsZh": {
+      "Counter": "计数器数值（CNT）。",
+      "IWDGx": "独立看门狗实例指针（F1 上固定是 IWDG）。"
+    }
+  }
+}

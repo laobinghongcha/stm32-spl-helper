@@ -1,0 +1,244 @@
+{
+  "HAL_ADCEx_Calibration_Start": {
+    "briefZh": "启动 ADC 自校准。必须在 ADC 已停止（未 Start 或已 Stop）时调用，校准耗时几十个 ADC 周期；每次上电做一次即可，不做的话精度会明显偏差。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    },
+    "exampleCode": "/* 必须在 ADC 停止时做，上电后一次即可 */\nHAL_ADCEx_Calibration_Start(&hadc1);\n\n/* 不做校准的话读数偏差明显 */"
+  },
+  "HAL_ADCEx_InjectedConfigChannel": {
+    "briefZh": "配置注入组的通道、排序与采样时间。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。",
+      "sConfigInjected": "注入组配置结构体：InjectedChannel、InjectedRank、InjectedSamplingTime、InjectedOffset、InjectedNbrOfConversion。"
+    }
+  },
+  "HAL_ADCEx_InjectedConvCpltCallback": {
+    "briefZh": "注入组转换完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADCEx_InjectedGetValue": {
+    "briefZh": "读取注入组的转换结果。",
+    "paramsZh": {
+      "InjectedRank": "注入组中的排序位置，取 ADC_INJECTED_RANK_1 ~ 4。",
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADCEx_InjectedPollForConversion": {
+    "briefZh": "轮询等待注入组转换完成，带超时。",
+    "paramsZh": {
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADCEx_InjectedStart": {
+    "briefZh": "启动注入组转换（不阻塞）。注入组优先级高于规则组，可打断规则组。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADCEx_InjectedStart_IT": {
+    "briefZh": "以中断方式启动注入组转换，完成后进注入组回调。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADCEx_InjectedStop": {
+    "briefZh": "停止注入组转换。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADCEx_InjectedStop_IT": {
+    "briefZh": "停止注入组转换并关闭其中断。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADCEx_MultiModeConfigChannel": {
+    "briefZh": "启用多重 ADC 模式并配置相关参数（双 ADC 交替 / 同步等）。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。",
+      "multimode": "多重 ADC 模式：ADC_MULTIMODE_MODE_INDEPENDENT / REGSIMULT / INTERLACED 等。"
+    }
+  },
+  "HAL_ADCEx_MultiModeGetValue": {
+    "briefZh": "读取多重模式下主从 ADC 的规则组转换结果。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADCEx_MultiModeStart_DMA": {
+    "briefZh": "以 DMA 方式启动多重 ADC 模式下的规则组转换。",
+    "paramsZh": {
+      "Length": "DMA 传输的数据长度。",
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_ADCEx_MultiModeStop_DMA": {
+    "briefZh": "停止多重 ADC 模式下的 DMA 转换。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADC_AnalogWDGConfig": {
+    "briefZh": "配置模拟看门狗：监视通道范围与上下阈值，越界时触发回调。",
+    "paramsZh": {
+      "AnalogWDGConfig": "模拟看门狗配置结构体：WatchdogNumber、Channel、HighThreshold、LowThreshold、WatchdogMode、ITMode。",
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADC_ConfigChannel": {
+    "briefZh": "配置指定通道并挂到对应的组（规则组或注入组）。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。",
+      "sConfig": "ADC 通道配置结构体：Channel、Rank（在序列中的次序）、SamplingTime（采样时间）。"
+    },
+    "exampleCode": "ADC_ChannelConfTypeDef sConfig = {0};\n\nsConfig.Channel      = ADC_CHANNEL_0;\nsConfig.Rank         = ADC_REGULAR_RANK_1;\nsConfig.SamplingTime = ADC_SAMPLETIME_239CYCLES_5;  /* 高阻抗源要加大 */\nif (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)\n{\n  Error_Handler();\n}"
+  },
+  "HAL_ADC_ConvCpltCallback": {
+    "briefZh": "转换完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADC_ConvHalfCpltCallback": {
+    "briefZh": "转换过半回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADC_DeInit": {
+    "briefZh": "把 ADC 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADC_ErrorCallback": {
+    "briefZh": "错误回调（__weak 空实现，需自己重写）。溢出、噪声、帧错误等异常会走到这里。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADC_GetError": {
+    "briefZh": "读取 ADC 累计的错误码位掩码。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADC_GetState": {
+    "briefZh": "读取 ADC 的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADC_GetValue": {
+    "briefZh": "读取最近一次转换结果。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADC_IRQHandler": {
+    "briefZh": "ADC 的中断统一入口。在 stm32f1xx_it.c 的对应 IRQHandler 里调用，内部会清标志并分派到各回调。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADC_Init": {
+    "briefZh": "按 InitTypeDef 中的参数初始化 ADC，并完成状态机初始化。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADC_LevelOutOfWindowCallback": {
+    "briefZh": "模拟看门狗越界回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADC_MspDeInit": {
+    "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADC_MspInit": {
+    "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADC_PollForConversion": {
+    "briefZh": "轮询等待规则组转换完成，带超时。",
+    "paramsZh": {
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADC_PollForEvent": {
+    "briefZh": "轮询等待指定转换事件，带超时。",
+    "paramsZh": {
+      "EventType": "要等待的转换事件类型（如 HAL_ADC_EVENT_EOS 规则组转换结束）。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADC_RegisterCallback": {
+    "briefZh": "为 ADC 注册指定事件的回调，替代默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。",
+      "pCallback": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+    }
+  },
+  "HAL_ADC_Start": {
+    "briefZh": "启动 ADC 并开始规则组转换（不阻塞）。需要结果时配合 HAL_ADC_PollForConversion 或回调。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    },
+    "exampleCode": "HAL_ADC_Start(&hadc1);\n\n/* 等转换完成（超时 10ms） */\nif (HAL_ADC_PollForConversion(&hadc1, 10) == HAL_OK)\n{\n  uint32_t raw = HAL_ADC_GetValue(&hadc1);\n  /* 12 位满量程 4095 对应 VDDA（通常 3.3V） */\n  float volt = raw * 3.3f / 4095.0f;\n}\n\nHAL_ADC_Stop(&hadc1);"
+  },
+  "HAL_ADC_Start_DMA": {
+    "briefZh": "启动规则组转换并用 DMA 搬运结果，适合多通道连续采样。",
+    "paramsZh": {
+      "Length": "DMA 传输的数据长度。",
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    },
+    "exampleCode": "uint16_t adc_buf[4];   /* 4 个通道 */\n\n/* 启动转换并让 DMA 自动搬运结果 */\nHAL_ADC_Start_DMA(&hadc1, (uint32_t *)adc_buf, 4);\n\nvoid HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)\n{\n  /* adc_buf 里已经是 4 个通道的新数据 */\n}"
+  },
+  "HAL_ADC_Start_IT": {
+    "briefZh": "启动规则组转换并以中断方式通知完成（EOC）。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADC_Stop": {
+    "briefZh": "停止规则组转换并关闭 ADC。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADC_Stop_DMA": {
+    "briefZh": "停止转换并关闭 DMA。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADC_Stop_IT": {
+    "briefZh": "停止规则组转换并关闭转换结束中断。",
+    "paramsZh": {
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  },
+  "HAL_ADC_UnRegisterCallback": {
+    "briefZh": "注销 ADC 已注册的回调，恢复成默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "hadc": "ADC 句柄指针，Instance 指向 ADC1。"
+    }
+  }
+}

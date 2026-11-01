@@ -1,0 +1,484 @@
+{
+  "LL_GPIO_AF_ConfigEventout": {
+    "briefZh": "配置 EVENTOUT 信号从哪个端口与引脚输出。"
+  },
+  "LL_GPIO_AF_Connect_FSMCNADV": {
+    "briefZh": "把 FSMC_NADV 信号接到对应引脚（部分型号可选是否使用该信号）。"
+  },
+  "LL_GPIO_AF_DisableEventout": {
+    "briefZh": "关闭 AFIO 的事件输出（EVENTOUT）。"
+  },
+  "LL_GPIO_AF_DisableRemap_ADC1_ETRGINJ": {
+    "briefZh": "关闭 ADC1_ETRGINJ 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_ADC1_ETRGREG": {
+    "briefZh": "关闭 ADC1_ETRGREG 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_ADC2_ETRGINJ": {
+    "briefZh": "关闭 ADC2_ETRGINJ 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_ADC2_ETRGREG": {
+    "briefZh": "关闭 ADC2_ETRGREG 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_CAN2": {
+    "briefZh": "关闭 CAN2 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_CEC": {
+    "briefZh": "关闭 CEC 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_ETH": {
+    "briefZh": "关闭 ETH 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_ETH_PTP_PPS": {
+    "briefZh": "关闭 ETH_PTP_PPS 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_I2C1": {
+    "briefZh": "关闭 I2C1 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_MISC": {
+    "briefZh": "关闭 MISC 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_PD01": {
+    "briefZh": "关闭 PD01 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_SPI1": {
+    "briefZh": "关闭 SPI1 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_SPI3": {
+    "briefZh": "关闭 SPI3 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_SWJ": {
+    "briefZh": "关闭 SWJ 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_TIM1": {
+    "briefZh": "关闭 TIM1 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_TIM10": {
+    "briefZh": "关闭 TIM10 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_TIM11": {
+    "briefZh": "关闭 TIM11 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_TIM12": {
+    "briefZh": "关闭 TIM12 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_TIM13": {
+    "briefZh": "关闭 TIM13 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_TIM14": {
+    "briefZh": "关闭 TIM14 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_TIM15": {
+    "briefZh": "关闭 TIM15 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_TIM16": {
+    "briefZh": "关闭 TIM16 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_TIM17": {
+    "briefZh": "关闭 TIM17 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_TIM1DMA": {
+    "briefZh": "关闭 TIM1DMA 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_TIM2": {
+    "briefZh": "关闭 TIM2 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_TIM3": {
+    "briefZh": "关闭 TIM3 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_TIM4": {
+    "briefZh": "关闭 TIM4 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_TIM5CH4": {
+    "briefZh": "关闭 TIM5CH4 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_TIM67DACDMA": {
+    "briefZh": "关闭 TIM67DACDMA 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_TIM9": {
+    "briefZh": "关闭 TIM9 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_USART1": {
+    "briefZh": "关闭 USART1 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_USART2": {
+    "briefZh": "关闭 USART2 的重映射。"
+  },
+  "LL_GPIO_AF_DisableRemap_USART3": {
+    "briefZh": "关闭 USART3 的重映射。"
+  },
+  "LL_GPIO_AF_Disconnect_FSMCNADV": {
+    "briefZh": "断开 FSMC_NADV 信号与引脚的连接。"
+  },
+  "LL_GPIO_AF_EnableEventout": {
+    "briefZh": "使能 AFIO 的事件输出（EVENTOUT）。"
+  },
+  "LL_GPIO_AF_EnableRemap_ADC1_ETRGINJ": {
+    "briefZh": "使能 ADC1_ETRGINJ 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_ADC1_ETRGREG": {
+    "briefZh": "使能 ADC1_ETRGREG 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_ADC2_ETRGINJ": {
+    "briefZh": "使能 ADC2_ETRGINJ 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_ADC2_ETRGREG": {
+    "briefZh": "使能 ADC2_ETRGREG 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_CAN2": {
+    "briefZh": "使能 CAN2 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_CEC": {
+    "briefZh": "使能 CEC 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_ETH": {
+    "briefZh": "使能 ETH 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_ETH_PTP_PPS": {
+    "briefZh": "使能 ETH_PTP_PPS 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_I2C1": {
+    "briefZh": "使能 I2C1 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_MISC": {
+    "briefZh": "使能 MISC 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_PD01": {
+    "briefZh": "使能 PD01 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_SPI1": {
+    "briefZh": "使能 SPI1 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_SPI3": {
+    "briefZh": "使能 SPI3 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_SWJ": {
+    "briefZh": "使能 SWJ 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_TIM1": {
+    "briefZh": "使能 TIM1 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_TIM10": {
+    "briefZh": "使能 TIM10 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_TIM11": {
+    "briefZh": "使能 TIM11 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_TIM12": {
+    "briefZh": "使能 TIM12 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_TIM13": {
+    "briefZh": "使能 TIM13 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_TIM14": {
+    "briefZh": "使能 TIM14 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_TIM15": {
+    "briefZh": "使能 TIM15 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_TIM16": {
+    "briefZh": "使能 TIM16 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_TIM17": {
+    "briefZh": "使能 TIM17 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_TIM1DMA": {
+    "briefZh": "使能 TIM1DMA 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_TIM2": {
+    "briefZh": "使能 TIM2 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_TIM3": {
+    "briefZh": "使能 TIM3 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_TIM4": {
+    "briefZh": "使能 TIM4 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_TIM5CH4": {
+    "briefZh": "使能 TIM5CH4 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_TIM67DACDMA": {
+    "briefZh": "使能 TIM67DACDMA 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_TIM9": {
+    "briefZh": "使能 TIM9 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_USART1": {
+    "briefZh": "使能 USART1 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_USART2": {
+    "briefZh": "使能 USART2 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_EnableRemap_USART3": {
+    "briefZh": "使能 USART3 的重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_GetEXTISource": {
+    "briefZh": "读取某条 EXTI 线当前绑定的输入端口。",
+    "paramsZh": {
+      "Line": "EXTI 线号，取 LL_EXTI_LINE_0 等。"
+    }
+  },
+  "LL_GPIO_AF_IsEnabledRemap_ADC1_ETRGINJ": {
+    "briefZh": "查询 ADC1_ETRGINJ 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_ADC1_ETRGREG": {
+    "briefZh": "查询 ADC1_ETRGREG 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_ADC2_ETRGINJ": {
+    "briefZh": "查询 ADC2_ETRGINJ 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_ADC2_ETRGREG": {
+    "briefZh": "查询 ADC2_ETRGREG 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_CAN2": {
+    "briefZh": "查询 CAN2 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_CEC": {
+    "briefZh": "查询 CEC 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_ETH": {
+    "briefZh": "查询 ETH 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_I2C1": {
+    "briefZh": "查询 I2C1 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_MISC": {
+    "briefZh": "查询 MISC 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_PD01": {
+    "briefZh": "查询 PD01 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_SPI1": {
+    "briefZh": "查询 SPI1 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_SPI3": {
+    "briefZh": "查询 SPI3 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_TIM10": {
+    "briefZh": "查询 TIM10 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_TIM11": {
+    "briefZh": "查询 TIM11 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_TIM12": {
+    "briefZh": "查询 TIM12 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_TIM13": {
+    "briefZh": "查询 TIM13 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_TIM14": {
+    "briefZh": "查询 TIM14 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_TIM15": {
+    "briefZh": "查询 TIM15 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_TIM16": {
+    "briefZh": "查询 TIM16 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_TIM17": {
+    "briefZh": "查询 TIM17 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_TIM1DMA": {
+    "briefZh": "查询 TIM1DMA 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_TIM4": {
+    "briefZh": "查询 TIM4 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_TIM5CH4": {
+    "briefZh": "查询 TIM5CH4 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_TIM67DACDMA": {
+    "briefZh": "查询 TIM67DACDMA 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_TIM9": {
+    "briefZh": "查询 TIM9 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_USART1": {
+    "briefZh": "查询 USART1 是否已重映射。"
+  },
+  "LL_GPIO_AF_IsEnabledRemap_USART2": {
+    "briefZh": "查询 USART2 是否已重映射。"
+  },
+  "LL_GPIO_AF_RemapPartial1_CAN1": {
+    "briefZh": "使能 CAN1 的部分重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_RemapPartial1_TIM2": {
+    "briefZh": "使能 TIM2 的部分重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_RemapPartial2_CAN1": {
+    "briefZh": "使能 CAN1 的部分重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_RemapPartial2_TIM2": {
+    "briefZh": "使能 TIM2 的部分重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_RemapPartial3_CAN1": {
+    "briefZh": "使能 CAN1 的部分重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_RemapPartial_TIM1": {
+    "briefZh": "使能 TIM1 的部分重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_RemapPartial_TIM3": {
+    "briefZh": "使能 TIM3 的部分重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_RemapPartial_USART3": {
+    "briefZh": "使能 USART3 的部分重映射（AFIO_MAPR）。"
+  },
+  "LL_GPIO_AF_Remap_SWJ_NOJTAG": {
+    "briefZh": "设置 SWJ_NOJTAG 的重映射。"
+  },
+  "LL_GPIO_AF_Remap_SWJ_NONJTRST": {
+    "briefZh": "设置 SWJ_NONJTRST 的重映射。"
+  },
+  "LL_GPIO_AF_Remap_TIM2ITR1_TO_ETH": {
+    "briefZh": "把 TIM2_ITR1 内部映射到以太网作为 PPS 信号源。"
+  },
+  "LL_GPIO_AF_Remap_TIM2ITR1_TO_USB": {
+    "briefZh": "把 TIM2_ITR1 内部映射到 USB 作为 SOF 信号源。"
+  },
+  "LL_GPIO_AF_Select_ETH_MII": {
+    "briefZh": "把以太网 MAC 配置为 MII 接口。仅带以太网的型号有效。"
+  },
+  "LL_GPIO_AF_Select_ETH_RMII": {
+    "briefZh": "把以太网 MAC 配置为 RMII 接口。仅带以太网的型号有效。"
+  },
+  "LL_GPIO_AF_SetEXTISource": {
+    "briefZh": "配置某条 EXTI 线的输入来源端口（AFIO_EXTICRx）。同一线号只能绑一个端口。",
+    "paramsZh": {
+      "Line": "EXTI 线号，取 LL_EXTI_LINE_0 等。",
+      "Port": "端口编号，取 LL_GPIO_PORT_SOURCE_GPIOA 等。"
+    }
+  },
+  "LL_GPIO_GetPinMode": {
+    "briefZh": "读取 GPIO 的引脚模式。",
+    "paramsZh": {
+      "GPIOx": "GPIO 端口指针，如 GPIOA / GPIOB / GPIOC。",
+      "Pin": "引脚号掩码，取 LL_GPIO_PIN_0 ~ LL_GPIO_PIN_15，可位或一次指定多个。"
+    }
+  },
+  "LL_GPIO_GetPinOutputType": {
+    "briefZh": "读取 GPIO 的引脚输出类型（推挽/开漏）。",
+    "paramsZh": {
+      "GPIOx": "GPIO 端口指针，如 GPIOA / GPIOB / GPIOC。",
+      "Pin": "引脚号掩码，取 LL_GPIO_PIN_0 ~ LL_GPIO_PIN_15，可位或一次指定多个。"
+    }
+  },
+  "LL_GPIO_GetPinPull": {
+    "briefZh": "读取 GPIO 的引脚上拉/下拉。",
+    "paramsZh": {
+      "GPIOx": "GPIO 端口指针，如 GPIOA / GPIOB / GPIOC。",
+      "Pin": "引脚号掩码，取 LL_GPIO_PIN_0 ~ LL_GPIO_PIN_15，可位或一次指定多个。"
+    }
+  },
+  "LL_GPIO_GetPinSpeed": {
+    "briefZh": "读取 GPIO 的引脚输出速度。",
+    "paramsZh": {
+      "GPIOx": "GPIO 端口指针，如 GPIOA / GPIOB / GPIOC。",
+      "Pin": "引脚号掩码，取 LL_GPIO_PIN_0 ~ LL_GPIO_PIN_15，可位或一次指定多个。"
+    }
+  },
+  "LL_GPIO_IsAnyPinLocked": {
+    "briefZh": "查询该端口是否有任一引脚已被锁定。",
+    "paramsZh": {
+      "GPIOx": "GPIO 端口指针，如 GPIOA / GPIOB / GPIOC。"
+    }
+  },
+  "LL_GPIO_IsInputPinSet": {
+    "briefZh": "查询 GPIO 的输入引脚是否为高电平。",
+    "paramsZh": {
+      "GPIOx": "GPIO 端口指针，如 GPIOA / GPIOB / GPIOC。",
+      "PinMask": "引脚掩码，可位或一次指定多个引脚。"
+    }
+  },
+  "LL_GPIO_IsOutputPinSet": {
+    "briefZh": "查询 GPIO 的输出引脚是否为高电平。",
+    "paramsZh": {
+      "GPIOx": "GPIO 端口指针，如 GPIOA / GPIOB / GPIOC。",
+      "PinMask": "引脚掩码，可位或一次指定多个引脚。"
+    }
+  },
+  "LL_GPIO_IsPinLocked": {
+    "briefZh": "查询指定引脚是否已被锁定。",
+    "paramsZh": {
+      "GPIOx": "GPIO 端口指针，如 GPIOA / GPIOB / GPIOC。",
+      "PinMask": "引脚掩码，可位或一次指定多个引脚。"
+    }
+  },
+  "LL_GPIO_LockPin": {
+    "briefZh": "锁定指定引脚的配置，直到下次复位前都无法再修改。",
+    "paramsZh": {
+      "GPIOx": "GPIO 端口指针，如 GPIOA / GPIOB / GPIOC。",
+      "PinMask": "引脚掩码，可位或一次指定多个引脚。"
+    }
+  },
+  "LL_GPIO_ReadInputPort": {
+    "briefZh": "读整个输入数据寄存器（IDR），返回该端口全部 16 个引脚的当前电平。",
+    "paramsZh": {
+      "GPIOx": "GPIO 端口指针，如 GPIOA / GPIOB / GPIOC。"
+    }
+  },
+  "LL_GPIO_ReadOutputPort": {
+    "briefZh": "读整个输出数据寄存器（ODR），返回当前设定的输出电平（不是引脚实际电平）。",
+    "paramsZh": {
+      "GPIOx": "GPIO 端口指针，如 GPIOA / GPIOB / GPIOC。"
+    }
+  },
+  "LL_GPIO_ResetOutputPin": {
+    "briefZh": "把指定引脚置低（写 BRR 寄存器，单次写、原子操作）。",
+    "paramsZh": {
+      "GPIOx": "GPIO 端口指针，如 GPIOA / GPIOB / GPIOC。",
+      "PinMask": "引脚掩码，可位或一次指定多个引脚。"
+    }
+  },
+  "LL_GPIO_SetOutputPin": {
+    "briefZh": "把指定引脚置高（写 BSRR 的置位位，单次写、原子操作）。",
+    "paramsZh": {
+      "GPIOx": "GPIO 端口指针，如 GPIOA / GPIOB / GPIOC。",
+      "PinMask": "引脚掩码，可位或一次指定多个引脚。"
+    }
+  },
+  "LL_GPIO_SetPinMode": {
+    "briefZh": "设置 GPIO 的引脚模式。",
+    "paramsZh": {
+      "GPIOx": "GPIO 端口指针，如 GPIOA / GPIOB / GPIOC。",
+      "Mode": "模式取值，如 LL_GPIO_MODE_OUTPUT / LL_GPIO_MODE_INPUT / LL_GPIO_MODE_ALTERNATE / LL_GPIO_MODE_ANALOG。",
+      "Pin": "引脚号掩码，取 LL_GPIO_PIN_0 ~ LL_GPIO_PIN_15，可位或一次指定多个。"
+    }
+  },
+  "LL_GPIO_SetPinOutputType": {
+    "briefZh": "设置 GPIO 的引脚输出类型（推挽/开漏）。",
+    "paramsZh": {
+      "GPIOx": "GPIO 端口指针，如 GPIOA / GPIOB / GPIOC。",
+      "OutputType": "输出类型：LL_GPIO_OUTPUT_PUSHPULL（推挽）或 LL_GPIO_OUTPUT_OPENDRAIN（开漏）。",
+      "Pin": "引脚号掩码，取 LL_GPIO_PIN_0 ~ LL_GPIO_PIN_15，可位或一次指定多个。"
+    }
+  },
+  "LL_GPIO_SetPinPull": {
+    "briefZh": "设置 GPIO 的引脚上拉/下拉。",
+    "paramsZh": {
+      "GPIOx": "GPIO 端口指针，如 GPIOA / GPIOB / GPIOC。",
+      "Pin": "引脚号掩码，取 LL_GPIO_PIN_0 ~ LL_GPIO_PIN_15，可位或一次指定多个。",
+      "Pull": "上下拉：LL_GPIO_PULL_UP / LL_GPIO_PULL_DOWN / LL_GPIO_PULL_NOPULL。"
+    }
+  },
+  "LL_GPIO_SetPinSpeed": {
+    "briefZh": "设置 GPIO 的引脚输出速度。",
+    "paramsZh": {
+      "GPIOx": "GPIO 端口指针，如 GPIOA / GPIOB / GPIOC。",
+      "Pin": "引脚号掩码，取 LL_GPIO_PIN_0 ~ LL_GPIO_PIN_15，可位或一次指定多个。",
+      "Speed": "输出速度：LL_GPIO_SPEED_FREQ_LOW / MEDIUM / HIGH（对应 2/10/50MHz）。"
+    }
+  },
+  "LL_GPIO_TogglePin": {
+    "briefZh": "翻转指定引脚的输出电平（读 ODR 后异或写回，非原子操作）。",
+    "paramsZh": {
+      "GPIOx": "GPIO 端口指针，如 GPIOA / GPIOB / GPIOC。",
+      "PinMask": "引脚掩码，可位或一次指定多个引脚。"
+    }
+  },
+  "LL_GPIO_WriteOutputPort": {
+    "briefZh": "直接写整个输出数据寄存器（ODR），一次设定该端口全部 16 个引脚。写 1 输出高、写 0 输出低。",
+    "paramsZh": {
+      "GPIOx": "GPIO 端口指针，如 GPIOA / GPIOB / GPIOC。"
+    }
+  }
+}

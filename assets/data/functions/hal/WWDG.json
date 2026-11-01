@@ -1,0 +1,393 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "WWDG",
+  "library": "hal",
+  "functions": [
+    {
+      "id": "HAL_WWDG_Init",
+      "name": "HAL_WWDG_Init",
+      "peripheral": "WWDG",
+      "library": "hal",
+      "sectionId": "WWDG@hal#sec1",
+      "prototype": "HAL_StatusTypeDef     HAL_WWDG_Init(WWDG_HandleTypeDef *hwwdg);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hwwdg",
+          "type": "WWDG_HandleTypeDef *",
+          "descEn": "pointer to a WWDG_HandleTypeDef structure that contains the configuration information for the specified WWDG module.",
+          "descZh": "WWDG 句柄，Init 里 Prescaler（1/2/4/8 分频）、Window（窗口值，喂狗时计数值必须小于它）、Counter（初始计数值）、EWIMode（是否开早期唤醒中断）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Initialize the WWDG according to the specified. parameters in the WWDG_InitTypeDef of associated handle.",
+      "briefZh": "按 WWDG_InitTypeDef 初始化窗口看门狗（预分频、窗口值、初始计数值、EWI 中断）。",
+      "usageZh": "WWDG 是「窗口」看门狗：喂狗太早也会复位，用来发现「程序跑得异常快」（比如某个循环失控、任务被跳过）。它挂在 APB1 上，时钟来自 PCLK1，所以主时钟跑偏时它也跟着偏——这是它不如 IWDG 可靠的地方，但换来了「喂早了也报警」的能力。",
+      "prerequisites": [
+        "已调用 __HAL_RCC_WWDG_CLK_ENABLE() 使能 WWDG 时钟"
+      ],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_WWDG_EarlyWakeupCallback",
+        "HAL_WWDG_MspInit"
+      ],
+      "remarks": [],
+      "notesZh": [
+        "喂狗必须落在「计数值 < Window」且「计数值 > 0x40」的窗口内；太早（计数值还大于 Window）会直接复位",
+        "计数器是 7 位，值降到 0x3F 时触发复位，所以有效窗口是 0x40~0x7F",
+        "PCLK1=36MHz 时，Prescaler=8 的计数周期约 910ns，据此估算超时",
+        "EWI 早期唤醒中断在计数值降到 0x40 时触发，可以在中断里做紧急保存，然后等复位"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "WWDG_HandleTypeDef",
+        "WWDG_InitTypeDef",
+        "HAL_ERROR",
+        "IS_WWDG_PRESCALER",
+        "IS_WWDG_WINDOW",
+        "IS_WWDG_COUNTER",
+        "IS_WWDG_EWI_MODE",
+        "EwiCallback",
+        "MspInitCallback",
+        "HAL_OK"
+      ],
+      "headerLine": 258,
+      "definedIn": "stm32f1xx_hal_wwdg.h",
+      "sourceLine": 175,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_WWDG_MspInit",
+      "name": "HAL_WWDG_MspInit",
+      "peripheral": "WWDG",
+      "library": "hal",
+      "sectionId": "WWDG@hal#sec1",
+      "prototype": "void                  HAL_WWDG_MspInit(WWDG_HandleTypeDef *hwwdg);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hwwdg",
+          "type": "WWDG_HandleTypeDef *",
+          "descEn": "pointer to a WWDG_HandleTypeDef structure that contains the configuration information for the specified WWDG module.",
+          "descZh": "WWDG 句柄指针。Init 里 Prescaler/Window/Counter/EWIMode 决定窗口与超时。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Initialize the WWDG MSP.",
+      "briefZh": "WWDG 的底层初始化回调，__weak 空实现，用于放时钟使能和 NVIC 配置。",
+      "usageZh": "CubeMX 会把 __HAL_RCC_WWDG_CLK_ENABLE() 和 NVIC 配置生成在这里。手写代码时要么重写它，要么在调用 HAL_WWDG_Init 前自己开时钟。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "When rewriting this function in user file, mechanism may be added to avoid multiple initialize when HAL_WWDG_Init function is called again to change parameters."
+      ],
+      "notesZh": [
+        "写成 static 会导致链接到 HAL 的空实现，时钟就永远开不了——这是很常见的踩坑点"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "WWDG_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 259,
+      "definedIn": "stm32f1xx_hal_wwdg.h",
+      "sourceLine": 229,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_WWDG_RegisterCallback",
+      "name": "HAL_WWDG_RegisterCallback",
+      "peripheral": "WWDG",
+      "library": "hal",
+      "sectionId": "WWDG@hal#sec1",
+      "prototype": "HAL_StatusTypeDef     HAL_WWDG_RegisterCallback(WWDG_HandleTypeDef *hwwdg, HAL_WWDG_CallbackIDTypeDef CallbackID, pWWDG_CallbackTypeDef pCallback);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hwwdg",
+          "type": "WWDG_HandleTypeDef *",
+          "descEn": "WWDG handle",
+          "descZh": "WWDG 句柄。"
+        },
+        {
+          "name": "CallbackID",
+          "type": "HAL_WWDG_CallbackIDTypeDef",
+          "descEn": "ID of the callback to be registered This parameter can be one of the following values:",
+          "descZh": "回调类型，如 HAL_WWDG_EARLYWAKEUP_CB_ID。"
+        },
+        {
+          "name": "pCallback",
+          "type": "pWWDG_CallbackTypeDef",
+          "descEn": "pointer to the Callback function",
+          "descZh": "回调函数指针，签名 void (*)(WWDG_HandleTypeDef *hwwdg)。"
+        }
+      ],
+      "returnDescEn": "status",
+      "returnDescZh": "",
+      "briefEn": "Register a User WWDG Callback To be used instead of the weak (surcharged) predefined callback",
+      "briefZh": "为 WWDG 注册回调函数。",
+      "usageZh": "想在不重写 __weak 函数的前提下挂钩子时用，适合把看门狗逻辑封装进独立模块。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "WWDG_HandleTypeDef",
+        "HAL_WWDG_CallbackIDTypeDef",
+        "pWWDG_CallbackTypeDef",
+        "HAL_OK",
+        "HAL_ERROR",
+        "HAL_WWDG_EWI_CB_ID",
+        "EwiCallback",
+        "MspInitCallback"
+      ],
+      "headerLine": 262,
+      "definedIn": "stm32f1xx_hal_wwdg.h",
+      "sourceLine": 252,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_WWDG_UnRegisterCallback",
+      "name": "HAL_WWDG_UnRegisterCallback",
+      "peripheral": "WWDG",
+      "library": "hal",
+      "sectionId": "WWDG@hal#sec1",
+      "prototype": "HAL_StatusTypeDef     HAL_WWDG_UnRegisterCallback(WWDG_HandleTypeDef *hwwdg, HAL_WWDG_CallbackIDTypeDef CallbackID);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hwwdg",
+          "type": "WWDG_HandleTypeDef *",
+          "descEn": "WWDG handle",
+          "descZh": "WWDG 句柄。"
+        },
+        {
+          "name": "CallbackID",
+          "type": "HAL_WWDG_CallbackIDTypeDef",
+          "descEn": "ID of the callback to be registered This parameter can be one of the following values:",
+          "descZh": "要注销的回调类型。"
+        }
+      ],
+      "returnDescEn": "status",
+      "returnDescZh": "",
+      "briefEn": "Unregister a WWDG Callback WWDG Callback is redirected to the weak (surcharged) predefined callback",
+      "briefZh": "注销 WWDG 回调，恢复默认空实现。",
+      "usageZh": "模块卸载或恢复默认行为时用；传 HAL_WWDG_EARLYWAKEUP_CB_ID 只注销对应那一个。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_WWDG_EarlyWakeupCallback",
+        "HAL_WWDG_MspInit"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "WWDG_HandleTypeDef",
+        "HAL_WWDG_CallbackIDTypeDef",
+        "HAL_OK",
+        "HAL_WWDG_EWI_CB_ID",
+        "EwiCallback",
+        "MspInitCallback",
+        "HAL_ERROR"
+      ],
+      "headerLine": 264,
+      "definedIn": "stm32f1xx_hal_wwdg.h",
+      "sourceLine": 293,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_WWDG_Refresh",
+      "name": "HAL_WWDG_Refresh",
+      "peripheral": "WWDG",
+      "library": "hal",
+      "sectionId": "WWDG@hal#sec2",
+      "prototype": "HAL_StatusTypeDef     HAL_WWDG_Refresh(WWDG_HandleTypeDef *hwwdg);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hwwdg",
+          "type": "WWDG_HandleTypeDef *",
+          "descEn": "pointer to a WWDG_HandleTypeDef structure that contains the configuration information for the specified WWDG module.",
+          "descZh": "WWDG 句柄。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Refresh the WWDG.",
+      "briefZh": "喂窗口看门狗，把计数值重装为 Counter。",
+      "usageZh": "必须在窗口期内调用。太早（当前计数值 > Window）或太晚（已降到 0x3F）都会触发复位，这是 WWDG 与 IWDG 最大的用法差异。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "首次喂狗前要确保计数值已经降到 Window 以下，否则会立刻复位",
+        "喂狗点最好放在固定节拍的任务里，让「喂狗时机」本身成为程序时序是否正常的判据"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "WWDG_HandleTypeDef",
+        "HAL_OK"
+      ],
+      "headerLine": 275,
+      "definedIn": "stm32f1xx_hal_wwdg.h",
+      "sourceLine": 342,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_WWDG_IRQHandler",
+      "name": "HAL_WWDG_IRQHandler",
+      "peripheral": "WWDG",
+      "library": "hal",
+      "sectionId": "WWDG@hal#sec2",
+      "prototype": "void                  HAL_WWDG_IRQHandler(WWDG_HandleTypeDef *hwwdg);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "hwwdg",
+          "type": "WWDG_HandleTypeDef *",
+          "descEn": "pointer to a WWDG_HandleTypeDef structure that contains the configuration information for the specified WWDG module.",
+          "descZh": "WWDG 句柄。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Handle WWDG interrupt request.",
+      "briefZh": "WWDG 早期唤醒中断的统一入口，清标志后调用 HAL_WWDG_EarlyWakeupCallback。",
+      "usageZh": "在 WWDG_IRQHandler 里调用。中断里适合做紧急收尾（把关键数据写进 Flash 或备份寄存器），因为紧接着就会复位。",
+      "prerequisites": [
+        "初始化时 EWIMode 打开，并在 NVIC 使能 WWDG_IRQn"
+      ],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_WWDG_EarlyWakeupCallback"
+      ],
+      "remarks": [
+        "The Early Wakeup Interrupt (EWI) can be used if specific safety operations or data logging must be performed before the actual reset is generated. The EWI interrupt is enabled by calling HAL_WWDG_Init function with EWIMode set to WWDG_EWI_ENABLE. When the downcounter reaches the value 0x40, and EWI interrupt is generated and the corresponding Interrupt Service Routine (ISR) can be used to trigger specific actions (such as communications or data logging), before resetting the device."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "WWDG_HandleTypeDef",
+        "WWDG_EWI_ENABLE",
+        "__HAL_WWDG_GET_IT_SOURCE",
+        "WWDG_IT_EWI",
+        "__HAL_WWDG_GET_FLAG",
+        "WWDG_FLAG_EWIF",
+        "__HAL_WWDG_CLEAR_FLAG",
+        "EwiCallback"
+      ],
+      "headerLine": 276,
+      "definedIn": "stm32f1xx_hal_wwdg.h",
+      "sourceLine": 365,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_WWDG_EarlyWakeupCallback",
+      "name": "HAL_WWDG_EarlyWakeupCallback",
+      "peripheral": "WWDG",
+      "library": "hal",
+      "sectionId": "WWDG@hal#sec2",
+      "prototype": "void                  HAL_WWDG_EarlyWakeupCallback(WWDG_HandleTypeDef *hwwdg);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hwwdg",
+          "type": "WWDG_HandleTypeDef *",
+          "descEn": "pointer to a WWDG_HandleTypeDef structure that contains the configuration information for the specified WWDG module.",
+          "descZh": "WWDG 句柄指针。Init 里 Prescaler/Window/Counter/EWIMode 决定窗口与超时。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "WWDG Early Wakeup callback.",
+      "briefZh": "WWDG 早期唤醒中断的用户回调，__weak 空实现，需自己重写。",
+      "usageZh": "在窗口看门狗即将复位前（计数值到 0x40）被调用，是保存现场的最后机会。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "回调在中断上下文，只能做很短的写寄存器操作",
+        "不要在这里喂狗试图逃避复位——能进这个回调说明时序已经出问题了"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "WWDG_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 277,
+      "definedIn": "stm32f1xx_hal_wwdg.h",
+      "sourceLine": 394,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

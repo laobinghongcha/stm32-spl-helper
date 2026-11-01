@@ -1,0 +1,965 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "CEC",
+  "library": "hal",
+  "functions": [
+    {
+      "id": "HAL_CEC_Init",
+      "name": "HAL_CEC_Init",
+      "peripheral": "CEC",
+      "library": "hal",
+      "sectionId": "CEC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_CEC_Init(CEC_HandleTypeDef *hcec);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcec",
+          "type": "CEC_HandleTypeDef *",
+          "descEn": "CEC handle",
+          "descZh": "CEC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Initializes the CEC mode according to the specified parameters in the CEC_InitTypeDef and creates the associated handle .",
+      "briefZh": "按 InitTypeDef 中的参数初始化 CEC，并完成状态机初始化。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_CEC_TxCpltCallback",
+        "HAL_CEC_RxCpltCallback",
+        "HAL_CEC_ErrorCallback",
+        "HAL_CEC_MspInit",
+        "HAL_RCC_GetPCLK1Freq"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CEC_HandleTypeDef",
+        "CEC_InitTypeDef",
+        "HAL_ERROR",
+        "IS_CEC_BIT_TIMING_ERROR_MODE",
+        "IS_CEC_BIT_PERIOD_ERROR_MODE",
+        "IS_CEC_ADDRESS",
+        "HAL_CEC_STATE_RESET",
+        "HAL_UNLOCKED",
+        "TxCpltCallback",
+        "MspInitCallback",
+        "__HAL_CEC_DISABLE",
+        "__HAL_CEC_ENABLE_IT",
+        "CEC_IT_IE",
+        "__HAL_CEC_ENABLE",
+        "HAL_CEC_ERROR_NONE",
+        "HAL_OK"
+      ],
+      "headerLine": 424,
+      "definedIn": "stm32f1xx_hal_cec.h",
+      "sourceLine": 182,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CEC_DeInit",
+      "name": "HAL_CEC_DeInit",
+      "peripheral": "CEC",
+      "library": "hal",
+      "sectionId": "CEC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_CEC_DeInit(CEC_HandleTypeDef *hcec);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcec",
+          "type": "CEC_HandleTypeDef *",
+          "descEn": "CEC handle",
+          "descZh": "CEC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "DeInitializes the CEC peripheral",
+      "briefZh": "把 CEC 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_CEC_MspDeInit"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CEC_HandleTypeDef",
+        "HAL_ERROR",
+        "__HAL_RCC_CEC_FORCE_RESET",
+        "__HAL_RCC_CEC_RELEASE_RESET",
+        "HAL_CEC_ERROR_NONE",
+        "HAL_CEC_STATE_RESET",
+        "__HAL_UNLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 425,
+      "definedIn": "stm32f1xx_hal_cec.h",
+      "sourceLine": 255,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CEC_SetDeviceAddress",
+      "name": "HAL_CEC_SetDeviceAddress",
+      "peripheral": "CEC",
+      "library": "hal",
+      "sectionId": "CEC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_CEC_SetDeviceAddress(CEC_HandleTypeDef *hcec, uint16_t CEC_OwnAddress);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcec",
+          "type": "CEC_HandleTypeDef *",
+          "descEn": "CEC handle",
+          "descZh": "CEC 句柄指针。"
+        },
+        {
+          "name": "CEC_OwnAddress",
+          "type": "uint16_t",
+          "descEn": "The CEC own address.",
+          "descZh": "本机逻辑地址（0x00~0x0E）。CEC 总线上每个设备必须有唯一地址。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Initializes the Own Address of the CEC device",
+      "briefZh": "设置 CEC 的本机逻辑地址。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CEC_HandleTypeDef",
+        "IS_CEC_OWN_ADDRESS",
+        "__HAL_LOCK",
+        "__HAL_CEC_DISABLE",
+        "CEC_OWN_ADDRESS_NONE",
+        "HAL_CEC_ERROR_NONE",
+        "__HAL_UNLOCK",
+        "__HAL_CEC_ENABLE",
+        "HAL_OK",
+        "HAL_BUSY"
+      ],
+      "headerLine": 426,
+      "definedIn": "stm32f1xx_hal_cec.h",
+      "sourceLine": 301,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CEC_MspInit",
+      "name": "HAL_CEC_MspInit",
+      "peripheral": "CEC",
+      "library": "hal",
+      "sectionId": "CEC@hal#sec1",
+      "prototype": "void HAL_CEC_MspInit(CEC_HandleTypeDef *hcec);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hcec",
+          "type": "CEC_HandleTypeDef *",
+          "descEn": "CEC handle",
+          "descZh": "CEC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "CEC MSP Init",
+      "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "CEC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 427,
+      "definedIn": "stm32f1xx_hal_cec.h",
+      "sourceLine": 347,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CEC_MspDeInit",
+      "name": "HAL_CEC_MspDeInit",
+      "peripheral": "CEC",
+      "library": "hal",
+      "sectionId": "CEC@hal#sec1",
+      "prototype": "void HAL_CEC_MspDeInit(CEC_HandleTypeDef *hcec);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hcec",
+          "type": "CEC_HandleTypeDef *",
+          "descEn": "CEC handle",
+          "descZh": "CEC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "CEC MSP DeInit",
+      "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "CEC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 428,
+      "definedIn": "stm32f1xx_hal_cec.h",
+      "sourceLine": 361,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CEC_RegisterCallback",
+      "name": "HAL_CEC_RegisterCallback",
+      "peripheral": "CEC",
+      "library": "hal",
+      "sectionId": "CEC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_CEC_RegisterCallback(CEC_HandleTypeDef *hcec, HAL_CEC_CallbackIDTypeDef CallbackID, pCEC_CallbackTypeDef pCallback);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcec",
+          "type": "CEC_HandleTypeDef *",
+          "descEn": "CEC handle",
+          "descZh": "CEC 句柄指针。"
+        },
+        {
+          "name": "CallbackID",
+          "type": "HAL_CEC_CallbackIDTypeDef",
+          "descEn": "ID of the callback to be registered This parameter can be one of the following values:",
+          "descZh": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。"
+        },
+        {
+          "name": "pCallback",
+          "type": "pCEC_CallbackTypeDef",
+          "descEn": "pointer to the Callback function",
+          "descZh": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Register a User CEC Callback To be used instead of the weak predefined callback",
+      "briefZh": "为 CEC 注册指定事件的回调，替代默认的 __weak 空实现。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CEC_HandleTypeDef",
+        "HAL_CEC_CallbackIDTypeDef",
+        "pCEC_CallbackTypeDef",
+        "HAL_OK",
+        "HAL_CEC_ERROR_INVALID_CALLBACK",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "HAL_CEC_TX_CPLT_CB_ID",
+        "TxCpltCallback",
+        "MspInitCallback",
+        "HAL_CEC_STATE_RESET",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 431,
+      "definedIn": "stm32f1xx_hal_cec.h",
+      "sourceLine": 383,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CEC_UnRegisterCallback",
+      "name": "HAL_CEC_UnRegisterCallback",
+      "peripheral": "CEC",
+      "library": "hal",
+      "sectionId": "CEC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_CEC_UnRegisterCallback(CEC_HandleTypeDef *hcec, HAL_CEC_CallbackIDTypeDef CallbackID);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcec",
+          "type": "CEC_HandleTypeDef *",
+          "descEn": "uart handle",
+          "descZh": "CEC 句柄指针。"
+        },
+        {
+          "name": "CallbackID",
+          "type": "HAL_CEC_CallbackIDTypeDef",
+          "descEn": "ID of the callback to be unregistered This parameter can be one of the following values:",
+          "descZh": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。"
+        }
+      ],
+      "returnDescEn": "status",
+      "returnDescZh": "",
+      "briefEn": "Unregister an CEC Callback CEC callback is redirected to the weak predefined callback",
+      "briefZh": "注销 CEC 已注册的回调，恢复成默认的 __weak 空实现。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_CEC_TxCpltCallback",
+        "HAL_CEC_ErrorCallback",
+        "HAL_CEC_MspInit",
+        "HAL_CEC_MspDeInit"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CEC_HandleTypeDef",
+        "HAL_CEC_CallbackIDTypeDef",
+        "HAL_OK",
+        "__HAL_LOCK",
+        "HAL_CEC_TX_CPLT_CB_ID",
+        "TxCpltCallback",
+        "MspInitCallback",
+        "HAL_CEC_ERROR_INVALID_CALLBACK",
+        "HAL_ERROR",
+        "HAL_CEC_STATE_RESET",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 433,
+      "definedIn": "stm32f1xx_hal_cec.h",
+      "sourceLine": 471,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CEC_RegisterRxCpltCallback",
+      "name": "HAL_CEC_RegisterRxCpltCallback",
+      "peripheral": "CEC",
+      "library": "hal",
+      "sectionId": "CEC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_CEC_RegisterRxCpltCallback(CEC_HandleTypeDef *hcec, pCEC_RxCallbackTypeDef pCallback);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcec",
+          "type": "CEC_HandleTypeDef *",
+          "descEn": "CEC handle",
+          "descZh": "CEC 句柄指针。"
+        },
+        {
+          "name": "pCallback",
+          "type": "pCEC_RxCallbackTypeDef",
+          "descEn": "pointer to the Rx transfer compelete Callback function",
+          "descZh": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Register CEC RX complete Callback To be used instead of the weak HAL_CEC_RxCpltCallback() predefined callback",
+      "briefZh": "注册接收完成回调。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CEC_HandleTypeDef",
+        "pCEC_RxCallbackTypeDef",
+        "HAL_OK",
+        "HAL_CEC_ERROR_INVALID_CALLBACK",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 435,
+      "definedIn": "stm32f1xx_hal_cec.h",
+      "sourceLine": 547,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CEC_UnRegisterRxCpltCallback",
+      "name": "HAL_CEC_UnRegisterRxCpltCallback",
+      "peripheral": "CEC",
+      "library": "hal",
+      "sectionId": "CEC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_CEC_UnRegisterRxCpltCallback(CEC_HandleTypeDef *hcec);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcec",
+          "type": "CEC_HandleTypeDef *",
+          "descEn": "CEC handle",
+          "descZh": "CEC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "UnRegister CEC RX complete Callback CEC RX complete Callback is redirected to the weak HAL_CEC_RxCpltCallback() predefined callback",
+      "briefZh": "注销接收完成回调。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_CEC_RxCpltCallback"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CEC_HandleTypeDef",
+        "HAL_OK",
+        "__HAL_LOCK",
+        "HAL_CEC_ERROR_INVALID_CALLBACK",
+        "HAL_ERROR",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 436,
+      "definedIn": "stm32f1xx_hal_cec.h",
+      "sourceLine": 583,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CEC_Transmit_IT",
+      "name": "HAL_CEC_Transmit_IT",
+      "peripheral": "CEC",
+      "library": "hal",
+      "sectionId": "CEC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_CEC_Transmit_IT(CEC_HandleTypeDef *hcec, uint8_t InitiatorAddress, uint8_t DestinationAddress, const uint8_t *pData, uint32_t Size);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcec",
+          "type": "CEC_HandleTypeDef *",
+          "descEn": "CEC handle",
+          "descZh": "CEC 句柄指针。"
+        },
+        {
+          "name": "InitiatorAddress",
+          "type": "uint8_t",
+          "descEn": "Initiator address",
+          "descZh": "发起方的逻辑地址（本机地址）。"
+        },
+        {
+          "name": "DestinationAddress",
+          "type": "uint8_t",
+          "descEn": "destination logical address",
+          "descZh": "目标逻辑地址：0x00~0x0E，0x0F 表示广播。"
+        },
+        {
+          "name": "pData",
+          "type": "const uint8_t *",
+          "descEn": "pointer to input byte data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint32_t",
+          "descEn": "amount of data to be sent in bytes (without counting the header). 0 means only the header is sent (ping operation). Maximum TX size is 15 bytes (1 opcode and up to 14 operands).",
+          "descZh": "数据长度（字节数）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Send data in interrupt mode",
+      "briefZh": "以中断方式发送一批数据，非阻塞。发送完成进 TxCpltCallback。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CEC_HandleTypeDef",
+        "HAL_ERROR",
+        "IS_CEC_ADDRESS",
+        "IS_CEC_MSGSIZE",
+        "__HAL_LOCK",
+        "HAL_CEC_ERROR_NONE",
+        "CEC_INITIATOR_LSB_POS",
+        "__HAL_UNLOCK",
+        "CEC_FLAG_TSOM",
+        "CEC_FLAG_TEOM",
+        "HAL_OK",
+        "HAL_BUSY"
+      ],
+      "headerLine": 447,
+      "definedIn": "stm32f1xx_hal_cec.h",
+      "sourceLine": 657,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CEC_GetLastReceivedFrameSize",
+      "name": "HAL_CEC_GetLastReceivedFrameSize",
+      "peripheral": "CEC",
+      "library": "hal",
+      "sectionId": "CEC@hal#sec2",
+      "prototype": "uint32_t HAL_CEC_GetLastReceivedFrameSize(const CEC_HandleTypeDef *hcec);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hcec",
+          "type": "const CEC_HandleTypeDef *",
+          "descEn": "CEC handle",
+          "descZh": "CEC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "Frame size",
+      "returnDescZh": "",
+      "briefEn": "Get size of the received frame.",
+      "briefZh": "读取最近一帧接收到的字节数。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "CEC_HandleTypeDef"
+      ],
+      "headerLine": 449,
+      "definedIn": "stm32f1xx_hal_cec.h",
+      "sourceLine": 714,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CEC_ChangeRxBuffer",
+      "name": "HAL_CEC_ChangeRxBuffer",
+      "peripheral": "CEC",
+      "library": "hal",
+      "sectionId": "CEC@hal#sec2",
+      "prototype": "void HAL_CEC_ChangeRxBuffer(CEC_HandleTypeDef *hcec, uint8_t *Rxbuffer);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "hcec",
+          "type": "CEC_HandleTypeDef *",
+          "descEn": "CEC handle",
+          "descZh": "CEC 句柄指针。"
+        },
+        {
+          "name": "Rxbuffer",
+          "type": "uint8_t *",
+          "descEn": "Rx Buffer",
+          "descZh": "新的接收缓冲区指针。切换缓冲后后续收到的帧写到这里。"
+        }
+      ],
+      "returnDescEn": "Frame size",
+      "returnDescZh": "",
+      "briefEn": "Change Rx Buffer.",
+      "briefZh": "切换接收缓冲区，并指定新缓冲区的期望长度。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "This function can be called only inside the HAL_CEC_RxCpltCallback()"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "CEC_HandleTypeDef"
+      ],
+      "headerLine": 450,
+      "definedIn": "stm32f1xx_hal_cec.h",
+      "sourceLine": 726,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CEC_IRQHandler",
+      "name": "HAL_CEC_IRQHandler",
+      "peripheral": "CEC",
+      "library": "hal",
+      "sectionId": "CEC@hal#sec2",
+      "prototype": "void HAL_CEC_IRQHandler(CEC_HandleTypeDef *hcec);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "hcec",
+          "type": "CEC_HandleTypeDef *",
+          "descEn": "CEC handle",
+          "descZh": "CEC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "This function handles CEC interrupt requests.",
+      "briefZh": "CEC 的中断统一入口。在 stm32f1xx_it.c 的对应 IRQHandler 里调用，内部会清标志并分派到各回调。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_CEC_ErrorCallback"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "CEC_HandleTypeDef",
+        "HAL_IS_BIT_SET",
+        "CEC_FLAG_TERR",
+        "__HAL_CEC_CLEAR_FLAG",
+        "CEC_FLAG_RERR",
+        "CEC_FLAG_TBTRF",
+        "CEC_FLAG_RBTF"
+      ],
+      "headerLine": 451,
+      "definedIn": "stm32f1xx_hal_cec.h",
+      "sourceLine": 736,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CEC_TxCpltCallback",
+      "name": "HAL_CEC_TxCpltCallback",
+      "peripheral": "CEC",
+      "library": "hal",
+      "sectionId": "CEC@hal#sec2",
+      "prototype": "void HAL_CEC_TxCpltCallback(CEC_HandleTypeDef *hcec);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hcec",
+          "type": "CEC_HandleTypeDef *",
+          "descEn": "CEC handle",
+          "descZh": "CEC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Tx Transfer completed callback",
+      "briefZh": "发送完成回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "CEC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 452,
+      "definedIn": "stm32f1xx_hal_cec.h",
+      "sourceLine": 798,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CEC_RxCpltCallback",
+      "name": "HAL_CEC_RxCpltCallback",
+      "peripheral": "CEC",
+      "library": "hal",
+      "sectionId": "CEC@hal#sec2",
+      "prototype": "void HAL_CEC_RxCpltCallback(CEC_HandleTypeDef *hcec, uint32_t RxFrameSize);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hcec",
+          "type": "CEC_HandleTypeDef *",
+          "descEn": "CEC handle",
+          "descZh": "CEC 句柄指针。"
+        },
+        {
+          "name": "RxFrameSize",
+          "type": "uint32_t",
+          "descEn": "Size of frame",
+          "descZh": "本帧实际收到的字节数。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Rx Transfer completed callback",
+      "briefZh": "接收完成回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "CEC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 453,
+      "definedIn": "stm32f1xx_hal_cec.h",
+      "sourceLine": 813,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CEC_ErrorCallback",
+      "name": "HAL_CEC_ErrorCallback",
+      "peripheral": "CEC",
+      "library": "hal",
+      "sectionId": "CEC@hal#sec2",
+      "prototype": "void HAL_CEC_ErrorCallback(CEC_HandleTypeDef *hcec);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hcec",
+          "type": "CEC_HandleTypeDef *",
+          "descEn": "CEC handle",
+          "descZh": "CEC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "CEC error callbacks",
+      "briefZh": "错误回调（__weak 空实现，需自己重写）。溢出、噪声、帧错误等异常会走到这里。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "CEC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 454,
+      "definedIn": "stm32f1xx_hal_cec.h",
+      "sourceLine": 828,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CEC_GetState",
+      "name": "HAL_CEC_GetState",
+      "peripheral": "CEC",
+      "library": "hal",
+      "sectionId": "CEC@hal#sec3",
+      "prototype": "HAL_CEC_StateTypeDef HAL_CEC_GetState(const CEC_HandleTypeDef *hcec);",
+      "returnType": "HAL_CEC_StateTypeDef",
+      "params": [
+        {
+          "name": "hcec",
+          "type": "const CEC_HandleTypeDef *",
+          "descEn": "pointer to a CEC_HandleTypeDef structure that contains the configuration information for the specified CEC module.",
+          "descZh": "CEC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL state",
+      "returnDescZh": "",
+      "briefEn": "return the CEC state",
+      "briefZh": "读取 CEC 的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_CEC_StateTypeDef",
+        "CEC_HandleTypeDef"
+      ],
+      "headerLine": 464,
+      "definedIn": "stm32f1xx_hal_cec.h",
+      "sourceLine": 860,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CEC_GetError",
+      "name": "HAL_CEC_GetError",
+      "peripheral": "CEC",
+      "library": "hal",
+      "sectionId": "CEC@hal#sec3",
+      "prototype": "uint32_t HAL_CEC_GetError(const CEC_HandleTypeDef *hcec);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hcec",
+          "type": "const CEC_HandleTypeDef *",
+          "descEn": "pointer to a CEC_HandleTypeDef structure that contains the configuration information for the specified CEC.",
+          "descZh": "CEC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "CEC Error Code",
+      "returnDescZh": "",
+      "briefEn": "Return the CEC error code",
+      "briefZh": "读取 CEC 累计的错误码位掩码。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "CEC_HandleTypeDef"
+      ],
+      "headerLine": 465,
+      "definedIn": "stm32f1xx_hal_cec.h",
+      "sourceLine": 876,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

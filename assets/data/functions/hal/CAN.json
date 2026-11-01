@@ -1,0 +1,2001 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "CAN",
+  "library": "hal",
+  "functions": [
+    {
+      "id": "HAL_CAN_Init",
+      "name": "HAL_CAN_Init",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_CAN_Init(CAN_HandleTypeDef *hcan);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Initializes the CAN peripheral according to the specified parameters in the CAN_InitStruct.",
+      "briefZh": "按 InitTypeDef 中的参数初始化 CAN，并完成状态机初始化。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_CAN_RxFifo0MsgPendingCallback",
+        "HAL_CAN_RxFifo0FullCallback",
+        "HAL_CAN_RxFifo1MsgPendingCallback",
+        "HAL_CAN_RxFifo1FullCallback",
+        "HAL_CAN_TxMailbox0CompleteCallback",
+        "HAL_CAN_TxMailbox1CompleteCallback",
+        "HAL_CAN_TxMailbox2CompleteCallback",
+        "HAL_CAN_TxMailbox0AbortCallback",
+        "HAL_CAN_TxMailbox1AbortCallback",
+        "HAL_CAN_TxMailbox2AbortCallback",
+        "HAL_CAN_SleepCallback",
+        "HAL_CAN_WakeUpFromRxMsgCallback",
+        "HAL_CAN_ErrorCallback",
+        "HAL_CAN_MspInit",
+        "HAL_GetTick"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CAN_HandleTypeDef",
+        "HAL_ERROR",
+        "IS_CAN_MODE",
+        "IS_CAN_SJW",
+        "IS_CAN_BS1",
+        "IS_CAN_BS2",
+        "IS_CAN_PRESCALER",
+        "HAL_CAN_STATE_RESET",
+        "TxMailbox0CompleteCallback",
+        "MspInitCallback",
+        "HAL_CAN_ERROR_TIMEOUT",
+        "HAL_CAN_ERROR_NONE",
+        "HAL_OK"
+      ],
+      "headerLine": 649,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 275,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_DeInit",
+      "name": "HAL_CAN_DeInit",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_CAN_DeInit(CAN_HandleTypeDef *hcan);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Deinitializes the CAN peripheral registers to their default reset values.",
+      "briefZh": "把 CAN 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_CAN_Stop",
+        "HAL_CAN_MspDeInit"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CAN_HandleTypeDef",
+        "HAL_ERROR",
+        "HAL_CAN_ERROR_NONE",
+        "HAL_CAN_STATE_RESET",
+        "HAL_OK"
+      ],
+      "headerLine": 650,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 460,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_MspInit",
+      "name": "HAL_CAN_MspInit",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec1",
+      "prototype": "void HAL_CAN_MspInit(CAN_HandleTypeDef *hcan);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Initializes the CAN MSP.",
+      "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "CAN_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 651,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 507,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_MspDeInit",
+      "name": "HAL_CAN_MspDeInit",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec1",
+      "prototype": "void HAL_CAN_MspDeInit(CAN_HandleTypeDef *hcan);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "DeInitializes the CAN MSP.",
+      "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "CAN_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 652,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 523,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_RegisterCallback",
+      "name": "HAL_CAN_RegisterCallback",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_CAN_RegisterCallback(CAN_HandleTypeDef *hcan, HAL_CAN_CallbackIDTypeDef CallbackID, void (* pCallback)(CAN_HandleTypeDef *_hcan));",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for CAN module",
+          "descZh": "CAN 句柄指针。"
+        },
+        {
+          "name": "CallbackID",
+          "type": "HAL_CAN_CallbackIDTypeDef",
+          "descEn": "ID of the callback to be registered This parameter can be one of the following values:",
+          "descZh": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。"
+        },
+        {
+          "name": "pCallback",
+          "type": "void (*)(CAN_HandleTypeDef *_hcan)",
+          "descEn": "pointer to the Callback function",
+          "descZh": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Register a CAN CallBack. To be used instead of the weak predefined callback",
+      "briefZh": "为 CAN 注册指定事件的回调，替代默认的 __weak 空实现。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CAN_HandleTypeDef",
+        "HAL_CAN_CallbackIDTypeDef",
+        "HAL_OK",
+        "HAL_CAN_ERROR_INVALID_CALLBACK",
+        "HAL_ERROR",
+        "HAL_CAN_TX_MAILBOX0_COMPLETE_CB_ID",
+        "TxMailbox0CompleteCallback",
+        "MspInitCallback",
+        "HAL_CAN_STATE_RESET"
+      ],
+      "headerLine": 656,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 559,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_UnRegisterCallback",
+      "name": "HAL_CAN_UnRegisterCallback",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_CAN_UnRegisterCallback(CAN_HandleTypeDef *hcan, HAL_CAN_CallbackIDTypeDef CallbackID);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for CAN module",
+          "descZh": "CAN 句柄指针。"
+        },
+        {
+          "name": "CallbackID",
+          "type": "HAL_CAN_CallbackIDTypeDef",
+          "descEn": "ID of the callback to be unregistered This parameter can be one of the following values:",
+          "descZh": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Unregister a CAN CallBack. CAN callback is redirected to the weak predefined callback",
+      "briefZh": "注销 CAN 已注册的回调，恢复成默认的 __weak 空实现。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_CAN_TxMailbox0CompleteCallback",
+        "HAL_CAN_TxMailbox1CompleteCallback",
+        "HAL_CAN_TxMailbox2CompleteCallback",
+        "HAL_CAN_TxMailbox0AbortCallback",
+        "HAL_CAN_TxMailbox1AbortCallback",
+        "HAL_CAN_TxMailbox2AbortCallback",
+        "HAL_CAN_RxFifo0MsgPendingCallback",
+        "HAL_CAN_RxFifo0FullCallback",
+        "HAL_CAN_RxFifo1MsgPendingCallback",
+        "HAL_CAN_RxFifo1FullCallback",
+        "HAL_CAN_SleepCallback",
+        "HAL_CAN_WakeUpFromRxMsgCallback",
+        "HAL_CAN_ErrorCallback",
+        "HAL_CAN_MspInit",
+        "HAL_CAN_MspDeInit"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CAN_HandleTypeDef",
+        "HAL_CAN_CallbackIDTypeDef",
+        "HAL_OK",
+        "HAL_CAN_TX_MAILBOX0_COMPLETE_CB_ID",
+        "TxMailbox0CompleteCallback",
+        "MspInitCallback",
+        "HAL_CAN_ERROR_INVALID_CALLBACK",
+        "HAL_ERROR",
+        "HAL_CAN_STATE_RESET"
+      ],
+      "headerLine": 658,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 702,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_ConfigFilter",
+      "name": "HAL_CAN_ConfigFilter",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_CAN_ConfigFilter(CAN_HandleTypeDef *hcan, const CAN_FilterTypeDef *sFilterConfig);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        },
+        {
+          "name": "sFilterConfig",
+          "type": "const CAN_FilterTypeDef *",
+          "descEn": "pointer to a CAN_FilterTypeDef structure that contains the filter configuration information.",
+          "descZh": "过滤器配置结构体：FilterBank、FilterMode（掩码/列表）、FilterScale、FilterIdHigh/Low、FilterMaskIdHigh/Low、FilterFIFOAssignment、FilterActivation。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Configures the CAN reception filter according to the specified parameters in the CAN_FilterInitStruct.",
+      "briefZh": "配置接收过滤器。不配置过滤器时所有报文都会被丢弃——这是 CAN 收不到数据的头号原因。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CAN_HandleTypeDef",
+        "CAN_FilterTypeDef",
+        "HAL_CAN_StateTypeDef",
+        "IS_CAN_FILTER_ID_HALFWORD",
+        "IS_CAN_FILTER_MODE",
+        "IS_CAN_FILTER_SCALE",
+        "IS_CAN_FILTER_FIFO",
+        "IS_CAN_FILTER_ACTIVATION",
+        "IS_CAN_FILTER_BANK_DUAL",
+        "IS_CAN_FILTER_BANK_SINGLE",
+        "CAN_FILTERSCALE_16BIT",
+        "CAN_FILTERSCALE_32BIT",
+        "CAN_FILTERMODE_IDMASK",
+        "CAN_FILTER_FIFO0",
+        "CAN_FILTER_ENABLE",
+        "HAL_OK",
+        "HAL_CAN_ERROR_NOT_INITIALIZED",
+        "HAL_ERROR"
+      ],
+      "headerLine": 671,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 840,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_Start",
+      "name": "HAL_CAN_Start",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_CAN_Start(CAN_HandleTypeDef *hcan);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to an CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Start the CAN module.",
+      "briefZh": "启动 CAN。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CAN_HandleTypeDef",
+        "HAL_CAN_ERROR_TIMEOUT",
+        "HAL_ERROR",
+        "HAL_CAN_ERROR_NONE",
+        "HAL_OK",
+        "HAL_CAN_ERROR_NOT_READY"
+      ],
+      "headerLine": 683,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 1006,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_Stop",
+      "name": "HAL_CAN_Stop",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_CAN_Stop(CAN_HandleTypeDef *hcan);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to an CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Stop the CAN module and enable access to configuration registers.",
+      "briefZh": "停止 CAN。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CAN_HandleTypeDef",
+        "HAL_CAN_ERROR_TIMEOUT",
+        "HAL_ERROR",
+        "HAL_OK",
+        "HAL_CAN_ERROR_NOT_STARTED"
+      ],
+      "headerLine": 684,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 1058,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_RequestSleep",
+      "name": "HAL_CAN_RequestSleep",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_CAN_RequestSleep(CAN_HandleTypeDef *hcan);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status.",
+      "returnDescZh": "",
+      "briefEn": "Request the sleep mode (low power) entry. When returning from this function, Sleep mode will be entered as soon as the current CAN activity (transmission or reception of a CAN frame) has been completed.",
+      "briefZh": "请求进入睡眠模式（总线空闲后生效）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CAN_HandleTypeDef",
+        "HAL_CAN_StateTypeDef",
+        "HAL_OK",
+        "HAL_CAN_ERROR_NOT_INITIALIZED",
+        "HAL_ERROR"
+      ],
+      "headerLine": 685,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 1113,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_WakeUp",
+      "name": "HAL_CAN_WakeUp",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_CAN_WakeUp(CAN_HandleTypeDef *hcan);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status.",
+      "returnDescZh": "",
+      "briefEn": "Wake up from sleep mode. When returning with HAL_OK status from this function, Sleep mode is exited.",
+      "briefZh": "请求从睡眠模式唤醒。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CAN_HandleTypeDef",
+        "HAL_OK",
+        "HAL_CAN_StateTypeDef",
+        "HAL_CAN_ERROR_TIMEOUT",
+        "HAL_ERROR",
+        "HAL_CAN_ERROR_NOT_INITIALIZED"
+      ],
+      "headerLine": 686,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 1144,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_IsSleepActive",
+      "name": "HAL_CAN_IsSleepActive",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec3",
+      "prototype": "uint32_t HAL_CAN_IsSleepActive(const CAN_HandleTypeDef *hcan);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "const CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "Status - 0 : Sleep mode is not active. - 1 : Sleep mode is active.",
+      "returnDescZh": "",
+      "briefEn": "Check is sleep mode is active.",
+      "briefZh": "查询 CAN 是否已进入睡眠状态。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "CAN_HandleTypeDef",
+        "HAL_CAN_StateTypeDef"
+      ],
+      "headerLine": 687,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 1191,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_AddTxMessage",
+      "name": "HAL_CAN_AddTxMessage",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_CAN_AddTxMessage(CAN_HandleTypeDef *hcan, const CAN_TxHeaderTypeDef *pHeader, const uint8_t aData[], uint32_t *pTxMailbox);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        },
+        {
+          "name": "pHeader",
+          "type": "const CAN_TxHeaderTypeDef *",
+          "descEn": "pointer to a CAN_TxHeaderTypeDef structure.",
+          "descZh": "报文头结构体：StdId/ExtId（标识符）、IDE（标准帧/扩展帧）、RTR（数据帧/远程帧）、DLC（数据长度 0~8）。"
+        },
+        {
+          "name": "aData",
+          "type": "const uint8_t []",
+          "descEn": "array containing the payload of the Tx frame.",
+          "descZh": "数据数组指针。CAN 每帧最多 8 字节（标准帧）。"
+        },
+        {
+          "name": "pTxMailbox",
+          "type": "uint32_t *",
+          "descEn": "pointer to a variable where the function will return the TxMailbox used to store the Tx message. This parameter can be a value of @arg CAN_Tx_Mailboxes.",
+          "descZh": "输出参数，返回本次使用的发送邮箱编号（0~2）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Add a message to the first free Tx mailbox and activate the corresponding transmission request.",
+      "briefZh": "把一个报文放进发送邮箱，由硬件自动仲裁发送。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CAN_HandleTypeDef",
+        "CAN_TxHeaderTypeDef",
+        "HAL_CAN_StateTypeDef",
+        "IS_CAN_IDTYPE",
+        "IS_CAN_RTR",
+        "IS_CAN_DLC",
+        "CAN_ID_STD",
+        "IS_CAN_STDID",
+        "IS_CAN_EXTID",
+        "HAL_OK",
+        "HAL_CAN_ERROR_PARAM",
+        "HAL_ERROR",
+        "HAL_CAN_ERROR_NOT_INITIALIZED"
+      ],
+      "headerLine": 688,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 1222,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_AbortTxRequest",
+      "name": "HAL_CAN_AbortTxRequest",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_CAN_AbortTxRequest(CAN_HandleTypeDef *hcan, uint32_t TxMailboxes);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to an CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        },
+        {
+          "name": "TxMailboxes",
+          "type": "uint32_t",
+          "descEn": "List of the Tx Mailboxes to abort. This parameter can be any combination of @arg CAN_Tx_Mailboxes.",
+          "descZh": "发送邮箱位掩码：CAN_TX_MAILBOX0 | CAN_TX_MAILBOX1 | CAN_TX_MAILBOX2。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Abort transmission requests",
+      "briefZh": "请求中止某个发送邮箱里待发的报文。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CAN_HandleTypeDef",
+        "HAL_CAN_StateTypeDef",
+        "IS_CAN_TX_MAILBOX_LIST",
+        "CAN_TX_MAILBOX0",
+        "CAN_TX_MAILBOX1",
+        "CAN_TX_MAILBOX2",
+        "HAL_OK",
+        "HAL_CAN_ERROR_NOT_INITIALIZED",
+        "HAL_ERROR"
+      ],
+      "headerLine": 690,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 1322,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_GetTxMailboxesFreeLevel",
+      "name": "HAL_CAN_GetTxMailboxesFreeLevel",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec3",
+      "prototype": "uint32_t HAL_CAN_GetTxMailboxesFreeLevel(const CAN_HandleTypeDef *hcan);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "const CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "Number of free Tx Mailboxes.",
+      "returnDescZh": "",
+      "briefEn": "Return Tx Mailboxes free level: number of free Tx Mailboxes.",
+      "briefZh": "读取还有几个发送邮箱空闲。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "CAN_HandleTypeDef",
+        "HAL_CAN_StateTypeDef"
+      ],
+      "headerLine": 691,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 1371,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_IsTxMessagePending",
+      "name": "HAL_CAN_IsTxMessagePending",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec3",
+      "prototype": "uint32_t HAL_CAN_IsTxMessagePending(const CAN_HandleTypeDef *hcan, uint32_t TxMailboxes);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "const CAN_HandleTypeDef *",
+          "descEn": "pointer to an CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        },
+        {
+          "name": "TxMailboxes",
+          "type": "uint32_t",
+          "descEn": "List of Tx Mailboxes to check. This parameter can be any combination of @arg CAN_Tx_Mailboxes.",
+          "descZh": "发送邮箱位掩码：CAN_TX_MAILBOX0 | CAN_TX_MAILBOX1 | CAN_TX_MAILBOX2。"
+        }
+      ],
+      "returnDescEn": "Status - 0 : No pending transmission request on any selected Tx Mailboxes. - 1 : Pending transmission request on at least one of the selected Tx Mailbox.",
+      "returnDescZh": "",
+      "briefEn": "Check if a transmission request is pending on the selected Tx Mailboxes.",
+      "briefZh": "查询指定发送邮箱里的报文是否还没发出去。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "CAN_HandleTypeDef",
+        "HAL_CAN_StateTypeDef",
+        "IS_CAN_TX_MAILBOX_LIST"
+      ],
+      "headerLine": 692,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 1414,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_GetTxTimestamp",
+      "name": "HAL_CAN_GetTxTimestamp",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec3",
+      "prototype": "uint32_t HAL_CAN_GetTxTimestamp(const CAN_HandleTypeDef *hcan, uint32_t TxMailbox);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "const CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        },
+        {
+          "name": "TxMailbox",
+          "type": "uint32_t",
+          "descEn": "Tx Mailbox where the timestamp of message sent will be read. This parameter can be one value of @arg CAN_Tx_Mailboxes.",
+          "descZh": "发送邮箱编号（CAN_TX_MAILBOX0 ~ 2）。"
+        }
+      ],
+      "returnDescEn": "Timestamp of message sent from Tx Mailbox.",
+      "returnDescZh": "",
+      "briefEn": "Return timestamp of Tx message sent, if time triggered communication mode is enabled.",
+      "briefZh": "读取某个发送邮箱的发送时间戳。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "CAN_HandleTypeDef",
+        "HAL_CAN_StateTypeDef",
+        "IS_CAN_TX_MAILBOX"
+      ],
+      "headerLine": 693,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 1446,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_GetRxMessage",
+      "name": "HAL_CAN_GetRxMessage",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_CAN_GetRxMessage(CAN_HandleTypeDef *hcan, uint32_t RxFifo, CAN_RxHeaderTypeDef *pHeader, uint8_t aData[]);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to an CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        },
+        {
+          "name": "RxFifo",
+          "type": "uint32_t",
+          "descEn": "Fifo number of the received message to be read. This parameter can be a value of @arg CAN_receive_FIFO_number.",
+          "descZh": "接收 FIFO 编号：CAN_RX_FIFO0 或 CAN_RX_FIFO1。"
+        },
+        {
+          "name": "pHeader",
+          "type": "CAN_RxHeaderTypeDef *",
+          "descEn": "pointer to a CAN_RxHeaderTypeDef structure where the header of the Rx frame will be stored.",
+          "descZh": "报文头结构体：StdId/ExtId（标识符）、IDE（标准帧/扩展帧）、RTR（数据帧/远程帧）、DLC（数据长度 0~8）。"
+        },
+        {
+          "name": "aData",
+          "type": "uint8_t []",
+          "descEn": "array where the payload of the Rx frame will be stored.",
+          "descZh": "数据数组指针。CAN 每帧最多 8 字节（标准帧）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Get an CAN frame from the Rx FIFO zone into the message RAM.",
+      "briefZh": "从接收 FIFO 取出一个报文。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CAN_HandleTypeDef",
+        "CAN_RxHeaderTypeDef",
+        "HAL_CAN_StateTypeDef",
+        "IS_CAN_RX_FIFO",
+        "CAN_RX_FIFO0",
+        "HAL_CAN_ERROR_PARAM",
+        "HAL_ERROR",
+        "CAN_ID_STD",
+        "HAL_OK",
+        "HAL_CAN_ERROR_NOT_INITIALIZED"
+      ],
+      "headerLine": 694,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 1480,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_GetRxFifoFillLevel",
+      "name": "HAL_CAN_GetRxFifoFillLevel",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec3",
+      "prototype": "uint32_t HAL_CAN_GetRxFifoFillLevel(const CAN_HandleTypeDef *hcan, uint32_t RxFifo);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "const CAN_HandleTypeDef *",
+          "descEn": "pointer to an CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        },
+        {
+          "name": "RxFifo",
+          "type": "uint32_t",
+          "descEn": "Rx FIFO. This parameter can be a value of @arg CAN_receive_FIFO_number.",
+          "descZh": "接收 FIFO 编号：CAN_RX_FIFO0 或 CAN_RX_FIFO1。"
+        }
+      ],
+      "returnDescEn": "Number of messages available in Rx FIFO.",
+      "returnDescZh": "",
+      "briefEn": "Return Rx FIFO fill level.",
+      "briefZh": "读取接收 FIFO 中待处理报文的个数。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "CAN_HandleTypeDef",
+        "HAL_CAN_StateTypeDef",
+        "IS_CAN_RX_FIFO",
+        "CAN_RX_FIFO0"
+      ],
+      "headerLine": 696,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 1580,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_ActivateNotification",
+      "name": "HAL_CAN_ActivateNotification",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec4",
+      "prototype": "HAL_StatusTypeDef HAL_CAN_ActivateNotification(CAN_HandleTypeDef *hcan, uint32_t ActiveITs);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to an CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        },
+        {
+          "name": "ActiveITs",
+          "type": "uint32_t",
+          "descEn": "indicates which interrupts will be enabled. This parameter can be any combination of @arg CAN_Interrupts.",
+          "descZh": "要启用的通知位掩码，如 CAN_IT_RX_FIFO0_MSG_PENDING | CAN_IT_TX_MAILBOX_EMPTY。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Enable interrupts.",
+      "briefZh": "使能指定的 CAN 通知（发送完成 / 接收挂起 / 错误等），对应回调才会被调用。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CAN_HandleTypeDef",
+        "HAL_CAN_StateTypeDef",
+        "IS_CAN_IT",
+        "__HAL_CAN_ENABLE_IT",
+        "HAL_OK",
+        "HAL_CAN_ERROR_NOT_INITIALIZED",
+        "HAL_ERROR"
+      ],
+      "headerLine": 707,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 1633,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_DeactivateNotification",
+      "name": "HAL_CAN_DeactivateNotification",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec4",
+      "prototype": "HAL_StatusTypeDef HAL_CAN_DeactivateNotification(CAN_HandleTypeDef *hcan, uint32_t InactiveITs);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to an CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        },
+        {
+          "name": "InactiveITs",
+          "type": "uint32_t",
+          "descEn": "indicates which interrupts will be disabled. This parameter can be any combination of @arg CAN_Interrupts.",
+          "descZh": "要关闭的通知位掩码。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Disable interrupts.",
+      "briefZh": "关闭指定的 CAN 通知。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CAN_HandleTypeDef",
+        "HAL_CAN_StateTypeDef",
+        "IS_CAN_IT",
+        "__HAL_CAN_DISABLE_IT",
+        "HAL_OK",
+        "HAL_CAN_ERROR_NOT_INITIALIZED",
+        "HAL_ERROR"
+      ],
+      "headerLine": 708,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 1666,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_IRQHandler",
+      "name": "HAL_CAN_IRQHandler",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec4",
+      "prototype": "void HAL_CAN_IRQHandler(CAN_HandleTypeDef *hcan);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Handles CAN interrupt request",
+      "briefZh": "CAN 的中断统一入口。在 stm32f1xx_it.c 的对应 IRQHandler 里调用，内部会清标志并分派到各回调。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_CAN_TxMailbox0CompleteCallback",
+        "HAL_CAN_TxMailbox0AbortCallback",
+        "HAL_CAN_TxMailbox1CompleteCallback",
+        "HAL_CAN_TxMailbox1AbortCallback",
+        "HAL_CAN_TxMailbox2CompleteCallback",
+        "HAL_CAN_TxMailbox2AbortCallback",
+        "HAL_CAN_RxFifo0FullCallback",
+        "HAL_CAN_RxFifo0MsgPendingCallback",
+        "HAL_CAN_RxFifo1FullCallback",
+        "HAL_CAN_RxFifo1MsgPendingCallback",
+        "HAL_CAN_SleepCallback",
+        "HAL_CAN_WakeUpFromRxMsgCallback",
+        "HAL_CAN_ErrorCallback"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "CAN_HandleTypeDef",
+        "HAL_CAN_ERROR_NONE",
+        "CAN_IT_TX_MAILBOX_EMPTY",
+        "__HAL_CAN_CLEAR_FLAG",
+        "CAN_FLAG_RQCP0",
+        "TxMailbox0CompleteCallback",
+        "HAL_CAN_ERROR_TX_ALST0",
+        "HAL_CAN_ERROR_TX_TERR0",
+        "CAN_FLAG_RQCP1",
+        "HAL_CAN_ERROR_TX_ALST1",
+        "HAL_CAN_ERROR_TX_TERR1",
+        "CAN_FLAG_RQCP2",
+        "HAL_CAN_ERROR_TX_ALST2",
+        "HAL_CAN_ERROR_TX_TERR2",
+        "CAN_IT_RX_FIFO0_OVERRUN",
+        "HAL_CAN_ERROR_RX_FOV0",
+        "CAN_FLAG_FOV0",
+        "CAN_IT_RX_FIFO0_FULL",
+        "CAN_FLAG_FF0",
+        "CAN_IT_RX_FIFO0_MSG_PENDING",
+        "CAN_IT_RX_FIFO1_OVERRUN",
+        "HAL_CAN_ERROR_RX_FOV1",
+        "CAN_FLAG_FOV1",
+        "CAN_IT_RX_FIFO1_FULL",
+        "CAN_FLAG_FF1",
+        "CAN_IT_RX_FIFO1_MSG_PENDING",
+        "CAN_IT_SLEEP_ACK",
+        "CAN_FLAG_SLAKI",
+        "CAN_IT_WAKEUP",
+        "CAN_FLAG_WKU",
+        "CAN_IT_ERROR",
+        "CAN_IT_ERROR_WARNING",
+        "HAL_CAN_ERROR_EWG",
+        "CAN_IT_ERROR_PASSIVE",
+        "HAL_CAN_ERROR_EPV",
+        "CAN_IT_BUSOFF",
+        "HAL_CAN_ERROR_BOF",
+        "CAN_IT_LAST_ERROR_CODE",
+        "HAL_CAN_ERROR_STF",
+        "HAL_CAN_ERROR_FOR",
+        "HAL_CAN_ERROR_ACK",
+        "HAL_CAN_ERROR_BR",
+        "HAL_CAN_ERROR_BD",
+        "HAL_CAN_ERROR_CRC",
+        "CAN_FLAG_ERRI"
+      ],
+      "headerLine": 709,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 1697,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_TxMailbox0CompleteCallback",
+      "name": "HAL_CAN_TxMailbox0CompleteCallback",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec5",
+      "prototype": "void HAL_CAN_TxMailbox0CompleteCallback(CAN_HandleTypeDef *hcan);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Transmission Mailbox 0 complete callback.",
+      "briefZh": "发送邮箱 0 完成回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "CAN_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 721,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 2108,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_TxMailbox1CompleteCallback",
+      "name": "HAL_CAN_TxMailbox1CompleteCallback",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec5",
+      "prototype": "void HAL_CAN_TxMailbox1CompleteCallback(CAN_HandleTypeDef *hcan);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Transmission Mailbox 1 complete callback.",
+      "briefZh": "发送邮箱 1 完成回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "CAN_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 722,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 2125,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_TxMailbox2CompleteCallback",
+      "name": "HAL_CAN_TxMailbox2CompleteCallback",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec5",
+      "prototype": "void HAL_CAN_TxMailbox2CompleteCallback(CAN_HandleTypeDef *hcan);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Transmission Mailbox 2 complete callback.",
+      "briefZh": "发送邮箱 2 完成回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "CAN_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 723,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 2142,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_TxMailbox0AbortCallback",
+      "name": "HAL_CAN_TxMailbox0AbortCallback",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec5",
+      "prototype": "void HAL_CAN_TxMailbox0AbortCallback(CAN_HandleTypeDef *hcan);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to an CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Transmission Mailbox 0 Cancellation callback.",
+      "briefZh": "发送邮箱 0 中止回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "CAN_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 724,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 2159,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_TxMailbox1AbortCallback",
+      "name": "HAL_CAN_TxMailbox1AbortCallback",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec5",
+      "prototype": "void HAL_CAN_TxMailbox1AbortCallback(CAN_HandleTypeDef *hcan);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to an CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Transmission Mailbox 1 Cancellation callback.",
+      "briefZh": "发送邮箱 1 中止回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "CAN_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 725,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 2176,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_TxMailbox2AbortCallback",
+      "name": "HAL_CAN_TxMailbox2AbortCallback",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec5",
+      "prototype": "void HAL_CAN_TxMailbox2AbortCallback(CAN_HandleTypeDef *hcan);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to an CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Transmission Mailbox 2 Cancellation callback.",
+      "briefZh": "发送邮箱 2 中止回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "CAN_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 726,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 2193,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_RxFifo0MsgPendingCallback",
+      "name": "HAL_CAN_RxFifo0MsgPendingCallback",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec5",
+      "prototype": "void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Rx FIFO 0 message pending callback.",
+      "briefZh": "FIFO0 收到新报文回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "CAN_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 727,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 2210,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_RxFifo0FullCallback",
+      "name": "HAL_CAN_RxFifo0FullCallback",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec5",
+      "prototype": "void HAL_CAN_RxFifo0FullCallback(CAN_HandleTypeDef *hcan);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Rx FIFO 0 full callback.",
+      "briefZh": "FIFO0 满回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "CAN_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 728,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 2227,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_RxFifo1MsgPendingCallback",
+      "name": "HAL_CAN_RxFifo1MsgPendingCallback",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec5",
+      "prototype": "void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Rx FIFO 1 message pending callback.",
+      "briefZh": "FIFO1 收到新报文回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "CAN_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 729,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 2244,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_RxFifo1FullCallback",
+      "name": "HAL_CAN_RxFifo1FullCallback",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec5",
+      "prototype": "void HAL_CAN_RxFifo1FullCallback(CAN_HandleTypeDef *hcan);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Rx FIFO 1 full callback.",
+      "briefZh": "FIFO1 满回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "CAN_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 730,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 2261,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_SleepCallback",
+      "name": "HAL_CAN_SleepCallback",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec5",
+      "prototype": "void HAL_CAN_SleepCallback(CAN_HandleTypeDef *hcan);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Sleep callback.",
+      "briefZh": "进入睡眠回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "CAN_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 731,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 2278,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_WakeUpFromRxMsgCallback",
+      "name": "HAL_CAN_WakeUpFromRxMsgCallback",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec5",
+      "prototype": "void HAL_CAN_WakeUpFromRxMsgCallback(CAN_HandleTypeDef *hcan);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "WakeUp from Rx message callback.",
+      "briefZh": "收到报文唤醒回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "CAN_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 732,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 2294,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_ErrorCallback",
+      "name": "HAL_CAN_ErrorCallback",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec5",
+      "prototype": "void HAL_CAN_ErrorCallback(CAN_HandleTypeDef *hcan);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Error CAN callback.",
+      "briefZh": "错误回调（__weak 空实现，需自己重写）。溢出、噪声、帧错误等异常会走到这里。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "CAN_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 733,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 2311,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_GetState",
+      "name": "HAL_CAN_GetState",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec6",
+      "prototype": "HAL_CAN_StateTypeDef HAL_CAN_GetState(const CAN_HandleTypeDef *hcan);",
+      "returnType": "HAL_CAN_StateTypeDef",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "const CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL state",
+      "returnDescZh": "",
+      "briefEn": "Return the CAN state.",
+      "briefZh": "读取 CAN 的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_CAN_StateTypeDef",
+        "CAN_HandleTypeDef"
+      ],
+      "headerLine": 744,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 2348,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_GetError",
+      "name": "HAL_CAN_GetError",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec6",
+      "prototype": "uint32_t HAL_CAN_GetError(const CAN_HandleTypeDef *hcan);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "const CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "CAN Error Code",
+      "returnDescZh": "",
+      "briefEn": "Return the CAN error code.",
+      "briefZh": "读取 CAN 累计的错误码位掩码。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "CAN_HandleTypeDef"
+      ],
+      "headerLine": 745,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 2383,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CAN_ResetError",
+      "name": "HAL_CAN_ResetError",
+      "peripheral": "CAN",
+      "library": "hal",
+      "sectionId": "CAN@hal#sec6",
+      "prototype": "HAL_StatusTypeDef HAL_CAN_ResetError(CAN_HandleTypeDef *hcan);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcan",
+          "type": "CAN_HandleTypeDef *",
+          "descEn": "pointer to a CAN_HandleTypeDef structure that contains the configuration information for the specified CAN.",
+          "descZh": "CAN 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Reset the CAN error code.",
+      "briefZh": "清除错误码与错误计数器状态。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CAN_HandleTypeDef",
+        "HAL_OK",
+        "HAL_CAN_StateTypeDef",
+        "HAL_CAN_ERROR_NOT_INITIALIZED",
+        "HAL_ERROR"
+      ],
+      "headerLine": 746,
+      "definedIn": "stm32f1xx_hal_can.h",
+      "sourceLine": 2395,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

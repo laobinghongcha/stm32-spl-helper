@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "PWR",
+  "library": "reg",
+  "functions": [
+    {
+      "id": "REG_PWR_CR",
+      "name": "PWR_CR",
+      "peripheral": "PWR",
+      "library": "reg",
+      "sectionId": "PWR@reg#sec2",
+      "prototype": "PWR->CR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "PWR_CR_LPDS",
+          "type": "bit 0（整个位域）",
+          "descEn": "Low-Power Deepsleep",
+          "descZh": ""
+        },
+        {
+          "name": "PWR_CR_PDDS",
+          "type": "bit 1（整个位域）",
+          "descEn": "Power Down Deepsleep",
+          "descZh": ""
+        },
+        {
+          "name": "PWR_CR_CWUF",
+          "type": "bit 2（整个位域）",
+          "descEn": "Clear Wakeup Flag",
+          "descZh": ""
+        },
+        {
+          "name": "PWR_CR_CSBF",
+          "type": "bit 3（整个位域）",
+          "descEn": "Clear Standby Flag",
+          "descZh": ""
+        },
+        {
+          "name": "PWR_CR_PVDE",
+          "type": "bit 4（整个位域）",
+          "descEn": "Power Voltage Detector Enable",
+          "descZh": ""
+        },
+        {
+          "name": "PWR_CR_PLS",
+          "type": "bits[7:5]（整个位域）",
+          "descEn": "PLS[2:0] bits (PVD Level Selection)",
+          "descZh": ""
+        },
+        {
+          "name": "PWR_CR_DBP",
+          "type": "bit 8（整个位域）",
+          "descEn": "Disable Backup Domain write protection",
+          "descZh": ""
+        },
+        {
+          "name": "PWR_CR_PLS_0",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "PWR_CR_PLS_1",
+          "type": "bit 6",
+          "descEn": "0x00000040",
+          "descZh": ""
+        },
+        {
+          "name": "PWR_CR_PLS_2",
+          "type": "bit 7",
+          "descEn": "0x00000080",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Low-Power Deepsleep",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "PWR_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 PWR_TypeDef.CR，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = PWR->CR;  /* 读回当前值 */\nv &= ~PWR_CR_LPDS_Msk;  /* 先清掉 PWR_CR_LPDS：bit 0（整个位域） */\nv |= (1u << PWR_CR_LPDS_Pos) & PWR_CR_LPDS_Msk;  /* 置位，实际取值看参考手册 */\nPWR->CR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 743,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_PWR_CSR",
+      "name": "PWR_CSR",
+      "peripheral": "PWR",
+      "library": "reg",
+      "sectionId": "PWR@reg#sec1",
+      "prototype": "PWR->CSR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "PWR_CSR_WUF",
+          "type": "bit 0（整个位域）",
+          "descEn": "Wakeup Flag",
+          "descZh": ""
+        },
+        {
+          "name": "PWR_CSR_SBF",
+          "type": "bit 1（整个位域）",
+          "descEn": "Standby Flag",
+          "descZh": ""
+        },
+        {
+          "name": "PWR_CSR_PVDO",
+          "type": "bit 2（整个位域）",
+          "descEn": "PVD Output",
+          "descZh": ""
+        },
+        {
+          "name": "PWR_CSR_EWUP",
+          "type": "bit 8（整个位域）",
+          "descEn": "Enable WKUP pin",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Wakeup Flag",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "PWR_CSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 PWR_TypeDef.CSR，偏移 0x04"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = PWR->CSR;  /* 读回当前值 */\nv &= ~PWR_CSR_WUF_Msk;  /* 先清掉 PWR_CSR_WUF：bit 0（整个位域） */\nv |= (1u << PWR_CSR_WUF_Pos) & PWR_CSR_WUF_Msk;  /* 置位，实际取值看参考手册 */\nPWR->CSR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 792,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    }
+  ]
+}

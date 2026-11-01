@@ -1,0 +1,205 @@
+{
+  "HAL_DACEx_ConvCpltCallbackCh2": {
+    "briefZh": "通道 2 转换完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DACEx_ConvHalfCpltCallbackCh2": {
+    "briefZh": "通道 2 转换过半回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DACEx_DMAUnderrunCallbackCh2": {
+    "briefZh": "通道 2 DMA 下溢回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DACEx_DualGetValue": {
+    "briefZh": "读取双 DAC 通道当前的输出数值。",
+    "paramsZh": {
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DACEx_DualSetValue": {
+    "briefZh": "同时设置两个 DAC 通道的输出值（双通道模式下用，保证两路同步更新）。",
+    "paramsZh": {
+      "Alignment": "数据对齐方式：DAC_ALIGN_12B_R（12 位右对齐，最常用）、12B_L、8B_R。",
+      "Data1": "通道 1 的输出数值（0~4095）。",
+      "Data2": "通道 2 的输出数值（0~4095）。",
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DACEx_DualStart": {
+    "briefZh": "启动双 DAC 通道同步输出（两个通道同时更新）。",
+    "paramsZh": {
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DACEx_DualStop": {
+    "briefZh": "停止双 DAC 通道同步输出。",
+    "paramsZh": {
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DACEx_ErrorCallbackCh2": {
+    "briefZh": "通道 2 错误回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DACEx_NoiseWaveGenerate": {
+    "briefZh": "让 DAC 通道自动生成噪声波，噪声的「频率」由 LFSR 掩码决定。",
+    "paramsZh": {
+      "Amplitude": "波形幅度（DAC_TRIANGLE_AMPLITUDE_1 ~ _4095），决定三角波/噪声波的峰值偏移量。",
+      "Channel": "DAC 通道：DAC_CHANNEL_1 或 DAC_CHANNEL_2（双通道型号才有 2）。",
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DACEx_TriangleWaveGenerate": {
+    "briefZh": "让 DAC 通道自动生成三角波，只需设定最大幅度，波形由硬件推演，不占用 CPU。",
+    "paramsZh": {
+      "Amplitude": "波形幅度（DAC_TRIANGLE_AMPLITUDE_1 ~ _4095），决定三角波/噪声波的峰值偏移量。",
+      "Channel": "DAC 通道：DAC_CHANNEL_1 或 DAC_CHANNEL_2（双通道型号才有 2）。",
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DAC_ConfigChannel": {
+    "briefZh": "配置指定通道并挂到对应的组（规则组或注入组）。",
+    "paramsZh": {
+      "Channel": "DAC 通道：DAC_CHANNEL_1 或 DAC_CHANNEL_2（双通道型号才有 2）。",
+      "hdac": "DAC 句柄指针。",
+      "sConfig": "DAC 通道配置结构体：DAC_Trigger（触发源）、DAC_OutputBuffer（是否使能输出缓冲）、DAC_LFSRUnmask_TriangleAmplitude（波形参数）。"
+    }
+  },
+  "HAL_DAC_ConvCpltCallbackCh1": {
+    "briefZh": "通道 1 转换完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DAC_ConvHalfCpltCallbackCh1": {
+    "briefZh": "通道 1 转换过半回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DAC_DMAUnderrunCallbackCh1": {
+    "briefZh": "通道 1 DMA 下溢回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DAC_DeInit": {
+    "briefZh": "把 DAC 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+    "paramsZh": {
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DAC_ErrorCallbackCh1": {
+    "briefZh": "通道 1 错误回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DAC_GetError": {
+    "briefZh": "读取 DAC 累计的错误码位掩码。",
+    "paramsZh": {
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DAC_GetState": {
+    "briefZh": "读取 DAC 的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+    "paramsZh": {
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DAC_GetValue": {
+    "briefZh": "读取最近一次转换结果。",
+    "paramsZh": {
+      "Channel": "DAC 通道：DAC_CHANNEL_1 或 DAC_CHANNEL_2（双通道型号才有 2）。",
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DAC_IRQHandler": {
+    "briefZh": "DAC 的中断统一入口。在 stm32f1xx_it.c 的对应 IRQHandler 里调用，内部会清标志并分派到各回调。",
+    "paramsZh": {
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DAC_Init": {
+    "briefZh": "按 InitTypeDef 中的参数初始化 DAC，并完成状态机初始化。",
+    "paramsZh": {
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DAC_MspDeInit": {
+    "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+    "paramsZh": {
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DAC_MspInit": {
+    "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+    "paramsZh": {
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DAC_RegisterCallback": {
+    "briefZh": "为 DAC 注册指定事件的回调，替代默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "hdac": "DAC 句柄指针。",
+      "pCallback": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+    }
+  },
+  "HAL_DAC_SetValue": {
+    "briefZh": "设置 DAC 通道的输出数值。value 为 0~4095（12 位），对应 0 到 VREF+ 的电压。",
+    "paramsZh": {
+      "Alignment": "数据对齐方式：DAC_ALIGN_12B_R（12 位右对齐，最常用）、12B_L、8B_R。",
+      "Channel": "DAC 通道：DAC_CHANNEL_1 或 DAC_CHANNEL_2（双通道型号才有 2）。",
+      "Data": "输出数值 0~4095（12 位），对应 0 到 VREF+ 的电压。",
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DAC_Start": {
+    "briefZh": "启动 DAC。",
+    "paramsZh": {
+      "Channel": "DAC 通道：DAC_CHANNEL_1 或 DAC_CHANNEL_2（双通道型号才有 2）。",
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DAC_Start_DMA": {
+    "briefZh": "以 DMA 方式启动 DAC，搬运过程不占用 CPU。",
+    "paramsZh": {
+      "Alignment": "数据对齐方式：DAC_ALIGN_12B_R（12 位右对齐，最常用）、12B_L、8B_R。",
+      "Channel": "DAC 通道：DAC_CHANNEL_1 或 DAC_CHANNEL_2（双通道型号才有 2）。",
+      "Length": "DMA 方式输出的数据个数（每个数据项对应一次 DAC 转换）。",
+      "hdac": "DAC 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_DAC_Stop": {
+    "briefZh": "停止 DAC。",
+    "paramsZh": {
+      "Channel": "DAC 通道：DAC_CHANNEL_1 或 DAC_CHANNEL_2（双通道型号才有 2）。",
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DAC_Stop_DMA": {
+    "briefZh": "停止 DAC 的 DMA 方式运行，并关闭 DMA 通道。",
+    "paramsZh": {
+      "Channel": "DAC 通道：DAC_CHANNEL_1 或 DAC_CHANNEL_2（双通道型号才有 2）。",
+      "hdac": "DAC 句柄指针。"
+    }
+  },
+  "HAL_DAC_UnRegisterCallback": {
+    "briefZh": "注销 DAC 已注册的回调，恢复成默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "hdac": "DAC 句柄指针。"
+    }
+  }
+}

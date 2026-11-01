@@ -1,0 +1,74 @@
+{
+  "LL_PWR_ClearFlag_SB": {
+    "briefZh": "清除待机模式标志（SBF）。"
+  },
+  "LL_PWR_ClearFlag_WU": {
+    "briefZh": "清除唤醒标志（WUF）。"
+  },
+  "LL_PWR_DisableBkUpAccess": {
+    "briefZh": "关闭备份域写访问。"
+  },
+  "LL_PWR_DisablePVD": {
+    "briefZh": "关闭可编程电压检测器（PVD）。"
+  },
+  "LL_PWR_DisableWakeUpPin": {
+    "briefZh": "关闭唤醒引脚。",
+    "paramsZh": {
+      "WakeUpPin": "唤醒引脚，取 LL_PWR_WAKEUP_PIN1。"
+    }
+  },
+  "LL_PWR_EnableBkUpAccess": {
+    "briefZh": "使能备份域（RTC + 备份寄存器）的写访问。"
+  },
+  "LL_PWR_EnablePVD": {
+    "briefZh": "使能可编程电压检测器（PVD）。"
+  },
+  "LL_PWR_EnableWakeUpPin": {
+    "briefZh": "使能唤醒引脚（WKUP），供待机模式唤醒使用。",
+    "paramsZh": {
+      "WakeUpPin": "唤醒引脚，取 LL_PWR_WAKEUP_PIN1。"
+    }
+  },
+  "LL_PWR_GetPVDLevel": {
+    "briefZh": "读取 PVD 电压监测阈值。"
+  },
+  "LL_PWR_GetPowerMode": {
+    "briefZh": "读取当前设定的低功耗模式。"
+  },
+  "LL_PWR_GetRegulModeDS": {
+    "briefZh": "读取 PWR 的深度睡眠时的调压器模式。"
+  },
+  "LL_PWR_IsActiveFlag_PVDO": {
+    "briefZh": "查询 PVD 输出状态：置位表示电压已低于设定阈值。"
+  },
+  "LL_PWR_IsActiveFlag_SB": {
+    "briefZh": "查询是否从待机模式唤醒（SBF 标志）。"
+  },
+  "LL_PWR_IsActiveFlag_WU": {
+    "briefZh": "查询是否发生过唤醒事件（WUF 标志）。"
+  },
+  "LL_PWR_IsEnabledBkUpAccess": {
+    "briefZh": "查询备份域写访问是否已使能。"
+  },
+  "LL_PWR_IsEnabledPVD": {
+    "briefZh": "查询 PVD 是否已使能。"
+  },
+  "LL_PWR_IsEnabledWakeUpPin": {
+    "briefZh": "查询唤醒引脚是否已使能。",
+    "paramsZh": {
+      "WakeUpPin": "唤醒引脚，取 LL_PWR_WAKEUP_PIN1。"
+    }
+  },
+  "LL_PWR_SetPVDLevel": {
+    "briefZh": "设置 PVD 电压监测阈值。",
+    "paramsZh": {
+      "PVDLevel": "PVD 电压监测阈值。"
+    }
+  },
+  "LL_PWR_SetPowerMode": {
+    "briefZh": "设置要进入的低功耗模式（SLEEP / STOP / STANDBY）。"
+  },
+  "LL_PWR_SetRegulModeDS": {
+    "briefZh": "设置 PWR 的深度睡眠时的调压器模式。"
+  }
+}

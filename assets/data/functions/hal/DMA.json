@@ -1,0 +1,739 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "DMA",
+  "library": "hal",
+  "functions": [
+    {
+      "id": "HAL_DMA_Init",
+      "name": "HAL_DMA_Init",
+      "peripheral": "DMA",
+      "library": "hal",
+      "sectionId": "DMA@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_DMA_Init(DMA_HandleTypeDef *hdma);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hdma",
+          "type": "DMA_HandleTypeDef *",
+          "descEn": "Pointer to a DMA_HandleTypeDef structure that contains the configuration information for the specified DMA Channel.",
+          "descZh": "指向 DMA_HandleTypeDef 的指针。它的 Instance 字段必须指向具体通道（如 DMA1_Channel4），Init 子结构里放搬运参数。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Initialize the DMA according to the specified parameters in the DMA_InitTypeDef and initialize the associated handle.",
+      "briefZh": "按 DMA_HandleTypeDef 里的 Init 配置初始化一条 DMA 通道。",
+      "usageZh": "HAL 下 DMA 一般不单独初始化——调用 HAL_UART_Transmit_DMA / HAL_ADC_Start_DMA 这类函数时，HAL 会通过 MspInit 回调代你把通道配好。只有两种场合需要自己调它：一是要在外设之外单独用 DMA（纯内存搬运），二是要改通道参数（比如动态调整数据宽度）。配置内容包括方向、自增模式、数据宽度、循环/单次模式、优先级，以及 SrcAddress/DstAddress 和 Length。",
+      "prerequisites": [
+        "已调用 __HAL_RCC_DMA1_CLK_ENABLE() 使能 DMA1 时钟",
+        "hdma->Instance 已赋值（CubeMX 在 MspInit 里做这件事）"
+      ],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "DMA1 有 7 个通道，每个通道固定对应若干外设请求，不能随意互换——USART1_TX 只能用 DMA1_Channel4，看参考手册的请求映射表",
+        "F1 的 DMA 是「通道」而不是 F4 那样的「流 + 请求」，所以没有 HAL_DMA_ConfigChannel 之类的选请求函数",
+        "同一个 DMA 通道不能同时服务两个外设；需要并发就换通道或者分时复用"
+      ],
+      "exampleCode": "DMA_HandleTypeDef hdma_usart1_tx;\n\n/* USART1_TX 固定绑 DMA1_Channel4 */\nhdma_usart1_tx.Instance                 = DMA1_Channel4;\nhdma_usart1_tx.Init.Direction           = DMA_MEMORY_TO_PERIPH;\nhdma_usart1_tx.Init.PeriphInc           = DMA_PINC_DISABLE;\nhdma_usart1_tx.Init.MemInc              = DMA_MINC_ENABLE;\nhdma_usart1_tx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;\nhdma_usart1_tx.Init.MemDataAlignment    = DMA_MDATAALIGN_BYTE;\nhdma_usart1_tx.Init.Mode                = DMA_NORMAL;\nhdma_usart1_tx.Init.Priority            = DMA_PRIORITY_LOW;\nif (HAL_DMA_Init(&hdma_usart1_tx) != HAL_OK)\n{\n  Error_Handler();\n}\n\n/* 把 DMA 句柄挂到串口句柄上 */\n__HAL_LINKDMA(&huart1, hdmatx, hdma_usart1_tx);",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "DMA_HandleTypeDef",
+        "DMA_InitTypeDef",
+        "HAL_ERROR",
+        "IS_DMA_DIRECTION",
+        "IS_DMA_PERIPHERAL_INC_STATE",
+        "IS_DMA_MEMORY_INC_STATE",
+        "IS_DMA_PERIPHERAL_DATA_SIZE",
+        "IS_DMA_MEMORY_DATA_SIZE",
+        "IS_DMA_MODE",
+        "IS_DMA_PRIORITY",
+        "HAL_DMA_ERROR_NONE",
+        "HAL_UNLOCKED",
+        "HAL_OK"
+      ],
+      "headerLine": 366,
+      "definedIn": "stm32f1xx_hal_dma.h",
+      "sourceLine": 142,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DMA_DeInit",
+      "name": "HAL_DMA_DeInit",
+      "peripheral": "DMA",
+      "library": "hal",
+      "sectionId": "DMA@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_DMA_DeInit (DMA_HandleTypeDef *hdma);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hdma",
+          "type": "DMA_HandleTypeDef *",
+          "descEn": "pointer to a DMA_HandleTypeDef structure that contains the configuration information for the specified DMA Channel.",
+          "descZh": "要复位的 DMA 句柄。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "DeInitialize the DMA peripheral.",
+      "briefZh": "把 DMA 通道寄存器恢复到复位默认值。",
+      "usageZh": "通道要改作他用、或者严重异常（传输卡死）需要硬复位时调用。也会顺带关掉该通道的中断。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "DMA_HandleTypeDef",
+        "HAL_ERROR",
+        "__HAL_DMA_DISABLE",
+        "XferCpltCallback",
+        "HAL_DMA_ERROR_NONE",
+        "HAL_DMA_STATE_RESET",
+        "__HAL_UNLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 367,
+      "definedIn": "stm32f1xx_hal_dma.h",
+      "sourceLine": 219,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DMA_Start",
+      "name": "HAL_DMA_Start",
+      "peripheral": "DMA",
+      "library": "hal",
+      "sectionId": "DMA@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_DMA_Start (DMA_HandleTypeDef *hdma, uint32_t SrcAddress, uint32_t DstAddress, uint32_t DataLength);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hdma",
+          "type": "DMA_HandleTypeDef *",
+          "descEn": "pointer to a DMA_HandleTypeDef structure that contains the configuration information for the specified DMA Channel.",
+          "descZh": "DMA 句柄。"
+        },
+        {
+          "name": "SrcAddress",
+          "type": "uint32_t",
+          "descEn": "The source memory Buffer address",
+          "descZh": "源地址。内存端传数组名（会自动退化成指针），外设端传外设数据寄存器地址。"
+        },
+        {
+          "name": "DstAddress",
+          "type": "uint32_t",
+          "descEn": "The destination memory Buffer address",
+          "descZh": "目的地址。"
+        },
+        {
+          "name": "DataLength",
+          "type": "uint32_t",
+          "descEn": "The length of data to be transferred from source to destination",
+          "descZh": "要搬运的数据项个数（不是字节数）。数据宽度 16 位时，Length=10 表示搬 20 字节。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Start the DMA Transfer.",
+      "briefZh": "启动一次阻塞式 DMA 传输，函数会一直等到传输完成或出错才返回。",
+      "usageZh": "纯内存到内存 / 外设到内存的搬运，且**不需要中断通知**时用。它是阻塞的：内部轮询传输完成标志，期间 CPU 空转。做串口收发更应该用 HAL_DMA_Start_IT，否则等于没用 DMA 的并行优势。",
+      "prerequisites": [
+        "已调用 HAL_DMA_Init 配好通道"
+      ],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "阻塞期间不能做别的事；超时行为取决于通道是否配了中断，没有内建超时机制",
+        "DataLength 是「数据项数」，和 HAL_UART_Transmit 的 Size（字节数）语义不同，容易搞混"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "DMA_HandleTypeDef",
+        "HAL_OK",
+        "IS_DMA_BUFFER_SIZE",
+        "__HAL_LOCK",
+        "HAL_DMA_ERROR_NONE",
+        "__HAL_DMA_DISABLE",
+        "__HAL_DMA_ENABLE",
+        "__HAL_UNLOCK",
+        "HAL_BUSY"
+      ],
+      "headerLine": 376,
+      "definedIn": "stm32f1xx_hal_dma.h",
+      "sourceLine": 318,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DMA_Start_IT",
+      "name": "HAL_DMA_Start_IT",
+      "peripheral": "DMA",
+      "library": "hal",
+      "sectionId": "DMA@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_DMA_Start_IT(DMA_HandleTypeDef *hdma, uint32_t SrcAddress, uint32_t DstAddress, uint32_t DataLength);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hdma",
+          "type": "DMA_HandleTypeDef *",
+          "descEn": "pointer to a DMA_HandleTypeDef structure that contains the configuration information for the specified DMA Channel.",
+          "descZh": "DMA 句柄。"
+        },
+        {
+          "name": "SrcAddress",
+          "type": "uint32_t",
+          "descEn": "The source memory Buffer address",
+          "descZh": "源地址。"
+        },
+        {
+          "name": "DstAddress",
+          "type": "uint32_t",
+          "descEn": "The destination memory Buffer address",
+          "descZh": "目的地址。"
+        },
+        {
+          "name": "DataLength",
+          "type": "uint32_t",
+          "descEn": "The length of data to be transferred from source to destination",
+          "descZh": "数据项个数。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Start the DMA Transfer with interrupt enabled.",
+      "briefZh": "启动 DMA 传输并使能传输完成/半完成/错误中断，非阻塞。",
+      "usageZh": "HAL 各外设的 xxx_DMA 系列函数内部就是调它。要自己接管 DMA 中断回调时直接用它。启动前会清掉旧的传输完成标志，避免立刻误触发一次回调。",
+      "prerequisites": [
+        "已调用 HAL_DMA_Init 配好通道",
+        "已在 NVIC 里使能对应 DMA 通道中断（如 DMA1_Channel4_IRQn）"
+      ],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "中断使能位由 HAL 在内部打开，但 NVIC 这一层要自己开，否则回调永远不来",
+        "循环模式下传输完成回调会周期性反复触发"
+      ],
+      "exampleCode": "/* 纯内存搬运：把 src 的 32 个字搬到 dst */\nHAL_DMA_Start_IT(&hdma_mem2mem,\n                 (uint32_t)src, (uint32_t)dst,\n                 32);          /* 数据项个数，不是字节数 */\n\n/* 想挂钩子就用注册接口，回调签名必须一致 */\nstatic void OnXferDone(DMA_HandleTypeDef *hdma)\n{\n  /* 搬运完成 */\n}\nHAL_DMA_RegisterCallback(&hdma_mem2mem, HAL_DMA_XFER_CPLT_CB_ID, OnXferDone);",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "DMA_HandleTypeDef",
+        "HAL_OK",
+        "IS_DMA_BUFFER_SIZE",
+        "__HAL_LOCK",
+        "HAL_DMA_ERROR_NONE",
+        "__HAL_DMA_DISABLE",
+        "__HAL_DMA_ENABLE_IT",
+        "DMA_IT_TC",
+        "DMA_IT_HT",
+        "DMA_IT_TE",
+        "__HAL_DMA_DISABLE_IT",
+        "__HAL_DMA_ENABLE",
+        "__HAL_UNLOCK",
+        "HAL_BUSY"
+      ],
+      "headerLine": 377,
+      "definedIn": "stm32f1xx_hal_dma.h",
+      "sourceLine": 361,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DMA_Abort",
+      "name": "HAL_DMA_Abort",
+      "peripheral": "DMA",
+      "library": "hal",
+      "sectionId": "DMA@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_DMA_Abort(DMA_HandleTypeDef *hdma);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hdma",
+          "type": "DMA_HandleTypeDef *",
+          "descEn": "pointer to a DMA_HandleTypeDef structure that contains the configuration information for the specified DMA Channel.",
+          "descZh": "DMA 句柄。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Abort the DMA Transfer.",
+      "briefZh": "立即中止正在进行的 DMA 传输（阻塞式，等通道真正关掉才返回）。",
+      "usageZh": "传输过程中要紧急停止（收到中止命令、协议超时、要释放通道给别的外设）时用。会在关闭通道后把状态机复位，因此可以再次调用 HAL_DMA_Start。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "阻塞式，内部有超时等待；在中断里调用要谨慎",
+        "中止后不会触发传输完成回调，也不会调用错误回调"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "DMA_HandleTypeDef",
+        "HAL_OK",
+        "HAL_DMA_ERROR_NO_XFER",
+        "__HAL_UNLOCK",
+        "HAL_ERROR",
+        "__HAL_DMA_DISABLE_IT",
+        "DMA_IT_TC",
+        "DMA_IT_HT",
+        "DMA_IT_TE",
+        "__HAL_DMA_DISABLE"
+      ],
+      "headerLine": 378,
+      "definedIn": "stm32f1xx_hal_dma.h",
+      "sourceLine": 415,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DMA_Abort_IT",
+      "name": "HAL_DMA_Abort_IT",
+      "peripheral": "DMA",
+      "library": "hal",
+      "sectionId": "DMA@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_DMA_Abort_IT(DMA_HandleTypeDef *hdma);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hdma",
+          "type": "DMA_HandleTypeDef *",
+          "descEn": "pointer to a DMA_HandleTypeDef structure that contains the configuration information for the specified DMA Channel.",
+          "descZh": "DMA 句柄。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Aborts the DMA Transfer in Interrupt mode.",
+      "briefZh": "以中断方式中止 DMA 传输，中止完成后回调 XferAbortCallback。",
+      "usageZh": "在中断上下文里需要停掉 DMA 时用它（HAL_DMA_Abort 是阻塞的，不适合 ISR）。中止动作本身在后台完成，完成后通知你。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "必须先通过 HAL_DMA_RegisterCallback 注册 HAL_DMA_XFER_ABORT_CB_ID 对应的回调，否则中止完成后无人知晓",
+        "和外设的 xxx_Abort_IT 不同，这里只停 DMA 通道，不涉及外设状态"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "DMA_HandleTypeDef",
+        "HAL_OK",
+        "HAL_DMA_ERROR_NO_XFER",
+        "HAL_ERROR",
+        "__HAL_DMA_DISABLE_IT",
+        "DMA_IT_TC",
+        "DMA_IT_HT",
+        "DMA_IT_TE",
+        "__HAL_DMA_DISABLE",
+        "__HAL_DMA_CLEAR_FLAG",
+        "__HAL_DMA_GET_GI_FLAG_INDEX",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 379,
+      "definedIn": "stm32f1xx_hal_dma.h",
+      "sourceLine": 456,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DMA_PollForTransfer",
+      "name": "HAL_DMA_PollForTransfer",
+      "peripheral": "DMA",
+      "library": "hal",
+      "sectionId": "DMA@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_DMA_PollForTransfer(DMA_HandleTypeDef *hdma, uint32_t CompleteLevel, uint32_t Timeout);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hdma",
+          "type": "DMA_HandleTypeDef *",
+          "descEn": "pointer to a DMA_HandleTypeDef structure that contains the configuration information for the specified DMA Channel.",
+          "descZh": "DMA 句柄。"
+        },
+        {
+          "name": "CompleteLevel",
+          "type": "uint32_t",
+          "descEn": "Specifies the DMA level complete.",
+          "descZh": "等待到哪个阶段：DMA_FULL_TRANSFER（全部完成）或 DMA_HALF_TRANSFER（过半）。"
+        },
+        {
+          "name": "Timeout",
+          "type": "uint32_t",
+          "descEn": "Timeout duration.",
+          "descZh": "超时毫秒数，用 HAL_MAX_DELAY 表示无限等待。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Polling for transfer complete.",
+      "briefZh": "轮询等待 DMA 传输结束，可带超时。",
+      "usageZh": "在 HAL_DMA_Start 之后需要自己确认完成、或者调试时手动等一次搬运结束时用。会处理传输错误并把错误码写进 hdma->ErrorCode。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [],
+      "notesZh": [
+        "超时后建议调 HAL_DMA_Abort 收拾残局，否则通道可能停在半途占着资源"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "DMA_HandleTypeDef",
+        "HAL_DMA_ERROR_NO_XFER",
+        "__HAL_UNLOCK",
+        "HAL_ERROR",
+        "HAL_DMA_ERROR_NOT_SUPPORTED",
+        "HAL_DMA_FULL_TRANSFER",
+        "__HAL_DMA_GET_TC_FLAG_INDEX",
+        "__HAL_DMA_GET_HT_FLAG_INDEX",
+        "__HAL_DMA_GET_FLAG",
+        "__HAL_DMA_GET_TE_FLAG_INDEX",
+        "HAL_DMA_ERROR_TE",
+        "HAL_MAX_DELAY",
+        "HAL_DMA_ERROR_TIMEOUT",
+        "__HAL_DMA_CLEAR_FLAG",
+        "HAL_OK"
+      ],
+      "headerLine": 380,
+      "definedIn": "stm32f1xx_hal_dma.h",
+      "sourceLine": 501,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DMA_IRQHandler",
+      "name": "HAL_DMA_IRQHandler",
+      "peripheral": "DMA",
+      "library": "hal",
+      "sectionId": "DMA@hal#sec2",
+      "prototype": "void HAL_DMA_IRQHandler(DMA_HandleTypeDef *hdma);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "hdma",
+          "type": "DMA_HandleTypeDef *",
+          "descEn": "pointer to a DMA_HandleTypeDef structure that contains the configuration information for the specified DMA Channel.",
+          "descZh": "对应通道的 DMA 句柄。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Handles DMA interrupt request.",
+      "briefZh": "DMA 通道中断的统一入口，按标志位分发到传输完成/半完成/错误回调。",
+      "usageZh": "在 stm32f1xx_it.c 的 DMA1_ChannelX_IRQHandler 里调用它，把 hdma 传进去。它负责清标志、更新状态机、再调用对应的用户回调，所以**不要自己再清标志**，否则回调可能不触发。",
+      "prerequisites": [
+        "该通道中断已在 NVIC 使能",
+        "已在 MspInit 里把 hdma 与中断向量对应起来"
+      ],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "一个 DMA 通道只有这一个入口，多个外设共用同一通道会互相干扰，务必确认通道归属",
+        "错误中断（TE）触发后通道会自动关闭，需要重新 HAL_DMA_Start 才能继续"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DMA_HandleTypeDef",
+        "DMA_FLAG_HT1",
+        "DMA_IT_HT",
+        "__HAL_DMA_DISABLE_IT",
+        "__HAL_DMA_CLEAR_FLAG",
+        "__HAL_DMA_GET_HT_FLAG_INDEX",
+        "DMA_FLAG_TC1",
+        "DMA_IT_TC",
+        "DMA_IT_TE",
+        "__HAL_DMA_GET_TC_FLAG_INDEX",
+        "__HAL_UNLOCK",
+        "XferCpltCallback",
+        "DMA_FLAG_TE1",
+        "HAL_DMA_ERROR_TE"
+      ],
+      "headerLine": 381,
+      "definedIn": "stm32f1xx_hal_dma.h",
+      "sourceLine": 602,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DMA_RegisterCallback",
+      "name": "HAL_DMA_RegisterCallback",
+      "peripheral": "DMA",
+      "library": "hal",
+      "sectionId": "DMA@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_DMA_RegisterCallback(DMA_HandleTypeDef *hdma, HAL_DMA_CallbackIDTypeDef CallbackID, void (* pCallback)( DMA_HandleTypeDef * _hdma));",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hdma",
+          "type": "DMA_HandleTypeDef *",
+          "descEn": "pointer to a DMA_HandleTypeDef structure that contains the configuration information for the specified DMA Channel.",
+          "descZh": "DMA 句柄。"
+        },
+        {
+          "name": "CallbackID",
+          "type": "HAL_DMA_CallbackIDTypeDef",
+          "descEn": "User Callback identifier a HAL_DMA_CallbackIDTypeDef ENUM as parameter.",
+          "descZh": "事件编号：HAL_DMA_XFER_CPLT_CB_ID / XFER_HALFCPLT_CB_ID / XFER_ERROR_CB_ID / XFER_ABORT_CB_ID。"
+        },
+        {
+          "name": "pCallback",
+          "type": "void (*)(DMA_HandleTypeDef * _hdma)",
+          "descEn": "pointer to private callback function which has pointer to a DMA_HandleTypeDef structure as parameter.",
+          "descZh": "回调函数指针，签名 void (*)(DMA_HandleTypeDef *hdma)。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Register callbacks",
+      "briefZh": "为 DMA 句柄注册指定事件的回调函数。",
+      "usageZh": "HAL 默认提供 __weak 的空回调，想在不改 HAL 源码的前提下挂钩子就用它。可注册的事件包括传输完成、半完成、传输错误、中止完成。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "同一事件重复注册会返回 HAL_ERROR（BUSY 状态），先 UnRegister 再注册",
+        "注册的回调优先于 __weak 版本，两者不会同时被调用"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "DMA_HandleTypeDef",
+        "HAL_DMA_CallbackIDTypeDef",
+        "HAL_OK",
+        "__HAL_LOCK",
+        "HAL_DMA_XFER_CPLT_CB_ID",
+        "XferCpltCallback",
+        "HAL_ERROR",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 382,
+      "definedIn": "stm32f1xx_hal_dma.h",
+      "sourceLine": 692,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DMA_UnRegisterCallback",
+      "name": "HAL_DMA_UnRegisterCallback",
+      "peripheral": "DMA",
+      "library": "hal",
+      "sectionId": "DMA@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_DMA_UnRegisterCallback(DMA_HandleTypeDef *hdma, HAL_DMA_CallbackIDTypeDef CallbackID);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hdma",
+          "type": "DMA_HandleTypeDef *",
+          "descEn": "pointer to a DMA_HandleTypeDef structure that contains the configuration information for the specified DMA Channel.",
+          "descZh": "DMA 句柄。"
+        },
+        {
+          "name": "CallbackID",
+          "type": "HAL_DMA_CallbackIDTypeDef",
+          "descEn": "User Callback identifier a HAL_DMA_CallbackIDTypeDef ENUM as parameter.",
+          "descZh": "要注销的事件编号；传 HAL_DMA_XFER_ALL_CALLBACKS 可一次注销全部。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "UnRegister callbacks",
+      "briefZh": "注销已注册的 DMA 回调，恢复成默认的 __weak 空实现。",
+      "usageZh": "动态切换驱动、或者在模块卸载时清理钩子。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "DMA_HandleTypeDef",
+        "HAL_DMA_CallbackIDTypeDef",
+        "HAL_OK",
+        "__HAL_LOCK",
+        "HAL_DMA_XFER_CPLT_CB_ID",
+        "XferCpltCallback",
+        "HAL_ERROR",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 383,
+      "definedIn": "stm32f1xx_hal_dma.h",
+      "sourceLine": 743,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DMA_GetState",
+      "name": "HAL_DMA_GetState",
+      "peripheral": "DMA",
+      "library": "hal",
+      "sectionId": "DMA@hal#sec3",
+      "prototype": "HAL_DMA_StateTypeDef HAL_DMA_GetState(DMA_HandleTypeDef *hdma);",
+      "returnType": "HAL_DMA_StateTypeDef",
+      "params": [
+        {
+          "name": "hdma",
+          "type": "DMA_HandleTypeDef *",
+          "descEn": "pointer to a DMA_HandleTypeDef structure that contains the configuration information for the specified DMA Channel.",
+          "descZh": "DMA 句柄。"
+        }
+      ],
+      "returnDescEn": "HAL state",
+      "returnDescZh": "",
+      "briefEn": "Return the DMA handle state.",
+      "briefZh": "读取 DMA 通道当前的状态机状态。",
+      "usageZh": "判断通道是空闲、忙还是出错。写状态机驱动的代码时用它做前置检查，避免重复 Start 返回 HAL_BUSY。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_DMA_StateTypeDef",
+        "DMA_HandleTypeDef"
+      ],
+      "headerLine": 393,
+      "definedIn": "stm32f1xx_hal_dma.h",
+      "sourceLine": 819,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DMA_GetError",
+      "name": "HAL_DMA_GetError",
+      "peripheral": "DMA",
+      "library": "hal",
+      "sectionId": "DMA@hal#sec3",
+      "prototype": "uint32_t HAL_DMA_GetError(DMA_HandleTypeDef *hdma);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hdma",
+          "type": "DMA_HandleTypeDef *",
+          "descEn": "pointer to a DMA_HandleTypeDef structure that contains the configuration information for the specified DMA Channel.",
+          "descZh": "DMA 句柄。"
+        }
+      ],
+      "returnDescEn": "DMA Error Code",
+      "returnDescZh": "",
+      "briefEn": "Return the DMA error code.",
+      "briefZh": "读取 DMA 通道累计的错误码。",
+      "usageZh": "传输失败后判断具体原因（传输错误 TE、FIFO 错误 FE、直接模式错误 DME）。只有 F4/F7 有 FIFO 相关错误，F1 主要看 TE。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "读之前通常先 HAL_DMA_Abort 或重新 Init 清状态，错误码不会自动清零"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "DMA_HandleTypeDef"
+      ],
+      "headerLine": 394,
+      "definedIn": "stm32f1xx_hal_dma.h",
+      "sourceLine": 831,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

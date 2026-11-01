@@ -1,0 +1,2026 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "TIM",
+  "library": "reg",
+  "functions": [
+    {
+      "id": "REG_TIM_ARR",
+      "name": "TIM_ARR",
+      "peripheral": "TIM",
+      "library": "reg",
+      "sectionId": "TIM@reg#sec3",
+      "prototype": "TIM1->ARR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "TIM_ARR_ARR",
+          "type": "bits[31:0]（整个位域）",
+          "descEn": "actual auto-reload Value",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "TIM auto-reload register, Address offset: 0x2C",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TIM_ARR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TIM_TypeDef.ARR，偏移 0x2C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TIM1->ARR;  /* 读回当前值 */\nv &= ~TIM_ARR_ARR_Msk;  /* 先清掉 TIM_ARR_ARR：bits[31:0]（整个位域） */\nv |= (1u << TIM_ARR_ARR_Pos) & TIM_ARR_ARR_Msk;  /* 置位，实际取值看参考手册 */\nTIM1->ARR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4252,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TIM_BDTR",
+      "name": "TIM_BDTR",
+      "peripheral": "TIM",
+      "library": "reg",
+      "sectionId": "TIM@reg#sec3",
+      "prototype": "TIM1->BDTR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "TIM_BDTR_DTG",
+          "type": "bits[7:0]（整个位域）",
+          "descEn": "DTG[0:7] bits (Dead-Time Generator set-up)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_BDTR_LOCK",
+          "type": "bits[9:8]（整个位域）",
+          "descEn": "LOCK[1:0] bits (Lock Configuration)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_BDTR_OSSI",
+          "type": "bit 10（整个位域）",
+          "descEn": "Off-State Selection for Idle mode",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_BDTR_OSSR",
+          "type": "bit 11（整个位域）",
+          "descEn": "Off-State Selection for Run mode",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_BDTR_BKE",
+          "type": "bit 12（整个位域）",
+          "descEn": "Break enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_BDTR_BKP",
+          "type": "bit 13（整个位域）",
+          "descEn": "Break Polarity",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_BDTR_AOE",
+          "type": "bit 14（整个位域）",
+          "descEn": "Automatic Output enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_BDTR_MOE",
+          "type": "bit 15（整个位域）",
+          "descEn": "Main Output enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_BDTR_DTG_0",
+          "type": "bit 0",
+          "descEn": "0x00000001",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_BDTR_DTG_1",
+          "type": "bit 1",
+          "descEn": "0x00000002",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_BDTR_DTG_2",
+          "type": "bit 2",
+          "descEn": "0x00000004",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_BDTR_DTG_3",
+          "type": "bit 3",
+          "descEn": "0x00000008",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_BDTR_DTG_4",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_BDTR_DTG_5",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_BDTR_DTG_6",
+          "type": "bit 6",
+          "descEn": "0x00000040",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_BDTR_DTG_7",
+          "type": "bit 7",
+          "descEn": "0x00000080",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_BDTR_LOCK_0",
+          "type": "bit 8",
+          "descEn": "0x00000100",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_BDTR_LOCK_1",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "TIM break and dead-time register, Address offset: 0x44",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TIM_BDTR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TIM_TypeDef.BDTR，偏移 0x44"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TIM1->BDTR;  /* 读回当前值 */\nv &= ~TIM_BDTR_DTG_Msk;  /* 先清掉 TIM_BDTR_DTG：bits[7:0]（整个位域） */\nv |= (1u << TIM_BDTR_DTG_Pos) & TIM_BDTR_DTG_Msk;  /* 置位，实际取值看参考手册 */\nTIM1->BDTR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4282,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TIM_CCER",
+      "name": "TIM_CCER",
+      "peripheral": "TIM",
+      "library": "reg",
+      "sectionId": "TIM@reg#sec3",
+      "prototype": "TIM1->CCER",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "TIM_CCER_CC1E",
+          "type": "bit 0（整个位域）",
+          "descEn": "Capture/Compare 1 output enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCER_CC1P",
+          "type": "bit 1（整个位域）",
+          "descEn": "Capture/Compare 1 output Polarity",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCER_CC1NE",
+          "type": "bit 2（整个位域）",
+          "descEn": "Capture/Compare 1 Complementary output enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCER_CC1NP",
+          "type": "bit 3（整个位域）",
+          "descEn": "Capture/Compare 1 Complementary output Polarity",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCER_CC2E",
+          "type": "bit 4（整个位域）",
+          "descEn": "Capture/Compare 2 output enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCER_CC2P",
+          "type": "bit 5（整个位域）",
+          "descEn": "Capture/Compare 2 output Polarity",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCER_CC2NE",
+          "type": "bit 6（整个位域）",
+          "descEn": "Capture/Compare 2 Complementary output enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCER_CC2NP",
+          "type": "bit 7（整个位域）",
+          "descEn": "Capture/Compare 2 Complementary output Polarity",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCER_CC3E",
+          "type": "bit 8（整个位域）",
+          "descEn": "Capture/Compare 3 output enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCER_CC3P",
+          "type": "bit 9（整个位域）",
+          "descEn": "Capture/Compare 3 output Polarity",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCER_CC3NE",
+          "type": "bit 10（整个位域）",
+          "descEn": "Capture/Compare 3 Complementary output enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCER_CC3NP",
+          "type": "bit 11（整个位域）",
+          "descEn": "Capture/Compare 3 Complementary output Polarity",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCER_CC4E",
+          "type": "bit 12（整个位域）",
+          "descEn": "Capture/Compare 4 output enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCER_CC4P",
+          "type": "bit 13（整个位域）",
+          "descEn": "Capture/Compare 4 output Polarity",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "TIM capture/compare enable register, Address offset: 0x20",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TIM_CCER"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TIM_TypeDef.CCER，偏移 0x20"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TIM1->CCER;  /* 读回当前值 */\nv &= ~TIM_CCER_CC1E_Msk;  /* 先清掉 TIM_CCER_CC1E：bit 0（整个位域） */\nv |= (1u << TIM_CCER_CC1E_Pos) & TIM_CCER_CC1E_Msk;  /* 置位，实际取值看参考手册 */\nTIM1->CCER = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4198,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TIM_CCMR1",
+      "name": "TIM_CCMR1",
+      "peripheral": "TIM",
+      "library": "reg",
+      "sectionId": "TIM@reg#sec3",
+      "prototype": "TIM1->CCMR1",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "TIM_CCMR1_CC1S",
+          "type": "bits[1:0]（整个位域）",
+          "descEn": "CC1S[1:0] bits (Capture/Compare 1 Selection)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_OC1FE",
+          "type": "bit 2（整个位域）",
+          "descEn": "Output Compare 1 Fast enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_OC1PE",
+          "type": "bit 3（整个位域）",
+          "descEn": "Output Compare 1 Preload enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_OC1M",
+          "type": "bits[6:4]（整个位域）",
+          "descEn": "OC1M[2:0] bits (Output Compare 1 Mode)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_OC1CE",
+          "type": "bit 7（整个位域）",
+          "descEn": "Output Compare 1Clear Enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_CC2S",
+          "type": "bits[9:8]（整个位域）",
+          "descEn": "CC2S[1:0] bits (Capture/Compare 2 Selection)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_OC2FE",
+          "type": "bit 10（整个位域）",
+          "descEn": "Output Compare 2 Fast enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_OC2PE",
+          "type": "bit 11（整个位域）",
+          "descEn": "Output Compare 2 Preload enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_OC2M",
+          "type": "bits[14:12]（整个位域）",
+          "descEn": "OC2M[2:0] bits (Output Compare 2 Mode)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_OC2CE",
+          "type": "bit 15（整个位域）",
+          "descEn": "Output Compare 2 Clear Enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_IC1PSC",
+          "type": "bits[3:2]（整个位域）",
+          "descEn": "IC1PSC[1:0] bits (Input Capture 1 Prescaler)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_IC1F",
+          "type": "bits[7:4]（整个位域）",
+          "descEn": "IC1F[3:0] bits (Input Capture 1 Filter)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_IC2PSC",
+          "type": "bits[11:10]（整个位域）",
+          "descEn": "IC2PSC[1:0] bits (Input Capture 2 Prescaler)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_IC2F",
+          "type": "bits[15:12]（整个位域）",
+          "descEn": "IC2F[3:0] bits (Input Capture 2 Filter)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_CC1S_0",
+          "type": "bit 0",
+          "descEn": "0x00000001",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_CC1S_1",
+          "type": "bit 1",
+          "descEn": "0x00000002",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_OC1M_0",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_OC1M_1",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_OC1M_2",
+          "type": "bit 6",
+          "descEn": "0x00000040",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_CC2S_0",
+          "type": "bit 8",
+          "descEn": "0x00000100",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_CC2S_1",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_OC2M_0",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_OC2M_1",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_OC2M_2",
+          "type": "bit 14",
+          "descEn": "0x00004000",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_IC1PSC_0",
+          "type": "bit 2",
+          "descEn": "0x00000004",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_IC1PSC_1",
+          "type": "bit 3",
+          "descEn": "0x00000008",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_IC1F_0",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_IC1F_1",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_IC1F_2",
+          "type": "bit 6",
+          "descEn": "0x00000040",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_IC1F_3",
+          "type": "bit 7",
+          "descEn": "0x00000080",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_IC2PSC_0",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_IC2PSC_1",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_IC2F_0",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_IC2F_1",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_IC2F_2",
+          "type": "bit 14",
+          "descEn": "0x00004000",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR1_IC2F_3",
+          "type": "bit 15",
+          "descEn": "0x00008000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "TIM capture/compare mode register 1, Address offset: 0x18",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TIM_CCMR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TIM_TypeDef.CCMR1，偏移 0x18"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TIM1->CCMR1;  /* 读回当前值 */\nv &= ~TIM_CCMR1_CC1S_Msk;  /* 先清掉 TIM_CCMR1_CC1S：bits[1:0]（整个位域） */\nv |= (1u << TIM_CCMR1_CC1S_Pos) & TIM_CCMR1_CC1S_Msk;  /* 置位，实际取值看参考手册 */\nTIM1->CCMR1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4040,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TIM_CCMR2",
+      "name": "TIM_CCMR2",
+      "peripheral": "TIM",
+      "library": "reg",
+      "sectionId": "TIM@reg#sec3",
+      "prototype": "TIM1->CCMR2",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "TIM_CCMR2_CC3S",
+          "type": "bits[1:0]（整个位域）",
+          "descEn": "CC3S[1:0] bits (Capture/Compare 3 Selection)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_OC3FE",
+          "type": "bit 2（整个位域）",
+          "descEn": "Output Compare 3 Fast enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_OC3PE",
+          "type": "bit 3（整个位域）",
+          "descEn": "Output Compare 3 Preload enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_OC3M",
+          "type": "bits[6:4]（整个位域）",
+          "descEn": "OC3M[2:0] bits (Output Compare 3 Mode)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_OC3CE",
+          "type": "bit 7（整个位域）",
+          "descEn": "Output Compare 3 Clear Enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_CC4S",
+          "type": "bits[9:8]（整个位域）",
+          "descEn": "CC4S[1:0] bits (Capture/Compare 4 Selection)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_OC4FE",
+          "type": "bit 10（整个位域）",
+          "descEn": "Output Compare 4 Fast enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_OC4PE",
+          "type": "bit 11（整个位域）",
+          "descEn": "Output Compare 4 Preload enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_OC4M",
+          "type": "bits[14:12]（整个位域）",
+          "descEn": "OC4M[2:0] bits (Output Compare 4 Mode)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_OC4CE",
+          "type": "bit 15（整个位域）",
+          "descEn": "Output Compare 4 Clear Enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_IC3PSC",
+          "type": "bits[3:2]（整个位域）",
+          "descEn": "IC3PSC[1:0] bits (Input Capture 3 Prescaler)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_IC3F",
+          "type": "bits[7:4]（整个位域）",
+          "descEn": "IC3F[3:0] bits (Input Capture 3 Filter)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_IC4PSC",
+          "type": "bits[11:10]（整个位域）",
+          "descEn": "IC4PSC[1:0] bits (Input Capture 4 Prescaler)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_IC4F",
+          "type": "bits[15:12]（整个位域）",
+          "descEn": "IC4F[3:0] bits (Input Capture 4 Filter)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_CC3S_0",
+          "type": "bit 0",
+          "descEn": "0x00000001",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_CC3S_1",
+          "type": "bit 1",
+          "descEn": "0x00000002",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_OC3M_0",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_OC3M_1",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_OC3M_2",
+          "type": "bit 6",
+          "descEn": "0x00000040",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_CC4S_0",
+          "type": "bit 8",
+          "descEn": "0x00000100",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_CC4S_1",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_OC4M_0",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_OC4M_1",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_OC4M_2",
+          "type": "bit 14",
+          "descEn": "0x00004000",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_IC3PSC_0",
+          "type": "bit 2",
+          "descEn": "0x00000004",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_IC3PSC_1",
+          "type": "bit 3",
+          "descEn": "0x00000008",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_IC3F_0",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_IC3F_1",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_IC3F_2",
+          "type": "bit 6",
+          "descEn": "0x00000040",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_IC3F_3",
+          "type": "bit 7",
+          "descEn": "0x00000080",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_IC4PSC_0",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_IC4PSC_1",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_IC4F_0",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_IC4F_1",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_IC4F_2",
+          "type": "bit 14",
+          "descEn": "0x00004000",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CCMR2_IC4F_3",
+          "type": "bit 15",
+          "descEn": "0x00008000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "TIM capture/compare mode register 2, Address offset: 0x1C",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TIM_CCMR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TIM_TypeDef.CCMR2，偏移 0x1C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TIM1->CCMR2;  /* 读回当前值 */\nv &= ~TIM_CCMR2_CC3S_Msk;  /* 先清掉 TIM_CCMR2_CC3S：bits[1:0]（整个位域） */\nv |= (1u << TIM_CCMR2_CC3S_Pos) & TIM_CCMR2_CC3S_Msk;  /* 置位，实际取值看参考手册 */\nTIM1->CCMR2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4119,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TIM_CCR1",
+      "name": "TIM_CCR1",
+      "peripheral": "TIM",
+      "library": "reg",
+      "sectionId": "TIM@reg#sec2",
+      "prototype": "TIM1->CCR1",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "TIM_CCR1_CCR1",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Capture/Compare 1 Value",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "TIM capture/compare register 1, Address offset: 0x34",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TIM_CCR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TIM_TypeDef.CCR1，偏移 0x34"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TIM1->CCR1;  /* 读回当前值 */\nv &= ~TIM_CCR1_CCR1_Msk;  /* 先清掉 TIM_CCR1_CCR1：bits[15:0]（整个位域） */\nv |= (1u << TIM_CCR1_CCR1_Pos) & TIM_CCR1_CCR1_Msk;  /* 置位，实际取值看参考手册 */\nTIM1->CCR1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4262,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TIM_CCR2",
+      "name": "TIM_CCR2",
+      "peripheral": "TIM",
+      "library": "reg",
+      "sectionId": "TIM@reg#sec2",
+      "prototype": "TIM1->CCR2",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "TIM_CCR2_CCR2",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Capture/Compare 2 Value",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "TIM capture/compare register 2, Address offset: 0x38",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TIM_CCR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TIM_TypeDef.CCR2，偏移 0x38"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TIM1->CCR2;  /* 读回当前值 */\nv &= ~TIM_CCR2_CCR2_Msk;  /* 先清掉 TIM_CCR2_CCR2：bits[15:0]（整个位域） */\nv |= (1u << TIM_CCR2_CCR2_Pos) & TIM_CCR2_CCR2_Msk;  /* 置位，实际取值看参考手册 */\nTIM1->CCR2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4267,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TIM_CCR3",
+      "name": "TIM_CCR3",
+      "peripheral": "TIM",
+      "library": "reg",
+      "sectionId": "TIM@reg#sec2",
+      "prototype": "TIM1->CCR3",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "TIM_CCR3_CCR3",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Capture/Compare 3 Value",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "TIM capture/compare register 3, Address offset: 0x3C",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TIM_CCR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TIM_TypeDef.CCR3，偏移 0x3C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TIM1->CCR3;  /* 读回当前值 */\nv &= ~TIM_CCR3_CCR3_Msk;  /* 先清掉 TIM_CCR3_CCR3：bits[15:0]（整个位域） */\nv |= (1u << TIM_CCR3_CCR3_Pos) & TIM_CCR3_CCR3_Msk;  /* 置位，实际取值看参考手册 */\nTIM1->CCR3 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4272,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TIM_CCR4",
+      "name": "TIM_CCR4",
+      "peripheral": "TIM",
+      "library": "reg",
+      "sectionId": "TIM@reg#sec2",
+      "prototype": "TIM1->CCR4",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "TIM_CCR4_CCR4",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Capture/Compare 4 Value",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "TIM capture/compare register 4, Address offset: 0x40",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TIM_CCR4"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TIM_TypeDef.CCR4，偏移 0x40"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TIM1->CCR4;  /* 读回当前值 */\nv &= ~TIM_CCR4_CCR4_Msk;  /* 先清掉 TIM_CCR4_CCR4：bits[15:0]（整个位域） */\nv |= (1u << TIM_CCR4_CCR4_Pos) & TIM_CCR4_CCR4_Msk;  /* 置位，实际取值看参考手册 */\nTIM1->CCR4 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4277,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TIM_CNT",
+      "name": "TIM_CNT",
+      "peripheral": "TIM",
+      "library": "reg",
+      "sectionId": "TIM@reg#sec2",
+      "prototype": "TIM1->CNT",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "TIM_CNT_CNT",
+          "type": "bits[31:0]（整个位域）",
+          "descEn": "Counter Value",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "TIM counter register, Address offset: 0x24",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TIM_CNT"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TIM_TypeDef.CNT，偏移 0x24"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TIM1->CNT;  /* 读回当前值 */\nv &= ~TIM_CNT_CNT_Msk;  /* 先清掉 TIM_CNT_CNT：bits[31:0]（整个位域） */\nv |= (1u << TIM_CNT_CNT_Pos) & TIM_CNT_CNT_Msk;  /* 置位，实际取值看参考手册 */\nTIM1->CNT = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4242,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TIM_CR1",
+      "name": "TIM_CR1",
+      "peripheral": "TIM",
+      "library": "reg",
+      "sectionId": "TIM@reg#sec3",
+      "prototype": "TIM1->CR1",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "TIM_CR1_CEN",
+          "type": "bit 0（整个位域）",
+          "descEn": "Counter enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CR1_UDIS",
+          "type": "bit 1（整个位域）",
+          "descEn": "Update disable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CR1_URS",
+          "type": "bit 2（整个位域）",
+          "descEn": "Update request source",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CR1_OPM",
+          "type": "bit 3（整个位域）",
+          "descEn": "One pulse mode",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CR1_DIR",
+          "type": "bit 4（整个位域）",
+          "descEn": "Direction",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CR1_CMS",
+          "type": "bits[6:5]（整个位域）",
+          "descEn": "CMS[1:0] bits (Center-aligned mode selection)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CR1_ARPE",
+          "type": "bit 7（整个位域）",
+          "descEn": "Auto-reload preload enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CR1_CKD",
+          "type": "bits[9:8]（整个位域）",
+          "descEn": "CKD[1:0] bits (clock division)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CR1_CMS_0",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CR1_CMS_1",
+          "type": "bit 6",
+          "descEn": "0x00000040",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CR1_CKD_0",
+          "type": "bit 8",
+          "descEn": "0x00000100",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CR1_CKD_1",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "TIM control register 1, Address offset: 0x00",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TIM_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TIM_TypeDef.CR1，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TIM1->CR1;  /* 读回当前值 */\nv &= ~TIM_CR1_CEN_Msk;  /* 先清掉 TIM_CR1_CEN：bit 0（整个位域） */\nv |= (1u << TIM_CR1_CEN_Pos) & TIM_CR1_CEN_Msk;  /* 置位，实际取值看参考手册 */\nTIM1->CR1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3813,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TIM_CR2",
+      "name": "TIM_CR2",
+      "peripheral": "TIM",
+      "library": "reg",
+      "sectionId": "TIM@reg#sec3",
+      "prototype": "TIM1->CR2",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "TIM_CR2_CCPC",
+          "type": "bit 0（整个位域）",
+          "descEn": "Capture/Compare Preloaded Control",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CR2_CCUS",
+          "type": "bit 2（整个位域）",
+          "descEn": "Capture/Compare Control Update Selection",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CR2_CCDS",
+          "type": "bit 3（整个位域）",
+          "descEn": "Capture/Compare DMA Selection",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CR2_MMS",
+          "type": "bits[6:4]（整个位域）",
+          "descEn": "MMS[2:0] bits (Master Mode Selection)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CR2_TI1S",
+          "type": "bit 7（整个位域）",
+          "descEn": "TI1 Selection",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CR2_OIS1",
+          "type": "bit 8（整个位域）",
+          "descEn": "Output Idle state 1 (OC1 output)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CR2_OIS2",
+          "type": "bit 10（整个位域）",
+          "descEn": "Output Idle state 2 (OC2 output)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CR2_OIS3",
+          "type": "bit 12（整个位域）",
+          "descEn": "Output Idle state 3 (OC3 output)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CR2_OIS4",
+          "type": "bit 14（整个位域）",
+          "descEn": "Output Idle state 4 (OC4 output)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CR2_MMS_0",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CR2_MMS_1",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_CR2_MMS_2",
+          "type": "bit 6",
+          "descEn": "0x00000040",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "TIM control register 2, Address offset: 0x04",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TIM_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TIM_TypeDef.CR2，偏移 0x04"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TIM1->CR2;  /* 读回当前值 */\nv &= ~TIM_CR2_CCPC_Msk;  /* 先清掉 TIM_CR2_CCPC：bit 0（整个位域） */\nv |= (1u << TIM_CR2_CCPC_Pos) & TIM_CR2_CCPC_Msk;  /* 置位，实际取值看参考手册 */\nTIM1->CR2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3846,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TIM_DCR",
+      "name": "TIM_DCR",
+      "peripheral": "TIM",
+      "library": "reg",
+      "sectionId": "TIM@reg#sec3",
+      "prototype": "TIM1->DCR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "TIM_DCR_DBA",
+          "type": "bits[4:0]（整个位域）",
+          "descEn": "DBA[4:0] bits (DMA Base Address)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DCR_DBL",
+          "type": "bits[12:8]（整个位域）",
+          "descEn": "DBL[4:0] bits (DMA Burst Length)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DCR_DBA_0",
+          "type": "bit 0",
+          "descEn": "0x00000001",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DCR_DBA_1",
+          "type": "bit 1",
+          "descEn": "0x00000002",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DCR_DBA_2",
+          "type": "bit 2",
+          "descEn": "0x00000004",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DCR_DBA_3",
+          "type": "bit 3",
+          "descEn": "0x00000008",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DCR_DBA_4",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DCR_DBL_0",
+          "type": "bit 8",
+          "descEn": "0x00000100",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DCR_DBL_1",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DCR_DBL_2",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DCR_DBL_3",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DCR_DBL_4",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "TIM DMA control register, Address offset: 0x48",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TIM_DCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TIM_TypeDef.DCR，偏移 0x48"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TIM1->DCR;  /* 读回当前值 */\nv &= ~TIM_DCR_DBA_Msk;  /* 先清掉 TIM_DCR_DBA：bits[4:0]（整个位域） */\nv |= (1u << TIM_DCR_DBA_Pos) & TIM_DCR_DBA_Msk;  /* 置位，实际取值看参考手册 */\nTIM1->DCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4320,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TIM_DIER",
+      "name": "TIM_DIER",
+      "peripheral": "TIM",
+      "library": "reg",
+      "sectionId": "TIM@reg#sec1",
+      "prototype": "TIM1->DIER",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "TIM_DIER_UIE",
+          "type": "bit 0（整个位域）",
+          "descEn": "Update interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DIER_CC1IE",
+          "type": "bit 1（整个位域）",
+          "descEn": "Capture/Compare 1 interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DIER_CC2IE",
+          "type": "bit 2（整个位域）",
+          "descEn": "Capture/Compare 2 interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DIER_CC3IE",
+          "type": "bit 3（整个位域）",
+          "descEn": "Capture/Compare 3 interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DIER_CC4IE",
+          "type": "bit 4（整个位域）",
+          "descEn": "Capture/Compare 4 interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DIER_COMIE",
+          "type": "bit 5（整个位域）",
+          "descEn": "COM interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DIER_TIE",
+          "type": "bit 6（整个位域）",
+          "descEn": "Trigger interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DIER_BIE",
+          "type": "bit 7（整个位域）",
+          "descEn": "Break interrupt enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DIER_UDE",
+          "type": "bit 8（整个位域）",
+          "descEn": "Update DMA request enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DIER_CC1DE",
+          "type": "bit 9（整个位域）",
+          "descEn": "Capture/Compare 1 DMA request enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DIER_CC2DE",
+          "type": "bit 10（整个位域）",
+          "descEn": "Capture/Compare 2 DMA request enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DIER_CC3DE",
+          "type": "bit 11（整个位域）",
+          "descEn": "Capture/Compare 3 DMA request enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DIER_CC4DE",
+          "type": "bit 12（整个位域）",
+          "descEn": "Capture/Compare 4 DMA request enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DIER_COMDE",
+          "type": "bit 13（整个位域）",
+          "descEn": "COM DMA request enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_DIER_TDE",
+          "type": "bit 14（整个位域）",
+          "descEn": "Trigger DMA request enable",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "TIM DMA/interrupt enable register, Address offset: 0x0C",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TIM_DIER"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TIM_TypeDef.DIER，偏移 0x0C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TIM1->DIER;  /* 读回当前值 */\nv &= ~TIM_DIER_UIE_Msk;  /* 先清掉 TIM_DIER_UIE：bit 0（整个位域） */\nv |= (1u << TIM_DIER_UIE_Pos) & TIM_DIER_UIE_Msk;  /* 置位，实际取值看参考手册 */\nTIM1->DIER = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3929,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TIM_DMAR",
+      "name": "TIM_DMAR",
+      "peripheral": "TIM",
+      "library": "reg",
+      "sectionId": "TIM@reg#sec3",
+      "prototype": "TIM1->DMAR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "TIM_DMAR_DMAB",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "DMA register for burst accesses",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "TIM DMA address for full transfer register, Address offset: 0x4C",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TIM_DMAR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TIM_TypeDef.DMAR，偏移 0x4C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TIM1->DMAR;  /* 读回当前值 */\nv &= ~TIM_DMAR_DMAB_Msk;  /* 先清掉 TIM_DMAR_DMAB：bits[15:0]（整个位域） */\nv |= (1u << TIM_DMAR_DMAB_Pos) & TIM_DMAR_DMAB_Msk;  /* 置位，实际取值看参考手册 */\nTIM1->DMAR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4339,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TIM_EGR",
+      "name": "TIM_EGR",
+      "peripheral": "TIM",
+      "library": "reg",
+      "sectionId": "TIM@reg#sec3",
+      "prototype": "TIM1->EGR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "TIM_EGR_UG",
+          "type": "bit 0（整个位域）",
+          "descEn": "Update Generation",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_EGR_CC1G",
+          "type": "bit 1（整个位域）",
+          "descEn": "Capture/Compare 1 Generation",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_EGR_CC2G",
+          "type": "bit 2（整个位域）",
+          "descEn": "Capture/Compare 2 Generation",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_EGR_CC3G",
+          "type": "bit 3（整个位域）",
+          "descEn": "Capture/Compare 3 Generation",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_EGR_CC4G",
+          "type": "bit 4（整个位域）",
+          "descEn": "Capture/Compare 4 Generation",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_EGR_COMG",
+          "type": "bit 5（整个位域）",
+          "descEn": "Capture/Compare Control Update Generation",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_EGR_TG",
+          "type": "bit 6（整个位域）",
+          "descEn": "Trigger Generation",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_EGR_BG",
+          "type": "bit 7（整个位域）",
+          "descEn": "Break Generation",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "TIM event generation register, Address offset: 0x14",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TIM_EGR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TIM_TypeDef.EGR，偏移 0x14"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TIM1->EGR;  /* 读回当前值 */\nv &= ~TIM_EGR_UG_Msk;  /* 先清掉 TIM_EGR_UG：bit 0（整个位域） */\nv |= (1u << TIM_EGR_UG_Pos) & TIM_EGR_UG_Msk;  /* 置位，实际取值看参考手册 */\nTIM1->EGR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4014,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TIM_OR",
+      "name": "TIM_OR",
+      "peripheral": "TIM",
+      "library": "reg",
+      "sectionId": "TIM@reg#sec3",
+      "prototype": "TIM1->OR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "TIM option register, Address offset: 0x50",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TIM_OR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TIM_TypeDef.OR，偏移 0x50",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TIM1->OR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nTIM1->OR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TIM_PSC",
+      "name": "TIM_PSC",
+      "peripheral": "TIM",
+      "library": "reg",
+      "sectionId": "TIM@reg#sec3",
+      "prototype": "TIM1->PSC",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "TIM_PSC_PSC",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Prescaler Value",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "TIM prescaler register, Address offset: 0x28",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TIM_PSC"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TIM_TypeDef.PSC，偏移 0x28"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TIM1->PSC;  /* 读回当前值 */\nv &= ~TIM_PSC_PSC_Msk;  /* 先清掉 TIM_PSC_PSC：bits[15:0]（整个位域） */\nv |= (1u << TIM_PSC_PSC_Pos) & TIM_PSC_PSC_Msk;  /* 置位，实际取值看参考手册 */\nTIM1->PSC = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4247,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TIM_RCR",
+      "name": "TIM_RCR",
+      "peripheral": "TIM",
+      "library": "reg",
+      "sectionId": "TIM@reg#sec3",
+      "prototype": "TIM1->RCR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "TIM_RCR_REP",
+          "type": "bits[7:0]（整个位域）",
+          "descEn": "Repetition Counter Value",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "TIM repetition counter register, Address offset: 0x30",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TIM_RCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TIM_TypeDef.RCR，偏移 0x30"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TIM1->RCR;  /* 读回当前值 */\nv &= ~TIM_RCR_REP_Msk;  /* 先清掉 TIM_RCR_REP：bits[7:0]（整个位域） */\nv |= (1u << TIM_RCR_REP_Pos) & TIM_RCR_REP_Msk;  /* 置位，实际取值看参考手册 */\nTIM1->RCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4257,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TIM_SMCR",
+      "name": "TIM_SMCR",
+      "peripheral": "TIM",
+      "library": "reg",
+      "sectionId": "TIM@reg#sec3",
+      "prototype": "TIM1->SMCR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "TIM_SMCR_SMS",
+          "type": "bits[2:0]（整个位域）",
+          "descEn": "SMS[2:0] bits (Slave mode selection)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SMCR_TS",
+          "type": "bits[6:4]（整个位域）",
+          "descEn": "TS[2:0] bits (Trigger selection)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SMCR_MSM",
+          "type": "bit 7（整个位域）",
+          "descEn": "Master/slave mode",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SMCR_ETF",
+          "type": "bits[11:8]（整个位域）",
+          "descEn": "ETF[3:0] bits (External trigger filter)",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SMCR_ECE",
+          "type": "bit 14（整个位域）",
+          "descEn": "External clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SMCR_ETP",
+          "type": "bit 15（整个位域）",
+          "descEn": "External trigger polarity",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SMCR_SMS_0",
+          "type": "bit 0",
+          "descEn": "0x00000001",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SMCR_SMS_1",
+          "type": "bit 1",
+          "descEn": "0x00000002",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SMCR_SMS_2",
+          "type": "bit 2",
+          "descEn": "0x00000004",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SMCR_TS_0",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SMCR_TS_1",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SMCR_TS_2",
+          "type": "bit 6",
+          "descEn": "0x00000040",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SMCR_ETF_0",
+          "type": "bit 8",
+          "descEn": "0x00000100",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SMCR_ETF_1",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SMCR_ETF_2",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SMCR_ETF_3",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "TIM slave Mode Control register, Address offset: 0x08",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TIM_SMCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TIM_TypeDef.SMCR，偏移 0x08"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TIM1->SMCR;  /* 读回当前值 */\nv &= ~TIM_SMCR_SMS_Msk;  /* 先清掉 TIM_SMCR_SMS：bits[2:0]（整个位域） */\nv |= (1u << TIM_SMCR_SMS_Pos) & TIM_SMCR_SMS_Msk;  /* 置位，实际取值看参考手册 */\nTIM1->SMCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3889,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TIM_SR",
+      "name": "TIM_SR",
+      "peripheral": "TIM",
+      "library": "reg",
+      "sectionId": "TIM@reg#sec1",
+      "prototype": "TIM1->SR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "TIM_SR_UIF",
+          "type": "bit 0（整个位域）",
+          "descEn": "Update interrupt Flag",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SR_CC1IF",
+          "type": "bit 1（整个位域）",
+          "descEn": "Capture/Compare 1 interrupt Flag",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SR_CC2IF",
+          "type": "bit 2（整个位域）",
+          "descEn": "Capture/Compare 2 interrupt Flag",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SR_CC3IF",
+          "type": "bit 3（整个位域）",
+          "descEn": "Capture/Compare 3 interrupt Flag",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SR_CC4IF",
+          "type": "bit 4（整个位域）",
+          "descEn": "Capture/Compare 4 interrupt Flag",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SR_COMIF",
+          "type": "bit 5（整个位域）",
+          "descEn": "COM interrupt Flag",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SR_TIF",
+          "type": "bit 6（整个位域）",
+          "descEn": "Trigger interrupt Flag",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SR_BIF",
+          "type": "bit 7（整个位域）",
+          "descEn": "Break interrupt Flag",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SR_CC1OF",
+          "type": "bit 9（整个位域）",
+          "descEn": "Capture/Compare 1 Overcapture Flag",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SR_CC2OF",
+          "type": "bit 10（整个位域）",
+          "descEn": "Capture/Compare 2 Overcapture Flag",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SR_CC3OF",
+          "type": "bit 11（整个位域）",
+          "descEn": "Capture/Compare 3 Overcapture Flag",
+          "descZh": ""
+        },
+        {
+          "name": "TIM_SR_CC4OF",
+          "type": "bit 12（整个位域）",
+          "descEn": "Capture/Compare 4 Overcapture Flag",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "TIM status register, Address offset: 0x10",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TIM_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TIM_TypeDef.SR，偏移 0x10"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TIM1->SR;  /* 读回当前值 */\nv &= ~TIM_SR_UIF_Msk;  /* 先清掉 TIM_SR_UIF：bit 0（整个位域） */\nv |= (1u << TIM_SR_UIF_Pos) & TIM_SR_UIF_Msk;  /* 置位，实际取值看参考手册 */\nTIM1->SR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3976,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    }
+  ]
+}

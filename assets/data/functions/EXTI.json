@@ -6,7 +6,7 @@
       "id": "EXTI_DeInit",
       "name": "EXTI_DeInit",
       "peripheral": "EXTI",
-      "sectionId": "EXTI#sec1",
+      "sectionId": "EXTI@spl#sec1",
       "prototype": "void EXTI_DeInit(void);",
       "returnType": "void",
       "params": [],
@@ -70,7 +70,7 @@
       "id": "EXTI_Init",
       "name": "EXTI_Init",
       "peripheral": "EXTI",
-      "sectionId": "EXTI#sec1",
+      "sectionId": "EXTI@spl#sec1",
       "prototype": "void EXTI_Init(EXTI_InitTypeDef* EXTI_InitStruct);",
       "returnType": "void",
       "params": [
@@ -166,7 +166,7 @@
       "id": "EXTI_StructInit",
       "name": "EXTI_StructInit",
       "peripheral": "EXTI",
-      "sectionId": "EXTI#sec1",
+      "sectionId": "EXTI@spl#sec1",
       "prototype": "void EXTI_StructInit(EXTI_InitTypeDef* EXTI_InitStruct);",
       "returnType": "void",
       "params": [
@@ -219,7 +219,7 @@
       "id": "EXTI_GenerateSWInterrupt",
       "name": "EXTI_GenerateSWInterrupt",
       "peripheral": "EXTI",
-      "sectionId": "EXTI#sec2",
+      "sectionId": "EXTI@spl#sec2",
       "prototype": "void EXTI_GenerateSWInterrupt(uint32_t EXTI_Line);",
       "returnType": "void",
       "params": [
@@ -284,7 +284,7 @@
       "id": "EXTI_GetFlagStatus",
       "name": "EXTI_GetFlagStatus",
       "peripheral": "EXTI",
-      "sectionId": "EXTI#sec3",
+      "sectionId": "EXTI@spl#sec3",
       "prototype": "FlagStatus EXTI_GetFlagStatus(uint32_t EXTI_Line);",
       "returnType": "FlagStatus",
       "params": [
@@ -349,7 +349,7 @@
       "id": "EXTI_ClearFlag",
       "name": "EXTI_ClearFlag",
       "peripheral": "EXTI",
-      "sectionId": "EXTI#sec3",
+      "sectionId": "EXTI@spl#sec3",
       "prototype": "void EXTI_ClearFlag(uint32_t EXTI_Line);",
       "returnType": "void",
       "params": [
@@ -407,7 +407,7 @@
       "id": "EXTI_GetITStatus",
       "name": "EXTI_GetITStatus",
       "peripheral": "EXTI",
-      "sectionId": "EXTI#sec4",
+      "sectionId": "EXTI@spl#sec4",
       "prototype": "ITStatus EXTI_GetITStatus(uint32_t EXTI_Line);",
       "returnType": "ITStatus",
       "params": [
@@ -475,7 +475,7 @@
       "id": "EXTI_ClearITPendingBit",
       "name": "EXTI_ClearITPendingBit",
       "peripheral": "EXTI",
-      "sectionId": "EXTI#sec4",
+      "sectionId": "EXTI@spl#sec4",
       "prototype": "void EXTI_ClearITPendingBit(uint32_t EXTI_Line);",
       "returnType": "void",
       "params": [

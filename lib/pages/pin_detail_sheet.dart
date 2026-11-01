@@ -163,7 +163,12 @@ class _PinDetailSheet extends ConsumerWidget {
                       <String>[
                         f.kind.labelZh,
                         if (f.remapRequired) '需要重映射',
-                        if (f.peripheralId.isNotEmpty) f.peripheralId,
+                        // 外设 id 换成中文名显示；查不到时（例如引脚标注里的
+                        // 「USB」在 STM32F103 上只是 USB 的 DM/DP 引脚功能，
+                        // 本 APP 没有为它建外设条目）原样显示 id。
+                        if (f.peripheralId.isNotEmpty)
+                          data?.peripheral(f.peripheralId)?.nameZh ??
+                              f.peripheralId,
                       ].join(' · '),
                       style: const TextStyle(fontSize: 12, height: 1.45),
                     ),

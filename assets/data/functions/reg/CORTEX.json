@@ -1,0 +1,5779 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "CORTEX",
+  "library": "reg",
+  "functions": [
+    {
+      "id": "REG_CoreDebug_DCRDR",
+      "name": "CoreDebug_DCRDR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "CoreDebug->DCRDR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Debug Core Register Data Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "CoreDebug_DCRDR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 CoreDebug_Type.DCRDR，偏移 0x08",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = CoreDebug->DCRDR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nCoreDebug->DCRDR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_CoreDebug_DCRSR",
+      "name": "CoreDebug_DCRSR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "CoreDebug->DCRSR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Debug Core Register Selector Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "CoreDebug_DCRSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 CoreDebug_Type.DCRSR，偏移 0x04",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = CoreDebug->DCRSR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nCoreDebug->DCRSR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_CoreDebug_DEMCR",
+      "name": "CoreDebug_DEMCR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "CoreDebug->DEMCR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Debug Exception and Monitor Control Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "CoreDebug_DEMCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 CoreDebug_Type.DEMCR，偏移 0x0C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = CoreDebug->DEMCR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nCoreDebug->DEMCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_CoreDebug_DHCSR",
+      "name": "CoreDebug_DHCSR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "CoreDebug->DHCSR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Debug Halting Control and Status Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "CoreDebug_DHCSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 CoreDebug_Type.DHCSR，偏移 0x00",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = CoreDebug->DHCSR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nCoreDebug->DHCSR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DWT_COMP0",
+      "name": "DWT_COMP0",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "DWT->COMP0",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Comparator Register 0",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DWT_COMP0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DWT_Type.COMP0，偏移 0x20",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DWT->COMP0;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nDWT->COMP0 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DWT_COMP1",
+      "name": "DWT_COMP1",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "DWT->COMP1",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Comparator Register 1",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DWT_COMP1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DWT_Type.COMP1，偏移 0x30",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DWT->COMP1;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nDWT->COMP1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DWT_COMP2",
+      "name": "DWT_COMP2",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "DWT->COMP2",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Comparator Register 2",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DWT_COMP2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DWT_Type.COMP2，偏移 0x40",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DWT->COMP2;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nDWT->COMP2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DWT_COMP3",
+      "name": "DWT_COMP3",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "DWT->COMP3",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Comparator Register 3",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DWT_COMP3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DWT_Type.COMP3，偏移 0x50",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DWT->COMP3;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nDWT->COMP3 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DWT_CPICNT",
+      "name": "DWT_CPICNT",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "DWT->CPICNT",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "CPI Count Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DWT_CPICNT"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DWT_Type.CPICNT，偏移 0x08",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DWT->CPICNT;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nDWT->CPICNT = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DWT_CTRL",
+      "name": "DWT_CTRL",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "DWT->CTRL",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Control Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DWT_CTRL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DWT_Type.CTRL，偏移 0x00",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DWT->CTRL;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nDWT->CTRL = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DWT_CYCCNT",
+      "name": "DWT_CYCCNT",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "DWT->CYCCNT",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Cycle Count Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DWT_CYCCNT"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DWT_Type.CYCCNT，偏移 0x04",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DWT->CYCCNT;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nDWT->CYCCNT = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DWT_EXCCNT",
+      "name": "DWT_EXCCNT",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "DWT->EXCCNT",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Exception Overhead Count Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DWT_EXCCNT"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DWT_Type.EXCCNT，偏移 0x0C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DWT->EXCCNT;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nDWT->EXCCNT = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DWT_FOLDCNT",
+      "name": "DWT_FOLDCNT",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "DWT->FOLDCNT",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Folded-instruction Count Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DWT_FOLDCNT"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DWT_Type.FOLDCNT，偏移 0x18",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DWT->FOLDCNT;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nDWT->FOLDCNT = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DWT_FUNCTION0",
+      "name": "DWT_FUNCTION0",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "DWT->FUNCTION0",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Function Register 0",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DWT_FUNCTION0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DWT_Type.FUNCTION0，偏移 0x28",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DWT->FUNCTION0;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nDWT->FUNCTION0 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DWT_FUNCTION1",
+      "name": "DWT_FUNCTION1",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "DWT->FUNCTION1",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Function Register 1",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DWT_FUNCTION1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DWT_Type.FUNCTION1，偏移 0x38",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DWT->FUNCTION1;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nDWT->FUNCTION1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DWT_FUNCTION2",
+      "name": "DWT_FUNCTION2",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "DWT->FUNCTION2",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Function Register 2",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DWT_FUNCTION2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DWT_Type.FUNCTION2，偏移 0x48",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DWT->FUNCTION2;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nDWT->FUNCTION2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DWT_FUNCTION3",
+      "name": "DWT_FUNCTION3",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "DWT->FUNCTION3",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Function Register 3",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DWT_FUNCTION3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DWT_Type.FUNCTION3，偏移 0x58",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DWT->FUNCTION3;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nDWT->FUNCTION3 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DWT_LSUCNT",
+      "name": "DWT_LSUCNT",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "DWT->LSUCNT",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "LSU Count Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DWT_LSUCNT"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DWT_Type.LSUCNT，偏移 0x14",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DWT->LSUCNT;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nDWT->LSUCNT = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DWT_MASK0",
+      "name": "DWT_MASK0",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "DWT->MASK0",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Mask Register 0",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DWT_MASK0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DWT_Type.MASK0，偏移 0x24",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DWT->MASK0;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nDWT->MASK0 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DWT_MASK1",
+      "name": "DWT_MASK1",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "DWT->MASK1",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Mask Register 1",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DWT_MASK1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DWT_Type.MASK1，偏移 0x34",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DWT->MASK1;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nDWT->MASK1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DWT_MASK2",
+      "name": "DWT_MASK2",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "DWT->MASK2",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Mask Register 2",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DWT_MASK2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DWT_Type.MASK2，偏移 0x44",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DWT->MASK2;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nDWT->MASK2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DWT_MASK3",
+      "name": "DWT_MASK3",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "DWT->MASK3",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Mask Register 3",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DWT_MASK3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DWT_Type.MASK3，偏移 0x54",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DWT->MASK3;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nDWT->MASK3 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DWT_PCSR",
+      "name": "DWT_PCSR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "DWT->PCSR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Program Counter Sample Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DWT_PCSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DWT_Type.PCSR，偏移 0x1C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DWT->PCSR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nDWT->PCSR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DWT_SLEEPCNT",
+      "name": "DWT_SLEEPCNT",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "DWT->SLEEPCNT",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Sleep Count Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DWT_SLEEPCNT"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DWT_Type.SLEEPCNT，偏移 0x10",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DWT->SLEEPCNT;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nDWT->SLEEPCNT = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ITM_CID0",
+      "name": "ITM_CID0",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "ITM->CID0",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "ITM Component Identification Register #0",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ITM_CID0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ITM_Type.CID0，偏移 0xF70",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ITM->CID0;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nITM->CID0 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ITM_CID1",
+      "name": "ITM_CID1",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "ITM->CID1",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "ITM Component Identification Register #1",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ITM_CID1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ITM_Type.CID1，偏移 0xF74",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ITM->CID1;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nITM->CID1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ITM_CID2",
+      "name": "ITM_CID2",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "ITM->CID2",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "ITM Component Identification Register #2",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ITM_CID2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ITM_Type.CID2，偏移 0xF78",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ITM->CID2;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nITM->CID2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ITM_CID3",
+      "name": "ITM_CID3",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "ITM->CID3",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "ITM Component Identification Register #3",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ITM_CID3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ITM_Type.CID3，偏移 0xF7C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ITM->CID3;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nITM->CID3 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ITM_IMCR",
+      "name": "ITM_IMCR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "ITM->IMCR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "ITM Integration Mode Control Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ITM_IMCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ITM_Type.IMCR，偏移 0xE80",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ITM->IMCR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nITM->IMCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ITM_IRR",
+      "name": "ITM_IRR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "ITM->IRR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "ITM Integration Read Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ITM_IRR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ITM_Type.IRR，偏移 0xE7C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ITM->IRR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nITM->IRR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ITM_IWR",
+      "name": "ITM_IWR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "ITM->IWR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "ITM Integration Write Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ITM_IWR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ITM_Type.IWR，偏移 0xE78",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ITM->IWR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nITM->IWR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ITM_LAR",
+      "name": "ITM_LAR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "ITM->LAR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "ITM Lock Access Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ITM_LAR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ITM_Type.LAR，偏移 0xF30",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ITM->LAR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nITM->LAR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ITM_LSR",
+      "name": "ITM_LSR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "ITM->LSR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "ITM Lock Status Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ITM_LSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ITM_Type.LSR，偏移 0xF34",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ITM->LSR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nITM->LSR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ITM_PID0",
+      "name": "ITM_PID0",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "ITM->PID0",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "ITM Peripheral Identification Register #0",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ITM_PID0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ITM_Type.PID0，偏移 0xF60",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ITM->PID0;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nITM->PID0 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ITM_PID1",
+      "name": "ITM_PID1",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "ITM->PID1",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "ITM Peripheral Identification Register #1",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ITM_PID1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ITM_Type.PID1，偏移 0xF64",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ITM->PID1;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nITM->PID1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ITM_PID2",
+      "name": "ITM_PID2",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "ITM->PID2",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "ITM Peripheral Identification Register #2",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ITM_PID2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ITM_Type.PID2，偏移 0xF68",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ITM->PID2;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nITM->PID2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ITM_PID3",
+      "name": "ITM_PID3",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "ITM->PID3",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "ITM Peripheral Identification Register #3",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ITM_PID3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ITM_Type.PID3，偏移 0xF6C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ITM->PID3;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nITM->PID3 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ITM_PID4",
+      "name": "ITM_PID4",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "ITM->PID4",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "ITM Peripheral Identification Register #4",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ITM_PID4"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ITM_Type.PID4，偏移 0xF50",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ITM->PID4;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nITM->PID4 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ITM_PID5",
+      "name": "ITM_PID5",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "ITM->PID5",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "ITM Peripheral Identification Register #5",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ITM_PID5"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ITM_Type.PID5，偏移 0xF54",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ITM->PID5;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nITM->PID5 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ITM_PID6",
+      "name": "ITM_PID6",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "ITM->PID6",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "ITM Peripheral Identification Register #6",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ITM_PID6"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ITM_Type.PID6，偏移 0xF58",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ITM->PID6;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nITM->PID6 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ITM_PID7",
+      "name": "ITM_PID7",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "ITM->PID7",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "ITM Peripheral Identification Register #7",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ITM_PID7"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ITM_Type.PID7，偏移 0xF5C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ITM->PID7;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nITM->PID7 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ITM_TCR",
+      "name": "ITM_TCR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "ITM->TCR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "ITM Trace Control Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ITM_TCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ITM_Type.TCR，偏移 0xE00",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ITM->TCR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nITM->TCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ITM_TER",
+      "name": "ITM_TER",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "ITM->TER",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "ITM Trace Enable Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ITM_TER"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ITM_Type.TER，偏移 0xD80",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ITM->TER;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nITM->TER = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ITM_TPR",
+      "name": "ITM_TPR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "ITM->TPR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "ITM Trace Privilege Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ITM_TPR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ITM_Type.TPR，偏移 0xDC0",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ITM->TPR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nITM->TPR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_MPU_CTRL",
+      "name": "MPU_CTRL",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "MPU->CTRL",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "MPU Control Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "MPU_CTRL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 MPU_Type.CTRL，偏移 0x04",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = MPU->CTRL;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nMPU->CTRL = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_MPU_RASR",
+      "name": "MPU_RASR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "MPU->RASR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "MPU Region Attribute and Size Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "MPU_RASR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 MPU_Type.RASR，偏移 0x10",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = MPU->RASR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nMPU->RASR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_MPU_RASR_A1",
+      "name": "MPU_RASR_A1",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "MPU->RASR_A1",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "MPU Alias 1 Region Attribute and Size Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "MPU_RASR_A1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 MPU_Type.RASR_A1，偏移 0x18",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = MPU->RASR_A1;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nMPU->RASR_A1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_MPU_RASR_A2",
+      "name": "MPU_RASR_A2",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "MPU->RASR_A2",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "MPU Alias 2 Region Attribute and Size Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "MPU_RASR_A2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 MPU_Type.RASR_A2，偏移 0x20",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = MPU->RASR_A2;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nMPU->RASR_A2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_MPU_RASR_A3",
+      "name": "MPU_RASR_A3",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "MPU->RASR_A3",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "MPU Alias 3 Region Attribute and Size Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "MPU_RASR_A3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 MPU_Type.RASR_A3，偏移 0x28",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = MPU->RASR_A3;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nMPU->RASR_A3 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_MPU_RBAR",
+      "name": "MPU_RBAR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "MPU->RBAR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "MPU Region Base Address Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "MPU_RBAR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 MPU_Type.RBAR，偏移 0x0C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = MPU->RBAR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nMPU->RBAR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_MPU_RBAR_A1",
+      "name": "MPU_RBAR_A1",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "MPU->RBAR_A1",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "MPU Alias 1 Region Base Address Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "MPU_RBAR_A1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 MPU_Type.RBAR_A1，偏移 0x14",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = MPU->RBAR_A1;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nMPU->RBAR_A1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_MPU_RBAR_A2",
+      "name": "MPU_RBAR_A2",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "MPU->RBAR_A2",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "MPU Alias 2 Region Base Address Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "MPU_RBAR_A2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 MPU_Type.RBAR_A2，偏移 0x1C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = MPU->RBAR_A2;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nMPU->RBAR_A2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_MPU_RBAR_A3",
+      "name": "MPU_RBAR_A3",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "MPU->RBAR_A3",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "MPU Alias 3 Region Base Address Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "MPU_RBAR_A3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 MPU_Type.RBAR_A3，偏移 0x24",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = MPU->RBAR_A3;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nMPU->RBAR_A3 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_MPU_RNR",
+      "name": "MPU_RNR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "MPU->RNR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "MPU Region RNRber Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "MPU_RNR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 MPU_Type.RNR，偏移 0x08",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = MPU->RNR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nMPU->RNR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_MPU_TYPE",
+      "name": "MPU_TYPE",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "MPU->TYPE",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "MPU Type Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "MPU_TYPE"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 MPU_Type.TYPE，偏移 0x00",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = MPU->TYPE;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nMPU->TYPE = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_IABR1",
+      "name": "NVIC_IABR1",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->IABR[0]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Active bit Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_IABR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.IABR1，偏移 0x200",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->IABR[0];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->IABR[0] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_IABR2",
+      "name": "NVIC_IABR2",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->IABR[1]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Active bit Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_IABR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.IABR2，偏移 0x204",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->IABR[1];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->IABR[1] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_IABR3",
+      "name": "NVIC_IABR3",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->IABR[2]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Active bit Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_IABR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.IABR3，偏移 0x208",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->IABR[2];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->IABR[2] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_IABR4",
+      "name": "NVIC_IABR4",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->IABR[3]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Active bit Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_IABR4"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.IABR4，偏移 0x20C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->IABR[3];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->IABR[3] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_IABR5",
+      "name": "NVIC_IABR5",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->IABR[4]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Active bit Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_IABR5"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.IABR5，偏移 0x210",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->IABR[4];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->IABR[4] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_IABR6",
+      "name": "NVIC_IABR6",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->IABR[5]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Active bit Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_IABR6"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.IABR6，偏移 0x214",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->IABR[5];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->IABR[5] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_IABR7",
+      "name": "NVIC_IABR7",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->IABR[6]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Active bit Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_IABR7"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.IABR7，偏移 0x218",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->IABR[6];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->IABR[6] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_IABR8",
+      "name": "NVIC_IABR8",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->IABR[7]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Active bit Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_IABR8"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.IABR8，偏移 0x21C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->IABR[7];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->IABR[7] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ICER1",
+      "name": "NVIC_ICER1",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ICER[0]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Clear Enable Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ICER1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ICER1，偏移 0x80",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ICER[0];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ICER[0] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ICER2",
+      "name": "NVIC_ICER2",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ICER[1]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Clear Enable Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ICER2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ICER2，偏移 0x84",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ICER[1];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ICER[1] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ICER3",
+      "name": "NVIC_ICER3",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ICER[2]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Clear Enable Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ICER3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ICER3，偏移 0x88",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ICER[2];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ICER[2] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ICER4",
+      "name": "NVIC_ICER4",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ICER[3]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Clear Enable Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ICER4"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ICER4，偏移 0x8C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ICER[3];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ICER[3] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ICER5",
+      "name": "NVIC_ICER5",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ICER[4]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Clear Enable Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ICER5"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ICER5，偏移 0x90",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ICER[4];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ICER[4] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ICER6",
+      "name": "NVIC_ICER6",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ICER[5]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Clear Enable Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ICER6"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ICER6，偏移 0x94",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ICER[5];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ICER[5] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ICER7",
+      "name": "NVIC_ICER7",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ICER[6]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Clear Enable Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ICER7"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ICER7，偏移 0x98",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ICER[6];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ICER[6] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ICER8",
+      "name": "NVIC_ICER8",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ICER[7]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Clear Enable Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ICER8"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ICER8，偏移 0x9C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ICER[7];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ICER[7] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ICPR1",
+      "name": "NVIC_ICPR1",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ICPR[0]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Clear Pending Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ICPR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ICPR1，偏移 0x180",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ICPR[0];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ICPR[0] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ICPR2",
+      "name": "NVIC_ICPR2",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ICPR[1]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Clear Pending Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ICPR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ICPR2，偏移 0x184",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ICPR[1];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ICPR[1] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ICPR3",
+      "name": "NVIC_ICPR3",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ICPR[2]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Clear Pending Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ICPR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ICPR3，偏移 0x188",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ICPR[2];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ICPR[2] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ICPR4",
+      "name": "NVIC_ICPR4",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ICPR[3]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Clear Pending Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ICPR4"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ICPR4，偏移 0x18C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ICPR[3];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ICPR[3] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ICPR5",
+      "name": "NVIC_ICPR5",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ICPR[4]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Clear Pending Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ICPR5"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ICPR5，偏移 0x190",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ICPR[4];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ICPR[4] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ICPR6",
+      "name": "NVIC_ICPR6",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ICPR[5]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Clear Pending Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ICPR6"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ICPR6，偏移 0x194",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ICPR[5];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ICPR[5] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ICPR7",
+      "name": "NVIC_ICPR7",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ICPR[6]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Clear Pending Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ICPR7"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ICPR7，偏移 0x198",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ICPR[6];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ICPR[6] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ICPR8",
+      "name": "NVIC_ICPR8",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ICPR[7]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Clear Pending Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ICPR8"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ICPR8，偏移 0x19C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ICPR[7];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ICPR[7] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_IP",
+      "name": "NVIC_IP",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->IP[n]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Priority Register (8Bit wide)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_IP"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.IP，偏移 0x300",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->IP[0];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->IP[0] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ISER1",
+      "name": "NVIC_ISER1",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ISER[0]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Set Enable Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ISER1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ISER1，偏移 0x00",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ISER[0];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ISER[0] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ISER2",
+      "name": "NVIC_ISER2",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ISER[1]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Set Enable Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ISER2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ISER2，偏移 0x04",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ISER[1];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ISER[1] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ISER3",
+      "name": "NVIC_ISER3",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ISER[2]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Set Enable Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ISER3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ISER3，偏移 0x08",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ISER[2];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ISER[2] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ISER4",
+      "name": "NVIC_ISER4",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ISER[3]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Set Enable Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ISER4"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ISER4，偏移 0x0C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ISER[3];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ISER[3] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ISER5",
+      "name": "NVIC_ISER5",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ISER[4]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Set Enable Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ISER5"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ISER5，偏移 0x10",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ISER[4];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ISER[4] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ISER6",
+      "name": "NVIC_ISER6",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ISER[5]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Set Enable Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ISER6"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ISER6，偏移 0x14",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ISER[5];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ISER[5] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ISER7",
+      "name": "NVIC_ISER7",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ISER[6]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Set Enable Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ISER7"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ISER7，偏移 0x18",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ISER[6];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ISER[6] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ISER8",
+      "name": "NVIC_ISER8",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ISER[7]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Set Enable Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ISER8"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ISER8，偏移 0x1C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ISER[7];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ISER[7] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ISPR1",
+      "name": "NVIC_ISPR1",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ISPR[0]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Set Pending Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ISPR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ISPR1，偏移 0x100",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ISPR[0];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ISPR[0] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ISPR2",
+      "name": "NVIC_ISPR2",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ISPR[1]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Set Pending Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ISPR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ISPR2，偏移 0x104",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ISPR[1];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ISPR[1] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ISPR3",
+      "name": "NVIC_ISPR3",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ISPR[2]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Set Pending Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ISPR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ISPR3，偏移 0x108",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ISPR[2];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ISPR[2] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ISPR4",
+      "name": "NVIC_ISPR4",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ISPR[3]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Set Pending Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ISPR4"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ISPR4，偏移 0x10C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ISPR[3];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ISPR[3] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ISPR5",
+      "name": "NVIC_ISPR5",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ISPR[4]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Set Pending Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ISPR5"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ISPR5，偏移 0x110",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ISPR[4];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ISPR[4] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ISPR6",
+      "name": "NVIC_ISPR6",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ISPR[5]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Set Pending Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ISPR6"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ISPR6，偏移 0x114",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ISPR[5];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ISPR[5] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ISPR7",
+      "name": "NVIC_ISPR7",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ISPR[6]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Set Pending Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ISPR7"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ISPR7，偏移 0x118",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ISPR[6];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ISPR[6] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_ISPR8",
+      "name": "NVIC_ISPR8",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->ISPR[7]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Set Pending Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_ISPR8"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.ISPR8，偏移 0x11C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->ISPR[7];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->ISPR[7] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_NVIC_STIR",
+      "name": "NVIC_STIR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "NVIC->STIR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Software Trigger Interrupt Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "NVIC_STIR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 NVIC_Type.STIR，偏移 0xE00",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = NVIC->STIR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nNVIC->STIR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_ADR",
+      "name": "SCB_ADR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->ADR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Auxiliary Feature Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_ADR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.ADR，偏移 0x4C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->ADR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->ADR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_AFSR",
+      "name": "SCB_AFSR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->AFSR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Auxiliary Fault Status Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_AFSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.AFSR，偏移 0x3C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->AFSR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->AFSR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_AIRCR",
+      "name": "SCB_AIRCR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->AIRCR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Application Interrupt and Reset Control Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_AIRCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.AIRCR，偏移 0x0C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->AIRCR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->AIRCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_BFAR",
+      "name": "SCB_BFAR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->BFAR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "BusFault Address Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_BFAR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.BFAR，偏移 0x38",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->BFAR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->BFAR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_CCR",
+      "name": "SCB_CCR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec1",
+      "prototype": "SCB->CCR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Configuration Control Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_CCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.CCR，偏移 0x14",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->CCR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->CCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_CFSR",
+      "name": "SCB_CFSR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->CFSR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Configurable Fault Status Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_CFSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.CFSR，偏移 0x28",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->CFSR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->CFSR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_CPACR",
+      "name": "SCB_CPACR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->CPACR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Coprocessor Access Control Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_CPACR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.CPACR，偏移 0x88",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->CPACR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->CPACR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_CPUID",
+      "name": "SCB_CPUID",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->CPUID",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "CPUID Base Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_CPUID"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.CPUID，偏移 0x00",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->CPUID;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->CPUID = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_DFR",
+      "name": "SCB_DFR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->DFR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Debug Feature Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_DFR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.DFR，偏移 0x48",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->DFR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->DFR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_DFSR",
+      "name": "SCB_DFSR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->DFSR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Debug Fault Status Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_DFSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.DFSR，偏移 0x30",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->DFSR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->DFSR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_HFSR",
+      "name": "SCB_HFSR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->HFSR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "HardFault Status Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_HFSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.HFSR，偏移 0x2C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->HFSR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->HFSR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_ICSR",
+      "name": "SCB_ICSR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->ICSR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Control and State Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_ICSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.ICSR，偏移 0x04",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->ICSR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->ICSR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_ISAR1",
+      "name": "SCB_ISAR1",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->ISAR[0]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Instruction Set Attributes Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_ISAR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.ISAR1，偏移 0x60",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->ISAR[0];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->ISAR[0] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_ISAR2",
+      "name": "SCB_ISAR2",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->ISAR[1]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Instruction Set Attributes Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_ISAR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.ISAR2，偏移 0x64",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->ISAR[1];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->ISAR[1] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_ISAR3",
+      "name": "SCB_ISAR3",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->ISAR[2]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Instruction Set Attributes Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_ISAR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.ISAR3，偏移 0x68",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->ISAR[2];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->ISAR[2] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_ISAR4",
+      "name": "SCB_ISAR4",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->ISAR[3]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Instruction Set Attributes Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_ISAR4"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.ISAR4，偏移 0x6C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->ISAR[3];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->ISAR[3] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_ISAR5",
+      "name": "SCB_ISAR5",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->ISAR[4]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Instruction Set Attributes Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_ISAR5"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.ISAR5，偏移 0x70",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->ISAR[4];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->ISAR[4] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_MMFAR",
+      "name": "SCB_MMFAR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->MMFAR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "MemManage Fault Address Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_MMFAR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.MMFAR，偏移 0x34",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->MMFAR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->MMFAR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_MMFR1",
+      "name": "SCB_MMFR1",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->MMFR[0]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Memory Model Feature Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_MMFR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.MMFR1，偏移 0x50",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->MMFR[0];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->MMFR[0] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_MMFR2",
+      "name": "SCB_MMFR2",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->MMFR[1]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Memory Model Feature Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_MMFR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.MMFR2，偏移 0x54",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->MMFR[1];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->MMFR[1] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_MMFR3",
+      "name": "SCB_MMFR3",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->MMFR[2]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Memory Model Feature Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_MMFR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.MMFR3，偏移 0x58",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->MMFR[2];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->MMFR[2] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_MMFR4",
+      "name": "SCB_MMFR4",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->MMFR[3]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Memory Model Feature Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_MMFR4"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.MMFR4，偏移 0x5C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->MMFR[3];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->MMFR[3] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_PFR1",
+      "name": "SCB_PFR1",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->PFR[0]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Processor Feature Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_PFR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.PFR1，偏移 0x40",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->PFR[0];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->PFR[0] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_PFR2",
+      "name": "SCB_PFR2",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->PFR[1]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Processor Feature Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_PFR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.PFR2，偏移 0x44",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->PFR[1];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->PFR[1] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_SCR",
+      "name": "SCB_SCR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->SCR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "System Control Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_SCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.SCR，偏移 0x10",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->SCR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->SCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_SHCSR",
+      "name": "SCB_SHCSR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->SHCSR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "System Handler Control and State Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_SHCSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.SHCSR，偏移 0x24",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->SHCSR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->SHCSR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_SHP",
+      "name": "SCB_SHP",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->SHP[n]",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "System Handlers Priority Registers (4-7, 8-11, 12-15)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_SHP"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.SHP，偏移 0x18",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->SHP[0];  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->SHP[0] = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCB_VTOR",
+      "name": "SCB_VTOR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCB->VTOR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Vector Table Offset Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCB_VTOR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCB_Type.VTOR，偏移 0x08",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCB->VTOR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCB->VTOR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCnSCB_ACTLR",
+      "name": "SCnSCB_ACTLR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCnSCB->ACTLR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Auxiliary Control Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCnSCB_ACTLR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCnSCB_Type.ACTLR，偏移 0x08",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCnSCB->ACTLR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCnSCB->ACTLR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SCnSCB_ICTR",
+      "name": "SCnSCB_ICTR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SCnSCB->ICTR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Controller Type Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SCnSCB_ICTR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SCnSCB_Type.ICTR，偏移 0x04",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SCnSCB->ICTR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSCnSCB->ICTR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SysTick_CALIB",
+      "name": "SysTick_CALIB",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SysTick->CALIB",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "SysTick Calibration Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SysTick_CALIB"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SysTick_Type.CALIB，偏移 0x0C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SysTick->CALIB;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSysTick->CALIB = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SysTick_CTRL",
+      "name": "SysTick_CTRL",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SysTick->CTRL",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "SysTick Control and Status Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SysTick_CTRL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SysTick_Type.CTRL，偏移 0x00",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SysTick->CTRL;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSysTick->CTRL = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SysTick_LOAD",
+      "name": "SysTick_LOAD",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SysTick->LOAD",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "SysTick Reload Value Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SysTick_LOAD"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SysTick_Type.LOAD，偏移 0x04",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SysTick->LOAD;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSysTick->LOAD = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SysTick_VAL",
+      "name": "SysTick_VAL",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "SysTick->VAL",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "SysTick Current Value Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SysTick_VAL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SysTick_Type.VAL，偏移 0x08",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SysTick->VAL;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSysTick->VAL = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TPI_ACPR",
+      "name": "TPI_ACPR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "TPI->ACPR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Asynchronous Clock Prescaler Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TPI_ACPR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TPI_Type.ACPR，偏移 0x10",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TPI->ACPR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nTPI->ACPR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TPI_CLAIMCLR",
+      "name": "TPI_CLAIMCLR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "TPI->CLAIMCLR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Claim tag clear",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TPI_CLAIMCLR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TPI_Type.CLAIMCLR，偏移 0xFA4",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TPI->CLAIMCLR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nTPI->CLAIMCLR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TPI_CLAIMSET",
+      "name": "TPI_CLAIMSET",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "TPI->CLAIMSET",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Claim tag set",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TPI_CLAIMSET"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TPI_Type.CLAIMSET，偏移 0xFA0",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TPI->CLAIMSET;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nTPI->CLAIMSET = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TPI_CSPSR",
+      "name": "TPI_CSPSR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "TPI->CSPSR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Current Parallel Port Size Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TPI_CSPSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TPI_Type.CSPSR，偏移 0x04",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TPI->CSPSR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nTPI->CSPSR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TPI_DEVID",
+      "name": "TPI_DEVID",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "TPI->DEVID",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "TPIU_DEVID",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TPI_DEVID"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TPI_Type.DEVID，偏移 0xFC8",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TPI->DEVID;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nTPI->DEVID = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TPI_DEVTYPE",
+      "name": "TPI_DEVTYPE",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "TPI->DEVTYPE",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "TPIU_DEVTYPE",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TPI_DEVTYPE"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TPI_Type.DEVTYPE，偏移 0xFCC",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TPI->DEVTYPE;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nTPI->DEVTYPE = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TPI_FFCR",
+      "name": "TPI_FFCR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "TPI->FFCR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Formatter and Flush Control Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TPI_FFCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TPI_Type.FFCR，偏移 0x304",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TPI->FFCR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nTPI->FFCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TPI_FFSR",
+      "name": "TPI_FFSR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "TPI->FFSR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Formatter and Flush Status Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TPI_FFSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TPI_Type.FFSR，偏移 0x300",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TPI->FFSR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nTPI->FFSR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TPI_FIFO0",
+      "name": "TPI_FIFO0",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "TPI->FIFO0",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Integration ETM Data",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TPI_FIFO0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TPI_Type.FIFO0，偏移 0xEEC",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TPI->FIFO0;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nTPI->FIFO0 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TPI_FIFO1",
+      "name": "TPI_FIFO1",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "TPI->FIFO1",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Integration ITM Data",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TPI_FIFO1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TPI_Type.FIFO1，偏移 0xEFC",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TPI->FIFO1;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nTPI->FIFO1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TPI_FSCR",
+      "name": "TPI_FSCR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "TPI->FSCR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Formatter Synchronization Counter Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TPI_FSCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TPI_Type.FSCR，偏移 0x308",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TPI->FSCR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nTPI->FSCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TPI_ITATBCTR0",
+      "name": "TPI_ITATBCTR0",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "TPI->ITATBCTR0",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "ITATBCTR0",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TPI_ITATBCTR0"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TPI_Type.ITATBCTR0，偏移 0xEF8",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TPI->ITATBCTR0;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nTPI->ITATBCTR0 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TPI_ITATBCTR2",
+      "name": "TPI_ITATBCTR2",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "TPI->ITATBCTR2",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "ITATBCTR2",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TPI_ITATBCTR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TPI_Type.ITATBCTR2，偏移 0xEF0",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TPI->ITATBCTR2;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nTPI->ITATBCTR2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TPI_ITCTRL",
+      "name": "TPI_ITCTRL",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "TPI->ITCTRL",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Integration Mode Control",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TPI_ITCTRL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TPI_Type.ITCTRL，偏移 0xF00",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TPI->ITCTRL;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nTPI->ITCTRL = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TPI_SPPR",
+      "name": "TPI_SPPR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "TPI->SPPR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Selected Pin Protocol Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TPI_SPPR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TPI_Type.SPPR，偏移 0xF0",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TPI->SPPR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nTPI->SPPR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TPI_SSPSR",
+      "name": "TPI_SSPSR",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "TPI->SSPSR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Supported Parallel Port Size Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TPI_SSPSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TPI_Type.SSPSR，偏移 0x00",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TPI->SSPSR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nTPI->SSPSR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_TPI_TRIGGER",
+      "name": "TPI_TRIGGER",
+      "peripheral": "CORTEX",
+      "library": "reg",
+      "sectionId": "CORTEX@reg#sec2",
+      "prototype": "TPI->TRIGGER",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "TRIGGER Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "TPI_TRIGGER"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 TPI_Type.TRIGGER，偏移 0xEE8",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = TPI->TRIGGER;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nTPI->TRIGGER = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "core_cm3.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    }
+  ]
+}

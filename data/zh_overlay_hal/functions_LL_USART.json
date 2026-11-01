@@ -1,0 +1,820 @@
+{
+  "LL_USART_ClearFlag_FE": {
+    "briefZh": "清除 USART 的帧错误标志位。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_ClearFlag_IDLE": {
+    "briefZh": "清除 USART 的空闲线路标志位。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_ClearFlag_LBD": {
+    "briefZh": "清除 USART 的 LIN 检测到断路标志位。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_ClearFlag_NE": {
+    "briefZh": "清除 USART 的噪声错误标志位。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_ClearFlag_ORE": {
+    "briefZh": "清除 USART 的溢出错误标志。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_ClearFlag_PE": {
+    "briefZh": "清除 USART 的校验错误标志位。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_ClearFlag_RXNE": {
+    "briefZh": "清除 USART 的接收数据寄存器非空标志位。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_ClearFlag_TC": {
+    "briefZh": "清除 USART 的传输完成标志位。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_ClearFlag_nCTS": {
+    "briefZh": "清除 USART 的 CTS 信号变化标志位。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_ConfigAsyncMode": {
+    "briefZh": "把 USART 配置成标准异步模式（8 位数据、无校验、1 停止位、收发均使能）。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_ConfigCharacter": {
+    "briefZh": "一次性配置数据位宽、校验位与停止位（等价于连续调三个 Set 函数）。",
+    "paramsZh": {
+      "DataWidth": "数据位宽：8 位或 9 位。",
+      "Parity": "校验方式：无 / 偶校验 / 奇校验。",
+      "StopBits": "停止位长度：0.5 / 1 / 1.5 / 2。",
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_ConfigClock": {
+    "briefZh": "配置 USART 的时钟。",
+    "paramsZh": {
+      "Polarity": "极性：高有效或低有效。",
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_ConfigHalfDuplexMode": {
+    "briefZh": "把 USART 配置成单线半双工模式。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_ConfigIrdaMode": {
+    "briefZh": "把 USART 配置成 IrDA 红外模式。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_ConfigLINMode": {
+    "briefZh": "把 USART 配置成 LIN 模式。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_ConfigMultiProcessMode": {
+    "briefZh": "把 USART 配置成多处理器模式（用于一对多总线）。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_ConfigSmartcardMode": {
+    "briefZh": "把 USART 配置成智能卡模式。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_ConfigSyncMode": {
+    "briefZh": "把 USART 配置成同步模式（带时钟输出）。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_DMA_GetRegAddr": {
+    "briefZh": "返回 USART 数据寄存器（DR）地址，供 DMA 搬运时使用。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_Disable": {
+    "briefZh": "失能 USART。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_DisableCTSHWFlowCtrl": {
+    "briefZh": "失能 USART 的 CTS 硬件流控。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_DisableDMAReq_RX": {
+    "briefZh": "失能 USART 的接收 DMA 请求。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_DisableDMAReq_TX": {
+    "briefZh": "失能 USART 的发送 DMA 请求。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_DisableDirectionRx": {
+    "briefZh": "失能 USART 的接收方向。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_DisableDirectionTx": {
+    "briefZh": "失能 USART 的发送方向。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_DisableHalfDuplex": {
+    "briefZh": "失能 USART 的半双工模式。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_DisableIT_CTS": {
+    "briefZh": "关闭 USART 的 CTS 引脚变化中断。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_DisableIT_ERROR": {
+    "briefZh": "关闭 USART 的错误中断。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_DisableIT_IDLE": {
+    "briefZh": "失能 USART 的空闲线路中断。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_DisableIT_LBD": {
+    "briefZh": "失能 USART 的 LIN 检测到断路中断。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_DisableIT_PE": {
+    "briefZh": "失能 USART 的校验错误中断。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_DisableIT_RXNE": {
+    "briefZh": "失能 USART 的接收数据寄存器非空中断。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_DisableIT_TC": {
+    "briefZh": "失能 USART 的传输完成中断。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_DisableIT_TXE": {
+    "briefZh": "失能 USART 的发送数据寄存器空中断。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_DisableIrda": {
+    "briefZh": "关闭 IrDA 红外模式。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_DisableLIN": {
+    "briefZh": "关闭 LIN 模式。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_DisableOneBitSamp": {
+    "briefZh": "失能 USART 的单采样位方式（3 采样位中的 1 位）。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_DisableRTSHWFlowCtrl": {
+    "briefZh": "失能 USART 的 RTS 硬件流控。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_DisableSCLKOutput": {
+    "briefZh": "失能 USART 的 SCLK 时钟输出。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_DisableSmartcard": {
+    "briefZh": "关闭智能卡模式。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_DisableSmartcardNACK": {
+    "briefZh": "关闭智能卡模式下的 NACK 发送。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_Enable": {
+    "briefZh": "使能 USART。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_EnableCTSHWFlowCtrl": {
+    "briefZh": "使能 USART 的 CTS 硬件流控。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_EnableDMAReq_RX": {
+    "briefZh": "使能 USART 的接收 DMA 请求。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_EnableDMAReq_TX": {
+    "briefZh": "使能 USART 的发送 DMA 请求。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_EnableDirectionRx": {
+    "briefZh": "使能 USART 的接收方向。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_EnableDirectionTx": {
+    "briefZh": "使能 USART 的发送方向。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_EnableHalfDuplex": {
+    "briefZh": "使能 USART 的半双工模式。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_EnableIT_CTS": {
+    "briefZh": "使能 USART 的 CTS 引脚变化中断。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_EnableIT_ERROR": {
+    "briefZh": "使能 USART 的错误中断（帧错误、噪声、溢出）。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_EnableIT_IDLE": {
+    "briefZh": "使能 USART 的空闲线路中断。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_EnableIT_LBD": {
+    "briefZh": "使能 USART 的 LIN 检测到断路中断。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_EnableIT_PE": {
+    "briefZh": "使能 USART 的校验错误中断。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_EnableIT_RXNE": {
+    "briefZh": "使能 USART 的接收数据寄存器非空中断。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_EnableIT_TC": {
+    "briefZh": "使能 USART 的传输完成中断。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_EnableIT_TXE": {
+    "briefZh": "使能 USART 的发送数据寄存器空中断。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_EnableIrda": {
+    "briefZh": "使能 IrDA 红外模式。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_EnableLIN": {
+    "briefZh": "使能 LIN 模式。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_EnableOneBitSamp": {
+    "briefZh": "使能 USART 的单采样位方式（3 采样位中的 1 位）。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_EnableRTSHWFlowCtrl": {
+    "briefZh": "使能 USART 的 RTS 硬件流控。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_EnableSCLKOutput": {
+    "briefZh": "使能 USART 的 SCLK 时钟输出。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_EnableSmartcard": {
+    "briefZh": "使能智能卡模式。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_EnableSmartcardNACK": {
+    "briefZh": "使能智能卡模式下的 NACK 发送（校验失败时回送否定应答）。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_GetBaudRate": {
+    "briefZh": "根据当前 BRR 寄存器值与给定外设时钟反算实际波特率。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_GetClockPhase": {
+    "briefZh": "读取 USART 的时钟相位（CPHA）。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_GetClockPolarity": {
+    "briefZh": "读取 USART 的时钟极性（CPOL）。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_GetDataWidth": {
+    "briefZh": "读取 USART 的数据位宽。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_GetHWFlowCtrl": {
+    "briefZh": "读取 USART 的硬件流控。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_GetIrdaPowerMode": {
+    "briefZh": "读取 IrDA 当前的功耗模式。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_GetIrdaPrescaler": {
+    "briefZh": "读取 IrDA 的低功耗预分频值。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_GetLINBrkDetectionLen": {
+    "briefZh": "读取 LIN 断路检测长度。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_GetLastClkPulseOutput": {
+    "briefZh": "读取 USART 的最后一位时钟脉冲输出。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_GetNodeAddress": {
+    "briefZh": "读取 USART 的节点地址。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_GetOverSampling": {
+    "briefZh": "读取 USART 的过采样方式。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_GetParity": {
+    "briefZh": "读取 USART 的校验位。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_GetSmartcardGuardTime": {
+    "briefZh": "读取智能卡的保护时间。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_GetSmartcardPrescaler": {
+    "briefZh": "读取智能卡的时钟预分频值。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_GetStopBitsLength": {
+    "briefZh": "读取 USART 的停止位长度。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_GetTransferDirection": {
+    "briefZh": "读取 USART 的传输方向。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_GetWakeUpMethod": {
+    "briefZh": "读取 USART 的唤醒方式。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsActiveFlag_FE": {
+    "briefZh": "查询 USART 的帧错误标志位是否置位。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsActiveFlag_IDLE": {
+    "briefZh": "查询 USART 的空闲线路标志位是否置位。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsActiveFlag_LBD": {
+    "briefZh": "查询 USART 的 LIN 检测到断路标志位是否置位。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsActiveFlag_NE": {
+    "briefZh": "查询 USART 的噪声错误标志位是否置位。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsActiveFlag_ORE": {
+    "briefZh": "查询 USART 的溢出错误标志是否置位。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsActiveFlag_PE": {
+    "briefZh": "查询 USART 的校验错误标志位是否置位。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsActiveFlag_RWU": {
+    "briefZh": "查询 USART 的从静默模式唤醒标志位是否置位。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsActiveFlag_RXNE": {
+    "briefZh": "查询 USART 的接收数据寄存器非空标志位是否置位。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsActiveFlag_SBK": {
+    "briefZh": "查询 USART 的断路字符已发送标志位是否置位。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsActiveFlag_TC": {
+    "briefZh": "查询 USART 的传输完成标志位是否置位。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsActiveFlag_TXE": {
+    "briefZh": "查询 USART 的发送数据寄存器空标志位是否置位。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsActiveFlag_nCTS": {
+    "briefZh": "查询 USART 的 CTS 信号变化标志位是否置位。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsEnabled": {
+    "briefZh": "查询 USART 是否已使能。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsEnabledDMAReq_RX": {
+    "briefZh": "查询 USART 的接收 DMA 请求是否已使能。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsEnabledDMAReq_TX": {
+    "briefZh": "查询 USART 的发送 DMA 请求是否已使能。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsEnabledHalfDuplex": {
+    "briefZh": "查询 USART 是否已使能。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsEnabledIT_CTS": {
+    "briefZh": "查询 USART 的 CTS 引脚变化中断是否已使能。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsEnabledIT_ERROR": {
+    "briefZh": "查询 USART 的错误中断是否已使能。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsEnabledIT_IDLE": {
+    "briefZh": "查询 USART 的空闲线路中断是否已使能。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsEnabledIT_LBD": {
+    "briefZh": "查询 USART 的 LIN 检测到断路中断是否已使能。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsEnabledIT_PE": {
+    "briefZh": "查询 USART 的校验错误中断是否已使能。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsEnabledIT_RXNE": {
+    "briefZh": "查询 USART 的接收数据寄存器非空中断是否已使能。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsEnabledIT_TC": {
+    "briefZh": "查询 USART 的传输完成中断是否已使能。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsEnabledIT_TXE": {
+    "briefZh": "查询 USART 的发送数据寄存器空中断是否已使能。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsEnabledIrda": {
+    "briefZh": "查询 USART 是否已使能。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsEnabledLIN": {
+    "briefZh": "查询 USART 是否已使能。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsEnabledOneBitSamp": {
+    "briefZh": "查询 USART 是否已使能。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsEnabledSCLKOutput": {
+    "briefZh": "查询 USART 是否已使能。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsEnabledSmartcard": {
+    "briefZh": "查询 USART 是否已使能。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_IsEnabledSmartcardNACK": {
+    "briefZh": "查询 USART 是否已使能。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_ReceiveData8": {
+    "briefZh": "从数据寄存器读一个字节（8 位模式）。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_ReceiveData9": {
+    "briefZh": "从数据寄存器读 9 位数据（9 位数据模式）。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_RequestBreakSending": {
+    "briefZh": "请求发送一个断路（Break）字符。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_RequestEnterMuteMode": {
+    "briefZh": "请求进入静默模式（只接收地址帧）。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_RequestExitMuteMode": {
+    "briefZh": "请求退出静默模式。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_SetBaudRate": {
+    "briefZh": "按外设时钟频率与目标波特率算出 BRR 值并写入。参数需给出 PCLK 频率，内部取整，实际波特率会有偏差。",
+    "paramsZh": {
+      "BaudRate": "波特率（如 115200）。",
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_SetClockPhase": {
+    "briefZh": "设置 USART 的时钟相位（CPHA）。",
+    "paramsZh": {
+      "ClockPhase": "时钟相位（CPHA）：第一个边沿或第二个边沿采样。",
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_SetClockPolarity": {
+    "briefZh": "设置 USART 的时钟极性（CPOL）。",
+    "paramsZh": {
+      "ClockPolarity": "时钟极性（CPOL）：空闲时为高或为低。",
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_SetDataWidth": {
+    "briefZh": "设置 USART 的数据位宽。",
+    "paramsZh": {
+      "DataWidth": "数据位宽：8 位或 9 位。",
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_SetHWFlowCtrl": {
+    "briefZh": "设置 USART 的硬件流控。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_SetIrdaPowerMode": {
+    "briefZh": "设置 IrDA 的功耗模式（正常 / 低功耗）。低功耗模式下需要用 IrdaPrescaler 把时钟分频到低速。",
+    "paramsZh": {
+      "PowerMode": "低功耗模式：SLEEP / STOP / STANDBY。",
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_SetIrdaPrescaler": {
+    "briefZh": "设置 IrDA 的低功耗预分频值（8 位），用于把 USART 时钟分频成 IrDA 低速时钟。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_SetLINBrkDetectionLen": {
+    "briefZh": "设置 LIN 断路检测长度（10 位或 11 位）。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_SetLastClkPulseOutput": {
+    "briefZh": "设置 USART 的最后一位时钟脉冲输出。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_SetNodeAddress": {
+    "briefZh": "设置 USART 的节点地址。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_SetOverSampling": {
+    "briefZh": "设置 USART 的过采样方式。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_SetParity": {
+    "briefZh": "设置 USART 的校验位。",
+    "paramsZh": {
+      "Parity": "校验方式：无 / 偶校验 / 奇校验。",
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_SetSmartcardGuardTime": {
+    "briefZh": "设置智能卡的保护时间（以波特时钟周期为单位，GT[7:0]）。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_SetSmartcardPrescaler": {
+    "briefZh": "设置智能卡的时钟预分频值（5 位），用于产生 SMARTCARD 时钟。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_SetStopBitsLength": {
+    "briefZh": "设置 USART 的停止位长度。",
+    "paramsZh": {
+      "StopBits": "停止位长度：0.5 / 1 / 1.5 / 2。",
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_SetTransferDirection": {
+    "briefZh": "设置 USART 的传输方向。",
+    "paramsZh": {
+      "TransferDirection": "传输方向：只收 / 只发 / 收发双向。",
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_SetWakeUpMethod": {
+    "briefZh": "设置 USART 的唤醒方式。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。"
+    }
+  },
+  "LL_USART_TransmitData8": {
+    "briefZh": "向数据寄存器写一个字节（8 位模式）。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。",
+      "Value": "要设置的数值（含义随函数而定，如计数值、比较值、阈值）。"
+    }
+  },
+  "LL_USART_TransmitData9": {
+    "briefZh": "向数据寄存器写 9 位数据（9 位数据模式）。",
+    "paramsZh": {
+      "USARTx": "串口实例指针，如 USART1 / USART2 / USART3。",
+      "Value": "要设置的数值（含义随函数而定，如计数值、比较值、阈值）。"
+    }
+  }
+}

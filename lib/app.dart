@@ -20,7 +20,7 @@ class SplHelperApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final themeMode = ref.watch(themeModeProvider);
     return MaterialApp(
-      title: 'STM32 标准库助手',
+      title: 'STM32 库函数助手',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),

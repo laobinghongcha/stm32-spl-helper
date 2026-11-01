@@ -1,0 +1,535 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "SPI",
+  "library": "reg",
+  "functions": [
+    {
+      "id": "REG_SPI_CR1",
+      "name": "SPI_CR1",
+      "peripheral": "SPI",
+      "library": "reg",
+      "sectionId": "SPI@reg#sec3",
+      "prototype": "SPI1->CR1",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPI_CR1_CPHA",
+          "type": "bit 0（整个位域）",
+          "descEn": "Clock Phase",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_CR1_CPOL",
+          "type": "bit 1（整个位域）",
+          "descEn": "Clock Polarity",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_CR1_MSTR",
+          "type": "bit 2（整个位域）",
+          "descEn": "Master Selection",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_CR1_BR",
+          "type": "bits[5:3]（整个位域）",
+          "descEn": "BR[2:0] bits (Baud Rate Control)",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_CR1_SPE",
+          "type": "bit 6（整个位域）",
+          "descEn": "SPI Enable",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_CR1_LSBFIRST",
+          "type": "bit 7（整个位域）",
+          "descEn": "Frame Format",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_CR1_SSI",
+          "type": "bit 8（整个位域）",
+          "descEn": "Internal slave select",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_CR1_SSM",
+          "type": "bit 9（整个位域）",
+          "descEn": "Software slave management",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_CR1_RXONLY",
+          "type": "bit 10（整个位域）",
+          "descEn": "Receive only",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_CR1_DFF",
+          "type": "bit 11（整个位域）",
+          "descEn": "Data Frame Format",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_CR1_CRCNEXT",
+          "type": "bit 12（整个位域）",
+          "descEn": "Transmit CRC next",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_CR1_CRCEN",
+          "type": "bit 13（整个位域）",
+          "descEn": "Hardware CRC calculation enable",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_CR1_BIDIOE",
+          "type": "bit 14（整个位域）",
+          "descEn": "Output enable in bidirectional mode",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_CR1_BIDIMODE",
+          "type": "bit 15（整个位域）",
+          "descEn": "Bidirectional data mode enable",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_CR1_BR_0",
+          "type": "bit 3",
+          "descEn": "0x00000008",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_CR1_BR_1",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_CR1_BR_2",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Clock Phase",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPI_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SPI_TypeDef.CR1，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SPI1->CR1;  /* 读回当前值 */\nv &= ~SPI_CR1_CPHA_Msk;  /* 先清掉 SPI_CR1_CPHA：bit 0（整个位域） */\nv |= (1u << SPI_CR1_CPHA_Pos) & SPI_CR1_CPHA_Msk;  /* 置位，实际取值看参考手册 */\nSPI1->CR1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9087,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SPI_CR2",
+      "name": "SPI_CR2",
+      "peripheral": "SPI",
+      "library": "reg",
+      "sectionId": "SPI@reg#sec3",
+      "prototype": "SPI1->CR2",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPI_CR2_RXDMAEN",
+          "type": "bit 0（整个位域）",
+          "descEn": "Rx Buffer DMA Enable",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_CR2_TXDMAEN",
+          "type": "bit 1（整个位域）",
+          "descEn": "Tx Buffer DMA Enable",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_CR2_SSOE",
+          "type": "bit 2（整个位域）",
+          "descEn": "SS Output Enable",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_CR2_ERRIE",
+          "type": "bit 5（整个位域）",
+          "descEn": "Error Interrupt Enable",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_CR2_RXNEIE",
+          "type": "bit 6（整个位域）",
+          "descEn": "RX buffer Not Empty Interrupt Enable",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_CR2_TXEIE",
+          "type": "bit 7（整个位域）",
+          "descEn": "Tx buffer Empty Interrupt Enable",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Rx Buffer DMA Enable",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPI_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SPI_TypeDef.CR2，偏移 0x04"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SPI1->CR2;  /* 读回当前值 */\nv &= ~SPI_CR2_RXDMAEN_Msk;  /* 先清掉 SPI_CR2_RXDMAEN：bit 0（整个位域） */\nv |= (1u << SPI_CR2_RXDMAEN_Pos) & SPI_CR2_RXDMAEN_Msk;  /* 置位，实际取值看参考手册 */\nSPI1->CR2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9136,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SPI_CRCPR",
+      "name": "SPI_CRCPR",
+      "peripheral": "SPI",
+      "library": "reg",
+      "sectionId": "SPI@reg#sec3",
+      "prototype": "SPI1->CRCPR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPI_CRCPR_CRCPOLY",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "CRC polynomial register",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "CRC polynomial register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPI_CRCPR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SPI_TypeDef.CRCPR，偏移 0x10"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SPI1->CRCPR;  /* 读回当前值 */\nv &= ~SPI_CRCPR_CRCPOLY_Msk;  /* 先清掉 SPI_CRCPR_CRCPOLY：bits[15:0]（整个位域） */\nv |= (1u << SPI_CRCPR_CRCPOLY_Pos) & SPI_CRCPR_CRCPOLY_Msk;  /* 置位，实际取值看参考手册 */\nSPI1->CRCPR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9187,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SPI_DR",
+      "name": "SPI_DR",
+      "peripheral": "SPI",
+      "library": "reg",
+      "sectionId": "SPI@reg#sec2",
+      "prototype": "SPI1->DR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPI_DR_DR",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Data Register",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Data Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPI_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SPI_TypeDef.DR，偏移 0x0C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SPI1->DR;  /* 读回当前值 */\nv &= ~SPI_DR_DR_Msk;  /* 先清掉 SPI_DR_DR：bits[15:0]（整个位域） */\nv |= (1u << SPI_DR_DR_Pos) & SPI_DR_DR_Msk;  /* 置位，实际取值看参考手册 */\nSPI1->DR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9182,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SPI_I2SCFGR",
+      "name": "SPI_I2SCFGR",
+      "peripheral": "SPI",
+      "library": "reg",
+      "sectionId": "SPI@reg#sec3",
+      "prototype": "SPI1->I2SCFGR",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "",
+      "returnDescZh": "",
+      "briefEn": "Serial Peripheral Interface",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPI_I2SCFGR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SPI_TypeDef.I2SCFGR，偏移 0x1C",
+        "该寄存器在 CMSIS 头里没有位定义宏"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SPI1->I2SCFGR;  /* 读回当前值 */\nv = 0x00000000u;  /* 该寄存器无位域宏，按整字写 */\nSPI1->I2SCFGR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 0,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SPI_RXCRCR",
+      "name": "SPI_RXCRCR",
+      "peripheral": "SPI",
+      "library": "reg",
+      "sectionId": "SPI@reg#sec3",
+      "prototype": "SPI1->RXCRCR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPI_RXCRCR_RXCRC",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Rx CRC Register",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Rx CRC Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPI_RXCRCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SPI_TypeDef.RXCRCR，偏移 0x14"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SPI1->RXCRCR;  /* 读回当前值 */\nv &= ~SPI_RXCRCR_RXCRC_Msk;  /* 先清掉 SPI_RXCRCR_RXCRC：bits[15:0]（整个位域） */\nv |= (1u << SPI_RXCRCR_RXCRC_Pos) & SPI_RXCRCR_RXCRC_Msk;  /* 置位，实际取值看参考手册 */\nSPI1->RXCRCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9192,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SPI_SR",
+      "name": "SPI_SR",
+      "peripheral": "SPI",
+      "library": "reg",
+      "sectionId": "SPI@reg#sec1",
+      "prototype": "SPI1->SR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPI_SR_RXNE",
+          "type": "bit 0（整个位域）",
+          "descEn": "Receive buffer Not Empty",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_SR_TXE",
+          "type": "bit 1（整个位域）",
+          "descEn": "Transmit buffer Empty",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_SR_CHSIDE",
+          "type": "bit 2（整个位域）",
+          "descEn": "Channel side",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_SR_UDR",
+          "type": "bit 3（整个位域）",
+          "descEn": "Underrun flag",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_SR_CRCERR",
+          "type": "bit 4（整个位域）",
+          "descEn": "CRC Error flag",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_SR_MODF",
+          "type": "bit 5（整个位域）",
+          "descEn": "Mode fault",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_SR_OVR",
+          "type": "bit 6（整个位域）",
+          "descEn": "Overrun flag",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_SR_BSY",
+          "type": "bit 7（整个位域）",
+          "descEn": "Busy flag",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Receive buffer Not Empty",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPI_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SPI_TypeDef.SR，偏移 0x08"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SPI1->SR;  /* 读回当前值 */\nv &= ~SPI_SR_RXNE_Msk;  /* 先清掉 SPI_SR_RXNE：bit 0（整个位域） */\nv |= (1u << SPI_SR_RXNE_Pos) & SPI_SR_RXNE_Msk;  /* 置位，实际取值看参考手册 */\nSPI1->SR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9156,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_SPI_TXCRCR",
+      "name": "SPI_TXCRCR",
+      "peripheral": "SPI",
+      "library": "reg",
+      "sectionId": "SPI@reg#sec3",
+      "prototype": "SPI1->TXCRCR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "SPI_TXCRCR_TXCRC",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "Tx CRC Register",
+          "descZh": ""
+        },
+        {
+          "name": "SPI_I2SCFGR_I2SMOD",
+          "type": "bit 11（整个位域）",
+          "descEn": "I2S mode selection",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Tx CRC Register",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "SPI_TXCRCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 SPI_TypeDef.TXCRCR，偏移 0x18"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = SPI1->TXCRCR;  /* 读回当前值 */\nv &= ~SPI_TXCRCR_TXCRC_Msk;  /* 先清掉 SPI_TXCRCR_TXCRC：bits[15:0]（整个位域） */\nv |= (1u << SPI_TXCRCR_TXCRC_Pos) & SPI_TXCRCR_TXCRC_Msk;  /* 置位，实际取值看参考手册 */\nSPI1->TXCRCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9197,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "LL_DBGMCU_APB1_GRP1_FreezePeriph": {
+    "briefZh": "调试暂停时冻结指定 APB1 外设（让定时器计数停下，方便单步）。",
+    "paramsZh": {
+      "Periphs": "外设掩码，可位或一次使能/复位多个，如 LL_APB2_GRP1_PERIPH_GPIOA | LL_APB2_GRP1_PERIPH_AFIO。"
+    }
+  },
+  "LL_DBGMCU_APB1_GRP1_UnFreezePeriph": {
+    "briefZh": "取消 APB1 外设的调试冻结。",
+    "paramsZh": {
+      "Periphs": "外设掩码，可位或一次使能/复位多个，如 LL_APB2_GRP1_PERIPH_GPIOA | LL_APB2_GRP1_PERIPH_AFIO。"
+    }
+  },
+  "LL_DBGMCU_APB2_GRP1_FreezePeriph": {
+    "briefZh": "调试暂停时冻结指定 APB2 外设。",
+    "paramsZh": {
+      "Periphs": "外设掩码，可位或一次使能/复位多个，如 LL_APB2_GRP1_PERIPH_GPIOA | LL_APB2_GRP1_PERIPH_AFIO。"
+    }
+  },
+  "LL_DBGMCU_APB2_GRP1_UnFreezePeriph": {
+    "briefZh": "取消 APB2 外设的调试冻结。",
+    "paramsZh": {
+      "Periphs": "外设掩码，可位或一次使能/复位多个，如 LL_APB2_GRP1_PERIPH_GPIOA | LL_APB2_GRP1_PERIPH_AFIO。"
+    }
+  },
+  "LL_DBGMCU_DisableDBGSleepMode": {
+    "briefZh": "关闭睡眠模式的调试保持。"
+  },
+  "LL_DBGMCU_DisableDBGStandbyMode": {
+    "briefZh": "关闭待机模式的调试保持。"
+  },
+  "LL_DBGMCU_DisableDBGStopMode": {
+    "briefZh": "关闭 STOP 模式的调试保持。"
+  },
+  "LL_DBGMCU_EnableDBGSleepMode": {
+    "briefZh": "使能在睡眠模式下保持调试连接。"
+  },
+  "LL_DBGMCU_EnableDBGStandbyMode": {
+    "briefZh": "使能在待机模式下保持调试连接。"
+  },
+  "LL_DBGMCU_EnableDBGStopMode": {
+    "briefZh": "使能在 STOP 模式下保持调试连接。"
+  },
+  "LL_DBGMCU_GetDeviceID": {
+    "briefZh": "读取器件 ID（用于区分具体型号）。"
+  },
+  "LL_DBGMCU_GetRevisionID": {
+    "briefZh": "读取芯片版本号。"
+  },
+  "LL_DBGMCU_GetTracePinAssignment": {
+    "briefZh": "读取调试跟踪引脚的分配方式。"
+  },
+  "LL_DBGMCU_SetTracePinAssignment": {
+    "briefZh": "设置调试跟踪引脚（TRACE）的分配方式。"
+  }
+}

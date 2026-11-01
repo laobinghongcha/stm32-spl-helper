@@ -1,0 +1,499 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "RTC",
+  "library": "reg",
+  "functions": [
+    {
+      "id": "REG_RTC_ALRH",
+      "name": "RTC_ALRH",
+      "peripheral": "RTC",
+      "library": "reg",
+      "sectionId": "RTC@reg#sec1",
+      "prototype": "RTC->ALRH",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RTC_ALRH_RTC_ALR",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "RTC Alarm High",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "RTC Alarm High",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTC_ALRH"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 RTC_TypeDef.ALRH，偏移 0x20"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = RTC->ALRH;  /* 读回当前值 */\nv &= ~RTC_ALRH_RTC_ALR_Msk;  /* 先清掉 RTC_ALRH_RTC_ALR：bits[15:0]（整个位域） */\nv |= (1u << RTC_ALRH_RTC_ALR_Pos) & RTC_ALRH_RTC_ALR_Msk;  /* 置位，实际取值看参考手册 */\nRTC->ALRH = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4411,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_RTC_ALRL",
+      "name": "RTC_ALRL",
+      "peripheral": "RTC",
+      "library": "reg",
+      "sectionId": "RTC@reg#sec1",
+      "prototype": "RTC->ALRL",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RTC_ALRL_RTC_ALR",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "RTC Alarm Low",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "RTC Alarm Low",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTC_ALRL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 RTC_TypeDef.ALRL，偏移 0x24"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = RTC->ALRL;  /* 读回当前值 */\nv &= ~RTC_ALRL_RTC_ALR_Msk;  /* 先清掉 RTC_ALRL_RTC_ALR：bits[15:0]（整个位域） */\nv |= (1u << RTC_ALRL_RTC_ALR_Pos) & RTC_ALRL_RTC_ALR_Msk;  /* 置位，实际取值看参考手册 */\nRTC->ALRL = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4416,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_RTC_CNTH",
+      "name": "RTC_CNTH",
+      "peripheral": "RTC",
+      "library": "reg",
+      "sectionId": "RTC@reg#sec1",
+      "prototype": "RTC->CNTH",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RTC_CNTH_RTC_CNT",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "RTC Counter High",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "RTC Counter High",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTC_CNTH"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 RTC_TypeDef.CNTH，偏移 0x18"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = RTC->CNTH;  /* 读回当前值 */\nv &= ~RTC_CNTH_RTC_CNT_Msk;  /* 先清掉 RTC_CNTH_RTC_CNT：bits[15:0]（整个位域） */\nv |= (1u << RTC_CNTH_RTC_CNT_Pos) & RTC_CNTH_RTC_CNT_Msk;  /* 置位，实际取值看参考手册 */\nRTC->CNTH = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4401,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_RTC_CNTL",
+      "name": "RTC_CNTL",
+      "peripheral": "RTC",
+      "library": "reg",
+      "sectionId": "RTC@reg#sec1",
+      "prototype": "RTC->CNTL",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RTC_CNTL_RTC_CNT",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "RTC Counter Low",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "RTC Counter Low",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTC_CNTL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 RTC_TypeDef.CNTL，偏移 0x1C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = RTC->CNTL;  /* 读回当前值 */\nv &= ~RTC_CNTL_RTC_CNT_Msk;  /* 先清掉 RTC_CNTL_RTC_CNT：bits[15:0]（整个位域） */\nv |= (1u << RTC_CNTL_RTC_CNT_Pos) & RTC_CNTL_RTC_CNT_Msk;  /* 置位，实际取值看参考手册 */\nRTC->CNTL = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4406,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_RTC_CRH",
+      "name": "RTC_CRH",
+      "peripheral": "RTC",
+      "library": "reg",
+      "sectionId": "RTC@reg#sec1",
+      "prototype": "RTC->CRH",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RTC_CRH_SECIE",
+          "type": "bit 0（整个位域）",
+          "descEn": "Second Interrupt Enable",
+          "descZh": ""
+        },
+        {
+          "name": "RTC_CRH_ALRIE",
+          "type": "bit 1（整个位域）",
+          "descEn": "Alarm Interrupt Enable",
+          "descZh": ""
+        },
+        {
+          "name": "RTC_CRH_OWIE",
+          "type": "bit 2（整个位域）",
+          "descEn": "OverfloW Interrupt Enable",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Second Interrupt Enable",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTC_CRH"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 RTC_TypeDef.CRH，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = RTC->CRH;  /* 读回当前值 */\nv &= ~RTC_CRH_SECIE_Msk;  /* 先清掉 RTC_CRH_SECIE：bit 0（整个位域） */\nv |= (1u << RTC_CRH_SECIE_Pos) & RTC_CRH_SECIE_Msk;  /* 置位，实际取值看参考手册 */\nRTC->CRH = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4350,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_RTC_CRL",
+      "name": "RTC_CRL",
+      "peripheral": "RTC",
+      "library": "reg",
+      "sectionId": "RTC@reg#sec1",
+      "prototype": "RTC->CRL",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RTC_CRL_SECF",
+          "type": "bit 0（整个位域）",
+          "descEn": "Second Flag",
+          "descZh": ""
+        },
+        {
+          "name": "RTC_CRL_ALRF",
+          "type": "bit 1（整个位域）",
+          "descEn": "Alarm Flag",
+          "descZh": ""
+        },
+        {
+          "name": "RTC_CRL_OWF",
+          "type": "bit 2（整个位域）",
+          "descEn": "OverfloW Flag",
+          "descZh": ""
+        },
+        {
+          "name": "RTC_CRL_RSF",
+          "type": "bit 3（整个位域）",
+          "descEn": "Registers Synchronized Flag",
+          "descZh": ""
+        },
+        {
+          "name": "RTC_CRL_CNF",
+          "type": "bit 4（整个位域）",
+          "descEn": "Configuration Flag",
+          "descZh": ""
+        },
+        {
+          "name": "RTC_CRL_RTOFF",
+          "type": "bit 5（整个位域）",
+          "descEn": "RTC operation OFF",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Second Flag",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTC_CRL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 RTC_TypeDef.CRL，偏移 0x04"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = RTC->CRL;  /* 读回当前值 */\nv &= ~RTC_CRL_SECF_Msk;  /* 先清掉 RTC_CRL_SECF：bit 0（整个位域） */\nv |= (1u << RTC_CRL_SECF_Pos) & RTC_CRL_SECF_Msk;  /* 置位，实际取值看参考手册 */\nRTC->CRL = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4361,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_RTC_DIVH",
+      "name": "RTC_DIVH",
+      "peripheral": "RTC",
+      "library": "reg",
+      "sectionId": "RTC@reg#sec1",
+      "prototype": "RTC->DIVH",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RTC_DIVH_RTC_DIV",
+          "type": "bits[3:0]（整个位域）",
+          "descEn": "RTC Clock Divider High",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "RTC Clock Divider High",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTC_DIVH"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 RTC_TypeDef.DIVH，偏移 0x10"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = RTC->DIVH;  /* 读回当前值 */\nv &= ~RTC_DIVH_RTC_DIV_Msk;  /* 先清掉 RTC_DIVH_RTC_DIV：bits[3:0]（整个位域） */\nv |= (1u << RTC_DIVH_RTC_DIV_Pos) & RTC_DIVH_RTC_DIV_Msk;  /* 置位，实际取值看参考手册 */\nRTC->DIVH = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4391,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_RTC_DIVL",
+      "name": "RTC_DIVL",
+      "peripheral": "RTC",
+      "library": "reg",
+      "sectionId": "RTC@reg#sec1",
+      "prototype": "RTC->DIVL",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RTC_DIVL_RTC_DIV",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "RTC Clock Divider Low",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "RTC Clock Divider Low",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTC_DIVL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 RTC_TypeDef.DIVL，偏移 0x14"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = RTC->DIVL;  /* 读回当前值 */\nv &= ~RTC_DIVL_RTC_DIV_Msk;  /* 先清掉 RTC_DIVL_RTC_DIV：bits[15:0]（整个位域） */\nv |= (1u << RTC_DIVL_RTC_DIV_Pos) & RTC_DIVL_RTC_DIV_Msk;  /* 置位，实际取值看参考手册 */\nRTC->DIVL = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4396,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_RTC_PRLH",
+      "name": "RTC_PRLH",
+      "peripheral": "RTC",
+      "library": "reg",
+      "sectionId": "RTC@reg#sec1",
+      "prototype": "RTC->PRLH",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RTC_PRLH_PRL",
+          "type": "bits[3:0]（整个位域）",
+          "descEn": "RTC Prescaler Reload Value High",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "RTC Prescaler Reload Value High",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTC_PRLH"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 RTC_TypeDef.PRLH，偏移 0x08"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = RTC->PRLH;  /* 读回当前值 */\nv &= ~RTC_PRLH_PRL_Msk;  /* 先清掉 RTC_PRLH_PRL：bits[3:0]（整个位域） */\nv |= (1u << RTC_PRLH_PRL_Pos) & RTC_PRLH_PRL_Msk;  /* 置位，实际取值看参考手册 */\nRTC->PRLH = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4381,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_RTC_PRLL",
+      "name": "RTC_PRLL",
+      "peripheral": "RTC",
+      "library": "reg",
+      "sectionId": "RTC@reg#sec1",
+      "prototype": "RTC->PRLL",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RTC_PRLL_PRL",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "RTC Prescaler Reload Value Low",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "RTC Prescaler Reload Value Low",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTC_PRLL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 RTC_TypeDef.PRLL，偏移 0x0C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = RTC->PRLL;  /* 读回当前值 */\nv &= ~RTC_PRLL_PRL_Msk;  /* 先清掉 RTC_PRLL_PRL：bits[15:0]（整个位域） */\nv |= (1u << RTC_PRLL_PRL_Pos) & RTC_PRLL_PRL_Msk;  /* 置位，实际取值看参考手册 */\nRTC->PRLL = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4386,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    }
+  ]
+}

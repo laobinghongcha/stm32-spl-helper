@@ -1,0 +1,624 @@
+{
+  "LL_I2S_ClearFlag_FRE": {
+    "briefZh": "清除 I2S 的帧格式错误标志位。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_ClearFlag_OVR": {
+    "briefZh": "清除 I2S 的溢出标志位。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_ClearFlag_UDR": {
+    "briefZh": "清除 I2S 的下溢标志位。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_Disable": {
+    "briefZh": "失能 I2S。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_DisableDMAReq_RX": {
+    "briefZh": "失能 I2S 的接收 DMA 请求。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_DisableDMAReq_TX": {
+    "briefZh": "失能 I2S 的发送 DMA 请求。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_DisableIT_ERR": {
+    "briefZh": "失能 I2S 的错误中断。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_DisableIT_RXNE": {
+    "briefZh": "失能 I2S 的接收数据寄存器非空中断。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_DisableIT_TXE": {
+    "briefZh": "失能 I2S 的发送数据寄存器空中断。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_DisableMasterClock": {
+    "briefZh": "失能 I2S 的主时钟输出（MCK）。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_Enable": {
+    "briefZh": "使能 I2S。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_EnableDMAReq_RX": {
+    "briefZh": "使能 I2S 的接收 DMA 请求。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_EnableDMAReq_TX": {
+    "briefZh": "使能 I2S 的发送 DMA 请求。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_EnableIT_ERR": {
+    "briefZh": "使能 I2S 的错误中断。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_EnableIT_RXNE": {
+    "briefZh": "使能 I2S 的接收数据寄存器非空中断。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_EnableIT_TXE": {
+    "briefZh": "使能 I2S 的发送数据寄存器空中断。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_EnableMasterClock": {
+    "briefZh": "使能 I2S 的主时钟输出（MCK）。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_GetClockPolarity": {
+    "briefZh": "读取 I2S 的时钟极性（CPOL）。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_GetDataFormat": {
+    "briefZh": "读取 I2S 的数据格式。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_GetPrescalerLinear": {
+    "briefZh": "读取 I2S 的线性预分频。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_GetPrescalerParity": {
+    "briefZh": "读取 I2S 的奇偶预分频。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_GetStandard": {
+    "briefZh": "读取 I2S 的标准。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_GetTransferMode": {
+    "briefZh": "读取 I2S 的传输模式。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_IsActiveFlag_BSY": {
+    "briefZh": "查询 I2S 的总线忙标志位是否置位。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_IsActiveFlag_CHSIDE": {
+    "briefZh": "查询 I2S 的声道指示标志位是否置位。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_IsActiveFlag_OVR": {
+    "briefZh": "查询 I2S 的溢出标志位是否置位。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_IsActiveFlag_RXNE": {
+    "briefZh": "查询 I2S 的接收数据寄存器非空标志位是否置位。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_IsActiveFlag_TXE": {
+    "briefZh": "查询 I2S 的发送数据寄存器空标志位是否置位。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_IsActiveFlag_UDR": {
+    "briefZh": "查询 I2S 的下溢标志位是否置位。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_IsEnabled": {
+    "briefZh": "查询 I2S 是否已使能。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_IsEnabledDMAReq_RX": {
+    "briefZh": "查询 I2S 的接收 DMA 请求是否已使能。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_IsEnabledDMAReq_TX": {
+    "briefZh": "查询 I2S 的发送 DMA 请求是否已使能。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_IsEnabledIT_ERR": {
+    "briefZh": "查询 I2S 的错误中断是否已使能。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_IsEnabledIT_RXNE": {
+    "briefZh": "查询 I2S 的接收数据寄存器非空中断是否已使能。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_IsEnabledIT_TXE": {
+    "briefZh": "查询 I2S 的发送数据寄存器空中断是否已使能。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_IsEnabledMasterClock": {
+    "briefZh": "查询 I2S 是否已使能。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_ReceiveData16": {
+    "briefZh": "从 I2S 数据寄存器读 16 位数据。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_SetClockPolarity": {
+    "briefZh": "设置 I2S 的时钟极性（CPOL）。",
+    "paramsZh": {
+      "ClockPolarity": "时钟极性（CPOL）：空闲时为高或为低。",
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_SetDataFormat": {
+    "briefZh": "设置 I2S 的数据格式。",
+    "paramsZh": {
+      "DataFormat": "数据格式（I2S）。",
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_SetPrescalerLinear": {
+    "briefZh": "设置 I2S 的线性预分频。",
+    "paramsZh": {
+      "PrescalerLinear": "线性预分频值。",
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_SetPrescalerParity": {
+    "briefZh": "设置 I2S 的奇偶预分频。",
+    "paramsZh": {
+      "PrescalerParity": "奇偶预分频值。",
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_SetStandard": {
+    "briefZh": "设置 I2S 的标准。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。",
+      "Standard": "I2S 标准：飞利浦 / MSB / LSB / PCM。"
+    }
+  },
+  "LL_I2S_SetTransferMode": {
+    "briefZh": "设置 I2S 的传输模式。",
+    "paramsZh": {
+      "Mode": "模式取值，如 LL_GPIO_MODE_OUTPUT / LL_GPIO_MODE_INPUT / LL_GPIO_MODE_ALTERNATE / LL_GPIO_MODE_ANALOG。",
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_I2S_TransmitData16": {
+    "briefZh": "向 I2S 数据寄存器写 16 位数据。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。",
+      "TxData": "要发送的数据。"
+    }
+  },
+  "LL_SPI_ClearFlag_CRCERR": {
+    "briefZh": "清除 SPI 的 CRC 校验错误标志位。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_ClearFlag_FRE": {
+    "briefZh": "清除 SPI 的帧格式错误标志位。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_ClearFlag_MODF": {
+    "briefZh": "清除 SPI 的模式错误（NSS 冲突）标志位。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_ClearFlag_OVR": {
+    "briefZh": "清除 SPI 的溢出标志位。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_DMA_GetRegAddr": {
+    "briefZh": "返回 SPI 数据寄存器（DR）地址，供 DMA 搬运时使用。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_Disable": {
+    "briefZh": "关闭 SPI 外设。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_DisableCRC": {
+    "briefZh": "关闭 SPI 的硬件 CRC 校验。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_DisableDMAReq_RX": {
+    "briefZh": "失能 SPI 的接收 DMA 请求。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_DisableDMAReq_TX": {
+    "briefZh": "失能 SPI 的发送 DMA 请求。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_DisableIT_ERR": {
+    "briefZh": "失能 SPI 的错误中断。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_DisableIT_RXNE": {
+    "briefZh": "失能 SPI 的接收数据寄存器非空中断。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_DisableIT_TXE": {
+    "briefZh": "失能 SPI 的发送数据寄存器空中断。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_Enable": {
+    "briefZh": "使能 SPI 外设（置 SPE 位）。使能后 NSS 引脚行为才真正生效。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_EnableCRC": {
+    "briefZh": "使能 SPI 的硬件 CRC 校验。收发双方必须用同一个多项式和同一个 CRC 初值。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_EnableDMAReq_RX": {
+    "briefZh": "使能 SPI 的接收 DMA 请求。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_EnableDMAReq_TX": {
+    "briefZh": "使能 SPI 的发送 DMA 请求。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_EnableIT_ERR": {
+    "briefZh": "使能 SPI 的错误中断。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_EnableIT_RXNE": {
+    "briefZh": "使能 SPI 的接收数据寄存器非空中断。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_EnableIT_TXE": {
+    "briefZh": "使能 SPI 的发送数据寄存器空中断。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_GetBaudRatePrescaler": {
+    "briefZh": "读取 SPI 的波特率预分频。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_GetCRCPolynomial": {
+    "briefZh": "读取 SPI 的 CRC 多项式。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_GetClockPhase": {
+    "briefZh": "读取 SPI 的时钟相位（CPHA）。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_GetClockPolarity": {
+    "briefZh": "读取 SPI 的时钟极性（CPOL）。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_GetDataWidth": {
+    "briefZh": "读取 SPI 的数据位宽。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_GetMode": {
+    "briefZh": "读取 SPI 的工作模式。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_GetNSSMode": {
+    "briefZh": "读取 SPI 的 NSS 片选模式。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_GetRxCRC": {
+    "briefZh": "读取 SPI 的接收到的 CRC 值。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_GetTransferBitOrder": {
+    "briefZh": "读取 SPI 的位序（MSB/LSB 优先）。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_GetTransferDirection": {
+    "briefZh": "读取 SPI 的传输方向。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_GetTxCRC": {
+    "briefZh": "读取 SPI 的发送的 CRC 值。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_IsActiveFlag_BSY": {
+    "briefZh": "查询 SPI 的总线忙标志位是否置位。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_IsActiveFlag_CRCERR": {
+    "briefZh": "查询 SPI 的 CRC 校验错误标志位是否置位。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_IsActiveFlag_MODF": {
+    "briefZh": "查询 SPI 的模式错误（NSS 冲突）标志位是否置位。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_IsActiveFlag_OVR": {
+    "briefZh": "查询 SPI 的溢出标志位是否置位。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_IsActiveFlag_RXNE": {
+    "briefZh": "查询 SPI 的接收数据寄存器非空标志位是否置位。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_IsActiveFlag_TXE": {
+    "briefZh": "查询 SPI 的发送数据寄存器空标志位是否置位。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_IsEnabled": {
+    "briefZh": "查询 SPI 外设是否已使能。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_IsEnabledCRC": {
+    "briefZh": "查询 SPI 是否已使能。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_IsEnabledDMAReq_RX": {
+    "briefZh": "查询 SPI 的接收 DMA 请求是否已使能。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_IsEnabledDMAReq_TX": {
+    "briefZh": "查询 SPI 的发送 DMA 请求是否已使能。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_IsEnabledIT_ERR": {
+    "briefZh": "查询 SPI 的错误中断是否已使能。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_IsEnabledIT_RXNE": {
+    "briefZh": "查询 SPI 的接收数据寄存器非空中断是否已使能。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_IsEnabledIT_TXE": {
+    "briefZh": "查询 SPI 的发送数据寄存器空中断是否已使能。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_ReceiveData16": {
+    "briefZh": "从数据寄存器读 16 位数据（16 位数据模式）。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_ReceiveData8": {
+    "briefZh": "从数据寄存器读一个字节（8 位数据模式）。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_SetBaudRatePrescaler": {
+    "briefZh": "设置 SPI 的波特率预分频。",
+    "paramsZh": {
+      "BaudRate": "波特率（如 115200）。",
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_SetCRCNext": {
+    "briefZh": "设置 SPI 的下一个待发送的 CRC 值。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_SetCRCPolynomial": {
+    "briefZh": "设置 SPI 的 CRC 多项式。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_SetClockPhase": {
+    "briefZh": "设置 SPI 的时钟相位（CPHA）。",
+    "paramsZh": {
+      "ClockPhase": "时钟相位（CPHA）：第一个边沿或第二个边沿采样。",
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_SetClockPolarity": {
+    "briefZh": "设置 SPI 的时钟极性（CPOL）。",
+    "paramsZh": {
+      "ClockPolarity": "时钟极性（CPOL）：空闲时为高或为低。",
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_SetDataWidth": {
+    "briefZh": "设置 SPI 的数据位宽。",
+    "paramsZh": {
+      "DataWidth": "数据位宽：8 位或 9 位。",
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_SetMode": {
+    "briefZh": "设置 SPI 的工作模式。",
+    "paramsZh": {
+      "Mode": "模式取值，如 LL_GPIO_MODE_OUTPUT / LL_GPIO_MODE_INPUT / LL_GPIO_MODE_ALTERNATE / LL_GPIO_MODE_ANALOG。",
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_SetNSSMode": {
+    "briefZh": "设置 SPI 的 NSS 片选模式。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_SetTransferBitOrder": {
+    "briefZh": "设置 SPI 的位序（MSB/LSB 优先）。",
+    "paramsZh": {
+      "BitOrder": "位序：MSB 优先或 LSB 优先。",
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。"
+    }
+  },
+  "LL_SPI_SetTransferDirection": {
+    "briefZh": "设置 SPI 的传输方向。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。",
+      "TransferDirection": "传输方向：只收 / 只发 / 收发双向。"
+    }
+  },
+  "LL_SPI_TransmitData16": {
+    "briefZh": "向数据寄存器写 16 位数据（16 位数据模式）。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。",
+      "TxData": "要发送的数据。"
+    }
+  },
+  "LL_SPI_TransmitData8": {
+    "briefZh": "向数据寄存器写一个字节（8 位数据模式）。",
+    "paramsZh": {
+      "SPIx": "SPI 实例指针，如 SPI1 / SPI2。",
+      "TxData": "要发送的数据。"
+    }
+  }
+}

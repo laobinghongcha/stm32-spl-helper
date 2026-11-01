@@ -6,7 +6,7 @@
       "id": "ADC_DeInit",
       "name": "ADC_DeInit",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec1",
+      "sectionId": "ADC@spl#sec1",
       "prototype": "void ADC_DeInit(ADC_TypeDef* ADCx);",
       "returnType": "void",
       "params": [
@@ -77,7 +77,7 @@
       "id": "ADC_Init",
       "name": "ADC_Init",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec1",
+      "sectionId": "ADC@spl#sec1",
       "prototype": "void ADC_Init(ADC_TypeDef* ADCx, ADC_InitTypeDef* ADC_InitStruct);",
       "returnType": "void",
       "params": [
@@ -181,7 +181,7 @@
       "id": "ADC_StructInit",
       "name": "ADC_StructInit",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec1",
+      "sectionId": "ADC@spl#sec1",
       "prototype": "void ADC_StructInit(ADC_InitTypeDef* ADC_InitStruct);",
       "returnType": "void",
       "params": [
@@ -235,7 +235,7 @@
       "id": "ADC_Cmd",
       "name": "ADC_Cmd",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec2",
+      "sectionId": "ADC@spl#sec2",
       "prototype": "void ADC_Cmd(ADC_TypeDef* ADCx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -309,7 +309,7 @@
       "id": "ADC_DMACmd",
       "name": "ADC_DMACmd",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec2",
+      "sectionId": "ADC@spl#sec2",
       "prototype": "void ADC_DMACmd(ADC_TypeDef* ADCx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -397,7 +397,7 @@
       "id": "ADC_ITConfig",
       "name": "ADC_ITConfig",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec3",
+      "sectionId": "ADC@spl#sec3",
       "prototype": "void ADC_ITConfig(ADC_TypeDef* ADCx, uint16_t ADC_IT, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -485,7 +485,7 @@
       "id": "ADC_ResetCalibration",
       "name": "ADC_ResetCalibration",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec4",
+      "sectionId": "ADC@spl#sec4",
       "prototype": "void ADC_ResetCalibration(ADC_TypeDef* ADCx);",
       "returnType": "void",
       "params": [
@@ -551,7 +551,7 @@
       "id": "ADC_GetResetCalibrationStatus",
       "name": "ADC_GetResetCalibrationStatus",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec5",
+      "sectionId": "ADC@spl#sec5",
       "prototype": "FlagStatus ADC_GetResetCalibrationStatus(ADC_TypeDef* ADCx);",
       "returnType": "FlagStatus",
       "params": [
@@ -614,7 +614,7 @@
       "id": "ADC_StartCalibration",
       "name": "ADC_StartCalibration",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec6",
+      "sectionId": "ADC@spl#sec6",
       "prototype": "void ADC_StartCalibration(ADC_TypeDef* ADCx);",
       "returnType": "void",
       "params": [
@@ -680,7 +680,7 @@
       "id": "ADC_GetCalibrationStatus",
       "name": "ADC_GetCalibrationStatus",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec5",
+      "sectionId": "ADC@spl#sec5",
       "prototype": "FlagStatus ADC_GetCalibrationStatus(ADC_TypeDef* ADCx);",
       "returnType": "FlagStatus",
       "params": [
@@ -744,7 +744,7 @@
       "id": "ADC_SoftwareStartConvCmd",
       "name": "ADC_SoftwareStartConvCmd",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec2",
+      "sectionId": "ADC@spl#sec2",
       "prototype": "void ADC_SoftwareStartConvCmd(ADC_TypeDef* ADCx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -825,7 +825,7 @@
       "id": "ADC_GetSoftwareStartConvStatus",
       "name": "ADC_GetSoftwareStartConvStatus",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec5",
+      "sectionId": "ADC@spl#sec5",
       "prototype": "FlagStatus ADC_GetSoftwareStartConvStatus(ADC_TypeDef* ADCx);",
       "returnType": "FlagStatus",
       "params": [
@@ -886,7 +886,7 @@
       "id": "ADC_DiscModeChannelCountConfig",
       "name": "ADC_DiscModeChannelCountConfig",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec7",
+      "sectionId": "ADC@spl#sec7",
       "prototype": "void ADC_DiscModeChannelCountConfig(ADC_TypeDef* ADCx, uint8_t Number);",
       "returnType": "void",
       "params": [
@@ -950,7 +950,7 @@
       "id": "ADC_DiscModeCmd",
       "name": "ADC_DiscModeCmd",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec2",
+      "sectionId": "ADC@spl#sec2",
       "prototype": "void ADC_DiscModeCmd(ADC_TypeDef* ADCx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1018,7 +1018,7 @@
       "id": "ADC_RegularChannelConfig",
       "name": "ADC_RegularChannelConfig",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec7",
+      "sectionId": "ADC@spl#sec7",
       "prototype": "void ADC_RegularChannelConfig(ADC_TypeDef* ADCx, uint8_t ADC_Channel, uint8_t Rank, uint8_t ADC_SampleTime);",
       "returnType": "void",
       "params": [
@@ -1119,7 +1119,7 @@
       "id": "ADC_ExternalTrigConvCmd",
       "name": "ADC_ExternalTrigConvCmd",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec2",
+      "sectionId": "ADC@spl#sec2",
       "prototype": "void ADC_ExternalTrigConvCmd(ADC_TypeDef* ADCx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1190,7 +1190,7 @@
       "id": "ADC_GetConversionValue",
       "name": "ADC_GetConversionValue",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec5",
+      "sectionId": "ADC@spl#sec5",
       "prototype": "uint16_t ADC_GetConversionValue(ADC_TypeDef* ADCx);",
       "returnType": "uint16_t",
       "params": [
@@ -1259,7 +1259,7 @@
       "id": "ADC_GetDualModeConversionValue",
       "name": "ADC_GetDualModeConversionValue",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec5",
+      "sectionId": "ADC@spl#sec5",
       "prototype": "uint32_t ADC_GetDualModeConversionValue(void);",
       "returnType": "uint32_t",
       "params": [],
@@ -1312,7 +1312,7 @@
       "id": "ADC_AutoInjectedConvCmd",
       "name": "ADC_AutoInjectedConvCmd",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec2",
+      "sectionId": "ADC@spl#sec2",
       "prototype": "void ADC_AutoInjectedConvCmd(ADC_TypeDef* ADCx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1379,7 +1379,7 @@
       "id": "ADC_InjectedDiscModeCmd",
       "name": "ADC_InjectedDiscModeCmd",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec2",
+      "sectionId": "ADC@spl#sec2",
       "prototype": "void ADC_InjectedDiscModeCmd(ADC_TypeDef* ADCx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1446,7 +1446,7 @@
       "id": "ADC_ExternalTrigInjectedConvConfig",
       "name": "ADC_ExternalTrigInjectedConvConfig",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec7",
+      "sectionId": "ADC@spl#sec7",
       "prototype": "void ADC_ExternalTrigInjectedConvConfig(ADC_TypeDef* ADCx, uint32_t ADC_ExternalTrigInjecConv);",
       "returnType": "void",
       "params": [
@@ -1522,7 +1522,7 @@
       "id": "ADC_ExternalTrigInjectedConvCmd",
       "name": "ADC_ExternalTrigInjectedConvCmd",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec2",
+      "sectionId": "ADC@spl#sec2",
       "prototype": "void ADC_ExternalTrigInjectedConvCmd(ADC_TypeDef* ADCx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1593,7 +1593,7 @@
       "id": "ADC_SoftwareStartInjectedConvCmd",
       "name": "ADC_SoftwareStartInjectedConvCmd",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec2",
+      "sectionId": "ADC@spl#sec2",
       "prototype": "void ADC_SoftwareStartInjectedConvCmd(ADC_TypeDef* ADCx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1671,7 +1671,7 @@
       "id": "ADC_GetSoftwareStartInjectedConvCmdStatus",
       "name": "ADC_GetSoftwareStartInjectedConvCmdStatus",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec5",
+      "sectionId": "ADC@spl#sec5",
       "prototype": "FlagStatus ADC_GetSoftwareStartInjectedConvCmdStatus(ADC_TypeDef* ADCx);",
       "returnType": "FlagStatus",
       "params": [
@@ -1732,7 +1732,7 @@
       "id": "ADC_InjectedChannelConfig",
       "name": "ADC_InjectedChannelConfig",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec7",
+      "sectionId": "ADC@spl#sec7",
       "prototype": "void ADC_InjectedChannelConfig(ADC_TypeDef* ADCx, uint8_t ADC_Channel, uint8_t Rank, uint8_t ADC_SampleTime);",
       "returnType": "void",
       "params": [
@@ -1820,7 +1820,7 @@
       "id": "ADC_InjectedSequencerLengthConfig",
       "name": "ADC_InjectedSequencerLengthConfig",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec7",
+      "sectionId": "ADC@spl#sec7",
       "prototype": "void ADC_InjectedSequencerLengthConfig(ADC_TypeDef* ADCx, uint8_t Length);",
       "returnType": "void",
       "params": [
@@ -1887,7 +1887,7 @@
       "id": "ADC_SetInjectedOffset",
       "name": "ADC_SetInjectedOffset",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec4",
+      "sectionId": "ADC@spl#sec4",
       "prototype": "void ADC_SetInjectedOffset(ADC_TypeDef* ADCx, uint8_t ADC_InjectedChannel, uint16_t Offset);",
       "returnType": "void",
       "params": [
@@ -1960,7 +1960,7 @@
       "id": "ADC_GetInjectedConversionValue",
       "name": "ADC_GetInjectedConversionValue",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec5",
+      "sectionId": "ADC@spl#sec5",
       "prototype": "uint16_t ADC_GetInjectedConversionValue(ADC_TypeDef* ADCx, uint8_t ADC_InjectedChannel);",
       "returnType": "uint16_t",
       "params": [
@@ -2042,7 +2042,7 @@
       "id": "ADC_AnalogWatchdogCmd",
       "name": "ADC_AnalogWatchdogCmd",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec2",
+      "sectionId": "ADC@spl#sec2",
       "prototype": "void ADC_AnalogWatchdogCmd(ADC_TypeDef* ADCx, uint32_t ADC_AnalogWatchdog);",
       "returnType": "void",
       "params": [
@@ -2117,7 +2117,7 @@
       "id": "ADC_AnalogWatchdogThresholdsConfig",
       "name": "ADC_AnalogWatchdogThresholdsConfig",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec7",
+      "sectionId": "ADC@spl#sec7",
       "prototype": "void ADC_AnalogWatchdogThresholdsConfig(ADC_TypeDef* ADCx, uint16_t HighThreshold, uint16_t LowThreshold);",
       "returnType": "void",
       "params": [
@@ -2192,7 +2192,7 @@
       "id": "ADC_AnalogWatchdogSingleChannelConfig",
       "name": "ADC_AnalogWatchdogSingleChannelConfig",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec7",
+      "sectionId": "ADC@spl#sec7",
       "prototype": "void ADC_AnalogWatchdogSingleChannelConfig(ADC_TypeDef* ADCx, uint8_t ADC_Channel);",
       "returnType": "void",
       "params": [
@@ -2260,7 +2260,7 @@
       "id": "ADC_TempSensorVrefintCmd",
       "name": "ADC_TempSensorVrefintCmd",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec2",
+      "sectionId": "ADC@spl#sec2",
       "prototype": "void ADC_TempSensorVrefintCmd(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -2330,7 +2330,7 @@
       "id": "ADC_GetFlagStatus",
       "name": "ADC_GetFlagStatus",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec8",
+      "sectionId": "ADC@spl#sec8",
       "prototype": "FlagStatus ADC_GetFlagStatus(ADC_TypeDef* ADCx, uint8_t ADC_FLAG);",
       "returnType": "FlagStatus",
       "params": [
@@ -2407,7 +2407,7 @@
       "id": "ADC_ClearFlag",
       "name": "ADC_ClearFlag",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec8",
+      "sectionId": "ADC@spl#sec8",
       "prototype": "void ADC_ClearFlag(ADC_TypeDef* ADCx, uint8_t ADC_FLAG);",
       "returnType": "void",
       "params": [
@@ -2474,7 +2474,7 @@
       "id": "ADC_GetITStatus",
       "name": "ADC_GetITStatus",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec3",
+      "sectionId": "ADC@spl#sec3",
       "prototype": "ITStatus ADC_GetITStatus(ADC_TypeDef* ADCx, uint16_t ADC_IT);",
       "returnType": "ITStatus",
       "params": [
@@ -2550,7 +2550,7 @@
       "id": "ADC_ClearITPendingBit",
       "name": "ADC_ClearITPendingBit",
       "peripheral": "ADC",
-      "sectionId": "ADC#sec3",
+      "sectionId": "ADC@spl#sec3",
       "prototype": "void ADC_ClearITPendingBit(ADC_TypeDef* ADCx, uint16_t ADC_IT);",
       "returnType": "void",
       "params": [

@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "EXTI",
+  "library": "hal",
+  "functions": [
+    {
+      "id": "HAL_EXTI_SetConfigLine",
+      "name": "HAL_EXTI_SetConfigLine",
+      "peripheral": "EXTI",
+      "library": "hal",
+      "sectionId": "EXTI@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_EXTI_SetConfigLine(EXTI_HandleTypeDef *hexti, EXTI_ConfigTypeDef *pExtiConfig);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hexti",
+          "type": "EXTI_HandleTypeDef *",
+          "descEn": "Exti handle.",
+          "descZh": "EXTI 句柄，Line 指定线号（EXTI_LINE_0 ~ EXTI_LINE_15 或 PVD/RTC/ETH 等内部线）。"
+        },
+        {
+          "name": "pExtiConfig",
+          "type": "EXTI_ConfigTypeDef *",
+          "descEn": "Pointer on EXTI configuration to be set.",
+          "descZh": "配置结构体：Line、Mode（EXTI_MODE_IT 中断 / EXTI_MODE_EVENT 事件）、Trigger（EXTI_TRIGGER_RISING/FALLING/RISING_FALLING）、GPIOSel（EXTI_GPIO_SEL_GPIOA 等，内部线填 EXTI_GPIO_SEL_NONE）、LineCmd（ENABLE/DISABLE）。"
+        }
+      ],
+      "returnDescEn": "HAL Status.",
+      "returnDescZh": "",
+      "briefEn": "Set configuration of a dedicated Exti line.",
+      "briefZh": "配置一条 EXTI 中断线：触发边沿、GPIO 端口与引脚映射、中断或事件模式。",
+      "usageZh": "这是 F1 上 EXTI 的「显式配置」接口。注意：如果引脚是用 HAL_GPIO_Init 的 GPIO_MODE_IT_RISING 初始化的，HAL 内部已经替你把这套 EXTI 配置做完了，**不需要再调本函数**——重复配置容易把边沿改乱。真正需要它的是「只走事件不产生中断」或者要单独改某条线的边沿时。",
+      "prerequisites": [
+        "已使能 AFIO 时钟（__HAL_RCC_AFIO_CLK_ENABLE），GPIO 到 EXTI 的映射要经过 AFIO",
+        "已调用 HAL_EXTI_GetHandle 拿到该线的句柄"
+      ],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "同一线号只能绑一个端口：PA0 和 PB0 共用 EXTI0，两个都配会互相覆盖",
+        "F1 的 EXTI0~4 各有独立向量，EXTI5~9 共用 EXTI9_5_IRQn，EXTI10~15 共用 EXTI15_10_IRQn",
+        "内部线（PVD/RTC 闹钟/ETH 唤醒）不需要 GPIO 映射，GPIOSel 填 NONE"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "EXTI_HandleTypeDef",
+        "EXTI_ConfigTypeDef",
+        "HAL_ERROR",
+        "IS_EXTI_LINE",
+        "IS_EXTI_MODE",
+        "EXTI_PIN_MASK",
+        "EXTI_CONFIG",
+        "IS_EXTI_TRIGGER",
+        "EXTI_TRIGGER_RISING",
+        "EXTI_TRIGGER_FALLING",
+        "EXTI_GPIO",
+        "IS_EXTI_GPIO_PORT",
+        "IS_EXTI_GPIO_PIN",
+        "EXTI_MODE_INTERRUPT",
+        "EXTI_MODE_EVENT",
+        "HAL_OK"
+      ],
+      "headerLine": 278,
+      "definedIn": "stm32f1xx_hal_exti.h",
+      "sourceLine": 142,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_EXTI_GetConfigLine",
+      "name": "HAL_EXTI_GetConfigLine",
+      "peripheral": "EXTI",
+      "library": "hal",
+      "sectionId": "EXTI@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_EXTI_GetConfigLine(EXTI_HandleTypeDef *hexti, EXTI_ConfigTypeDef *pExtiConfig);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hexti",
+          "type": "EXTI_HandleTypeDef *",
+          "descEn": "Exti handle.",
+          "descZh": "EXTI 句柄。"
+        },
+        {
+          "name": "pExtiConfig",
+          "type": "EXTI_ConfigTypeDef *",
+          "descEn": "Pointer on structure to store Exti configuration.",
+          "descZh": "输出参数，传入结构体地址由函数填回当前配置。"
+        }
+      ],
+      "returnDescEn": "HAL Status.",
+      "returnDescZh": "",
+      "briefEn": "Get configuration of a dedicated Exti line.",
+      "briefZh": "读回某条 EXTI 线当前的配置（模式、触发边沿、GPIO 来源）。",
+      "usageZh": "调试 EXTI 行为不符合预期时用：确认边沿到底是上升还是下降、有没有被别处改过、GPIO 映射到哪个端口。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "EXTI_HandleTypeDef",
+        "EXTI_ConfigTypeDef",
+        "HAL_ERROR",
+        "IS_EXTI_LINE",
+        "EXTI_PIN_MASK",
+        "EXTI_MODE_INTERRUPT",
+        "EXTI_MODE_NONE",
+        "EXTI_MODE_EVENT",
+        "EXTI_TRIGGER_NONE",
+        "EXTI_CONFIG",
+        "EXTI_TRIGGER_RISING",
+        "EXTI_TRIGGER_FALLING",
+        "EXTI_GPIO",
+        "IS_EXTI_GPIO_PIN",
+        "HAL_OK"
+      ],
+      "headerLine": 279,
+      "definedIn": "stm32f1xx_hal_exti.h",
+      "sourceLine": 237,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_EXTI_ClearConfigLine",
+      "name": "HAL_EXTI_ClearConfigLine",
+      "peripheral": "EXTI",
+      "library": "hal",
+      "sectionId": "EXTI@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_EXTI_ClearConfigLine(EXTI_HandleTypeDef *hexti);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hexti",
+          "type": "EXTI_HandleTypeDef *",
+          "descEn": "Exti handle.",
+          "descZh": "EXTI 句柄。"
+        }
+      ],
+      "returnDescEn": "HAL Status.",
+      "returnDescZh": "",
+      "briefEn": "Clear whole configuration of a dedicated Exti line.",
+      "briefZh": "清空一条 EXTI 线的全部配置，让它回到未使用状态。",
+      "usageZh": "引脚改作他用、或者要从某个 EXTI 线上解绑时调用。会关掉该线的中断/事件使能并解除 GPIO 映射。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "清理后 NVIC 里的使能还开着，若不打算再用，建议同时 HAL_NVIC_DisableIRQ"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "EXTI_HandleTypeDef",
+        "HAL_ERROR",
+        "IS_EXTI_LINE",
+        "EXTI_PIN_MASK",
+        "EXTI_CONFIG",
+        "EXTI_GPIO",
+        "IS_EXTI_GPIO_PIN",
+        "HAL_OK"
+      ],
+      "headerLine": 280,
+      "definedIn": "stm32f1xx_hal_exti.h",
+      "sourceLine": 316,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_EXTI_RegisterCallback",
+      "name": "HAL_EXTI_RegisterCallback",
+      "peripheral": "EXTI",
+      "library": "hal",
+      "sectionId": "EXTI@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_EXTI_RegisterCallback(EXTI_HandleTypeDef *hexti, EXTI_CallbackIDTypeDef CallbackID, void (*pPendingCbfn)(void));",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hexti",
+          "type": "EXTI_HandleTypeDef *",
+          "descEn": "Exti handle.",
+          "descZh": "EXTI 句柄。"
+        },
+        {
+          "name": "CallbackID",
+          "type": "EXTI_CallbackIDTypeDef",
+          "descEn": "User callback identifier. This parameter can be one of @arg @ref EXTI_CallbackIDTypeDef values.",
+          "descZh": "回调类型，如 HAL_EXTI_COMMON_CB_ID。"
+        },
+        {
+          "name": "pPendingCbfn",
+          "type": "void (*)(void)",
+          "descEn": "function pointer to be stored as callback.",
+          "descZh": "挂起中断的回调函数指针（内部事件线用），签名 void (*)(void)。"
+        }
+      ],
+      "returnDescEn": "HAL Status.",
+      "returnDescZh": "",
+      "briefEn": "Register callback for a dedicated Exti line.",
+      "briefZh": "为 EXTI 句柄注册回调（目前主要用于「回调线」如 PVD、RTC 闹钟这类内部事件）。",
+      "usageZh": "一般 GPIO 外部中断不用它——那类走 HAL_GPIO_EXTI_Callback 的 __weak 机制。这里主要给内部线上事件型 EXTI 挂钩子。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "EXTI_HandleTypeDef",
+        "EXTI_CallbackIDTypeDef",
+        "pPendingCbfn",
+        "HAL_OK",
+        "HAL_EXTI_COMMON_CB_ID",
+        "PendingCallback",
+        "HAL_ERROR"
+      ],
+      "headerLine": 281,
+      "definedIn": "stm32f1xx_hal_exti.h",
+      "sourceLine": 369,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_EXTI_GetHandle",
+      "name": "HAL_EXTI_GetHandle",
+      "peripheral": "EXTI",
+      "library": "hal",
+      "sectionId": "EXTI@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_EXTI_GetHandle(EXTI_HandleTypeDef *hexti, uint32_t ExtiLine);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hexti",
+          "type": "EXTI_HandleTypeDef *",
+          "descEn": "Exti handle.",
+          "descZh": "输出参数，传入 EXTI_HandleTypeDef 变量的地址。"
+        },
+        {
+          "name": "ExtiLine",
+          "type": "uint32_t",
+          "descEn": "Exti line number. This parameter can be from 0 to @ref EXTI_LINE_NB.",
+          "descZh": "EXTI 线号，EXTI_LINE_0 ~ EXTI_LINE_15 或内部线枚举。"
+        }
+      ],
+      "returnDescEn": "HAL Status.",
+      "returnDescZh": "",
+      "briefEn": "Store line number as handle private field.",
+      "briefZh": "获取某条 EXTI 线对应的句柄指针（句柄由 HAL 内部统一管理）。",
+      "usageZh": "用 HAL_EXTI_SetConfigLine 之前必须先拿到句柄。内部就是一个按线号索引的静态数组，不需要自己定义句柄变量。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "EXTI_HandleTypeDef",
+        "EXTI_LINE_NB",
+        "IS_EXTI_LINE",
+        "HAL_ERROR",
+        "HAL_OK"
+      ],
+      "headerLine": 282,
+      "definedIn": "stm32f1xx_hal_exti.h",
+      "sourceLine": 394,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_EXTI_IRQHandler",
+      "name": "HAL_EXTI_IRQHandler",
+      "peripheral": "EXTI",
+      "library": "hal",
+      "sectionId": "EXTI@hal#sec2",
+      "prototype": "void              HAL_EXTI_IRQHandler(EXTI_HandleTypeDef *hexti);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "hexti",
+          "type": "EXTI_HandleTypeDef *",
+          "descEn": "Exti handle.",
+          "descZh": "EXTI 句柄。"
+        }
+      ],
+      "returnDescEn": "none.",
+      "returnDescZh": "",
+      "briefEn": "Handle EXTI interrupt request.",
+      "briefZh": "EXTI 线中断的统一入口，清挂起标志并按配置调用对应回调。",
+      "usageZh": "内部线（PVD、RTC 闹钟、ETH 唤醒）的中断处理里调用它。普通 GPIO 外部中断请用 HAL_GPIO_EXTI_IRQHandler，不要混用。",
+      "prerequisites": [
+        "该线已在 NVIC 使能对应中断"
+      ],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "它会自动清 EXTI->PR 的对应位，用户回调里不需要再清"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "EXTI_HandleTypeDef",
+        "EXTI_PIN_MASK",
+        "PendingCallback"
+      ],
+      "headerLine": 292,
+      "definedIn": "stm32f1xx_hal_exti.h",
+      "sourceLine": 434,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_EXTI_GetPending",
+      "name": "HAL_EXTI_GetPending",
+      "peripheral": "EXTI",
+      "library": "hal",
+      "sectionId": "EXTI@hal#sec2",
+      "prototype": "uint32_t          HAL_EXTI_GetPending(EXTI_HandleTypeDef *hexti, uint32_t Edge);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hexti",
+          "type": "EXTI_HandleTypeDef *",
+          "descEn": "Exti handle.",
+          "descZh": "EXTI 句柄。"
+        },
+        {
+          "name": "Edge",
+          "type": "uint32_t",
+          "descEn": "Specify which pending edge as to be checked. This parameter can be one of the following values:",
+          "descZh": "要查询的边沿，EXTI_TRIGGER_RISING / FALLING。"
+        }
+      ],
+      "returnDescEn": "1 if interrupt is pending else 0.",
+      "returnDescZh": "",
+      "briefEn": "Get interrupt pending bit of a dedicated line.",
+      "briefZh": "查询某条 EXTI 线的挂起状态（是否已触发但未被处理）。",
+      "usageZh": "轮询式处理 EXTI 事件时用，或者在 ISR 里判断具体是哪条线触发的。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "EXTI_HandleTypeDef",
+        "IS_EXTI_LINE",
+        "IS_EXTI_CONFIG_LINE",
+        "IS_EXTI_PENDING_EDGE",
+        "UNUSED",
+        "EXTI_PIN_MASK"
+      ],
+      "headerLine": 293,
+      "definedIn": "stm32f1xx_hal_exti.h",
+      "sourceLine": 466,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_EXTI_ClearPending",
+      "name": "HAL_EXTI_ClearPending",
+      "peripheral": "EXTI",
+      "library": "hal",
+      "sectionId": "EXTI@hal#sec2",
+      "prototype": "void              HAL_EXTI_ClearPending(EXTI_HandleTypeDef *hexti, uint32_t Edge);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "hexti",
+          "type": "EXTI_HandleTypeDef *",
+          "descEn": "Exti handle.",
+          "descZh": "EXTI 句柄。"
+        },
+        {
+          "name": "Edge",
+          "type": "uint32_t",
+          "descEn": "Specify which pending edge as to be clear. This parameter can be one of the following values:",
+          "descZh": "要清的边沿，EXTI_TRIGGER_RISING / FALLING。"
+        }
+      ],
+      "returnDescEn": "None.",
+      "returnDescZh": "",
+      "briefEn": "Clear interrupt pending bit of a dedicated line.",
+      "briefZh": "清除某条 EXTI 线的挂起标志。",
+      "usageZh": "轮询模式下处理完事件后手动清；或者使能中断前先清掉遗留的旧标志，避免一使能就误进中断。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "EXTI_HandleTypeDef",
+        "IS_EXTI_LINE",
+        "IS_EXTI_CONFIG_LINE",
+        "IS_EXTI_PENDING_EDGE",
+        "UNUSED",
+        "EXTI_PIN_MASK"
+      ],
+      "headerLine": 294,
+      "definedIn": "stm32f1xx_hal_exti.h",
+      "sourceLine": 498,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_EXTI_GenerateSWI",
+      "name": "HAL_EXTI_GenerateSWI",
+      "peripheral": "EXTI",
+      "library": "hal",
+      "sectionId": "EXTI@hal#sec2",
+      "prototype": "void              HAL_EXTI_GenerateSWI(EXTI_HandleTypeDef *hexti);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "hexti",
+          "type": "EXTI_HandleTypeDef *",
+          "descEn": "Exti handle.",
+          "descZh": "EXTI 句柄。"
+        }
+      ],
+      "returnDescEn": "None.",
+      "returnDescZh": "",
+      "briefEn": "Generate a software interrupt for a dedicated line.",
+      "briefZh": "软件触发一条 EXTI 线的中断/事件，模拟一次硬件边沿。",
+      "usageZh": "调试 EXTI 服务程序时不必真的去拨动引脚，直接软触发就能单步进中断；也可用于自检。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "该线的中断/事件使能必须已经打开，否则触发了也不会有反应"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "EXTI_HandleTypeDef",
+        "IS_EXTI_LINE",
+        "IS_EXTI_CONFIG_LINE",
+        "EXTI_PIN_MASK"
+      ],
+      "headerLine": 295,
+      "definedIn": "stm32f1xx_hal_exti.h",
+      "sourceLine": 522,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

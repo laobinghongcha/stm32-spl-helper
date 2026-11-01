@@ -1,0 +1,562 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "WWDG",
+  "library": "reg",
+  "functions": [
+    {
+      "id": "REG_WWDG_CFR",
+      "name": "WWDG_CFR",
+      "peripheral": "WWDG",
+      "library": "reg",
+      "sectionId": "WWDG@reg#sec2",
+      "prototype": "WWDG->CFR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "WWDG_CFR_W",
+          "type": "bits[6:0]（整个位域）",
+          "descEn": "W[6:0] bits (7-bit window value)",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CFR_EWI",
+          "type": "bit 9（整个位域）",
+          "descEn": "Early Wakeup Interrupt",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CFR_W_0",
+          "type": "bit 0",
+          "descEn": "0x00000001",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CFR_W_1",
+          "type": "bit 1",
+          "descEn": "0x00000002",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CFR_W_2",
+          "type": "bit 2",
+          "descEn": "0x00000004",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CFR_W_3",
+          "type": "bit 3",
+          "descEn": "0x00000008",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CFR_W_4",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CFR_W_5",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CFR_W_6",
+          "type": "bit 6",
+          "descEn": "0x00000040",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CFR_W0",
+          "type": "WWDG_CFR_W_0",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CFR_W1",
+          "type": "WWDG_CFR_W_1",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CFR_W2",
+          "type": "WWDG_CFR_W_2",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CFR_W3",
+          "type": "WWDG_CFR_W_3",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CFR_W4",
+          "type": "WWDG_CFR_W_4",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CFR_W5",
+          "type": "WWDG_CFR_W_5",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CFR_W6",
+          "type": "WWDG_CFR_W_6",
+          "descEn": "",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "WWDG Configuration register, Address offset: 0x04",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "WWDG_CFR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 WWDG_TypeDef.CFR，偏移 0x04"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = WWDG->CFR;  /* 读回当前值 */\nv &= ~WWDG_CFR_W_Msk;  /* 先清掉 WWDG_CFR_W：bits[6:0]（整个位域） */\nv |= (1u << WWDG_CFR_W_Pos) & WWDG_CFR_W_Msk;  /* 置位，实际取值看参考手册 */\nWWDG->CFR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4484,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_WWDG_CR",
+      "name": "WWDG_CR",
+      "peripheral": "WWDG",
+      "library": "reg",
+      "sectionId": "WWDG@reg#sec2",
+      "prototype": "WWDG->CR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "WWDG_CR_T",
+          "type": "bits[6:0]（整个位域）",
+          "descEn": "T[6:0] bits (7-Bit counter (MSB to LSB))",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CR_WDGA",
+          "type": "bit 7（整个位域）",
+          "descEn": "Activation bit",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CR_T_0",
+          "type": "bit 0",
+          "descEn": "0x00000001",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CR_T_1",
+          "type": "bit 1",
+          "descEn": "0x00000002",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CR_T_2",
+          "type": "bit 2",
+          "descEn": "0x00000004",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CR_T_3",
+          "type": "bit 3",
+          "descEn": "0x00000008",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CR_T_4",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CR_T_5",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CR_T_6",
+          "type": "bit 6",
+          "descEn": "0x00000040",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CR_T0",
+          "type": "WWDG_CR_T_0",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CR_T1",
+          "type": "WWDG_CR_T_1",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CR_T2",
+          "type": "WWDG_CR_T_2",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CR_T3",
+          "type": "WWDG_CR_T_3",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CR_T4",
+          "type": "WWDG_CR_T_4",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CR_T5",
+          "type": "WWDG_CR_T_5",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "WWDG_CR_T6",
+          "type": "WWDG_CR_T_6",
+          "descEn": "",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "WWDG Control register, Address offset: 0x00",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "WWDG_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 WWDG_TypeDef.CR，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = WWDG->CR;  /* 读回当前值 */\nv &= ~WWDG_CR_T_Msk;  /* 先清掉 WWDG_CR_T：bits[6:0]（整个位域） */\nv |= (1u << WWDG_CR_T_Pos) & WWDG_CR_T_Msk;  /* 置位，实际取值看参考手册 */\nWWDG->CR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4459,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_WWDG_SR",
+      "name": "WWDG_SR",
+      "peripheral": "WWDG",
+      "library": "reg",
+      "sectionId": "WWDG@reg#sec1",
+      "prototype": "WWDG->SR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "WWDG_SR_EWIF",
+          "type": "bit 0（整个位域）",
+          "descEn": "Early Wakeup Interrupt Flag",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP_CTR_RX",
+          "type": "bit 15（整个位域）",
+          "descEn": "EndPoint Correct TRansfer RX",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP_DTOG_RX",
+          "type": "bit 14（整个位域）",
+          "descEn": "EndPoint Data TOGGLE RX",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EPRX_STAT",
+          "type": "bits[13:12]（整个位域）",
+          "descEn": "EndPoint RX STATus bit field",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP_SETUP",
+          "type": "bit 11（整个位域）",
+          "descEn": "EndPoint SETUP",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP_T_FIELD",
+          "type": "bits[10:9]（整个位域）",
+          "descEn": "EndPoint TYPE",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP_KIND",
+          "type": "bit 8（整个位域）",
+          "descEn": "EndPoint KIND",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP_CTR_TX",
+          "type": "bit 7（整个位域）",
+          "descEn": "EndPoint Correct TRansfer TX",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP_DTOG_TX",
+          "type": "bit 6（整个位域）",
+          "descEn": "EndPoint Data TOGGLE TX",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EPTX_STAT",
+          "type": "bits[5:4]（整个位域）",
+          "descEn": "EndPoint TX STATus bit field",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EPADDR_FIELD",
+          "type": "bits[3:0]（整个位域）",
+          "descEn": "EndPoint ADDRess FIELD",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP_TYPE_MASK",
+          "type": "bits[10:9]（整个位域）",
+          "descEn": "EndPoint TYPE Mask",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP0R",
+          "type": "USB_BASE",
+          "descEn": "Endpoint 0 register address",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP1R",
+          "type": "(USB_BASE + 0x00000004)",
+          "descEn": "Endpoint 1 register address",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP2R",
+          "type": "(USB_BASE + 0x00000008)",
+          "descEn": "Endpoint 2 register address",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP3R",
+          "type": "(USB_BASE + 0x0000000C)",
+          "descEn": "Endpoint 3 register address",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP4R",
+          "type": "(USB_BASE + 0x00000010)",
+          "descEn": "Endpoint 4 register address",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP5R",
+          "type": "(USB_BASE + 0x00000014)",
+          "descEn": "Endpoint 5 register address",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP6R",
+          "type": "(USB_BASE + 0x00000018)",
+          "descEn": "Endpoint 6 register address",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP7R",
+          "type": "(USB_BASE + 0x0000001C)",
+          "descEn": "Endpoint 7 register address",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EPREG_MASK",
+          "type": "(USB_EP_CTR_RX|USB_EP_SETUP|USB_EP_T_FIELD|USB_EP_KIND|USB_EP_CTR_TX|USB_EPADDR_FIELD)",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP_BULK",
+          "type": "0x00000000",
+          "descEn": "EndPoint BULK",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP_CONTROL",
+          "type": "bit 9",
+          "descEn": "EndPoint CONTROL",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP_ISOCHRONOUS",
+          "type": "bit 10",
+          "descEn": "EndPoint ISOCHRONOUS",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP_INTERRUPT",
+          "type": "bits[10:9]",
+          "descEn": "EndPoint INTERRUPT",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP_T_MASK",
+          "type": "(~USB_EP_T_FIELD & USB_EPREG_MASK)",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EPKIND_MASK",
+          "type": "(~USB_EP_KIND & USB_EPREG_MASK)",
+          "descEn": "EP_KIND EndPoint KIND",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP_TX_DIS",
+          "type": "0x00000000",
+          "descEn": "EndPoint TX DISabled",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP_TX_STALL",
+          "type": "bit 4",
+          "descEn": "EndPoint TX STALLed",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP_TX_NAK",
+          "type": "bit 5",
+          "descEn": "EndPoint TX NAKed",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP_TX_VALID",
+          "type": "bits[5:4]",
+          "descEn": "EndPoint TX VALID",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EPTX_DTOG1",
+          "type": "bit 4",
+          "descEn": "EndPoint TX Data TOGgle bit1",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EPTX_DTOG2",
+          "type": "bit 5",
+          "descEn": "EndPoint TX Data TOGgle bit2",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EPTX_DTOGMASK",
+          "type": "(USB_EPTX_STAT|USB_EPREG_MASK)",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP_RX_DIS",
+          "type": "0x00000000",
+          "descEn": "EndPoint RX DISabled",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP_RX_STALL",
+          "type": "bit 12",
+          "descEn": "EndPoint RX STALLed",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP_RX_NAK",
+          "type": "bit 13",
+          "descEn": "EndPoint RX NAKed",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EP_RX_VALID",
+          "type": "bits[13:12]",
+          "descEn": "EndPoint RX VALID",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EPRX_DTOG1",
+          "type": "bit 12",
+          "descEn": "EndPoint RX Data TOGgle bit1",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EPRX_DTOG2",
+          "type": "bit 13",
+          "descEn": "EndPoint RX Data TOGgle bit1",
+          "descZh": ""
+        },
+        {
+          "name": "USB_EPRX_DTOGMASK",
+          "type": "(USB_EPRX_STAT|USB_EPREG_MASK)",
+          "descEn": "",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "WWDG Status register, Address offset: 0x08",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "WWDG_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 WWDG_TypeDef.SR，偏移 0x08"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = WWDG->SR;  /* 读回当前值 */\nv &= ~WWDG_SR_EWIF_Msk;  /* 先清掉 WWDG_SR_EWIF：bit 0（整个位域） */\nv |= (1u << WWDG_SR_EWIF_Pos) & WWDG_SR_EWIF_Msk;  /* 置位，实际取值看参考手册 */\nWWDG->SR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 4519,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    }
+  ]
+}

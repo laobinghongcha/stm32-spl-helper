@@ -1,0 +1,831 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "FLASH",
+  "library": "hal",
+  "functions": [
+    {
+      "id": "HAL_FLASH_Program",
+      "name": "HAL_FLASH_Program",
+      "peripheral": "FLASH",
+      "library": "hal",
+      "sectionId": "FLASH@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_FLASH_Program(uint32_t TypeProgram, uint32_t Address, uint64_t Data);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "TypeProgram",
+          "type": "uint32_t",
+          "descEn": "Indicate the way to program at a specified address. This parameter can be a value of @ref FLASH_Type_Program",
+          "descZh": "编程宽度：FLASH_TYPEPROGRAM_HALFWORD（16 位）或 FLASH_TYPEPROGRAM_WORD（32 位）。F1 不支持按字节编程。"
+        },
+        {
+          "name": "Address",
+          "type": "uint32_t",
+          "descEn": "Specifies the address to be programmed.",
+          "descZh": "目标地址。必须按编程宽度对齐（半字 2 字节、字 4 字节），且该位置已擦除为 0xFFFF。"
+        },
+        {
+          "name": "Data",
+          "type": "uint64_t",
+          "descEn": "Specifies the data to be programmed",
+          "descZh": "要写入的数据，宽度要与 TypeProgram 一致。"
+        }
+      ],
+      "returnDescEn": "HAL_StatusTypeDef HAL Status",
+      "returnDescZh": "",
+      "briefEn": "Program halfword, word or double word at a specified address",
+      "briefZh": "按指定的编程宽度向目标地址写入数据。目标地址必须是已擦除状态（0xFFFF）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "The function HAL_FLASH_Unlock() should be called before to unlock the FLASH interface The function HAL_FLASH_Lock() should be called after to lock the FLASH interface",
+        "If an erase and a program operations are requested simultaneously, the erase operation is performed before the program one.",
+        "FLASH should be previously erased before new programmation (only exception to this is when 0x0000 is programmed)"
+      ],
+      "notesZh": [],
+      "exampleCode": "/* 写入前必须确保该地址已擦除（0xFFFF） */\nHAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD,   /* 32 位编程 */\n                  0x0801F000,\n                  0x12345678);",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "IS_FLASH_TYPEPROGRAM",
+        "IS_FLASH_PROGRAM_ADDRESS",
+        "FLASH_TIMEOUT_VALUE",
+        "HAL_OK",
+        "FLASH_TYPEPROGRAM_HALFWORD",
+        "FLASH_TYPEPROGRAM_WORD",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 257,
+      "definedIn": "stm32f1xx_hal_flash.h",
+      "sourceLine": 166,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_FLASH_Program_IT",
+      "name": "HAL_FLASH_Program_IT",
+      "peripheral": "FLASH",
+      "library": "hal",
+      "sectionId": "FLASH@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_FLASH_Program_IT(uint32_t TypeProgram, uint32_t Address, uint64_t Data);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "TypeProgram",
+          "type": "uint32_t",
+          "descEn": "Indicate the way to program at a specified address. This parameter can be a value of @ref FLASH_Type_Program",
+          "descZh": "编程宽度：FLASH_TYPEPROGRAM_HALFWORD（16 位）或 FLASH_TYPEPROGRAM_WORD（32 位）。F1 不支持按字节编程。"
+        },
+        {
+          "name": "Address",
+          "type": "uint32_t",
+          "descEn": "Specifies the address to be programmed.",
+          "descZh": "目标地址。必须按编程宽度对齐（半字 2 字节、字 4 字节），且该位置已擦除为 0xFFFF。"
+        },
+        {
+          "name": "Data",
+          "type": "uint64_t",
+          "descEn": "Specifies the data to be programmed",
+          "descZh": "要写入的数据，宽度要与 TypeProgram 一致。"
+        }
+      ],
+      "returnDescEn": "HAL_StatusTypeDef HAL Status",
+      "returnDescZh": "",
+      "briefEn": "Program halfword, word or double word at a specified address with interrupt enabled.",
+      "briefZh": "以中断方式编程 FLASH，写完后进 EndOfOperationCallback。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "The function HAL_FLASH_Unlock() should be called before to unlock the FLASH interface The function HAL_FLASH_Lock() should be called after to lock the FLASH interface",
+        "If an erase and a program operations are requested simultaneously, the erase operation is performed before the program one."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "HAL_OK",
+        "IS_FLASH_TYPEPROGRAM",
+        "IS_FLASH_PROGRAM_ADDRESS",
+        "FLASH_PROC_NONE",
+        "HAL_ERROR",
+        "__HAL_FLASH_ENABLE_IT",
+        "FLASH_IT_EOP_BANK1",
+        "FLASH_IT_ERR_BANK1",
+        "FLASH_IT_EOP_BANK2",
+        "FLASH_IT_ERR_BANK2",
+        "FLASH_IT_EOP",
+        "FLASH_IT_ERR",
+        "FLASH_TYPEPROGRAM_HALFWORD",
+        "FLASH_PROC_PROGRAMHALFWORD",
+        "FLASH_TYPEPROGRAM_WORD",
+        "FLASH_PROC_PROGRAMWORD",
+        "FLASH_PROC_PROGRAMDOUBLEWORD"
+      ],
+      "headerLine": 258,
+      "definedIn": "stm32f1xx_hal_flash.h",
+      "sourceLine": 265,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_FLASH_IRQHandler",
+      "name": "HAL_FLASH_IRQHandler",
+      "peripheral": "FLASH",
+      "library": "hal",
+      "sectionId": "FLASH@hal#sec1",
+      "prototype": "void       HAL_FLASH_IRQHandler(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "This function handles FLASH interrupt request.",
+      "briefZh": "FLASH 的中断统一入口。在 stm32f1xx_it.c 的对应 IRQHandler 里调用，内部会清标志并分派到各回调。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_FLASH_OperationErrorCallback",
+        "HAL_FLASH_EndOfOperationCallback"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__HAL_FLASH_GET_FLAG",
+        "FLASH_FLAG_WRPERR_BANK1",
+        "FLASH_FLAG_PGERR_BANK1",
+        "FLASH_FLAG_WRPERR_BANK2",
+        "FLASH_FLAG_PGERR_BANK2",
+        "FLASH_FLAG_WRPERR",
+        "FLASH_FLAG_PGERR",
+        "FLASH_PROC_NONE",
+        "FLASH_FLAG_EOP_BANK1",
+        "__HAL_FLASH_CLEAR_FLAG",
+        "FLASH_FLAG_EOP",
+        "FLASH_PROC_PAGEERASE",
+        "FLASH_PAGE_SIZE",
+        "FLASH_PROC_MASSERASE",
+        "HAL_IS_BIT_CLR",
+        "FLASH_PROC_PROGRAMHALFWORD",
+        "FLASH_PROC_PROGRAMWORD",
+        "FLASH_FLAG_EOP_BANK2"
+      ],
+      "headerLine": 261,
+      "definedIn": "stm32f1xx_hal_flash.h",
+      "sourceLine": 327,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_FLASH_EndOfOperationCallback",
+      "name": "HAL_FLASH_EndOfOperationCallback",
+      "peripheral": "FLASH",
+      "library": "hal",
+      "sectionId": "FLASH@hal#sec1",
+      "prototype": "void       HAL_FLASH_EndOfOperationCallback(uint32_t ReturnValue);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "ReturnValue",
+          "type": "uint32_t",
+          "descEn": "The value saved in this parameter depends on the ongoing procedure - Mass Erase: No return value expected - Pages Erase: Address of the page which has been erased (if 0xFFFFFFFF, it means that all the selected pages have been erased) - Program: Address which was selected for data program",
+          "descZh": "输出参数，接收函数返回的状态。"
+        }
+      ],
+      "returnDescEn": "none",
+      "returnDescZh": "",
+      "briefEn": "FLASH end of operation interrupt callback",
+      "briefZh": "擦除/编程完成回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "UNUSED"
+      ],
+      "headerLine": 263,
+      "definedIn": "stm32f1xx_hal_flash.h",
+      "sourceLine": 599,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_FLASH_OperationErrorCallback",
+      "name": "HAL_FLASH_OperationErrorCallback",
+      "peripheral": "FLASH",
+      "library": "hal",
+      "sectionId": "FLASH@hal#sec1",
+      "prototype": "void       HAL_FLASH_OperationErrorCallback(uint32_t ReturnValue);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "ReturnValue",
+          "type": "uint32_t",
+          "descEn": "The value saved in this parameter depends on the ongoing procedure - Mass Erase: No return value expected - Pages Erase: Address of the page which returned an error - Program: Address which was selected for data program",
+          "descZh": "输出参数，接收函数返回的状态。"
+        }
+      ],
+      "returnDescEn": "none",
+      "returnDescZh": "",
+      "briefEn": "FLASH operation error interrupt callback",
+      "briefZh": "擦除/编程失败回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "UNUSED"
+      ],
+      "headerLine": 264,
+      "definedIn": "stm32f1xx_hal_flash.h",
+      "sourceLine": 617,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_FLASH_Unlock",
+      "name": "HAL_FLASH_Unlock",
+      "peripheral": "FLASH",
+      "library": "hal",
+      "sectionId": "FLASH@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_FLASH_Unlock(void);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [],
+      "returnDescEn": "HAL Status",
+      "returnDescZh": "",
+      "briefEn": "Unlock the FLASH control register access",
+      "briefZh": "解锁 FLASH 控制寄存器，之后才能擦除/编程。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "HAL_FLASH_Unlock();\n\n/* 擦除 + 写入（详见 HAL_FLASHEx_Erase / HAL_FLASH_Program） */\nuint32_t page_error = 0;\nFLASH_EraseInitTypeDef erase = {0};\nerase.TypeErase   = FLASH_TYPEERASE_PAGES;\nerase.PageAddress = 0x0801F000;\nerase.NbPages     = 1;\nHAL_FLASHEx_Erase(&erase, &page_error);\n\n/* F1 只支持半字或字编程 */\nHAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, 0x0801F000, 0x12345678);\n\nHAL_FLASH_Lock();",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "HAL_OK",
+        "HAL_ERROR"
+      ],
+      "headerLine": 274,
+      "definedIn": "stm32f1xx_hal_flash.h",
+      "sourceLine": 650,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_FLASH_Lock",
+      "name": "HAL_FLASH_Lock",
+      "peripheral": "FLASH",
+      "library": "hal",
+      "sectionId": "FLASH@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_FLASH_Lock(void);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [],
+      "returnDescEn": "HAL Status",
+      "returnDescZh": "",
+      "briefEn": "Locks the FLASH control register access",
+      "briefZh": "重新锁定 FLASH 控制寄存器，防止误写。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "HAL_OK"
+      ],
+      "headerLine": 275,
+      "definedIn": "stm32f1xx_hal_flash.h",
+      "sourceLine": 688,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_FLASH_OB_Unlock",
+      "name": "HAL_FLASH_OB_Unlock",
+      "peripheral": "FLASH",
+      "library": "hal",
+      "sectionId": "FLASH@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_FLASH_OB_Unlock(void);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [],
+      "returnDescEn": "HAL Status",
+      "returnDescZh": "",
+      "briefEn": "Unlock the FLASH Option Control Registers access.",
+      "briefZh": "解锁选项字节（Option Bytes）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "HAL_IS_BIT_CLR",
+        "HAL_ERROR",
+        "HAL_OK"
+      ],
+      "headerLine": 276,
+      "definedIn": "stm32f1xx_hal_flash.h",
+      "sourceLine": 705,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_FLASH_OB_Lock",
+      "name": "HAL_FLASH_OB_Lock",
+      "peripheral": "FLASH",
+      "library": "hal",
+      "sectionId": "FLASH@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_FLASH_OB_Lock(void);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [],
+      "returnDescEn": "HAL Status",
+      "returnDescZh": "",
+      "briefEn": "Lock the FLASH Option Control Registers access.",
+      "briefZh": "锁定选项字节。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "HAL_OK"
+      ],
+      "headerLine": 277,
+      "definedIn": "stm32f1xx_hal_flash.h",
+      "sourceLine": 725,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_FLASH_OB_Launch",
+      "name": "HAL_FLASH_OB_Launch",
+      "peripheral": "FLASH",
+      "library": "hal",
+      "sectionId": "FLASH@hal#sec2",
+      "prototype": "void HAL_FLASH_OB_Launch(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Launch the option byte loading.",
+      "briefZh": "执行选项字节重装载。改完选项字节必须调它，会触发一次复位让新配置生效。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_NVIC_SystemReset"
+      ],
+      "remarks": [
+        "This function will reset automatically the MCU."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 278,
+      "definedIn": "stm32f1xx_hal_flash.h",
+      "sourceLine": 738,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_FLASH_GetError",
+      "name": "HAL_FLASH_GetError",
+      "peripheral": "FLASH",
+      "library": "hal",
+      "sectionId": "FLASH@hal#sec3",
+      "prototype": "uint32_t HAL_FLASH_GetError(void);",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "FLASH_ErrorCode The returned value can be:",
+      "returnDescZh": "",
+      "briefEn": "Get the specific FLASH error flag.",
+      "briefZh": "读取 FLASH 累计的错误码位掩码。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 288,
+      "definedIn": "stm32f1xx_hal_flash.h",
+      "sourceLine": 767,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_FLASHEx_Erase",
+      "name": "HAL_FLASHEx_Erase",
+      "peripheral": "FLASH",
+      "library": "hal",
+      "sectionId": "FLASH@hal#sec4",
+      "prototype": "HAL_StatusTypeDef  HAL_FLASHEx_Erase(FLASH_EraseInitTypeDef *pEraseInit, uint32_t *PageError);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "pEraseInit",
+          "type": "FLASH_EraseInitTypeDef *",
+          "descEn": "",
+          "descZh": "擦除配置结构体：TypeErase（页擦除/整片擦除）、PageAddress（起始页地址）、NbPages（页数）。"
+        },
+        {
+          "name": "PageError",
+          "type": "uint32_t *",
+          "descEn": "",
+          "descZh": "输出参数，擦除失败时返回出错的页码；传 0xFFFFFFFF 表示全部成功。"
+        }
+      ],
+      "returnDescEn": "HAL_StatusTypeDef HAL Status",
+      "returnDescZh": "",
+      "briefEn": "Perform a mass erase or erase the specified FLASH memory pages",
+      "briefZh": "擦除指定页/扇区。擦除的最小单位是整页，会丢掉该页原有数据。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "To correctly run this function, the @ref HAL_FLASH_Unlock() function must be called before. Call the @ref HAL_FLASH_Lock() to disable the flash memory access (recommended to protect the FLASH memory against possible unwanted operation)"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t page_error = 0;\nFLASH_EraseInitTypeDef erase = {0};\n\nerase.TypeErase   = FLASH_TYPEERASE_PAGES;\nerase.PageAddress = 0x0801F000;   /* 目标页起始地址 */\nerase.NbPages     = 1;\n\nif (HAL_FLASHEx_Erase(&erase, &page_error) != HAL_OK)\n{\n  /* page_error 是出错的页号，0xFFFFFFFF 表示全部成功 */\n}",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "FLASH_EraseInitTypeDef",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "IS_FLASH_TYPEERASE",
+        "FLASH_TYPEERASE_MASSERASE",
+        "FLASH_BANK_BOTH",
+        "FLASH_TIMEOUT_VALUE",
+        "HAL_OK",
+        "FLASH_BANK_2",
+        "FLASH_BANK_1",
+        "IS_FLASH_PROGRAM_ADDRESS",
+        "IS_FLASH_NB_PAGES",
+        "FLASH_PAGE_SIZE",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 748,
+      "definedIn": "stm32f1xx_hal_flash_ex.h",
+      "sourceLine": 157,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_FLASHEx_Erase_IT",
+      "name": "HAL_FLASHEx_Erase_IT",
+      "peripheral": "FLASH",
+      "library": "hal",
+      "sectionId": "FLASH@hal#sec4",
+      "prototype": "HAL_StatusTypeDef  HAL_FLASHEx_Erase_IT(FLASH_EraseInitTypeDef *pEraseInit);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "pEraseInit",
+          "type": "FLASH_EraseInitTypeDef *",
+          "descEn": "pointer to an FLASH_EraseInitTypeDef structure that contains the configuration information for the erasing.",
+          "descZh": "擦除配置结构体：TypeErase（页擦除/整片擦除）、PageAddress（起始页地址）、NbPages（页数）。"
+        }
+      ],
+      "returnDescEn": "HAL_StatusTypeDef HAL Status",
+      "returnDescZh": "",
+      "briefEn": "Perform a mass erase or erase the specified FLASH memory pages with interrupt enabled",
+      "briefZh": "以中断方式擦除，擦完后进 EndOfOperationCallback。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "To correctly run this function, the @ref HAL_FLASH_Unlock() function must be called before. Call the @ref HAL_FLASH_Lock() to disable the flash memory access (recommended to protect the FLASH memory against possible unwanted operation)"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "FLASH_EraseInitTypeDef",
+        "HAL_OK",
+        "FLASH_PROC_NONE",
+        "HAL_ERROR",
+        "IS_FLASH_TYPEERASE",
+        "__HAL_FLASH_ENABLE_IT",
+        "FLASH_IT_EOP",
+        "FLASH_IT_ERR",
+        "FLASH_IT_EOP_BANK2",
+        "FLASH_IT_ERR_BANK2",
+        "FLASH_TYPEERASE_MASSERASE",
+        "FLASH_PROC_MASSERASE",
+        "IS_FLASH_PROGRAM_ADDRESS",
+        "IS_FLASH_NB_PAGES",
+        "FLASH_PROC_PAGEERASE"
+      ],
+      "headerLine": 749,
+      "definedIn": "stm32f1xx_hal_flash_ex.h",
+      "sourceLine": 317,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_FLASHEx_OBErase",
+      "name": "HAL_FLASHEx_OBErase",
+      "peripheral": "FLASH",
+      "library": "hal",
+      "sectionId": "FLASH@hal#sec5",
+      "prototype": "HAL_StatusTypeDef  HAL_FLASHEx_OBErase(void);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Erases the FLASH option bytes.",
+      "briefZh": "擦除选项字节。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "This functions erases all option bytes except the Read protection (RDP). The function @ref HAL_FLASH_Unlock() should be called before to unlock the FLASH interface The function @ref HAL_FLASH_OB_Unlock() should be called before to unlock the options bytes The function @ref HAL_FLASH_OB_Launch() should be called after to force the reload of the options bytes (system reset will occur)"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "OB_RDP_LEVEL_0",
+        "HAL_ERROR",
+        "FLASH_TIMEOUT_VALUE",
+        "HAL_OK",
+        "HAL_FLASH_ERROR_NONE"
+      ],
+      "headerLine": 759,
+      "definedIn": "stm32f1xx_hal_flash_ex.h",
+      "sourceLine": 392,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_FLASHEx_OBProgram",
+      "name": "HAL_FLASHEx_OBProgram",
+      "peripheral": "FLASH",
+      "library": "hal",
+      "sectionId": "FLASH@hal#sec5",
+      "prototype": "HAL_StatusTypeDef  HAL_FLASHEx_OBProgram(FLASH_OBProgramInitTypeDef *pOBInit);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "pOBInit",
+          "type": "FLASH_OBProgramInitTypeDef *",
+          "descEn": "pointer to an FLASH_OBInitStruct structure that contains the configuration information for the programming.",
+          "descZh": "选项字节配置结构体：OptionType（要改哪一项）、WRPState、RDPLevel、USERConfig 等。"
+        }
+      ],
+      "returnDescEn": "HAL_StatusTypeDef HAL Status",
+      "returnDescZh": "",
+      "briefEn": "Program option bytes",
+      "briefZh": "编程选项字节（读写保护、复位后启动方式、看门狗硬件使能等）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "The function @ref HAL_FLASH_Unlock() should be called before to unlock the FLASH interface The function @ref HAL_FLASH_OB_Unlock() should be called before to unlock the options bytes The function @ref HAL_FLASH_OB_Launch() should be called after to force the reload of the options bytes (system reset will occur)"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "FLASH_OBProgramInitTypeDef",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "IS_OPTIONBYTE",
+        "OPTIONBYTE_WRP",
+        "IS_WRPSTATE",
+        "OB_WRPSTATE_ENABLE",
+        "HAL_OK",
+        "__HAL_UNLOCK",
+        "OPTIONBYTE_RDP",
+        "OPTIONBYTE_USER",
+        "OPTIONBYTE_DATA"
+      ],
+      "headerLine": 760,
+      "definedIn": "stm32f1xx_hal_flash_ex.h",
+      "sourceLine": 441,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_FLASHEx_OBGetConfig",
+      "name": "HAL_FLASHEx_OBGetConfig",
+      "peripheral": "FLASH",
+      "library": "hal",
+      "sectionId": "FLASH@hal#sec5",
+      "prototype": "void               HAL_FLASHEx_OBGetConfig(FLASH_OBProgramInitTypeDef *pOBInit);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "pOBInit",
+          "type": "FLASH_OBProgramInitTypeDef *",
+          "descEn": "pointer to an FLASH_OBInitStruct structure that contains the configuration information for the programming.",
+          "descZh": "选项字节配置结构体：OptionType（要改哪一项）、WRPState、RDPLevel、USERConfig 等。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Get the Option byte configuration",
+      "briefZh": "读取当前选项字节配置。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "FLASH_OBProgramInitTypeDef",
+        "OPTIONBYTE_WRP",
+        "OPTIONBYTE_RDP",
+        "OPTIONBYTE_USER"
+      ],
+      "headerLine": 761,
+      "definedIn": "stm32f1xx_hal_flash_ex.h",
+      "sourceLine": 522,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_FLASHEx_OBGetUserData",
+      "name": "HAL_FLASHEx_OBGetUserData",
+      "peripheral": "FLASH",
+      "library": "hal",
+      "sectionId": "FLASH@hal#sec5",
+      "prototype": "uint32_t           HAL_FLASHEx_OBGetUserData(uint32_t DATAAdress);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DATAAdress",
+          "type": "uint32_t",
+          "descEn": "Address of the option byte DATA This parameter can be one of the following values:",
+          "descZh": "目标地址。"
+        }
+      ],
+      "returnDescEn": "Value programmed in USER data",
+      "returnDescZh": "",
+      "briefEn": "Get the Option byte user data",
+      "briefZh": "读取选项字节里的用户数据区（4 字节自由使用）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "OB_DATA_ADDRESS_DATA0"
+      ],
+      "headerLine": 762,
+      "definedIn": "stm32f1xx_hal_flash_ex.h",
+      "sourceLine": 544,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

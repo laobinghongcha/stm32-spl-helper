@@ -1,0 +1,121 @@
+{
+  "HAL_CEC_ChangeRxBuffer": {
+    "briefZh": "切换接收缓冲区，并指定新缓冲区的期望长度。",
+    "paramsZh": {
+      "Rxbuffer": "新的接收缓冲区指针。切换缓冲后后续收到的帧写到这里。",
+      "hcec": "CEC 句柄指针。"
+    }
+  },
+  "HAL_CEC_DeInit": {
+    "briefZh": "把 CEC 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+    "paramsZh": {
+      "hcec": "CEC 句柄指针。"
+    }
+  },
+  "HAL_CEC_ErrorCallback": {
+    "briefZh": "错误回调（__weak 空实现，需自己重写）。溢出、噪声、帧错误等异常会走到这里。",
+    "paramsZh": {
+      "hcec": "CEC 句柄指针。"
+    }
+  },
+  "HAL_CEC_GetError": {
+    "briefZh": "读取 CEC 累计的错误码位掩码。",
+    "paramsZh": {
+      "hcec": "CEC 句柄指针。"
+    }
+  },
+  "HAL_CEC_GetLastReceivedFrameSize": {
+    "briefZh": "读取最近一帧接收到的字节数。",
+    "paramsZh": {
+      "hcec": "CEC 句柄指针。"
+    }
+  },
+  "HAL_CEC_GetState": {
+    "briefZh": "读取 CEC 的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+    "paramsZh": {
+      "hcec": "CEC 句柄指针。"
+    }
+  },
+  "HAL_CEC_IRQHandler": {
+    "briefZh": "CEC 的中断统一入口。在 stm32f1xx_it.c 的对应 IRQHandler 里调用，内部会清标志并分派到各回调。",
+    "paramsZh": {
+      "hcec": "CEC 句柄指针。"
+    }
+  },
+  "HAL_CEC_Init": {
+    "briefZh": "按 InitTypeDef 中的参数初始化 CEC，并完成状态机初始化。",
+    "paramsZh": {
+      "hcec": "CEC 句柄指针。"
+    }
+  },
+  "HAL_CEC_MspDeInit": {
+    "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+    "paramsZh": {
+      "hcec": "CEC 句柄指针。"
+    }
+  },
+  "HAL_CEC_MspInit": {
+    "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+    "paramsZh": {
+      "hcec": "CEC 句柄指针。"
+    }
+  },
+  "HAL_CEC_RegisterCallback": {
+    "briefZh": "为 CEC 注册指定事件的回调，替代默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "hcec": "CEC 句柄指针。",
+      "pCallback": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+    }
+  },
+  "HAL_CEC_RegisterRxCpltCallback": {
+    "briefZh": "注册接收完成回调。",
+    "paramsZh": {
+      "hcec": "CEC 句柄指针。",
+      "pCallback": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+    }
+  },
+  "HAL_CEC_RxCpltCallback": {
+    "briefZh": "接收完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "RxFrameSize": "本帧实际收到的字节数。",
+      "hcec": "CEC 句柄指针。"
+    }
+  },
+  "HAL_CEC_SetDeviceAddress": {
+    "briefZh": "设置 CEC 的本机逻辑地址。",
+    "paramsZh": {
+      "CEC_OwnAddress": "本机逻辑地址（0x00~0x0E）。CEC 总线上每个设备必须有唯一地址。",
+      "hcec": "CEC 句柄指针。"
+    }
+  },
+  "HAL_CEC_Transmit_IT": {
+    "briefZh": "以中断方式发送一批数据，非阻塞。发送完成进 TxCpltCallback。",
+    "paramsZh": {
+      "DestinationAddress": "目标逻辑地址：0x00~0x0E，0x0F 表示广播。",
+      "InitiatorAddress": "发起方的逻辑地址（本机地址）。",
+      "Size": "数据长度（字节数）。",
+      "hcec": "CEC 句柄指针。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_CEC_TxCpltCallback": {
+    "briefZh": "发送完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hcec": "CEC 句柄指针。"
+    }
+  },
+  "HAL_CEC_UnRegisterCallback": {
+    "briefZh": "注销 CEC 已注册的回调，恢复成默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "hcec": "CEC 句柄指针。"
+    }
+  },
+  "HAL_CEC_UnRegisterRxCpltCallback": {
+    "briefZh": "注销接收完成回调。",
+    "paramsZh": {
+      "hcec": "CEC 句柄指针。"
+    }
+  }
+}

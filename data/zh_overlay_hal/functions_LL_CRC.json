@@ -1,0 +1,34 @@
+{
+  "LL_CRC_FeedData32": {
+    "briefZh": "把一个 32 位数据送入 CRC 计算单元累加。",
+    "paramsZh": {
+      "CRCx": "CRC 实例指针（F1 上固定是 CRC）。",
+      "InData": "要发送的数据。"
+    }
+  },
+  "LL_CRC_ReadData32": {
+    "briefZh": "读取当前 CRC 计算结果。",
+    "paramsZh": {
+      "CRCx": "CRC 实例指针（F1 上固定是 CRC）。"
+    }
+  },
+  "LL_CRC_Read_IDR": {
+    "briefZh": "读取 CRC 独立数据寄存器（IDR）。",
+    "paramsZh": {
+      "CRCx": "CRC 实例指针（F1 上固定是 CRC）。"
+    }
+  },
+  "LL_CRC_ResetCRCCalculationUnit": {
+    "briefZh": "复位 CRC 计算单元，把数据寄存器恢复成 0xFFFFFFFF。",
+    "paramsZh": {
+      "CRCx": "CRC 实例指针（F1 上固定是 CRC）。"
+    }
+  },
+  "LL_CRC_Write_IDR": {
+    "briefZh": "写入 CRC 独立数据寄存器（IDR）。",
+    "paramsZh": {
+      "CRCx": "CRC 实例指针（F1 上固定是 CRC）。",
+      "InData": "要发送的数据。"
+    }
+  }
+}

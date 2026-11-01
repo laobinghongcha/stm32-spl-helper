@@ -6,7 +6,7 @@
       "id": "CEC_DeInit",
       "name": "CEC_DeInit",
       "peripheral": "CEC",
-      "sectionId": "CEC#sec1",
+      "sectionId": "CEC@spl#sec1",
       "prototype": "void CEC_DeInit(void);",
       "returnType": "void",
       "params": [],
@@ -58,7 +58,7 @@
       "id": "CEC_Init",
       "name": "CEC_Init",
       "peripheral": "CEC",
-      "sectionId": "CEC#sec1",
+      "sectionId": "CEC@spl#sec1",
       "prototype": "void CEC_Init(CEC_InitTypeDef* CEC_InitStruct);",
       "returnType": "void",
       "params": [
@@ -128,7 +128,7 @@
       "id": "CEC_Cmd",
       "name": "CEC_Cmd",
       "peripheral": "CEC",
-      "sectionId": "CEC#sec2",
+      "sectionId": "CEC@spl#sec2",
       "prototype": "void CEC_Cmd(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -186,7 +186,7 @@
       "id": "CEC_ITConfig",
       "name": "CEC_ITConfig",
       "peripheral": "CEC",
-      "sectionId": "CEC#sec3",
+      "sectionId": "CEC@spl#sec3",
       "prototype": "void CEC_ITConfig(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -255,7 +255,7 @@
       "id": "CEC_OwnAddressConfig",
       "name": "CEC_OwnAddressConfig",
       "peripheral": "CEC",
-      "sectionId": "CEC#sec4",
+      "sectionId": "CEC@spl#sec4",
       "prototype": "void CEC_OwnAddressConfig(uint8_t CEC_OwnAddress);",
       "returnType": "void",
       "params": [
@@ -313,7 +313,7 @@
       "id": "CEC_SetPrescaler",
       "name": "CEC_SetPrescaler",
       "peripheral": "CEC",
-      "sectionId": "CEC#sec5",
+      "sectionId": "CEC@spl#sec5",
       "prototype": "void CEC_SetPrescaler(uint16_t CEC_Prescaler);",
       "returnType": "void",
       "params": [
@@ -370,7 +370,7 @@
       "id": "CEC_SendDataByte",
       "name": "CEC_SendDataByte",
       "peripheral": "CEC",
-      "sectionId": "CEC#sec6",
+      "sectionId": "CEC@spl#sec6",
       "prototype": "void CEC_SendDataByte(uint8_t Data);",
       "returnType": "void",
       "params": [
@@ -439,7 +439,7 @@
       "id": "CEC_ReceiveDataByte",
       "name": "CEC_ReceiveDataByte",
       "peripheral": "CEC",
-      "sectionId": "CEC#sec7",
+      "sectionId": "CEC@spl#sec7",
       "prototype": "uint8_t CEC_ReceiveDataByte(void);",
       "returnType": "uint8_t",
       "params": [],
@@ -496,7 +496,7 @@
       "id": "CEC_StartOfMessage",
       "name": "CEC_StartOfMessage",
       "peripheral": "CEC",
-      "sectionId": "CEC#sec8",
+      "sectionId": "CEC@spl#sec8",
       "prototype": "void CEC_StartOfMessage(void);",
       "returnType": "void",
       "params": [],
@@ -550,7 +550,7 @@
       "id": "CEC_EndOfMessageCmd",
       "name": "CEC_EndOfMessageCmd",
       "peripheral": "CEC",
-      "sectionId": "CEC#sec2",
+      "sectionId": "CEC@spl#sec2",
       "prototype": "void CEC_EndOfMessageCmd(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -615,7 +615,7 @@
       "id": "CEC_GetFlagStatus",
       "name": "CEC_GetFlagStatus",
       "peripheral": "CEC",
-      "sectionId": "CEC#sec9",
+      "sectionId": "CEC@spl#sec9",
       "prototype": "FlagStatus CEC_GetFlagStatus(uint32_t CEC_FLAG);",
       "returnType": "FlagStatus",
       "params": [
@@ -688,7 +688,7 @@
       "id": "CEC_ClearFlag",
       "name": "CEC_ClearFlag",
       "peripheral": "CEC",
-      "sectionId": "CEC#sec9",
+      "sectionId": "CEC@spl#sec9",
       "prototype": "void CEC_ClearFlag(uint32_t CEC_FLAG);",
       "returnType": "void",
       "params": [
@@ -756,7 +756,7 @@
       "id": "CEC_GetITStatus",
       "name": "CEC_GetITStatus",
       "peripheral": "CEC",
-      "sectionId": "CEC#sec3",
+      "sectionId": "CEC@spl#sec3",
       "prototype": "ITStatus CEC_GetITStatus(uint8_t CEC_IT);",
       "returnType": "ITStatus",
       "params": [
@@ -823,7 +823,7 @@
       "id": "CEC_ClearITPendingBit",
       "name": "CEC_ClearITPendingBit",
       "peripheral": "CEC",
-      "sectionId": "CEC#sec3",
+      "sectionId": "CEC@spl#sec3",
       "prototype": "void CEC_ClearITPendingBit(uint16_t CEC_IT);",
       "returnType": "void",
       "params": [

@@ -6,7 +6,7 @@
       "id": "SPI_I2S_DeInit",
       "name": "SPI_I2S_DeInit",
       "peripheral": "SPI",
-      "sectionId": "SPI#sec1",
+      "sectionId": "SPI@spl#sec1",
       "prototype": "void SPI_I2S_DeInit(SPI_TypeDef* SPIx);",
       "returnType": "void",
       "params": [
@@ -81,7 +81,7 @@
       "id": "SPI_Init",
       "name": "SPI_Init",
       "peripheral": "SPI",
-      "sectionId": "SPI#sec1",
+      "sectionId": "SPI@spl#sec1",
       "prototype": "void SPI_Init(SPI_TypeDef* SPIx, SPI_InitTypeDef* SPI_InitStruct);",
       "returnType": "void",
       "params": [
@@ -193,7 +193,7 @@
       "id": "I2S_Init",
       "name": "I2S_Init",
       "peripheral": "SPI",
-      "sectionId": "SPI#sec1",
+      "sectionId": "SPI@spl#sec1",
       "prototype": "void I2S_Init(SPI_TypeDef* SPIx, I2S_InitTypeDef* I2S_InitStruct);",
       "returnType": "void",
       "params": [
@@ -293,7 +293,7 @@
       "id": "SPI_StructInit",
       "name": "SPI_StructInit",
       "peripheral": "SPI",
-      "sectionId": "SPI#sec1",
+      "sectionId": "SPI@spl#sec1",
       "prototype": "void SPI_StructInit(SPI_InitTypeDef* SPI_InitStruct);",
       "returnType": "void",
       "params": [
@@ -349,7 +349,7 @@
       "id": "I2S_StructInit",
       "name": "I2S_StructInit",
       "peripheral": "SPI",
-      "sectionId": "SPI#sec1",
+      "sectionId": "SPI@spl#sec1",
       "prototype": "void I2S_StructInit(I2S_InitTypeDef* I2S_InitStruct);",
       "returnType": "void",
       "params": [
@@ -403,7 +403,7 @@
       "id": "SPI_Cmd",
       "name": "SPI_Cmd",
       "peripheral": "SPI",
-      "sectionId": "SPI#sec2",
+      "sectionId": "SPI@spl#sec2",
       "prototype": "void SPI_Cmd(SPI_TypeDef* SPIx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -479,7 +479,7 @@
       "id": "I2S_Cmd",
       "name": "I2S_Cmd",
       "peripheral": "SPI",
-      "sectionId": "SPI#sec2",
+      "sectionId": "SPI@spl#sec2",
       "prototype": "void I2S_Cmd(SPI_TypeDef* SPIx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -551,7 +551,7 @@
       "id": "SPI_I2S_ITConfig",
       "name": "SPI_I2S_ITConfig",
       "peripheral": "SPI",
-      "sectionId": "SPI#sec3",
+      "sectionId": "SPI@spl#sec3",
       "prototype": "void SPI_I2S_ITConfig(SPI_TypeDef* SPIx, uint8_t SPI_I2S_IT, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -642,7 +642,7 @@
       "id": "SPI_I2S_DMACmd",
       "name": "SPI_I2S_DMACmd",
       "peripheral": "SPI",
-      "sectionId": "SPI#sec2",
+      "sectionId": "SPI@spl#sec2",
       "prototype": "void SPI_I2S_DMACmd(SPI_TypeDef* SPIx, uint16_t SPI_I2S_DMAReq, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -747,7 +747,7 @@
       "id": "SPI_I2S_SendData",
       "name": "SPI_I2S_SendData",
       "peripheral": "SPI",
-      "sectionId": "SPI#sec4",
+      "sectionId": "SPI@spl#sec4",
       "prototype": "void SPI_I2S_SendData(SPI_TypeDef* SPIx, uint16_t Data);",
       "returnType": "void",
       "params": [
@@ -827,7 +827,7 @@
       "id": "SPI_I2S_ReceiveData",
       "name": "SPI_I2S_ReceiveData",
       "peripheral": "SPI",
-      "sectionId": "SPI#sec5",
+      "sectionId": "SPI@spl#sec5",
       "prototype": "uint16_t SPI_I2S_ReceiveData(SPI_TypeDef* SPIx);",
       "returnType": "uint16_t",
       "params": [
@@ -898,7 +898,7 @@
       "id": "SPI_NSSInternalSoftwareConfig",
       "name": "SPI_NSSInternalSoftwareConfig",
       "peripheral": "SPI",
-      "sectionId": "SPI#sec6",
+      "sectionId": "SPI@spl#sec6",
       "prototype": "void SPI_NSSInternalSoftwareConfig(SPI_TypeDef* SPIx, uint16_t SPI_NSSInternalSoft);",
       "returnType": "void",
       "params": [
@@ -970,7 +970,7 @@
       "id": "SPI_SSOutputCmd",
       "name": "SPI_SSOutputCmd",
       "peripheral": "SPI",
-      "sectionId": "SPI#sec2",
+      "sectionId": "SPI@spl#sec2",
       "prototype": "void SPI_SSOutputCmd(SPI_TypeDef* SPIx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1044,7 +1044,7 @@
       "id": "SPI_DataSizeConfig",
       "name": "SPI_DataSizeConfig",
       "peripheral": "SPI",
-      "sectionId": "SPI#sec6",
+      "sectionId": "SPI@spl#sec6",
       "prototype": "void SPI_DataSizeConfig(SPI_TypeDef* SPIx, uint16_t SPI_DataSize);",
       "returnType": "void",
       "params": [
@@ -1120,7 +1120,7 @@
       "id": "SPI_TransmitCRC",
       "name": "SPI_TransmitCRC",
       "peripheral": "SPI",
-      "sectionId": "SPI#sec4",
+      "sectionId": "SPI@spl#sec4",
       "prototype": "void SPI_TransmitCRC(SPI_TypeDef* SPIx);",
       "returnType": "void",
       "params": [
@@ -1188,7 +1188,7 @@
       "id": "SPI_CalculateCRC",
       "name": "SPI_CalculateCRC",
       "peripheral": "SPI",
-      "sectionId": "SPI#sec7",
+      "sectionId": "SPI@spl#sec7",
       "prototype": "void SPI_CalculateCRC(SPI_TypeDef* SPIx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1264,7 +1264,7 @@
       "id": "SPI_GetCRC",
       "name": "SPI_GetCRC",
       "peripheral": "SPI",
-      "sectionId": "SPI#sec8",
+      "sectionId": "SPI@spl#sec8",
       "prototype": "uint16_t SPI_GetCRC(SPI_TypeDef* SPIx, uint8_t SPI_CRC);",
       "returnType": "uint16_t",
       "params": [
@@ -1335,7 +1335,7 @@
       "id": "SPI_GetCRCPolynomial",
       "name": "SPI_GetCRCPolynomial",
       "peripheral": "SPI",
-      "sectionId": "SPI#sec8",
+      "sectionId": "SPI@spl#sec8",
       "prototype": "uint16_t SPI_GetCRCPolynomial(SPI_TypeDef* SPIx);",
       "returnType": "uint16_t",
       "params": [
@@ -1395,7 +1395,7 @@
       "id": "SPI_BiDirectionalLineConfig",
       "name": "SPI_BiDirectionalLineConfig",
       "peripheral": "SPI",
-      "sectionId": "SPI#sec6",
+      "sectionId": "SPI@spl#sec6",
       "prototype": "void SPI_BiDirectionalLineConfig(SPI_TypeDef* SPIx, uint16_t SPI_Direction);",
       "returnType": "void",
       "params": [
@@ -1475,7 +1475,7 @@
       "id": "SPI_I2S_GetFlagStatus",
       "name": "SPI_I2S_GetFlagStatus",
       "peripheral": "SPI",
-      "sectionId": "SPI#sec9",
+      "sectionId": "SPI@spl#sec9",
       "prototype": "FlagStatus SPI_I2S_GetFlagStatus(SPI_TypeDef* SPIx, uint16_t SPI_I2S_FLAG);",
       "returnType": "FlagStatus",
       "params": [
@@ -1558,7 +1558,7 @@
       "id": "SPI_I2S_ClearFlag",
       "name": "SPI_I2S_ClearFlag",
       "peripheral": "SPI",
-      "sectionId": "SPI#sec9",
+      "sectionId": "SPI@spl#sec9",
       "prototype": "void SPI_I2S_ClearFlag(SPI_TypeDef* SPIx, uint16_t SPI_I2S_FLAG);",
       "returnType": "void",
       "params": [
@@ -1632,7 +1632,7 @@
       "id": "SPI_I2S_GetITStatus",
       "name": "SPI_I2S_GetITStatus",
       "peripheral": "SPI",
-      "sectionId": "SPI#sec3",
+      "sectionId": "SPI@spl#sec3",
       "prototype": "ITStatus SPI_I2S_GetITStatus(SPI_TypeDef* SPIx, uint8_t SPI_I2S_IT);",
       "returnType": "ITStatus",
       "params": [
@@ -1709,7 +1709,7 @@
       "id": "SPI_I2S_ClearITPendingBit",
       "name": "SPI_I2S_ClearITPendingBit",
       "peripheral": "SPI",
-      "sectionId": "SPI#sec3",
+      "sectionId": "SPI@spl#sec3",
       "prototype": "void SPI_I2S_ClearITPendingBit(SPI_TypeDef* SPIx, uint8_t SPI_I2S_IT);",
       "returnType": "void",
       "params": [

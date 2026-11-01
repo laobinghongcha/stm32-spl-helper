@@ -6,7 +6,7 @@
       "id": "IWDG_WriteAccessCmd",
       "name": "IWDG_WriteAccessCmd",
       "peripheral": "IWDG",
-      "sectionId": "IWDG#sec1",
+      "sectionId": "IWDG@spl#sec1",
       "prototype": "void IWDG_WriteAccessCmd(uint16_t IWDG_WriteAccess);",
       "returnType": "void",
       "params": [
@@ -72,7 +72,7 @@
       "id": "IWDG_SetPrescaler",
       "name": "IWDG_SetPrescaler",
       "peripheral": "IWDG",
-      "sectionId": "IWDG#sec1",
+      "sectionId": "IWDG@spl#sec1",
       "prototype": "void IWDG_SetPrescaler(uint8_t IWDG_Prescaler);",
       "returnType": "void",
       "params": [
@@ -140,7 +140,7 @@
       "id": "IWDG_SetReload",
       "name": "IWDG_SetReload",
       "peripheral": "IWDG",
-      "sectionId": "IWDG#sec1",
+      "sectionId": "IWDG@spl#sec1",
       "prototype": "void IWDG_SetReload(uint16_t Reload);",
       "returnType": "void",
       "params": [
@@ -203,7 +203,7 @@
       "id": "IWDG_ReloadCounter",
       "name": "IWDG_ReloadCounter",
       "peripheral": "IWDG",
-      "sectionId": "IWDG#sec2",
+      "sectionId": "IWDG@spl#sec2",
       "prototype": "void IWDG_ReloadCounter(void);",
       "returnType": "void",
       "params": [],
@@ -258,7 +258,7 @@
       "id": "IWDG_Enable",
       "name": "IWDG_Enable",
       "peripheral": "IWDG",
-      "sectionId": "IWDG#sec2",
+      "sectionId": "IWDG@spl#sec2",
       "prototype": "void IWDG_Enable(void);",
       "returnType": "void",
       "params": [],
@@ -320,7 +320,7 @@
       "id": "IWDG_GetFlagStatus",
       "name": "IWDG_GetFlagStatus",
       "peripheral": "IWDG",
-      "sectionId": "IWDG#sec3",
+      "sectionId": "IWDG@spl#sec3",
       "prototype": "FlagStatus IWDG_GetFlagStatus(uint16_t IWDG_FLAG);",
       "returnType": "FlagStatus",
       "params": [

@@ -1,0 +1,634 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "USART",
+  "library": "reg",
+  "functions": [
+    {
+      "id": "REG_USART_BRR",
+      "name": "USART_BRR",
+      "peripheral": "USART",
+      "library": "reg",
+      "sectionId": "USART@reg#sec3",
+      "prototype": "USART1->BRR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USART_BRR_DIV_Fraction",
+          "type": "bits[3:0]（整个位域）",
+          "descEn": "Fraction of USARTDIV",
+          "descZh": ""
+        },
+        {
+          "name": "USART_BRR_DIV_Mantissa",
+          "type": "bits[15:4]（整个位域）",
+          "descEn": "Mantissa of USARTDIV",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "USART Baud rate register, Address offset: 0x08",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USART_BRR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 USART_TypeDef.BRR，偏移 0x08"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = USART1->BRR;  /* 读回当前值 */\nv &= ~USART_BRR_DIV_Fraction_Msk;  /* 先清掉 USART_BRR_DIV_Fraction：bits[3:0]（整个位域） */\nv |= (1u << USART_BRR_DIV_Fraction_Pos) & USART_BRR_DIV_Fraction_Msk;  /* 置位，实际取值看参考手册 */\nUSART1->BRR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9464,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USART_CR1",
+      "name": "USART_CR1",
+      "peripheral": "USART",
+      "library": "reg",
+      "sectionId": "USART@reg#sec3",
+      "prototype": "USART1->CR1",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USART_CR1_SBK",
+          "type": "bit 0（整个位域）",
+          "descEn": "Send Break",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR1_RWU",
+          "type": "bit 1（整个位域）",
+          "descEn": "Receiver wakeup",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR1_RE",
+          "type": "bit 2（整个位域）",
+          "descEn": "Receiver Enable",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR1_TE",
+          "type": "bit 3（整个位域）",
+          "descEn": "Transmitter Enable",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR1_IDLEIE",
+          "type": "bit 4（整个位域）",
+          "descEn": "IDLE Interrupt Enable",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR1_RXNEIE",
+          "type": "bit 5（整个位域）",
+          "descEn": "RXNE Interrupt Enable",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR1_TCIE",
+          "type": "bit 6（整个位域）",
+          "descEn": "Transmission Complete Interrupt Enable",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR1_TXEIE",
+          "type": "bit 7（整个位域）",
+          "descEn": "PE Interrupt Enable",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR1_PEIE",
+          "type": "bit 8（整个位域）",
+          "descEn": "PE Interrupt Enable",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR1_PS",
+          "type": "bit 9（整个位域）",
+          "descEn": "Parity Selection",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR1_PCE",
+          "type": "bit 10（整个位域）",
+          "descEn": "Parity Control Enable",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR1_WAKE",
+          "type": "bit 11（整个位域）",
+          "descEn": "Wakeup method",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR1_M",
+          "type": "bit 12（整个位域）",
+          "descEn": "Word length",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR1_UE",
+          "type": "bit 13（整个位域）",
+          "descEn": "USART Enable",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "USART Control register 1, Address offset: 0x0C",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USART_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 USART_TypeDef.CR1，偏移 0x0C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = USART1->CR1;  /* 读回当前值 */\nv &= ~USART_CR1_SBK_Msk;  /* 先清掉 USART_CR1_SBK：bit 0（整个位域） */\nv |= (1u << USART_CR1_SBK_Pos) & USART_CR1_SBK_Msk;  /* 置位，实际取值看参考手册 */\nUSART1->CR1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9472,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USART_CR2",
+      "name": "USART_CR2",
+      "peripheral": "USART",
+      "library": "reg",
+      "sectionId": "USART@reg#sec3",
+      "prototype": "USART1->CR2",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USART_CR2_ADD",
+          "type": "bits[3:0]（整个位域）",
+          "descEn": "Address of the USART node",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR2_LBDL",
+          "type": "bit 5（整个位域）",
+          "descEn": "LIN Break Detection Length",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR2_LBDIE",
+          "type": "bit 6（整个位域）",
+          "descEn": "LIN Break Detection Interrupt Enable",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR2_LBCL",
+          "type": "bit 8（整个位域）",
+          "descEn": "Last Bit Clock pulse",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR2_CPHA",
+          "type": "bit 9（整个位域）",
+          "descEn": "Clock Phase",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR2_CPOL",
+          "type": "bit 10（整个位域）",
+          "descEn": "Clock Polarity",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR2_CLKEN",
+          "type": "bit 11（整个位域）",
+          "descEn": "Clock Enable",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR2_STOP",
+          "type": "bits[13:12]（整个位域）",
+          "descEn": "STOP[1:0] bits (STOP bits)",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR2_LINEN",
+          "type": "bit 14（整个位域）",
+          "descEn": "LIN mode enable",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR2_STOP_0",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR2_STOP_1",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "USART Control register 2, Address offset: 0x10",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USART_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 USART_TypeDef.CR2，偏移 0x10"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = USART1->CR2;  /* 读回当前值 */\nv &= ~USART_CR2_ADD_Msk;  /* 先清掉 USART_CR2_ADD：bits[3:0]（整个位域） */\nv |= (1u << USART_CR2_ADD_Pos) & USART_CR2_ADD_Msk;  /* 置位，实际取值看参考手册 */\nUSART1->CR2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9516,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USART_CR3",
+      "name": "USART_CR3",
+      "peripheral": "USART",
+      "library": "reg",
+      "sectionId": "USART@reg#sec3",
+      "prototype": "USART1->CR3",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USART_CR3_EIE",
+          "type": "bit 0（整个位域）",
+          "descEn": "Error Interrupt Enable",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR3_IREN",
+          "type": "bit 1（整个位域）",
+          "descEn": "IrDA mode Enable",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR3_IRLP",
+          "type": "bit 2（整个位域）",
+          "descEn": "IrDA Low-Power",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR3_HDSEL",
+          "type": "bit 3（整个位域）",
+          "descEn": "Half-Duplex Selection",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR3_NACK",
+          "type": "bit 4（整个位域）",
+          "descEn": "Smartcard NACK enable",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR3_SCEN",
+          "type": "bit 5（整个位域）",
+          "descEn": "Smartcard mode enable",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR3_DMAR",
+          "type": "bit 6（整个位域）",
+          "descEn": "DMA Enable Receiver",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR3_DMAT",
+          "type": "bit 7（整个位域）",
+          "descEn": "DMA Enable Transmitter",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR3_RTSE",
+          "type": "bit 8（整个位域）",
+          "descEn": "RTS Enable",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR3_CTSE",
+          "type": "bit 9（整个位域）",
+          "descEn": "CTS Enable",
+          "descZh": ""
+        },
+        {
+          "name": "USART_CR3_CTSIE",
+          "type": "bit 10（整个位域）",
+          "descEn": "CTS Interrupt Enable",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "USART Control register 3, Address offset: 0x14",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USART_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 USART_TypeDef.CR3，偏移 0x14"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = USART1->CR3;  /* 读回当前值 */\nv &= ~USART_CR3_EIE_Msk;  /* 先清掉 USART_CR3_EIE：bit 0（整个位域） */\nv |= (1u << USART_CR3_EIE_Pos) & USART_CR3_EIE_Msk;  /* 置位，实际取值看参考手册 */\nUSART1->CR3 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9549,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USART_DR",
+      "name": "USART_DR",
+      "peripheral": "USART",
+      "library": "reg",
+      "sectionId": "USART@reg#sec2",
+      "prototype": "USART1->DR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USART_DR_DR",
+          "type": "bits[8:0]（整个位域）",
+          "descEn": "Data value",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "USART Data register, Address offset: 0x04",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USART_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 USART_TypeDef.DR，偏移 0x04"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = USART1->DR;  /* 读回当前值 */\nv &= ~USART_DR_DR_Msk;  /* 先清掉 USART_DR_DR：bits[8:0]（整个位域） */\nv |= (1u << USART_DR_DR_Pos) & USART_DR_DR_Msk;  /* 置位，实际取值看参考手册 */\nUSART1->DR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9459,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USART_GTPR",
+      "name": "USART_GTPR",
+      "peripheral": "USART",
+      "library": "reg",
+      "sectionId": "USART@reg#sec3",
+      "prototype": "USART1->GTPR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USART_GTPR_PSC",
+          "type": "bits[7:0]（整个位域）",
+          "descEn": "PSC[7:0] bits (Prescaler value)",
+          "descZh": ""
+        },
+        {
+          "name": "USART_GTPR_GT",
+          "type": "bits[15:8]（整个位域）",
+          "descEn": "Guard time value",
+          "descZh": ""
+        },
+        {
+          "name": "USART_GTPR_PSC_0",
+          "type": "bit 0",
+          "descEn": "0x00000001",
+          "descZh": ""
+        },
+        {
+          "name": "USART_GTPR_PSC_1",
+          "type": "bit 1",
+          "descEn": "0x00000002",
+          "descZh": ""
+        },
+        {
+          "name": "USART_GTPR_PSC_2",
+          "type": "bit 2",
+          "descEn": "0x00000004",
+          "descZh": ""
+        },
+        {
+          "name": "USART_GTPR_PSC_3",
+          "type": "bit 3",
+          "descEn": "0x00000008",
+          "descZh": ""
+        },
+        {
+          "name": "USART_GTPR_PSC_4",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "USART_GTPR_PSC_5",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "USART_GTPR_PSC_6",
+          "type": "bit 6",
+          "descEn": "0x00000040",
+          "descZh": ""
+        },
+        {
+          "name": "USART_GTPR_PSC_7",
+          "type": "bit 7",
+          "descEn": "0x00000080",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "USART Guard time and prescaler register, Address offset: 0x18",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USART_GTPR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 USART_TypeDef.GTPR，偏移 0x18"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = USART1->GTPR;  /* 读回当前值 */\nv &= ~USART_GTPR_PSC_Msk;  /* 先清掉 USART_GTPR_PSC：bits[7:0]（整个位域） */\nv |= (1u << USART_GTPR_PSC_Pos) & USART_GTPR_PSC_Msk;  /* 置位，实际取值看参考手册 */\nUSART1->GTPR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9584,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_USART_SR",
+      "name": "USART_SR",
+      "peripheral": "USART",
+      "library": "reg",
+      "sectionId": "USART@reg#sec1",
+      "prototype": "USART1->SR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USART_SR_PE",
+          "type": "bit 0（整个位域）",
+          "descEn": "Parity Error",
+          "descZh": ""
+        },
+        {
+          "name": "USART_SR_FE",
+          "type": "bit 1（整个位域）",
+          "descEn": "Framing Error",
+          "descZh": ""
+        },
+        {
+          "name": "USART_SR_NE",
+          "type": "bit 2（整个位域）",
+          "descEn": "Noise Error Flag",
+          "descZh": ""
+        },
+        {
+          "name": "USART_SR_ORE",
+          "type": "bit 3（整个位域）",
+          "descEn": "OverRun Error",
+          "descZh": ""
+        },
+        {
+          "name": "USART_SR_IDLE",
+          "type": "bit 4（整个位域）",
+          "descEn": "IDLE line detected",
+          "descZh": ""
+        },
+        {
+          "name": "USART_SR_RXNE",
+          "type": "bit 5（整个位域）",
+          "descEn": "Read Data Register Not Empty",
+          "descZh": ""
+        },
+        {
+          "name": "USART_SR_TC",
+          "type": "bit 6（整个位域）",
+          "descEn": "Transmission Complete",
+          "descZh": ""
+        },
+        {
+          "name": "USART_SR_TXE",
+          "type": "bit 7（整个位域）",
+          "descEn": "Transmit Data Register Empty",
+          "descZh": ""
+        },
+        {
+          "name": "USART_SR_LBD",
+          "type": "bit 8（整个位域）",
+          "descEn": "LIN Break Detection Flag",
+          "descZh": ""
+        },
+        {
+          "name": "USART_SR_CTS",
+          "type": "bit 9（整个位域）",
+          "descEn": "CTS Flag",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "USART Status register, Address offset: 0x00",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USART_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 USART_TypeDef.SR，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = USART1->SR;  /* 读回当前值 */\nv &= ~USART_SR_PE_Msk;  /* 先清掉 USART_SR_PE：bit 0（整个位域） */\nv |= (1u << USART_SR_PE_Pos) & USART_SR_PE_Msk;  /* 置位，实际取值看参考手册 */\nUSART1->SR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9427,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    }
+  ]
+}

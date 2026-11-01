@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../models/chip.dart';
+import '../models/library_kind.dart';
 import '../models/peripheral.dart';
 import '../providers/app_providers.dart';
 import '../utils/theme.dart';
 import '../widgets/block_label.dart';
+import '../widgets/library_chip.dart';
 import 'peripheral_detail_page.dart';
 
 /// 首页：外设分类浏览。
@@ -37,6 +39,7 @@ class HomePage extends ConsumerWidget {
       data: (data) {
         final onlySupported = ref.watch(onlySupportedProvider);
         final sortMode = ref.watch(homeSortModeProvider);
+        final enabled = ref.watch(enabledLibrariesProvider);
         final chip = data.chip;
 
         // 过滤与排序都在内存里做，数据量小（25 个外设），无需缓存
@@ -62,10 +65,26 @@ class HomePage extends ConsumerWidget {
                 chip: chip,
                 stats: _OverviewStats(
                   peripherals: data.peripherals.length,
-                  functions: data.peripherals
-                      .fold<int>(0, (a, p) => a + p.functionCount),
-                  symbols: data.symbols.length,
+                  // v2：函数总数改成「四库合计」。
+                  // 单看 488（只有 SPL）会让用户以为这 App 只认标准库。
+                  functions: data.peripherals.fold<int>(
+                    0,
+                    (a, p) => a + _enabledFunctionCount(p, enabled),
+                  ),
+                  // 符号数取 manifest 的统计值，与设置页的「数据统计」同一口径。
+                  // 不能再用 data.symbols.length：那只是 SPL 的 API 符号（2450），
+                  // 不含 HAL/LL 的 5021 个，也不含寄存器位定义。
+                  symbols: data.manifest.stats.symbolCount,
                   pins: data.pinout.pins.length,
+                  // 各库函数数（只统计启用的库，与上面的合计口径一致）
+                  perLibrary: <LibraryKind, int>{
+                    for (final lib in LibraryKind.ordered)
+                      if (enabled.contains(lib.raw))
+                        lib: data.peripherals.fold<int>(
+                          0,
+                          (a, p) => a + p.functionCountOf(lib),
+                        ),
+                  },
                 ),
               ),
             ),
@@ -83,7 +102,8 @@ class HomePage extends ConsumerWidget {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: AppSpace.lg),
                 child: BlockLabel(
-                  '标准外设模块',
+                  // 标题里点名四个库：用户第一次打开要立刻知道这四类都能查
+                  '外设模块（标准库 / HAL / LL / 寄存器）',
                   icon: Icons.widgets_outlined,
                   count: '${list.length}',
                   topSpace: AppSpace.sm,
@@ -105,10 +125,17 @@ class HomePage extends ConsumerWidget {
                 itemBuilder: (context, index) {
                   final p = list[index];
                   final supported = chip.supportsPeripheral(p.id);
+                  // 该外设下"有数据 且 用户开启了"的库。
+                  // 一个都没有时整张卡片置灰禁点：点进去只能看到空列表。
+                  final activeLibs = p.availableLibraries
+                      .where((lib) => enabled.contains(lib.raw))
+                      .toList(growable: false);
                   return _PeripheralCard(
                     peripheral: p,
                     chip: chip,
                     supported: supported,
+                    activeLibraries: activeLibs,
+                    functionCount: _enabledFunctionCount(p, enabled),
                     onTap: () => Navigator.of(context).push(
                       MaterialPageRoute<void>(
                         builder: (_) =>
@@ -124,20 +151,36 @@ class HomePage extends ConsumerWidget {
       },
     );
   }
+
+  /// 该外设在「用户启用的库」下的函数总数。
+  static int _enabledFunctionCount(Peripheral p, Set<String> enabled) {
+    var sum = 0;
+    for (final lib in p.availableLibraries) {
+      if (!enabled.contains(lib.raw)) continue;
+      sum += p.functionCountOf(lib);
+    }
+    return sum;
+  }
 }
 
-/// 概览卡里的四个数字。
+/// 概览卡里的四个数字 + 各库明细。
 class _OverviewStats {
   final int peripherals;
+
+  /// 四库合计的函数数（只算设置里启用的库）
   final int functions;
   final int symbols;
   final int pins;
+
+  /// 各库函数数（按 LibraryKind.ordered 顺序，只含启用的库）
+  final Map<LibraryKind, int> perLibrary;
 
   const _OverviewStats({
     required this.peripherals,
     required this.functions,
     required this.symbols,
     required this.pins,
+    this.perLibrary = const <LibraryKind, int>{},
   });
 }
 
@@ -262,6 +305,34 @@ class _ChipOverviewCard extends StatelessWidget {
               _StatItem(value: '${stats.pins}', label: '引脚'),
             ],
           ),
+          // 各库函数数：四个数字里的"函数"是合计，这里拆开说明合计从哪来。
+          // 不拆开的话用户看到 1200+ 会困惑"我查的不是标准库吗，哪来这么多"。
+          if (stats.perLibrary.isNotEmpty) ...<Widget>[
+            const SizedBox(height: AppSpace.md),
+            Wrap(
+              spacing: AppSpace.sm,
+              runSpacing: 5,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: <Widget>[
+                for (final entry in stats.perLibrary.entries)
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      LibraryChip(library: entry.key, compact: true),
+                      const SizedBox(width: 4),
+                      Text(
+                        '${entry.value}',
+                        style: AppFonts.monoStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.w600,
+                          color: scheme.onSurfaceVariant,
+                        ),
+                      ),
+                    ],
+                  ),
+              ],
+            ),
+          ],
         ],
       ),
     );
@@ -527,20 +598,31 @@ class _FilterRow extends StatelessWidget {
 /// 外设卡片。
 ///
 /// 视觉结构：左侧 3px 竖色条（标识可用性）→ 主标题（英文名 + 中文名）
-/// → 一句话简介 → 底部横向小标签。
+/// → 一行库徽标（这个是哪个库有内容）→ 一句话简介 → 底部横向小标签。
 ///
-/// 不支持的外设整体降透明度 + 左侧色条转灰，视觉上"退到后面"，
-/// 但不过度处理（用户可能就是想看 DAC 的说明）。
+/// 三种"不可用"要分清楚，样式也不同：
+///   1. 本型号不支持（DAC/FSDC…）—— 降透明度 + 左侧色条转灰，仍可点开看说明；
+///   2. 用户把该外设的所有库都关掉了 —— 同样置灰，但**禁点**，
+///      因为点进去只有空列表；
+///   3. 正常 —— 原样。
 class _PeripheralCard extends StatefulWidget {
   final Peripheral peripheral;
   final ChipSpec chip;
   final bool supported;
+
+  /// 该外设下"有数据 且 用户启用"的库（最多 4 个）
+  final List<LibraryKind> activeLibraries;
+
+  /// 启用库下的函数总数（各库 functionCount 之和）
+  final int functionCount;
   final VoidCallback onTap;
 
   const _PeripheralCard({
     required this.peripheral,
     required this.chip,
     required this.supported,
+    required this.activeLibraries,
+    required this.functionCount,
     required this.onTap,
   });
 
@@ -556,8 +638,13 @@ class _PeripheralCardState extends State<_PeripheralCard> {
     final scheme = Theme.of(context).colorScheme;
     final p = widget.peripheral;
     final supported = widget.supported;
+    // 一个启用的库都没有 → 点进去是空的，直接禁掉
+    final hasAnyLibrary = widget.activeLibraries.isNotEmpty;
+    final tappable = supported && hasAnyLibrary;
 
-    final accent = supported ? scheme.primary : scheme.outline;
+    final accent = !hasAnyLibrary
+        ? scheme.outline
+        : (supported ? scheme.primary : scheme.outline);
     final cardColor = Theme.of(context).cardTheme.color;
     final borderColor = _pressed
         ? accent.withValues(alpha: 0.5)
@@ -565,7 +652,7 @@ class _PeripheralCardState extends State<_PeripheralCard> {
 
     return AnimatedOpacity(
       duration: AppDuration.fast,
-      opacity: supported ? 1.0 : 0.62,
+      opacity: tappable ? 1.0 : 0.62,
       child: AnimatedContainer(
         duration: AppDuration.fast,
         curve: Curves.easeOut,
@@ -589,7 +676,7 @@ class _PeripheralCardState extends State<_PeripheralCard> {
           borderRadius: AppRadius.card,
           child: InkWell(
             borderRadius: AppRadius.card,
-            onTap: supported ? widget.onTap : null,
+            onTap: tappable ? widget.onTap : null,
             onHighlightChanged: (v) => setState(() => _pressed = v),
             child: Padding(
               padding: const EdgeInsets.fromLTRB(
@@ -607,7 +694,7 @@ class _PeripheralCardState extends State<_PeripheralCard> {
                     height: 34,
                     margin: const EdgeInsets.only(top: 2, right: AppSpace.md),
                     decoration: BoxDecoration(
-                      color: accent.withValues(alpha: supported ? 0.85 : 0.4),
+                      color: accent.withValues(alpha: tappable ? 0.85 : 0.4),
                       borderRadius: BorderRadius.circular(2),
                     ),
                   ),
@@ -622,7 +709,7 @@ class _PeripheralCardState extends State<_PeripheralCard> {
                               style: AppFonts.monoStyle(
                                 fontSize: 14.5,
                                 fontWeight: FontWeight.w700,
-                                color: supported
+                                color: tappable
                                     ? scheme.primary
                                     : scheme.onSurfaceVariant,
                               ),
@@ -643,6 +730,21 @@ class _PeripheralCardState extends State<_PeripheralCard> {
                           ],
                         ),
                         const SizedBox(height: 5),
+                        // ---- 库徽标行 ----
+                        //
+                        // 这是首页回答"这个外设能用哪几种库写"的地方：
+                        // 四个小色块紧挨着，扫一眼就知道 HAL 有没有覆盖到它。
+                        if (hasAnyLibrary) ...<Widget>[
+                          Wrap(
+                            spacing: 4,
+                            runSpacing: 4,
+                            children: <Widget>[
+                              for (final lib in widget.activeLibraries)
+                                LibraryChip(library: lib, compact: true),
+                            ],
+                          ),
+                          const SizedBox(height: 5),
+                        ],
                         Text(
                           p.oneLineIntro.isEmpty ? '暂无中文说明' : p.oneLineIntro,
                           maxLines: 2,
@@ -658,10 +760,16 @@ class _PeripheralCardState extends State<_PeripheralCard> {
                           spacing: 6,
                           runSpacing: 4,
                           children: <Widget>[
-                            _Badge(
-                              text: '${p.functionCount} 函数',
-                              color: scheme.primary,
-                            ),
+                            if (!hasAnyLibrary)
+                              _Badge(
+                                text: '未启用任何库',
+                                color: scheme.outline,
+                              )
+                            else
+                              _Badge(
+                                text: '${widget.functionCount} 函数',
+                                color: scheme.primary,
+                              ),
                             if (!supported)
                               _Badge(
                                 text: widget.chip.unsupportedReason(p.id),
@@ -678,11 +786,13 @@ class _PeripheralCardState extends State<_PeripheralCard> {
                   Padding(
                     padding: const EdgeInsets.only(top: 6),
                     child: Icon(
-                      supported ? Icons.chevron_right : Icons.block,
-                      color: supported
+                      !hasAnyLibrary
+                          ? Icons.block
+                          : (supported ? Icons.chevron_right : Icons.block),
+                      color: tappable
                           ? scheme.onSurfaceVariant
                           : scheme.error.withValues(alpha: 0.6),
-                      size: supported ? 20 : 17,
+                      size: supported ? (tappable ? 20 : 17) : 17,
                     ),
                   ),
                 ],

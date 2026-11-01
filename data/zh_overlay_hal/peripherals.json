@@ -1,0 +1,495 @@
+{
+  "_comment": "外设级中文说明（HAL/LL）。按 docs/contract_v2.md §7 约定：顶层键是外设 id，值直接作为该外设「HAL 库」的 introZh/usageOverviewZh/usageSteps/noteZh；若某个外设需要单独给 LL 库写说明，用 \"ll\" 子键。留空的字段保留 build 阶段的默认值。",
+  "GPIO": {
+    "introZh": "HAL 的 GPIO 驱动只有 11 个函数，比标准库更薄——因为 HAL 把「方向 + 上下拉 + 复用 + EXTI」合并进了同一个 GPIO_InitTypeDef，不再需要 SPL 那一堆 xxxConfig 函数。代价是初始化结构体要你自己填全，HAL 不会提供默认值。",
+    "usageOverviewZh": "HAL 下的标准调用顺序：① __HAL_RCC_GPIOx_CLK_ENABLE() 使能端口时钟（这一步忘了后面全白配）；② 填 GPIO_InitTypeDef 的 Pin / Mode / Pull / Speed 四个字段；③ HAL_GPIO_Init() 写入配置；④ 用 HAL_GPIO_WritePin / HAL_GPIO_ReadPin / HAL_GPIO_TogglePin 操作电平；⑤ 要中断就在 Mode 里选 GPIO_MODE_IT_RISING 等，再配 NVIC，中断里调 HAL_GPIO_EXTI_IRQHandler，业务写进 HAL_GPIO_EXTI_Callback。",
+    "usageSteps": [
+      "__HAL_RCC_GPIOx_CLK_ENABLE() 使能端口时钟，AFIO 时钟在需要重映射/EXTI 时才需单独开",
+      "填 GPIO_InitTypeDef：Pin 用 GPIO_PIN_x 位或，Mode 取 GPIO_MODE_*，Pull 取 GPIO_NOPULL / PULLUP / PULLDOWN，Speed 取 GPIO_SPEED_FREQ_*",
+      "HAL_GPIO_Init(GPIOx, &initStruct) 写入配置",
+      "HAL_GPIO_WritePin / ReadPin / TogglePin 操作电平",
+      "需要外部中断：Mode 选 GPIO_MODE_IT_RISING/FALLING，HAL_NVIC_SetPriority + EnableIRQ，ISR 里调 HAL_GPIO_EXTI_IRQHandler，业务放 HAL_GPIO_EXTI_Callback"
+    ],
+    "noteZh": "HAL 与 SPL 最容易混淆的三点：① 时钟宏变成 __HAL_RCC_GPIOx_CLK_ENABLE()，不再有 RCC_APB2PeriphClockCmd；② 上下拉从独立的 GPIO_Init 参数变成了 Mode 之外的 Pull 字段；③ EXTI 不再需要 GPIO_EXTILineConfig，Mode 选好 IT 系列就自动接好了。",
+    "ll": {
+      "introZh": "LL 的 GPIO 驱动是「一个动作一个函数」的粒度：SetPinMode / SetPinSpeed / SetPinOutputType / SetPinPull 分开调，不像 HAL 用一个结构体一次配完。好处是代码短、执行快（都是 static inline 直接写寄存器），代价是要自己记得把四项都设一遍。",
+      "usageOverviewZh": "① LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_GPIOA) 开时钟；② LL_GPIO_SetPinMode 设模式；③ LL_GPIO_SetPinOutputType 设推挽/开漏；④ LL_GPIO_SetPinSpeed 设速度；⑤ LL_GPIO_SetPinPull 设上下拉；⑥ LL_GPIO_SetOutputPin / ResetOutputPin 操作电平。",
+      "usageSteps": [
+        "LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_GPIOx) 使能端口时钟，AFIO 用 LL_APB2_GRP1_PERIPH_AFIO",
+        "LL_GPIO_SetPinMode(GPIOx, LL_GPIO_PIN_x, LL_GPIO_MODE_OUTPUT)",
+        "LL_GPIO_SetPinOutputType(GPIOx, LL_GPIO_PIN_x, LL_GPIO_OUTPUT_PUSHPULL)",
+        "LL_GPIO_SetPinSpeed(GPIOx, LL_GPIO_PIN_x, LL_GPIO_SPEED_FREQ_LOW)",
+        "LL_GPIO_SetPinPull(GPIOx, LL_GPIO_PIN_x, LL_GPIO_PULL_UP)",
+        "LL_GPIO_SetOutputPin / LL_GPIO_ResetOutputPin / LL_GPIO_TogglePin 操作电平"
+      ],
+      "noteZh": "F1 的 LL_GPIO_MODE_* 把「方向」和「速度」合在同一个 CNF/MODE 字段里：LL_GPIO_MODE_OUTPUT 只是方向，实际输出速度还要 LL_GPIO_SetPinSpeed 再设一次；配成 LL_GPIO_MODE_INPUT 时上下拉靠 LL_GPIO_SetPinPull。重映射全部在 LL_GPIO_AF_EnableRemap_xxx 系列里，一个外设一个函数。"
+    }
+  },
+  "RCC": {
+    "introZh": "HAL 的 RCC 驱动把「开外设时钟」和「配系统时钟树」分成了两类：日常的外设时钟使能是 __HAL_RCC_xxx_CLK_ENABLE() 这类宏（在 stm32f1xx_hal_rcc_ex.h 里，数量有上百个），而 HAL_RCC_xxx 函数只负责系统时钟、总线分频、MCO 输出这些真正的「时钟树」配置。",
+    "usageOverviewZh": "两类用法：① 外设时钟使能——直接用宏 __HAL_RCC_GPIOA_CLK_ENABLE()、__HAL_RCC_USART1_CLK_ENABLE()、__HAL_RCC_DMA1_CLK_ENABLE()，宏名和总线对应关系在名字里就能看出来；② 系统时钟初始化——填 RCC_OscInitTypeDef（选时钟源、PLL 倍频）调 HAL_RCC_OscConfig，再填 RCC_ClkInitTypeDef（SYSCLK/AHB/APB 分频）调 HAL_RCC_ClockConfig，最后用 HAL_RCC_GetHCLKFreq / GetPCLK1Freq 校核，并调 SystemCoreClockUpdate() 把 SystemCoreClock 变量同步过来。",
+    "usageSteps": [
+      "HAL_RCC_OscConfig(&RCC_OscInitStruct)：使能 HSE/HSI，配置 PLLMUL 与 PLLSource",
+      "HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2)：选 SYSCLK 源、设 AHB/APB1/APB2 分频，同时设 Flash 等待周期",
+      "SystemCoreClockUpdate()：把 SystemCoreClock 变量更新成实际频率，后续所有基于它的计算才正确",
+      "外设时钟用 __HAL_RCC_xxx_CLK_ENABLE() 宏按需使能，用完可用 __HAL_RCC_xxx_CLK_DISABLE() 关掉省电",
+      "需要非默认外设时钟源（ADC/USB/I2S/RTC）时用 HAL_RCCEx_PeriphCLKConfig"
+    ],
+    "noteZh": "F1 的 PLL 输入是 HSE 或 HSI/2（没有 F4 那样的 PLLM 分频），倍频用 RCC_OscInitStruct.PLL.PLLMUL 指定；72MHz 需要 FLASH_LATENCY_2（2 个等待周期），配错会跑飞。HAL_RCC_ClockConfig 里已经包含了 Flash 等待周期的设置，不需要像 SPL 那样单独调 FLASH_SetLatency。",
+    "ll": {
+      "introZh": "LL 的 RCC 把所有「开关」都做成了宏或 inline 函数：时钟使能用 LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_xxx)，振荡器用 LL_RCC_HSE_Enable / LL_RCC_HSE_IsReady 这类逐位操作。没有 HAL_RCC_OscConfig 那种结构体一次性配置。",
+      "usageOverviewZh": "外设时钟使能：LL_APB1_GRP1_EnableClock / LL_APB2_GRP1_EnableClock / LL_AHB1_GRP1_EnableClock 传外设掩码。系统时钟：① LL_RCC_HSE_Enable 并轮询 LL_RCC_HSE_IsReady；② LL_RCC_PLL_ConfigDomain_SYS(LL_RCC_PLLSOURCE_HSE, LL_RCC_PLL_MUL_9)；③ LL_RCC_PLL_Enable 并等 LL_RCC_PLL_IsReady；④ LL_RCC_SetSysClkSource(LL_RCC_SYS_CLKSOURCE_PLL) 并等切换完成；⑤ LL_RCC_SetAHBPrescaler / SetAPB1Prescaler / SetAPB2Prescaler。",
+      "usageSteps": [
+        "外设时钟：LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_GPIOA)，注意是「组 + 外设掩码」两个参数",
+        "HSE 起振：LL_RCC_HSE_Enable() 后 while (!LL_RCC_HSE_IsReady()) {}",
+        "配 PLL：LL_RCC_PLL_ConfigDomain_SYS(LL_RCC_PLLSOURCE_HSE, LL_RCC_PLL_MUL_9)",
+        "启动 PLL：LL_RCC_PLL_Enable()，等 LL_RCC_PLL_IsReady()",
+        "切 SYSCLK：LL_RCC_SetSysClkSource(LL_RCC_SYS_CLKSOURCE_PLL)，再等 LL_RCC_GetSysClkSource() 确认",
+        "设分频：LL_RCC_SetAHBPrescaler / SetAPB1Prescaler / SetAPB2Prescaler",
+        "别忘了 FLASH 等待周期：LL_FLASH_SetLatency(LL_FLASH_LATENCY_2)，否则 72MHz 下会读错指令"
+      ],
+      "noteZh": "LL 里没有「配完自动帮你设 Flash 等待周期」的逻辑（HAL_RCC_ClockConfig 有），72MHz 必须自己调 LL_FLASH_SetLatency，漏了会偶发死机。切换 SYSCLK 源后要等一会儿再确认，硬件切换不是瞬间完成。"
+    }
+  },
+  "USART": {
+    "introZh": "HAL 把 USART 的三种模式拆成了三个独立驱动：HAL_UART_*（异步，最常用）、HAL_USART_*（同步）、HAL_LIN_* / HAL_HalfDuplex_* / HAL_MultiProcessor_*（特殊模式），另外还有 IrDA 和 SmartCard 两个完全独立的句柄类型。绝大多数场景用 HAL_UART_* 就够了。",
+    "usageOverviewZh": "标准调用顺序：① 开 USARTx 与对应 GPIO 时钟；② GPIO 配成复用（TX 用 GPIO_MODE_AF_PP，RX 用 GPIO_MODE_INPUT 或 GPIO_MODE_AF_PP）；③ 填 UART_InitTypeDef（BaudRate/WordLength/StopBits/Parity/Mode/HwFlowCtl）并 HAL_UART_Init()；④ 发送 HAL_UART_Transmit()（阻塞）/ HAL_UART_Transmit_IT()（中断）/ HAL_UART_Transmit_DMA()（DMA）；⑤ 接收同理，但中断方式下必须在 HAL_UART_RxCpltCallback 里再次调用 HAL_UART_Receive_IT 才能继续收。",
+    "usageSteps": [
+      "__HAL_RCC_USARTx_CLK_ENABLE() + GPIO 时钟，GPIO 配成复用推挽（TX）/ 浮空或上拉输入（RX）",
+      "填 UART_InitTypeDef 并 HAL_UART_Init(&huart1)",
+      "发送：HAL_UART_Transmit(&huart1, buf, len, HAL_MAX_DELAY)（阻塞，最常用）",
+      "接收：中断方式用 HAL_UART_Receive_IT(&huart1, buf, len)，普通模式收满 len 字节就停，必须在回调里重新调用",
+      "DMA 方式用 HAL_UART_Transmit_DMA / HAL_UART_Receive_DMA，注意 F1 的 DMA 通道与串口是固定绑定的",
+      "不定长接收用 HAL_UARTEx_ReceiveToIdle_DMA + HAL_UARTEx_RxEventCallback（空闲中断），这是最省心的写法"
+    ],
+    "noteZh": "最容易踩的三个坑：① HAL_UART_Receive_IT 收满指定长度后会自动关掉 RXNE 中断，必须在 HAL_UART_RxCpltCallback 里再调一次，否则只能收到第一批；② HAL_UART_Transmit 是阻塞的，HAL_MAX_DELAY 时如果串口发不出去（比如流控脚没接对）会永久卡死；③ 重定向 printf 要重写 _write 或 fputc，并确保目标是 HAL_UART_Transmit。",
+    "ll": {
+      "introZh": "LL 的 USART 驱动把每个配置项拆成 Set/Get 一对，收发则是直接读写 DR：LL_USART_TransmitData8 / ReceiveData8。没有任何阻塞/中断/DMA 的包装，超时与重试全要自己写。",
+      "usageOverviewZh": "① 开时钟与 GPIO；② LL_USART_SetTransferDirection、SetParity、SetDataWidth、SetStopBitsLength 逐个配置；③ LL_USART_SetBaudRate(USART1, PCLK2, 115200) 算波特率；④ LL_USART_Enable；⑤ 发送 LL_USART_TransmitData8，接收 LL_USART_ReceiveData8，用 LL_USART_IsActiveFlag_TXE / RXNE 判断能否读写。",
+      "usageSteps": [
+        "LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_USART1) 与 GPIO 时钟",
+        "LL_USART_SetTransferDirection(USART1, LL_USART_DIRECTION_TX_RX)",
+        "LL_USART_ConfigCharacter(USART1, LL_USART_DATAWIDTH_8B, LL_USART_PARITY_NONE, LL_USART_STOPBITS_1) 一次配好数据格式",
+        "LL_USART_SetBaudRate(USART1, 72000000, 115200) —— 第二个参数要传对总线频率",
+        "LL_USART_Enable(USART1)",
+        "发送：等 LL_USART_IsActiveFlag_TXE 后 LL_USART_TransmitData8",
+        "接收：等 LL_USART_IsActiveFlag_RXNE 后 LL_USART_ReceiveData8"
+      ],
+      "noteZh": "LL 没有 HAL 那种「收满自动关中断」的行为，收发全靠自己轮询标志位或写中断服务程序。波特率的第二个参数必须传该串口所在总线的频率（USART1 用 PCLK2，USART2/3 用 PCLK1），传错了波特率就全错。"
+    }
+  },
+  "TIM": {
+    "introZh": "HAL 的定时器驱动按功能拆成 7 组：Base（时基/定时中断）、OC（输出比较）、PWM（PWM 输出）、IC（输入捕获）、OnePulse（单脉冲）、Encoder（编码器）、以及 Ex 后缀的高级功能（互补输出、死区、刹车、霍尔）。同一个 TIMx 可以同时用多组，但每组要单独 Init。",
+    "usageOverviewZh": "定时中断的典型顺序：① __HAL_RCC_TIMx_CLK_ENABLE()；② 填 TIM_Base_InitTypeDef（Prescaler 预分频、Period 重装值、CounterMode、ClockDivision）并 HAL_TIM_Base_Init(&htim2)；③ HAL_TIM_Base_Start_IT(&htim2) 启动并开更新中断；④ 配 NVIC；⑤ 在 TIM2_IRQHandler 里调 HAL_TIM_IRQHandler(&htim2)；⑥ 业务写进 HAL_TIM_PeriodElapsedCallback。PWM 输出要把 ②③ 换成 HAL_TIM_PWM_Init + HAL_TIM_PWM_ConfigChannel + HAL_TIM_PWM_Start。",
+    "usageSteps": [
+      "__HAL_RCC_TIMx_CLK_ENABLE() 使能定时器时钟（TIM1 在 APB2，TIM2~4 在 APB1）",
+      "填 TIM_Base_InitTypeDef：Prescaler 与 Period 决定频率，公式 f = TIMxCLK / ((PSC+1) × (ARR+1))",
+      "HAL_TIM_Base_Init(&htim2) 完成时基配置",
+      "HAL_TIM_Base_Start_IT(&htim2) 启动并开更新中断；只定时不中断用 HAL_TIM_Base_Start",
+      "NVIC 配优先级并使能 TIMx_IRQn，ISR 里调 HAL_TIM_IRQHandler(&htim2)",
+      "业务写进 HAL_TIM_PeriodElapsedCallback，用 htim->Instance 区分是哪个定时器"
+    ],
+    "noteZh": "HAL_TIM_IRQHandler 会统一清标志并分派到不同回调，所以 ISR 里不要自己清；多个定时器共用同一个回调，必须用 htim->Instance == TIM2 这类判断分流。PWM 占空比用 __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, value)，改 ARR 用 __HAL_TIM_SET_AUTORELOAD。高级定时器 TIM1 输出 PWM 前还必须 HAL_TIMEx_ConfigBreakDeadTime + HAL_TIM_OC_Start 否则没输出。",
+    "ll": {
+      "introZh": "LL 的 TIM 驱动按寄存器分组：时基（SetPrescaler/SetAutoReload/EnableCounter）、输出比较（TIM_OC_*）、输入捕获（TIM_IC_*）、通道控制（TIM_CC_*）。每个配置项一个函数，没有 Init 结构体。",
+      "usageOverviewZh": "定时中断：① 开时钟；② LL_TIM_SetPrescaler + LL_TIM_SetAutoReload；③ LL_TIM_EnableIT_UPDATE；④ NVIC 使能；⑤ LL_TIM_EnableCounter 启动；⑥ 在 ISR 里判断 LL_TIM_IsActiveFlag_UPDATE 并 LL_TIM_ClearFlag_UPDATE。PWM：额外 LL_TIM_OC_SetMode(TIM_CHANNEL_1, LL_TIM_OCMODE_PWM1) + LL_TIM_OC_SetCompareCH1 + LL_TIM_CC_EnableChannel。",
+      "usageSteps": [
+        "LL_APB1_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_TIM2)（TIM1 走 APB2）",
+        "LL_TIM_SetPrescaler(TIM2, psc) 与 LL_TIM_SetAutoReload(TIM2, arr)",
+        "LL_TIM_SetCounterMode(TIM2, LL_TIM_COUNTERMODE_UP)",
+        "LL_TIM_EnableIT_UPDATE(TIM2) + NVIC 配置",
+        "LL_TIM_EnableCounter(TIM2) 启动",
+        "PWM：LL_TIM_OC_SetMode + LL_TIM_OC_SetCompareCHx + LL_TIM_CC_EnableChannel",
+        "TIM1 输出还需 LL_TIM_EnableAllOutputs(TIM1) 打开 MOE 位"
+      ],
+      "noteZh": "LL 里改占空比直接 LL_TIM_OC_SetCompareCH1(TIM1, value)，比 HAL 的 __HAL_TIM_SET_COMPARE 更直接。TIM1（高级定时器）输出必须打开 MOE 位，即 LL_TIM_EnableAllOutputs，不做的话引脚上什么波形都没有——这是 LL 用 TIM1 最常踩的坑。"
+    }
+  },
+  "SPI": {
+    "introZh": "HAL 的 SPI 驱动同时覆盖了 SPI 和 I2S（同一组硬件，用 HAL_I2S_* 操作）。SPI 全双工/半双工/只读/只写四种模式由 Init 里的 Direction 决定，收发函数（Transmit/Receive/TransmitReceive）与模式必须匹配。",
+    "usageOverviewZh": "标准调用顺序：① 开 SPIx 时钟与 GPIO 时钟，SCK/MOSI 配复用推挽、MISO 配复用输入、NSS 软件模式下配成普通输出；② 填 SPI_HandleTypeDef 的 Init（Mode 主从、Direction、DataSize、CLKPolarity、CLKPhase、NSS、BaudRatePrescaler、FirstBit）并 HAL_SPI_Init()；③ 片选脚手动拉低 HAL_GPIO_WritePin(CS_GPIO, CS_PIN, GPIO_PIN_RESET)；④ HAL_SPI_Transmit / TransmitReceive 收发；⑤ 拉高片选。",
+    "usageSteps": [
+      "__HAL_RCC_SPIx_CLK_ENABLE() 与 GPIO 时钟；SCK/MOSI 用 GPIO_MODE_AF_PP，MISO 用 GPIO_MODE_INPUT",
+      "填 SPI_InitTypeDef：Mode 选 SLAVE/MASTER，DataSize 8/16 位，CLKPolarity + CLKPhase 组成 SPI 模式 0~3",
+      "HAL_SPI_Init(&hspi1)",
+      "片选：软件 NSS 模式下自己拉低/拉高 CS 引脚；硬件 NSS 由外设自动管理",
+      "HAL_SPI_Transmit(&hspi1, txBuf, len, HAL_MAX_DELAY) 或 HAL_SPI_TransmitReceive 全双工",
+      "高速场景改 DMA 版本，并在 HAL_SPI_TxCpltCallback 里拉高片选"
+    ],
+    "noteZh": "SPI 没有应答机制，波特率过高或线太长会静默丢数据，调试时先把 BaudRatePrescaler 调到最大分频（最慢）确认能通再提速。读寄存器类器件必须用 TransmitReceive 而不是先 Transmit 再 Receive——因为 SPI 是全双工的，发命令的同时就在收数据。",
+    "ll": {
+      "introZh": "LL 的 SPI 驱动逐项配置模式、位序、数据宽度、CPOL/CPHA、波特率预分频，收发直接读写 DR。没有 HAL 那套 Transmit/Receive 的阻塞包装，全双工要自己同时写读。",
+      "usageOverviewZh": "① 开时钟与 GPIO；② LL_SPI_SetMode(SLAVE/MASTER)；③ LL_SPI_SetDataWidth、SetTransferBitOrder、SetClockPolarity、SetClockPhase、SetBaudRatePrescaler、SetNSSMode；④ LL_SPI_Enable；⑤ 发送等 LL_SPI_IsActiveFlag_TXE 后 LL_SPI_TransmitData8，接收等 LL_SPI_IsActiveFlag_RXNE 后 LL_SPI_ReceiveData8。",
+      "usageSteps": [
+        "LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_SPI1) 与 GPIO 时钟",
+        "LL_SPI_SetMode(SPI1, LL_SPI_MODE_MASTER)",
+        "LL_SPI_SetClockPolarity + SetClockPhase（组合成 SPI 模式 0~3）",
+        "LL_SPI_SetBaudRatePrescaler(SPI1, LL_SPI_BAUDRATEPRESCALER_DIV8) 先慢速调通再提速",
+        "LL_SPI_SetNSSMode(SPI1, LL_SPI_NSS_SOFT)",
+        "LL_SPI_Enable(SPI1)",
+        "收发：轮询 TXE 写数据、轮询 RXNE 读数据；片选脚自己用 LL_GPIO_ResetOutputPin 拉低"
+      ],
+      "noteZh": "SPI 全双工：写 DR 的同时就在读 DR，读寄存器类器件必须发完立刻读，不能等。LL 没有内置超时，轮询标志位时建议自己加计数兜底，否则硬件异常时会死循环。"
+    }
+  },
+  "I2C": {
+    "introZh": "HAL 的 I2C 驱动区分「Master/Slave」和「阻塞/中断/DMA」两个维度，另外还专门提供了 Mem_Read/Mem_Write 系列用于「先写寄存器地址再读数据」的典型器件访问。I2C 是 HAL 里最容易卡死的外设，多数问题出在总线被从机拉死。",
+    "usageOverviewZh": "主机访问从机的标准顺序：① 开 I2Cx 与 GPIO 时钟，SCL/SDA 必须配成 GPIO_MODE_AF_OD（开漏复用，不能配成推挽）；② 填 I2C_InitTypeDef（ClockSpeed、DutyCycle、OwnAddress1、Ack）并 HAL_I2C_Init()；③ 简单收发用 HAL_I2C_Master_Transmit / Master_Receive，读写器件寄存器用 HAL_I2C_Mem_Write / Mem_Read；④ 先用 HAL_I2C_IsDeviceReady 探测器件是否在线，比直接收发更容易定位问题。",
+    "usageSteps": [
+      "__HAL_RCC_I2Cx_CLK_ENABLE() 与 GPIO 时钟；SCL/SDA 配成 GPIO_MODE_AF_OD 并开外部上拉",
+      "填 I2C_InitTypeDef（100kHz 标准模式或 400kHz 快速模式）并 HAL_I2C_Init(&hi2c1)",
+      "HAL_I2C_IsDeviceReady(&hi2c1, devAddr << 1, 3, 100) 先确认器件在线",
+      "写寄存器：HAL_I2C_Mem_Write(&hi2c1, addr, reg, I2C_MEMADD_SIZE_8BIT, buf, len, timeout)",
+      "读寄存器：HAL_I2C_Mem_Read(&hi2c1, addr, reg, I2C_MEMADD_SIZE_8BIT, buf, len, timeout)",
+      "多字节连续读（如 OLED/EEPROM）注意页边界，跨页要分段"
+    ],
+    "noteZh": "三个高频坑：① 设备地址是 7 位，HAL 要求传 8 位（左移一位），少移一位是最常见的错误；② SCL/SDA 必须开漏输出 + 外部上拉电阻，配成推挽会导致总线锁死；③ HAL 的 timeout 到期后总线可能停在忙状态，需要 HAL_I2C_DeInit + HAL_I2C_Init 重新初始化，或手动发 9 个时钟脉冲解锁。",
+    "ll": {
+      "introZh": "LL 的 I2C 是「寄存器级」操作：起停条件、应答、读写数据都是独立函数（GenerateStartCondition / AcknowledgeNextData / TransmitData8），完整的一次传输要自己按状态机拼。",
+      "usageOverviewZh": "① 开时钟与 GPIO（SCL/SDA 必须开漏）；② LL_I2C_SetPeriphClock + LL_I2C_ConfigSpeed 设定时；③ LL_I2C_SetOwnAddress1；④ LL_I2C_Enable；⑤ 主机发：GenerateStart → 等 SB → 写地址 → 等 ADDR → 清 ADDR → 循环写数据 → 等 BTF → GenerateStop。",
+      "usageSteps": [
+        "LL_APB1_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_I2C1) 与 GPIO 时钟，SCL/SDA 配 LL_GPIO_MODE_ALTERNATE + 开漏",
+        "LL_I2C_SetPeriphClock(I2C1, 36000000) 告诉外设 PCLK1 频率",
+        "LL_I2C_ConfigSpeed(I2C1, 36000000, 100000, LL_I2C_DUTYCYCLE_2)",
+        "LL_I2C_Enable(I2C1)",
+        "LL_I2C_GenerateStartCondition → 等 LL_I2C_IsActiveFlag_SB → LL_I2C_TransmitData8(地址)",
+        "等 ADDR 后 LL_I2C_ClearFlag_ADDR，再循环收发数据",
+        "结束：LL_I2C_GenerateStopCondition"
+      ],
+      "noteZh": "LL 的 I2C 需要你手动处理完整时序，出错时最容易卡在等某个标志位的死循环里——所有轮询都建议加超时。读最后一个字节前必须 LL_I2C_AcknowledgeNextData(I2C1, LL_I2C_NACK)，否则从机会一直以为你还要读。"
+    }
+  },
+  "ADC": {
+    "introZh": "HAL 的 ADC 驱动分规则组（Regular，最常用）和注入组（Injected，可打断规则组、用于高优先级采样），注入组函数在 HAL_ADCEx_* 里。F1 的 ADC 是 12 位逐次逼近型，参考电压通常接 VDDA=3.3V。",
+    "usageOverviewZh": "轮询采样的标准顺序：① 开 ADC1 时钟与 GPIO 时钟（模拟输入引脚配 GPIO_MODE_ANALOG）；② HAL_ADC_Init() 完成基础配置；③ HAL_ADC_ConfigChannel() 指定通道与采样时间；④ 首次使用前调 HAL_ADCEx_Calibration_Start() 做自校准（F1 必须做，否则精度差）；⑤ HAL_ADC_Start() 启动；⑥ HAL_ADC_PollForConversion() 等转换完成；⑦ HAL_ADC_GetValue() 取值。",
+    "usageSteps": [
+      "__HAL_RCC_ADC1_CLK_ENABLE() 与 GPIO 时钟，模拟引脚配 GPIO_MODE_ANALOG（不能用输入模式）",
+      "HAL_ADC_Init(&hadc1)：设 Resolution/ScanConvMode/ContinuousConvMode/DataAlign/NbrOfConversion",
+      "HAL_ADC_ConfigChannel(&hadc1, &sConfig) 指定通道、采样时间、规则组排序",
+      "HAL_ADCEx_Calibration_Start(&hadc1) 自校准（每次上电做一次即可）",
+      "HAL_ADC_Start(&hadc1) → HAL_ADC_PollForConversion(&hadc1, 10) → HAL_ADC_GetValue(&hadc1)",
+      "多通道/连续采样用 HAL_ADC_Start_DMA，在 HAL_ADC_ConvCpltCallback 里处理整批数据"
+    ],
+    "noteZh": "换算公式：电压 = GetValue() × 3.3f / 4095。采样时间太短会让高阻抗信号源测不准（手册要求源阻抗与采样时间匹配），测高阻信号把 SamplingTime 调到 239.5 周期。多通道扫描时 DataAlign 用右对齐更方便处理。",
+    "ll": {
+      "introZh": "LL 的 ADC 驱动分规则组（ADC_REG_*）和注入组（ADC_INJ_*），配置项比 HAL 更细（序列排序、不连续模式都能直接设），但启动/读结果的流程要自己串。",
+      "usageOverviewZh": "① 开时钟、GPIO 配模拟；② LL_ADC_SetCommonPathInternalCh（如需内部通道）；③ LL_ADC_SetChannelSamplingTime；④ LL_ADC_REG_SetSequencerRanks 设通道与次序；⑤ LL_ADC_Enable；⑥ LL_ADC_StartCalibration 并等 LL_ADC_IsCalibrationOnGoing 清零；⑦ LL_ADC_REG_StartConversionSWStart；⑧ 等 LL_ADC_IsActiveFlag_EOS 后 LL_ADC_REG_ReadConversionData12。",
+      "usageSteps": [
+        "LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_ADC1) 与 GPIO 时钟",
+        "LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_0, LL_ADC_SAMPLINGTIME_239CYCLES_5)",
+        "LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_1, LL_ADC_CHANNEL_0)",
+        "LL_ADC_Enable(ADC1) 后调 LL_ADC_StartCalibration(ADC1)，等 IsCalibrationOnGoing 变 0",
+        "LL_ADC_REG_StartConversionSWStart(ADC1)",
+        "轮询 LL_ADC_IsActiveFlag_EOS，然后 LL_ADC_REG_ReadConversionData12(ADC1)"
+      ],
+      "noteZh": "校准必须在 ADC 已使能、且没有转换进行时做；LL 不会像 HAL 那样在 Start 里帮你处理校准状态。读结果要根据数据对齐方式选 ReadConversionData12 或 Data32。"
+    }
+  },
+  "DMA": {
+    "introZh": "F1 的 DMA 是「通道」结构（DMA1 有 7 个通道，DMA2 只有大容量型号才有），每个通道固定映射到若干外设请求，不能随意改。HAL 下绝大多数场景不需要直接调用 HAL_DMA_* 函数——各外设的 xxx_DMA 系列函数会在 MspInit 里自动把通道配好。",
+    "usageOverviewZh": "使用 DMA 的实际流程（以外设 DMA 传输为例）：① 开 DMA 时钟 __HAL_RCC_DMA1_CLK_ENABLE()；② 在对应外设的 MspInit 里填 DMA_HandleTypeDef（Instance 选通道、方向、自增、数据宽度、优先级）并 HAL_DMA_Init()；③ 在 NVIC 里使能对应的 DMA1_ChannelX_IRQn；④ 调外设的 HAL_xxx_Transmit_DMA / Start_DMA 启动；⑤ 完成回调里做后续处理。只有「纯内存搬运」才需要自己调 HAL_DMA_Start。",
+    "usageSteps": [
+      "__HAL_RCC_DMA1_CLK_ENABLE() 使能 DMA 时钟",
+      "在 MspInit 里给 hdma_usart1_tx.Instance 赋值（如 DMA1_Channel4），再 HAL_DMA_Init",
+      "NVIC 使能对应通道中断（如 DMA1_Channel4_IRQn）",
+      "调用外设的 DMA 启动函数：HAL_UART_Transmit_DMA / HAL_ADC_Start_DMA / HAL_SPI_Transmit_DMA",
+      "在 HAL_xxx_TxCpltCallback 里收尾（比如拉高 CS、启动下一批）"
+    ],
+    "noteZh": "通道和外设的对应关系是硬连线的：USART1_TX→DMA1_Channel4、USART1_RX→Channel5、SPI1_TX→Channel3、SPI1_RX→Channel2、ADC1→Channel1。查错先看这张表，通道选错完全没反应且不报错。一个通道不能同时服务两个外设。",
+    "ll": {
+      "introZh": "LL 的 DMA 把通道配置拆成独立函数：方向、自增、数据宽度、优先级、地址、长度各一个 Set。比 HAL 的 Init 结构体更直观，但要自己保证调用顺序（先关通道再改参数）。",
+      "usageOverviewZh": "① 开 DMA 时钟；② LL_DMA_DisableChannel 先关通道；③ LL_DMA_SetDataTransferDirection、SetPeriphIncMode、SetMemoryIncMode、SetPeriphSize、SetMemorySize、SetChannelPriorityLevel；④ LL_DMA_ConfigAddresses 设源/目的；⑤ LL_DMA_SetDataLength；⑥ LL_DMA_EnableChannel 启动。",
+      "usageSteps": [
+        "LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_DMA1)",
+        "LL_DMA_DisableChannel(DMA1, LL_DMA_CHANNEL_4) —— 改配置前必须先关通道",
+        "LL_DMA_ConfigTransfer(DMA1, ch, LL_DMA_DIRECTION_PERIPH_TO_MEMORY | LL_DMA_MODE_NORMAL | LL_DMA_PERIPH_NOINCREMENT | LL_DMA_MEMORY_INCREMENT | LL_DMA_PDATAALIGN_BYTE | LL_DMA_MDATAALIGN_BYTE | LL_DMA_PRIORITY_HIGH)",
+        "LL_DMA_ConfigAddresses(DMA1, ch, 外设地址, 缓冲区地址, LL_DMA_DIRECTION_PERIPH_TO_MEMORY)",
+        "LL_DMA_SetDataLength(DMA1, ch, len)",
+        "LL_DMA_EnableChannel(DMA1, ch)"
+      ],
+      "noteZh": "通道配置只能在通道关闭时改，所以标准流程一定是「先 DisableChannel 再配再 Enable」。F1 的 DMA 通道与外设的对应关系是硬连线的（USART1_TX 只能走 DMA1_Channel4），选错通道没反应也不报错。"
+    }
+  },
+  "FLASH": {
+    "introZh": "HAL 的 FLASH 驱动分两层：HAL_FLASH_* 负责擦除/编程/解锁这些基本操作，HAL_FLASHEx_* 负责选项字节（Option Bytes）与带中断的擦除。F1 的 Flash 按页擦除（中容量每页 1KB，大容量 2KB），写之前必须先擦。",
+    "usageOverviewZh": "写 Flash 的标准顺序：① HAL_FLASH_Unlock() 解锁；② HAL_FLASHEx_Erase() 擦除目标页（擦除最小单位是整页，会丢掉整页数据）；③ HAL_FLASH_Program() 按半字/字/双字写入；④ HAL_FLASH_Lock() 上锁。全程建议先关中断或确保没有代码在执行同一块 Flash 的读操作。",
+    "usageSteps": [
+      "HAL_FLASH_Unlock() 解除写保护",
+      "填 FLASH_EraseInitTypeDef（TypeErase 页擦除、PageAddress、NbPages）并 HAL_FLASHEx_Erase",
+      "HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, addr, data) 写入；F1 只支持半字(16 位)/字(32 位)编程",
+      "写完调 HAL_FLASH_Lock() 重新上锁",
+      "出错时用 HAL_FLASH_GetError() 查具体原因（PGERR/WRPRTERR 等）"
+    ],
+    "noteZh": "F1 只能按半字或字编程，不能按字节写；目标地址必须 2/4 字节对齐，且写入前该位置必须是 0xFFFF。擦除会阻塞 CPU（Flash 读操作在擦除期间无法进行），如果代码本身就在同一块 Flash 里运行，擦除期间不能取指——所以擦除代码最好放 RAM 或者确认是在不同 bank。",
+    "ll": {
+      "introZh": "LL 的 FLASH 驱动只管「配置类」参数：等待周期、预取、半周期访问。**擦除与编程不在 LL 里**，仍要用 HAL_FLASH_* 或直接写寄存器。",
+      "usageOverviewZh": "典型用法：① LL_FLASH_SetLatency(LL_FLASH_LATENCY_2) 按主频设等待周期；② LL_FLASH_EnablePrefetch 开预取（能明显提升 72MHz 下的取指效率）；③ 需要省电时 LL_FLASH_EnableHalfCycleAccess。",
+      "usageSteps": [
+        "LL_FLASH_SetLatency(LL_FLASH_LATENCY_2)：<24MHz 用 0，24~48MHz 用 1，48~72MHz 用 2",
+        "LL_FLASH_EnablePrefetch()：64 位预取缓冲，72MHz 下建议开启",
+        "低功耗场景可选 LL_FLASH_EnableHalfCycleAccess / IsHalfCycleAccessEnabled"
+      ],
+      "noteZh": "LL_FLASH 没有擦除/编程函数，这不是遗漏——ST 只把配置类操作放进 LL。写 Flash 请用 HAL_FLASHEx_Erase + HAL_FLASH_Program。"
+    }
+  },
+  "PWR": {
+    "introZh": "HAL 的 PWR 驱动负责低功耗模式（SLEEP/STOP/STANDBY）、PVD 电压监测、唤醒引脚、以及备份域访问使能。F1 的三种低功耗模式功耗依次降低、唤醒后行为也完全不同。",
+    "usageOverviewZh": "低功耗的典型顺序：① 使能 PWR 时钟 __HAL_RCC_PWR_CLK_ENABLE()；② 关掉不用的外设时钟和 GPIO（未用的引脚配成模拟输入最省电）；③ 需要外部中断唤醒时先配好 EXTI；④ 调 HAL_PWR_EnterSLEEPMode / EnterSTOPMode / EnterSTANDBYMode。三种模式的差别很大：SLEEP 只关 CPU 时钟、STOP 关所有时钟但保留 SRAM、STANDBY 连 SRAM 都掉电只能靠复位或 WKUP 唤醒。",
+    "usageSteps": [
+      "__HAL_RCC_PWR_CLK_ENABLE() 使能电源控制时钟",
+      "按需关外设时钟、把未使用 GPIO 配成 GPIO_MODE_ANALOG 降低漏电",
+      "SLEEP：HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI)，任意中断可唤醒",
+      "STOP：HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI)，唤醒后要重新配置时钟（HSE/PLL 已停）",
+      "STANDBY：HAL_PWR_EnterSTANDBYMode()，唤醒等同复位，程序从头跑",
+      "用 WKUP 引脚唤醒需先 HAL_PWR_EnableWakeUpPin"
+    ],
+    "noteZh": "STOP 模式唤醒后系统时钟会退回到 HSI，必须重新调 HAL_RCC_OscConfig + HAL_RCC_ClockConfig 恢复，否则串口波特率全错——这是 STOP 模式最经典的坑。STANDBY 唤醒后 SRAM 内容丢失，程序从复位向量重新执行。",
+    "ll": {
+      "introZh": "LL 的 PWR 驱动提供低功耗模式选择、PVD 阈值、唤醒引脚、备份域访问。注意它只负责「设置模式」，**真正进入低功耗要执行 WFI/WFE 指令**。",
+      "usageOverviewZh": "① 开 PWR 时钟；② LL_PWR_SetPowerMode 选模式；③ 需要时 LL_PWR_EnableWakeUpPin；④ 执行 __WFI() 让内核睡眠；⑤ STOP 唤醒后重新配置系统时钟。",
+      "usageSteps": [
+        "LL_APB1_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_PWR)",
+        "LL_PWR_SetPowerMode(LL_PWR_MODE_STOP_MAINREGU) 选择目标模式",
+        "LL_PWR_EnableWakeUpPin(LL_PWR_WAKEUP_PIN1) 若需 WKUP 唤醒",
+        "__WFI() 执行等待中断指令，这时才真正进入低功耗",
+        "STOP 唤醒后系统时钟退回 HSI，必须重配时钟树"
+      ],
+      "noteZh": "LL_PWR_SetPowerMode 只是写寄存器选择模式，不调用 WFI/WFE 的话根本不会睡下去。STANDBY 唤醒等同复位，程序从头跑。"
+    }
+  },
+  "CORTEX": {
+    "introZh": "HAL 的 CORTEX 驱动封装了 NVIC（中断优先级与开关）、SysTick（系统时基）和 MPU（内存保护）。它不属于任何外设，但每个工程都会用到——HAL_Init 内部就是用这里的函数把 SysTick 配成 1ms 的。",
+    "usageOverviewZh": "工程启动的固定套路：① HAL_Init() 内部完成优先级分组设置与 SysTick 1ms 配置；② 每个用到的中断调 HAL_NVIC_SetPriority 设优先级，再 HAL_NVIC_EnableIRQ 打开；③ 需要更高时基精度就改 HAL_SYSTICK_Config 的重装载值。注意优先级分组只在开头设一次，中途改会让所有已配置的优先级语义全部错乱。",
+    "usageSteps": [
+      "HAL_Init() 里已调用 HAL_NVIC_SetPriorityGrouping 与 HAL_SYSTICK_Config，一般不需要重复设置",
+      "对每个中断：HAL_NVIC_SetPriority(IRQn, 抢占优先级, 子优先级)",
+      "然后 HAL_NVIC_EnableIRQ(IRQn) 才会真正响应",
+      "需要软件复位用 HAL_NVIC_SystemReset",
+      "想跑 1ms 软定时任务就重写 HAL_SYSTICK_Callback（__weak）"
+    ],
+    "noteZh": "HAL_NVIC_SetPriority 的数字越小优先级越高（和很多人直觉相反）。只设优先级不使能中断是新手最常见的疏漏，现象是外设标志位置了但死活不进中断。用 RTOS 时中断优先级的数值还要受 configMAX_SYSCALL_INTERRUPT_PRIORITY 约束。",
+    "ll": {
+      "introZh": "LL 的 CORTEX 驱动包含 SysTick、低功耗指令、异常控制、CPUID 查询与 MPU，全部是极薄的 inline 封装。",
+      "usageOverviewZh": "① LL_SYSTICK_SetClkSource 选时钟源；② LL_SYSTICK_EnableIT 开中断；③ 低功耗前用 LL_LPM_EnableSleep / EnableDeepSleep 设置 SLEEPONEXIT 与深度睡眠；④ 读芯片信息用 LL_CPUID_*、LL_GetUID_*。",
+      "usageSteps": [
+        "LL_SYSTICK_SetClkSource(LL_SYSTICK_CLKSOURCE_HCLK)",
+        "LL_SYSTICK_EnableIT() 使能 SysTick 中断",
+        "LL_LPM_EnableSleep / LL_LPM_EnableDeepSleep 设置低功耗行为",
+        "LL_HANDLER_EnableFault 可开启 BusFault/UsageFault 便于排错",
+        "LL_CPUID_GetImplementer 等读取内核信息"
+      ],
+      "noteZh": "LL 这里是直接改内核寄存器，和 HAL 的 NVIC/SysTick 函数不要混用同一套配置，否则状态会互相覆盖。"
+    }
+  },
+  "EXTI": {
+    "introZh": "F1 的 EXTI 既有「跟着 GPIO 走」的隐式配置，也有这一套独立的 HAL_EXTI_* 显式接口。日常外部中断用隐式那套就够（GPIO_Init 里选 GPIO_MODE_IT_RISING），只有在配内部信号线（PVD、RTC 闹钟）或者要做纯事件唤醒时才需要这里的函数。",
+    "usageOverviewZh": "显式配置的顺序：① 使能 AFIO 时钟；② HAL_EXTI_GetHandle(&hexti, EXTI_LINE_x) 拿到句柄；③ 填 EXTI_ConfigTypeDef（Mode 中断/事件、Trigger 边沿、GPIOSel 端口映射）并 HAL_EXTI_SetConfigLine；④ NVIC 使能对应中断；⑤ ISR 里调 HAL_EXTI_IRQHandler。",
+    "usageSteps": [
+      "__HAL_RCC_AFIO_CLK_ENABLE() 使能 AFIO 时钟（GPIO 到 EXTI 的映射要经过它）",
+      "HAL_EXTI_GetHandle(&hexti, EXTI_LINE_0) 获取线句柄",
+      "填 EXTI_ConfigTypeDef 后调 HAL_EXTI_SetConfigLine",
+      "HAL_NVIC_SetPriority + HAL_NVIC_EnableIRQ 使能中断",
+      "ISR 里调 HAL_EXTI_IRQHandler(&hexti)"
+    ],
+    "noteZh": "同一线号只能在端口间二选一：PA0 和 PB0 都映射到 EXTI0，同时配置会互相覆盖。EXTI5~9 共用 EXTI9_5_IRQn，EXTI10~15 共用 EXTI15_10_IRQn，所以一个 ISR 里可能要处理多条线。",
+    "ll": {
+      "introZh": "LL 的 EXTI 全部是位操作宏：使能中断、使能事件、设触发边沿、清标志各一个函数，参数是线号掩码（LL_EXTI_LINE_0 等）。",
+      "usageOverviewZh": "① 开 AFIO 时钟；② LL_GPIO_AF_SetEXTISource 把线绑到端口；③ LL_EXTI_EnableRisingTrig_0_31 设边沿；④ LL_EXTI_EnableIT_0_31 开中断；⑤ NVIC 使能；⑥ ISR 里 LL_EXTI_IsActiveFlag_0_31 + LL_EXTI_ClearFlag_0_31。",
+      "usageSteps": [
+        "LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_AFIO)",
+        "LL_GPIO_AF_SetEXTISource(LL_GPIO_PORT_SOURCE_GPIOA, LL_GPIO_EXTI_LINE_0) 绑定端口",
+        "LL_EXTI_EnableRisingTrig_0_31(LL_EXTI_LINE_0) 设触发边沿",
+        "LL_EXTI_EnableIT_0_31(LL_EXTI_LINE_0) 使能中断",
+        "NVIC 使能 EXTI0_IRQn",
+        "ISR 里 LL_EXTI_ClearFlag_0_31(LL_EXTI_LINE_0)"
+      ],
+      "noteZh": "同一线号只能绑一个端口（PA0 与 PB0 共用 EXTI0）。EXTI5~9 与 EXTI10~15 是共用中断向量，ISR 里要判断具体是哪条线。"
+    }
+  },
+  "IWDG": {
+    "introZh": "独立看门狗，由内部 40kHz LSI 驱动，完全独立于主时钟，主循环跑飞或时钟配置崩了也能把芯片拉回来。F1 上只有 2 个函数：初始化（初始化即启动）和喂狗。",
+    "usageOverviewZh": "① 填 IWDG_InitTypeDef（Prescaler 分频、Reload 重装值）；② HAL_IWDG_Init() —— 注意调完就已经开始计数，没有单独的 Start；③ 在超时时间内周期调 HAL_IWDG_Refresh() 喂狗。超时时间 = (4 × 2^Prescaler) × Reload / 40000 秒。",
+    "usageSteps": [
+      "按需要的超时时间反推 Prescaler 与 Reload",
+      "HAL_IWDG_Init(&hiwdg) —— 调用即启动，不可再改预分频",
+      "在主循环的关键路径末尾调 HAL_IWDG_Refresh(&hiwdg)",
+      "调试期若需停在断点，先在 DBGMCU 里冻结 IWDG，否则会被反复复位"
+    ],
+    "noteZh": "LSI 频率误差很大（F1 手册标 30~60kHz），算超时时间要按最坏情况留余量。喂狗绝不能放在定时器中断里——那样主循环死了狗照样被喂，等于没开。",
+    "ll": {
+      "introZh": "LL 的 IWDG 全部是寄存器级位操作：使能、写保护、预分频、重装载、喂狗。",
+      "usageOverviewZh": "① LL_IWDG_EnableWriteAccess 打开寄存器写访问；② LL_IWDG_SetPrescaler；③ LL_IWDG_SetReloadCounter；④ 等 LL_IWDG_IsReady；⑤ LL_IWDG_Enable 启动；⑥ 周期性 LL_IWDG_ReloadCounter 喂狗。",
+      "usageSteps": [
+        "LL_IWDG_EnableWriteAccess() 解锁 PR/RLR 寄存器",
+        "LL_IWDG_SetPrescaler(LL_IWDG_PRESCALER_64)",
+        "LL_IWDG_SetReloadCounter(IWDG, 1000)",
+        "while (!LL_IWDG_IsReady(IWDG)) {} 等 PVU/RVU 清零",
+        "LL_IWDG_Enable(IWDG) 启动（注意：启动后预分频不能再改）",
+        "主循环里 LL_IWDG_ReloadCounter(IWDG) 喂狗"
+      ],
+      "noteZh": "IWDG 一旦启动，预分频与重装载值就锁死，只有复位能改。LSI 频率误差大（30~60kHz），超时要留足余量。"
+    }
+  },
+  "WWDG": {
+    "introZh": "窗口看门狗，挂在 APB1 上、时钟来自 PCLK1。它比 IWDG 多一个「窗口」约束：喂狗太早也会复位，用来发现程序跑得异常快（循环失控、任务被跳过）这类 IWDG 查不出的问题。",
+    "usageOverviewZh": "① 使能 WWDG 时钟；② 填 WWDG_InitTypeDef（Prescaler 分频、Window 窗口值、Counter 初始值、EWIMode）；③ HAL_WWDG_Init()；④ 在「计数值 < Window 且 > 0x40」的窗口内调 HAL_WWDG_Refresh()。太早（计数值还大于 Window）或太晚（已降到 0x3F）都直接复位。",
+    "usageSteps": [
+      "__HAL_RCC_WWDG_CLK_ENABLE() 使能时钟",
+      "填 WWDG_InitTypeDef 并 HAL_WWDG_Init(&hwwdg)",
+      "在窗口期内调 HAL_WWDG_Refresh(&hwwdg)",
+      "需要提前预警就打开 EWIMode 并重写 HAL_WWDG_EarlyWakeupCallback 做现场保存"
+    ],
+    "noteZh": "计数器 7 位，有效范围 0x40~0x7F，降到 0x3F 就复位。首次喂狗前必须确认计数值已经进入窗口，否则一上来就复位。WWDG 依赖 PCLK1，主时钟错乱时它也失效——这点不如 IWDG 可靠。",
+    "ll": {
+      "introZh": "LL 的 WWDG 驱动很薄：使能、设计数器、设窗口值、设预分频，以及提前唤醒标志与中断。",
+      "usageOverviewZh": "① 开 WWDG 时钟；② LL_WWDG_SetPrescaler；③ LL_WWDG_SetWindow 设窗口；④ LL_WWDG_Enable 启动；⑤ 在「计数值 < 窗口值且 > 0x40」的区间内 LL_WWDG_SetCounter 喂狗。",
+      "usageSteps": [
+        "LL_APB1_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_WWDG)",
+        "LL_WWDG_SetPrescaler(WWDG, LL_WWDG_PRESCALER_8)",
+        "LL_WWDG_SetWindow(WWDG, 0x5F) 设置窗口上界",
+        "LL_WWDG_Enable(WWDG) 启动",
+        "LL_WWDG_SetCounter(WWDG, 0x7F) 在窗口内喂狗",
+        "需要预警就 LL_WWDG_EnableIT_EWKUP + NVIC"
+      ],
+      "noteZh": "喂早了（计数值还大于窗口值）也会复位，这是 WWDG 与 IWDG 最大的差别。WWDG 时钟来自 PCLK1，主时钟错乱时它也失效。"
+    }
+  },
+  "RTC": {
+    "introZh": "HAL 的 RTC 驱动同时覆盖日历（年月日时分秒）、闹钟、周期唤醒、时间戳、篡改检测和备份寄存器。F1 的 RTC 是 32 位计数器方案，走 LSE（32.768kHz）最准。",
+    "usageOverviewZh": "初始化的标准顺序：① 使能 PWR 与 BKP 时钟，HAL_PWR_EnableBkUpAccess() 打开备份域写访问；② 选 RTC 时钟源（LSE/LSI/HSE 分频）HAL_RCC_OscConfig；③ HAL_RCCEx_PeriphCLKConfig 把 RTC 时钟接到 RCC；④ 填 RTC_InitTypeDef 并 HAL_RTC_Init()；⑤ HAL_RTC_SetTime / SetDate 设初始时间；⑥ 闹钟用 HAL_RTC_SetAlarm_IT。",
+    "usageSteps": [
+      "__HAL_RCC_PWR_CLK_ENABLE() + __HAL_RCC_BKP_CLK_ENABLE()，再 HAL_PWR_EnableBkUpAccess()",
+      "配置并等待 LSE 起振，HAL_RCCEx_PeriphCLKConfig 把 RTC 时钟源设为 LSE",
+      "HAL_RTC_Init(&hrtc) 完成初始化",
+      "HAL_RTC_SetTime / HAL_RTC_SetDate 写入初始时间（BCD 格式）",
+      "闹钟：HAL_RTC_SetAlarm_IT 后，ISR 调 HAL_RTC_AlarmIRQHandler，业务写 HAL_RTC_AlarmAEventCallback"
+    ],
+    "noteZh": "时间/日期结构体是 BCD 格式，赋值要写成 RTC_TimeStruct.Seconds = 0x30 表示 30 秒，写十进制 30 会变成 30(BCD)=0x1E。HAL_RTC_GetTime 和 HAL_RTC_GetDate 必须成对调用，只读时间不读日期会导致时间停止更新。",
+    "ll": {
+      "introZh": "LL 的 RTC 驱动把日历拆成 RTC_TIME_* 与 RTC_ALARM_* 两组，分别操作时间寄存器与闹钟寄存器，备份寄存器是 RTC_BKP_*。",
+      "usageOverviewZh": "① 开 PWR 与 BKP 时钟并使能备份域访问；② 选 RTC 时钟源（LSE）；③ 解除写保护 LL_RTC_DisableWriteProtection；④ LL_RTC_SetAsynchPrescaler 设分频；⑤ LL_RTC_TIME_Set 设时间；⑥ 闹钟用 LL_RTC_ALARM_Set + EnableIT_ALR。",
+      "usageSteps": [
+        "LL_APB1_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_PWR | ..._BKP)",
+        "LL_PWR_EnableBkUpAccess() 打开备份域写访问",
+        "LL_RCC_SetRTCClockSource(LL_RCC_RTC_CLKSOURCE_LSE) 后 LL_RCC_EnableRTC",
+        "LL_RTC_DisableWriteProtection(RTC) 才能改寄存器",
+        "LL_RTC_SetAsynchPrescaler(RTC, 0x7FFF) 得到 1Hz",
+        "LL_RTC_TIME_Set(RTC, 时, 分, 秒, 格式) —— 参数是 BCD 值",
+        "完成后 LL_RTC_EnableWriteProtection(RTC) 重新上锁"
+      ],
+      "noteZh": "时间参数都是 BCD 格式，写十进制会得到错误时间。改 RTC 寄存器前必须先 DisableWriteProtection，改完记得上锁。"
+    }
+  },
+  "CAN": {
+    "introZh": "HAL 的 CAN 驱动覆盖初始化、过滤器配置、三个发送邮箱与两个接收 FIFO 的管理、以及睡眠/唤醒。F1 的 CAN 是 bxCAN 控制器。",
+    "usageOverviewZh": "标准顺序：① 开 CAN 时钟与 GPIO 时钟，CAN_TX 配复用推挽、CAN_RX 配复用输入；② HAL_CAN_Init()；③ HAL_CAN_ConfigFilter() 配接收过滤器（**不配过滤器收不到任何报文**）；④ HAL_CAN_Start()；⑤ 发送 HAL_CAN_AddTxMessage()，接收 HAL_CAN_GetRxMessage()；⑥ 中断方式用 HAL_CAN_ActivateNotification() 打开对应通知。",
+    "usageSteps": [
+      "__HAL_RCC_CAN1_CLK_ENABLE() 与 GPIO 时钟（CAN 引脚在 PA11/PA12 或 PB8/PB9，需正确重映射）",
+      "HAL_CAN_Init(&hcan)",
+      "HAL_CAN_ConfigFilter(&hcan, &sFilterConfig) 配过滤器，全通配 0x0000 / MaskId 0x0000",
+      "HAL_CAN_Start(&hcan)",
+      "HAL_CAN_AddTxMessage 发送，HAL_CAN_GetRxMessage 接收",
+      "中断接收：HAL_CAN_ActivateNotification(HAL_CAN_IT_RX_FIFO0_MSG_PENDING)，ISR 调 HAL_CAN_IRQHandler"
+    ],
+    "noteZh": "过滤器是最大的坑：默认没有过滤器、所有报文都被丢弃，必须先调 HAL_CAN_ConfigFilter 才能收数据。F1 的 CAN 引脚需要 AFIO 重映射，且总线上必须有另一个节点，单节点自发自收需要环回模式（HAL_CAN_Init 里 Mode 选 CAN_MODE_LOOPBACK）才能验证。",
+    "ll": {
+      "introZh": "LL 的 CAN 驱动覆盖初始化、过滤器、发送邮箱、接收 FIFO 与中断，粒度和 HAL 接近但全部是位操作。",
+      "usageOverviewZh": "① 开 CAN 时钟与 GPIO；② LL_CAN_Init；③ 配过滤器；④ LL_CAN_Start；⑤ LL_CAN_Transmit 发报文、LL_CAN_Receive 收报文；⑥ 中断方式用 LL_CAN_EnableIT_xxx。",
+      "usageSteps": [
+        "LL_APB1_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_CAN1) 与 GPIO 时钟（CAN 引脚需重映射）",
+        "LL_CAN_Init(CAN1, &init) 完成位时序与工作模式配置",
+        "配置过滤器，否则所有报文都会被丢弃",
+        "LL_CAN_Start(CAN1)",
+        "LL_CAN_Transmit 发送、LL_CAN_Receive 接收",
+        "中断方式：LL_CAN_EnableIT_RX_FIFO0_MSG_PENDING 等"
+      ],
+      "noteZh": "和 HAL 一样：不配过滤器收不到任何报文。F1 的 CAN 引脚需要 AFIO 重映射，单节点验证要开环回模式。"
+    }
+  },
+  "DAC": {
+    "introZh": "HAL 的 DAC 驱动支持通道使能、直接数据输出、三角波/噪声波生成、DMA 输出和双通道（DACEx）。F1 的 DAC 是 12 位，可接到 ADC 或外部引脚。",
+    "usageOverviewZh": "输出直流电平的标准顺序：① 开 DAC 时钟与 GPIO 时钟（DAC 输出引脚配 GPIO_MODE_ANALOG）；② HAL_DAC_Init()；③ HAL_DAC_ConfigChannel() 指定通道与触发源；④ HAL_DAC_Start() 启动；⑤ HAL_DAC_SetValue() 写数据。要在指定位置触发（比如定时器配合做波形）就配触发源并 HAL_DAC_Start。",
+    "usageSteps": [
+      "__HAL_RCC_DAC_CLK_ENABLE() 与 GPIO 时钟，PA4/PA5 配 GPIO_MODE_ANALOG",
+      "HAL_DAC_Init(&hdac)",
+      "HAL_DAC_ConfigChannel(&hdac, &sConfig, DAC_CHANNEL_1) 指定触发源（DAC_TRIGGER_SOFTWARE 为软件触发）",
+      "HAL_DAC_Start(&hdac, DAC_CHANNEL_1)",
+      "HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, value)",
+      "做波形输出用 HAL_DAC_Start_DMA 配合定时器触发，缓冲区循环输出"
+    ],
+    "noteZh": "输出值范围 0~4095，对应 0~VREF+（通常是 3.3V）。DAC 输出引脚必须配成 GPIO_MODE_ANALOG，配成输出模式会导致输出不准。用定时器触发 DUT 一定要把触发源和定时器的 TRGO 对上。",
+    "ll": {
+      "introZh": "LL 的 DAC 驱动按「使能 / 触发 / 数据写入 / 波形生成」分组，写数据有 12 位右对齐、左对齐、8 位等多种格式。",
+      "usageOverviewZh": "① 开 DAC 时钟与 GPIO（模拟模式）；② LL_DAC_SetTriggerSource；③ LL_DAC_EnableTrigger；④ LL_DAC_Enable；⑤ LL_DAC_ConvertData12RightAligned 写数据；⑥ 需要波形就用 LL_DAC_SetWaveAutoGeneration。",
+      "usageSteps": [
+        "LL_APB1_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_DAC1)，PA4/PA5 配 LL_GPIO_MODE_ANALOG",
+        "LL_DAC_SetTriggerSource(DAC1, LL_DAC_CHANNEL_1, LL_DAC_TRIG_SOFTWARE)",
+        "LL_DAC_EnableTrigger(DAC1, LL_DAC_CHANNEL_1)",
+        "LL_DAC_Enable(DAC1, LL_DAC_CHANNEL_1)",
+        "LL_DAC_ConvertData12RightAligned(DAC1, LL_DAC_CHANNEL_1, value) 写输出值",
+        "波形输出：LL_DAC_SetWaveAutoGeneration 选三角波/噪声波"
+      ],
+      "noteZh": "DAC 引脚必须配成模拟模式，配成输出模式会导致输出不准。用定时器触发时，触发源要和定时器 TRGO 对上。"
+    }
+  },
+  "CEC": {
+    "introZh": "CEC（消费电子控制）是 HDMI 总线上传控制命令的单线协议，F1 上只有部分型号带 CEC。日常开发极少用到，HAL 驱动只支持发送，接收靠中断。",
+    "usageOverviewZh": "① 开 CEC 时钟；② 填 CEC_InitTypeDef（SignalFreeTime、Tolerance、BRERxStop、BREErrorBitGen、LBPEErrorBitGen、BroadcastMsgNoErrorBitGen、SignalFreeTime、RxBuffer）并 HAL_CEC_Init()；③ HAL_CEC_SetDeviceAddress() 设本机逻辑地址；④ 发送用 HAL_CEC_Transmit_IT()（CEC 只有中断方式）。",
+    "usageSteps": [
+      "__HAL_RCC_CEC_CLK_ENABLE() 与 GPIO 时钟",
+      "HAL_CEC_Init(&hcec) 完成时序参数配置",
+      "HAL_CEC_SetDeviceAddress(&hcec, 0x04) 设置逻辑地址",
+      "HAL_CEC_Transmit_IT(&hcec, 目标地址, 缓冲区, 长度) 发送",
+      "接收回调里用 HAL_CEC_GetLastReceivedFrameSize + HAL_CEC_ChangeRxBuffer 换缓冲"
+    ],
+    "noteZh": "CEC 只有中断发送，没有阻塞版本；接收缓冲区由用户提供，必须足够大且在回调里及时切换，否则后续帧会丢失。"
+  },
+  "SDIO": {
+    "introZh": "HAL 的 SDIO 驱动同时包含 SD 卡（HAL_SD_*）和 eMMC（HAL_MMC_*）两套接口，它们在 F1 上共用同一个 SDIO 外设。F1 只有大容量型号才带 SDIO。",
+    "usageOverviewZh": "SD 卡读写的标准顺序：① 开 SDIO 时钟与 GPIO 时钟；② HAL_SD_Init() 完成卡初始化并能拿到卡信息；③ HAL_SD_GetCardInfo() 读出容量与块大小；④ HAL_SD_ReadBlocks / WriteBlocks 按块读写（也可用 _IT / _DMA 版本）；⑤ 多块操作后注意等待传输完成。",
+    "usageSteps": [
+      "__HAL_RCC_SDIO_CLK_ENABLE() 与 GPIO 时钟（SDIO 引脚固定，需正确复用）",
+      "HAL_SD_Init() 完成时钟与卡识别",
+      "HAL_SD_GetCardInfo(&hsd, &cardInfo) 获取块大小、容量",
+      "HAL_SD_ReadBlocks(&hsd, buf, blockAddr, blockCount, timeout) 按块读",
+      "HAL_SD_WriteBlocks 写入，HAL_SD_Erase 擦除",
+      "DMA 版本用 HAL_SD_ReadBlocks_DMA + HAL_SD_RxCpltCallback"
+    ],
+    "noteZh": "C8T6（中容量）没有 SDIO 外设，这个驱动对它无意义。块地址是「块号」不是字节偏移，块大小通常 512 字节。热插拔检测需要额外的卡检测引脚配合。"
+  },
+  "FSMC": {
+    "introZh": "FSMC（灵活的静态存储器控制器）用于外扩 SRAM、NOR/NAND Flash、LCD 并口和 PC 卡。HAL 把它拆成 HAL_SRAM_*、HAL_NOR_*、HAL_NAND_*、HAL_PCCARD_* 四组，F1 上只有大容量型号带 FSMC。",
+    "usageOverviewZh": "以 NOR/SRAM 为例：① 开 FSMC 时钟与 GPIO 时钟（数据/地址/控制脚都要配成复用推挽，且速度设为 HIGH）；② 填 FSMC_NORSRAM_InitTypeDef（Bank、数据宽度、时序参数）并 HAL_SRAM_Init()；③ 之后直接读写映射地址即可，像访问内存一样。",
+    "usageSteps": [
+      "__HAL_RCC_FSMC_CLK_ENABLE() 与 GPIO 时钟，全部信号脚配成 GPIO_MODE_AF_PP",
+      "填 FSMC_NORSRAM_TimingTypeDef（地址建立/保持时间、数据建立时间）与 Init 结构",
+      "HAL_SRAM_Init(&hsram, &Init, &Timing)",
+      "直接按 Bank 基地址读写，如 *(volatile uint16_t *)0x60000000 = data",
+      "驱动 LCD 时通常还要配 FSMC_NORSRAM_EXTENDED_TimingTypeDef 区分读写时序"
+    ],
+    "noteZh": "时序参数配得不对会出现「偶尔读对、重启后读错」的怪现象，务必按外设手册算建立/保持时间。C8T6 没有 FSMC，这组函数对它无意义。"
+  },
+  "CRC": {
+    "introZh": "HAL 的 CRC 驱动封装了硬件 CRC 计算单元。F1 的 CRC 多项式固定为 0x04C11DB7、输入输出 32 位，不可配置，所以驱动只有 7 个函数。",
+    "usageOverviewZh": "① 开 CRC 时钟；② HAL_CRC_Init()；③ 算一帧用 HAL_CRC_Calculate（内部先复位再算），接着算下一段用 HAL_CRC_Accumulate（不复位）。注意 BufferLength 的单位是 32 位字的个数，不是字节数。",
+    "usageSteps": [
+      "__HAL_RCC_CRC_CLK_ENABLE() 使能 CRC 时钟",
+      "HAL_CRC_Init(&hcrc)",
+      "HAL_CRC_Calculate(&hcrc, (uint32_t *)buf, len / 4) 得到 32 位结果",
+      "分包校验时后续块用 HAL_CRC_Accumulate 累加",
+      "缓冲区必须 4 字节对齐，长度按 uint32_t 个数传"
+    ],
+    "noteZh": "最常见的错误是把字节数直接传给 BufferLength，结果只算了 1/4 的数据。F1 的 CRC 不能指定初始值和多项式，和软件实现的 CRC32（如 zlib）不一定对得上，跨平台校验要核对具体算法。",
+    "ll": {
+      "introZh": "LL 的 CRC 只有 5 个函数：复位计算单元、送数据、读结果、读写独立数据寄存器。",
+      "usageOverviewZh": "① 开 CRC 时钟；② LL_CRC_ResetCRCCalculationUnit 复位；③ 循环 LL_CRC_FeedData32 送入数据；④ LL_CRC_ReadData32 读结果。",
+      "usageSteps": [
+        "LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_CRC)",
+        "LL_CRC_ResetCRCCalculationUnit(CRC) 把结果复位成 0xFFFFFFFF",
+        "逐个 LL_CRC_FeedData32(CRC, word) 送入 32 位数据",
+        "LL_CRC_ReadData32(CRC) 取最终结果"
+      ],
+      "noteZh": "LL_CRC_FeedData32 一次吃 32 位，字节数据要自己按 4 字节对齐拼装。F1 的 CRC 多项式与初值都不可配置。"
+    }
+  }
+}

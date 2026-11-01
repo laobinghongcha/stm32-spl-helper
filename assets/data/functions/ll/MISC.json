@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "MISC",
+  "library": "ll",
+  "functions": [
+    {
+      "id": "LL_GetUID_Word0",
+      "name": "LL_GetUID_Word0",
+      "peripheral": "MISC",
+      "library": "ll",
+      "sectionId": "MISC@ll#sec1",
+      "prototype": "uint32_t LL_GetUID_Word0(void);",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "UID[31:0]",
+      "returnDescZh": "",
+      "briefEn": "Get Word0 of the unique device identifier (UID based on 96 bits)",
+      "briefZh": "读取 96 位唯一 ID 的第 0 个 32 位字。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "UID_BASE_ADDRESS"
+      ],
+      "headerLine": 167,
+      "definedIn": "stm32f1xx_ll_utils.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_GetUID_Word1",
+      "name": "LL_GetUID_Word1",
+      "peripheral": "MISC",
+      "library": "ll",
+      "sectionId": "MISC@ll#sec1",
+      "prototype": "uint32_t LL_GetUID_Word1(void);",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "UID[63:32]",
+      "returnDescZh": "",
+      "briefEn": "Get Word1 of the unique device identifier (UID based on 96 bits)",
+      "briefZh": "读取 96 位唯一 ID 的第 1 个 32 位字。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "UID_BASE_ADDRESS"
+      ],
+      "headerLine": 176,
+      "definedIn": "stm32f1xx_ll_utils.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_GetUID_Word2",
+      "name": "LL_GetUID_Word2",
+      "peripheral": "MISC",
+      "library": "ll",
+      "sectionId": "MISC@ll#sec1",
+      "prototype": "uint32_t LL_GetUID_Word2(void);",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "UID[95:64]",
+      "returnDescZh": "",
+      "briefEn": "Get Word2 of the unique device identifier (UID based on 96 bits)",
+      "briefZh": "读取 96 位唯一 ID 的第 2 个 32 位字。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "UID_BASE_ADDRESS"
+      ],
+      "headerLine": 185,
+      "definedIn": "stm32f1xx_ll_utils.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_GetFlashSize",
+      "name": "LL_GetFlashSize",
+      "peripheral": "MISC",
+      "library": "ll",
+      "sectionId": "MISC@ll#sec1",
+      "prototype": "uint32_t LL_GetFlashSize(void);",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "FLASH_SIZE[15:0]: Flash memory size",
+      "returnDescZh": "",
+      "briefEn": "Get Flash memory size",
+      "briefZh": "读取芯片 Flash 容量寄存器（单位 KB）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "This bitfield indicates the size of the device Flash memory expressed in Kbytes. As an example, 0x040 corresponds to 64 Kbytes."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "FLASHSIZE_BASE_ADDRESS"
+      ],
+      "headerLine": 196,
+      "definedIn": "stm32f1xx_ll_utils.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_InitTick",
+      "name": "LL_InitTick",
+      "peripheral": "MISC",
+      "library": "ll",
+      "sectionId": "MISC@ll#sec2",
+      "prototype": "void LL_InitTick(uint32_t HCLKFrequency, uint32_t Ticks);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "HCLKFrequency",
+          "type": "uint32_t",
+          "descEn": "HCLK frequency in Hz (can be calculated thanks to RCC helper macro)",
+          "descZh": ""
+        },
+        {
+          "name": "Ticks",
+          "type": "uint32_t",
+          "descEn": "Frequency of Ticks (Hz)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "This function configures the Cortex-M SysTick source of the time base.",
+      "briefZh": "用给定的主频与目标频率初始化 SysTick 重装载值（HAL 与 LL 混用时由 HAL_InitTick 调用）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "When a RTOS is used, it is recommended to avoid changing the SysTick configuration by calling this function, for a delay use rather osDelay RTOS service."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 218,
+      "definedIn": "stm32f1xx_ll_utils.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

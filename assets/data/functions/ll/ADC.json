@@ -1,0 +1,3847 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "ADC",
+  "library": "ll",
+  "functions": [
+    {
+      "id": "LL_ADC_DMA_GetRegAddr",
+      "name": "LL_ADC_DMA_GetRegAddr",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec1",
+      "prototype": "uint32_t LL_ADC_DMA_GetRegAddr(ADC_TypeDef * ADCx, uint32_t Register);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "Register",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "寄存器编号（如备份寄存器、突发传输起始寄存器）。"
+        }
+      ],
+      "returnDescEn": "ADC register address",
+      "returnDescZh": "",
+      "briefEn": "Function to help to configure DMA transfer from ADC: retrieve the ADC register address from ADC instance and a list of ADC registers intended to be used (most commonly) with DMA transfer.",
+      "briefZh": "返回 ADC 数据寄存器（DR）地址，供 DMA 搬运时作为源地址。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "These ADC registers are data registers: when ADC conversion data is available in ADC data registers, ADC generates a DMA transfer request.",
+        "This macro is intended to be used with LL DMA driver, refer to function \"LL_DMA_ConfigAddresses()\". Example: LL_DMA_ConfigAddresses(DMA1, LL_DMA_CHANNEL_1, LL_ADC_DMA_GetRegAddr(ADC1, LL_ADC_DMA_REG_REGULAR_DATA), (uint32_t)&< array or variable >, LL_DMA_DIRECTION_PERIPH_TO_MEMORY);",
+        "For devices with several ADC: in multimode, some devices use a different data register outside of ADC instance scope (common data register). This macro manages this register difference, only ADC instance has to be set as parameter.",
+        "On STM32F1, only ADC instances ADC1 and ADC3 have DMA transfer capability, not ADC2 (ADC2 and ADC3 instances not available on all devices).",
+        "On STM32F1, multimode can be used only with ADC1 and ADC2, not ADC3. Therefore, the corresponding parameter of data transfer for multimode can be used only with ADC1 and ADC2. (ADC2 and ADC3 instances not available on all devices)."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_DMA_CHANNEL_1",
+        "LL_ADC_DMA_REG_REGULAR_DATA",
+        "LL_DMA_DIRECTION_PERIPH_TO_MEMORY",
+        "LL_ADC_DMA_REG_REGULAR_DATA_MULTI"
+      ],
+      "headerLine": 1600,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_SetCommonPathInternalCh",
+      "name": "LL_ADC_SetCommonPathInternalCh",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec2",
+      "prototype": "void LL_ADC_SetCommonPathInternalCh(ADC_Common_TypeDef * ADCxy_COMMON, uint32_t PathInternal);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCxy_COMMON",
+          "type": "ADC_Common_TypeDef *",
+          "descEn": "ADC common instance (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )",
+          "descZh": "ADC 公共寄存器指针（ADC1_2_COMMON），用于多重 ADC 模式。"
+        },
+        {
+          "name": "PathInternal",
+          "type": "uint32_t",
+          "descEn": "This parameter can be a combination of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set parameter common to several ADC: measurement path to internal channels (VrefInt, temperature sensor, ...).",
+      "briefZh": "使能 ADC 的公共内部信号通路（把温度传感器、VREFINT、VBAT 接到转换通道）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCxy_COMMON_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "One or several values can be selected. Example: (LL_ADC_PATH_INTERNAL_VREFINT | LL_ADC_PATH_INTERNAL_TEMPSENSOR)",
+        "Stabilization time of measurement path to internal channel: After enabling internal paths, before starting ADC conversion, a delay is required for internal voltage reference and temperature sensor stabilization time. Refer to device datasheet. Refer to literal @ref LL_ADC_DELAY_TEMPSENSOR_STAB_US.",
+        "ADC internal channel sampling time constraint: For ADC conversion of internal channels, a sampling time minimum value is required. Refer to device datasheet."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__LL_ADC_COMMON_INSTANCE",
+        "LL_ADC_PATH_INTERNAL_VREFINT",
+        "LL_ADC_PATH_INTERNAL_TEMPSENSOR",
+        "LL_ADC_DELAY_TEMPSENSOR_STAB_US"
+      ],
+      "headerLine": 1658,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_GetCommonPathInternalCh",
+      "name": "LL_ADC_GetCommonPathInternalCh",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec2",
+      "prototype": "uint32_t LL_ADC_GetCommonPathInternalCh(ADC_Common_TypeDef * ADCxy_COMMON);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCxy_COMMON",
+          "type": "ADC_Common_TypeDef *",
+          "descEn": "ADC common instance (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )",
+          "descZh": "ADC 公共寄存器指针（ADC1_2_COMMON），用于多重 ADC 模式。"
+        }
+      ],
+      "returnDescEn": "Returned value can be a combination of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get parameter common to several ADC: measurement path to internal channels (VrefInt, temperature sensor, ...).",
+      "briefZh": "读取 ADC 公共内部信号通路当前使能了哪些（温度传感器 / VREFINT / VBAT）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCxy_COMMON_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "One or several values can be selected. Example: (LL_ADC_PATH_INTERNAL_VREFINT | LL_ADC_PATH_INTERNAL_TEMPSENSOR)"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__LL_ADC_COMMON_INSTANCE",
+        "LL_ADC_PATH_INTERNAL_VREFINT",
+        "LL_ADC_PATH_INTERNAL_TEMPSENSOR"
+      ],
+      "headerLine": 1677,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_SetDataAlignment",
+      "name": "LL_ADC_SetDataAlignment",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec3",
+      "prototype": "void LL_ADC_SetDataAlignment(ADC_TypeDef * ADCx, uint32_t DataAlignment);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "DataAlignment",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "数据对齐方式：左对齐或右对齐。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set ADC conversion data alignment.",
+      "briefZh": "设置 ADC 的数据对齐方式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Refer to reference manual for alignments formats dependencies to ADC resolutions."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1701,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_GetDataAlignment",
+      "name": "LL_ADC_GetDataAlignment",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec3",
+      "prototype": "uint32_t LL_ADC_GetDataAlignment(ADC_TypeDef * ADCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get ADC conversion data alignment.",
+      "briefZh": "读取 ADC 的数据对齐方式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Refer to reference manual for alignments formats dependencies to ADC resolutions."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1716,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_SetSequencersScanMode",
+      "name": "LL_ADC_SetSequencersScanMode",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec3",
+      "prototype": "void LL_ADC_SetSequencersScanMode(ADC_TypeDef * ADCx, uint32_t ScanMode);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "ScanMode",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set ADC sequencers scan mode, for all ADC groups (group regular, group injected).",
+      "briefZh": "设置规则组的扫描模式：开启后按序列一次转换多个通道。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "According to sequencers scan mode : - If disabled: ADC conversion is performed in unitary conversion mode (one channel converted, that defined in rank 1). Configuration of sequencers of all ADC groups (sequencer scan length, ...) is discarded: equivalent to scan length of 1 rank. - If enabled: ADC conversions are performed in sequence conversions mode, according to configuration of sequencers of each ADC group (sequencer scan length, ...). Refer to function @ref LL_ADC_REG_SetSequencerLength() and to function @ref LL_ADC_INJ_SetSequencerLength()."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1742,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_GetSequencersScanMode",
+      "name": "LL_ADC_GetSequencersScanMode",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec3",
+      "prototype": "uint32_t LL_ADC_GetSequencersScanMode(ADC_TypeDef * ADCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get ADC sequencers scan mode, for all ADC groups (group regular, group injected).",
+      "briefZh": "读取规则组的扫描模式设置。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "According to sequencers scan mode : - If disabled: ADC conversion is performed in unitary conversion mode (one channel converted, that defined in rank 1). Configuration of sequencers of all ADC groups (sequencer scan length, ...) is discarded: equivalent to scan length of 1 rank. - If enabled: ADC conversions are performed in sequence conversions mode, according to configuration of sequencers of each ADC group (sequencer scan length, ...). Refer to function @ref LL_ADC_REG_SetSequencerLength() and to function @ref LL_ADC_INJ_SetSequencerLength()."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1767,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_REG_SetTriggerSource",
+      "name": "LL_ADC_REG_SetTriggerSource",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec4",
+      "prototype": "void LL_ADC_REG_SetTriggerSource(ADC_TypeDef * ADCx, uint32_t TriggerSource);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "TriggerSource",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "触发源，取 LL_TIM_TS_* 系列（内部互联 ITR、TIx、ETR 等）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set ADC group regular conversion trigger source: internal (SW start) or from external IP (timer event, external interrupt line).",
+      "briefZh": "设置 ADC 规则组的触发源。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR2"
+      ],
+      "relatedFunctions": [
+        "LL_ADC_REG_StartConversionExtTrig"
+      ],
+      "remarks": [
+        "On this STM32 series, external trigger is set with trigger polarity: rising edge (only trigger polarity available on this STM32 series).",
+        "Availability of parameters of trigger sources from timer depends on timers availability on the selected device."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1814,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_REG_GetTriggerSource",
+      "name": "LL_ADC_REG_GetTriggerSource",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec4",
+      "prototype": "uint32_t LL_ADC_REG_GetTriggerSource(ADC_TypeDef * ADCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get ADC group regular conversion trigger source: internal (SW start) or from external IP (timer event, external interrupt line).",
+      "briefZh": "读取 ADC 规则组的触发源。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "To determine whether group regular trigger source is internal (SW start) or external, without detail of which peripheral is selected as external trigger, (equivalent to \"if(LL_ADC_REG_GetTriggerSource(ADC1) == LL_ADC_REG_TRIG_SOFTWARE)\") use function @ref LL_ADC_REG_IsTriggerSourceSWStart.",
+        "Availability of parameters of trigger sources from timer depends on timers availability on the selected device."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_ADC_REG_TRIG_SOFTWARE"
+      ],
+      "headerLine": 1861,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_REG_IsTriggerSourceSWStart",
+      "name": "LL_ADC_REG_IsTriggerSourceSWStart",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec4",
+      "prototype": "uint32_t LL_ADC_REG_IsTriggerSourceSWStart(ADC_TypeDef * ADCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "Value \"0\" if trigger source external trigger Value \"1\" if trigger source SW start.",
+      "returnDescZh": "",
+      "briefEn": "Get ADC group regular conversion trigger source internal (SW start) or external.",
+      "briefZh": "查询 ADC 规则组的转换触发源是否为软件启动。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "In case of group regular trigger source set to external trigger, to determine which peripheral is selected as external trigger, use function @ref LL_ADC_REG_GetTriggerSource()."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_ADC_REG_TRIG_SOFTWARE"
+      ],
+      "headerLine": 1877,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_REG_SetSequencerLength",
+      "name": "LL_ADC_REG_SetSequencerLength",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec4",
+      "prototype": "void LL_ADC_REG_SetSequencerLength(ADC_TypeDef * ADCx, uint32_t SequencerNbRanks);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "SequencerNbRanks",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "序列长度（要转换几个通道）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set ADC group regular sequencer length and scan direction.",
+      "briefZh": "设置 ADC 规则组的序列长度。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_SQR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Description of ADC group regular sequencer features: - For devices with sequencer fully configurable (function \"LL_ADC_REG_SetSequencerRanks()\" available): sequencer length and each rank affectation to a channel are configurable. This function performs configuration of: - Sequence length: Number of ranks in the scan sequence. - Sequence direction: Unless specified in parameters, sequencer scan direction is forward (from rank 1 to rank n). Sequencer ranks are selected using function \"LL_ADC_REG_SetSequencerRanks()\". - For devices with sequencer not fully configurable (function \"LL_ADC_REG_SetSequencerChannels()\" available): sequencer length and each rank affectation to a channel are defined by channel number. This function performs configuration of: - Sequence length: Number of ranks in the scan sequence is defined by number of channels set in the sequence, rank of each channel is fixed by channel HW number. (channel 0 fixed on rank 0, channel 1 fixed on rank1, ...). - Sequence direction: Unless specified in parameters, sequencer scan direction is forward (from lowest channel number to highest channel number). Sequencer ranks are selected using function \"LL_ADC_REG_SetSequencerChannels()\".",
+        "On this STM32 series, group regular sequencer configuration is conditioned to ADC instance sequencer mode. If ADC instance sequencer mode is disabled, sequencers of all groups (group regular, group injected) can be configured but their execution is disabled (limited to rank 1). Refer to function @ref LL_ADC_SetSequencersScanMode().",
+        "Sequencer disabled is equivalent to sequencer of 1 rank: ADC conversion on only 1 channel."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1939,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_REG_GetSequencerLength",
+      "name": "LL_ADC_REG_GetSequencerLength",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec4",
+      "prototype": "uint32_t LL_ADC_REG_GetSequencerLength(ADC_TypeDef * ADCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get ADC group regular sequencer length and scan direction.",
+      "briefZh": "读取 ADC 规则组的序列长度。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_SQR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Description of ADC group regular sequencer features: - For devices with sequencer fully configurable (function \"LL_ADC_REG_SetSequencerRanks()\" available): sequencer length and each rank affectation to a channel are configurable. This function retrieves: - Sequence length: Number of ranks in the scan sequence. - Sequence direction: Unless specified in parameters, sequencer scan direction is forward (from rank 1 to rank n). Sequencer ranks are selected using function \"LL_ADC_REG_SetSequencerRanks()\". - For devices with sequencer not fully configurable (function \"LL_ADC_REG_SetSequencerChannels()\" available): sequencer length and each rank affectation to a channel are defined by channel number. This function retrieves: - Sequence length: Number of ranks in the scan sequence is defined by number of channels set in the sequence, rank of each channel is fixed by channel HW number. (channel 0 fixed on rank 0, channel 1 fixed on rank1, ...). - Sequence direction: Unless specified in parameters, sequencer scan direction is forward (from lowest channel number to highest channel number). Sequencer ranks are selected using function \"LL_ADC_REG_SetSequencerChannels()\".",
+        "On this STM32 series, group regular sequencer configuration is conditioned to ADC instance sequencer mode. If ADC instance sequencer mode is disabled, sequencers of all groups (group regular, group injected) can be configured but their execution is disabled (limited to rank 1). Refer to function @ref LL_ADC_SetSequencersScanMode().",
+        "Sequencer disabled is equivalent to sequencer of 1 rank: ADC conversion on only 1 channel."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1999,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_REG_SetSequencerDiscont",
+      "name": "LL_ADC_REG_SetSequencerDiscont",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec4",
+      "prototype": "void LL_ADC_REG_SetSequencerDiscont(ADC_TypeDef * ADCx, uint32_t SeqDiscont);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "SeqDiscont",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "不连续转换模式设置。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set ADC group regular sequencer discontinuous mode: sequence subdivided and scan conversions interrupted every selected number of ranks.",
+      "briefZh": "设置 ADC 规则组的不连续转换模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "It is not possible to enable both ADC group regular continuous mode and sequencer discontinuous mode.",
+        "It is not possible to enable both ADC auto-injected mode and ADC group regular sequencer discontinuous mode."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2027,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_REG_GetSequencerDiscont",
+      "name": "LL_ADC_REG_GetSequencerDiscont",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec4",
+      "prototype": "uint32_t LL_ADC_REG_GetSequencerDiscont(ADC_TypeDef * ADCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get ADC group regular sequencer discontinuous mode: sequence subdivided and scan conversions interrupted every selected number of ranks.",
+      "briefZh": "读取 ADC 规则组的不连续转换模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2050,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_REG_SetSequencerRanks",
+      "name": "LL_ADC_REG_SetSequencerRanks",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec4",
+      "prototype": "void LL_ADC_REG_SetSequencerRanks(ADC_TypeDef * ADCx, uint32_t Rank, uint32_t Channel);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "Rank",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "在转换序列中的位置，取 LL_ADC_REG_RANK_1 ~ 16（注入组是 RANK_1 ~ 4）。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set ADC group regular sequence: channel on the selected scan sequence rank.",
+      "briefZh": "设置规则序列中某一级的通道，把通道号与转换次序对应起来。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_SQR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This function performs configuration of: - Channels ordering into each rank of scan sequence: whatever channel can be placed into whatever rank.",
+        "On this STM32 series, ADC group regular sequencer is fully configurable: sequencer length and each rank affectation to a channel are configurable. Refer to description of function @ref LL_ADC_REG_SetSequencerLength().",
+        "Depending on devices and packages, some channels may not be available. Refer to device datasheet for channels availability.",
+        "On this STM32 series, to measure internal channels (VrefInt, TempSensor, ...), measurement paths to internal channels must be enabled separately. This can be done using function @ref LL_ADC_SetCommonPathInternalCh()."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__ADC_PTR_REG_OFFSET",
+        "__ADC_MASK_SHIFT",
+        "ADC_REG_SQRX_REGOFFSET_MASK",
+        "ADC_CHANNEL_ID_NUMBER_MASK",
+        "ADC_REG_RANK_ID_SQRX_MASK"
+      ],
+      "headerLine": 2130,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_REG_GetSequencerRanks",
+      "name": "LL_ADC_REG_GetSequencerRanks",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec4",
+      "prototype": "uint32_t LL_ADC_REG_GetSequencerRanks(ADC_TypeDef * ADCx, uint32_t Rank);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "Rank",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "在转换序列中的位置，取 LL_ADC_REG_RANK_1 ~ 16（注入组是 RANK_1 ~ 4）。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get ADC group regular sequence: channel on the selected scan sequence rank.",
+      "briefZh": "读取 ADC 规则组的序列中各通道的排序。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_SQR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "On this STM32 series, ADC group regular sequencer is fully configurable: sequencer length and each rank affectation to a channel are configurable. Refer to description of function @ref LL_ADC_REG_SetSequencerLength().",
+        "Depending on devices and packages, some channels may not be available. Refer to device datasheet for channels availability.",
+        "Usage of the returned channel number: - To reinject this channel into another function LL_ADC_xxx: the returned channel number is only partly formatted on definition of literals LL_ADC_CHANNEL_x. Therefore, it has to be compared with parts of literals LL_ADC_CHANNEL_x or using helper macro @ref __LL_ADC_CHANNEL_TO_DECIMAL_NB(). Then the selected literal LL_ADC_CHANNEL_x can be used as parameter for another function. - To get the channel number in decimal format: process the returned value with the helper macro"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__LL_ADC_CHANNEL_TO_DECIMAL_NB",
+        "__ADC_PTR_REG_OFFSET",
+        "__ADC_MASK_SHIFT",
+        "ADC_REG_SQRX_REGOFFSET_MASK",
+        "ADC_CHANNEL_ID_NUMBER_MASK",
+        "ADC_REG_RANK_ID_SQRX_MASK"
+      ],
+      "headerLine": 2224,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_REG_SetContinuousMode",
+      "name": "LL_ADC_REG_SetContinuousMode",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec4",
+      "prototype": "void LL_ADC_REG_SetContinuousMode(ADC_TypeDef * ADCx, uint32_t Continuous);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "Continuous",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set ADC continuous conversion mode on ADC group regular.",
+      "briefZh": "设置 ADC 规则组的连续转换模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Description of ADC continuous conversion mode: - single mode: one conversion per trigger - continuous mode: after the first trigger, following conversions launched successively automatically.",
+        "It is not possible to enable both ADC group regular continuous mode and sequencer discontinuous mode."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2249,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_REG_GetContinuousMode",
+      "name": "LL_ADC_REG_GetContinuousMode",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec4",
+      "prototype": "uint32_t LL_ADC_REG_GetContinuousMode(ADC_TypeDef * ADCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get ADC continuous conversion mode on ADC group regular.",
+      "briefZh": "读取 ADC 规则组的连续转换模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Description of ADC continuous conversion mode: - single mode: one conversion per trigger - continuous mode: after the first trigger, following conversions launched successively automatically."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2266,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_REG_SetDMATransfer",
+      "name": "LL_ADC_REG_SetDMATransfer",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec4",
+      "prototype": "void LL_ADC_REG_SetDMATransfer(ADC_TypeDef * ADCx, uint32_t DMATransfer);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "DMATransfer",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set ADC group regular conversion data transfer: no transfer or transfer by DMA, and DMA requests mode.",
+      "briefZh": "设置 ADC 规则组的 DMA 传输。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "If transfer by DMA selected, specifies the DMA requests mode: - Limited mode (One shot mode): DMA transfer requests are stopped when number of DMA data transfers (number of ADC conversions) is reached. This ADC mode is intended to be used with DMA mode non-circular. - Unlimited mode: DMA transfer requests are unlimited, whatever number of DMA data transfers (number of ADC conversions). This ADC mode is intended to be used with DMA mode circular.",
+        "If ADC DMA requests mode is set to unlimited and DMA is set to mode non-circular: when DMA transfers size will be reached, DMA will stop transfers of ADC conversions data ADC will raise an overrun error (overrun flag and interruption if enabled).",
+        "To configure DMA source address (peripheral address), use function @ref LL_ADC_DMA_GetRegAddr()."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2298,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_REG_GetDMATransfer",
+      "name": "LL_ADC_REG_GetDMATransfer",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec4",
+      "prototype": "uint32_t LL_ADC_REG_GetDMATransfer(ADC_TypeDef * ADCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get ADC group regular conversion data transfer: no transfer or transfer by DMA, and DMA requests mode.",
+      "briefZh": "读取 ADC 规则组的 DMA 传输。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "If transfer by DMA selected, specifies the DMA requests mode: - Limited mode (One shot mode): DMA transfer requests are stopped when number of DMA data transfers (number of ADC conversions) is reached. This ADC mode is intended to be used with DMA mode non-circular. - Unlimited mode: DMA transfer requests are unlimited, whatever number of DMA data transfers (number of ADC conversions). This ADC mode is intended to be used with DMA mode circular.",
+        "If ADC DMA requests mode is set to unlimited and DMA is set to mode non-circular: when DMA transfers size will be reached, DMA will stop transfers of ADC conversions data ADC will raise an overrun error (overrun flag and interruption if enabled).",
+        "To configure DMA source address (peripheral address), use function @ref LL_ADC_DMA_GetRegAddr()."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2329,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_INJ_SetTriggerSource",
+      "name": "LL_ADC_INJ_SetTriggerSource",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec5",
+      "prototype": "void LL_ADC_INJ_SetTriggerSource(ADC_TypeDef * ADCx, uint32_t TriggerSource);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "TriggerSource",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "触发源，取 LL_TIM_TS_* 系列（内部互联 ITR、TIx、ETR 等）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set ADC group injected conversion trigger source: internal (SW start) or from external IP (timer event, external interrupt line).",
+      "briefZh": "设置 ADC 注入组的触发源。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR2"
+      ],
+      "relatedFunctions": [
+        "LL_ADC_INJ_StartConversionExtTrig"
+      ],
+      "remarks": [
+        "On this STM32 series, external trigger is set with trigger polarity: rising edge (only trigger polarity available on this STM32 series).",
+        "Availability of parameters of trigger sources from timer depends on timers availability on the selected device."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2375,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_INJ_GetTriggerSource",
+      "name": "LL_ADC_INJ_GetTriggerSource",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec5",
+      "prototype": "uint32_t LL_ADC_INJ_GetTriggerSource(ADC_TypeDef * ADCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get ADC group injected conversion trigger source: internal (SW start) or from external IP (timer event, external interrupt line).",
+      "briefZh": "读取 ADC 注入组的触发源。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "To determine whether group injected trigger source is internal (SW start) or external, without detail of which peripheral is selected as external trigger, (equivalent to \"if(LL_ADC_INJ_GetTriggerSource(ADC1) == LL_ADC_INJ_TRIG_SOFTWARE)\") use function @ref LL_ADC_INJ_IsTriggerSourceSWStart.",
+        "Availability of parameters of trigger sources from timer depends on timers availability on the selected device."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_ADC_INJ_TRIG_SOFTWARE"
+      ],
+      "headerLine": 2421,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_INJ_IsTriggerSourceSWStart",
+      "name": "LL_ADC_INJ_IsTriggerSourceSWStart",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec5",
+      "prototype": "uint32_t LL_ADC_INJ_IsTriggerSourceSWStart(ADC_TypeDef * ADCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "Value \"0\" if trigger source external trigger Value \"1\" if trigger source SW start.",
+      "returnDescZh": "",
+      "briefEn": "Get ADC group injected conversion trigger source internal (SW start) or external",
+      "briefZh": "查询 ADC 注入组的转换触发源是否为软件启动。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "In case of group injected trigger source set to external trigger, to determine which peripheral is selected as external trigger, use function @ref LL_ADC_INJ_GetTriggerSource."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_ADC_INJ_TRIG_SOFTWARE"
+      ],
+      "headerLine": 2437,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_INJ_SetSequencerLength",
+      "name": "LL_ADC_INJ_SetSequencerLength",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec5",
+      "prototype": "void LL_ADC_INJ_SetSequencerLength(ADC_TypeDef * ADCx, uint32_t SequencerNbRanks);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "SequencerNbRanks",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "序列长度（要转换几个通道）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set ADC group injected sequencer length and scan direction.",
+      "briefZh": "设置 ADC 注入组的序列长度。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_JSQR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This function performs configuration of: - Sequence length: Number of ranks in the scan sequence. - Sequence direction: Unless specified in parameters, sequencer scan direction is forward (from rank 1 to rank n).",
+        "On this STM32 series, group injected sequencer configuration is conditioned to ADC instance sequencer mode. If ADC instance sequencer mode is disabled, sequencers of all groups (group regular, group injected) can be configured but their execution is disabled (limited to rank 1). Refer to function @ref LL_ADC_SetSequencersScanMode().",
+        "Sequencer disabled is equivalent to sequencer of 1 rank: ADC conversion on only 1 channel."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2465,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_INJ_GetSequencerLength",
+      "name": "LL_ADC_INJ_GetSequencerLength",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec5",
+      "prototype": "uint32_t LL_ADC_INJ_GetSequencerLength(ADC_TypeDef * ADCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get ADC group injected sequencer length and scan direction.",
+      "briefZh": "读取 ADC 注入组的序列长度。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_JSQR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This function retrieves: - Sequence length: Number of ranks in the scan sequence. - Sequence direction: Unless specified in parameters, sequencer scan direction is forward (from rank 1 to rank n).",
+        "On this STM32 series, group injected sequencer configuration is conditioned to ADC instance sequencer mode. If ADC instance sequencer mode is disabled, sequencers of all groups (group regular, group injected) can be configured but their execution is disabled (limited to rank 1). Refer to function @ref LL_ADC_SetSequencersScanMode().",
+        "Sequencer disabled is equivalent to sequencer of 1 rank: ADC conversion on only 1 channel."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2492,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_INJ_SetSequencerDiscont",
+      "name": "LL_ADC_INJ_SetSequencerDiscont",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec5",
+      "prototype": "void LL_ADC_INJ_SetSequencerDiscont(ADC_TypeDef * ADCx, uint32_t SeqDiscont);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "SeqDiscont",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "不连续转换模式设置。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set ADC group injected sequencer discontinuous mode: sequence subdivided and scan conversions interrupted every selected number of ranks.",
+      "briefZh": "设置 ADC 注入组的不连续转换模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "It is not possible to enable both ADC group injected auto-injected mode and sequencer discontinuous mode."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2510,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_INJ_GetSequencerDiscont",
+      "name": "LL_ADC_INJ_GetSequencerDiscont",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec5",
+      "prototype": "uint32_t LL_ADC_INJ_GetSequencerDiscont(ADC_TypeDef * ADCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get ADC group injected sequencer discontinuous mode: sequence subdivided and scan conversions interrupted every selected number of ranks.",
+      "briefZh": "读取 ADC 注入组的不连续转换模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2525,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_INJ_SetSequencerRanks",
+      "name": "LL_ADC_INJ_SetSequencerRanks",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec5",
+      "prototype": "void LL_ADC_INJ_SetSequencerRanks(ADC_TypeDef * ADCx, uint32_t Rank, uint32_t Channel);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "Rank",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "在转换序列中的位置，取 LL_ADC_REG_RANK_1 ~ 16（注入组是 RANK_1 ~ 4）。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set ADC group injected sequence: channel on the selected sequence rank.",
+      "briefZh": "设置注入序列中某一级的通道。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_JSQR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Depending on devices and packages, some channels may not be available. Refer to device datasheet for channels availability.",
+        "On this STM32 series, to measure internal channels (VrefInt, TempSensor, ...), measurement paths to internal channels must be enabled separately. This can be done using function @ref LL_ADC_SetCommonPathInternalCh()."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "ADC_CHANNEL_ID_NUMBER_MASK"
+      ],
+      "headerLine": 2574,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_INJ_GetSequencerRanks",
+      "name": "LL_ADC_INJ_GetSequencerRanks",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec5",
+      "prototype": "uint32_t LL_ADC_INJ_GetSequencerRanks(ADC_TypeDef * ADCx, uint32_t Rank);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "Rank",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "在转换序列中的位置，取 LL_ADC_REG_RANK_1 ~ 16（注入组是 RANK_1 ~ 4）。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get ADC group injected sequence: channel on the selected sequence rank.",
+      "briefZh": "读取 ADC 注入组的序列中各通道的排序。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_JSQR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Depending on devices and packages, some channels may not be available. Refer to device datasheet for channels availability.",
+        "Usage of the returned channel number: - To reinject this channel into another function LL_ADC_xxx: the returned channel number is only partly formatted on definition of literals LL_ADC_CHANNEL_x. Therefore, it has to be compared with parts of literals LL_ADC_CHANNEL_x or using helper macro @ref __LL_ADC_CHANNEL_TO_DECIMAL_NB(). Then the selected literal LL_ADC_CHANNEL_x can be used as parameter for another function. - To get the channel number in decimal format: process the returned value with the helper macro"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__LL_ADC_CHANNEL_TO_DECIMAL_NB",
+        "ADC_CHANNEL_ID_NUMBER_MASK"
+      ],
+      "headerLine": 2640,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_INJ_SetTrigAuto",
+      "name": "LL_ADC_INJ_SetTrigAuto",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec5",
+      "prototype": "void LL_ADC_INJ_SetTrigAuto(ADC_TypeDef * ADCx, uint32_t TrigAuto);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "TrigAuto",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "注入组被触发后对规则组的自动处理方式。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set ADC group injected conversion trigger: independent or from ADC group regular.",
+      "briefZh": "设置 ADC 注入组的注入组触发后的自动行为。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This mode can be used to extend number of data registers updated after one ADC conversion trigger and with data permanently kept (not erased by successive conversions of scan of ADC sequencer ranks), up to 5 data registers: 1 data register on ADC group regular, 4 data registers on ADC group injected.",
+        "If ADC group injected injected trigger source is set to an external trigger, this feature must be must be set to independent trigger. ADC group injected automatic trigger is compliant only with group injected trigger source set to SW start, without any further action on ADC group injected conversion start or stop: in this case, ADC group injected is controlled only from ADC group regular.",
+        "It is not possible to enable both ADC group injected auto-injected mode and sequencer discontinuous mode."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2676,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_INJ_GetTrigAuto",
+      "name": "LL_ADC_INJ_GetTrigAuto",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec5",
+      "prototype": "uint32_t LL_ADC_INJ_GetTrigAuto(ADC_TypeDef * ADCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get ADC group injected conversion trigger: independent or from ADC group regular.",
+      "briefZh": "读取 ADC 注入组的注入组触发后的自动行为。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2690,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_INJ_SetOffset",
+      "name": "LL_ADC_INJ_SetOffset",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec5",
+      "prototype": "void LL_ADC_INJ_SetOffset(ADC_TypeDef * ADCx, uint32_t Rank, uint32_t OffsetLevel);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "Rank",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "在转换序列中的位置，取 LL_ADC_REG_RANK_1 ~ 16（注入组是 RANK_1 ~ 4）。"
+        },
+        {
+          "name": "OffsetLevel",
+          "type": "uint32_t",
+          "descEn": "Value between Min_Data=0x000 and Max_Data=0xFFF",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set ADC group injected offset.",
+      "briefZh": "设置 ADC 注入组的偏移量。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_JOFR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "It sets: - ADC group injected rank to which the offset programmed will be applied - Offset level (offset to be subtracted from the raw converted data). Caution: Offset format is dependent to ADC resolution: offset has to be left-aligned on bit 11, the LSB (right bits) are set to 0.",
+        "Offset cannot be enabled or disabled. To emulate offset disabled, set an offset value equal to 0."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__ADC_PTR_REG_OFFSET",
+        "__ADC_MASK_SHIFT",
+        "ADC_INJ_JOFRX_REGOFFSET_MASK"
+      ],
+      "headerLine": 2720,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_INJ_GetOffset",
+      "name": "LL_ADC_INJ_GetOffset",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec5",
+      "prototype": "uint32_t LL_ADC_INJ_GetOffset(ADC_TypeDef * ADCx, uint32_t Rank);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "Rank",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "在转换序列中的位置，取 LL_ADC_REG_RANK_1 ~ 16（注入组是 RANK_1 ~ 4）。"
+        }
+      ],
+      "returnDescEn": "Value between Min_Data=0x000 and Max_Data=0xFFF",
+      "returnDescZh": "",
+      "briefEn": "Get ADC group injected offset.",
+      "briefZh": "读取 ADC 注入组的偏移量。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_JOFR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "It gives offset level (offset to be subtracted from the raw converted data). Caution: Offset format is dependent to ADC resolution: offset has to be left-aligned on bit 11, the LSB (right bits) are set to 0."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__ADC_PTR_REG_OFFSET",
+        "__ADC_MASK_SHIFT",
+        "ADC_INJ_JOFRX_REGOFFSET_MASK"
+      ],
+      "headerLine": 2747,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_SetChannelSamplingTime",
+      "name": "LL_ADC_SetChannelSamplingTime",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec6",
+      "prototype": "void LL_ADC_SetChannelSamplingTime(ADC_TypeDef * ADCx, uint32_t Channel, uint32_t SamplingTime);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        },
+        {
+          "name": "SamplingTime",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "采样时间，以 ADC 时钟周期数表示。信号源阻抗越高，需要的采样时间越长。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set sampling time of the selected ADC channel Unit: ADC clock cycles.",
+      "briefZh": "设置 ADC 的通道采样时间。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_SMPR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "On this device, sampling time is on channel scope: independently of channel mapped on ADC group regular or injected.",
+        "In case of internal channel (VrefInt, TempSensor, ...) to be converted: sampling time constraints must be respected (sampling time can be adjusted in function of ADC clock frequency and sampling time setting). Refer to device datasheet for timings values (parameters TS_vrefint, TS_temp, ...).",
+        "Conversion time is the addition of sampling time and processing time. Refer to reference manual for ADC processing time of this STM32 series.",
+        "In case of ADC conversion of internal channel (VrefInt, temperature sensor, ...), a sampling time minimum value is required. Refer to device datasheet."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__ADC_PTR_REG_OFFSET",
+        "__ADC_MASK_SHIFT",
+        "ADC_CHANNEL_SMPRX_REGOFFSET_MASK",
+        "ADC_CHANNEL_SMPx_BITOFFSET_MASK"
+      ],
+      "headerLine": 2836,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_GetChannelSamplingTime",
+      "name": "LL_ADC_GetChannelSamplingTime",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec6",
+      "prototype": "uint32_t LL_ADC_GetChannelSamplingTime(ADC_TypeDef * ADCx, uint32_t Channel);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "Channel",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get sampling time of the selected ADC channel Unit: ADC clock cycles.",
+      "briefZh": "读取 ADC 的通道采样时间。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_SMPR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "On this device, sampling time is on channel scope: independently of channel mapped on ADC group regular or injected.",
+        "Conversion time is the addition of sampling time and processing time. Refer to reference manual for ADC processing time of this STM32 series."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__ADC_PTR_REG_OFFSET",
+        "__ADC_MASK_SHIFT",
+        "ADC_CHANNEL_SMPRX_REGOFFSET_MASK",
+        "ADC_CHANNEL_SMPx_BITOFFSET_MASK"
+      ],
+      "headerLine": 2909,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_SetAnalogWDMonitChannels",
+      "name": "LL_ADC_SetAnalogWDMonitChannels",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec7",
+      "prototype": "void LL_ADC_SetAnalogWDMonitChannels(ADC_TypeDef * ADCx, uint32_t AWDChannelGroup);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "AWDChannelGroup",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set ADC analog watchdog monitored channels: a single channel or all channels, on ADC groups regular and-or injected.",
+      "briefZh": "设置 ADC 的模拟看门狗监视的通道。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Once monitored channels are selected, analog watchdog is enabled.",
+        "In case of need to define a single channel to monitor with analog watchdog from sequencer channel definition, use helper macro @ref __LL_ADC_ANALOGWD_CHANNEL_GROUP().",
+        "On this STM32 series, there is only 1 kind of analog watchdog instance: - AWD standard (instance AWD1): - channels monitored: can monitor 1 channel or all channels. - groups monitored: ADC groups regular and-or injected. - resolution: resolution is not limited (corresponds to ADC resolution configured)."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__LL_ADC_ANALOGWD_CHANNEL_GROUP"
+      ],
+      "headerLine": 3016,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_GetAnalogWDMonitChannels",
+      "name": "LL_ADC_GetAnalogWDMonitChannels",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec7",
+      "prototype": "uint32_t LL_ADC_GetAnalogWDMonitChannels(ADC_TypeDef * ADCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get ADC analog watchdog monitored channel.",
+      "briefZh": "读取 ADC 的模拟看门狗监视的通道。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Usage of the returned channel number: - To reinject this channel into another function LL_ADC_xxx: the returned channel number is only partly formatted on definition of literals LL_ADC_CHANNEL_x. Therefore, it has to be compared with parts of literals LL_ADC_CHANNEL_x or using helper macro @ref __LL_ADC_CHANNEL_TO_DECIMAL_NB(). Then the selected literal LL_ADC_CHANNEL_x can be used as parameter for another function. - To get the channel number in decimal format: process the returned value with the helper macro",
+        "On this STM32 series, there is only 1 kind of analog watchdog instance: - AWD standard (instance AWD1): - channels monitored: can monitor 1 channel or all channels. - groups monitored: ADC groups regular and-or injected. - resolution: resolution is not limited (corresponds to ADC resolution configured)."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__LL_ADC_CHANNEL_TO_DECIMAL_NB"
+      ],
+      "headerLine": 3109,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_SetAnalogWDThresholds",
+      "name": "LL_ADC_SetAnalogWDThresholds",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec7",
+      "prototype": "void LL_ADC_SetAnalogWDThresholds(ADC_TypeDef * ADCx, uint32_t AWDThresholdsHighLow, uint32_t AWDThresholdValue);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "AWDThresholdsHighLow",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "模拟看门狗阈值选择位（选高阈值还是低阈值）。"
+        },
+        {
+          "name": "AWDThresholdValue",
+          "type": "uint32_t",
+          "descEn": "Value between Min_Data=0x000 and Max_Data=0xFFF",
+          "descZh": "模拟看门狗阈值数值。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set ADC analog watchdog threshold value of threshold high or low.",
+      "briefZh": "设置 ADC 的模拟看门狗的高/低阈值。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_HTR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "On this STM32 series, there is only 1 kind of analog watchdog instance: - AWD standard (instance AWD1): - channels monitored: can monitor 1 channel or all channels. - groups monitored: ADC groups regular and-or injected. - resolution: resolution is not limited (corresponds to ADC resolution configured)."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__ADC_PTR_REG_OFFSET"
+      ],
+      "headerLine": 3133,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_GetAnalogWDThresholds",
+      "name": "LL_ADC_GetAnalogWDThresholds",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec7",
+      "prototype": "uint32_t LL_ADC_GetAnalogWDThresholds(ADC_TypeDef * ADCx, uint32_t AWDThresholdsHighLow);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "AWDThresholdsHighLow",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "模拟看门狗阈值选择位（选高阈值还是低阈值）。"
+        }
+      ],
+      "returnDescEn": "Value between Min_Data=0x000 and Max_Data=0xFFF",
+      "returnDescZh": "",
+      "briefEn": "Get ADC analog watchdog threshold value of threshold high or threshold low.",
+      "briefZh": "读取 ADC 的模拟看门狗的高/低阈值。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_HTR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "In case of ADC resolution different of 12 bits, analog watchdog thresholds data require a specific shift. Use helper macro @ref __LL_ADC_ANALOGWD_GET_THRESHOLD_RESOLUTION()."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__LL_ADC_ANALOGWD_GET_THRESHOLD_RESOLUTION",
+        "__ADC_PTR_REG_OFFSET"
+      ],
+      "headerLine": 3156,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_SetMultimode",
+      "name": "LL_ADC_SetMultimode",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec8",
+      "prototype": "void LL_ADC_SetMultimode(ADC_Common_TypeDef * ADCxy_COMMON, uint32_t Multimode);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCxy_COMMON",
+          "type": "ADC_Common_TypeDef *",
+          "descEn": "ADC common instance (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )",
+          "descZh": "ADC 公共寄存器指针（ADC1_2_COMMON），用于多重 ADC 模式。"
+        },
+        {
+          "name": "Multimode",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "多重 ADC 模式：独立 / 规则同步 / 注入同步 / 交错 / 交替触发。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set ADC multimode configuration to operate in independent mode or multimode (for devices with several ADC instances).",
+      "briefZh": "设置多重 ADC 模式（双 ADC 交替 / 同步 / 交错等），仅有多 ADC 的型号有效。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCxy_COMMON_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "If multimode configuration: the selected ADC instance is either master or slave depending on hardware. Refer to reference manual."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__LL_ADC_COMMON_INSTANCE"
+      ],
+      "headerLine": 3194,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_GetMultimode",
+      "name": "LL_ADC_GetMultimode",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec8",
+      "prototype": "uint32_t LL_ADC_GetMultimode(ADC_Common_TypeDef * ADCxy_COMMON);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCxy_COMMON",
+          "type": "ADC_Common_TypeDef *",
+          "descEn": "ADC common instance (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )",
+          "descZh": "ADC 公共寄存器指针（ADC1_2_COMMON），用于多重 ADC 模式。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get ADC multimode configuration to operate in independent mode or multimode (for devices with several ADC instances).",
+      "briefZh": "读取 ADC 的多重 ADC 模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCxy_COMMON_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "If multimode configuration: the selected ADC instance is either master or slave depending on hardware. Refer to reference manual."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__LL_ADC_COMMON_INSTANCE"
+      ],
+      "headerLine": 3220,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_Enable",
+      "name": "LL_ADC_Enable",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec9",
+      "prototype": "void LL_ADC_Enable(ADC_TypeDef * ADCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable the selected ADC instance.",
+      "briefZh": "使能 ADC（置 ADON 位）。得到准确结果前必须先完成自校准。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "On this STM32 series, after ADC enable, a delay for ADC internal analog stabilization is required before performing a ADC conversion start. Refer to device datasheet, parameter tSTAB."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3244,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_Disable",
+      "name": "LL_ADC_Disable",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec9",
+      "prototype": "void LL_ADC_Disable(ADC_TypeDef * ADCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable the selected ADC instance.",
+      "briefZh": "关闭 ADC。转换过程中关闭会立即中止当前转换。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3255,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_IsEnabled",
+      "name": "LL_ADC_IsEnabled",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec9",
+      "prototype": "uint32_t LL_ADC_IsEnabled(ADC_TypeDef * ADCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "0: ADC is disabled, 1: ADC is enabled.",
+      "returnDescZh": "",
+      "briefEn": "Get the selected ADC instance enable state.",
+      "briefZh": "查询 ADC 是否已使能（ADON 位状态）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3266,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_StartCalibration",
+      "name": "LL_ADC_StartCalibration",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec9",
+      "prototype": "void LL_ADC_StartCalibration(ADC_TypeDef * ADCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Start ADC calibration in the mode single-ended or differential (for devices with differential mode available).",
+      "briefZh": "启动 ADC 自校准。必须在 ADC 已使能、且没有转换进行中时调用。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "On this STM32 series, before starting a calibration, ADC must be disabled. A minimum number of ADC clock cycles are required between ADC disable state and calibration start. Refer to literal @ref LL_ADC_DELAY_DISABLE_CALIB_ADC_CYCLES.",
+        "On this STM32 series, hardware prerequisite before starting a calibration: the ADC must have been in power-on state for at least two ADC clock cycles."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_ADC_DELAY_DISABLE_CALIB_ADC_CYCLES"
+      ],
+      "headerLine": 3286,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_IsCalibrationOnGoing",
+      "name": "LL_ADC_IsCalibrationOnGoing",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec9",
+      "prototype": "uint32_t LL_ADC_IsCalibrationOnGoing(ADC_TypeDef * ADCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "0: calibration complete, 1: calibration in progress.",
+      "returnDescZh": "",
+      "briefEn": "Get ADC calibration state.",
+      "briefZh": "查询 ADC 自校准是否仍在进行中。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3297,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_REG_StartConversionSWStart",
+      "name": "LL_ADC_REG_StartConversionSWStart",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec10",
+      "prototype": "void LL_ADC_REG_StartConversionSWStart(ADC_TypeDef * ADCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Start ADC group regular conversion.",
+      "briefZh": "软件启动规则组转换（置 SWSTART 位）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "On this STM32 series, this function is relevant only for internal trigger (SW start), not for external trigger: - If ADC trigger has been set to software start, ADC conversion starts immediately. - If ADC trigger has been set to external trigger, ADC conversion start must be performed using function"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3326,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_REG_StartConversionExtTrig",
+      "name": "LL_ADC_REG_StartConversionExtTrig",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec10",
+      "prototype": "void LL_ADC_REG_StartConversionExtTrig(ADC_TypeDef * ADCx, uint32_t ExternalTriggerEdge);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "ExternalTriggerEdge",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "外部触发边沿：上升沿 / 下降沿 / 双边沿。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Start ADC group regular conversion from external trigger.",
+      "briefZh": "允许外部触发启动规则组转换。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "ADC conversion will start at next trigger event (on the selected trigger edge) following the ADC start conversion command.",
+        "On this STM32 series, this function is relevant for ADC conversion start from external trigger. If internal trigger (SW start) is needed, perform ADC conversion start using function @ref LL_ADC_REG_StartConversionSWStart()."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3345,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_REG_StopConversionExtTrig",
+      "name": "LL_ADC_REG_StopConversionExtTrig",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec10",
+      "prototype": "void LL_ADC_REG_StopConversionExtTrig(ADC_TypeDef * ADCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Stop ADC group regular conversion from external trigger.",
+      "briefZh": "禁止外部触发启动规则组转换。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "No more ADC conversion will start at next trigger event following the ADC stop conversion command. If a conversion is on-going, it will be completed.",
+        "On this STM32 series, there is no specific command to stop a conversion on-going or to stop ADC converting in continuous mode. These actions can be performed using function @ref LL_ADC_Disable()."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3363,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_REG_ReadConversionData32",
+      "name": "LL_ADC_REG_ReadConversionData32",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec10",
+      "prototype": "uint32_t LL_ADC_REG_ReadConversionData32(ADC_TypeDef * ADCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "Value between Min_Data=0x00000000 and Max_Data=0xFFFFFFFF",
+      "returnDescZh": "",
+      "briefEn": "Get ADC group regular conversion data, range fit for all ADC configurations: all ADC resolutions and all oversampling increased data width (for devices with feature oversampling).",
+      "briefZh": "读取 ADC 规则组的转换结果（32 位读取）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3377,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_REG_ReadConversionData12",
+      "name": "LL_ADC_REG_ReadConversionData12",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec10",
+      "prototype": "uint16_t LL_ADC_REG_ReadConversionData12(ADC_TypeDef * ADCx);",
+      "returnType": "uint16_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "Value between Min_Data=0x000 and Max_Data=0xFFF",
+      "returnDescZh": "",
+      "briefEn": "Get ADC group regular conversion data, range fit for ADC resolution 12 bits.",
+      "briefZh": "读取 ADC 规则组的转换结果（12 位）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "For devices with feature oversampling: Oversampling can increase data width, function for extended range may be needed: @ref LL_ADC_REG_ReadConversionData32."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3392,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_REG_ReadMultiConversionData32",
+      "name": "LL_ADC_REG_ReadMultiConversionData32",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec10",
+      "prototype": "uint32_t LL_ADC_REG_ReadMultiConversionData32(ADC_TypeDef * ADCx, uint32_t ConversionData);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "ConversionData",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Value between Min_Data=0x00000000 and Max_Data=0xFFFFFFFF",
+      "returnDescZh": "",
+      "briefEn": "Get ADC multimode conversion data of ADC master, ADC slave or raw data with ADC master and slave concatenated.",
+      "briefZh": "读取 ADC 规则组的多重模式转换结果（32 位）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "If raw data with ADC master and slave concatenated is retrieved, a macro is available to get the conversion data of ADC master or ADC slave: see helper macro"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__LL_ADC_COMMON_INSTANCE"
+      ],
+      "headerLine": 3419,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_INJ_StartConversionSWStart",
+      "name": "LL_ADC_INJ_StartConversionSWStart",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec11",
+      "prototype": "void LL_ADC_INJ_StartConversionSWStart(ADC_TypeDef * ADCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Start ADC group injected conversion.",
+      "briefZh": "软件启动注入组转换（置 JSWSTART 位）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "On this STM32 series, this function is relevant only for internal trigger (SW start), not for external trigger: - If ADC trigger has been set to software start, ADC conversion starts immediately. - If ADC trigger has been set to external trigger, ADC conversion start must be performed using function"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3452,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_INJ_StartConversionExtTrig",
+      "name": "LL_ADC_INJ_StartConversionExtTrig",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec11",
+      "prototype": "void LL_ADC_INJ_StartConversionExtTrig(ADC_TypeDef * ADCx, uint32_t ExternalTriggerEdge);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "ExternalTriggerEdge",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "外部触发边沿：上升沿 / 下降沿 / 双边沿。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Start ADC group injected conversion from external trigger.",
+      "briefZh": "允许外部触发启动注入组转换。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "ADC conversion will start at next trigger event (on the selected trigger edge) following the ADC start conversion command.",
+        "On this STM32 series, this function is relevant for ADC conversion start from external trigger. If internal trigger (SW start) is needed, perform ADC conversion start using function @ref LL_ADC_INJ_StartConversionSWStart()."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3471,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_INJ_StopConversionExtTrig",
+      "name": "LL_ADC_INJ_StopConversionExtTrig",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec11",
+      "prototype": "void LL_ADC_INJ_StopConversionExtTrig(ADC_TypeDef * ADCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Stop ADC group injected conversion from external trigger.",
+      "briefZh": "禁止外部触发启动注入组转换。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "No more ADC conversion will start at next trigger event following the ADC stop conversion command. If a conversion is on-going, it will be completed.",
+        "On this STM32 series, there is no specific command to stop a conversion on-going or to stop ADC converting in continuous mode. These actions can be performed using function @ref LL_ADC_Disable()."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3489,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_INJ_ReadConversionData32",
+      "name": "LL_ADC_INJ_ReadConversionData32",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec11",
+      "prototype": "uint32_t LL_ADC_INJ_ReadConversionData32(ADC_TypeDef * ADCx, uint32_t Rank);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "Rank",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "在转换序列中的位置，取 LL_ADC_REG_RANK_1 ~ 16（注入组是 RANK_1 ~ 4）。"
+        }
+      ],
+      "returnDescEn": "Value between Min_Data=0x00000000 and Max_Data=0xFFFFFFFF",
+      "returnDescZh": "",
+      "briefEn": "Get ADC group regular conversion data, range fit for all ADC configurations: all ADC resolutions and all oversampling increased data width (for devices with feature oversampling).",
+      "briefZh": "读取 ADC 注入组的转换结果（32 位读取）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_JDR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__ADC_PTR_REG_OFFSET",
+        "__ADC_MASK_SHIFT",
+        "ADC_INJ_JDRX_REGOFFSET_MASK"
+      ],
+      "headerLine": 3511,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_INJ_ReadConversionData12",
+      "name": "LL_ADC_INJ_ReadConversionData12",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec11",
+      "prototype": "uint16_t LL_ADC_INJ_ReadConversionData12(ADC_TypeDef * ADCx, uint32_t Rank);",
+      "returnType": "uint16_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        },
+        {
+          "name": "Rank",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "在转换序列中的位置，取 LL_ADC_REG_RANK_1 ~ 16（注入组是 RANK_1 ~ 4）。"
+        }
+      ],
+      "returnDescEn": "Value between Min_Data=0x000 and Max_Data=0xFFF",
+      "returnDescZh": "",
+      "briefEn": "Get ADC group injected conversion data, range fit for ADC resolution 12 bits.",
+      "briefZh": "读取 ADC 注入组的转换结果（12 位）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_JDR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "For devices with feature oversampling: Oversampling can increase data width, function for extended range may be needed: @ref LL_ADC_INJ_ReadConversionData32."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__ADC_PTR_REG_OFFSET",
+        "__ADC_MASK_SHIFT",
+        "ADC_INJ_JDRX_REGOFFSET_MASK"
+      ],
+      "headerLine": 3538,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_IsActiveFlag_EOS",
+      "name": "LL_ADC_IsActiveFlag_EOS",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec12",
+      "prototype": "uint32_t LL_ADC_IsActiveFlag_EOS(ADC_TypeDef * ADCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get flag ADC group regular end of sequence conversions.",
+      "briefZh": "查询规则组转换结束标志（EOC）是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_ADC_FLAG_EOS"
+      ],
+      "headerLine": 3561,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_IsActiveFlag_JEOS",
+      "name": "LL_ADC_IsActiveFlag_JEOS",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec12",
+      "prototype": "uint32_t LL_ADC_IsActiveFlag_JEOS(ADC_TypeDef * ADCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get flag ADC group injected end of sequence conversions.",
+      "briefZh": "查询注入组转换结束标志（JEOC）是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_ADC_FLAG_JEOS"
+      ],
+      "headerLine": 3577,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_IsActiveFlag_AWD1",
+      "name": "LL_ADC_IsActiveFlag_AWD1",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec12",
+      "prototype": "uint32_t LL_ADC_IsActiveFlag_AWD1(ADC_TypeDef * ADCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get flag ADC analog watchdog 1 flag",
+      "briefZh": "查询模拟看门狗 1 标志是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_ADC_FLAG_AWD1"
+      ],
+      "headerLine": 3592,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_ClearFlag_EOS",
+      "name": "LL_ADC_ClearFlag_EOS",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec12",
+      "prototype": "void LL_ADC_ClearFlag_EOS(ADC_TypeDef * ADCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear flag ADC group regular end of sequence conversions.",
+      "briefZh": "清除规则组转换结束标志。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_ADC_FLAG_EOS"
+      ],
+      "headerLine": 3603,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_ClearFlag_JEOS",
+      "name": "LL_ADC_ClearFlag_JEOS",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec12",
+      "prototype": "void LL_ADC_ClearFlag_JEOS(ADC_TypeDef * ADCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear flag ADC group injected end of sequence conversions.",
+      "briefZh": "清除注入组转换结束标志。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_ADC_FLAG_JEOS"
+      ],
+      "headerLine": 3619,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_ClearFlag_AWD1",
+      "name": "LL_ADC_ClearFlag_AWD1",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec12",
+      "prototype": "void LL_ADC_ClearFlag_AWD1(ADC_TypeDef * ADCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear flag ADC analog watchdog 1.",
+      "briefZh": "清除模拟看门狗 1 标志。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_ADC_FLAG_AWD1"
+      ],
+      "headerLine": 3634,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_IsActiveFlag_MST_EOS",
+      "name": "LL_ADC_IsActiveFlag_MST_EOS",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec12",
+      "prototype": "uint32_t LL_ADC_IsActiveFlag_MST_EOS(ADC_Common_TypeDef * ADCxy_COMMON);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCxy_COMMON",
+          "type": "ADC_Common_TypeDef *",
+          "descEn": "ADC common instance (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )",
+          "descZh": "ADC 公共寄存器指针（ADC1_2_COMMON），用于多重 ADC 模式。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get flag multimode ADC group regular end of sequence conversions of the ADC master.",
+      "briefZh": "查询多重模式下 ADC 主器件的规则组转换结束标志。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCxy_COMMON_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__LL_ADC_COMMON_INSTANCE"
+      ],
+      "headerLine": 3647,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_IsActiveFlag_SLV_EOS",
+      "name": "LL_ADC_IsActiveFlag_SLV_EOS",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec12",
+      "prototype": "uint32_t LL_ADC_IsActiveFlag_SLV_EOS(ADC_Common_TypeDef * ADCxy_COMMON);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCxy_COMMON",
+          "type": "ADC_Common_TypeDef *",
+          "descEn": "ADC common instance (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )",
+          "descZh": "ADC 公共寄存器指针（ADC1_2_COMMON），用于多重 ADC 模式。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get flag multimode ADC group regular end of sequence conversions of the ADC slave.",
+      "briefZh": "查询多重模式下 ADC 从器件的规则组转换结束标志。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCxy_COMMON_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__LL_ADC_COMMON_INSTANCE",
+        "__ADC_PTR_REG_OFFSET",
+        "LL_ADC_FLAG_EOS_SLV"
+      ],
+      "headerLine": 3663,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_IsActiveFlag_MST_JEOS",
+      "name": "LL_ADC_IsActiveFlag_MST_JEOS",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec12",
+      "prototype": "uint32_t LL_ADC_IsActiveFlag_MST_JEOS(ADC_Common_TypeDef * ADCxy_COMMON);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCxy_COMMON",
+          "type": "ADC_Common_TypeDef *",
+          "descEn": "ADC common instance (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )",
+          "descZh": "ADC 公共寄存器指针（ADC1_2_COMMON），用于多重 ADC 模式。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get flag multimode ADC group injected end of sequence conversions of the ADC master.",
+      "briefZh": "查询多重模式下 ADC 主器件的注入组转换结束标志。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCxy_COMMON_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__LL_ADC_COMMON_INSTANCE"
+      ],
+      "headerLine": 3683,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_IsActiveFlag_SLV_JEOS",
+      "name": "LL_ADC_IsActiveFlag_SLV_JEOS",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec12",
+      "prototype": "uint32_t LL_ADC_IsActiveFlag_SLV_JEOS(ADC_Common_TypeDef * ADCxy_COMMON);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCxy_COMMON",
+          "type": "ADC_Common_TypeDef *",
+          "descEn": "ADC common instance (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )",
+          "descZh": "ADC 公共寄存器指针（ADC1_2_COMMON），用于多重 ADC 模式。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get flag multimode ADC group injected end of sequence conversions of the ADC slave.",
+      "briefZh": "查询多重模式下 ADC 从器件的注入组转换结束标志。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCxy_COMMON_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__LL_ADC_COMMON_INSTANCE",
+        "__ADC_PTR_REG_OFFSET",
+        "LL_ADC_FLAG_JEOS_SLV"
+      ],
+      "headerLine": 3699,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_IsActiveFlag_MST_AWD1",
+      "name": "LL_ADC_IsActiveFlag_MST_AWD1",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec12",
+      "prototype": "uint32_t LL_ADC_IsActiveFlag_MST_AWD1(ADC_Common_TypeDef * ADCxy_COMMON);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCxy_COMMON",
+          "type": "ADC_Common_TypeDef *",
+          "descEn": "ADC common instance (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )",
+          "descZh": "ADC 公共寄存器指针（ADC1_2_COMMON），用于多重 ADC 模式。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get flag multimode ADC analog watchdog 1 of the ADC master.",
+      "briefZh": "查询多重模式下 ADC 主器件的模拟看门狗 1 标志。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCxy_COMMON_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__LL_ADC_COMMON_INSTANCE",
+        "LL_ADC_FLAG_AWD1"
+      ],
+      "headerLine": 3718,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_IsActiveFlag_SLV_AWD1",
+      "name": "LL_ADC_IsActiveFlag_SLV_AWD1",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec12",
+      "prototype": "uint32_t LL_ADC_IsActiveFlag_SLV_AWD1(ADC_Common_TypeDef * ADCxy_COMMON);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCxy_COMMON",
+          "type": "ADC_Common_TypeDef *",
+          "descEn": "ADC common instance (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMON_INSTANCE() )",
+          "descZh": "ADC 公共寄存器指针（ADC1_2_COMMON），用于多重 ADC 模式。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get flag multimode analog watchdog 1 of the ADC slave.",
+      "briefZh": "查询多重模式下 ADC 从器件的模拟看门狗 1 标志。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCxy_COMMON_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__LL_ADC_COMMON_INSTANCE",
+        "__ADC_PTR_REG_OFFSET",
+        "LL_ADC_FLAG_AWD1"
+      ],
+      "headerLine": 3730,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_EnableIT_EOS",
+      "name": "LL_ADC_EnableIT_EOS",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec13",
+      "prototype": "void LL_ADC_EnableIT_EOS(ADC_TypeDef * ADCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable interruption ADC group regular end of sequence conversions.",
+      "briefZh": "使能 ADC 的规则组转换结束中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3753,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_EnableIT_JEOS",
+      "name": "LL_ADC_EnableIT_JEOS",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec13",
+      "prototype": "void LL_ADC_EnableIT_JEOS(ADC_TypeDef * ADCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable interruption ADC group injected end of sequence conversions.",
+      "briefZh": "使能 ADC 的注入组转换结束中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_ADC_IT_JEOS"
+      ],
+      "headerLine": 3769,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_EnableIT_AWD1",
+      "name": "LL_ADC_EnableIT_AWD1",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec13",
+      "prototype": "void LL_ADC_EnableIT_AWD1(ADC_TypeDef * ADCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable interruption ADC analog watchdog 1.",
+      "briefZh": "使能 ADC 的模拟看门狗 1 中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_ADC_IT_AWD1"
+      ],
+      "headerLine": 3784,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_DisableIT_EOS",
+      "name": "LL_ADC_DisableIT_EOS",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec13",
+      "prototype": "void LL_ADC_DisableIT_EOS(ADC_TypeDef * ADCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable interruption ADC group regular end of sequence conversions.",
+      "briefZh": "失能 ADC 的规则组转换结束中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3795,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_DisableIT_JEOS",
+      "name": "LL_ADC_DisableIT_JEOS",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec13",
+      "prototype": "void LL_ADC_DisableIT_JEOS(ADC_TypeDef * ADCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable interruption ADC group injected end of sequence conversions.",
+      "briefZh": "失能 ADC 的注入组转换结束中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_ADC_IT_JEOS"
+      ],
+      "headerLine": 3811,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_DisableIT_AWD1",
+      "name": "LL_ADC_DisableIT_AWD1",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec13",
+      "prototype": "void LL_ADC_DisableIT_AWD1(ADC_TypeDef * ADCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable interruption ADC analog watchdog 1.",
+      "briefZh": "失能 ADC 的模拟看门狗 1 中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_ADC_IT_AWD1"
+      ],
+      "headerLine": 3826,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_IsEnabledIT_EOS",
+      "name": "LL_ADC_IsEnabledIT_EOS",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec13",
+      "prototype": "uint32_t LL_ADC_IsEnabledIT_EOS(ADC_TypeDef * ADCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get state of interruption ADC group regular end of sequence conversions (0: interrupt disabled, 1: interrupt enabled).",
+      "briefZh": "查询 ADC 的规则组转换结束中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_ADC_IT_EOS"
+      ],
+      "headerLine": 3838,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_IsEnabledIT_JEOS",
+      "name": "LL_ADC_IsEnabledIT_JEOS",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec13",
+      "prototype": "uint32_t LL_ADC_IsEnabledIT_JEOS(ADC_TypeDef * ADCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get state of interruption ADC group injected end of sequence conversions (0: interrupt disabled, 1: interrupt enabled).",
+      "briefZh": "查询 ADC 的注入组转换结束中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_ADC_IT_JEOS"
+      ],
+      "headerLine": 3855,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_ADC_IsEnabledIT_AWD1",
+      "name": "LL_ADC_IsEnabledIT_AWD1",
+      "peripheral": "ADC",
+      "library": "ll",
+      "sectionId": "ADC@ll#sec13",
+      "prototype": "uint32_t LL_ADC_IsEnabledIT_AWD1(ADC_TypeDef * ADCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADCx",
+          "type": "ADC_TypeDef *",
+          "descEn": "ADC instance",
+          "descZh": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get state of interruption ADC analog watchdog 1 (0: interrupt disabled, 1: interrupt enabled).",
+      "briefZh": "查询 ADC 的模拟看门狗 1 中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADCx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_ADC_IT_AWD1"
+      ],
+      "headerLine": 3871,
+      "definedIn": "stm32f1xx_ll_adc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

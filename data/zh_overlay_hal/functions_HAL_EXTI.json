@@ -1,0 +1,95 @@
+{
+  "HAL_EXTI_ClearConfigLine": {
+    "briefZh": "清空一条 EXTI 线的全部配置，让它回到未使用状态。",
+    "usageZh": "引脚改作他用、或者要从某个 EXTI 线上解绑时调用。会关掉该线的中断/事件使能并解除 GPIO 映射。",
+    "paramsZh": {
+      "hexti": "EXTI 句柄。"
+    },
+    "notesZh": [
+      "清理后 NVIC 里的使能还开着，若不打算再用，建议同时 HAL_NVIC_DisableIRQ"
+    ]
+  },
+  "HAL_EXTI_ClearPending": {
+    "briefZh": "清除某条 EXTI 线的挂起标志。",
+    "usageZh": "轮询模式下处理完事件后手动清；或者使能中断前先清掉遗留的旧标志，避免一使能就误进中断。",
+    "paramsZh": {
+      "Edge": "要清的边沿，EXTI_TRIGGER_RISING / FALLING。",
+      "hexti": "EXTI 句柄。"
+    }
+  },
+  "HAL_EXTI_GenerateSWI": {
+    "briefZh": "软件触发一条 EXTI 线的中断/事件，模拟一次硬件边沿。",
+    "usageZh": "调试 EXTI 服务程序时不必真的去拨动引脚，直接软触发就能单步进中断；也可用于自检。",
+    "paramsZh": {
+      "hexti": "EXTI 句柄。"
+    },
+    "notesZh": [
+      "该线的中断/事件使能必须已经打开，否则触发了也不会有反应"
+    ]
+  },
+  "HAL_EXTI_GetConfigLine": {
+    "briefZh": "读回某条 EXTI 线当前的配置（模式、触发边沿、GPIO 来源）。",
+    "usageZh": "调试 EXTI 行为不符合预期时用：确认边沿到底是上升还是下降、有没有被别处改过、GPIO 映射到哪个端口。",
+    "paramsZh": {
+      "hexti": "EXTI 句柄。",
+      "pExtiConfig": "输出参数，传入结构体地址由函数填回当前配置。"
+    }
+  },
+  "HAL_EXTI_GetHandle": {
+    "briefZh": "获取某条 EXTI 线对应的句柄指针（句柄由 HAL 内部统一管理）。",
+    "usageZh": "用 HAL_EXTI_SetConfigLine 之前必须先拿到句柄。内部就是一个按线号索引的静态数组，不需要自己定义句柄变量。",
+    "paramsZh": {
+      "ExtiLine": "EXTI 线号，EXTI_LINE_0 ~ EXTI_LINE_15 或内部线枚举。",
+      "Line": "线号，EXTI_LINE_0 ~ EXTI_LINE_15 或内部线枚举。",
+      "hexti": "输出参数，传入 EXTI_HandleTypeDef 变量的地址。"
+    }
+  },
+  "HAL_EXTI_GetPending": {
+    "briefZh": "查询某条 EXTI 线的挂起状态（是否已触发但未被处理）。",
+    "usageZh": "轮询式处理 EXTI 事件时用，或者在 ISR 里判断具体是哪条线触发的。",
+    "paramsZh": {
+      "Edge": "要查询的边沿，EXTI_TRIGGER_RISING / FALLING。",
+      "hexti": "EXTI 句柄。"
+    }
+  },
+  "HAL_EXTI_IRQHandler": {
+    "briefZh": "EXTI 线中断的统一入口，清挂起标志并按配置调用对应回调。",
+    "usageZh": "内部线（PVD、RTC 闹钟、ETH 唤醒）的中断处理里调用它。普通 GPIO 外部中断请用 HAL_GPIO_EXTI_IRQHandler，不要混用。",
+    "paramsZh": {
+      "hexti": "EXTI 句柄。"
+    },
+    "notesZh": [
+      "它会自动清 EXTI->PR 的对应位，用户回调里不需要再清"
+    ],
+    "prerequisites": [
+      "该线已在 NVIC 使能对应中断"
+    ]
+  },
+  "HAL_EXTI_RegisterCallback": {
+    "briefZh": "为 EXTI 句柄注册回调（目前主要用于「回调线」如 PVD、RTC 闹钟这类内部事件）。",
+    "usageZh": "一般 GPIO 外部中断不用它——那类走 HAL_GPIO_EXTI_Callback 的 __weak 机制。这里主要给内部线上事件型 EXTI 挂钩子。",
+    "paramsZh": {
+      "CallbackID": "回调类型，如 HAL_EXTI_COMMON_CB_ID。",
+      "hexti": "EXTI 句柄。",
+      "pCallback": "回调函数指针，签名 void (*)(void)。",
+      "pPendingCbfn": "挂起中断的回调函数指针（内部事件线用），签名 void (*)(void)。"
+    }
+  },
+  "HAL_EXTI_SetConfigLine": {
+    "briefZh": "配置一条 EXTI 中断线：触发边沿、GPIO 端口与引脚映射、中断或事件模式。",
+    "usageZh": "这是 F1 上 EXTI 的「显式配置」接口。注意：如果引脚是用 HAL_GPIO_Init 的 GPIO_MODE_IT_RISING 初始化的，HAL 内部已经替你把这套 EXTI 配置做完了，**不需要再调本函数**——重复配置容易把边沿改乱。真正需要它的是「只走事件不产生中断」或者要单独改某条线的边沿时。",
+    "paramsZh": {
+      "hexti": "EXTI 句柄，Line 指定线号（EXTI_LINE_0 ~ EXTI_LINE_15 或 PVD/RTC/ETH 等内部线）。",
+      "pExtiConfig": "配置结构体：Line、Mode（EXTI_MODE_IT 中断 / EXTI_MODE_EVENT 事件）、Trigger（EXTI_TRIGGER_RISING/FALLING/RISING_FALLING）、GPIOSel（EXTI_GPIO_SEL_GPIOA 等，内部线填 EXTI_GPIO_SEL_NONE）、LineCmd（ENABLE/DISABLE）。"
+    },
+    "notesZh": [
+      "同一线号只能绑一个端口：PA0 和 PB0 共用 EXTI0，两个都配会互相覆盖",
+      "F1 的 EXTI0~4 各有独立向量，EXTI5~9 共用 EXTI9_5_IRQn，EXTI10~15 共用 EXTI15_10_IRQn",
+      "内部线（PVD/RTC 闹钟/ETH 唤醒）不需要 GPIO 映射，GPIOSel 填 NONE"
+    ],
+    "prerequisites": [
+      "已使能 AFIO 时钟（__HAL_RCC_AFIO_CLK_ENABLE），GPIO 到 EXTI 的映射要经过 AFIO",
+      "已调用 HAL_EXTI_GetHandle 拿到该线的句柄"
+    ]
+  }
+}

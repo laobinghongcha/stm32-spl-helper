@@ -1,0 +1,1933 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "RTC",
+  "library": "ll",
+  "functions": [
+    {
+      "id": "LL_RTC_SetAsynchPrescaler",
+      "name": "LL_RTC_SetAsynchPrescaler",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec1",
+      "prototype": "void LL_RTC_SetAsynchPrescaler(RTC_TypeDef * RTCx, uint32_t AsynchPrescaler);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        },
+        {
+          "name": "AsynchPrescaler",
+          "type": "uint32_t",
+          "descEn": "Value between Min_Data = 0 and Max_Data = 0xFFFFF",
+          "descZh": "异步预分频值。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set Asynchronous prescaler factor",
+      "briefZh": "设置 RTC 的异步预分频。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_PRLH",
+        "RTCx_PRLL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 276,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_GetDivider",
+      "name": "LL_RTC_GetDivider",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec1",
+      "prototype": "uint32_t LL_RTC_GetDivider(RTC_TypeDef * RTCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        }
+      ],
+      "returnDescEn": "Value between Min_Data = 0 and Max_Data = 0xFFFFF",
+      "returnDescZh": "",
+      "briefEn": "Get Asynchronous prescaler factor",
+      "briefZh": "读取 RTC 的分频余数（DIV）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_DIVH",
+        "RTCx_DIVL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 289,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_SetOutputSource",
+      "name": "LL_RTC_SetOutputSource",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec1",
+      "prototype": "void LL_RTC_SetOutputSource(BKP_TypeDef * BKPx, uint32_t OutputSource);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "BKPx",
+          "type": "BKP_TypeDef *",
+          "descEn": "BKP Instance",
+          "descZh": "备份寄存器实例指针（F1 上是 BKP）。"
+        },
+        {
+          "name": "OutputSource",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set Output Source",
+      "briefZh": "设置 RTC 的输出信号源。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKPx_RTCCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 311,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_GetOutPutSource",
+      "name": "LL_RTC_GetOutPutSource",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec1",
+      "prototype": "uint32_t LL_RTC_GetOutPutSource(BKP_TypeDef * BKPx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "BKPx",
+          "type": "BKP_TypeDef *",
+          "descEn": "BKP Instance",
+          "descZh": "备份寄存器实例指针（F1 上是 BKP）。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get Output Source",
+      "briefZh": "读取 RTC 的输出信号源。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKPx_RTCCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 328,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_EnableWriteProtection",
+      "name": "LL_RTC_EnableWriteProtection",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec1",
+      "prototype": "void LL_RTC_EnableWriteProtection(RTC_TypeDef * RTCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable the write protection for RTC registers.",
+      "briefZh": "使能 RTC 的写保护。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_CRL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 339,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_DisableWriteProtection",
+      "name": "LL_RTC_DisableWriteProtection",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec1",
+      "prototype": "void LL_RTC_DisableWriteProtection(RTC_TypeDef * RTCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable the write protection for RTC registers.",
+      "briefZh": "失能 RTC 的写保护。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_CRL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 350,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_TIME_Set",
+      "name": "LL_RTC_TIME_Set",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec2",
+      "prototype": "void LL_RTC_TIME_Set(RTC_TypeDef * RTCx, uint32_t TimeCounter);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        },
+        {
+          "name": "TimeCounter",
+          "type": "uint32_t",
+          "descEn": "Value between Min_Data=0x00 and Max_Data=0xFFFFF",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set time counter in BCD format",
+      "briefZh": "设置 RTC 当前时间（BCD 格式，写入时/分/秒寄存器）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_CNTH",
+        "RTCx_CNTL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Bit is write-protected. @ref LL_RTC_DisableWriteProtection function should be called before.",
+        "It can be written in initialization mode only (@ref LL_RTC_EnterInitMode function)"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 373,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_TIME_Get",
+      "name": "LL_RTC_TIME_Get",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec2",
+      "prototype": "uint32_t LL_RTC_TIME_Get(RTC_TypeDef * RTCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        }
+      ],
+      "returnDescEn": "Value between Min_Data = 0 and Max_Data = 0xFFFFF",
+      "returnDescZh": "",
+      "briefEn": "Get time counter in BCD format",
+      "briefZh": "读取 RTC 当前时间（BCD 格式）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_CNTH",
+        "RTCx_CNTL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 388,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_ALARM_Set",
+      "name": "LL_RTC_ALARM_Set",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec3",
+      "prototype": "void LL_RTC_ALARM_Set(RTC_TypeDef * RTCx, uint32_t AlarmCounter);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        },
+        {
+          "name": "AlarmCounter",
+          "type": "uint32_t",
+          "descEn": "Value between Min_Data=0x00 and Max_Data=0xFFFFF",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set Alarm Counter",
+      "briefZh": "设置闹钟 A 的时间与日期。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_ALRH",
+        "RTCx_ALRL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Bit is write-protected. @ref LL_RTC_DisableWriteProtection function should be called before."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 414,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_ALARM_Get",
+      "name": "LL_RTC_ALARM_Get",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec3",
+      "prototype": "uint32_t LL_RTC_ALARM_Get(RTC_TypeDef * RTCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Get Alarm Counter",
+      "briefZh": "读取闹钟 A 当前设定的时间与日期。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_ALRH",
+        "RTCx_ALRL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Bit is write-protected. @ref LL_RTC_DisableWriteProtection function should be called before."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 430,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_TAMPER_Enable",
+      "name": "LL_RTC_TAMPER_Enable",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec4",
+      "prototype": "void LL_RTC_TAMPER_Enable(BKP_TypeDef * BKPx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "BKPx",
+          "type": "BKP_TypeDef *",
+          "descEn": "",
+          "descZh": "备份寄存器实例指针（F1 上是 BKP）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable RTC_TAMPx input detection",
+      "briefZh": "使能 RTC 篡改检测。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKPx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 453,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_TAMPER_Disable",
+      "name": "LL_RTC_TAMPER_Disable",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec4",
+      "prototype": "void LL_RTC_TAMPER_Disable(BKP_TypeDef * BKPx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "BKPx",
+          "type": "BKP_TypeDef *",
+          "descEn": "",
+          "descZh": "备份寄存器实例指针（F1 上是 BKP）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable RTC_TAMPx Tamper",
+      "briefZh": "失能 RTC 篡改检测。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 463,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_TAMPER_SetActiveLevel",
+      "name": "LL_RTC_TAMPER_SetActiveLevel",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec4",
+      "prototype": "void LL_RTC_TAMPER_SetActiveLevel(BKP_TypeDef * BKPx, uint32_t Tamper);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "BKPx",
+          "type": "BKP_TypeDef *",
+          "descEn": "BKP Instance",
+          "descZh": "备份寄存器实例指针（F1 上是 BKP）。"
+        },
+        {
+          "name": "Tamper",
+          "type": "uint32_t",
+          "descEn": "This parameter can be a combination of the following values:",
+          "descZh": "篡改检测引脚编号。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable Active level for Tamper input",
+      "briefZh": "设置篡改引脚的有效电平（高有效或低有效）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKPx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 477,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_TAMPER_GetActiveLevel",
+      "name": "LL_RTC_TAMPER_GetActiveLevel",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec4",
+      "prototype": "uint32_t LL_RTC_TAMPER_GetActiveLevel(BKP_TypeDef * BKPx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "BKPx",
+          "type": "BKP_TypeDef *",
+          "descEn": "",
+          "descZh": "备份寄存器实例指针（F1 上是 BKP）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable Active level for Tamper input",
+      "briefZh": "读取篡改引脚当前设定的有效电平。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKPx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 487,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_BKP_SetRegister",
+      "name": "LL_RTC_BKP_SetRegister",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec5",
+      "prototype": "void LL_RTC_BKP_SetRegister(BKP_TypeDef * BKPx, uint32_t BackupRegister, uint32_t Data);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "BKPx",
+          "type": "BKP_TypeDef *",
+          "descEn": "BKP Instance",
+          "descZh": "备份寄存器实例指针（F1 上是 BKP）。"
+        },
+        {
+          "name": "BackupRegister",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "备份寄存器编号，取 LL_RTC_BKP_DR1 ~ DR10。"
+        },
+        {
+          "name": "Data",
+          "type": "uint32_t",
+          "descEn": "Value between Min_Data=0x00 and Max_Data=0xFFFFFFFF",
+          "descZh": "要写入的数据值。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Writes a data in a specified RTC Backup data register.",
+      "briefZh": "设置 RTC 备份寄存器的备份寄存器。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 551,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_BKP_GetRegister",
+      "name": "LL_RTC_BKP_GetRegister",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec5",
+      "prototype": "uint32_t LL_RTC_BKP_GetRegister(BKP_TypeDef * BKPx, uint32_t BackupRegister);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "BKPx",
+          "type": "BKP_TypeDef *",
+          "descEn": "BKP Instance",
+          "descZh": "备份寄存器实例指针（F1 上是 BKP）。"
+        },
+        {
+          "name": "BackupRegister",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "备份寄存器编号，取 LL_RTC_BKP_DR1 ~ DR10。"
+        }
+      ],
+      "returnDescEn": "Value between Min_Data=0x00 and Max_Data=0xFFFFFFFF",
+      "returnDescZh": "",
+      "briefEn": "Reads data from the specified RTC Backup data Register.",
+      "briefZh": "读取 RTC 备份寄存器的备份寄存器。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 611,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_CAL_SetCoarseDigital",
+      "name": "LL_RTC_CAL_SetCoarseDigital",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec6",
+      "prototype": "void LL_RTC_CAL_SetCoarseDigital(BKP_TypeDef * BKPx, uint32_t Value);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "BKPx",
+          "type": "BKP_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "备份寄存器实例指针（F1 上是 BKP）。"
+        },
+        {
+          "name": "Value",
+          "type": "uint32_t",
+          "descEn": "value of coarse calibration expressed in ppm (coded on 5 bits)",
+          "descZh": "要设置的数值（含义随函数而定，如计数值、比较值、阈值）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set the coarse digital calibration",
+      "briefZh": "设置 RTC 校准的粗调数字校准值。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKPx_RTCCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Bit is write-protected. @ref LL_RTC_DisableWriteProtection function should be called before.",
+        "It can be written in initialization mode only (@ref LL_RTC_EnterInitMode function)",
+        "This Calibration value should be between 0 and 121 when using positive sign with a 4-ppm step."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 640,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_CAL_GetCoarseDigital",
+      "name": "LL_RTC_CAL_GetCoarseDigital",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec6",
+      "prototype": "uint32_t LL_RTC_CAL_GetCoarseDigital(BKP_TypeDef * BKPx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "BKPx",
+          "type": "BKP_TypeDef *",
+          "descEn": "BKP Instance",
+          "descZh": "备份寄存器实例指针（F1 上是 BKP）。"
+        }
+      ],
+      "returnDescEn": "value of coarse calibration expressed in ppm (coded on 5 bits)",
+      "returnDescZh": "",
+      "briefEn": "Get the coarse digital calibration value",
+      "briefZh": "读取 RTC 校准的粗调数字校准值。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKPx_RTCCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 651,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_IsActiveFlag_TAMPI",
+      "name": "LL_RTC_IsActiveFlag_TAMPI",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec7",
+      "prototype": "uint32_t LL_RTC_IsActiveFlag_TAMPI(BKP_TypeDef * BKPx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "BKPx",
+          "type": "BKP_TypeDef *",
+          "descEn": "BKP Instance",
+          "descZh": "备份寄存器实例指针（F1 上是 BKP）。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get RTC_TAMPI Interruption detection flag",
+      "briefZh": "查询 RTC 的篡改中断标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKPx_CSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 669,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_ClearFlag_TAMPI",
+      "name": "LL_RTC_ClearFlag_TAMPI",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec7",
+      "prototype": "void LL_RTC_ClearFlag_TAMPI(BKP_TypeDef * BKPx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "BKPx",
+          "type": "BKP_TypeDef *",
+          "descEn": "BKP Instance",
+          "descZh": "备份寄存器实例指针（F1 上是 BKP）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear RTC_TAMP Interruption detection flag",
+      "briefZh": "清除 RTC 的篡改中断标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKPx_CSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 680,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_IsActiveFlag_TAMPE",
+      "name": "LL_RTC_IsActiveFlag_TAMPE",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec7",
+      "prototype": "uint32_t LL_RTC_IsActiveFlag_TAMPE(BKP_TypeDef * BKPx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "BKPx",
+          "type": "BKP_TypeDef *",
+          "descEn": "BKP Instance",
+          "descZh": "备份寄存器实例指针（F1 上是 BKP）。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get RTC_TAMPE Event detection flag",
+      "briefZh": "查询 RTC 的篡改事件标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKPx_CSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 691,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_ClearFlag_TAMPE",
+      "name": "LL_RTC_ClearFlag_TAMPE",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec7",
+      "prototype": "void LL_RTC_ClearFlag_TAMPE(BKP_TypeDef * BKPx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "BKPx",
+          "type": "BKP_TypeDef *",
+          "descEn": "BKP Instance",
+          "descZh": "备份寄存器实例指针（F1 上是 BKP）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear RTC_TAMPE Even detection flag",
+      "briefZh": "清除 RTC 的篡改事件标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKPx_CSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 702,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_IsActiveFlag_ALR",
+      "name": "LL_RTC_IsActiveFlag_ALR",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec7",
+      "prototype": "uint32_t LL_RTC_IsActiveFlag_ALR(RTC_TypeDef * RTCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Alarm flag",
+      "briefZh": "查询 RTC 的闹钟标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_CRL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 713,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_ClearFlag_ALR",
+      "name": "LL_RTC_ClearFlag_ALR",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec7",
+      "prototype": "void LL_RTC_ClearFlag_ALR(RTC_TypeDef * RTCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Alarm flag",
+      "briefZh": "清除 RTC 的闹钟标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_CRL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 724,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_IsActiveFlag_RS",
+      "name": "LL_RTC_IsActiveFlag_RS",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec7",
+      "prototype": "uint32_t LL_RTC_IsActiveFlag_RS(RTC_TypeDef * RTCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Registers synchronization flag",
+      "briefZh": "查询 RTC 的寄存器同步标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_CRL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 735,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_ClearFlag_RS",
+      "name": "LL_RTC_ClearFlag_RS",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec7",
+      "prototype": "void LL_RTC_ClearFlag_RS(RTC_TypeDef * RTCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Registers synchronization flag",
+      "briefZh": "清除 RTC 的寄存器同步标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_CRL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 746,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_IsActiveFlag_OW",
+      "name": "LL_RTC_IsActiveFlag_OW",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec7",
+      "prototype": "uint32_t LL_RTC_IsActiveFlag_OW(RTC_TypeDef * RTCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Registers OverFlow flag",
+      "briefZh": "查询 RTC 的溢出（日历溢出）标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_CRL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 757,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_ClearFlag_OW",
+      "name": "LL_RTC_ClearFlag_OW",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec7",
+      "prototype": "void LL_RTC_ClearFlag_OW(RTC_TypeDef * RTCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Registers OverFlow flag",
+      "briefZh": "清除 RTC 的溢出（日历溢出）标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_CRL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 768,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_IsActiveFlag_SEC",
+      "name": "LL_RTC_IsActiveFlag_SEC",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec7",
+      "prototype": "uint32_t LL_RTC_IsActiveFlag_SEC(RTC_TypeDef * RTCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get Registers synchronization flag",
+      "briefZh": "查询 RTC 的秒标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_CRL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 779,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_ClearFlag_SEC",
+      "name": "LL_RTC_ClearFlag_SEC",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec7",
+      "prototype": "void LL_RTC_ClearFlag_SEC(RTC_TypeDef * RTCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Registers synchronization flag",
+      "briefZh": "清除 RTC 的秒标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_CRL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 790,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_IsActiveFlag_RTOF",
+      "name": "LL_RTC_IsActiveFlag_RTOF",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec7",
+      "prototype": "uint32_t LL_RTC_IsActiveFlag_RTOF(RTC_TypeDef * RTCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Get RTC Operation OFF status flag",
+      "briefZh": "查询 RTC 的 RTC 操作完成标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_CRL"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 801,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_EnableIT_ALR",
+      "name": "LL_RTC_EnableIT_ALR",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec8",
+      "prototype": "void LL_RTC_EnableIT_ALR(RTC_TypeDef * RTCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable Alarm interrupt",
+      "briefZh": "使能 RTC 的闹钟中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_CRH"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Bit is write-protected. @ref LL_RTC_DisableWriteProtection function should be called before."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 821,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_DisableIT_ALR",
+      "name": "LL_RTC_DisableIT_ALR",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec8",
+      "prototype": "void LL_RTC_DisableIT_ALR(RTC_TypeDef * RTCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable Alarm interrupt",
+      "briefZh": "失能 RTC 的闹钟中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_CRH"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Bit is write-protected. @ref LL_RTC_DisableWriteProtection function should be called before."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 833,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_IsEnabledIT_ALR",
+      "name": "LL_RTC_IsEnabledIT_ALR",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec8",
+      "prototype": "uint32_t LL_RTC_IsEnabledIT_ALR(RTC_TypeDef * RTCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if Alarm interrupt is enabled or not",
+      "briefZh": "查询 RTC 的闹钟中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_CRH"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 844,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_EnableIT_SEC",
+      "name": "LL_RTC_EnableIT_SEC",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec8",
+      "prototype": "void LL_RTC_EnableIT_SEC(RTC_TypeDef * RTCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable Second Interrupt interrupt",
+      "briefZh": "使能 RTC 的秒中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_CRH"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Bit is write-protected. @ref LL_RTC_DisableWriteProtection function should be called before."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 856,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_DisableIT_SEC",
+      "name": "LL_RTC_DisableIT_SEC",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec8",
+      "prototype": "void LL_RTC_DisableIT_SEC(RTC_TypeDef * RTCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable Second interrupt",
+      "briefZh": "失能 RTC 的秒中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_CRH"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Bit is write-protected. @ref LL_RTC_DisableWriteProtection function should be called before."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 868,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_IsEnabledIT_SEC",
+      "name": "LL_RTC_IsEnabledIT_SEC",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec8",
+      "prototype": "uint32_t LL_RTC_IsEnabledIT_SEC(RTC_TypeDef * RTCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if Second interrupt is enabled or not",
+      "briefZh": "查询 RTC 的秒中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_CRH"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 879,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_EnableIT_OW",
+      "name": "LL_RTC_EnableIT_OW",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec8",
+      "prototype": "void LL_RTC_EnableIT_OW(RTC_TypeDef * RTCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable OverFlow interrupt",
+      "briefZh": "使能 RTC 的溢出（日历溢出）中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_CRH"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Bit is write-protected. @ref LL_RTC_DisableWriteProtection function should be called before."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 891,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_DisableIT_OW",
+      "name": "LL_RTC_DisableIT_OW",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec8",
+      "prototype": "void LL_RTC_DisableIT_OW(RTC_TypeDef * RTCx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable OverFlow interrupt",
+      "briefZh": "失能 RTC 的溢出（日历溢出）中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_CRH"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Bit is write-protected. @ref LL_RTC_DisableWriteProtection function should be called before."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 903,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_IsEnabledIT_OW",
+      "name": "LL_RTC_IsEnabledIT_OW",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec8",
+      "prototype": "uint32_t LL_RTC_IsEnabledIT_OW(RTC_TypeDef * RTCx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RTCx",
+          "type": "RTC_TypeDef *",
+          "descEn": "RTC Instance",
+          "descZh": "RTC 实例指针（F1 上固定是 RTC）。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if OverFlow interrupt is enabled or not",
+      "briefZh": "查询 RTC 的溢出（日历溢出）中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RTCx_CRH"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 914,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_EnableIT_TAMP",
+      "name": "LL_RTC_EnableIT_TAMP",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec8",
+      "prototype": "void LL_RTC_EnableIT_TAMP(BKP_TypeDef * BKPx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "BKPx",
+          "type": "BKP_TypeDef *",
+          "descEn": "BKP Instance",
+          "descZh": "备份寄存器实例指针（F1 上是 BKP）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable Tamper interrupt",
+      "briefZh": "使能 RTC 的篡改中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKPx_CSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 925,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_DisableIT_TAMP",
+      "name": "LL_RTC_DisableIT_TAMP",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec8",
+      "prototype": "void LL_RTC_DisableIT_TAMP(BKP_TypeDef * BKPx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "BKPx",
+          "type": "BKP_TypeDef *",
+          "descEn": "BKP Instance",
+          "descZh": "备份寄存器实例指针（F1 上是 BKP）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable Tamper interrupt",
+      "briefZh": "失能 RTC 的篡改中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKPx_CSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 936,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_RTC_IsEnabledIT_TAMP",
+      "name": "LL_RTC_IsEnabledIT_TAMP",
+      "peripheral": "RTC",
+      "library": "ll",
+      "sectionId": "RTC@ll#sec8",
+      "prototype": "uint32_t LL_RTC_IsEnabledIT_TAMP(BKP_TypeDef * BKPx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "BKPx",
+          "type": "BKP_TypeDef *",
+          "descEn": "BKP Instance",
+          "descZh": "备份寄存器实例指针（F1 上是 BKP）。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if all the TAMPER interrupts are enabled or not",
+      "briefZh": "查询 RTC 的篡改中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "BKPx_CSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 947,
+      "definedIn": "stm32f1xx_ll_rtc.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

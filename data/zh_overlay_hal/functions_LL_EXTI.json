@@ -1,0 +1,98 @@
+{
+  "LL_EXTI_ClearFlag_0_31": {
+    "briefZh": "清除 EXTI 指定线的挂起标志。",
+    "paramsZh": {
+      "ExtiLine": "EXTI 线号，取 LL_EXTI_LINE_0 等。"
+    }
+  },
+  "LL_EXTI_DisableEvent_0_31": {
+    "briefZh": "关闭 EXTI 指定线的事件输出。",
+    "paramsZh": {
+      "ExtiLine": "EXTI 线号，取 LL_EXTI_LINE_0 等。"
+    }
+  },
+  "LL_EXTI_DisableFallingTrig_0_31": {
+    "briefZh": "关闭 EXTI 指定线的下降沿触发。",
+    "paramsZh": {
+      "ExtiLine": "EXTI 线号，取 LL_EXTI_LINE_0 等。"
+    }
+  },
+  "LL_EXTI_DisableIT_0_31": {
+    "briefZh": "关闭 EXTI 指定线的中断请求。",
+    "paramsZh": {
+      "ExtiLine": "EXTI 线号，取 LL_EXTI_LINE_0 等。"
+    }
+  },
+  "LL_EXTI_DisableRisingTrig_0_31": {
+    "briefZh": "关闭 EXTI 指定线的上升沿触发。",
+    "paramsZh": {
+      "ExtiLine": "EXTI 线号，取 LL_EXTI_LINE_0 等。"
+    }
+  },
+  "LL_EXTI_EnableEvent_0_31": {
+    "briefZh": "使能 EXTI 指定线的事件输出（不产生中断，可用于唤醒）。",
+    "paramsZh": {
+      "ExtiLine": "EXTI 线号，取 LL_EXTI_LINE_0 等。"
+    }
+  },
+  "LL_EXTI_EnableFallingTrig_0_31": {
+    "briefZh": "使能 EXTI 指定线的下降沿触发。",
+    "paramsZh": {
+      "ExtiLine": "EXTI 线号，取 LL_EXTI_LINE_0 等。"
+    }
+  },
+  "LL_EXTI_EnableIT_0_31": {
+    "briefZh": "使能 EXTI 0~31 线中指定线的中断请求。",
+    "paramsZh": {
+      "ExtiLine": "EXTI 线号，取 LL_EXTI_LINE_0 等。"
+    }
+  },
+  "LL_EXTI_EnableRisingTrig_0_31": {
+    "briefZh": "使能 EXTI 指定线的上升沿触发。",
+    "paramsZh": {
+      "ExtiLine": "EXTI 线号，取 LL_EXTI_LINE_0 等。"
+    }
+  },
+  "LL_EXTI_GenerateSWI_0_31": {
+    "briefZh": "软件触发 EXTI 指定线，模拟一次硬件边沿。",
+    "paramsZh": {
+      "ExtiLine": "EXTI 线号，取 LL_EXTI_LINE_0 等。"
+    }
+  },
+  "LL_EXTI_IsActiveFlag_0_31": {
+    "briefZh": "查询 EXTI 指定线的挂起标志是否置位。",
+    "paramsZh": {
+      "ExtiLine": "EXTI 线号，取 LL_EXTI_LINE_0 等。"
+    }
+  },
+  "LL_EXTI_IsEnabledEvent_0_31": {
+    "briefZh": "查询 EXTI 指定线的事件输出是否已使能。",
+    "paramsZh": {
+      "ExtiLine": "EXTI 线号，取 LL_EXTI_LINE_0 等。"
+    }
+  },
+  "LL_EXTI_IsEnabledFallingTrig_0_31": {
+    "briefZh": "查询 EXTI 指定线的下降沿触发是否已使能。",
+    "paramsZh": {
+      "ExtiLine": "EXTI 线号，取 LL_EXTI_LINE_0 等。"
+    }
+  },
+  "LL_EXTI_IsEnabledIT_0_31": {
+    "briefZh": "查询 EXTI 指定线的中断请求是否已使能。",
+    "paramsZh": {
+      "ExtiLine": "EXTI 线号，取 LL_EXTI_LINE_0 等。"
+    }
+  },
+  "LL_EXTI_IsEnabledRisingTrig_0_31": {
+    "briefZh": "查询 EXTI 指定线的上升沿触发是否已使能。",
+    "paramsZh": {
+      "ExtiLine": "EXTI 线号，取 LL_EXTI_LINE_0 等。"
+    }
+  },
+  "LL_EXTI_ReadFlag_0_31": {
+    "briefZh": "读取 EXTI 指定线的挂起标志。",
+    "paramsZh": {
+      "ExtiLine": "EXTI 线号，取 LL_EXTI_LINE_0 等。"
+    }
+  }
+}

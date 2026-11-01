@@ -1,0 +1,2202 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "ADC",
+  "library": "hal",
+  "functions": [
+    {
+      "id": "HAL_ADC_Init",
+      "name": "HAL_ADC_Init",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef       HAL_ADC_Init(ADC_HandleTypeDef* hadc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Initializes the ADC peripheral and regular group according to parameters specified in structure \"ADC_InitTypeDef\".",
+      "briefZh": "按 InitTypeDef 中的参数初始化 ADC，并完成状态机初始化。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_ADC_ConvCpltCallback",
+        "HAL_ADC_ConvHalfCpltCallback",
+        "HAL_ADC_LevelOutOfWindowCallback",
+        "HAL_ADC_ErrorCallback",
+        "HAL_ADCEx_InjectedConvCpltCallback",
+        "HAL_ADC_MspInit"
+      ],
+      "remarks": [
+        "As prerequisite, ADC clock must be configured at RCC top level (clock source APB2). See commented example code below that can be copied and uncommented into HAL_ADC_MspInit().",
+        "Possibility to update parameters on the fly: This function initializes the ADC MSP (HAL_ADC_MspInit()) only when coming from ADC state reset. Following calls to this function can be used to reconfigure some parameters of ADC_InitTypeDef structure on the fly, without modifying MSP configuration. If ADC MSP has to be modified again, HAL_ADC_DeInit() must be called before HAL_ADC_Init(). The setting of these parameters is conditioned to ADC state. For parameters constraints, see comments of structure \"ADC_InitTypeDef\".",
+        "This function configures the ADC within 2 scopes: scope of entire ADC and scope of regular group. For parameters details, see comments of structure \"ADC_InitTypeDef\"."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "ADC_HandleTypeDef",
+        "ADC_InitTypeDef",
+        "HAL_OK",
+        "HAL_ERROR",
+        "IS_ADC_DATA_ALIGN",
+        "IS_ADC_SCAN_MODE",
+        "IS_ADC_EXTTRIG",
+        "ADC_SCAN_DISABLE",
+        "IS_ADC_REGULAR_NB_CONV",
+        "IS_ADC_REGULAR_DISCONT_NUMBER",
+        "HAL_ADC_STATE_RESET",
+        "ADC_CLEAR_ERRORCODE",
+        "HAL_UNLOCKED",
+        "ConvCpltCallback",
+        "MspInitCallback",
+        "HAL_IS_BIT_CLR",
+        "HAL_ADC_STATE_ERROR_INTERNAL",
+        "ADC_STATE_CLR_SET",
+        "HAL_ADC_STATE_REG_BUSY",
+        "HAL_ADC_STATE_INJ_BUSY",
+        "HAL_ADC_STATE_BUSY_INTERNAL",
+        "ADC_CFGR_EXTSEL",
+        "ADC_CR2_CONTINUOUS",
+        "ADC_CR1_SCAN_SET",
+        "ADC_CR1_DISCONTINUOUS_NUM",
+        "HAL_ADC_STATE_ERROR_CONFIG",
+        "HAL_ADC_ERROR_INTERNAL",
+        "ADC_SCAN_ENABLE",
+        "ADC_SQR1_L_SHIFT",
+        "HAL_ADC_STATE_READY"
+      ],
+      "headerLine": 895,
+      "definedIn": "stm32f1xx_hal_adc.h",
+      "sourceLine": 411,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADC_DeInit",
+      "name": "HAL_ADC_DeInit",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef       HAL_ADC_DeInit(ADC_HandleTypeDef *hadc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Deinitialize the ADC peripheral registers to their default reset values, with deinitialization of the ADC MSP. If needed, the example code can be copied and uncommented into function HAL_ADC_MspDeInit().",
+      "briefZh": "把 ADC 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_ADC_MspDeInit"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "ADC_HandleTypeDef",
+        "HAL_OK",
+        "HAL_ERROR",
+        "HAL_ADC_STATE_BUSY_INTERNAL",
+        "__HAL_ADC_CLEAR_FLAG",
+        "ADC_FLAG_AWD",
+        "ADC_FLAG_JEOC",
+        "ADC_FLAG_EOC",
+        "ADC_FLAG_JSTRT",
+        "ADC_FLAG_STRT",
+        "ADC_CLEAR_ERRORCODE",
+        "HAL_ADC_STATE_RESET",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 896,
+      "definedIn": "stm32f1xx_hal_adc.h",
+      "sourceLine": 629,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADC_MspInit",
+      "name": "HAL_ADC_MspInit",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec1",
+      "prototype": "void                    HAL_ADC_MspInit(ADC_HandleTypeDef* hadc);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Initializes the ADC MSP.",
+      "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "ADC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 897,
+      "definedIn": "stm32f1xx_hal_adc.h",
+      "sourceLine": 777,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADC_MspDeInit",
+      "name": "HAL_ADC_MspDeInit",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec1",
+      "prototype": "void                    HAL_ADC_MspDeInit(ADC_HandleTypeDef* hadc);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "DeInitializes the ADC MSP.",
+      "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "ADC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 898,
+      "definedIn": "stm32f1xx_hal_adc.h",
+      "sourceLine": 791,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADC_RegisterCallback",
+      "name": "HAL_ADC_RegisterCallback",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_ADC_RegisterCallback(ADC_HandleTypeDef *hadc, HAL_ADC_CallbackIDTypeDef CallbackID, pADC_CallbackTypeDef pCallback);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "Pointer to a ADC_HandleTypeDef structure that contains the configuration information for the specified ADC.",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        },
+        {
+          "name": "CallbackID",
+          "type": "HAL_ADC_CallbackIDTypeDef",
+          "descEn": "ID of the callback to be registered This parameter can be one of the following values:",
+          "descZh": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。"
+        },
+        {
+          "name": "pCallback",
+          "type": "pADC_CallbackTypeDef",
+          "descEn": "pointer to the Callback function",
+          "descZh": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Register a User ADC Callback To be used instead of the weak predefined callback",
+      "briefZh": "为 ADC 注册指定事件的回调，替代默认的 __weak 空实现。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "ADC_HandleTypeDef",
+        "HAL_ADC_CallbackIDTypeDef",
+        "pADC_CallbackTypeDef",
+        "HAL_OK",
+        "HAL_ADC_ERROR_INVALID_CALLBACK",
+        "HAL_ERROR",
+        "HAL_ADC_STATE_READY",
+        "HAL_ADC_CONVERSION_COMPLETE_CB_ID",
+        "ConvCpltCallback",
+        "MspInitCallback",
+        "HAL_ADC_STATE_RESET"
+      ],
+      "headerLine": 902,
+      "definedIn": "stm32f1xx_hal_adc.h",
+      "sourceLine": 820,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADC_UnRegisterCallback",
+      "name": "HAL_ADC_UnRegisterCallback",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_ADC_UnRegisterCallback(ADC_HandleTypeDef *hadc, HAL_ADC_CallbackIDTypeDef CallbackID);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "Pointer to a ADC_HandleTypeDef structure that contains the configuration information for the specified ADC.",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        },
+        {
+          "name": "CallbackID",
+          "type": "HAL_ADC_CallbackIDTypeDef",
+          "descEn": "ID of the callback to be unregistered This parameter can be one of the following values:",
+          "descZh": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Unregister a ADC Callback ADC callback is redirected to the weak predefined callback",
+      "briefZh": "注销 ADC 已注册的回调，恢复成默认的 __weak 空实现。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_ADC_ConvCpltCallback",
+        "HAL_ADC_ConvHalfCpltCallback",
+        "HAL_ADC_LevelOutOfWindowCallback",
+        "HAL_ADC_ErrorCallback",
+        "HAL_ADCEx_InjectedConvCpltCallback",
+        "HAL_ADC_MspInit",
+        "HAL_ADC_MspDeInit"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "ADC_HandleTypeDef",
+        "HAL_ADC_CallbackIDTypeDef",
+        "HAL_OK",
+        "HAL_ADC_STATE_READY",
+        "HAL_ADC_CONVERSION_COMPLETE_CB_ID",
+        "ConvCpltCallback",
+        "MspInitCallback",
+        "HAL_ADC_ERROR_INVALID_CALLBACK",
+        "HAL_ERROR",
+        "HAL_ADC_STATE_RESET"
+      ],
+      "headerLine": 903,
+      "definedIn": "stm32f1xx_hal_adc.h",
+      "sourceLine": 924,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADC_Start",
+      "name": "HAL_ADC_Start",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef       HAL_ADC_Start(ADC_HandleTypeDef* hadc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Enables ADC, starts conversion of regular group. Interruptions enabled in this function: None.",
+      "briefZh": "启动 ADC 并开始规则组转换（不阻塞）。需要结果时配合 HAL_ADC_PollForConversion 或回调。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "HAL_ADC_Start(&hadc1);\n\n/* 等转换完成（超时 10ms） */\nif (HAL_ADC_PollForConversion(&hadc1, 10) == HAL_OK)\n{\n  uint32_t raw = HAL_ADC_GetValue(&hadc1);\n  /* 12 位满量程 4095 对应 VDDA（通常 3.3V） */\n  float volt = raw * 3.3f / 4095.0f;\n}\n\nHAL_ADC_Stop(&hadc1);",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "ADC_HandleTypeDef",
+        "HAL_OK",
+        "__HAL_LOCK",
+        "ADC_STATE_CLR_SET",
+        "HAL_ADC_STATE_READY",
+        "HAL_ADC_STATE_REG_EOC",
+        "HAL_ADC_STATE_REG_BUSY",
+        "ADC_NONMULTIMODE_OR_MULTIMODEMASTER",
+        "HAL_ADC_STATE_MULTIMODE_SLAVE",
+        "HAL_ADC_STATE_INJ_EOC",
+        "HAL_ADC_STATE_INJ_BUSY",
+        "ADC_MULTIMODE_AUTO_INJECTED",
+        "HAL_IS_BIT_SET",
+        "HAL_ADC_ERROR_OVR",
+        "HAL_ADC_ERROR_DMA",
+        "ADC_CLEAR_ERRORCODE",
+        "__HAL_UNLOCK",
+        "__HAL_ADC_CLEAR_FLAG",
+        "ADC_FLAG_EOC",
+        "ADC_IS_SOFTWARE_START_REGULAR"
+      ],
+      "headerLine": 918,
+      "definedIn": "stm32f1xx_hal_adc.h",
+      "sourceLine": 1036,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADC_Stop",
+      "name": "HAL_ADC_Stop",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef       HAL_ADC_Stop(ADC_HandleTypeDef* hadc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "HAL status.",
+      "returnDescZh": "",
+      "briefEn": "Stop ADC conversion of regular group (and injected channels in case of auto_injection mode), disable ADC peripheral.",
+      "briefZh": "停止规则组转换并关闭 ADC。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        ": ADC peripheral disable is forcing stop of potential conversion on injected group. If injected group is under use, it should be preliminarily stopped using HAL_ADCEx_InjectedStop function."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "ADC_HandleTypeDef",
+        "HAL_OK",
+        "__HAL_LOCK",
+        "ADC_STATE_CLR_SET",
+        "HAL_ADC_STATE_REG_BUSY",
+        "HAL_ADC_STATE_INJ_BUSY",
+        "HAL_ADC_STATE_READY",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 919,
+      "definedIn": "stm32f1xx_hal_adc.h",
+      "sourceLine": 1149,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADC_PollForConversion",
+      "name": "HAL_ADC_PollForConversion",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef       HAL_ADC_PollForConversion(ADC_HandleTypeDef* hadc, uint32_t Timeout);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        },
+        {
+          "name": "Timeout",
+          "type": "uint32_t",
+          "descEn": "Timeout value in millisecond.",
+          "descZh": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Wait for regular group conversion to be completed.",
+      "briefZh": "轮询等待规则组转换完成，带超时。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick",
+        "HAL_RCCEx_GetPeriphCLKFreq"
+      ],
+      "remarks": [
+        "This function cannot be used in a particular setup: ADC configured in DMA mode. In this case, DMA resets the flag EOC and polling cannot be performed on each conversion.",
+        "On STM32F1 devices, limitation in case of sequencer enabled (several ranks selected): polling cannot be done on each conversion inside the sequence. In this case, polling is replaced by wait for maximum conversion time."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "ADC_HandleTypeDef",
+        "HAL_IS_BIT_SET",
+        "HAL_ADC_STATE_ERROR_CONFIG",
+        "__HAL_UNLOCK",
+        "HAL_ERROR",
+        "HAL_IS_BIT_CLR",
+        "ADC_FLAG_EOC",
+        "HAL_MAX_DELAY",
+        "HAL_ADC_STATE_TIMEOUT",
+        "HAL_TIMEOUT",
+        "RCC_PERIPHCLK_ADC",
+        "ADC_CONVCYCLES_MAX_RANGE",
+        "__HAL_ADC_CLEAR_FLAG",
+        "ADC_FLAG_STRT",
+        "HAL_ADC_STATE_REG_EOC",
+        "ADC_IS_SOFTWARE_START_REGULAR",
+        "HAL_ADC_STATE_REG_BUSY",
+        "HAL_ADC_STATE_INJ_BUSY",
+        "HAL_ADC_STATE_READY",
+        "HAL_OK"
+      ],
+      "headerLine": 920,
+      "definedIn": "stm32f1xx_hal_adc.h",
+      "sourceLine": 1193,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADC_PollForEvent",
+      "name": "HAL_ADC_PollForEvent",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef       HAL_ADC_PollForEvent(ADC_HandleTypeDef* hadc, uint32_t EventType, uint32_t Timeout);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        },
+        {
+          "name": "EventType",
+          "type": "uint32_t",
+          "descEn": "the ADC event type. This parameter can be one of the following values:",
+          "descZh": "要等待的转换事件类型（如 HAL_ADC_EVENT_EOS 规则组转换结束）。"
+        },
+        {
+          "name": "Timeout",
+          "type": "uint32_t",
+          "descEn": "Timeout value in millisecond.",
+          "descZh": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Poll for conversion event.",
+      "briefZh": "轮询等待指定转换事件，带超时。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "ADC_HandleTypeDef",
+        "IS_ADC_EVENT_TYPE",
+        "__HAL_ADC_GET_FLAG",
+        "HAL_MAX_DELAY",
+        "HAL_ADC_STATE_TIMEOUT",
+        "__HAL_UNLOCK",
+        "HAL_TIMEOUT",
+        "HAL_ADC_STATE_AWD1",
+        "__HAL_ADC_CLEAR_FLAG",
+        "ADC_FLAG_AWD",
+        "HAL_OK"
+      ],
+      "headerLine": 921,
+      "definedIn": "stm32f1xx_hal_adc.h",
+      "sourceLine": 1332,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADC_Start_IT",
+      "name": "HAL_ADC_Start_IT",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef       HAL_ADC_Start_IT(ADC_HandleTypeDef* hadc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Enables ADC, starts conversion of regular group with interruption. Interruptions enabled in this function: - EOC (end of conversion of regular group) Each of these interruptions has its dedicated callback function.",
+      "briefZh": "启动规则组转换并以中断方式通知完成（EOC）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "ADC_HandleTypeDef",
+        "HAL_OK",
+        "__HAL_LOCK",
+        "ADC_STATE_CLR_SET",
+        "HAL_ADC_STATE_READY",
+        "HAL_ADC_STATE_REG_EOC",
+        "HAL_ADC_STATE_REG_OVR",
+        "HAL_ADC_STATE_REG_EOSMP",
+        "HAL_ADC_STATE_REG_BUSY",
+        "ADC_NONMULTIMODE_OR_MULTIMODEMASTER",
+        "HAL_ADC_STATE_MULTIMODE_SLAVE",
+        "HAL_ADC_STATE_INJ_EOC",
+        "HAL_ADC_STATE_INJ_BUSY",
+        "ADC_MULTIMODE_AUTO_INJECTED",
+        "HAL_IS_BIT_SET",
+        "HAL_ADC_ERROR_OVR",
+        "HAL_ADC_ERROR_DMA",
+        "ADC_CLEAR_ERRORCODE",
+        "__HAL_UNLOCK",
+        "__HAL_ADC_CLEAR_FLAG",
+        "ADC_FLAG_EOC",
+        "__HAL_ADC_ENABLE_IT",
+        "ADC_IT_EOC",
+        "ADC_IS_SOFTWARE_START_REGULAR"
+      ],
+      "headerLine": 924,
+      "definedIn": "stm32f1xx_hal_adc.h",
+      "sourceLine": 1385,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADC_Stop_IT",
+      "name": "HAL_ADC_Stop_IT",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef       HAL_ADC_Stop_IT(ADC_HandleTypeDef* hadc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Stop ADC conversion of regular group (and injected group in case of auto_injection mode), disable interrution of end-of-conversion, disable ADC peripheral.",
+      "briefZh": "停止规则组转换并关闭转换结束中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "ADC_HandleTypeDef",
+        "HAL_OK",
+        "__HAL_LOCK",
+        "__HAL_ADC_DISABLE_IT",
+        "ADC_IT_EOC",
+        "ADC_STATE_CLR_SET",
+        "HAL_ADC_STATE_REG_BUSY",
+        "HAL_ADC_STATE_INJ_BUSY",
+        "HAL_ADC_STATE_READY",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 925,
+      "definedIn": "stm32f1xx_hal_adc.h",
+      "sourceLine": 1496,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADC_Start_DMA",
+      "name": "HAL_ADC_Start_DMA",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef       HAL_ADC_Start_DMA(ADC_HandleTypeDef* hadc, uint32_t* pData, uint32_t Length);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        },
+        {
+          "name": "pData",
+          "type": "uint32_t *",
+          "descEn": "The destination Buffer address.",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Length",
+          "type": "uint32_t",
+          "descEn": "The length of data to be transferred from ADC peripheral to memory.",
+          "descZh": "DMA 传输的数据长度。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enables ADC, starts conversion of regular group and transfers result through DMA. Interruptions enabled in this function: - DMA transfer complete - DMA half transfer Each of these interruptions has its dedicated callback function.",
+      "briefZh": "启动规则组转换并用 DMA 搬运结果，适合多通道连续采样。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_DMA_Start_IT"
+      ],
+      "remarks": [
+        "For devices with several ADCs: This function is for single-ADC mode only. For multimode, use the dedicated MultimodeStart function.",
+        "On STM32F1 devices, only ADC1 and ADC3 (ADC availability depending on devices) have DMA capability. ADC2 converted data can be transferred in dual ADC mode using DMA of ADC1 (ADC master in multimode). In case of using ADC1 with DMA on a device featuring 2 ADC instances: ADC1 conversion register DR contains ADC1 conversion result (ADC1 register DR bits 0 to 11) and, additionally, ADC2 last conversion result (ADC1 register DR bits 16 to 27). Therefore, to have DMA transferring the conversion results of ADC1 only, DMA must be configured to transfer size: half word."
+      ],
+      "notesZh": [],
+      "exampleCode": "uint16_t adc_buf[4];   /* 4 个通道 */\n\n/* 启动转换并让 DMA 自动搬运结果 */\nHAL_ADC_Start_DMA(&hadc1, (uint32_t *)adc_buf, 4);\n\nvoid HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)\n{\n  /* adc_buf 里已经是 4 个通道的新数据 */\n}",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "ADC_HandleTypeDef",
+        "HAL_OK",
+        "ADC_MULTIMODE_IS_ENABLE",
+        "__HAL_LOCK",
+        "ADC_STATE_CLR_SET",
+        "HAL_ADC_STATE_READY",
+        "HAL_ADC_STATE_REG_EOC",
+        "HAL_ADC_STATE_REG_OVR",
+        "HAL_ADC_STATE_REG_EOSMP",
+        "HAL_ADC_STATE_REG_BUSY",
+        "ADC_NONMULTIMODE_OR_MULTIMODEMASTER",
+        "HAL_ADC_STATE_MULTIMODE_SLAVE",
+        "HAL_ADC_STATE_INJ_EOC",
+        "HAL_ADC_STATE_INJ_BUSY",
+        "ADC_MULTIMODE_AUTO_INJECTED",
+        "HAL_IS_BIT_SET",
+        "HAL_ADC_ERROR_OVR",
+        "HAL_ADC_ERROR_DMA",
+        "ADC_CLEAR_ERRORCODE",
+        "__HAL_UNLOCK",
+        "XferCpltCallback",
+        "__HAL_ADC_CLEAR_FLAG",
+        "ADC_FLAG_EOC",
+        "ADC_IS_SOFTWARE_START_REGULAR",
+        "HAL_ERROR"
+      ],
+      "headerLine": 928,
+      "definedIn": "stm32f1xx_hal_adc.h",
+      "sourceLine": 1553,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADC_Stop_DMA",
+      "name": "HAL_ADC_Stop_DMA",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef       HAL_ADC_Stop_DMA(ADC_HandleTypeDef* hadc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "HAL status.",
+      "returnDescZh": "",
+      "briefEn": "Stop ADC conversion of regular group (and injected group in case of auto_injection mode), disable ADC DMA transfer, disable ADC peripheral.",
+      "briefZh": "停止转换并关闭 DMA。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_DMA_Abort"
+      ],
+      "remarks": [
+        ": ADC peripheral disable is forcing stop of potential conversion on injected group. If injected group is under use, it should be preliminarily stopped using HAL_ADCEx_InjectedStop function.",
+        "For devices with several ADCs: This function is for single-ADC mode only. For multimode, use the dedicated MultimodeStop function.",
+        "On STM32F1 devices, only ADC1 and ADC3 (ADC availability depending on devices) have DMA capability."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "ADC_HandleTypeDef",
+        "HAL_OK",
+        "__HAL_LOCK",
+        "ADC_STATE_CLR_SET",
+        "HAL_ADC_STATE_REG_BUSY",
+        "HAL_ADC_STATE_INJ_BUSY",
+        "HAL_ADC_STATE_READY",
+        "HAL_ADC_STATE_ERROR_DMA",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 929,
+      "definedIn": "stm32f1xx_hal_adc.h",
+      "sourceLine": 1694,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADC_GetValue",
+      "name": "HAL_ADC_GetValue",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec2",
+      "prototype": "uint32_t                HAL_ADC_GetValue(ADC_HandleTypeDef* hadc);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "ADC group regular conversion data",
+      "returnDescZh": "",
+      "briefEn": "Get ADC regular group conversion result.",
+      "briefZh": "读取最近一次转换结果。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "Reading register DR automatically clears ADC flag EOC (ADC group regular end of unitary conversion).",
+        "This function does not clear ADC flag EOS (ADC group regular end of sequence conversion). Occurrence of flag EOS rising: - If sequencer is composed of 1 rank, flag EOS is equivalent to flag EOC. - If sequencer is composed of several ranks, during the scan sequence flag EOC only is raised, at the end of the scan sequence both flags EOC and EOS are raised. To clear this flag, either use function: in programming model IT: @ref HAL_ADC_IRQHandler(), in programming model polling: @ref HAL_ADC_PollForConversion() or @ref __HAL_ADC_CLEAR_FLAG(&hadc, ADC_FLAG_EOS)."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "ADC_HandleTypeDef",
+        "__HAL_ADC_CLEAR_FLAG"
+      ],
+      "headerLine": 932,
+      "definedIn": "stm32f1xx_hal_adc.h",
+      "sourceLine": 1762,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADC_IRQHandler",
+      "name": "HAL_ADC_IRQHandler",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec2",
+      "prototype": "void                    HAL_ADC_IRQHandler(ADC_HandleTypeDef* hadc);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Handles ADC interrupt request",
+      "briefZh": "ADC 的中断统一入口。在 stm32f1xx_it.c 的对应 IRQHandler 里调用，内部会清标志并分派到各回调。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_ADC_ConvCpltCallback",
+        "HAL_ADCEx_InjectedConvCpltCallback",
+        "HAL_ADC_LevelOutOfWindowCallback"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "ADC_HandleTypeDef",
+        "IS_ADC_REGULAR_NB_CONV",
+        "ADC_IT_EOC",
+        "ADC_FLAG_EOC",
+        "HAL_IS_BIT_CLR",
+        "HAL_ADC_STATE_ERROR_INTERNAL",
+        "HAL_ADC_STATE_REG_EOC",
+        "ADC_IS_SOFTWARE_START_REGULAR",
+        "__HAL_ADC_DISABLE_IT",
+        "HAL_ADC_STATE_REG_BUSY",
+        "HAL_ADC_STATE_INJ_BUSY",
+        "HAL_ADC_STATE_READY",
+        "ConvCpltCallback",
+        "__HAL_ADC_CLEAR_FLAG",
+        "ADC_FLAG_STRT",
+        "ADC_IT_JEOC",
+        "ADC_FLAG_JEOC",
+        "HAL_ADC_STATE_INJ_EOC",
+        "ADC_IS_SOFTWARE_START_INJECTED",
+        "ADC_FLAG_JSTRT",
+        "ADC_IT_AWD",
+        "ADC_FLAG_AWD",
+        "HAL_ADC_STATE_AWD1"
+      ],
+      "headerLine": 935,
+      "definedIn": "stm32f1xx_hal_adc.h",
+      "sourceLine": 1779,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADC_ConvCpltCallback",
+      "name": "HAL_ADC_ConvCpltCallback",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec2",
+      "prototype": "void                    HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Conversion complete callback in non blocking mode",
+      "briefZh": "转换完成回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "ADC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 936,
+      "definedIn": "stm32f1xx_hal_adc.h",
+      "sourceLine": 1909,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADC_ConvHalfCpltCallback",
+      "name": "HAL_ADC_ConvHalfCpltCallback",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec2",
+      "prototype": "void                    HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Conversion DMA half-transfer callback in non blocking mode",
+      "briefZh": "转换过半回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "ADC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 937,
+      "definedIn": "stm32f1xx_hal_adc.h",
+      "sourceLine": 1923,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADC_LevelOutOfWindowCallback",
+      "name": "HAL_ADC_LevelOutOfWindowCallback",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec2",
+      "prototype": "void                    HAL_ADC_LevelOutOfWindowCallback(ADC_HandleTypeDef* hadc);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Analog watchdog callback in non blocking mode.",
+      "briefZh": "模拟看门狗越界回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "ADC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 938,
+      "definedIn": "stm32f1xx_hal_adc.h",
+      "sourceLine": 1937,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADC_ErrorCallback",
+      "name": "HAL_ADC_ErrorCallback",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec2",
+      "prototype": "void                    HAL_ADC_ErrorCallback(ADC_HandleTypeDef *hadc);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "ADC error callback in non blocking mode (ADC conversion with interruption or transfer by DMA)",
+      "briefZh": "错误回调（__weak 空实现，需自己重写）。溢出、噪声、帧错误等异常会走到这里。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "ADC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 939,
+      "definedIn": "stm32f1xx_hal_adc.h",
+      "sourceLine": 1952,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADC_ConfigChannel",
+      "name": "HAL_ADC_ConfigChannel",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec3",
+      "prototype": "HAL_StatusTypeDef       HAL_ADC_ConfigChannel(ADC_HandleTypeDef* hadc, ADC_ChannelConfTypeDef* sConfig);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        },
+        {
+          "name": "sConfig",
+          "type": "ADC_ChannelConfTypeDef *",
+          "descEn": "Structure of ADC channel for regular group.",
+          "descZh": "ADC 通道配置结构体：Channel、Rank（在序列中的次序）、SamplingTime（采样时间）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Configures the the selected channel to be linked to the regular group.",
+      "briefZh": "配置指定通道并挂到对应的组（规则组或注入组）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "In case of usage of internal measurement channels: Vbat/VrefInt/TempSensor. These internal paths can be be disabled using function HAL_ADC_DeInit().",
+        "Possibility to update parameters on the fly: This function initializes channel into regular group, following calls to this function can be used to reconfigure some parameters of structure \"ADC_ChannelConfTypeDef\" on the fly, without resetting the ADC. The setting of these parameters is conditioned to ADC state. For parameters constraints, see comments of structure \"ADC_ChannelConfTypeDef\"."
+      ],
+      "notesZh": [],
+      "exampleCode": "ADC_ChannelConfTypeDef sConfig = {0};\n\nsConfig.Channel      = ADC_CHANNEL_0;\nsConfig.Rank         = ADC_REGULAR_RANK_1;\nsConfig.SamplingTime = ADC_SAMPLETIME_239CYCLES_5;  /* 高阻抗源要加大 */\nif (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)\n{\n  Error_Handler();\n}",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "ADC_HandleTypeDef",
+        "ADC_ChannelConfTypeDef",
+        "HAL_OK",
+        "IS_ADC_CHANNEL",
+        "IS_ADC_REGULAR_RANK",
+        "IS_ADC_SAMPLE_TIME",
+        "__HAL_LOCK",
+        "ADC_SQR3_RK",
+        "ADC_SQR2_RK",
+        "ADC_SQR1_RK",
+        "ADC_CHANNEL_10",
+        "ADC_SMPR1",
+        "ADC_SMPR2",
+        "ADC_CHANNEL_TEMPSENSOR",
+        "ADC_CHANNEL_VREFINT",
+        "HAL_ADC_STATE_ERROR_CONFIG",
+        "HAL_ERROR",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 949,
+      "definedIn": "stm32f1xx_hal_adc.h",
+      "sourceLine": 2000,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADC_AnalogWDGConfig",
+      "name": "HAL_ADC_AnalogWDGConfig",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec3",
+      "prototype": "HAL_StatusTypeDef       HAL_ADC_AnalogWDGConfig(ADC_HandleTypeDef* hadc, ADC_AnalogWDGConfTypeDef* AnalogWDGConfig);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        },
+        {
+          "name": "AnalogWDGConfig",
+          "type": "ADC_AnalogWDGConfTypeDef *",
+          "descEn": "Structure of ADC analog watchdog configuration",
+          "descZh": "模拟看门狗配置结构体：WatchdogNumber、Channel、HighThreshold、LowThreshold、WatchdogMode、ITMode。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Configures the analog watchdog.",
+      "briefZh": "配置模拟看门狗：监视通道范围与上下阈值，越界时触发回调。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "Analog watchdog thresholds can be modified while ADC conversion is on going. In this case, some constraints must be taken into account: the programmed threshold values are effective from the next ADC EOC (end of unitary conversion). Considering that registers write delay may happen due to bus activity, this might cause an uncertainty on the effective timing of the new programmed threshold values."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "ADC_HandleTypeDef",
+        "ADC_AnalogWDGConfTypeDef",
+        "IS_ADC_ANALOG_WATCHDOG_MODE",
+        "IS_ADC_RANGE",
+        "ADC_ANALOGWATCHDOG_SINGLE_REG",
+        "ADC_ANALOGWATCHDOG_SINGLE_INJEC",
+        "ADC_ANALOGWATCHDOG_SINGLE_REGINJEC",
+        "IS_ADC_CHANNEL",
+        "__HAL_LOCK",
+        "__HAL_ADC_ENABLE_IT",
+        "ADC_IT_AWD",
+        "__HAL_ADC_DISABLE_IT",
+        "__HAL_UNLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 950,
+      "definedIn": "stm32f1xx_hal_adc.h",
+      "sourceLine": 2110,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADC_GetState",
+      "name": "HAL_ADC_GetState",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec4",
+      "prototype": "uint32_t                HAL_ADC_GetState(ADC_HandleTypeDef* hadc);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "HAL state",
+      "returnDescZh": "",
+      "briefEn": "return the ADC state",
+      "briefZh": "读取 ADC 的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "ADC_HandleTypeDef"
+      ],
+      "headerLine": 960,
+      "definedIn": "stm32f1xx_hal_adc.h",
+      "sourceLine": 2197,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADC_GetError",
+      "name": "HAL_ADC_GetError",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec4",
+      "prototype": "uint32_t                HAL_ADC_GetError(ADC_HandleTypeDef *hadc);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "ADC Error Code",
+      "returnDescZh": "",
+      "briefEn": "Return the ADC error code",
+      "briefZh": "读取 ADC 累计的错误码位掩码。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "ADC_HandleTypeDef"
+      ],
+      "headerLine": 961,
+      "definedIn": "stm32f1xx_hal_adc.h",
+      "sourceLine": 2208,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADCEx_Calibration_Start",
+      "name": "HAL_ADCEx_Calibration_Start",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec5",
+      "prototype": "HAL_StatusTypeDef       HAL_ADCEx_Calibration_Start(ADC_HandleTypeDef* hadc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Perform an ADC automatic self-calibration Calibration prerequisite: ADC must be disabled (execute this function before HAL_ADC_Start() or after HAL_ADC_Stop() ). During calibration process, ADC is enabled. ADC is let enabled at the completion of this function.",
+      "briefZh": "启动 ADC 自校准。必须在 ADC 已停止（未 Start 或已 Stop）时调用，校准耗时几十个 ADC 周期；每次上电做一次即可，不做的话精度会明显偏差。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_RCCEx_GetPeriphCLKFreq",
+        "HAL_GetTick"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "/* 必须在 ADC 停止时做，上电后一次即可 */\nHAL_ADCEx_Calibration_Start(&hadc1);\n\n/* 不做校准的话读数偏差明显 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "ADC_HandleTypeDef",
+        "HAL_OK",
+        "__HAL_LOCK",
+        "ADC_STATE_CLR_SET",
+        "HAL_ADC_STATE_REG_BUSY",
+        "HAL_ADC_STATE_INJ_BUSY",
+        "HAL_ADC_STATE_BUSY_INTERNAL",
+        "RCC_PERIPHCLK_ADC",
+        "HAL_IS_BIT_SET",
+        "HAL_ADC_STATE_ERROR_INTERNAL",
+        "__HAL_UNLOCK",
+        "HAL_ERROR",
+        "HAL_ADC_STATE_READY"
+      ],
+      "headerLine": 646,
+      "definedIn": "stm32f1xx_hal_adc_ex.h",
+      "sourceLine": 119,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADCEx_InjectedStart",
+      "name": "HAL_ADCEx_InjectedStart",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec5",
+      "prototype": "HAL_StatusTypeDef       HAL_ADCEx_InjectedStart(ADC_HandleTypeDef* hadc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Enables ADC, starts conversion of injected group. Interruptions enabled in this function: None.",
+      "briefZh": "启动注入组转换（不阻塞）。注入组优先级高于规则组，可打断规则组。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "ADC_HandleTypeDef",
+        "HAL_OK",
+        "__HAL_LOCK",
+        "ADC_STATE_CLR_SET",
+        "HAL_ADC_STATE_READY",
+        "HAL_ADC_STATE_INJ_EOC",
+        "HAL_ADC_STATE_INJ_BUSY",
+        "ADC_NONMULTIMODE_OR_MULTIMODEMASTER",
+        "HAL_ADC_STATE_MULTIMODE_SLAVE",
+        "HAL_IS_BIT_CLR",
+        "HAL_ADC_STATE_REG_BUSY",
+        "ADC_CLEAR_ERRORCODE",
+        "__HAL_UNLOCK",
+        "__HAL_ADC_CLEAR_FLAG",
+        "ADC_FLAG_JEOC",
+        "ADC_IS_SOFTWARE_START_INJECTED"
+      ],
+      "headerLine": 649,
+      "definedIn": "stm32f1xx_hal_adc_ex.h",
+      "sourceLine": 229,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADCEx_InjectedStop",
+      "name": "HAL_ADCEx_InjectedStop",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec5",
+      "prototype": "HAL_StatusTypeDef       HAL_ADCEx_InjectedStop(ADC_HandleTypeDef* hadc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Stop conversion of injected channels. Disable ADC peripheral if no regular conversion is on going.",
+      "briefZh": "停止注入组转换。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "If ADC must be disabled and if conversion is on going on regular group, function HAL_ADC_Stop must be used to stop both injected and regular groups, and disable the ADC.",
+        "If injected group mode auto-injection is enabled, function HAL_ADC_Stop must be used.",
+        "In case of auto-injection mode, HAL_ADC_Stop must be used."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "ADC_HandleTypeDef",
+        "HAL_OK",
+        "__HAL_LOCK",
+        "HAL_ADC_STATE_REG_BUSY",
+        "HAL_IS_BIT_CLR",
+        "ADC_STATE_CLR_SET",
+        "HAL_ADC_STATE_INJ_BUSY",
+        "HAL_ADC_STATE_READY",
+        "HAL_ADC_STATE_ERROR_CONFIG",
+        "HAL_ERROR",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 650,
+      "definedIn": "stm32f1xx_hal_adc_ex.h",
+      "sourceLine": 328,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADCEx_InjectedPollForConversion",
+      "name": "HAL_ADCEx_InjectedPollForConversion",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec5",
+      "prototype": "HAL_StatusTypeDef       HAL_ADCEx_InjectedPollForConversion(ADC_HandleTypeDef* hadc, uint32_t Timeout);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        },
+        {
+          "name": "Timeout",
+          "type": "uint32_t",
+          "descEn": "Timeout value in millisecond.",
+          "descZh": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Wait for injected group conversion to be completed.",
+      "briefZh": "轮询等待注入组转换完成，带超时。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick",
+        "HAL_RCCEx_GetPeriphCLKFreq"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "ADC_HandleTypeDef",
+        "HAL_IS_BIT_CLR",
+        "ADC_FLAG_JEOC",
+        "HAL_MAX_DELAY",
+        "HAL_ADC_STATE_TIMEOUT",
+        "__HAL_UNLOCK",
+        "HAL_TIMEOUT",
+        "RCC_PERIPHCLK_ADC",
+        "ADC_CONVCYCLES_MAX_RANGE",
+        "__HAL_ADC_CLEAR_FLAG",
+        "ADC_FLAG_JSTRT",
+        "ADC_FLAG_EOC",
+        "HAL_ADC_STATE_INJ_EOC",
+        "ADC_IS_SOFTWARE_START_INJECTED",
+        "ADC_IS_SOFTWARE_START_REGULAR",
+        "HAL_ADC_STATE_INJ_BUSY",
+        "HAL_ADC_STATE_REG_BUSY",
+        "HAL_ADC_STATE_READY",
+        "HAL_OK"
+      ],
+      "headerLine": 651,
+      "definedIn": "stm32f1xx_hal_adc_ex.h",
+      "sourceLine": 381,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADCEx_InjectedStart_IT",
+      "name": "HAL_ADCEx_InjectedStart_IT",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec5",
+      "prototype": "HAL_StatusTypeDef       HAL_ADCEx_InjectedStart_IT(ADC_HandleTypeDef* hadc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "HAL status.",
+      "returnDescZh": "",
+      "briefEn": "Enables ADC, starts conversion of injected group with interruption. - JEOC (end of conversion of injected group) Each of these interruptions has its dedicated callback function.",
+      "briefZh": "以中断方式启动注入组转换，完成后进注入组回调。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "ADC_HandleTypeDef",
+        "HAL_OK",
+        "__HAL_LOCK",
+        "ADC_STATE_CLR_SET",
+        "HAL_ADC_STATE_READY",
+        "HAL_ADC_STATE_INJ_EOC",
+        "HAL_ADC_STATE_INJ_BUSY",
+        "ADC_NONMULTIMODE_OR_MULTIMODEMASTER",
+        "HAL_ADC_STATE_MULTIMODE_SLAVE",
+        "HAL_IS_BIT_CLR",
+        "HAL_ADC_STATE_REG_BUSY",
+        "ADC_CLEAR_ERRORCODE",
+        "__HAL_UNLOCK",
+        "__HAL_ADC_CLEAR_FLAG",
+        "ADC_FLAG_JEOC",
+        "__HAL_ADC_ENABLE_IT",
+        "ADC_IT_JEOC",
+        "ADC_IS_SOFTWARE_START_INJECTED"
+      ],
+      "headerLine": 654,
+      "definedIn": "stm32f1xx_hal_adc_ex.h",
+      "sourceLine": 507,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADCEx_InjectedStop_IT",
+      "name": "HAL_ADCEx_InjectedStop_IT",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec5",
+      "prototype": "HAL_StatusTypeDef       HAL_ADCEx_InjectedStop_IT(ADC_HandleTypeDef* hadc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Stop conversion of injected channels, disable interruption of end-of-conversion. Disable ADC peripheral if no regular conversion is on going.",
+      "briefZh": "停止注入组转换并关闭其中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "If ADC must be disabled and if conversion is on going on regular group, function HAL_ADC_Stop must be used to stop both injected and regular groups, and disable the ADC.",
+        "If injected group mode auto-injection is enabled, function HAL_ADC_Stop must be used."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "ADC_HandleTypeDef",
+        "HAL_OK",
+        "__HAL_LOCK",
+        "HAL_ADC_STATE_REG_BUSY",
+        "HAL_IS_BIT_CLR",
+        "__HAL_ADC_DISABLE_IT",
+        "ADC_IT_JEOC",
+        "ADC_STATE_CLR_SET",
+        "HAL_ADC_STATE_INJ_BUSY",
+        "HAL_ADC_STATE_READY",
+        "HAL_ADC_STATE_ERROR_CONFIG",
+        "HAL_ERROR",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 655,
+      "definedIn": "stm32f1xx_hal_adc_ex.h",
+      "sourceLine": 606,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADCEx_MultiModeStart_DMA",
+      "name": "HAL_ADCEx_MultiModeStart_DMA",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec5",
+      "prototype": "HAL_StatusTypeDef       HAL_ADCEx_MultiModeStart_DMA(ADC_HandleTypeDef *hadc, uint32_t *pData, uint32_t Length);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle of ADC master (handle of ADC slave must not be used)",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        },
+        {
+          "name": "pData",
+          "type": "uint32_t *",
+          "descEn": "The destination Buffer address.",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Length",
+          "type": "uint32_t",
+          "descEn": "The length of data to be transferred from ADC peripheral to memory.",
+          "descZh": "DMA 传输的数据长度。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enables ADC, starts conversion of regular group and transfers result through DMA. Multimode must have been previously configured using HAL_ADCEx_MultiModeConfigChannel() function. Interruptions enabled in this function: - DMA transfer complete - DMA half transfer Each of these interruptions has its dedicated callback function.",
+      "briefZh": "以 DMA 方式启动多重 ADC 模式下的规则组转换。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_DMA_Start_IT"
+      ],
+      "remarks": [
+        ": On STM32F1 devices, ADC slave regular group must be configured with conversion trigger ADC_SOFTWARE_START.",
+        ": ADC slave can be enabled preliminarily using single-mode HAL_ADC_Start() function."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "ADC_HandleTypeDef",
+        "ADC_SOFTWARE_START",
+        "HAL_OK",
+        "__HAL_LOCK",
+        "ADC_MULTI_SLAVE",
+        "ADC_IS_SOFTWARE_START_REGULAR",
+        "HAL_ADC_STATE_ERROR_CONFIG",
+        "__HAL_UNLOCK",
+        "HAL_ERROR",
+        "ADC_STATE_CLR_SET",
+        "HAL_ADC_STATE_READY",
+        "HAL_ADC_STATE_REG_EOC",
+        "HAL_ADC_STATE_MULTIMODE_SLAVE",
+        "HAL_ADC_STATE_REG_BUSY",
+        "HAL_ADC_STATE_INJ_EOC",
+        "HAL_ADC_STATE_INJ_BUSY",
+        "ADC_CLEAR_ERRORCODE",
+        "XferCpltCallback",
+        "__HAL_ADC_CLEAR_FLAG",
+        "ADC_FLAG_EOC"
+      ],
+      "headerLine": 659,
+      "definedIn": "stm32f1xx_hal_adc_ex.h",
+      "sourceLine": 675,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADCEx_MultiModeStop_DMA",
+      "name": "HAL_ADCEx_MultiModeStop_DMA",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec5",
+      "prototype": "HAL_StatusTypeDef       HAL_ADCEx_MultiModeStop_DMA(ADC_HandleTypeDef *hadc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle of ADC master (handle of ADC slave must not be used)",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Stop ADC conversion of regular group (and injected channels in case of auto_injection mode), disable ADC DMA transfer, disable ADC peripheral.",
+      "briefZh": "停止多重 ADC 模式下的 DMA 转换。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_DMA_Abort"
+      ],
+      "remarks": [
+        "Multimode is kept enabled after this function. To disable multimode (set with HAL_ADCEx_MultiModeConfigChannel(), ADC must be reinitialized using HAL_ADC_Init() or HAL_ADC_ReInit().",
+        "In case of DMA configured in circular mode, function HAL_ADC_Stop_DMA must be called after this function with handle of ADC slave, to properly disable the DMA channel."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "ADC_HandleTypeDef",
+        "HAL_OK",
+        "__HAL_LOCK",
+        "ADC_MULTI_SLAVE",
+        "HAL_ADC_STATE_ERROR_INTERNAL",
+        "__HAL_UNLOCK",
+        "HAL_ERROR",
+        "ADC_STATE_CLR_SET",
+        "HAL_ADC_STATE_REG_BUSY",
+        "HAL_ADC_STATE_INJ_BUSY",
+        "HAL_ADC_STATE_READY"
+      ],
+      "headerLine": 660,
+      "definedIn": "stm32f1xx_hal_adc_ex.h",
+      "sourceLine": 801,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADCEx_InjectedGetValue",
+      "name": "HAL_ADCEx_InjectedGetValue",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec5",
+      "prototype": "uint32_t                HAL_ADCEx_InjectedGetValue(ADC_HandleTypeDef* hadc, uint32_t InjectedRank);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        },
+        {
+          "name": "InjectedRank",
+          "type": "uint32_t",
+          "descEn": "the converted ADC injected rank. This parameter can be one of the following values:",
+          "descZh": "注入组中的排序位置，取 ADC_INJECTED_RANK_1 ~ 4。"
+        }
+      ],
+      "returnDescEn": "ADC group injected conversion data",
+      "returnDescZh": "",
+      "briefEn": "Get ADC injected group conversion result.",
+      "briefZh": "读取注入组的转换结果。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "Reading register JDRx automatically clears ADC flag JEOC (ADC group injected end of unitary conversion).",
+        "This function does not clear ADC flag JEOS (ADC group injected end of sequence conversion) Occurrence of flag JEOS rising: - If sequencer is composed of 1 rank, flag JEOS is equivalent to flag JEOC. - If sequencer is composed of several ranks, during the scan sequence flag JEOC only is raised, at the end of the scan sequence both flags JEOC and EOS are raised. Flag JEOS must not be cleared by this function because it would not be compliant with low power features (feature low power auto-wait, not available on all STM32 families). To clear this flag, either use function: in programming model IT: @ref HAL_ADC_IRQHandler(), in programming model polling: @ref HAL_ADCEx_InjectedPollForConversion() or @ref __HAL_ADC_CLEAR_FLAG(&hadc, ADC_FLAG_JEOS)."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "ADC_HandleTypeDef",
+        "__HAL_ADC_CLEAR_FLAG",
+        "IS_ADC_INJECTED_RANK",
+        "ADC_INJECTED_RANK_4",
+        "ADC_INJECTED_RANK_3",
+        "ADC_INJECTED_RANK_2",
+        "ADC_INJECTED_RANK_1"
+      ],
+      "headerLine": 664,
+      "definedIn": "stm32f1xx_hal_adc_ex.h",
+      "sourceLine": 889,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADCEx_MultiModeGetValue",
+      "name": "HAL_ADCEx_MultiModeGetValue",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec5",
+      "prototype": "uint32_t                HAL_ADCEx_MultiModeGetValue(ADC_HandleTypeDef *hadc);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle of ADC master (handle of ADC slave must not be used)",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "The converted data value.",
+      "returnDescZh": "",
+      "briefEn": "Returns the last ADC Master&Slave regular conversions results data in the selected multi mode.",
+      "briefZh": "读取多重模式下主从 ADC 的规则组转换结果。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "ADC_HandleTypeDef",
+        "HAL_IS_BIT_CLR"
+      ],
+      "headerLine": 666,
+      "definedIn": "stm32f1xx_hal_adc_ex.h",
+      "sourceLine": 926,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADCEx_InjectedConvCpltCallback",
+      "name": "HAL_ADCEx_InjectedConvCpltCallback",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec5",
+      "prototype": "void                    HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef* hadc);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Injected conversion complete callback in non blocking mode",
+      "briefZh": "注入组转换完成回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "ADC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 670,
+      "definedIn": "stm32f1xx_hal_adc_ex.h",
+      "sourceLine": 958,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADCEx_InjectedConfigChannel",
+      "name": "HAL_ADCEx_InjectedConfigChannel",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec6",
+      "prototype": "HAL_StatusTypeDef       HAL_ADCEx_InjectedConfigChannel(ADC_HandleTypeDef* hadc,ADC_InjectionConfTypeDef* sConfigInjected);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        },
+        {
+          "name": "sConfigInjected",
+          "type": "ADC_InjectionConfTypeDef *",
+          "descEn": "Structure of ADC injected group and ADC channel for injected group.",
+          "descZh": "注入组配置结构体：InjectedChannel、InjectedRank、InjectedSamplingTime、InjectedOffset、InjectedNbrOfConversion。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Configures the ADC injected group and the selected channel to be linked to the injected group.",
+      "briefZh": "配置注入组的通道、排序与采样时间。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "Possibility to update parameters on the fly: This function initializes injected group, following calls to this function can be used to reconfigure some parameters of structure \"ADC_InjectionConfTypeDef\" on the fly, without resetting the ADC. The setting of these parameters is conditioned to ADC state: this function must be called when ADC is not under conversion."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "ADC_HandleTypeDef",
+        "ADC_InjectionConfTypeDef",
+        "HAL_OK",
+        "IS_ADC_CHANNEL",
+        "IS_ADC_SAMPLE_TIME",
+        "IS_ADC_EXTTRIGINJEC",
+        "IS_ADC_RANGE",
+        "ADC_SCAN_DISABLE",
+        "IS_ADC_INJECTED_RANK",
+        "IS_ADC_INJECTED_NB_CONV",
+        "__HAL_LOCK",
+        "ADC_INJECTED_RANK_1",
+        "ADC_JSQR_RK_JL",
+        "HAL_ADC_STATE_ERROR_CONFIG",
+        "HAL_ERROR",
+        "ADC_JSQR_JL_SHIFT",
+        "ADC_IS_ENABLE",
+        "ADC_CFGR_JEXTSEL",
+        "ADC_INJECTED_SOFTWARE_START",
+        "ADC_CHANNEL_10",
+        "ADC_SMPR1",
+        "ADC_SMPR2",
+        "ADC_CHANNEL_TEMPSENSOR",
+        "ADC_CHANNEL_VREFINT",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 680,
+      "definedIn": "stm32f1xx_hal_adc_ex.h",
+      "sourceLine": 1000,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ADCEx_MultiModeConfigChannel",
+      "name": "HAL_ADCEx_MultiModeConfigChannel",
+      "peripheral": "ADC",
+      "library": "hal",
+      "sectionId": "ADC@hal#sec6",
+      "prototype": "HAL_StatusTypeDef       HAL_ADCEx_MultiModeConfigChannel(ADC_HandleTypeDef *hadc, ADC_MultiModeTypeDef *multimode);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hadc",
+          "type": "ADC_HandleTypeDef *",
+          "descEn": "ADC handle",
+          "descZh": "ADC 句柄指针，Instance 指向 ADC1。"
+        },
+        {
+          "name": "multimode",
+          "type": "ADC_MultiModeTypeDef *",
+          "descEn": "Structure of ADC multimode configuration",
+          "descZh": "多重 ADC 模式：ADC_MULTIMODE_MODE_INDEPENDENT / REGSIMULT / INTERLACED 等。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Enable ADC multimode and configure multimode parameters",
+      "briefZh": "启用多重 ADC 模式并配置相关参数（双 ADC 交替 / 同步等）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "Possibility to update parameters on the fly: This function initializes multimode parameters, following calls to this function can be used to reconfigure some parameters of structure \"ADC_MultiModeTypeDef\" on the fly, without resetting the ADCs (both ADCs of the common group). The setting of these parameters is conditioned to ADC state. For parameters constraints, see comments of structure \"ADC_MultiModeTypeDef\".",
+        "To change back configuration from multimode to single mode, ADC must be reset (using function HAL_ADC_Init() )."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "ADC_HandleTypeDef",
+        "ADC_MultiModeTypeDef",
+        "HAL_OK",
+        "IS_ADC_MODE",
+        "__HAL_LOCK",
+        "ADC_MULTI_SLAVE",
+        "ADC_IS_ENABLE",
+        "HAL_ADC_STATE_ERROR_CONFIG",
+        "HAL_ERROR",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 682,
+      "definedIn": "stm32f1xx_hal_adc_ex.h",
+      "sourceLine": 1261,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

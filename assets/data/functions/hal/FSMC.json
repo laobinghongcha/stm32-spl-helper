@@ -1,0 +1,3732 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "FSMC",
+  "library": "hal",
+  "functions": [
+    {
+      "id": "HAL_NAND_Init",
+      "name": "HAL_NAND_Init",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef  HAL_NAND_Init(NAND_HandleTypeDef *hnand, FSMC_NAND_PCC_TimingTypeDef *ComSpace_Timing, FSMC_NAND_PCC_TimingTypeDef *AttSpace_Timing);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "NAND_HandleTypeDef *",
+          "descEn": "pointer to a NAND_HandleTypeDef structure that contains the configuration information for NAND module.",
+          "descZh": "NAND 句柄指针。"
+        },
+        {
+          "name": "ComSpace_Timing",
+          "type": "FSMC_NAND_PCC_TimingTypeDef *",
+          "descEn": "pointer to Common space timing structure",
+          "descZh": "命令锁存（CLE）阶段的时序参数。"
+        },
+        {
+          "name": "AttSpace_Timing",
+          "type": "FSMC_NAND_PCC_TimingTypeDef *",
+          "descEn": "pointer to Attribute space timing structure",
+          "descZh": "地址锁存（ALE）阶段的时序参数。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Perform NAND memory Initialization sequence",
+      "briefZh": "按 InitTypeDef 中的参数初始化 NAND Flash，并完成状态机初始化。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_NAND_MspInit",
+        "HAL_NAND_ITCallback"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "NAND_HandleTypeDef",
+        "HAL_ERROR",
+        "HAL_NAND_STATE_RESET",
+        "HAL_UNLOCKED",
+        "MspInitCallback",
+        "HAL_OK"
+      ],
+      "headerLine": 193,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 159,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_DeInit",
+      "name": "HAL_NAND_DeInit",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef  HAL_NAND_DeInit(NAND_HandleTypeDef *hnand);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "NAND_HandleTypeDef *",
+          "descEn": "pointer to a NAND_HandleTypeDef structure that contains the configuration information for NAND module.",
+          "descZh": "NAND 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Perform NAND memory De-Initialization sequence",
+      "briefZh": "把 NAND Flash 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_NAND_MspDeInit"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "NAND_HandleTypeDef",
+        "HAL_NAND_STATE_RESET",
+        "__HAL_UNLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 195,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 212,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_MspInit",
+      "name": "HAL_NAND_MspInit",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec1",
+      "prototype": "void               HAL_NAND_MspInit(NAND_HandleTypeDef *hnand);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "NAND_HandleTypeDef *",
+          "descEn": "pointer to a NAND_HandleTypeDef structure that contains the configuration information for NAND module.",
+          "descZh": "NAND 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "NAND MSP Init",
+      "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "NAND_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 201,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 245,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_MspDeInit",
+      "name": "HAL_NAND_MspDeInit",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec1",
+      "prototype": "void               HAL_NAND_MspDeInit(NAND_HandleTypeDef *hnand);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "NAND_HandleTypeDef *",
+          "descEn": "pointer to a NAND_HandleTypeDef structure that contains the configuration information for NAND module.",
+          "descZh": "NAND 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "NAND MSP DeInit",
+      "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "NAND_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 202,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 261,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_IRQHandler",
+      "name": "HAL_NAND_IRQHandler",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec1",
+      "prototype": "void               HAL_NAND_IRQHandler(NAND_HandleTypeDef *hnand);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "NAND_HandleTypeDef *",
+          "descEn": "pointer to a NAND_HandleTypeDef structure that contains the configuration information for NAND module.",
+          "descZh": "NAND 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "This function handles NAND device interrupt request.",
+      "briefZh": "NAND Flash 的中断统一入口。在 stm32f1xx_it.c 的对应 IRQHandler 里调用，内部会清标志并分派到各回调。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_NAND_ITCallback"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "NAND_HandleTypeDef"
+      ],
+      "headerLine": 203,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 278,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_ITCallback",
+      "name": "HAL_NAND_ITCallback",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec1",
+      "prototype": "void               HAL_NAND_ITCallback(NAND_HandleTypeDef *hnand);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "NAND_HandleTypeDef *",
+          "descEn": "pointer to a NAND_HandleTypeDef structure that contains the configuration information for NAND module.",
+          "descZh": "NAND 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "NAND interrupt feature callback",
+      "briefZh": "中断回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "NAND_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 204,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 344,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_Read_ID",
+      "name": "HAL_NAND_Read_ID",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef  HAL_NAND_Read_ID(NAND_HandleTypeDef *hnand, NAND_IDTypeDef *pNAND_ID);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "NAND_HandleTypeDef *",
+          "descEn": "pointer to a NAND_HandleTypeDef structure that contains the configuration information for NAND module.",
+          "descZh": "NAND 句柄指针。"
+        },
+        {
+          "name": "pNAND_ID",
+          "type": "NAND_IDTypeDef *",
+          "descEn": "NAND ID structure",
+          "descZh": "输出参数，接收 NAND 的 ID 信息（制造商、器件号、页大小等）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Read the NAND memory electronic signature",
+      "briefZh": "读取器件的 ID 信息。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "NAND_HandleTypeDef",
+        "NAND_IDTypeDef",
+        "HAL_BUSY",
+        "__HAL_LOCK",
+        "NAND_DEVICE1",
+        "NAND_DEVICE2",
+        "CMD_AREA",
+        "NAND_CMD_READID",
+        "ADDR_AREA",
+        "ADDR_1ST_CYCLE",
+        "ADDR_2ND_CYCLE",
+        "ADDR_3RD_CYCLE",
+        "ADDR_4TH_CYCLE",
+        "__HAL_UNLOCK",
+        "HAL_ERROR",
+        "HAL_OK"
+      ],
+      "headerLine": 199,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 380,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_Reset",
+      "name": "HAL_NAND_Reset",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef  HAL_NAND_Reset(NAND_HandleTypeDef *hnand);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "NAND_HandleTypeDef *",
+          "descEn": "pointer to a NAND_HandleTypeDef structure that contains the configuration information for NAND module.",
+          "descZh": "NAND 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "NAND memory reset",
+      "briefZh": "复位器件。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "NAND_HandleTypeDef",
+        "HAL_BUSY",
+        "__HAL_LOCK",
+        "NAND_DEVICE1",
+        "NAND_DEVICE2",
+        "CMD_AREA",
+        "__HAL_UNLOCK",
+        "HAL_ERROR",
+        "HAL_OK"
+      ],
+      "headerLine": 215,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 458,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_ConfigDevice",
+      "name": "HAL_NAND_ConfigDevice",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef  HAL_NAND_ConfigDevice(NAND_HandleTypeDef *hnand, const NAND_DeviceConfigTypeDef *pDeviceConfig);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "NAND_HandleTypeDef *",
+          "descEn": "pointer to a NAND_HandleTypeDef structure that contains the configuration information for NAND module.",
+          "descZh": "NAND 句柄指针。"
+        },
+        {
+          "name": "pDeviceConfig",
+          "type": "const NAND_DeviceConfigTypeDef *",
+          "descEn": "pointer to NAND_DeviceConfigTypeDef structure",
+          "descZh": "器件参数结构体：页大小、块数、平面数、页内备用区大小。必须与实际芯片手册一致，否则读写会错位。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Configure the device: Enter the physical parameters of the device",
+      "briefZh": "配置器件参数（页大小、块数等）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "NAND_HandleTypeDef",
+        "NAND_DeviceConfigTypeDef",
+        "HAL_OK"
+      ],
+      "headerLine": 197,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 510,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_Read_Page_8b",
+      "name": "HAL_NAND_Read_Page_8b",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef  HAL_NAND_Read_Page_8b(NAND_HandleTypeDef *hnand, const NAND_AddressTypeDef *pAddress, uint8_t *pBuffer, uint32_t NumPageToRead);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "NAND_HandleTypeDef *",
+          "descEn": "pointer to a NAND_HandleTypeDef structure that contains the configuration information for NAND module.",
+          "descZh": "NAND 句柄指针。"
+        },
+        {
+          "name": "pAddress",
+          "type": "const NAND_AddressTypeDef *",
+          "descEn": "pointer to NAND address structure",
+          "descZh": "地址结构体：Page、Block、Plane、Zone，以及块/页内的偏移。"
+        },
+        {
+          "name": "pBuffer",
+          "type": "uint8_t *",
+          "descEn": "pointer to destination read buffer",
+          "descZh": "数据缓冲区指针。"
+        },
+        {
+          "name": "NumPageToRead",
+          "type": "uint32_t",
+          "descEn": "number of pages to read from block",
+          "descZh": "要读取的页数。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Read Page(s) from NAND memory block (8-bits addressing)",
+      "briefZh": "按 8 位数据宽度读取一页。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick",
+        "HAL_NAND_Read_Status"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "NAND_HandleTypeDef",
+        "NAND_AddressTypeDef",
+        "HAL_BUSY",
+        "__HAL_LOCK",
+        "NAND_DEVICE1",
+        "NAND_DEVICE2",
+        "ARRAY_ADDRESS",
+        "CMD_AREA",
+        "NAND_CMD_AREA_A",
+        "ADDR_AREA",
+        "ADDR_1ST_CYCLE",
+        "ADDR_2ND_CYCLE",
+        "ADDR_3RD_CYCLE",
+        "NAND_CMD_AREA_TRUE1",
+        "NAND_READY",
+        "NAND_WRITE_TIMEOUT",
+        "__HAL_UNLOCK",
+        "HAL_TIMEOUT",
+        "HAL_ERROR",
+        "HAL_OK"
+      ],
+      "headerLine": 217,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 532,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_Read_Page_16b",
+      "name": "HAL_NAND_Read_Page_16b",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef  HAL_NAND_Read_Page_16b(NAND_HandleTypeDef *hnand, const NAND_AddressTypeDef *pAddress, uint16_t *pBuffer, uint32_t NumPageToRead);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "NAND_HandleTypeDef *",
+          "descEn": "pointer to a NAND_HandleTypeDef structure that contains the configuration information for NAND module.",
+          "descZh": "NAND 句柄指针。"
+        },
+        {
+          "name": "pAddress",
+          "type": "const NAND_AddressTypeDef *",
+          "descEn": "pointer to NAND address structure",
+          "descZh": "地址结构体：Page、Block、Plane、Zone，以及块/页内的偏移。"
+        },
+        {
+          "name": "pBuffer",
+          "type": "uint16_t *",
+          "descEn": "pointer to destination read buffer. pBuffer should be 16bits aligned",
+          "descZh": "数据缓冲区指针。"
+        },
+        {
+          "name": "NumPageToRead",
+          "type": "uint32_t",
+          "descEn": "number of pages to read from block",
+          "descZh": "要读取的页数。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Read Page(s) from NAND memory block (16-bits addressing)",
+      "briefZh": "按 16 位数据宽度读取一页。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick",
+        "HAL_NAND_Read_Status"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "NAND_HandleTypeDef",
+        "NAND_AddressTypeDef",
+        "HAL_BUSY",
+        "__HAL_LOCK",
+        "NAND_DEVICE1",
+        "NAND_DEVICE2",
+        "ARRAY_ADDRESS",
+        "CMD_AREA",
+        "NAND_CMD_AREA_A",
+        "ADDR_AREA",
+        "ADDR_1ST_CYCLE",
+        "ADDR_2ND_CYCLE",
+        "ADDR_3RD_CYCLE",
+        "NAND_CMD_AREA_TRUE1",
+        "NAND_READY",
+        "NAND_WRITE_TIMEOUT",
+        "__HAL_UNLOCK",
+        "HAL_TIMEOUT",
+        "HAL_ERROR",
+        "HAL_OK"
+      ],
+      "headerLine": 226,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 697,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_Write_Page_8b",
+      "name": "HAL_NAND_Write_Page_8b",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef  HAL_NAND_Write_Page_8b(NAND_HandleTypeDef *hnand, const NAND_AddressTypeDef *pAddress, const uint8_t *pBuffer, uint32_t NumPageToWrite);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "NAND_HandleTypeDef *",
+          "descEn": "pointer to a NAND_HandleTypeDef structure that contains the configuration information for NAND module.",
+          "descZh": "NAND 句柄指针。"
+        },
+        {
+          "name": "pAddress",
+          "type": "const NAND_AddressTypeDef *",
+          "descEn": "pointer to NAND address structure",
+          "descZh": "地址结构体：Page、Block、Plane、Zone，以及块/页内的偏移。"
+        },
+        {
+          "name": "pBuffer",
+          "type": "const uint8_t *",
+          "descEn": "pointer to source buffer to write",
+          "descZh": "数据缓冲区指针。"
+        },
+        {
+          "name": "NumPageToWrite",
+          "type": "uint32_t",
+          "descEn": "number of pages to write to block",
+          "descZh": "要写入的页数。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Write Page(s) to NAND memory block (8-bits addressing)",
+      "briefZh": "按 8 位数据宽度写入一页。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick",
+        "HAL_NAND_Read_Status"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "NAND_HandleTypeDef",
+        "NAND_AddressTypeDef",
+        "HAL_BUSY",
+        "__HAL_LOCK",
+        "NAND_DEVICE1",
+        "NAND_DEVICE2",
+        "ARRAY_ADDRESS",
+        "CMD_AREA",
+        "NAND_CMD_AREA_A",
+        "NAND_CMD_WRITE0",
+        "ADDR_AREA",
+        "ADDR_1ST_CYCLE",
+        "ADDR_2ND_CYCLE",
+        "ADDR_3RD_CYCLE",
+        "NAND_CMD_WRITE_TRUE1",
+        "NAND_READY",
+        "NAND_WRITE_TIMEOUT",
+        "__HAL_UNLOCK",
+        "HAL_TIMEOUT",
+        "HAL_ERROR",
+        "HAL_OK"
+      ],
+      "headerLine": 219,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 872,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_Write_Page_16b",
+      "name": "HAL_NAND_Write_Page_16b",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef  HAL_NAND_Write_Page_16b(NAND_HandleTypeDef *hnand, const NAND_AddressTypeDef *pAddress, const uint16_t *pBuffer, uint32_t NumPageToWrite);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "NAND_HandleTypeDef *",
+          "descEn": "pointer to a NAND_HandleTypeDef structure that contains the configuration information for NAND module.",
+          "descZh": "NAND 句柄指针。"
+        },
+        {
+          "name": "pAddress",
+          "type": "const NAND_AddressTypeDef *",
+          "descEn": "pointer to NAND address structure",
+          "descZh": "地址结构体：Page、Block、Plane、Zone，以及块/页内的偏移。"
+        },
+        {
+          "name": "pBuffer",
+          "type": "const uint16_t *",
+          "descEn": "pointer to source buffer to write. pBuffer should be 16bits aligned",
+          "descZh": "数据缓冲区指针。"
+        },
+        {
+          "name": "NumPageToWrite",
+          "type": "uint32_t",
+          "descEn": "number of pages to write to block",
+          "descZh": "要写入的页数。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Write Page(s) to NAND memory block (16-bits addressing)",
+      "briefZh": "按 16 位数据宽度写入一页。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick",
+        "HAL_NAND_Read_Status"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "NAND_HandleTypeDef",
+        "NAND_AddressTypeDef",
+        "HAL_BUSY",
+        "__HAL_LOCK",
+        "NAND_DEVICE1",
+        "NAND_DEVICE2",
+        "ARRAY_ADDRESS",
+        "CMD_AREA",
+        "NAND_CMD_AREA_A",
+        "NAND_CMD_WRITE0",
+        "ADDR_AREA",
+        "ADDR_1ST_CYCLE",
+        "ADDR_2ND_CYCLE",
+        "ADDR_3RD_CYCLE",
+        "NAND_CMD_WRITE_TRUE1",
+        "NAND_READY",
+        "NAND_WRITE_TIMEOUT",
+        "__HAL_UNLOCK",
+        "HAL_TIMEOUT",
+        "HAL_ERROR",
+        "HAL_OK"
+      ],
+      "headerLine": 228,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 1032,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_Read_SpareArea_8b",
+      "name": "HAL_NAND_Read_SpareArea_8b",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef  HAL_NAND_Read_SpareArea_8b(NAND_HandleTypeDef *hnand, const NAND_AddressTypeDef *pAddress, uint8_t *pBuffer, uint32_t NumSpareAreaToRead);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "NAND_HandleTypeDef *",
+          "descEn": "pointer to a NAND_HandleTypeDef structure that contains the configuration information for NAND module.",
+          "descZh": "NAND 句柄指针。"
+        },
+        {
+          "name": "pAddress",
+          "type": "const NAND_AddressTypeDef *",
+          "descEn": "pointer to NAND address structure",
+          "descZh": "地址结构体：Page、Block、Plane、Zone，以及块/页内的偏移。"
+        },
+        {
+          "name": "pBuffer",
+          "type": "uint8_t *",
+          "descEn": "pointer to source buffer to write",
+          "descZh": "数据缓冲区指针。"
+        },
+        {
+          "name": "NumSpareAreaToRead",
+          "type": "uint32_t",
+          "descEn": "Number of spare area to read",
+          "descZh": "要读取的备用区（OOB）个数。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Read Spare area(s) from NAND memory (8-bits addressing)",
+      "briefZh": "读取备用区（OOB），8 位宽度。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick",
+        "HAL_NAND_Read_Status"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "NAND_HandleTypeDef",
+        "NAND_AddressTypeDef",
+        "HAL_BUSY",
+        "__HAL_LOCK",
+        "NAND_DEVICE1",
+        "NAND_DEVICE2",
+        "ARRAY_ADDRESS",
+        "COLUMN_ADDRESS",
+        "CMD_AREA",
+        "NAND_CMD_AREA_C",
+        "ADDR_AREA",
+        "ADDR_1ST_CYCLE",
+        "ADDR_2ND_CYCLE",
+        "ADDR_3RD_CYCLE",
+        "NAND_CMD_AREA_A",
+        "COLUMN_1ST_CYCLE",
+        "COLUMN_2ND_CYCLE",
+        "NAND_CMD_AREA_TRUE1",
+        "NAND_READY",
+        "NAND_WRITE_TIMEOUT",
+        "__HAL_UNLOCK",
+        "HAL_TIMEOUT",
+        "HAL_ERROR",
+        "HAL_OK"
+      ],
+      "headerLine": 221,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 1203,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_Read_SpareArea_16b",
+      "name": "HAL_NAND_Read_SpareArea_16b",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef  HAL_NAND_Read_SpareArea_16b(NAND_HandleTypeDef *hnand, const NAND_AddressTypeDef *pAddress, uint16_t *pBuffer, uint32_t NumSpareAreaToRead);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "NAND_HandleTypeDef *",
+          "descEn": "pointer to a NAND_HandleTypeDef structure that contains the configuration information for NAND module.",
+          "descZh": "NAND 句柄指针。"
+        },
+        {
+          "name": "pAddress",
+          "type": "const NAND_AddressTypeDef *",
+          "descEn": "pointer to NAND address structure",
+          "descZh": "地址结构体：Page、Block、Plane、Zone，以及块/页内的偏移。"
+        },
+        {
+          "name": "pBuffer",
+          "type": "uint16_t *",
+          "descEn": "pointer to source buffer to write. pBuffer should be 16bits aligned.",
+          "descZh": "数据缓冲区指针。"
+        },
+        {
+          "name": "NumSpareAreaToRead",
+          "type": "uint32_t",
+          "descEn": "Number of spare area to read",
+          "descZh": "要读取的备用区（OOB）个数。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Read Spare area(s) from NAND memory (16-bits addressing)",
+      "briefZh": "读取备用区（OOB），16 位宽度。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick",
+        "HAL_NAND_Read_Status"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "NAND_HandleTypeDef",
+        "NAND_AddressTypeDef",
+        "HAL_BUSY",
+        "__HAL_LOCK",
+        "NAND_DEVICE1",
+        "NAND_DEVICE2",
+        "ARRAY_ADDRESS",
+        "COLUMN_ADDRESS",
+        "CMD_AREA",
+        "NAND_CMD_AREA_C",
+        "ADDR_AREA",
+        "ADDR_1ST_CYCLE",
+        "ADDR_2ND_CYCLE",
+        "ADDR_3RD_CYCLE",
+        "NAND_CMD_AREA_A",
+        "COLUMN_1ST_CYCLE",
+        "COLUMN_2ND_CYCLE",
+        "NAND_CMD_AREA_TRUE1",
+        "NAND_READY",
+        "NAND_WRITE_TIMEOUT",
+        "__HAL_UNLOCK",
+        "HAL_TIMEOUT",
+        "HAL_ERROR",
+        "HAL_OK"
+      ],
+      "headerLine": 230,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 1375,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_Write_SpareArea_8b",
+      "name": "HAL_NAND_Write_SpareArea_8b",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef  HAL_NAND_Write_SpareArea_8b(NAND_HandleTypeDef *hnand, const NAND_AddressTypeDef *pAddress, const uint8_t *pBuffer, uint32_t NumSpareAreaTowrite);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "NAND_HandleTypeDef *",
+          "descEn": "pointer to a NAND_HandleTypeDef structure that contains the configuration information for NAND module.",
+          "descZh": "NAND 句柄指针。"
+        },
+        {
+          "name": "pAddress",
+          "type": "const NAND_AddressTypeDef *",
+          "descEn": "pointer to NAND address structure",
+          "descZh": "地址结构体：Page、Block、Plane、Zone，以及块/页内的偏移。"
+        },
+        {
+          "name": "pBuffer",
+          "type": "const uint8_t *",
+          "descEn": "pointer to source buffer to write",
+          "descZh": "数据缓冲区指针。"
+        },
+        {
+          "name": "NumSpareAreaTowrite",
+          "type": "uint32_t",
+          "descEn": "number of spare areas to write to block",
+          "descZh": "要写入的备用区（OOB）个数。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Write Spare area(s) to NAND memory (8-bits addressing)",
+      "briefZh": "写入备用区（OOB），8 位宽度。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick",
+        "HAL_NAND_Read_Status"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "NAND_HandleTypeDef",
+        "NAND_AddressTypeDef",
+        "HAL_BUSY",
+        "__HAL_LOCK",
+        "NAND_DEVICE1",
+        "NAND_DEVICE2",
+        "ARRAY_ADDRESS",
+        "COLUMN_ADDRESS",
+        "CMD_AREA",
+        "NAND_CMD_AREA_C",
+        "NAND_CMD_WRITE0",
+        "ADDR_AREA",
+        "ADDR_1ST_CYCLE",
+        "ADDR_2ND_CYCLE",
+        "ADDR_3RD_CYCLE",
+        "NAND_CMD_AREA_A",
+        "COLUMN_1ST_CYCLE",
+        "COLUMN_2ND_CYCLE",
+        "NAND_CMD_WRITE_TRUE1",
+        "NAND_READY",
+        "NAND_WRITE_TIMEOUT",
+        "__HAL_UNLOCK",
+        "HAL_TIMEOUT",
+        "HAL_ERROR",
+        "HAL_OK"
+      ],
+      "headerLine": 223,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 1547,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_Write_SpareArea_16b",
+      "name": "HAL_NAND_Write_SpareArea_16b",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef  HAL_NAND_Write_SpareArea_16b(NAND_HandleTypeDef *hnand, const NAND_AddressTypeDef *pAddress, const uint16_t *pBuffer, uint32_t NumSpareAreaTowrite);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "NAND_HandleTypeDef *",
+          "descEn": "pointer to a NAND_HandleTypeDef structure that contains the configuration information for NAND module.",
+          "descZh": "NAND 句柄指针。"
+        },
+        {
+          "name": "pAddress",
+          "type": "const NAND_AddressTypeDef *",
+          "descEn": "pointer to NAND address structure",
+          "descZh": "地址结构体：Page、Block、Plane、Zone，以及块/页内的偏移。"
+        },
+        {
+          "name": "pBuffer",
+          "type": "const uint16_t *",
+          "descEn": "pointer to source buffer to write. pBuffer should be 16bits aligned.",
+          "descZh": "数据缓冲区指针。"
+        },
+        {
+          "name": "NumSpareAreaTowrite",
+          "type": "uint32_t",
+          "descEn": "number of spare areas to write to block",
+          "descZh": "要写入的备用区（OOB）个数。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Write Spare area(s) to NAND memory (16-bits addressing)",
+      "briefZh": "写入备用区（OOB），16 位宽度。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick",
+        "HAL_NAND_Read_Status"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "NAND_HandleTypeDef",
+        "NAND_AddressTypeDef",
+        "HAL_BUSY",
+        "__HAL_LOCK",
+        "NAND_DEVICE1",
+        "NAND_DEVICE2",
+        "ARRAY_ADDRESS",
+        "COLUMN_ADDRESS",
+        "CMD_AREA",
+        "NAND_CMD_AREA_C",
+        "NAND_CMD_WRITE0",
+        "ADDR_AREA",
+        "ADDR_1ST_CYCLE",
+        "ADDR_2ND_CYCLE",
+        "ADDR_3RD_CYCLE",
+        "NAND_CMD_AREA_A",
+        "COLUMN_1ST_CYCLE",
+        "COLUMN_2ND_CYCLE",
+        "NAND_CMD_WRITE_TRUE1",
+        "NAND_READY",
+        "NAND_WRITE_TIMEOUT",
+        "__HAL_UNLOCK",
+        "HAL_TIMEOUT",
+        "HAL_ERROR",
+        "HAL_OK"
+      ],
+      "headerLine": 232,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 1717,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_Erase_Block",
+      "name": "HAL_NAND_Erase_Block",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef  HAL_NAND_Erase_Block(NAND_HandleTypeDef *hnand, const NAND_AddressTypeDef *pAddress);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "NAND_HandleTypeDef *",
+          "descEn": "pointer to a NAND_HandleTypeDef structure that contains the configuration information for NAND module.",
+          "descZh": "NAND 句柄指针。"
+        },
+        {
+          "name": "pAddress",
+          "type": "const NAND_AddressTypeDef *",
+          "descEn": "pointer to NAND address structure",
+          "descZh": "地址结构体：Page、Block、Plane、Zone，以及块/页内的偏移。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "NAND memory Block erase",
+      "briefZh": "擦除一个块。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "NAND_HandleTypeDef",
+        "NAND_AddressTypeDef",
+        "HAL_BUSY",
+        "__HAL_LOCK",
+        "NAND_DEVICE1",
+        "NAND_DEVICE2",
+        "CMD_AREA",
+        "NAND_CMD_ERASE0",
+        "ADDR_AREA",
+        "ADDR_1ST_CYCLE",
+        "ARRAY_ADDRESS",
+        "ADDR_2ND_CYCLE",
+        "ADDR_3RD_CYCLE",
+        "NAND_CMD_ERASE1",
+        "__HAL_UNLOCK",
+        "HAL_ERROR",
+        "HAL_OK"
+      ],
+      "headerLine": 235,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 1885,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_Address_Inc",
+      "name": "HAL_NAND_Address_Inc",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec2",
+      "prototype": "uint32_t           HAL_NAND_Address_Inc(const NAND_HandleTypeDef *hnand, NAND_AddressTypeDef *pAddress);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "const NAND_HandleTypeDef *",
+          "descEn": "pointer to a NAND_HandleTypeDef structure that contains the configuration information for NAND module.",
+          "descZh": "NAND 句柄指针。"
+        },
+        {
+          "name": "pAddress",
+          "type": "NAND_AddressTypeDef *",
+          "descEn": "pointer to NAND address structure",
+          "descZh": "地址结构体：Page、Block、Plane、Zone，以及块/页内的偏移。"
+        }
+      ],
+      "returnDescEn": "The new status of the increment address operation. It can be: - NAND_VALID_ADDRESS: When the new address is valid address - NAND_INVALID_ADDRESS: When the new address is invalid address",
+      "returnDescZh": "",
+      "briefEn": "Increment the NAND memory address",
+      "briefZh": "把地址结构体递增到下一个页/块。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "NAND_HandleTypeDef",
+        "NAND_AddressTypeDef",
+        "NAND_VALID_ADDRESS",
+        "NAND_INVALID_ADDRESS"
+      ],
+      "headerLine": 237,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 1948,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_RegisterCallback",
+      "name": "HAL_NAND_RegisterCallback",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef  HAL_NAND_RegisterCallback(NAND_HandleTypeDef *hnand, HAL_NAND_CallbackIDTypeDef CallbackId, pNAND_CallbackTypeDef pCallback);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "NAND_HandleTypeDef *",
+          "descEn": "NAND handle",
+          "descZh": "NAND 句柄指针。"
+        },
+        {
+          "name": "CallbackId",
+          "type": "HAL_NAND_CallbackIDTypeDef",
+          "descEn": "ID of the callback to be registered This parameter can be one of the following values:",
+          "descZh": "回调事件编号，取对应的 CallbackIDTypeDef 枚举值。"
+        },
+        {
+          "name": "pCallback",
+          "type": "pNAND_CallbackTypeDef",
+          "descEn": "pointer to the Callback function",
+          "descZh": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+        }
+      ],
+      "returnDescEn": "status",
+      "returnDescZh": "",
+      "briefEn": "Register a User NAND Callback To be used to override the weak predefined callback",
+      "briefZh": "为 NAND Flash 注册指定事件的回调，替代默认的 __weak 空实现。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "NAND_HandleTypeDef",
+        "HAL_NAND_CallbackIDTypeDef",
+        "pNAND_CallbackTypeDef",
+        "HAL_OK",
+        "HAL_ERROR",
+        "HAL_NAND_MSP_INIT_CB_ID",
+        "MspInitCallback",
+        "HAL_NAND_STATE_RESET"
+      ],
+      "headerLine": 241,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 1989,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_UnRegisterCallback",
+      "name": "HAL_NAND_UnRegisterCallback",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec2",
+      "prototype": "HAL_StatusTypeDef  HAL_NAND_UnRegisterCallback(NAND_HandleTypeDef *hnand, HAL_NAND_CallbackIDTypeDef CallbackId);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "NAND_HandleTypeDef *",
+          "descEn": "NAND handle",
+          "descZh": "NAND 句柄指针。"
+        },
+        {
+          "name": "CallbackId",
+          "type": "HAL_NAND_CallbackIDTypeDef",
+          "descEn": "ID of the callback to be unregistered This parameter can be one of the following values:",
+          "descZh": "回调事件编号，取对应的 CallbackIDTypeDef 枚举值。"
+        }
+      ],
+      "returnDescEn": "status",
+      "returnDescZh": "",
+      "briefEn": "Unregister a User NAND Callback NAND Callback is redirected to the weak predefined callback",
+      "briefZh": "注销 NAND Flash 已注册的回调，恢复成默认的 __weak 空实现。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_NAND_MspInit",
+        "HAL_NAND_MspDeInit",
+        "HAL_NAND_ITCallback"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "NAND_HandleTypeDef",
+        "HAL_NAND_CallbackIDTypeDef",
+        "HAL_OK",
+        "HAL_NAND_MSP_INIT_CB_ID",
+        "MspInitCallback",
+        "HAL_ERROR",
+        "HAL_NAND_STATE_RESET"
+      ],
+      "headerLine": 243,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 2054,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_ECC_Enable",
+      "name": "HAL_NAND_ECC_Enable",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec3",
+      "prototype": "HAL_StatusTypeDef  HAL_NAND_ECC_Enable(NAND_HandleTypeDef *hnand);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "NAND_HandleTypeDef *",
+          "descEn": "pointer to a NAND_HandleTypeDef structure that contains the configuration information for NAND module.",
+          "descZh": "NAND 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Enables dynamically NAND ECC feature.",
+      "briefZh": "使能 ECC 硬件校验。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "NAND_HandleTypeDef",
+        "HAL_BUSY",
+        "HAL_ERROR",
+        "HAL_OK"
+      ],
+      "headerLine": 255,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 2129,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_ECC_Disable",
+      "name": "HAL_NAND_ECC_Disable",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec3",
+      "prototype": "HAL_StatusTypeDef  HAL_NAND_ECC_Disable(NAND_HandleTypeDef *hnand);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "NAND_HandleTypeDef *",
+          "descEn": "pointer to a NAND_HandleTypeDef structure that contains the configuration information for NAND module.",
+          "descZh": "NAND 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Disables dynamically FSMC_NAND ECC feature.",
+      "briefZh": "关闭 ECC 硬件校验。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "NAND_HandleTypeDef",
+        "HAL_BUSY",
+        "HAL_ERROR",
+        "HAL_OK"
+      ],
+      "headerLine": 256,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 2161,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_GetECC",
+      "name": "HAL_NAND_GetECC",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec3",
+      "prototype": "HAL_StatusTypeDef  HAL_NAND_GetECC(NAND_HandleTypeDef *hnand, uint32_t *ECCval, uint32_t Timeout);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "NAND_HandleTypeDef *",
+          "descEn": "pointer to a NAND_HandleTypeDef structure that contains the configuration information for NAND module.",
+          "descZh": "NAND 句柄指针。"
+        },
+        {
+          "name": "ECCval",
+          "type": "uint32_t *",
+          "descEn": "pointer to ECC value",
+          "descZh": "输出参数，接收 ECC 校验值。"
+        },
+        {
+          "name": "Timeout",
+          "type": "uint32_t",
+          "descEn": "maximum timeout to wait",
+          "descZh": "超时毫秒数。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Disables dynamically NAND ECC feature.",
+      "briefZh": "读取 ECC 校验结果。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "NAND_HandleTypeDef",
+        "HAL_BUSY",
+        "HAL_ERROR"
+      ],
+      "headerLine": 257,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 2195,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_GetState",
+      "name": "HAL_NAND_GetState",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec4",
+      "prototype": "HAL_NAND_StateTypeDef HAL_NAND_GetState(const NAND_HandleTypeDef *hnand);",
+      "returnType": "HAL_NAND_StateTypeDef",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "const NAND_HandleTypeDef *",
+          "descEn": "pointer to a NAND_HandleTypeDef structure that contains the configuration information for NAND module.",
+          "descZh": "NAND 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL state",
+      "returnDescZh": "",
+      "briefEn": "return the NAND state",
+      "briefZh": "读取 NAND Flash 的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_NAND_StateTypeDef",
+        "NAND_HandleTypeDef"
+      ],
+      "headerLine": 267,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 2249,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NAND_Read_Status",
+      "name": "HAL_NAND_Read_Status",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec4",
+      "prototype": "uint32_t              HAL_NAND_Read_Status(const NAND_HandleTypeDef *hnand);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hnand",
+          "type": "const NAND_HandleTypeDef *",
+          "descEn": "pointer to a NAND_HandleTypeDef structure that contains the configuration information for NAND module.",
+          "descZh": "NAND 句柄指针。"
+        }
+      ],
+      "returnDescEn": "NAND status",
+      "returnDescZh": "",
+      "briefEn": "NAND memory read status",
+      "briefZh": "读取器件状态寄存器。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "NAND_HandleTypeDef",
+        "UNUSED",
+        "NAND_DEVICE1",
+        "NAND_DEVICE2",
+        "CMD_AREA",
+        "NAND_CMD_STATUS",
+        "NAND_ERROR",
+        "NAND_READY",
+        "NAND_BUSY"
+      ],
+      "headerLine": 268,
+      "definedIn": "stm32f1xx_hal_nand.h",
+      "sourceLine": 2260,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NOR_Init",
+      "name": "HAL_NOR_Init",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec5",
+      "prototype": "HAL_StatusTypeDef HAL_NOR_Init(NOR_HandleTypeDef *hnor, FSMC_NORSRAM_TimingTypeDef *Timing, FSMC_NORSRAM_TimingTypeDef *ExtTiming);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnor",
+          "type": "NOR_HandleTypeDef *",
+          "descEn": "pointer to a NOR_HandleTypeDef structure that contains the configuration information for NOR module.",
+          "descZh": "NOR Flash 句柄指针。"
+        },
+        {
+          "name": "Timing",
+          "type": "FSMC_NORSRAM_TimingTypeDef *",
+          "descEn": "pointer to NOR control timing structure",
+          "descZh": "读操作时序参数：地址建立时间、数据建立时间等。"
+        },
+        {
+          "name": "ExtTiming",
+          "type": "FSMC_NORSRAM_TimingTypeDef *",
+          "descEn": "pointer to NOR extended mode timing structure",
+          "descZh": "扩展模式下的写操作时序参数（与读时序分开配置）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Perform the NOR memory Initialization sequence",
+      "briefZh": "按 InitTypeDef 中的参数初始化 NOR Flash，并完成状态机初始化。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_NOR_MspInit",
+        "HAL_NOR_ReturnToReadMode"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "HAL_OK",
+        "HAL_ERROR",
+        "HAL_NOR_STATE_RESET",
+        "HAL_UNLOCKED",
+        "MspInitCallback",
+        "NOR_MEMORY_8B",
+        "NOR_MEMORY_16B",
+        "NOR_MEMORY_ADRESS1",
+        "NOR_MEMORY_ADRESS2",
+        "NOR_MEMORY_ADRESS3",
+        "NOR_MEMORY_ADRESS4",
+        "NOR_WRITE",
+        "NOR_ADDR_SHIFT"
+      ],
+      "headerLine": 182,
+      "definedIn": "stm32f1xx_hal_nor.h",
+      "sourceLine": 234,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NOR_DeInit",
+      "name": "HAL_NOR_DeInit",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec5",
+      "prototype": "HAL_StatusTypeDef HAL_NOR_DeInit(NOR_HandleTypeDef *hnor);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnor",
+          "type": "NOR_HandleTypeDef *",
+          "descEn": "pointer to a NOR_HandleTypeDef structure that contains the configuration information for NOR module.",
+          "descZh": "NOR Flash 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Perform NOR memory De-Initialization sequence",
+      "briefZh": "把 NOR Flash 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_NOR_MspDeInit"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "HAL_NOR_STATE_RESET",
+        "__HAL_UNLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 184,
+      "definedIn": "stm32f1xx_hal_nor.h",
+      "sourceLine": 343,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NOR_MspInit",
+      "name": "HAL_NOR_MspInit",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec5",
+      "prototype": "void HAL_NOR_MspInit(NOR_HandleTypeDef *hnor);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hnor",
+          "type": "NOR_HandleTypeDef *",
+          "descEn": "pointer to a NOR_HandleTypeDef structure that contains the configuration information for NOR module.",
+          "descZh": "NOR Flash 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "NOR MSP Init",
+      "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "UNUSED"
+      ],
+      "headerLine": 185,
+      "definedIn": "stm32f1xx_hal_nor.h",
+      "sourceLine": 376,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NOR_MspDeInit",
+      "name": "HAL_NOR_MspDeInit",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec5",
+      "prototype": "void HAL_NOR_MspDeInit(NOR_HandleTypeDef *hnor);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hnor",
+          "type": "NOR_HandleTypeDef *",
+          "descEn": "pointer to a NOR_HandleTypeDef structure that contains the configuration information for NOR module.",
+          "descZh": "NOR Flash 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "NOR MSP DeInit",
+      "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "UNUSED"
+      ],
+      "headerLine": 186,
+      "definedIn": "stm32f1xx_hal_nor.h",
+      "sourceLine": 392,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NOR_MspWait",
+      "name": "HAL_NOR_MspWait",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec5",
+      "prototype": "void HAL_NOR_MspWait(NOR_HandleTypeDef *hnor, uint32_t Timeout);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hnor",
+          "type": "NOR_HandleTypeDef *",
+          "descEn": "pointer to a NOR_HandleTypeDef structure that contains the configuration information for NOR module.",
+          "descZh": "NOR Flash 句柄指针。"
+        },
+        {
+          "name": "Timeout",
+          "type": "uint32_t",
+          "descEn": "Maximum timeout value",
+          "descZh": "超时毫秒数。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "NOR MSP Wait for Ready/Busy signal",
+      "briefZh": "MSP 层等待回调（__weak 空实现）：实现 NOR 操作所需的延时。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "UNUSED"
+      ],
+      "headerLine": 187,
+      "definedIn": "stm32f1xx_hal_nor.h",
+      "sourceLine": 409,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NOR_Read_ID",
+      "name": "HAL_NOR_Read_ID",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec6",
+      "prototype": "HAL_StatusTypeDef HAL_NOR_Read_ID(NOR_HandleTypeDef *hnor, NOR_IDTypeDef *pNOR_ID);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnor",
+          "type": "NOR_HandleTypeDef *",
+          "descEn": "pointer to a NOR_HandleTypeDef structure that contains the configuration information for NOR module.",
+          "descZh": "NOR Flash 句柄指针。"
+        },
+        {
+          "name": "pNOR_ID",
+          "type": "NOR_IDTypeDef *",
+          "descEn": "pointer to NOR ID structure",
+          "descZh": "输出参数，接收 NOR 的 ID 信息（制造商 ID、器件 ID）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Read NOR flash IDs",
+      "briefZh": "读取器件的 ID 信息。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "NOR_IDTypeDef",
+        "HAL_NOR_StateTypeDef",
+        "HAL_OK",
+        "HAL_BUSY",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "NOR_MEMORY_ADRESS1",
+        "NOR_MEMORY_ADRESS2",
+        "NOR_MEMORY_ADRESS3",
+        "NOR_MEMORY_ADRESS4",
+        "NOR_MEMORY_8B",
+        "NOR_WRITE",
+        "NOR_ADDR_SHIFT",
+        "MC_ADDRESS",
+        "DEVICE_CODE1_ADDR",
+        "DEVICE_CODE2_ADDR",
+        "DEVICE_CODE3_ADDR",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 197,
+      "definedIn": "stm32f1xx_hal_nor.h",
+      "sourceLine": 445,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NOR_ReturnToReadMode",
+      "name": "HAL_NOR_ReturnToReadMode",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec6",
+      "prototype": "HAL_StatusTypeDef HAL_NOR_ReturnToReadMode(NOR_HandleTypeDef *hnor);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnor",
+          "type": "NOR_HandleTypeDef *",
+          "descEn": "pointer to a NOR_HandleTypeDef structure that contains the configuration information for NOR module.",
+          "descZh": "NOR Flash 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Returns the NOR memory to Read mode.",
+      "briefZh": "让 NOR Flash 从编程/擦除状态回到读模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "HAL_NOR_StateTypeDef",
+        "HAL_OK",
+        "HAL_BUSY",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "NOR_MEMORY_ADRESS1",
+        "NOR_MEMORY_ADRESS2",
+        "NOR_MEMORY_ADRESS3",
+        "NOR_MEMORY_ADRESS4",
+        "NOR_WRITE",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 198,
+      "definedIn": "stm32f1xx_hal_nor.h",
+      "sourceLine": 549,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NOR_Read",
+      "name": "HAL_NOR_Read",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec6",
+      "prototype": "HAL_StatusTypeDef HAL_NOR_Read(NOR_HandleTypeDef *hnor, uint32_t *pAddress, uint16_t *pData);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnor",
+          "type": "NOR_HandleTypeDef *",
+          "descEn": "pointer to a NOR_HandleTypeDef structure that contains the configuration information for NOR module.",
+          "descZh": "NOR Flash 句柄指针。"
+        },
+        {
+          "name": "pAddress",
+          "type": "uint32_t *",
+          "descEn": "pointer to Device address",
+          "descZh": "地址结构体：Page、Block、Plane、Zone，以及块/页内的偏移。"
+        },
+        {
+          "name": "pData",
+          "type": "uint16_t *",
+          "descEn": "pointer to read data",
+          "descZh": "数据缓冲区指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Read data from NOR memory",
+      "briefZh": "从指定地址读取一个数据。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "HAL_NOR_StateTypeDef",
+        "HAL_OK",
+        "HAL_BUSY",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "NOR_MEMORY_ADRESS1",
+        "NOR_MEMORY_ADRESS2",
+        "NOR_MEMORY_ADRESS3",
+        "NOR_MEMORY_ADRESS4",
+        "NOR_MEMORY_8B",
+        "NOR_WRITE",
+        "NOR_ADDR_SHIFT",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 199,
+      "definedIn": "stm32f1xx_hal_nor.h",
+      "sourceLine": 627,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NOR_Program",
+      "name": "HAL_NOR_Program",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec6",
+      "prototype": "HAL_StatusTypeDef HAL_NOR_Program(NOR_HandleTypeDef *hnor, uint32_t *pAddress, uint16_t *pData);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnor",
+          "type": "NOR_HandleTypeDef *",
+          "descEn": "pointer to a NOR_HandleTypeDef structure that contains the configuration information for NOR module.",
+          "descZh": "NOR Flash 句柄指针。"
+        },
+        {
+          "name": "pAddress",
+          "type": "uint32_t *",
+          "descEn": "Device address",
+          "descZh": "地址结构体：Page、Block、Plane、Zone，以及块/页内的偏移。"
+        },
+        {
+          "name": "pData",
+          "type": "uint16_t *",
+          "descEn": "pointer to the data to write",
+          "descZh": "数据缓冲区指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Program data to NOR memory",
+      "briefZh": "按指定的编程宽度向目标地址写入数据。目标地址必须是已擦除状态（0xFFFF）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "HAL_OK",
+        "HAL_BUSY",
+        "__HAL_LOCK",
+        "NOR_MEMORY_ADRESS1",
+        "NOR_MEMORY_ADRESS2",
+        "NOR_MEMORY_ADRESS3",
+        "NOR_MEMORY_ADRESS4",
+        "NOR_MEMORY_8B",
+        "NOR_WRITE",
+        "NOR_ADDR_SHIFT",
+        "HAL_ERROR",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 200,
+      "definedIn": "stm32f1xx_hal_nor.h",
+      "sourceLine": 727,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NOR_ReadBuffer",
+      "name": "HAL_NOR_ReadBuffer",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec6",
+      "prototype": "HAL_StatusTypeDef HAL_NOR_ReadBuffer(NOR_HandleTypeDef *hnor, uint32_t uwAddress, uint16_t *pData, uint32_t uwBufferSize);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnor",
+          "type": "NOR_HandleTypeDef *",
+          "descEn": "pointer to the NOR handle",
+          "descZh": "NOR Flash 句柄指针。"
+        },
+        {
+          "name": "uwAddress",
+          "type": "uint32_t",
+          "descEn": "NOR memory internal address to read from.",
+          "descZh": "器件内地址（相对基地址的偏移）。"
+        },
+        {
+          "name": "pData",
+          "type": "uint16_t *",
+          "descEn": "pointer to the buffer that receives the data read from the NOR memory.",
+          "descZh": "数据缓冲区指针。"
+        },
+        {
+          "name": "uwBufferSize",
+          "type": "uint32_t",
+          "descEn": "number of Half word to read.",
+          "descZh": "数据字节数。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Reads a half-word buffer from the NOR memory.",
+      "briefZh": "从器件连续读取一段数据到缓冲区。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "HAL_NOR_StateTypeDef",
+        "HAL_OK",
+        "HAL_BUSY",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "NOR_MEMORY_ADRESS1",
+        "NOR_MEMORY_ADRESS2",
+        "NOR_MEMORY_ADRESS3",
+        "NOR_MEMORY_ADRESS4",
+        "NOR_MEMORY_8B",
+        "NOR_WRITE",
+        "NOR_ADDR_SHIFT",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 202,
+      "definedIn": "stm32f1xx_hal_nor.h",
+      "sourceLine": 821,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NOR_ProgramBuffer",
+      "name": "HAL_NOR_ProgramBuffer",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec6",
+      "prototype": "HAL_StatusTypeDef HAL_NOR_ProgramBuffer(NOR_HandleTypeDef *hnor, uint32_t uwAddress, uint16_t *pData, uint32_t uwBufferSize);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnor",
+          "type": "NOR_HandleTypeDef *",
+          "descEn": "pointer to the NOR handle",
+          "descZh": "NOR Flash 句柄指针。"
+        },
+        {
+          "name": "uwAddress",
+          "type": "uint32_t",
+          "descEn": "NOR memory internal start write address",
+          "descZh": "器件内地址（相对基地址的偏移）。"
+        },
+        {
+          "name": "pData",
+          "type": "uint16_t *",
+          "descEn": "pointer to source data buffer.",
+          "descZh": "数据缓冲区指针。"
+        },
+        {
+          "name": "uwBufferSize",
+          "type": "uint32_t",
+          "descEn": "Size of the buffer to write",
+          "descZh": "数据字节数。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Writes a half-word buffer to the NOR memory. This function must be used only with S29GL128P NOR memory.",
+      "briefZh": "把缓冲区数据连续编程到器件。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "HAL_OK",
+        "HAL_BUSY",
+        "__HAL_LOCK",
+        "NOR_MEMORY_ADRESS1",
+        "NOR_MEMORY_ADRESS2",
+        "NOR_MEMORY_ADRESS3",
+        "NOR_MEMORY_ADRESS4",
+        "NOR_MEMORY_8B",
+        "NOR_WRITE",
+        "NOR_ADDR_SHIFT",
+        "HAL_ERROR",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 204,
+      "definedIn": "stm32f1xx_hal_nor.h",
+      "sourceLine": 932,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NOR_Erase_Block",
+      "name": "HAL_NOR_Erase_Block",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec6",
+      "prototype": "HAL_StatusTypeDef HAL_NOR_Erase_Block(NOR_HandleTypeDef *hnor, uint32_t BlockAddress, uint32_t Address);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnor",
+          "type": "NOR_HandleTypeDef *",
+          "descEn": "pointer to a NOR_HandleTypeDef structure that contains the configuration information for NOR module.",
+          "descZh": "NOR Flash 句柄指针。"
+        },
+        {
+          "name": "BlockAddress",
+          "type": "uint32_t",
+          "descEn": "Block to erase address",
+          "descZh": "块地址（块号）。"
+        },
+        {
+          "name": "Address",
+          "type": "uint32_t",
+          "descEn": "Device address",
+          "descZh": "器件内地址偏移。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Erase the specified block of the NOR memory",
+      "briefZh": "擦除一个块。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "HAL_OK",
+        "HAL_BUSY",
+        "__HAL_LOCK",
+        "NOR_MEMORY_ADRESS1",
+        "NOR_MEMORY_ADRESS2",
+        "NOR_MEMORY_ADRESS3",
+        "NOR_MEMORY_ADRESS4",
+        "NOR_MEMORY_8B",
+        "NOR_WRITE",
+        "NOR_ADDR_SHIFT",
+        "HAL_ERROR",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 207,
+      "definedIn": "stm32f1xx_hal_nor.h",
+      "sourceLine": 1052,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NOR_Erase_Chip",
+      "name": "HAL_NOR_Erase_Chip",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec6",
+      "prototype": "HAL_StatusTypeDef HAL_NOR_Erase_Chip(NOR_HandleTypeDef *hnor, uint32_t Address);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnor",
+          "type": "NOR_HandleTypeDef *",
+          "descEn": "pointer to a NOR_HandleTypeDef structure that contains the configuration information for NOR module.",
+          "descZh": "NOR Flash 句柄指针。"
+        },
+        {
+          "name": "Address",
+          "type": "uint32_t",
+          "descEn": "Device address",
+          "descZh": "器件内地址偏移。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Erase the entire NOR chip.",
+      "briefZh": "整片擦除（很慢，且不可恢复，慎用）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "HAL_OK",
+        "UNUSED",
+        "HAL_BUSY",
+        "__HAL_LOCK",
+        "NOR_MEMORY_ADRESS1",
+        "NOR_MEMORY_ADRESS2",
+        "NOR_MEMORY_ADRESS3",
+        "NOR_MEMORY_ADRESS4",
+        "NOR_MEMORY_8B",
+        "NOR_WRITE",
+        "NOR_ADDR_SHIFT",
+        "HAL_ERROR",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 208,
+      "definedIn": "stm32f1xx_hal_nor.h",
+      "sourceLine": 1148,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NOR_Read_CFI",
+      "name": "HAL_NOR_Read_CFI",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec6",
+      "prototype": "HAL_StatusTypeDef HAL_NOR_Read_CFI(NOR_HandleTypeDef *hnor, NOR_CFITypeDef *pNOR_CFI);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnor",
+          "type": "NOR_HandleTypeDef *",
+          "descEn": "pointer to a NOR_HandleTypeDef structure that contains the configuration information for NOR module.",
+          "descZh": "NOR Flash 句柄指针。"
+        },
+        {
+          "name": "pNOR_CFI",
+          "type": "NOR_CFITypeDef *",
+          "descEn": "pointer to NOR CFI IDs structure",
+          "descZh": "输出参数，接收 CFI（Common Flash Interface）查询结果，用于识别器件参数。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Read NOR flash CFI IDs",
+      "briefZh": "读取 CFI（Common Flash Interface）信息，用于识别 NOR 器件参数。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "NOR_CFITypeDef",
+        "HAL_NOR_StateTypeDef",
+        "HAL_BUSY",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "NOR_MEMORY_ADRESS1",
+        "NOR_MEMORY_ADRESS2",
+        "NOR_MEMORY_ADRESS3",
+        "NOR_MEMORY_ADRESS4",
+        "NOR_MEMORY_8B",
+        "NOR_WRITE",
+        "NOR_ADDR_SHIFT",
+        "CFI1_ADDRESS",
+        "CFI2_ADDRESS",
+        "CFI3_ADDRESS",
+        "CFI4_ADDRESS",
+        "__HAL_UNLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 209,
+      "definedIn": "stm32f1xx_hal_nor.h",
+      "sourceLine": 1238,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NOR_RegisterCallback",
+      "name": "HAL_NOR_RegisterCallback",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec6",
+      "prototype": "HAL_StatusTypeDef HAL_NOR_RegisterCallback(NOR_HandleTypeDef *hnor, HAL_NOR_CallbackIDTypeDef CallbackId, pNOR_CallbackTypeDef pCallback);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnor",
+          "type": "NOR_HandleTypeDef *",
+          "descEn": "NOR handle",
+          "descZh": "NOR Flash 句柄指针。"
+        },
+        {
+          "name": "CallbackId",
+          "type": "HAL_NOR_CallbackIDTypeDef",
+          "descEn": "ID of the callback to be registered This parameter can be one of the following values:",
+          "descZh": "回调事件编号，取对应的 CallbackIDTypeDef 枚举值。"
+        },
+        {
+          "name": "pCallback",
+          "type": "pNOR_CallbackTypeDef",
+          "descEn": "pointer to the Callback function",
+          "descZh": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+        }
+      ],
+      "returnDescEn": "status",
+      "returnDescZh": "",
+      "briefEn": "Register a User NOR Callback To be used to override the weak predefined callback",
+      "briefZh": "为 NOR Flash 注册指定事件的回调，替代默认的 __weak 空实现。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "HAL_NOR_CallbackIDTypeDef",
+        "pNOR_CallbackTypeDef",
+        "HAL_OK",
+        "HAL_NOR_StateTypeDef",
+        "HAL_ERROR",
+        "HAL_NOR_STATE_RESET",
+        "HAL_NOR_MSP_INIT_CB_ID",
+        "MspInitCallback"
+      ],
+      "headerLine": 213,
+      "definedIn": "stm32f1xx_hal_nor.h",
+      "sourceLine": 1321,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NOR_UnRegisterCallback",
+      "name": "HAL_NOR_UnRegisterCallback",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec6",
+      "prototype": "HAL_StatusTypeDef HAL_NOR_UnRegisterCallback(NOR_HandleTypeDef *hnor, HAL_NOR_CallbackIDTypeDef CallbackId);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnor",
+          "type": "NOR_HandleTypeDef *",
+          "descEn": "NOR handle",
+          "descZh": "NOR Flash 句柄指针。"
+        },
+        {
+          "name": "CallbackId",
+          "type": "HAL_NOR_CallbackIDTypeDef",
+          "descEn": "ID of the callback to be unregistered This parameter can be one of the following values:",
+          "descZh": "回调事件编号，取对应的 CallbackIDTypeDef 枚举值。"
+        }
+      ],
+      "returnDescEn": "status",
+      "returnDescZh": "",
+      "briefEn": "Unregister a User NOR Callback NOR Callback is redirected to the weak predefined callback",
+      "briefZh": "注销 NOR Flash 已注册的回调，恢复成默认的 __weak 空实现。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_NOR_MspInit",
+        "HAL_NOR_MspDeInit"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "HAL_NOR_CallbackIDTypeDef",
+        "HAL_OK",
+        "HAL_NOR_StateTypeDef",
+        "HAL_NOR_STATE_RESET",
+        "HAL_NOR_MSP_INIT_CB_ID",
+        "MspInitCallback",
+        "HAL_ERROR"
+      ],
+      "headerLine": 215,
+      "definedIn": "stm32f1xx_hal_nor.h",
+      "sourceLine": 1368,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NOR_WriteOperation_Enable",
+      "name": "HAL_NOR_WriteOperation_Enable",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec7",
+      "prototype": "HAL_StatusTypeDef HAL_NOR_WriteOperation_Enable(NOR_HandleTypeDef *hnor);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnor",
+          "type": "NOR_HandleTypeDef *",
+          "descEn": "pointer to a NOR_HandleTypeDef structure that contains the configuration information for NOR module.",
+          "descZh": "NOR Flash 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Enables dynamically NOR write operation.",
+      "briefZh": "使能写操作（NOR 需要先解锁写保护）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "__HAL_LOCK",
+        "__HAL_UNLOCK",
+        "HAL_ERROR",
+        "HAL_OK"
+      ],
+      "headerLine": 226,
+      "definedIn": "stm32f1xx_hal_nor.h",
+      "sourceLine": 1425,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NOR_WriteOperation_Disable",
+      "name": "HAL_NOR_WriteOperation_Disable",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec7",
+      "prototype": "HAL_StatusTypeDef HAL_NOR_WriteOperation_Disable(NOR_HandleTypeDef *hnor);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnor",
+          "type": "NOR_HandleTypeDef *",
+          "descEn": "pointer to a NOR_HandleTypeDef structure that contains the configuration information for NOR module.",
+          "descZh": "NOR Flash 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Disables dynamically NOR write operation.",
+      "briefZh": "关闭写操作。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "__HAL_LOCK",
+        "__HAL_UNLOCK",
+        "HAL_ERROR",
+        "HAL_OK"
+      ],
+      "headerLine": 227,
+      "definedIn": "stm32f1xx_hal_nor.h",
+      "sourceLine": 1459,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NOR_GetState",
+      "name": "HAL_NOR_GetState",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec8",
+      "prototype": "HAL_NOR_StateTypeDef  HAL_NOR_GetState(const NOR_HandleTypeDef *hnor);",
+      "returnType": "HAL_NOR_StateTypeDef",
+      "params": [
+        {
+          "name": "hnor",
+          "type": "const NOR_HandleTypeDef *",
+          "descEn": "pointer to a NOR_HandleTypeDef structure that contains the configuration information for NOR module.",
+          "descZh": "NOR Flash 句柄指针。"
+        }
+      ],
+      "returnDescEn": "NOR controller state",
+      "returnDescZh": "",
+      "briefEn": "return the NOR controller state",
+      "briefZh": "读取 NOR Flash 的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_NOR_StateTypeDef"
+      ],
+      "headerLine": 237,
+      "definedIn": "stm32f1xx_hal_nor.h",
+      "sourceLine": 1512,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NOR_GetStatus",
+      "name": "HAL_NOR_GetStatus",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec8",
+      "prototype": "HAL_NOR_StatusTypeDef HAL_NOR_GetStatus(NOR_HandleTypeDef *hnor, uint32_t Address, uint32_t Timeout);",
+      "returnType": "HAL_NOR_StatusTypeDef",
+      "params": [
+        {
+          "name": "hnor",
+          "type": "NOR_HandleTypeDef *",
+          "descEn": "pointer to a NOR_HandleTypeDef structure that contains the configuration information for NOR module.",
+          "descZh": "NOR Flash 句柄指针。"
+        },
+        {
+          "name": "Address",
+          "type": "uint32_t",
+          "descEn": "Device address",
+          "descZh": "器件内地址偏移。"
+        },
+        {
+          "name": "Timeout",
+          "type": "uint32_t",
+          "descEn": "NOR programming Timeout",
+          "descZh": "超时毫秒数。"
+        }
+      ],
+      "returnDescEn": "NOR_Status The returned value can be: HAL_NOR_STATUS_SUCCESS, HAL_NOR_STATUS_ERROR or HAL_NOR_STATUS_TIMEOUT",
+      "returnDescZh": "",
+      "briefEn": "Returns the NOR operation status.",
+      "briefZh": "读取器件当前状态。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_NOR_MspWait",
+        "HAL_GetTick"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_NOR_StatusTypeDef",
+        "HAL_NOR_STATUS_SUCCESS",
+        "HAL_NOR_STATUS_ERROR",
+        "HAL_NOR_STATUS_TIMEOUT",
+        "HAL_NOR_STATUS_ONGOING",
+        "HAL_MAX_DELAY",
+        "NOR_WRITE"
+      ],
+      "headerLine": 238,
+      "definedIn": "stm32f1xx_hal_nor.h",
+      "sourceLine": 1526,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PCCARD_Init",
+      "name": "HAL_PCCARD_Init",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec9",
+      "prototype": "HAL_StatusTypeDef  HAL_PCCARD_Init(PCCARD_HandleTypeDef *hpccard, FSMC_NAND_PCC_TimingTypeDef *ComSpaceTiming, FSMC_NAND_PCC_TimingTypeDef *AttSpaceTiming, FSMC_NAND_PCC_TimingTypeDef *IOSpaceTiming);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hpccard",
+          "type": "PCCARD_HandleTypeDef *",
+          "descEn": "pointer to a PCCARD_HandleTypeDef structure that contains the configuration information for PCCARD module.",
+          "descZh": "PC 卡句柄指针。"
+        },
+        {
+          "name": "ComSpaceTiming",
+          "type": "FSMC_NAND_PCC_TimingTypeDef *",
+          "descEn": "Common space timing structure",
+          "descZh": "命令阶段的时序参数。"
+        },
+        {
+          "name": "AttSpaceTiming",
+          "type": "FSMC_NAND_PCC_TimingTypeDef *",
+          "descEn": "Attribute space timing structure",
+          "descZh": "地址阶段的时序参数。"
+        },
+        {
+          "name": "IOSpaceTiming",
+          "type": "FSMC_NAND_PCC_TimingTypeDef *",
+          "descEn": "IO space timing structure",
+          "descZh": "数据总线阶段的时序参数。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Perform the PCCARD memory Initialization sequence",
+      "briefZh": "按 InitTypeDef 中的参数初始化 PC 卡，并完成状态机初始化。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_PCCARD_MspInit",
+        "HAL_PCCARD_ITCallback"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "PCCARD_HandleTypeDef",
+        "HAL_ERROR",
+        "HAL_PCCARD_STATE_RESET",
+        "HAL_UNLOCKED",
+        "MspInitCallback",
+        "HAL_OK"
+      ],
+      "headerLine": 139,
+      "definedIn": "stm32f1xx_hal_pccard.h",
+      "sourceLine": 165,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PCCARD_DeInit",
+      "name": "HAL_PCCARD_DeInit",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec9",
+      "prototype": "HAL_StatusTypeDef  HAL_PCCARD_DeInit(PCCARD_HandleTypeDef *hpccard);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hpccard",
+          "type": "PCCARD_HandleTypeDef *",
+          "descEn": "pointer to a PCCARD_HandleTypeDef structure that contains the configuration information for PCCARD module.",
+          "descZh": "PC 卡句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Perform the PCCARD memory De-initialization sequence",
+      "briefZh": "把 PC 卡的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_PCCARD_MspDeInit"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "PCCARD_HandleTypeDef",
+        "HAL_PCCARD_STATE_RESET",
+        "__HAL_UNLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 142,
+      "definedIn": "stm32f1xx_hal_pccard.h",
+      "sourceLine": 225,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PCCARD_MspInit",
+      "name": "HAL_PCCARD_MspInit",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec9",
+      "prototype": "void HAL_PCCARD_MspInit(PCCARD_HandleTypeDef *hpccard);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hpccard",
+          "type": "PCCARD_HandleTypeDef *",
+          "descEn": "pointer to a PCCARD_HandleTypeDef structure that contains the configuration information for PCCARD module.",
+          "descZh": "PC 卡句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "PCCARD MSP Init",
+      "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "PCCARD_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 143,
+      "definedIn": "stm32f1xx_hal_pccard.h",
+      "sourceLine": 258,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PCCARD_MspDeInit",
+      "name": "HAL_PCCARD_MspDeInit",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec9",
+      "prototype": "void HAL_PCCARD_MspDeInit(PCCARD_HandleTypeDef *hpccard);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hpccard",
+          "type": "PCCARD_HandleTypeDef *",
+          "descEn": "pointer to a PCCARD_HandleTypeDef structure that contains the configuration information for PCCARD module.",
+          "descZh": "PC 卡句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "PCCARD MSP DeInit",
+      "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "PCCARD_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 144,
+      "definedIn": "stm32f1xx_hal_pccard.h",
+      "sourceLine": 273,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PCCARD_Read_ID",
+      "name": "HAL_PCCARD_Read_ID",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec10",
+      "prototype": "HAL_StatusTypeDef  HAL_PCCARD_Read_ID(PCCARD_HandleTypeDef *hpccard, uint8_t CompactFlash_ID[], uint8_t *pStatus);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hpccard",
+          "type": "PCCARD_HandleTypeDef *",
+          "descEn": "pointer to a PCCARD_HandleTypeDef structure that contains the configuration information for PCCARD module.",
+          "descZh": "PC 卡句柄指针。"
+        },
+        {
+          "name": "CompactFlash_ID",
+          "type": "uint8_t []",
+          "descEn": "Compact flash ID structure.",
+          "descZh": "输出参数，接收 CompactFlash 卡的 ID 信息数组。"
+        },
+        {
+          "name": "pStatus",
+          "type": "uint8_t *",
+          "descEn": "pointer to compact flash status",
+          "descZh": "输出参数，接收 PC 卡的状态字节。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Read Compact Flash's ID.",
+      "briefZh": "读取器件的 ID 信息。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "PCCARD_HandleTypeDef",
+        "__HAL_LOCK",
+        "HAL_BUSY",
+        "PCCARD_READY",
+        "PCCARD_IO_SPACE_PRIMARY_ADDR",
+        "ATA_STATUS_CMD",
+        "ATA_STATUS_CMD_ALTERNATE",
+        "PCCARD_TIMEOUT_ERROR",
+        "ATA_DATA",
+        "__HAL_UNLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 153,
+      "definedIn": "stm32f1xx_hal_pccard.h",
+      "sourceLine": 309,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PCCARD_Read_Sector",
+      "name": "HAL_PCCARD_Read_Sector",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec10",
+      "prototype": "HAL_StatusTypeDef  HAL_PCCARD_Read_Sector(PCCARD_HandleTypeDef *hpccard, uint16_t *pBuffer, uint16_t SectorAddress, uint8_t *pStatus);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hpccard",
+          "type": "PCCARD_HandleTypeDef *",
+          "descEn": "pointer to a PCCARD_HandleTypeDef structure that contains the configuration information for PCCARD module.",
+          "descZh": "PC 卡句柄指针。"
+        },
+        {
+          "name": "pBuffer",
+          "type": "uint16_t *",
+          "descEn": "pointer to destination read buffer",
+          "descZh": "数据缓冲区指针。"
+        },
+        {
+          "name": "SectorAddress",
+          "type": "uint16_t",
+          "descEn": "Sector address to read",
+          "descZh": "扇区地址。"
+        },
+        {
+          "name": "pStatus",
+          "type": "uint8_t *",
+          "descEn": "pointer to PCCARD status",
+          "descZh": "输出参数，接收 PC 卡的状态字节。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Read sector from PCCARD memory",
+      "briefZh": "读取一个扇区。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "PCCARD_HandleTypeDef",
+        "__HAL_LOCK",
+        "HAL_BUSY",
+        "PCCARD_READY",
+        "PCCARD_IO_SPACE_PRIMARY_ADDR",
+        "ATA_CYLINDER_HIGH",
+        "ATA_SECTOR_COUNT",
+        "ATA_STATUS_CMD",
+        "ATA_STATUS_CMD_ALTERNATE",
+        "PCCARD_TIMEOUT_ERROR",
+        "PCCARD_SECTOR_SIZE",
+        "__HAL_UNLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 156,
+      "definedIn": "stm32f1xx_hal_pccard.h",
+      "sourceLine": 373,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PCCARD_Write_Sector",
+      "name": "HAL_PCCARD_Write_Sector",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec10",
+      "prototype": "HAL_StatusTypeDef  HAL_PCCARD_Write_Sector(PCCARD_HandleTypeDef *hpccard, uint16_t *pBuffer, uint16_t SectorAddress, uint8_t *pStatus);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hpccard",
+          "type": "PCCARD_HandleTypeDef *",
+          "descEn": "pointer to a PCCARD_HandleTypeDef structure that contains the configuration information for PCCARD module.",
+          "descZh": "PC 卡句柄指针。"
+        },
+        {
+          "name": "pBuffer",
+          "type": "uint16_t *",
+          "descEn": "pointer to source write buffer",
+          "descZh": "数据缓冲区指针。"
+        },
+        {
+          "name": "SectorAddress",
+          "type": "uint16_t",
+          "descEn": "Sector address to write",
+          "descZh": "扇区地址。"
+        },
+        {
+          "name": "pStatus",
+          "type": "uint8_t *",
+          "descEn": "pointer to PCCARD status",
+          "descZh": "输出参数，接收 PC 卡的状态字节。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Write sector to PCCARD memory",
+      "briefZh": "写入一个扇区。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "PCCARD_HandleTypeDef",
+        "__HAL_LOCK",
+        "HAL_BUSY",
+        "PCCARD_READY",
+        "PCCARD_IO_SPACE_PRIMARY_ADDR",
+        "ATA_CYLINDER_HIGH",
+        "ATA_SECTOR_COUNT",
+        "ATA_STATUS_CMD",
+        "ATA_STATUS_CMD_ALTERNATE",
+        "PCCARD_TIMEOUT_ERROR",
+        "PCCARD_SECTOR_SIZE",
+        "__HAL_UNLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 154,
+      "definedIn": "stm32f1xx_hal_pccard.h",
+      "sourceLine": 451,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PCCARD_Erase_Sector",
+      "name": "HAL_PCCARD_Erase_Sector",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec10",
+      "prototype": "HAL_StatusTypeDef  HAL_PCCARD_Erase_Sector(PCCARD_HandleTypeDef *hpccard, uint16_t SectorAddress, uint8_t *pStatus);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hpccard",
+          "type": "PCCARD_HandleTypeDef *",
+          "descEn": "pointer to a PCCARD_HandleTypeDef structure that contains the configuration information for PCCARD module.",
+          "descZh": "PC 卡句柄指针。"
+        },
+        {
+          "name": "SectorAddress",
+          "type": "uint16_t",
+          "descEn": "Sector address to erase",
+          "descZh": "扇区地址。"
+        },
+        {
+          "name": "pStatus",
+          "type": "uint8_t *",
+          "descEn": "pointer to PCCARD status",
+          "descZh": "输出参数，接收 PC 卡的状态字节。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Erase sector from PCCARD memory",
+      "briefZh": "擦除一个扇区。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "PCCARD_HandleTypeDef",
+        "__HAL_LOCK",
+        "HAL_BUSY",
+        "PCCARD_READY",
+        "PCCARD_IO_SPACE_PRIMARY_ADDR",
+        "ATA_CYLINDER_LOW",
+        "ATA_CYLINDER_HIGH",
+        "ATA_SECTOR_NUMBER",
+        "ATA_SECTOR_COUNT",
+        "ATA_CARD_HEAD",
+        "ATA_STATUS_CMD",
+        "ATA_ERASE_SECTOR_CMD",
+        "ATA_STATUS_CMD_ALTERNATE",
+        "PCCARD_TIMEOUT_ERROR",
+        "__HAL_UNLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 158,
+      "definedIn": "stm32f1xx_hal_pccard.h",
+      "sourceLine": 526,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PCCARD_Reset",
+      "name": "HAL_PCCARD_Reset",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec10",
+      "prototype": "HAL_StatusTypeDef  HAL_PCCARD_Reset(PCCARD_HandleTypeDef *hpccard);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hpccard",
+          "type": "PCCARD_HandleTypeDef *",
+          "descEn": "pointer to a PCCARD_HandleTypeDef structure that contains the configuration information for PCCARD module.",
+          "descZh": "PC 卡句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Reset the PCCARD memory",
+      "briefZh": "复位器件。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "PCCARD_HandleTypeDef",
+        "__HAL_LOCK",
+        "HAL_BUSY",
+        "PCCARD_ATTRIBUTE_SPACE_ADDRESS",
+        "ATA_CARD_CONFIGURATION",
+        "__HAL_UNLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 159,
+      "definedIn": "stm32f1xx_hal_pccard.h",
+      "sourceLine": 583,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PCCARD_IRQHandler",
+      "name": "HAL_PCCARD_IRQHandler",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec10",
+      "prototype": "void               HAL_PCCARD_IRQHandler(PCCARD_HandleTypeDef *hpccard);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "hpccard",
+          "type": "PCCARD_HandleTypeDef *",
+          "descEn": "pointer to a PCCARD_HandleTypeDef structure that contains the configuration information for PCCARD module.",
+          "descZh": "PC 卡句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "This function handles PCCARD device interrupt request.",
+      "briefZh": "PC 卡的中断统一入口。在 stm32f1xx_it.c 的对应 IRQHandler 里调用，内部会清标志并分派到各回调。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_PCCARD_ITCallback"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "PCCARD_HandleTypeDef"
+      ],
+      "headerLine": 160,
+      "definedIn": "stm32f1xx_hal_pccard.h",
+      "sourceLine": 621,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PCCARD_ITCallback",
+      "name": "HAL_PCCARD_ITCallback",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec10",
+      "prototype": "void               HAL_PCCARD_ITCallback(PCCARD_HandleTypeDef *hpccard);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hpccard",
+          "type": "PCCARD_HandleTypeDef *",
+          "descEn": "pointer to a PCCARD_HandleTypeDef structure that contains the configuration information for PCCARD module.",
+          "descZh": "PC 卡句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "PCCARD interrupt feature callback",
+      "briefZh": "中断回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "PCCARD_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 161,
+      "definedIn": "stm32f1xx_hal_pccard.h",
+      "sourceLine": 686,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PCCARD_RegisterCallback",
+      "name": "HAL_PCCARD_RegisterCallback",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec10",
+      "prototype": "HAL_StatusTypeDef  HAL_PCCARD_RegisterCallback(PCCARD_HandleTypeDef *hpccard, HAL_PCCARD_CallbackIDTypeDef CallbackId, pPCCARD_CallbackTypeDef pCallback);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hpccard",
+          "type": "PCCARD_HandleTypeDef *",
+          "descEn": "PCCARD handle",
+          "descZh": "PC 卡句柄指针。"
+        },
+        {
+          "name": "CallbackId",
+          "type": "HAL_PCCARD_CallbackIDTypeDef",
+          "descEn": "ID of the callback to be registered This parameter can be one of the following values:",
+          "descZh": "回调事件编号，取对应的 CallbackIDTypeDef 枚举值。"
+        },
+        {
+          "name": "pCallback",
+          "type": "pPCCARD_CallbackTypeDef",
+          "descEn": "pointer to the Callback function",
+          "descZh": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+        }
+      ],
+      "returnDescEn": "status",
+      "returnDescZh": "",
+      "briefEn": "Register a User PCCARD Callback To be used instead of the weak (surcharged) predefined callback",
+      "briefZh": "为 PC 卡注册指定事件的回调，替代默认的 __weak 空实现。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "PCCARD_HandleTypeDef",
+        "HAL_PCCARD_CallbackIDTypeDef",
+        "pPCCARD_CallbackTypeDef",
+        "HAL_OK",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "HAL_PCCARD_MSP_INIT_CB_ID",
+        "MspInitCallback",
+        "HAL_PCCARD_STATE_RESET",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 165,
+      "definedIn": "stm32f1xx_hal_pccard.h",
+      "sourceLine": 708,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PCCARD_UnRegisterCallback",
+      "name": "HAL_PCCARD_UnRegisterCallback",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec10",
+      "prototype": "HAL_StatusTypeDef  HAL_PCCARD_UnRegisterCallback(PCCARD_HandleTypeDef *hpccard, HAL_PCCARD_CallbackIDTypeDef CallbackId);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hpccard",
+          "type": "PCCARD_HandleTypeDef *",
+          "descEn": "PCCARD handle",
+          "descZh": "PC 卡句柄指针。"
+        },
+        {
+          "name": "CallbackId",
+          "type": "HAL_PCCARD_CallbackIDTypeDef",
+          "descEn": "ID of the callback to be unregistered This parameter can be one of the following values:",
+          "descZh": "回调事件编号，取对应的 CallbackIDTypeDef 枚举值。"
+        }
+      ],
+      "returnDescEn": "status",
+      "returnDescZh": "",
+      "briefEn": "Unregister a User PCCARD Callback PCCARD Callback is redirected to the weak (surcharged) predefined callback",
+      "briefZh": "注销 PC 卡已注册的回调，恢复成默认的 __weak 空实现。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_PCCARD_MspInit",
+        "HAL_PCCARD_MspDeInit",
+        "HAL_PCCARD_ITCallback"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "PCCARD_HandleTypeDef",
+        "HAL_PCCARD_CallbackIDTypeDef",
+        "HAL_OK",
+        "__HAL_LOCK",
+        "HAL_PCCARD_MSP_INIT_CB_ID",
+        "MspInitCallback",
+        "HAL_ERROR",
+        "HAL_PCCARD_STATE_RESET",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 167,
+      "definedIn": "stm32f1xx_hal_pccard.h",
+      "sourceLine": 778,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PCCARD_GetState",
+      "name": "HAL_PCCARD_GetState",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec11",
+      "prototype": "HAL_PCCARD_StateTypeDef  HAL_PCCARD_GetState(PCCARD_HandleTypeDef *hpccard);",
+      "returnType": "HAL_PCCARD_StateTypeDef",
+      "params": [
+        {
+          "name": "hpccard",
+          "type": "PCCARD_HandleTypeDef *",
+          "descEn": "pointer to a PCCARD_HandleTypeDef structure that contains the configuration information for PCCARD module.",
+          "descZh": "PC 卡句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL state",
+      "returnDescZh": "",
+      "briefEn": "return the PCCARD controller state",
+      "briefZh": "读取 PC 卡的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_PCCARD_StateTypeDef",
+        "PCCARD_HandleTypeDef"
+      ],
+      "headerLine": 178,
+      "definedIn": "stm32f1xx_hal_pccard.h",
+      "sourceLine": 857,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PCCARD_GetStatus",
+      "name": "HAL_PCCARD_GetStatus",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec11",
+      "prototype": "HAL_PCCARD_StatusTypeDef HAL_PCCARD_GetStatus(PCCARD_HandleTypeDef *hpccard);",
+      "returnType": "HAL_PCCARD_StatusTypeDef",
+      "params": [
+        {
+          "name": "hpccard",
+          "type": "PCCARD_HandleTypeDef *",
+          "descEn": "pointer to a PCCARD_HandleTypeDef structure that contains the configuration information for PCCARD module.",
+          "descZh": "PC 卡句柄指针。"
+        }
+      ],
+      "returnDescEn": "New status of the PCCARD operation. This parameter can be: - CompactFlash_TIMEOUT_ERROR: when the previous operation generate a Timeout error - CompactFlash_READY: when memory is ready for the next operation",
+      "returnDescZh": "",
+      "briefEn": "Get the compact flash memory status",
+      "briefZh": "读取器件当前状态。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_PCCARD_StatusTypeDef",
+        "PCCARD_HandleTypeDef",
+        "HAL_PCCARD_STATUS_ONGOING",
+        "PCCARD_IO_SPACE_PRIMARY_ADDR",
+        "ATA_STATUS_CMD_ALTERNATE",
+        "PCCARD_BUSY",
+        "PCCARD_TIMEOUT_ERROR"
+      ],
+      "headerLine": 179,
+      "definedIn": "stm32f1xx_hal_pccard.h",
+      "sourceLine": 871,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_PCCARD_ReadStatus",
+      "name": "HAL_PCCARD_ReadStatus",
+      "peripheral": "FSMC",
+      "library": "hal",
+      "sectionId": "FSMC@hal#sec11",
+      "prototype": "HAL_PCCARD_StatusTypeDef HAL_PCCARD_ReadStatus(PCCARD_HandleTypeDef *hpccard);",
+      "returnType": "HAL_PCCARD_StatusTypeDef",
+      "params": [
+        {
+          "name": "hpccard",
+          "type": "PCCARD_HandleTypeDef *",
+          "descEn": "pointer to a PCCARD_HandleTypeDef structure that contains the configuration information for PCCARD module.",
+          "descZh": "PC 卡句柄指针。"
+        }
+      ],
+      "returnDescEn": "The status of the Compact Flash memory. This parameter can be: - CompactFlash_BUSY: when memory is busy - CompactFlash_READY: when memory is ready for the next operation - CompactFlash_ERROR: when the previous operation generates error",
+      "returnDescZh": "",
+      "briefEn": "Reads the Compact Flash memory status using the Read status command",
+      "briefZh": "读取 PC 卡状态。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_PCCARD_StatusTypeDef",
+        "PCCARD_HandleTypeDef",
+        "PCCARD_BUSY",
+        "HAL_PCCARD_STATUS_ONGOING",
+        "PCCARD_IO_SPACE_PRIMARY_ADDR",
+        "ATA_STATUS_CMD_ALTERNATE",
+        "PCCARD_TIMEOUT_ERROR",
+        "PCCARD_READY"
+      ],
+      "headerLine": 180,
+      "definedIn": "stm32f1xx_hal_pccard.h",
+      "sourceLine": 908,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

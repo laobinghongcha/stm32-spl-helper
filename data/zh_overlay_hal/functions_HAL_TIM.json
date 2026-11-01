@@ -1,0 +1,926 @@
+{
+  "HAL_TIMEx_BreakCallback": {
+    "briefZh": "刹车输入触发回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_CommutCallback": {
+    "briefZh": "换相回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_CommutHalfCpltCallback": {
+    "briefZh": "换相过半回调（__weak 空实现）。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_ConfigBreakDeadTime": {
+    "briefZh": "配置刹车功能、死区时间、锁定等级、空闲状态与自动输出。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。",
+      "sBreakDeadTimeConfig": "刹车与死区配置结构体：OffStateRunMode、OffStateIDLEMode、LockLevel、DeadTime、BreakState、BreakPolarity、AutomaticOutput。"
+    }
+  },
+  "HAL_TIMEx_ConfigCommutEvent": {
+    "briefZh": "配置换相事件序列（用于 BLDC 六步换相）。",
+    "paramsZh": {
+      "CommutationSource": "换相事件源：TIM_COMMUTATION_TRGI 或 TIM_COMMUTATION_SOFTWARE。",
+      "InputTrigger": "换相/从模式的触发输入源：TIM_TS_ITR0 ~ ITR3（内部互联）、TI1F_ED、TI1FP1 等。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_ConfigCommutEvent_DMA": {
+    "briefZh": "配置换相事件序列并以 DMA 方式更新。",
+    "paramsZh": {
+      "CommutationSource": "换相事件源：TIM_COMMUTATION_TRGI 或 TIM_COMMUTATION_SOFTWARE。",
+      "InputTrigger": "换相/从模式的触发输入源：TIM_TS_ITR0 ~ ITR3（内部互联）、TI1F_ED、TI1FP1 等。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_ConfigCommutEvent_IT": {
+    "briefZh": "配置换相事件序列并以中断方式触发。",
+    "paramsZh": {
+      "CommutationSource": "换相事件源：TIM_COMMUTATION_TRGI 或 TIM_COMMUTATION_SOFTWARE。",
+      "InputTrigger": "换相/从模式的触发输入源：TIM_TS_ITR0 ~ ITR3（内部互联）、TI1F_ED、TI1FP1 等。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_GetChannelNState": {
+    "briefZh": "读取指定互补通道（CHxN）的当前状态（空闲 / 忙 / 超时）。",
+    "paramsZh": {
+      "ChannelN": "互补通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_3（互补输出没有通道 4）。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_HallSensor_DeInit": {
+    "briefZh": "把高级定时器 TIM1 的霍尔传感器接口的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_HallSensor_GetState": {
+    "briefZh": "读取高级定时器 TIM1 的霍尔传感器接口的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_HallSensor_Init": {
+    "briefZh": "按 InitTypeDef 中的参数初始化高级定时器 TIM1 的霍尔传感器接口，并完成状态机初始化。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。",
+      "sConfig": "通道配置结构体（TIM_OC_InitTypeDef / TIM_IC_InitTypeDef 等，视调用的函数而定）。"
+    }
+  },
+  "HAL_TIMEx_HallSensor_MspDeInit": {
+    "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_HallSensor_MspInit": {
+    "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_HallSensor_Start": {
+    "briefZh": "启动高级定时器 TIM1 的霍尔传感器接口。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_HallSensor_Start_DMA": {
+    "briefZh": "以 DMA 方式启动高级定时器 TIM1 的霍尔传感器接口，搬运过程不占用 CPU。",
+    "paramsZh": {
+      "Length": "数据长度（视函数而定，通常是缓冲区里的元素个数）。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_TIMEx_HallSensor_Start_IT": {
+    "briefZh": "以中断方式启动高级定时器 TIM1 的霍尔传感器接口，完成后进入中断回调。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_HallSensor_Stop": {
+    "briefZh": "停止高级定时器 TIM1 的霍尔传感器接口。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_HallSensor_Stop_DMA": {
+    "briefZh": "停止高级定时器 TIM1 的霍尔传感器接口的 DMA 方式运行，并关闭 DMA 通道。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_HallSensor_Stop_IT": {
+    "briefZh": "停止高级定时器 TIM1 的霍尔传感器接口的中断方式运行，并关闭相关中断。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_MasterConfigSynchronization": {
+    "briefZh": "把定时器配置成主模式，并选择 TRGO 信号源。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。",
+      "sMasterConfig": "主模式配置结构体：MasterOutputTrigger（TRGO 信号源）、MasterSlaveMode。"
+    }
+  },
+  "HAL_TIMEx_OCN_Start": {
+    "briefZh": "启动高级定时器 TIM1 的互补输出（OCN）。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_OCN_Start_DMA": {
+    "briefZh": "以 DMA 方式启动高级定时器 TIM1 的互补输出（OCN），搬运过程不占用 CPU。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "Length": "数据长度（视函数而定，通常是缓冲区里的元素个数）。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_TIMEx_OCN_Start_IT": {
+    "briefZh": "以中断方式启动高级定时器 TIM1 的互补输出（OCN），完成后进入中断回调。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_OCN_Stop": {
+    "briefZh": "停止高级定时器 TIM1 的互补输出（OCN）。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_OCN_Stop_DMA": {
+    "briefZh": "停止高级定时器 TIM1 的互补输出（OCN）的 DMA 方式运行，并关闭 DMA 通道。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_OCN_Stop_IT": {
+    "briefZh": "停止高级定时器 TIM1 的互补输出（OCN）的中断方式运行，并关闭相关中断。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_OnePulseN_Start": {
+    "briefZh": "启动高级定时器 TIM1 的互补单脉冲输出。",
+    "paramsZh": {
+      "OutputChannel": "要输出的通道，取 TIM_CHANNEL_1 ~ 4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_OnePulseN_Start_IT": {
+    "briefZh": "以中断方式启动高级定时器 TIM1 的互补单脉冲输出，完成后进入中断回调。",
+    "paramsZh": {
+      "OutputChannel": "要输出的通道，取 TIM_CHANNEL_1 ~ 4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_OnePulseN_Stop": {
+    "briefZh": "停止高级定时器 TIM1 的互补单脉冲输出。",
+    "paramsZh": {
+      "OutputChannel": "要输出的通道，取 TIM_CHANNEL_1 ~ 4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_OnePulseN_Stop_IT": {
+    "briefZh": "停止高级定时器 TIM1 的互补单脉冲输出的中断方式运行，并关闭相关中断。",
+    "paramsZh": {
+      "OutputChannel": "要输出的通道，取 TIM_CHANNEL_1 ~ 4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_PWMN_Start": {
+    "briefZh": "启动高级定时器 TIM1 的互补 PWM 输出（PWMN）。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_PWMN_Start_DMA": {
+    "briefZh": "以 DMA 方式启动高级定时器 TIM1 的互补 PWM 输出（PWMN），搬运过程不占用 CPU。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "Length": "数据长度（视函数而定，通常是缓冲区里的元素个数）。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_TIMEx_PWMN_Start_IT": {
+    "briefZh": "以中断方式启动高级定时器 TIM1 的互补 PWM 输出（PWMN），完成后进入中断回调。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_PWMN_Stop": {
+    "briefZh": "停止高级定时器 TIM1 的互补 PWM 输出（PWMN）。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_PWMN_Stop_DMA": {
+    "briefZh": "停止高级定时器 TIM1 的互补 PWM 输出（PWMN）的 DMA 方式运行，并关闭 DMA 通道。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_PWMN_Stop_IT": {
+    "briefZh": "停止高级定时器 TIM1 的互补 PWM 输出（PWMN）的中断方式运行，并关闭相关中断。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIMEx_RemapConfig": {
+    "briefZh": "配置定时器的引脚重映射。",
+    "paramsZh": {
+      "Remap": "引脚重映射选项，如 TIM_TIM2_REMAP_NONE / PARTIAL1 / FULL。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_Base_DeInit": {
+    "briefZh": "把 TIM 的时基单元的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_Base_GetState": {
+    "briefZh": "读取 TIM 的时基单元的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_Base_Init": {
+    "briefZh": "按 InitTypeDef 中的参数初始化 TIM 的时基单元，并完成状态机初始化。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    },
+    "exampleCode": "/* TIM2 挂 APB1=36MHz，定时器时钟 72MHz\n   72MHz / (71+1) = 1MHz，计 1000 次 = 1ms */\nTIM_HandleTypeDef htim2;\n\nhtim2.Instance               = TIM2;\nhtim2.Init.Prescaler         = 71;\nhtim2.Init.CounterMode       = TIM_COUNTERMODE_UP;\nhtim2.Init.Period            = 999;\nhtim2.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;\nhtim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;\nif (HAL_TIM_Base_Init(&htim2) != HAL_OK)\n{\n  Error_Handler();\n}"
+  },
+  "HAL_TIM_Base_MspDeInit": {
+    "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_Base_MspInit": {
+    "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_Base_Start": {
+    "briefZh": "启动时基单元计数（不开中断）。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_Base_Start_DMA": {
+    "briefZh": "以 DMA 方式启动 TIM 的时基单元，搬运过程不占用 CPU。",
+    "paramsZh": {
+      "Length": "数据长度（视函数而定，通常是缓冲区里的元素个数）。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_TIM_Base_Start_IT": {
+    "briefZh": "启动时基单元并以中断方式在每次溢出时回调 HAL_TIM_PeriodElapsedCallback。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    },
+    "exampleCode": "HAL_TIM_Base_Start_IT(&htim2);\n\n/* stm32f1xx_it.c */\nvoid TIM2_IRQHandler(void)\n{\n  HAL_TIM_IRQHandler(&htim2);\n}\n\n/* 业务写在这里，1ms 进一次 */\nvoid HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)\n{\n  if (htim->Instance == TIM2)\n  {\n    /* 注意：这里是中断上下文，不要调 HAL_Delay */\n  }\n}"
+  },
+  "HAL_TIM_Base_Stop": {
+    "briefZh": "停止 TIM 的时基单元。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_Base_Stop_DMA": {
+    "briefZh": "停止 TIM 的时基单元的 DMA 方式运行，并关闭 DMA 通道。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_Base_Stop_IT": {
+    "briefZh": "停止 TIM 的时基单元的中断方式运行，并关闭相关中断。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_ConfigClockSource": {
+    "briefZh": "配置时基的时钟源（内部时钟 / 外部时钟模式 1、2 / 编码器）。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。",
+      "sClockSourceConfig": "时钟源配置结构体：ClockSource 选内部时钟 / 外部时钟模式 1、2 / 编码器模式。"
+    }
+  },
+  "HAL_TIM_ConfigOCrefClear": {
+    "briefZh": "配置 OCref 清零功能（用外部信号把输出强制清零）。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。",
+      "sClearInputConfig": "OCref 清零配置结构体：ClearInputState、ClearInputSource、ClearInputPolarity、ClearInputFilter。"
+    }
+  },
+  "HAL_TIM_ConfigTI1Input": {
+    "briefZh": "选择 TI1 输入的连接方式（直接来自 CH1，或 CH1/CH2/CH3 异或组合）。",
+    "paramsZh": {
+      "TI1_Selection": "TI1 输入选择：TIM_TI1SELECTION_CH1（直接 CH1）或 TIM_TI1SELECTION_XORCOMBINATION（三通道异或）。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_DMABurstState": {
+    "briefZh": "读取 DMA 突发传输的当前状态。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_DMABurst_MultiReadStart": {
+    "briefZh": "配置 DMA 突发读，可指定多次传输。",
+    "paramsZh": {
+      "BurstBaseAddress": "DMA 突发传输的起始寄存器地址（如 TIM_DMABASE_CCR1）。",
+      "BurstBuffer": "突发传输的数据缓冲区指针。",
+      "BurstLength": "突发长度：单次传输的数据个数减 1。",
+      "BurstRequestSrc": "触发突发传输的 DMA 请求源。",
+      "DataLength": "参与突发传输的数据长度。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_DMABurst_MultiWriteStart": {
+    "briefZh": "配置 DMA 突发写，可指定多次传输。",
+    "paramsZh": {
+      "BurstBaseAddress": "DMA 突发传输的起始寄存器地址（如 TIM_DMABASE_CCR1）。",
+      "BurstBuffer": "突发传输的数据缓冲区指针。",
+      "BurstLength": "突发长度：单次传输的数据个数减 1。",
+      "BurstRequestSrc": "触发突发传输的 DMA 请求源。",
+      "DataLength": "参与突发传输的数据长度。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_DMABurst_ReadStart": {
+    "briefZh": "配置 DMA 突发读：从定时器连续读出多个寄存器。",
+    "paramsZh": {
+      "BurstBaseAddress": "DMA 突发传输的起始寄存器地址（如 TIM_DMABASE_CCR1）。",
+      "BurstBuffer": "突发传输的数据缓冲区指针。",
+      "BurstLength": "突发长度：单次传输的数据个数减 1。",
+      "BurstRequestSrc": "触发突发传输的 DMA 请求源。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_DMABurst_ReadStop": {
+    "briefZh": "停止 DMA 突发读。",
+    "paramsZh": {
+      "BurstRequestSrc": "触发突发传输的 DMA 请求源。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_DMABurst_WriteStart": {
+    "briefZh": "配置 DMA 突发写：从一个寄存器地址连续写多个数据到定时器。",
+    "paramsZh": {
+      "BurstBaseAddress": "DMA 突发传输的起始寄存器地址（如 TIM_DMABASE_CCR1）。",
+      "BurstBuffer": "突发传输的数据缓冲区指针。",
+      "BurstLength": "突发长度：单次传输的数据个数减 1。",
+      "BurstRequestSrc": "触发突发传输的 DMA 请求源。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_DMABurst_WriteStop": {
+    "briefZh": "停止 DMA 突发写。",
+    "paramsZh": {
+      "BurstRequestSrc": "触发突发传输的 DMA 请求源。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_Encoder_DeInit": {
+    "briefZh": "把 TIM 的编码器接口的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_Encoder_GetState": {
+    "briefZh": "读取 TIM 的编码器接口的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_Encoder_Init": {
+    "briefZh": "按 InitTypeDef 中的参数初始化 TIM 的编码器接口，并完成状态机初始化。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。",
+      "sConfig": "通道配置结构体（TIM_OC_InitTypeDef / TIM_IC_InitTypeDef 等，视调用的函数而定）。"
+    }
+  },
+  "HAL_TIM_Encoder_MspDeInit": {
+    "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_Encoder_MspInit": {
+    "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_Encoder_Start": {
+    "briefZh": "启动编码器接口开始计数。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_Encoder_Start_DMA": {
+    "briefZh": "以 DMA 方式启动 TIM 的编码器接口，搬运过程不占用 CPU。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "Length": "数据长度（视函数而定，通常是缓冲区里的元素个数）。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。",
+      "pData1": "第一组数据的缓冲区指针。",
+      "pData2": "第二组数据的缓冲区指针。"
+    }
+  },
+  "HAL_TIM_Encoder_Start_IT": {
+    "briefZh": "以中断方式启动 TIM 的编码器接口，完成后进入中断回调。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_Encoder_Stop": {
+    "briefZh": "停止 TIM 的编码器接口。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_Encoder_Stop_DMA": {
+    "briefZh": "停止 TIM 的编码器接口的 DMA 方式运行，并关闭 DMA 通道。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_Encoder_Stop_IT": {
+    "briefZh": "停止 TIM 的编码器接口的中断方式运行，并关闭相关中断。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_ErrorCallback": {
+    "briefZh": "错误回调（__weak 空实现，需自己重写）。溢出、噪声、帧错误等异常会走到这里。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_GenerateEvent": {
+    "briefZh": "软件产生指定事件（更新 / 触发 / 捕获比较 / 换相 / 刹车）。",
+    "paramsZh": {
+      "EventSource": "要软件产生的事件源：TIM_EVENTSOURCE_UPDATE / CC1~CC4 / COM / TRIG / BRK。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_GetActiveChannel": {
+    "briefZh": "读取当前活跃的通道（仅单脉冲等特定模式有值）。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_GetChannelState": {
+    "briefZh": "读取指定通道的当前状态。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_IC_CaptureCallback": {
+    "briefZh": "输入捕获回调（__weak 空实现，需自己重写）。捕获到边沿时触发，用 HAL_TIM_ReadCapturedValue 取值。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_IC_CaptureHalfCpltCallback": {
+    "briefZh": "输入捕获过半回调（DMA 模式，__weak 空实现）。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_IC_ConfigChannel": {
+    "briefZh": "配置指定通道并挂到对应的组（规则组或注入组）。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。",
+      "sConfig": "通道配置结构体（TIM_OC_InitTypeDef / TIM_IC_InitTypeDef 等，视调用的函数而定）。"
+    }
+  },
+  "HAL_TIM_IC_DeInit": {
+    "briefZh": "把 TIM 的输入捕获的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_IC_GetState": {
+    "briefZh": "读取 TIM 的输入捕获的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_IC_Init": {
+    "briefZh": "按 InitTypeDef 中的参数初始化 TIM 的输入捕获，并完成状态机初始化。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_IC_MspDeInit": {
+    "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_IC_MspInit": {
+    "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_IC_Start": {
+    "briefZh": "启动 TIM 的输入捕获。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_IC_Start_DMA": {
+    "briefZh": "以 DMA 方式启动 TIM 的输入捕获，搬运过程不占用 CPU。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "Length": "数据长度（视函数而定，通常是缓冲区里的元素个数）。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_TIM_IC_Start_IT": {
+    "briefZh": "以中断方式启动 TIM 的输入捕获，完成后进入中断回调。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    },
+    "exampleCode": "HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1);\n\nvoid HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)\n{\n  if (htim->Instance == TIM2 && htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1)\n  {\n    uint32_t capture = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1);\n    /* 用前后两次捕获值之差算周期/频率 */\n  }\n}"
+  },
+  "HAL_TIM_IC_Stop": {
+    "briefZh": "停止 TIM 的输入捕获。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_IC_Stop_DMA": {
+    "briefZh": "停止 TIM 的输入捕获的 DMA 方式运行，并关闭 DMA 通道。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_IC_Stop_IT": {
+    "briefZh": "停止 TIM 的输入捕获的中断方式运行，并关闭相关中断。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_IRQHandler": {
+    "briefZh": "定时器中断的统一入口。在 TIMx_IRQHandler 里调用，内部清标志并按事件类型分派到不同回调。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_OC_ConfigChannel": {
+    "briefZh": "配置指定通道并挂到对应的组（规则组或注入组）。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。",
+      "sConfig": "通道配置结构体（TIM_OC_InitTypeDef / TIM_IC_InitTypeDef 等，视调用的函数而定）。"
+    }
+  },
+  "HAL_TIM_OC_DeInit": {
+    "briefZh": "把 TIM 的输出比较的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_OC_DelayElapsedCallback": {
+    "briefZh": "输出比较匹配回调（__weak 空实现，需自己重写）。比较值匹配时触发。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_OC_GetState": {
+    "briefZh": "读取 TIM 的输出比较的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_OC_Init": {
+    "briefZh": "按 InitTypeDef 中的参数初始化 TIM 的输出比较，并完成状态机初始化。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_OC_MspDeInit": {
+    "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_OC_MspInit": {
+    "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_OC_Start": {
+    "briefZh": "启动 TIM 的输出比较。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_OC_Start_DMA": {
+    "briefZh": "以 DMA 方式启动 TIM 的输出比较，搬运过程不占用 CPU。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "Length": "数据长度（视函数而定，通常是缓冲区里的元素个数）。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_TIM_OC_Start_IT": {
+    "briefZh": "以中断方式启动 TIM 的输出比较，完成后进入中断回调。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_OC_Stop": {
+    "briefZh": "停止 TIM 的输出比较。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_OC_Stop_DMA": {
+    "briefZh": "停止 TIM 的输出比较的 DMA 方式运行，并关闭 DMA 通道。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_OC_Stop_IT": {
+    "briefZh": "停止 TIM 的输出比较的中断方式运行，并关闭相关中断。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_OnePulse_ConfigChannel": {
+    "briefZh": "配置指定通道并挂到对应的组（规则组或注入组）。",
+    "paramsZh": {
+      "InputChannel": "输入捕获的输入通道：TIM_CHANNEL_1 表示从 TI1 输入，也可选 TIM_CHANNEL_2 做间接映射。",
+      "OutputChannel": "要输出的通道，取 TIM_CHANNEL_1 ~ 4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。",
+      "sConfig": "通道配置结构体（TIM_OC_InitTypeDef / TIM_IC_InitTypeDef 等，视调用的函数而定）。"
+    }
+  },
+  "HAL_TIM_OnePulse_DeInit": {
+    "briefZh": "把 TIM 的单脉冲的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_OnePulse_GetState": {
+    "briefZh": "读取 TIM 的单脉冲的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_OnePulse_Init": {
+    "briefZh": "按 InitTypeDef 中的参数初始化 TIM 的单脉冲，并完成状态机初始化。",
+    "paramsZh": {
+      "OnePulseMode": "单脉冲模式：TIM_OPMODE_SINGLE（计数一次后停）或 TIM_OPMODE_REPETITIVE。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_OnePulse_MspDeInit": {
+    "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_OnePulse_MspInit": {
+    "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_OnePulse_Start": {
+    "briefZh": "启动 TIM 的单脉冲。",
+    "paramsZh": {
+      "OutputChannel": "要输出的通道，取 TIM_CHANNEL_1 ~ 4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_OnePulse_Start_IT": {
+    "briefZh": "以中断方式启动 TIM 的单脉冲，完成后进入中断回调。",
+    "paramsZh": {
+      "OutputChannel": "要输出的通道，取 TIM_CHANNEL_1 ~ 4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_OnePulse_Stop": {
+    "briefZh": "停止 TIM 的单脉冲。",
+    "paramsZh": {
+      "OutputChannel": "要输出的通道，取 TIM_CHANNEL_1 ~ 4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_OnePulse_Stop_IT": {
+    "briefZh": "停止 TIM 的单脉冲的中断方式运行，并关闭相关中断。",
+    "paramsZh": {
+      "OutputChannel": "要输出的通道，取 TIM_CHANNEL_1 ~ 4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_PWM_ConfigChannel": {
+    "briefZh": "配置指定通道并挂到对应的组（规则组或注入组）。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。",
+      "sConfig": "通道配置结构体（TIM_OC_InitTypeDef / TIM_IC_InitTypeDef 等，视调用的函数而定）。"
+    },
+    "exampleCode": "TIM_OC_InitTypeDef sConfigOC = {0};\n\nsConfigOC.OCMode     = TIM_OCMODE_PWM1;\nsConfigOC.Pulse      = 500;              /* 占空比 50%（ARR=999） */\nsConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;\nsConfigOC.OCFastMode = TIM_OCFAST_DISABLE;\nif (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)\n{\n  Error_Handler();\n}"
+  },
+  "HAL_TIM_PWM_DeInit": {
+    "briefZh": "把 TIM 的 PWM 输出的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_PWM_GetState": {
+    "briefZh": "读取 TIM 的 PWM 输出的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_PWM_Init": {
+    "briefZh": "按 InitTypeDef 中的参数初始化 TIM 的 PWM 输出，并完成状态机初始化。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_PWM_MspDeInit": {
+    "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_PWM_MspInit": {
+    "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_PWM_PulseFinishedCallback": {
+    "briefZh": "PWM 脉冲输出完成回调（__weak 空实现，需自己重写）。DMA 方式输出 PWM 时每批数据发完触发。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_PWM_PulseFinishedHalfCpltCallback": {
+    "briefZh": "PWM 脉冲输出过半回调（__weak 空实现）。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_PWM_Start": {
+    "briefZh": "启动 PWM 输出。注意高级定时器 TIM1 还需 HAL_TIMEx_ConfigBreakDeadTime 且 MOE 位打开才有输出。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    },
+    "exampleCode": "/* 启动 TIM3 通道 1 的 PWM 输出 */\nHAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);\n\n/* 动态改占空比：CCR 从 0 ~ ARR */\n__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 500);\n\n/* 停止 */\nHAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);"
+  },
+  "HAL_TIM_PWM_Start_DMA": {
+    "briefZh": "以 DMA 方式启动 TIM 的 PWM 输出，搬运过程不占用 CPU。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "Length": "数据长度（视函数而定，通常是缓冲区里的元素个数）。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_TIM_PWM_Start_IT": {
+    "briefZh": "以中断方式启动 TIM 的 PWM 输出，完成后进入中断回调。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_PWM_Stop": {
+    "briefZh": "停止 TIM 的 PWM 输出。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_PWM_Stop_DMA": {
+    "briefZh": "停止 TIM 的 PWM 输出的 DMA 方式运行，并关闭 DMA 通道。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_PWM_Stop_IT": {
+    "briefZh": "停止 TIM 的 PWM 输出的中断方式运行，并关闭相关中断。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_PeriodElapsedCallback": {
+    "briefZh": "定时器更新（溢出）回调（__weak 空实现，需自己重写）。定时中断的业务就写在这里。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_PeriodElapsedHalfCpltCallback": {
+    "briefZh": "更新事件过半回调（DMA 模式，__weak 空实现）。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_ReadCapturedValue": {
+    "briefZh": "读取捕获/比较寄存器中的捕获值。",
+    "paramsZh": {
+      "Channel": "通道号，取 TIM_CHANNEL_1 ~ TIM_CHANNEL_4。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_RegisterCallback": {
+    "briefZh": "为 TIM 注册指定事件的回调，替代默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。",
+      "pCallback": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+    }
+  },
+  "HAL_TIM_SlaveConfigSynchro": {
+    "briefZh": "把定时器配置成从模式（复位 / 门控 / 触发 / 外部时钟）。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。",
+      "sSlaveConfig": "从模式配置结构体：SlaveMode（复位/门控/触发/外部时钟）、InputTrigger、TriggerPolarity、TriggerFilter。"
+    }
+  },
+  "HAL_TIM_SlaveConfigSynchro_IT": {
+    "briefZh": "以中断方式配置从模式并启用触发中断。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。",
+      "sSlaveConfig": "从模式配置结构体：SlaveMode（复位/门控/触发/外部时钟）、InputTrigger、TriggerPolarity、TriggerFilter。"
+    }
+  },
+  "HAL_TIM_TriggerCallback": {
+    "briefZh": "触发/霍尔检测回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_TriggerHalfCpltCallback": {
+    "briefZh": "触发/霍尔检测过半回调（__weak 空实现）。",
+    "paramsZh": {
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  },
+  "HAL_TIM_UnRegisterCallback": {
+    "briefZh": "注销 TIM 已注册的回调，恢复成默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "htim": "定时器句柄指针，Instance 指向 TIM1~TIM4，Init 里是预分频与重装值。"
+    }
+  }
+}

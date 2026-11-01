@@ -6,7 +6,7 @@
       "id": "I2C_DeInit",
       "name": "I2C_DeInit",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec1",
+      "sectionId": "I2C@spl#sec1",
       "prototype": "void I2C_DeInit(I2C_TypeDef* I2Cx);",
       "returnType": "void",
       "params": [
@@ -73,7 +73,7 @@
       "id": "I2C_Init",
       "name": "I2C_Init",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec1",
+      "sectionId": "I2C@spl#sec1",
       "prototype": "void I2C_Init(I2C_TypeDef* I2Cx, I2C_InitTypeDef* I2C_InitStruct);",
       "returnType": "void",
       "params": [
@@ -170,7 +170,7 @@
       "id": "I2C_StructInit",
       "name": "I2C_StructInit",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec1",
+      "sectionId": "I2C@spl#sec1",
       "prototype": "void I2C_StructInit(I2C_InitTypeDef* I2C_InitStruct);",
       "returnType": "void",
       "params": [
@@ -222,7 +222,7 @@
       "id": "I2C_Cmd",
       "name": "I2C_Cmd",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec2",
+      "sectionId": "I2C@spl#sec2",
       "prototype": "void I2C_Cmd(I2C_TypeDef* I2Cx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -289,7 +289,7 @@
       "id": "I2C_DMACmd",
       "name": "I2C_DMACmd",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec2",
+      "sectionId": "I2C@spl#sec2",
       "prototype": "void I2C_DMACmd(I2C_TypeDef* I2Cx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -371,7 +371,7 @@
       "id": "I2C_DMALastTransferCmd",
       "name": "I2C_DMALastTransferCmd",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec2",
+      "sectionId": "I2C@spl#sec2",
       "prototype": "void I2C_DMALastTransferCmd(I2C_TypeDef* I2Cx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -436,7 +436,7 @@
       "id": "I2C_GenerateSTART",
       "name": "I2C_GenerateSTART",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec3",
+      "sectionId": "I2C@spl#sec3",
       "prototype": "void I2C_GenerateSTART(I2C_TypeDef* I2Cx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -512,7 +512,7 @@
       "id": "I2C_GenerateSTOP",
       "name": "I2C_GenerateSTOP",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec3",
+      "sectionId": "I2C@spl#sec3",
       "prototype": "void I2C_GenerateSTOP(I2C_TypeDef* I2Cx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -578,7 +578,7 @@
       "id": "I2C_AcknowledgeConfig",
       "name": "I2C_AcknowledgeConfig",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec4",
+      "sectionId": "I2C@spl#sec4",
       "prototype": "void I2C_AcknowledgeConfig(I2C_TypeDef* I2Cx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -651,7 +651,7 @@
       "id": "I2C_OwnAddress2Config",
       "name": "I2C_OwnAddress2Config",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec4",
+      "sectionId": "I2C@spl#sec4",
       "prototype": "void I2C_OwnAddress2Config(I2C_TypeDef* I2Cx, uint8_t Address);",
       "returnType": "void",
       "params": [
@@ -716,7 +716,7 @@
       "id": "I2C_DualAddressCmd",
       "name": "I2C_DualAddressCmd",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec2",
+      "sectionId": "I2C@spl#sec2",
       "prototype": "void I2C_DualAddressCmd(I2C_TypeDef* I2Cx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -781,7 +781,7 @@
       "id": "I2C_GeneralCallCmd",
       "name": "I2C_GeneralCallCmd",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec2",
+      "sectionId": "I2C@spl#sec2",
       "prototype": "void I2C_GeneralCallCmd(I2C_TypeDef* I2Cx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -847,7 +847,7 @@
       "id": "I2C_ITConfig",
       "name": "I2C_ITConfig",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec5",
+      "sectionId": "I2C@spl#sec5",
       "prototype": "void I2C_ITConfig(I2C_TypeDef* I2Cx, uint16_t I2C_IT, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -926,7 +926,7 @@
       "id": "I2C_SendData",
       "name": "I2C_SendData",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec6",
+      "sectionId": "I2C@spl#sec6",
       "prototype": "void I2C_SendData(I2C_TypeDef* I2Cx, uint8_t Data);",
       "returnType": "void",
       "params": [
@@ -997,7 +997,7 @@
       "id": "I2C_ReceiveData",
       "name": "I2C_ReceiveData",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec7",
+      "sectionId": "I2C@spl#sec7",
       "prototype": "uint8_t I2C_ReceiveData(I2C_TypeDef* I2Cx);",
       "returnType": "uint8_t",
       "params": [
@@ -1068,7 +1068,7 @@
       "id": "I2C_Send7bitAddress",
       "name": "I2C_Send7bitAddress",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec6",
+      "sectionId": "I2C@spl#sec6",
       "prototype": "void I2C_Send7bitAddress(I2C_TypeDef* I2Cx, uint8_t Address, uint8_t I2C_Direction);",
       "returnType": "void",
       "params": [
@@ -1150,7 +1150,7 @@
       "id": "I2C_ReadRegister",
       "name": "I2C_ReadRegister",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec8",
+      "sectionId": "I2C@spl#sec8",
       "prototype": "uint16_t I2C_ReadRegister(I2C_TypeDef* I2Cx, uint8_t I2C_Register);",
       "returnType": "uint16_t",
       "params": [
@@ -1227,7 +1227,7 @@
       "id": "I2C_SoftwareResetCmd",
       "name": "I2C_SoftwareResetCmd",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec2",
+      "sectionId": "I2C@spl#sec2",
       "prototype": "void I2C_SoftwareResetCmd(I2C_TypeDef* I2Cx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1296,7 +1296,7 @@
       "id": "I2C_NACKPositionConfig",
       "name": "I2C_NACKPositionConfig",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec4",
+      "sectionId": "I2C@spl#sec4",
       "prototype": "void I2C_NACKPositionConfig(I2C_TypeDef* I2Cx, uint16_t I2C_NACKPosition);",
       "returnType": "void",
       "params": [
@@ -1376,7 +1376,7 @@
       "id": "I2C_SMBusAlertConfig",
       "name": "I2C_SMBusAlertConfig",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec4",
+      "sectionId": "I2C@spl#sec4",
       "prototype": "void I2C_SMBusAlertConfig(I2C_TypeDef* I2Cx, uint16_t I2C_SMBusAlert);",
       "returnType": "void",
       "params": [
@@ -1438,7 +1438,7 @@
       "id": "I2C_TransmitPEC",
       "name": "I2C_TransmitPEC",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec6",
+      "sectionId": "I2C@spl#sec6",
       "prototype": "void I2C_TransmitPEC(I2C_TypeDef* I2Cx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1504,7 +1504,7 @@
       "id": "I2C_PECPositionConfig",
       "name": "I2C_PECPositionConfig",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec4",
+      "sectionId": "I2C@spl#sec4",
       "prototype": "void I2C_PECPositionConfig(I2C_TypeDef* I2Cx, uint16_t I2C_PECPosition);",
       "returnType": "void",
       "params": [
@@ -1572,7 +1572,7 @@
       "id": "I2C_CalculatePEC",
       "name": "I2C_CalculatePEC",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec3",
+      "sectionId": "I2C@spl#sec3",
       "prototype": "void I2C_CalculatePEC(I2C_TypeDef* I2Cx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1637,7 +1637,7 @@
       "id": "I2C_GetPEC",
       "name": "I2C_GetPEC",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec8",
+      "sectionId": "I2C@spl#sec8",
       "prototype": "uint8_t I2C_GetPEC(I2C_TypeDef* I2Cx);",
       "returnType": "uint8_t",
       "params": [
@@ -1695,7 +1695,7 @@
       "id": "I2C_ARPCmd",
       "name": "I2C_ARPCmd",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec2",
+      "sectionId": "I2C@spl#sec2",
       "prototype": "void I2C_ARPCmd(I2C_TypeDef* I2Cx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1760,7 +1760,7 @@
       "id": "I2C_StretchClockCmd",
       "name": "I2C_StretchClockCmd",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec2",
+      "sectionId": "I2C@spl#sec2",
       "prototype": "void I2C_StretchClockCmd(I2C_TypeDef* I2Cx, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1823,7 +1823,7 @@
       "id": "I2C_FastModeDutyCycleConfig",
       "name": "I2C_FastModeDutyCycleConfig",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec4",
+      "sectionId": "I2C@spl#sec4",
       "prototype": "void I2C_FastModeDutyCycleConfig(I2C_TypeDef* I2Cx, uint16_t I2C_DutyCycle);",
       "returnType": "void",
       "params": [
@@ -1888,7 +1888,7 @@
       "id": "I2C_CheckEvent",
       "name": "I2C_CheckEvent",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec3",
+      "sectionId": "I2C@spl#sec3",
       "prototype": "ErrorStatus I2C_CheckEvent(I2C_TypeDef* I2Cx, uint32_t I2C_EVENT);",
       "returnType": "ErrorStatus",
       "params": [
@@ -1975,7 +1975,7 @@
       "id": "I2C_GetLastEvent",
       "name": "I2C_GetLastEvent",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec8",
+      "sectionId": "I2C@spl#sec8",
       "prototype": "uint32_t I2C_GetLastEvent(I2C_TypeDef* I2Cx);",
       "returnType": "uint32_t",
       "params": [
@@ -2039,7 +2039,7 @@
       "id": "I2C_GetFlagStatus",
       "name": "I2C_GetFlagStatus",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec9",
+      "sectionId": "I2C@spl#sec9",
       "prototype": "FlagStatus I2C_GetFlagStatus(I2C_TypeDef* I2Cx, uint32_t I2C_FLAG);",
       "returnType": "FlagStatus",
       "params": [
@@ -2123,7 +2123,7 @@
       "id": "I2C_ClearFlag",
       "name": "I2C_ClearFlag",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec9",
+      "sectionId": "I2C@spl#sec9",
       "prototype": "void I2C_ClearFlag(I2C_TypeDef* I2Cx, uint32_t I2C_FLAG);",
       "returnType": "void",
       "params": [
@@ -2200,7 +2200,7 @@
       "id": "I2C_GetITStatus",
       "name": "I2C_GetITStatus",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec5",
+      "sectionId": "I2C@spl#sec5",
       "prototype": "ITStatus I2C_GetITStatus(I2C_TypeDef* I2Cx, uint32_t I2C_IT);",
       "returnType": "ITStatus",
       "params": [
@@ -2282,7 +2282,7 @@
       "id": "I2C_ClearITPendingBit",
       "name": "I2C_ClearITPendingBit",
       "peripheral": "I2C",
-      "sectionId": "I2C#sec5",
+      "sectionId": "I2C@spl#sec5",
       "prototype": "void I2C_ClearITPendingBit(I2C_TypeDef* I2Cx, uint32_t I2C_IT);",
       "returnType": "void",
       "params": [

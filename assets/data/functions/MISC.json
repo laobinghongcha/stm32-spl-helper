@@ -6,7 +6,7 @@
       "id": "NVIC_PriorityGroupConfig",
       "name": "NVIC_PriorityGroupConfig",
       "peripheral": "MISC",
-      "sectionId": "MISC#sec1",
+      "sectionId": "MISC@spl#sec1",
       "prototype": "void NVIC_PriorityGroupConfig(uint32_t NVIC_PriorityGroup);",
       "returnType": "void",
       "params": [
@@ -62,7 +62,7 @@
       "id": "NVIC_Init",
       "name": "NVIC_Init",
       "peripheral": "MISC",
-      "sectionId": "MISC#sec2",
+      "sectionId": "MISC@spl#sec2",
       "prototype": "void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct);",
       "returnType": "void",
       "params": [
@@ -131,7 +131,7 @@
       "id": "NVIC_SetVectorTable",
       "name": "NVIC_SetVectorTable",
       "peripheral": "MISC",
-      "sectionId": "MISC#sec3",
+      "sectionId": "MISC@spl#sec3",
       "prototype": "void NVIC_SetVectorTable(uint32_t NVIC_VectTab, uint32_t Offset);",
       "returnType": "void",
       "params": [
@@ -191,7 +191,7 @@
       "id": "NVIC_SystemLPConfig",
       "name": "NVIC_SystemLPConfig",
       "peripheral": "MISC",
-      "sectionId": "MISC#sec1",
+      "sectionId": "MISC@spl#sec1",
       "prototype": "void NVIC_SystemLPConfig(uint8_t LowPowerMode, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -258,7 +258,7 @@
       "id": "SysTick_CLKSourceConfig",
       "name": "SysTick_CLKSourceConfig",
       "peripheral": "MISC",
-      "sectionId": "MISC#sec1",
+      "sectionId": "MISC@spl#sec1",
       "prototype": "void SysTick_CLKSourceConfig(uint32_t SysTick_CLKSource);",
       "returnType": "void",
       "params": [

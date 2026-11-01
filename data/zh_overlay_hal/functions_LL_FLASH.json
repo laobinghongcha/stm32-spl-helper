@@ -1,0 +1,29 @@
+{
+  "LL_FLASH_DisableHalfCycleAccess": {
+    "briefZh": "失能 FLASH 的半周期访问模式。"
+  },
+  "LL_FLASH_DisablePrefetch": {
+    "briefZh": "失能 FLASH 的预取缓冲区。"
+  },
+  "LL_FLASH_EnableHalfCycleAccess": {
+    "briefZh": "使能 FLASH 的半周期访问模式。"
+  },
+  "LL_FLASH_EnablePrefetch": {
+    "briefZh": "使能 FLASH 的预取缓冲区。"
+  },
+  "LL_FLASH_GetLatency": {
+    "briefZh": "读取 FLASH 的等待周期。"
+  },
+  "LL_FLASH_IsHalfCycleAccessEnabled": {
+    "briefZh": "查询 FLASH 的半周期访问是否已使能。"
+  },
+  "LL_FLASH_IsPrefetchEnabled": {
+    "briefZh": "查询 FLASH 的预取是否已使能。"
+  },
+  "LL_FLASH_SetLatency": {
+    "briefZh": "设置 FLASH 的等待周期。",
+    "paramsZh": {
+      "Latency": "Flash 等待周期数：<24MHz 用 0，24~48MHz 用 1，48~72MHz 用 2。"
+    }
+  }
+}

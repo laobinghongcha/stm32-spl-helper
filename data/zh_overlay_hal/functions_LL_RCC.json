@@ -1,0 +1,439 @@
+{
+  "LL_AHB1_GRP1_DisableClock": {
+    "briefZh": "失能 AHB1 上的外设时钟的时钟。",
+    "paramsZh": {
+      "Periphs": "外设掩码，可位或一次使能/复位多个，如 LL_APB2_GRP1_PERIPH_GPIOA | LL_APB2_GRP1_PERIPH_AFIO。"
+    }
+  },
+  "LL_AHB1_GRP1_EnableClock": {
+    "briefZh": "使能 AHB1 上的外设时钟的时钟。",
+    "paramsZh": {
+      "Periphs": "外设掩码，可位或一次使能/复位多个，如 LL_APB2_GRP1_PERIPH_GPIOA | LL_APB2_GRP1_PERIPH_AFIO。"
+    }
+  },
+  "LL_AHB1_GRP1_ForceReset": {
+    "briefZh": "强制复位 AHB1 上指定外设（置 RCC_AHBENR 对应的复位位），该外设会立刻回到初始状态。",
+    "paramsZh": {
+      "Periphs": "外设掩码，可位或一次使能/复位多个，如 LL_APB2_GRP1_PERIPH_GPIOA | LL_APB2_GRP1_PERIPH_AFIO。"
+    }
+  },
+  "LL_AHB1_GRP1_IsEnabledClock": {
+    "briefZh": "查询 AHB1 上的外设时钟是否已使能。",
+    "paramsZh": {
+      "Periphs": "外设掩码，可位或一次使能/复位多个，如 LL_APB2_GRP1_PERIPH_GPIOA | LL_APB2_GRP1_PERIPH_AFIO。"
+    }
+  },
+  "LL_AHB1_GRP1_ReleaseReset": {
+    "briefZh": "释放 AHB1 上指定外设的复位（清 RCC_AHBENR 对应的复位位），让外设恢复工作。",
+    "paramsZh": {
+      "Periphs": "外设掩码，可位或一次使能/复位多个，如 LL_APB2_GRP1_PERIPH_GPIOA | LL_APB2_GRP1_PERIPH_AFIO。"
+    }
+  },
+  "LL_APB1_GRP1_DisableClock": {
+    "briefZh": "失能 APB1 上的外设时钟的时钟。",
+    "paramsZh": {
+      "Periphs": "外设掩码，可位或一次使能/复位多个，如 LL_APB2_GRP1_PERIPH_GPIOA | LL_APB2_GRP1_PERIPH_AFIO。"
+    }
+  },
+  "LL_APB1_GRP1_EnableClock": {
+    "briefZh": "使能 APB1 上的外设时钟的时钟。",
+    "paramsZh": {
+      "Periphs": "外设掩码，可位或一次使能/复位多个，如 LL_APB2_GRP1_PERIPH_GPIOA | LL_APB2_GRP1_PERIPH_AFIO。"
+    }
+  },
+  "LL_APB1_GRP1_ForceReset": {
+    "briefZh": "强制复位 APB1 上指定外设（置 RCC_APB1RSTR 对应位）。",
+    "paramsZh": {
+      "Periphs": "外设掩码，可位或一次使能/复位多个，如 LL_APB2_GRP1_PERIPH_GPIOA | LL_APB2_GRP1_PERIPH_AFIO。"
+    }
+  },
+  "LL_APB1_GRP1_IsEnabledClock": {
+    "briefZh": "查询 APB1 上的外设时钟是否已使能。",
+    "paramsZh": {
+      "Periphs": "外设掩码，可位或一次使能/复位多个，如 LL_APB2_GRP1_PERIPH_GPIOA | LL_APB2_GRP1_PERIPH_AFIO。"
+    }
+  },
+  "LL_APB1_GRP1_ReleaseReset": {
+    "briefZh": "释放 APB1 上指定外设的复位（清 RCC_APB1RSTR 对应位）。",
+    "paramsZh": {
+      "Periphs": "外设掩码，可位或一次使能/复位多个，如 LL_APB2_GRP1_PERIPH_GPIOA | LL_APB2_GRP1_PERIPH_AFIO。"
+    }
+  },
+  "LL_APB2_GRP1_DisableClock": {
+    "briefZh": "失能 APB2 上的外设时钟的时钟。",
+    "paramsZh": {
+      "Periphs": "外设掩码，可位或一次使能/复位多个，如 LL_APB2_GRP1_PERIPH_GPIOA | LL_APB2_GRP1_PERIPH_AFIO。"
+    }
+  },
+  "LL_APB2_GRP1_EnableClock": {
+    "briefZh": "使能 APB2 上的外设时钟的时钟。",
+    "paramsZh": {
+      "Periphs": "外设掩码，可位或一次使能/复位多个，如 LL_APB2_GRP1_PERIPH_GPIOA | LL_APB2_GRP1_PERIPH_AFIO。"
+    }
+  },
+  "LL_APB2_GRP1_ForceReset": {
+    "briefZh": "强制复位 APB2 上指定外设（置 RCC_APB2RSTR 对应位）。",
+    "paramsZh": {
+      "Periphs": "外设掩码，可位或一次使能/复位多个，如 LL_APB2_GRP1_PERIPH_GPIOA | LL_APB2_GRP1_PERIPH_AFIO。"
+    }
+  },
+  "LL_APB2_GRP1_IsEnabledClock": {
+    "briefZh": "查询 APB2 上的外设时钟是否已使能。",
+    "paramsZh": {
+      "Periphs": "外设掩码，可位或一次使能/复位多个，如 LL_APB2_GRP1_PERIPH_GPIOA | LL_APB2_GRP1_PERIPH_AFIO。"
+    }
+  },
+  "LL_APB2_GRP1_ReleaseReset": {
+    "briefZh": "释放 APB2 上指定外设的复位（清 RCC_APB2RSTR 对应位）。",
+    "paramsZh": {
+      "Periphs": "外设掩码，可位或一次使能/复位多个，如 LL_APB2_GRP1_PERIPH_GPIOA | LL_APB2_GRP1_PERIPH_AFIO。"
+    }
+  },
+  "LL_RCC_ClearFlag_HSECSS": {
+    "briefZh": "清除 RCC 的 HSE 时钟安全系统失效标志位。"
+  },
+  "LL_RCC_ClearFlag_HSERDY": {
+    "briefZh": "清除 RCC 的 HSE 就绪标志位。"
+  },
+  "LL_RCC_ClearFlag_HSIRDY": {
+    "briefZh": "清除 RCC 的 HSI 就绪标志位。"
+  },
+  "LL_RCC_ClearFlag_LSERDY": {
+    "briefZh": "清除 RCC 的 LSE 就绪标志位。"
+  },
+  "LL_RCC_ClearFlag_LSIRDY": {
+    "briefZh": "清除 RCC 的 LSI 就绪标志位。"
+  },
+  "LL_RCC_ClearFlag_PLL2RDY": {
+    "briefZh": "清除 RCC 的 PLL2 就绪标志位。"
+  },
+  "LL_RCC_ClearFlag_PLLI2SRDY": {
+    "briefZh": "清除 RCC 的 PLLI2S 就绪标志位。"
+  },
+  "LL_RCC_ClearFlag_PLLRDY": {
+    "briefZh": "清除 RCC 的 PLL 就绪标志位。"
+  },
+  "LL_RCC_ClearResetFlags": {
+    "briefZh": "清除 RCC 的复位标志（判断上次复位原因）。"
+  },
+  "LL_RCC_ConfigMCO": {
+    "briefZh": "配置 RCC 的 MCO 引脚（PA8）的时钟输出。"
+  },
+  "LL_RCC_DisableIT_HSERDY": {
+    "briefZh": "失能 RCC 的 HSE 就绪中断。"
+  },
+  "LL_RCC_DisableIT_HSIRDY": {
+    "briefZh": "失能 RCC 的 HSI 就绪中断。"
+  },
+  "LL_RCC_DisableIT_LSERDY": {
+    "briefZh": "失能 RCC 的 LSE 就绪中断。"
+  },
+  "LL_RCC_DisableIT_LSIRDY": {
+    "briefZh": "失能 RCC 的 LSI 就绪中断。"
+  },
+  "LL_RCC_DisableIT_PLL2RDY": {
+    "briefZh": "失能 RCC 的 PLL2 就绪中断。"
+  },
+  "LL_RCC_DisableIT_PLLI2SRDY": {
+    "briefZh": "失能 RCC 的 PLLI2S 就绪中断。"
+  },
+  "LL_RCC_DisableIT_PLLRDY": {
+    "briefZh": "失能 RCC 的 PLL 就绪中断。"
+  },
+  "LL_RCC_DisableRTC": {
+    "briefZh": "失能 RCC 的 RTC 外设。"
+  },
+  "LL_RCC_EnableIT_HSERDY": {
+    "briefZh": "使能 RCC 的 HSE 就绪中断。"
+  },
+  "LL_RCC_EnableIT_HSIRDY": {
+    "briefZh": "使能 RCC 的 HSI 就绪中断。"
+  },
+  "LL_RCC_EnableIT_LSERDY": {
+    "briefZh": "使能 RCC 的 LSE 就绪中断。"
+  },
+  "LL_RCC_EnableIT_LSIRDY": {
+    "briefZh": "使能 RCC 的 LSI 就绪中断。"
+  },
+  "LL_RCC_EnableIT_PLL2RDY": {
+    "briefZh": "使能 RCC 的 PLL2 就绪中断。"
+  },
+  "LL_RCC_EnableIT_PLLI2SRDY": {
+    "briefZh": "使能 RCC 的 PLLI2S 就绪中断。"
+  },
+  "LL_RCC_EnableIT_PLLRDY": {
+    "briefZh": "使能 RCC 的 PLL 就绪中断。"
+  },
+  "LL_RCC_EnableRTC": {
+    "briefZh": "使能 RCC 的 RTC 外设。"
+  },
+  "LL_RCC_ForceBackupDomainReset": {
+    "briefZh": "强制复位备份域（RTC 与备份寄存器）。"
+  },
+  "LL_RCC_GetADCClockSource": {
+    "briefZh": "读取 RCC 的 ADC 时钟源。",
+    "paramsZh": {
+      "ADCx": "ADC 实例指针，如 ADC1 / ADC2（多 ADC 型号）。"
+    }
+  },
+  "LL_RCC_GetAHBPrescaler": {
+    "briefZh": "读取 RCC 的 AHB 预分频。"
+  },
+  "LL_RCC_GetAPB1Prescaler": {
+    "briefZh": "读取 RCC 的 APB1 预分频。"
+  },
+  "LL_RCC_GetAPB2Prescaler": {
+    "briefZh": "读取 RCC 的 APB2 预分频。"
+  },
+  "LL_RCC_GetI2SClockSource": {
+    "briefZh": "读取 RCC 的 I2S 时钟源。"
+  },
+  "LL_RCC_GetRTCClockSource": {
+    "briefZh": "读取 RCC 的 RTC 时钟源。"
+  },
+  "LL_RCC_GetSysClkSource": {
+    "briefZh": "读取 RCC 的系统时钟源。"
+  },
+  "LL_RCC_GetUSBClockSource": {
+    "briefZh": "读取 RCC 的 USB 时钟源。"
+  },
+  "LL_RCC_HSE_Disable": {
+    "briefZh": "失能 HSE 高速外部时钟。"
+  },
+  "LL_RCC_HSE_DisableBypass": {
+    "briefZh": "失能 HSE 高速外部时钟的旁路模式。"
+  },
+  "LL_RCC_HSE_Enable": {
+    "briefZh": "使能 HSE 高速外部时钟。"
+  },
+  "LL_RCC_HSE_EnableBypass": {
+    "briefZh": "使能 HSE 高速外部时钟的旁路模式。"
+  },
+  "LL_RCC_HSE_EnableCSS": {
+    "briefZh": "使能 HSE 高速外部时钟的时钟安全系统（CSS）。"
+  },
+  "LL_RCC_HSE_GetPrediv2": {
+    "briefZh": "读取 HSE 高速外部时钟的 2 分频配置。"
+  },
+  "LL_RCC_HSE_IsReady": {
+    "briefZh": "查询 HSE 高速外部时钟是否就绪。"
+  },
+  "LL_RCC_HSI_Disable": {
+    "briefZh": "失能 HSI 高速内部时钟。"
+  },
+  "LL_RCC_HSI_Enable": {
+    "briefZh": "使能 HSI 高速内部时钟。"
+  },
+  "LL_RCC_HSI_GetCalibTrimming": {
+    "briefZh": "读取 HSI 高速内部时钟的校准微调值。"
+  },
+  "LL_RCC_HSI_GetCalibration": {
+    "briefZh": "读取 HSI 高速内部时钟的校准。"
+  },
+  "LL_RCC_HSI_IsReady": {
+    "briefZh": "查询 HSI 高速内部时钟是否就绪。"
+  },
+  "LL_RCC_HSI_SetCalibTrimming": {
+    "briefZh": "设置 HSI 高速内部时钟的校准微调值。",
+    "paramsZh": {
+      "Value": "要设置的数值（含义随函数而定，如计数值、比较值、阈值）。"
+    }
+  },
+  "LL_RCC_IsActiveFlag_HSECSS": {
+    "briefZh": "查询 RCC 的 HSE 时钟安全系统失效标志位是否置位。"
+  },
+  "LL_RCC_IsActiveFlag_HSERDY": {
+    "briefZh": "查询 RCC 的 HSE 就绪标志位是否置位。"
+  },
+  "LL_RCC_IsActiveFlag_HSIRDY": {
+    "briefZh": "查询 RCC 的 HSI 就绪标志位是否置位。"
+  },
+  "LL_RCC_IsActiveFlag_IWDGRST": {
+    "briefZh": "查询 RCC 的独立看门狗复位标志位是否置位。"
+  },
+  "LL_RCC_IsActiveFlag_LPWRRST": {
+    "briefZh": "查询 RCC 的低功耗管理复位标志位是否置位。"
+  },
+  "LL_RCC_IsActiveFlag_LSERDY": {
+    "briefZh": "查询 RCC 的 LSE 就绪标志位是否置位。"
+  },
+  "LL_RCC_IsActiveFlag_LSIRDY": {
+    "briefZh": "查询 RCC 的 LSI 就绪标志位是否置位。"
+  },
+  "LL_RCC_IsActiveFlag_PINRST": {
+    "briefZh": "查询 RCC 的外部引脚复位标志位是否置位。"
+  },
+  "LL_RCC_IsActiveFlag_PLL2RDY": {
+    "briefZh": "查询 RCC 的 PLL2 就绪标志位是否置位。"
+  },
+  "LL_RCC_IsActiveFlag_PLLI2SRDY": {
+    "briefZh": "查询 RCC 的 PLLI2S 就绪标志位是否置位。"
+  },
+  "LL_RCC_IsActiveFlag_PLLRDY": {
+    "briefZh": "查询 RCC 的 PLL 就绪标志位是否置位。"
+  },
+  "LL_RCC_IsActiveFlag_PORRST": {
+    "briefZh": "查询 RCC 的上电/掉电复位标志位是否置位。"
+  },
+  "LL_RCC_IsActiveFlag_SFTRST": {
+    "briefZh": "查询 RCC 的软件复位标志位是否置位。"
+  },
+  "LL_RCC_IsActiveFlag_WWDGRST": {
+    "briefZh": "查询 RCC 的窗口看门狗复位标志位是否置位。"
+  },
+  "LL_RCC_IsEnabledIT_HSERDY": {
+    "briefZh": "查询 RCC 的 HSE 就绪中断是否已使能。"
+  },
+  "LL_RCC_IsEnabledIT_HSIRDY": {
+    "briefZh": "查询 RCC 的 HSI 就绪中断是否已使能。"
+  },
+  "LL_RCC_IsEnabledIT_LSERDY": {
+    "briefZh": "查询 RCC 的 LSE 就绪中断是否已使能。"
+  },
+  "LL_RCC_IsEnabledIT_LSIRDY": {
+    "briefZh": "查询 RCC 的 LSI 就绪中断是否已使能。"
+  },
+  "LL_RCC_IsEnabledIT_PLL2RDY": {
+    "briefZh": "查询 RCC 的 PLL2 就绪中断是否已使能。"
+  },
+  "LL_RCC_IsEnabledIT_PLLI2SRDY": {
+    "briefZh": "查询 RCC 的 PLLI2S 就绪中断是否已使能。"
+  },
+  "LL_RCC_IsEnabledIT_PLLRDY": {
+    "briefZh": "查询 RCC 的 PLL 就绪中断是否已使能。"
+  },
+  "LL_RCC_IsEnabledRTC": {
+    "briefZh": "查询 RCC 是否已使能。"
+  },
+  "LL_RCC_LSE_Disable": {
+    "briefZh": "失能 LSE 低速外部时钟。"
+  },
+  "LL_RCC_LSE_DisableBypass": {
+    "briefZh": "失能 LSE 低速外部时钟的旁路模式。"
+  },
+  "LL_RCC_LSE_Enable": {
+    "briefZh": "使能 LSE 低速外部时钟。"
+  },
+  "LL_RCC_LSE_EnableBypass": {
+    "briefZh": "使能 LSE 低速外部时钟的旁路模式。"
+  },
+  "LL_RCC_LSE_IsReady": {
+    "briefZh": "查询 LSE 低速外部时钟是否就绪。"
+  },
+  "LL_RCC_LSI_Disable": {
+    "briefZh": "失能 LSI 低速内部时钟。"
+  },
+  "LL_RCC_LSI_Enable": {
+    "briefZh": "使能 LSI 低速内部时钟。"
+  },
+  "LL_RCC_LSI_IsReady": {
+    "briefZh": "查询 LSI 低速内部时钟是否就绪。"
+  },
+  "LL_RCC_PLL2_Disable": {
+    "briefZh": "失能 PLL2。"
+  },
+  "LL_RCC_PLL2_Enable": {
+    "briefZh": "使能 PLL2。"
+  },
+  "LL_RCC_PLL2_GetMultiplicator": {
+    "briefZh": "读取 PLL2 的倍频系数。"
+  },
+  "LL_RCC_PLL2_IsReady": {
+    "briefZh": "查询 PLL2 是否就绪。"
+  },
+  "LL_RCC_PLLI2S_Disable": {
+    "briefZh": "失能 PLLI2S。"
+  },
+  "LL_RCC_PLLI2S_Enable": {
+    "briefZh": "使能 PLLI2S。"
+  },
+  "LL_RCC_PLLI2S_GetMultiplicator": {
+    "briefZh": "读取 PLLI2S 的倍频系数。"
+  },
+  "LL_RCC_PLLI2S_IsReady": {
+    "briefZh": "查询 PLLI2S 是否就绪。"
+  },
+  "LL_RCC_PLL_ConfigDomain_PLL2": {
+    "briefZh": "配置 PLL2 的倍频参数，供需要额外时钟域的外设使用。",
+    "paramsZh": {
+      "Divider": "分频值。",
+      "Multiplicator": "PLL 倍频系数。"
+    }
+  },
+  "LL_RCC_PLL_ConfigDomain_PLLI2S": {
+    "briefZh": "配置 PLLI2S 给 I2S 用的倍频参数。仅大容量型号带 I2S PLL。",
+    "paramsZh": {
+      "Divider": "分频值。",
+      "Multiplicator": "PLL 倍频系数。"
+    }
+  },
+  "LL_RCC_PLL_ConfigDomain_SYS": {
+    "briefZh": "配置 PLL 给系统时钟（SYSCLK）用的倍频系数。",
+    "paramsZh": {
+      "Source": "来源选择值，具体取值域随函数而定。"
+    }
+  },
+  "LL_RCC_PLL_Disable": {
+    "briefZh": "失能 PLL。"
+  },
+  "LL_RCC_PLL_Enable": {
+    "briefZh": "使能 PLL。"
+  },
+  "LL_RCC_PLL_GetMainSource": {
+    "briefZh": "读取 PLL 的主时钟源。"
+  },
+  "LL_RCC_PLL_GetMultiplicator": {
+    "briefZh": "读取 PLL 的倍频系数。"
+  },
+  "LL_RCC_PLL_GetPrediv": {
+    "briefZh": "读取 PLL 的预分频。"
+  },
+  "LL_RCC_PLL_IsReady": {
+    "briefZh": "查询 PLL 是否就绪。"
+  },
+  "LL_RCC_PLL_SetMainSource": {
+    "briefZh": "设置 PLL 的主时钟源。"
+  },
+  "LL_RCC_ReleaseBackupDomainReset": {
+    "briefZh": "释放备份域的复位，让 RTC 与备份寄存器恢复正常工作。"
+  },
+  "LL_RCC_SetADCClockSource": {
+    "briefZh": "设置 RCC 的 ADC 时钟源。"
+  },
+  "LL_RCC_SetAHBPrescaler": {
+    "briefZh": "设置 RCC 的 AHB 预分频。",
+    "paramsZh": {
+      "Prescaler": "预分频值。计数频率 = 输入时钟 / (Prescaler + 1)。"
+    }
+  },
+  "LL_RCC_SetAPB1Prescaler": {
+    "briefZh": "设置 RCC 的 APB1 预分频。",
+    "paramsZh": {
+      "Prescaler": "预分频值。计数频率 = 输入时钟 / (Prescaler + 1)。"
+    }
+  },
+  "LL_RCC_SetAPB2Prescaler": {
+    "briefZh": "设置 RCC 的 APB2 预分频。",
+    "paramsZh": {
+      "Prescaler": "预分频值。计数频率 = 输入时钟 / (Prescaler + 1)。"
+    }
+  },
+  "LL_RCC_SetI2SClockSource": {
+    "briefZh": "设置 RCC 的 I2S 时钟源。"
+  },
+  "LL_RCC_SetRTCClockSource": {
+    "briefZh": "设置 RCC 的 RTC 时钟源。",
+    "paramsZh": {
+      "Source": "来源选择值，具体取值域随函数而定。"
+    }
+  },
+  "LL_RCC_SetSysClkSource": {
+    "briefZh": "设置 RCC 的系统时钟源。",
+    "paramsZh": {
+      "Source": "来源选择值，具体取值域随函数而定。"
+    }
+  },
+  "LL_RCC_SetUSBClockSource": {
+    "briefZh": "设置 RCC 的 USB 时钟源。"
+  }
+}

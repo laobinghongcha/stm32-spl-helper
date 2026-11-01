@@ -1,0 +1,6138 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "USART",
+  "library": "ll",
+  "functions": [
+    {
+      "id": "LL_USART_Enable",
+      "name": "LL_USART_Enable",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_Enable(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "USART Enable",
+      "briefZh": "使能 USART。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 412,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_Disable",
+      "name": "LL_USART_Disable",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_Disable(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "USART Disable (all USART prescalers and outputs are disabled)",
+      "briefZh": "失能 USART。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "When USART is disabled, USART prescalers and outputs are stopped immediately, and current operations are discarded. The configuration of the USART is kept, but all the status flags, in the USARTx_SR are set to their default values."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 426,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsEnabled",
+      "name": "LL_USART_IsEnabled",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "uint32_t LL_USART_IsEnabled(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate if USART is enabled",
+      "briefZh": "查询 USART 是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 437,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_EnableDirectionRx",
+      "name": "LL_USART_EnableDirectionRx",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_EnableDirectionRx(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Receiver Enable (Receiver is enabled and begins searching for a start bit)",
+      "briefZh": "使能 USART 的接收方向。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 448,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_DisableDirectionRx",
+      "name": "LL_USART_DisableDirectionRx",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_DisableDirectionRx(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Receiver Disable",
+      "briefZh": "失能 USART 的接收方向。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 459,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_EnableDirectionTx",
+      "name": "LL_USART_EnableDirectionTx",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_EnableDirectionTx(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Transmitter Enable",
+      "briefZh": "使能 USART 的发送方向。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 470,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_DisableDirectionTx",
+      "name": "LL_USART_DisableDirectionTx",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_DisableDirectionTx(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Transmitter Disable",
+      "briefZh": "失能 USART 的发送方向。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 481,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_SetTransferDirection",
+      "name": "LL_USART_SetTransferDirection",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_SetTransferDirection(USART_TypeDef * USARTx, uint32_t TransferDirection);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        },
+        {
+          "name": "TransferDirection",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "传输方向：只收 / 只发 / 收发双向。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Configure simultaneously enabled/disabled states of Transmitter and Receiver",
+      "briefZh": "设置 USART 的传输方向。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 499,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_GetTransferDirection",
+      "name": "LL_USART_GetTransferDirection",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "uint32_t LL_USART_GetTransferDirection(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Return enabled/disabled states of Transmitter and Receiver",
+      "briefZh": "读取 USART 的传输方向。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 515,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_SetParity",
+      "name": "LL_USART_SetParity",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_SetParity(USART_TypeDef * USARTx, uint32_t Parity);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        },
+        {
+          "name": "Parity",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "校验方式：无 / 偶校验 / 奇校验。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Configure Parity (enabled/disabled and parity mode if enabled).",
+      "briefZh": "设置 USART 的校验位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This function selects if hardware parity control (generation and detection) is enabled or disabled. When the parity control is enabled (Odd or Even), computed parity bit is inserted at the MSB position (9th or 8th bit depending on data width) and parity is checked on the received data."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 534,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_GetParity",
+      "name": "LL_USART_GetParity",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "uint32_t LL_USART_GetParity(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Return Parity configuration (enabled/disabled and parity mode if enabled)",
+      "briefZh": "读取 USART 的校验位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 549,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_SetWakeUpMethod",
+      "name": "LL_USART_SetWakeUpMethod",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_SetWakeUpMethod(USART_TypeDef * USARTx, uint32_t Method);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        },
+        {
+          "name": "Method",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set Receiver Wake Up method from Mute mode.",
+      "briefZh": "设置 USART 的唤醒方式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 563,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_GetWakeUpMethod",
+      "name": "LL_USART_GetWakeUpMethod",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "uint32_t LL_USART_GetWakeUpMethod(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Return Receiver Wake Up method from Mute mode",
+      "briefZh": "读取 USART 的唤醒方式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 576,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_SetDataWidth",
+      "name": "LL_USART_SetDataWidth",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_SetDataWidth(USART_TypeDef * USARTx, uint32_t DataWidth);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        },
+        {
+          "name": "DataWidth",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "数据位宽：8 位或 9 位。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set Word length (i.e. nb of data bits, excluding start and stop bits)",
+      "briefZh": "设置 USART 的数据位宽。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 590,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_GetDataWidth",
+      "name": "LL_USART_GetDataWidth",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "uint32_t LL_USART_GetDataWidth(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Return Word length (i.e. nb of data bits, excluding start and stop bits)",
+      "briefZh": "读取 USART 的数据位宽。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 603,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_SetOverSampling",
+      "name": "LL_USART_SetOverSampling",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_SetOverSampling(USART_TypeDef * USARTx, uint32_t OverSampling);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        },
+        {
+          "name": "OverSampling",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set Oversampling to 8-bit or 16-bit mode",
+      "briefZh": "设置 USART 的过采样方式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 618,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_GetOverSampling",
+      "name": "LL_USART_GetOverSampling",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "uint32_t LL_USART_GetOverSampling(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Return Oversampling mode",
+      "briefZh": "读取 USART 的过采样方式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 631,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_SetLastClkPulseOutput",
+      "name": "LL_USART_SetLastClkPulseOutput",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_SetLastClkPulseOutput(USART_TypeDef * USARTx, uint32_t LastBitClockPulse);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        },
+        {
+          "name": "LastBitClockPulse",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Configure if Clock pulse of the last data bit is output to the SCLK pin or not",
+      "briefZh": "设置 USART 的最后一位时钟脉冲输出。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_USART_INSTANCE(USARTx) can be used to check whether or not Synchronous mode is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 648,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_GetLastClkPulseOutput",
+      "name": "LL_USART_GetLastClkPulseOutput",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "uint32_t LL_USART_GetLastClkPulseOutput(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Retrieve Clock pulse of the last data bit output configuration (Last bit Clock pulse output to the SCLK pin or not)",
+      "briefZh": "读取 USART 的最后一位时钟脉冲输出。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_USART_INSTANCE(USARTx) can be used to check whether or not Synchronous mode is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 664,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_SetClockPhase",
+      "name": "LL_USART_SetClockPhase",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_SetClockPhase(USART_TypeDef * USARTx, uint32_t ClockPhase);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        },
+        {
+          "name": "ClockPhase",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "时钟相位（CPHA）：第一个边沿或第二个边沿采样。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Select the phase of the clock output on the SCLK pin in synchronous mode",
+      "briefZh": "设置 USART 的时钟相位（CPHA）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_USART_INSTANCE(USARTx) can be used to check whether or not Synchronous mode is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 680,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_GetClockPhase",
+      "name": "LL_USART_GetClockPhase",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "uint32_t LL_USART_GetClockPhase(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Return phase of the clock output on the SCLK pin in synchronous mode",
+      "briefZh": "读取 USART 的时钟相位（CPHA）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_USART_INSTANCE(USARTx) can be used to check whether or not Synchronous mode is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 695,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_SetClockPolarity",
+      "name": "LL_USART_SetClockPolarity",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_SetClockPolarity(USART_TypeDef * USARTx, uint32_t ClockPolarity);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        },
+        {
+          "name": "ClockPolarity",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "时钟极性（CPOL）：空闲时为高或为低。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Select the polarity of the clock output on the SCLK pin in synchronous mode",
+      "briefZh": "设置 USART 的时钟极性（CPOL）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_USART_INSTANCE(USARTx) can be used to check whether or not Synchronous mode is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 711,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_GetClockPolarity",
+      "name": "LL_USART_GetClockPolarity",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "uint32_t LL_USART_GetClockPolarity(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Return polarity of the clock output on the SCLK pin in synchronous mode",
+      "briefZh": "读取 USART 的时钟极性（CPOL）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_USART_INSTANCE(USARTx) can be used to check whether or not Synchronous mode is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 726,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_ConfigClock",
+      "name": "LL_USART_ConfigClock",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_ConfigClock(USART_TypeDef * USARTx, uint32_t Phase, uint32_t Polarity, uint32_t LBCPOutput);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        },
+        {
+          "name": "Phase",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        },
+        {
+          "name": "Polarity",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "极性：高有效或低有效。"
+        },
+        {
+          "name": "LBCPOutput",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Configure Clock signal format (Phase Polarity and choice about output of last bit clock pulse)",
+      "briefZh": "配置 USART 的时钟。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_USART_INSTANCE(USARTx) can be used to check whether or not Synchronous mode is supported by the USARTx instance.",
+        "Call of this function is equivalent to following function call sequence : - Clock Phase configuration using @ref LL_USART_SetClockPhase() function - Clock Polarity configuration using @ref LL_USART_SetClockPolarity() function - Output of Last bit Clock pulse configuration using @ref LL_USART_SetLastClkPulseOutput() function"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 754,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_EnableSCLKOutput",
+      "name": "LL_USART_EnableSCLKOutput",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_EnableSCLKOutput(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable Clock output on SCLK pin",
+      "briefZh": "使能 USART 的 SCLK 时钟输出。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_USART_INSTANCE(USARTx) can be used to check whether or not Synchronous mode is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 767,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_DisableSCLKOutput",
+      "name": "LL_USART_DisableSCLKOutput",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_DisableSCLKOutput(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable Clock output on SCLK pin",
+      "briefZh": "失能 USART 的 SCLK 时钟输出。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_USART_INSTANCE(USARTx) can be used to check whether or not Synchronous mode is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 780,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsEnabledSCLKOutput",
+      "name": "LL_USART_IsEnabledSCLKOutput",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "uint32_t LL_USART_IsEnabledSCLKOutput(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate if Clock output on SCLK pin is enabled",
+      "briefZh": "查询 USART 是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_USART_INSTANCE(USARTx) can be used to check whether or not Synchronous mode is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 793,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_SetStopBitsLength",
+      "name": "LL_USART_SetStopBitsLength",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_SetStopBitsLength(USART_TypeDef * USARTx, uint32_t StopBits);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        },
+        {
+          "name": "StopBits",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "停止位长度：0.5 / 1 / 1.5 / 2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set the length of the stop bits",
+      "briefZh": "设置 USART 的停止位长度。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 809,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_GetStopBitsLength",
+      "name": "LL_USART_GetStopBitsLength",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "uint32_t LL_USART_GetStopBitsLength(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Retrieve the length of the stop bits",
+      "briefZh": "读取 USART 的停止位长度。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 824,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_ConfigCharacter",
+      "name": "LL_USART_ConfigCharacter",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_ConfigCharacter(USART_TypeDef * USARTx, uint32_t DataWidth, uint32_t Parity, uint32_t StopBits);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        },
+        {
+          "name": "DataWidth",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "数据位宽：8 位或 9 位。"
+        },
+        {
+          "name": "Parity",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "校验方式：无 / 偶校验 / 奇校验。"
+        },
+        {
+          "name": "StopBits",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "停止位长度：0.5 / 1 / 1.5 / 2。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Configure Character frame format (Datawidth, Parity control, Stop Bits)",
+      "briefZh": "一次性配置数据位宽、校验位与停止位（等价于连续调三个 Set 函数）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1",
+        "USARTx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Call of this function is equivalent to following function call sequence : - Data Width configuration using @ref LL_USART_SetDataWidth() function - Parity Control and mode configuration using @ref LL_USART_SetParity() function - Stop bits configuration using @ref LL_USART_SetStopBitsLength() function"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 854,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_SetNodeAddress",
+      "name": "LL_USART_SetNodeAddress",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_SetNodeAddress(USART_TypeDef * USARTx, uint32_t NodeAddress);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        },
+        {
+          "name": "NodeAddress",
+          "type": "uint32_t",
+          "descEn": "4 bit Address of the USART node.",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set Address of the USART node.",
+      "briefZh": "设置 USART 的节点地址。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This is used in multiprocessor communication during Mute mode or Stop mode, for wake up with address mark detection."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 870,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_GetNodeAddress",
+      "name": "LL_USART_GetNodeAddress",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "uint32_t LL_USART_GetNodeAddress(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "Address of the USART node (Value between Min_Data=0 and Max_Data=255)",
+      "returnDescZh": "",
+      "briefEn": "Return 4 bit Address of the USART node as set in ADD field of CR2.",
+      "briefZh": "读取 USART 的节点地址。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "only 4bits (b3-b0) of returned value are relevant (b31-b4 are not relevant)"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 882,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_EnableRTSHWFlowCtrl",
+      "name": "LL_USART_EnableRTSHWFlowCtrl",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_EnableRTSHWFlowCtrl(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable RTS HW Flow Control",
+      "briefZh": "使能 USART 的 RTS 硬件流控。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_UART_HWFLOW_INSTANCE(USARTx) can be used to check whether or not Hardware Flow control feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 895,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_DisableRTSHWFlowCtrl",
+      "name": "LL_USART_DisableRTSHWFlowCtrl",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_DisableRTSHWFlowCtrl(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable RTS HW Flow Control",
+      "briefZh": "失能 USART 的 RTS 硬件流控。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_UART_HWFLOW_INSTANCE(USARTx) can be used to check whether or not Hardware Flow control feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 908,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_EnableCTSHWFlowCtrl",
+      "name": "LL_USART_EnableCTSHWFlowCtrl",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_EnableCTSHWFlowCtrl(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable CTS HW Flow Control",
+      "briefZh": "使能 USART 的 CTS 硬件流控。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_UART_HWFLOW_INSTANCE(USARTx) can be used to check whether or not Hardware Flow control feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 921,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_DisableCTSHWFlowCtrl",
+      "name": "LL_USART_DisableCTSHWFlowCtrl",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_DisableCTSHWFlowCtrl(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable CTS HW Flow Control",
+      "briefZh": "失能 USART 的 CTS 硬件流控。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_UART_HWFLOW_INSTANCE(USARTx) can be used to check whether or not Hardware Flow control feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 934,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_SetHWFlowCtrl",
+      "name": "LL_USART_SetHWFlowCtrl",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_SetHWFlowCtrl(USART_TypeDef * USARTx, uint32_t HardwareFlowControl);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        },
+        {
+          "name": "HardwareFlowControl",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Configure HW Flow Control mode (both CTS and RTS)",
+      "briefZh": "设置 USART 的硬件流控。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_UART_HWFLOW_INSTANCE(USARTx) can be used to check whether or not Hardware Flow control feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 953,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_GetHWFlowCtrl",
+      "name": "LL_USART_GetHWFlowCtrl",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "uint32_t LL_USART_GetHWFlowCtrl(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Return HW Flow Control configuration (both CTS and RTS)",
+      "briefZh": "读取 USART 的硬件流控。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_UART_HWFLOW_INSTANCE(USARTx) can be used to check whether or not Hardware Flow control feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 971,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_EnableOneBitSamp",
+      "name": "LL_USART_EnableOneBitSamp",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_EnableOneBitSamp(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable One bit sampling method",
+      "briefZh": "使能 USART 的单采样位方式（3 采样位中的 1 位）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 983,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_DisableOneBitSamp",
+      "name": "LL_USART_DisableOneBitSamp",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_DisableOneBitSamp(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable One bit sampling method",
+      "briefZh": "失能 USART 的单采样位方式（3 采样位中的 1 位）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 994,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsEnabledOneBitSamp",
+      "name": "LL_USART_IsEnabledOneBitSamp",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "uint32_t LL_USART_IsEnabledOneBitSamp(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate if One bit sampling method is enabled",
+      "briefZh": "查询 USART 是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1005,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_SetBaudRate",
+      "name": "LL_USART_SetBaudRate",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "void LL_USART_SetBaudRate(USART_TypeDef * USARTx, uint32_t PeriphClk, uint32_t OverSampling, uint32_t BaudRate);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        },
+        {
+          "name": "PeriphClk",
+          "type": "uint32_t",
+          "descEn": "Peripheral Clock",
+          "descZh": ""
+        },
+        {
+          "name": "OverSampling",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        },
+        {
+          "name": "BaudRate",
+          "type": "uint32_t",
+          "descEn": "Baud Rate",
+          "descZh": "波特率（如 115200）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Configure USART BRR register for achieving expected Baud Rate value.",
+      "briefZh": "按外设时钟频率与目标波特率算出 BRR 值并写入。参数需给出 PCLK 频率，内部取整，实际波特率会有偏差。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_BRR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Compute and set USARTDIV value in BRR Register (full BRR content) according to used Peripheral Clock, Oversampling mode, and expected Baud Rate values",
+        "Peripheral clock and Baud rate values provided as function parameters should be valid (Baud rate value != 0)"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_USART_OVERSAMPLING_8",
+        "__LL_USART_DIV_SAMPLING8",
+        "__LL_USART_DIV_SAMPLING16"
+      ],
+      "headerLine": 1027,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_GetBaudRate",
+      "name": "LL_USART_GetBaudRate",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec1",
+      "prototype": "uint32_t LL_USART_GetBaudRate(const USART_TypeDef * USARTx, uint32_t PeriphClk, uint32_t OverSampling);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        },
+        {
+          "name": "PeriphClk",
+          "type": "uint32_t",
+          "descEn": "Peripheral Clock",
+          "descZh": ""
+        },
+        {
+          "name": "OverSampling",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Baud Rate",
+      "returnDescZh": "",
+      "briefEn": "Return current Baud Rate value, according to USARTDIV present in BRR register (full BRR content), and to used Peripheral Clock and Oversampling mode values",
+      "briefZh": "根据当前 BRR 寄存器值与给定外设时钟反算实际波特率。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_BRR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "In case of non-initialized or invalid value stored in BRR register, value 0 will be returned."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_USART_OVERSAMPLING_8"
+      ],
+      "headerLine": 1052,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_EnableIrda",
+      "name": "LL_USART_EnableIrda",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec2",
+      "prototype": "void LL_USART_EnableIrda(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable IrDA mode",
+      "briefZh": "使能 IrDA 红外模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_IRDA_INSTANCE(USARTx) can be used to check whether or not IrDA feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1134,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_DisableIrda",
+      "name": "LL_USART_DisableIrda",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec2",
+      "prototype": "void LL_USART_DisableIrda(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable IrDA mode",
+      "briefZh": "关闭 IrDA 红外模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_IRDA_INSTANCE(USARTx) can be used to check whether or not IrDA feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1147,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsEnabledIrda",
+      "name": "LL_USART_IsEnabledIrda",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec2",
+      "prototype": "uint32_t LL_USART_IsEnabledIrda(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate if IrDA mode is enabled",
+      "briefZh": "查询 USART 是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_IRDA_INSTANCE(USARTx) can be used to check whether or not IrDA feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1160,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_SetIrdaPowerMode",
+      "name": "LL_USART_SetIrdaPowerMode",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec2",
+      "prototype": "void LL_USART_SetIrdaPowerMode(USART_TypeDef * USARTx, uint32_t PowerMode);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        },
+        {
+          "name": "PowerMode",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "低功耗模式：SLEEP / STOP / STANDBY。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Configure IrDA Power Mode (Normal or Low Power)",
+      "briefZh": "设置 IrDA 的功耗模式（正常 / 低功耗）。低功耗模式下需要用 IrdaPrescaler 把时钟分频到低速。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_IRDA_INSTANCE(USARTx) can be used to check whether or not IrDA feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1176,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_GetIrdaPowerMode",
+      "name": "LL_USART_GetIrdaPowerMode",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec2",
+      "prototype": "uint32_t LL_USART_GetIrdaPowerMode(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Retrieve IrDA Power Mode configuration (Normal or Low Power)",
+      "briefZh": "读取 IrDA 当前的功耗模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_IRDA_INSTANCE(USARTx) can be used to check whether or not IrDA feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1191,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_SetIrdaPrescaler",
+      "name": "LL_USART_SetIrdaPrescaler",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec2",
+      "prototype": "void LL_USART_SetIrdaPrescaler(USART_TypeDef * USARTx, uint32_t PrescalerValue);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        },
+        {
+          "name": "PrescalerValue",
+          "type": "uint32_t",
+          "descEn": "Value between Min_Data=0x00 and Max_Data=0xFF",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set Irda prescaler value, used for dividing the USART clock source to achieve the Irda Low Power frequency (8 bits value)",
+      "briefZh": "设置 IrDA 的低功耗预分频值（8 位），用于把 USART 时钟分频成 IrDA 低速时钟。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_GTPR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_IRDA_INSTANCE(USARTx) can be used to check whether or not IrDA feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1206,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_GetIrdaPrescaler",
+      "name": "LL_USART_GetIrdaPrescaler",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec2",
+      "prototype": "uint32_t LL_USART_GetIrdaPrescaler(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "Irda prescaler value (Value between Min_Data=0x00 and Max_Data=0xFF)",
+      "returnDescZh": "",
+      "briefEn": "Return Irda prescaler value, used for dividing the USART clock source to achieve the Irda Low Power frequency (8 bits value)",
+      "briefZh": "读取 IrDA 的低功耗预分频值。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_GTPR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_IRDA_INSTANCE(USARTx) can be used to check whether or not IrDA feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1220,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_EnableSmartcardNACK",
+      "name": "LL_USART_EnableSmartcardNACK",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec3",
+      "prototype": "void LL_USART_EnableSmartcardNACK(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable Smartcard NACK transmission",
+      "briefZh": "使能智能卡模式下的 NACK 发送（校验失败时回送否定应答）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMARTCARD_INSTANCE(USARTx) can be used to check whether or not Smartcard feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1241,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_DisableSmartcardNACK",
+      "name": "LL_USART_DisableSmartcardNACK",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec3",
+      "prototype": "void LL_USART_DisableSmartcardNACK(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable Smartcard NACK transmission",
+      "briefZh": "关闭智能卡模式下的 NACK 发送。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMARTCARD_INSTANCE(USARTx) can be used to check whether or not Smartcard feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1254,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsEnabledSmartcardNACK",
+      "name": "LL_USART_IsEnabledSmartcardNACK",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec3",
+      "prototype": "uint32_t LL_USART_IsEnabledSmartcardNACK(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate if Smartcard NACK transmission is enabled",
+      "briefZh": "查询 USART 是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMARTCARD_INSTANCE(USARTx) can be used to check whether or not Smartcard feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1267,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_EnableSmartcard",
+      "name": "LL_USART_EnableSmartcard",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec3",
+      "prototype": "void LL_USART_EnableSmartcard(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable Smartcard mode",
+      "briefZh": "使能智能卡模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMARTCARD_INSTANCE(USARTx) can be used to check whether or not Smartcard feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1280,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_DisableSmartcard",
+      "name": "LL_USART_DisableSmartcard",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec3",
+      "prototype": "void LL_USART_DisableSmartcard(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable Smartcard mode",
+      "briefZh": "关闭智能卡模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMARTCARD_INSTANCE(USARTx) can be used to check whether or not Smartcard feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1293,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsEnabledSmartcard",
+      "name": "LL_USART_IsEnabledSmartcard",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec3",
+      "prototype": "uint32_t LL_USART_IsEnabledSmartcard(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate if Smartcard mode is enabled",
+      "briefZh": "查询 USART 是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMARTCARD_INSTANCE(USARTx) can be used to check whether or not Smartcard feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1306,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_SetSmartcardPrescaler",
+      "name": "LL_USART_SetSmartcardPrescaler",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec3",
+      "prototype": "void LL_USART_SetSmartcardPrescaler(USART_TypeDef * USARTx, uint32_t PrescalerValue);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        },
+        {
+          "name": "PrescalerValue",
+          "type": "uint32_t",
+          "descEn": "Value between Min_Data=0 and Max_Data=31",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set Smartcard prescaler value, used for dividing the USART clock source to provide the SMARTCARD Clock (5 bits value)",
+      "briefZh": "设置智能卡的时钟预分频值（5 位），用于产生 SMARTCARD 时钟。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_GTPR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMARTCARD_INSTANCE(USARTx) can be used to check whether or not Smartcard feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1321,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_GetSmartcardPrescaler",
+      "name": "LL_USART_GetSmartcardPrescaler",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec3",
+      "prototype": "uint32_t LL_USART_GetSmartcardPrescaler(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "Smartcard prescaler value (Value between Min_Data=0 and Max_Data=31)",
+      "returnDescZh": "",
+      "briefEn": "Return Smartcard prescaler value, used for dividing the USART clock source to provide the SMARTCARD Clock (5 bits value)",
+      "briefZh": "读取智能卡的时钟预分频值。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_GTPR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMARTCARD_INSTANCE(USARTx) can be used to check whether or not Smartcard feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1335,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_SetSmartcardGuardTime",
+      "name": "LL_USART_SetSmartcardGuardTime",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec3",
+      "prototype": "void LL_USART_SetSmartcardGuardTime(USART_TypeDef * USARTx, uint32_t GuardTime);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        },
+        {
+          "name": "GuardTime",
+          "type": "uint32_t",
+          "descEn": "Value between Min_Data=0x00 and Max_Data=0xFF",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set Smartcard Guard time value, expressed in nb of baud clocks periods (GT[7:0] bits : Guard time value)",
+      "briefZh": "设置智能卡的保护时间（以波特时钟周期为单位，GT[7:0]）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_GTPR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMARTCARD_INSTANCE(USARTx) can be used to check whether or not Smartcard feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "USART_POSITION_GTPR_GT"
+      ],
+      "headerLine": 1350,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_GetSmartcardGuardTime",
+      "name": "LL_USART_GetSmartcardGuardTime",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec3",
+      "prototype": "uint32_t LL_USART_GetSmartcardGuardTime(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "Smartcard Guard time value (Value between Min_Data=0x00 and Max_Data=0xFF)",
+      "returnDescZh": "",
+      "briefEn": "Return Smartcard Guard time value, expressed in nb of baud clocks periods (GT[7:0] bits : Guard time value)",
+      "briefZh": "读取智能卡的保护时间。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_GTPR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_SMARTCARD_INSTANCE(USARTx) can be used to check whether or not Smartcard feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "USART_POSITION_GTPR_GT"
+      ],
+      "headerLine": 1364,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_EnableHalfDuplex",
+      "name": "LL_USART_EnableHalfDuplex",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec4",
+      "prototype": "void LL_USART_EnableHalfDuplex(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable Single Wire Half-Duplex mode",
+      "briefZh": "使能 USART 的半双工模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_UART_HALFDUPLEX_INSTANCE(USARTx) can be used to check whether or not Half-Duplex mode is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1385,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_DisableHalfDuplex",
+      "name": "LL_USART_DisableHalfDuplex",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec4",
+      "prototype": "void LL_USART_DisableHalfDuplex(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable Single Wire Half-Duplex mode",
+      "briefZh": "失能 USART 的半双工模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_UART_HALFDUPLEX_INSTANCE(USARTx) can be used to check whether or not Half-Duplex mode is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1398,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsEnabledHalfDuplex",
+      "name": "LL_USART_IsEnabledHalfDuplex",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec4",
+      "prototype": "uint32_t LL_USART_IsEnabledHalfDuplex(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate if Single Wire Half-Duplex mode is enabled",
+      "briefZh": "查询 USART 是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_UART_HALFDUPLEX_INSTANCE(USARTx) can be used to check whether or not Half-Duplex mode is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1411,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_SetLINBrkDetectionLen",
+      "name": "LL_USART_SetLINBrkDetectionLen",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec5",
+      "prototype": "void LL_USART_SetLINBrkDetectionLen(USART_TypeDef * USARTx, uint32_t LINBDLength);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        },
+        {
+          "name": "LINBDLength",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set LIN Break Detection Length",
+      "briefZh": "设置 LIN 断路检测长度（10 位或 11 位）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_UART_LIN_INSTANCE(USARTx) can be used to check whether or not LIN feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1435,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_GetLINBrkDetectionLen",
+      "name": "LL_USART_GetLINBrkDetectionLen",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec5",
+      "prototype": "uint32_t LL_USART_GetLINBrkDetectionLen(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Return LIN Break Detection Length",
+      "briefZh": "读取 LIN 断路检测长度。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_UART_LIN_INSTANCE(USARTx) can be used to check whether or not LIN feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1450,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_EnableLIN",
+      "name": "LL_USART_EnableLIN",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec5",
+      "prototype": "void LL_USART_EnableLIN(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable LIN mode",
+      "briefZh": "使能 LIN 模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_UART_LIN_INSTANCE(USARTx) can be used to check whether or not LIN feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1463,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_DisableLIN",
+      "name": "LL_USART_DisableLIN",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec5",
+      "prototype": "void LL_USART_DisableLIN(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable LIN mode",
+      "briefZh": "关闭 LIN 模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_UART_LIN_INSTANCE(USARTx) can be used to check whether or not LIN feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1476,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsEnabledLIN",
+      "name": "LL_USART_IsEnabledLIN",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec5",
+      "prototype": "uint32_t LL_USART_IsEnabledLIN(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicate if LIN mode is enabled",
+      "briefZh": "查询 USART 是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_UART_LIN_INSTANCE(USARTx) can be used to check whether or not LIN feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1489,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_ConfigAsyncMode",
+      "name": "LL_USART_ConfigAsyncMode",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec6",
+      "prototype": "void LL_USART_ConfigAsyncMode(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Perform basic configuration of USART for enabling use in Asynchronous Mode (UART)",
+      "briefZh": "把 USART 配置成标准异步模式（8 位数据、无校验、1 停止位、收发均使能）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2",
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "In UART mode, the following bits must be kept cleared: - LINEN bit in the USART_CR2 register, - CLKEN bit in the USART_CR2 register, - SCEN bit in the USART_CR3 register, - IREN bit in the USART_CR3 register, - HDSEL bit in the USART_CR3 register.",
+        "Call of this function is equivalent to following function call sequence : - Clear LINEN in CR2 using @ref LL_USART_DisableLIN() function - Clear CLKEN in CR2 using @ref LL_USART_DisableSCLKOutput() function - Clear SCEN in CR3 using @ref LL_USART_DisableSmartcard() function - Clear IREN in CR3 using @ref LL_USART_DisableIrda() function - Clear HDSEL in CR3 using @ref LL_USART_DisableHalfDuplex() function",
+        "Other remaining configurations items related to Asynchronous Mode (as Baud Rate, Word length, Parity, ...) should be set using dedicated functions"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1527,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_ConfigSyncMode",
+      "name": "LL_USART_ConfigSyncMode",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec6",
+      "prototype": "void LL_USART_ConfigSyncMode(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Perform basic configuration of USART for enabling use in Synchronous Mode",
+      "briefZh": "把 USART 配置成同步模式（带时钟输出）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2",
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "In Synchronous mode, the following bits must be kept cleared: - LINEN bit in the USART_CR2 register, - SCEN bit in the USART_CR3 register, - IREN bit in the USART_CR3 register, - HDSEL bit in the USART_CR3 register. This function also sets the USART in Synchronous mode.",
+        "Macro IS_USART_INSTANCE(USARTx) can be used to check whether or not Synchronous mode is supported by the USARTx instance.",
+        "Call of this function is equivalent to following function call sequence : - Clear LINEN in CR2 using @ref LL_USART_DisableLIN() function - Clear IREN in CR3 using @ref LL_USART_DisableIrda() function - Clear SCEN in CR3 using @ref LL_USART_DisableSmartcard() function - Clear HDSEL in CR3 using @ref LL_USART_DisableHalfDuplex() function - Set CLKEN in CR2 using @ref LL_USART_EnableSCLKOutput() function",
+        "Other remaining configurations items related to Synchronous Mode (as Baud Rate, Word length, Parity, Clock Polarity, ...) should be set using dedicated functions"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1563,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_ConfigLINMode",
+      "name": "LL_USART_ConfigLINMode",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec6",
+      "prototype": "void LL_USART_ConfigLINMode(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Perform basic configuration of USART for enabling use in LIN Mode",
+      "briefZh": "把 USART 配置成 LIN 模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2",
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "In LIN mode, the following bits must be kept cleared: - STOP and CLKEN bits in the USART_CR2 register, - SCEN bit in the USART_CR3 register, - IREN bit in the USART_CR3 register, - HDSEL bit in the USART_CR3 register. This function also set the UART/USART in LIN mode.",
+        "Macro IS_UART_LIN_INSTANCE(USARTx) can be used to check whether or not LIN feature is supported by the USARTx instance.",
+        "Call of this function is equivalent to following function call sequence : - Clear CLKEN in CR2 using @ref LL_USART_DisableSCLKOutput() function - Clear STOP in CR2 using @ref LL_USART_SetStopBitsLength() function - Clear SCEN in CR3 using @ref LL_USART_DisableSmartcard() function - Clear IREN in CR3 using @ref LL_USART_DisableIrda() function - Clear HDSEL in CR3 using @ref LL_USART_DisableHalfDuplex() function - Set LINEN in CR2 using @ref LL_USART_EnableLIN() function",
+        "Other remaining configurations items related to LIN Mode (as Baud Rate, Word length, LIN Break Detection Length, ...) should be set using dedicated functions"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1603,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_ConfigHalfDuplexMode",
+      "name": "LL_USART_ConfigHalfDuplexMode",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec6",
+      "prototype": "void LL_USART_ConfigHalfDuplexMode(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Perform basic configuration of USART for enabling use in Half Duplex Mode",
+      "briefZh": "把 USART 配置成单线半双工模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2",
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "In Half Duplex mode, the following bits must be kept cleared: - LINEN bit in the USART_CR2 register, - CLKEN bit in the USART_CR2 register, - SCEN bit in the USART_CR3 register, - IREN bit in the USART_CR3 register, This function also sets the UART/USART in Half Duplex mode.",
+        "Macro IS_UART_HALFDUPLEX_INSTANCE(USARTx) can be used to check whether or not Half-Duplex mode is supported by the USARTx instance.",
+        "Call of this function is equivalent to following function call sequence : - Clear LINEN in CR2 using @ref LL_USART_DisableLIN() function - Clear CLKEN in CR2 using @ref LL_USART_DisableSCLKOutput() function - Clear SCEN in CR3 using @ref LL_USART_DisableSmartcard() function - Clear IREN in CR3 using @ref LL_USART_DisableIrda() function - Set HDSEL in CR3 using @ref LL_USART_EnableHalfDuplex() function",
+        "Other remaining configurations items related to Half Duplex Mode (as Baud Rate, Word length, Parity, ...) should be set using dedicated functions"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1641,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_ConfigSmartcardMode",
+      "name": "LL_USART_ConfigSmartcardMode",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec6",
+      "prototype": "void LL_USART_ConfigSmartcardMode(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Perform basic configuration of USART for enabling use in Smartcard Mode",
+      "briefZh": "把 USART 配置成智能卡模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2",
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "In Smartcard mode, the following bits must be kept cleared: - LINEN bit in the USART_CR2 register, - IREN bit in the USART_CR3 register, - HDSEL bit in the USART_CR3 register. This function also configures Stop bits to 1.5 bits and sets the USART in Smartcard mode (SCEN bit). Clock Output is also enabled (CLKEN).",
+        "Macro IS_SMARTCARD_INSTANCE(USARTx) can be used to check whether or not Smartcard feature is supported by the USARTx instance.",
+        "Call of this function is equivalent to following function call sequence : - Clear LINEN in CR2 using @ref LL_USART_DisableLIN() function - Clear IREN in CR3 using @ref LL_USART_DisableIrda() function - Clear HDSEL in CR3 using @ref LL_USART_DisableHalfDuplex() function - Configure STOP in CR2 using @ref LL_USART_SetStopBitsLength() function - Set CLKEN in CR2 using @ref LL_USART_EnableSCLKOutput() function - Set SCEN in CR3 using @ref LL_USART_EnableSmartcard() function",
+        "Other remaining configurations items related to Smartcard Mode (as Baud Rate, Word length, Parity, ...) should be set using dedicated functions"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1681,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_ConfigIrdaMode",
+      "name": "LL_USART_ConfigIrdaMode",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec6",
+      "prototype": "void LL_USART_ConfigIrdaMode(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Perform basic configuration of USART for enabling use in Irda Mode",
+      "briefZh": "把 USART 配置成 IrDA 红外模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2",
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "In IRDA mode, the following bits must be kept cleared: - LINEN bit in the USART_CR2 register, - STOP and CLKEN bits in the USART_CR2 register, - SCEN bit in the USART_CR3 register, - HDSEL bit in the USART_CR3 register. This function also sets the UART/USART in IRDA mode (IREN bit).",
+        "Macro IS_IRDA_INSTANCE(USARTx) can be used to check whether or not IrDA feature is supported by the USARTx instance.",
+        "Call of this function is equivalent to following function call sequence : - Clear LINEN in CR2 using @ref LL_USART_DisableLIN() function - Clear CLKEN in CR2 using @ref LL_USART_DisableSCLKOutput() function - Clear SCEN in CR3 using @ref LL_USART_DisableSmartcard() function - Clear HDSEL in CR3 using @ref LL_USART_DisableHalfDuplex() function - Configure STOP in CR2 using @ref LL_USART_SetStopBitsLength() function - Set IREN in CR3 using @ref LL_USART_EnableIrda() function",
+        "Other remaining configurations items related to Irda Mode (as Baud Rate, Word length, Power mode, ...) should be set using dedicated functions"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1724,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_ConfigMultiProcessMode",
+      "name": "LL_USART_ConfigMultiProcessMode",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec6",
+      "prototype": "void LL_USART_ConfigMultiProcessMode(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Perform basic configuration of USART for enabling use in Multi processor Mode (several USARTs connected in a network, one of the USARTs can be the master, its TX output connected to the RX inputs of the other slaves USARTs).",
+      "briefZh": "把 USART 配置成多处理器模式（用于一对多总线）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2",
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "In MultiProcessor mode, the following bits must be kept cleared: - LINEN bit in the USART_CR2 register, - CLKEN bit in the USART_CR2 register, - SCEN bit in the USART_CR3 register, - IREN bit in the USART_CR3 register, - HDSEL bit in the USART_CR3 register.",
+        "Call of this function is equivalent to following function call sequence : - Clear LINEN in CR2 using @ref LL_USART_DisableLIN() function - Clear CLKEN in CR2 using @ref LL_USART_DisableSCLKOutput() function - Clear SCEN in CR3 using @ref LL_USART_DisableSmartcard() function - Clear IREN in CR3 using @ref LL_USART_DisableIrda() function - Clear HDSEL in CR3 using @ref LL_USART_DisableHalfDuplex() function",
+        "Other remaining configurations items related to Multi processor Mode (as Baud Rate, Wake Up Method, Node address, ...) should be set using dedicated functions"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1762,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsActiveFlag_PE",
+      "name": "LL_USART_IsActiveFlag_PE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec7",
+      "prototype": "uint32_t LL_USART_IsActiveFlag_PE(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the USART Parity Error Flag is set or not",
+      "briefZh": "查询 USART 的校验错误标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1785,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsActiveFlag_FE",
+      "name": "LL_USART_IsActiveFlag_FE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec7",
+      "prototype": "uint32_t LL_USART_IsActiveFlag_FE(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the USART Framing Error Flag is set or not",
+      "briefZh": "查询 USART 的帧错误标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1796,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsActiveFlag_NE",
+      "name": "LL_USART_IsActiveFlag_NE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec7",
+      "prototype": "uint32_t LL_USART_IsActiveFlag_NE(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the USART Noise error detected Flag is set or not",
+      "briefZh": "查询 USART 的噪声错误标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1807,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsActiveFlag_ORE",
+      "name": "LL_USART_IsActiveFlag_ORE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec7",
+      "prototype": "uint32_t LL_USART_IsActiveFlag_ORE(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the USART OverRun Error Flag is set or not",
+      "briefZh": "查询 USART 的溢出错误标志是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1818,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsActiveFlag_IDLE",
+      "name": "LL_USART_IsActiveFlag_IDLE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec7",
+      "prototype": "uint32_t LL_USART_IsActiveFlag_IDLE(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the USART IDLE line detected Flag is set or not",
+      "briefZh": "查询 USART 的空闲线路标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1829,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsActiveFlag_RXNE",
+      "name": "LL_USART_IsActiveFlag_RXNE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec7",
+      "prototype": "uint32_t LL_USART_IsActiveFlag_RXNE(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the USART Read Data Register Not Empty Flag is set or not",
+      "briefZh": "查询 USART 的接收数据寄存器非空标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1840,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsActiveFlag_TC",
+      "name": "LL_USART_IsActiveFlag_TC",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec7",
+      "prototype": "uint32_t LL_USART_IsActiveFlag_TC(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the USART Transmission Complete Flag is set or not",
+      "briefZh": "查询 USART 的传输完成标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1851,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsActiveFlag_TXE",
+      "name": "LL_USART_IsActiveFlag_TXE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec7",
+      "prototype": "uint32_t LL_USART_IsActiveFlag_TXE(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the USART Transmit Data Register Empty Flag is set or not",
+      "briefZh": "查询 USART 的发送数据寄存器空标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1862,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsActiveFlag_LBD",
+      "name": "LL_USART_IsActiveFlag_LBD",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec7",
+      "prototype": "uint32_t LL_USART_IsActiveFlag_LBD(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the USART LIN Break Detection Flag is set or not",
+      "briefZh": "查询 USART 的 LIN 检测到断路标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_UART_LIN_INSTANCE(USARTx) can be used to check whether or not LIN feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1875,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsActiveFlag_nCTS",
+      "name": "LL_USART_IsActiveFlag_nCTS",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec7",
+      "prototype": "uint32_t LL_USART_IsActiveFlag_nCTS(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the USART CTS Flag is set or not",
+      "briefZh": "查询 USART 的 CTS 信号变化标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_UART_HWFLOW_INSTANCE(USARTx) can be used to check whether or not Hardware Flow control feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1888,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsActiveFlag_SBK",
+      "name": "LL_USART_IsActiveFlag_SBK",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec7",
+      "prototype": "uint32_t LL_USART_IsActiveFlag_SBK(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the USART Send Break Flag is set or not",
+      "briefZh": "查询 USART 的断路字符已发送标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1899,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsActiveFlag_RWU",
+      "name": "LL_USART_IsActiveFlag_RWU",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec7",
+      "prototype": "uint32_t LL_USART_IsActiveFlag_RWU(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the USART Receive Wake Up from mute mode Flag is set or not",
+      "briefZh": "查询 USART 的从静默模式唤醒标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1910,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_ClearFlag_PE",
+      "name": "LL_USART_ClearFlag_PE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec7",
+      "prototype": "void LL_USART_ClearFlag_PE(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Parity Error Flag",
+      "briefZh": "清除 USART 的校验错误标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_SR",
+        "USARTx_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Clearing this flag is done by a read access to the USARTx_SR register followed by a read access to the USARTx_DR register.",
+        "Please also consider that when clearing this flag, other flags as NE, FE, ORE, IDLE would also be cleared."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1925,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_ClearFlag_FE",
+      "name": "LL_USART_ClearFlag_FE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec7",
+      "prototype": "void LL_USART_ClearFlag_FE(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Framing Error Flag",
+      "briefZh": "清除 USART 的帧错误标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_SR",
+        "USARTx_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Clearing this flag is done by a read access to the USARTx_SR register followed by a read access to the USARTx_DR register.",
+        "Please also consider that when clearing this flag, other flags as PE, NE, ORE, IDLE would also be cleared."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1944,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_ClearFlag_NE",
+      "name": "LL_USART_ClearFlag_NE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec7",
+      "prototype": "void LL_USART_ClearFlag_NE(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Noise detected Flag",
+      "briefZh": "清除 USART 的噪声错误标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_SR",
+        "USARTx_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Clearing this flag is done by a read access to the USARTx_SR register followed by a read access to the USARTx_DR register.",
+        "Please also consider that when clearing this flag, other flags as PE, FE, ORE, IDLE would also be cleared."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1963,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_ClearFlag_ORE",
+      "name": "LL_USART_ClearFlag_ORE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec7",
+      "prototype": "void LL_USART_ClearFlag_ORE(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear OverRun Error Flag",
+      "briefZh": "清除 USART 的溢出错误标志。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_SR",
+        "USARTx_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Clearing this flag is done by a read access to the USARTx_SR register followed by a read access to the USARTx_DR register.",
+        "Please also consider that when clearing this flag, other flags as PE, NE, FE, IDLE would also be cleared."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1982,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_ClearFlag_IDLE",
+      "name": "LL_USART_ClearFlag_IDLE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec7",
+      "prototype": "void LL_USART_ClearFlag_IDLE(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear IDLE line detected Flag",
+      "briefZh": "清除 USART 的空闲线路标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_SR",
+        "USARTx_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Clearing this flag is done by a read access to the USARTx_SR register followed by a read access to the USARTx_DR register.",
+        "Please also consider that when clearing this flag, other flags as PE, NE, FE, ORE would also be cleared."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2001,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_ClearFlag_TC",
+      "name": "LL_USART_ClearFlag_TC",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec7",
+      "prototype": "void LL_USART_ClearFlag_TC(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear Transmission Complete Flag",
+      "briefZh": "清除 USART 的传输完成标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2016,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_ClearFlag_RXNE",
+      "name": "LL_USART_ClearFlag_RXNE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec7",
+      "prototype": "void LL_USART_ClearFlag_RXNE(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear RX Not Empty Flag",
+      "briefZh": "清除 USART 的接收数据寄存器非空标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2027,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_ClearFlag_LBD",
+      "name": "LL_USART_ClearFlag_LBD",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec7",
+      "prototype": "void LL_USART_ClearFlag_LBD(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear LIN Break Detection Flag",
+      "briefZh": "清除 USART 的 LIN 检测到断路标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_UART_LIN_INSTANCE(USARTx) can be used to check whether or not LIN feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2040,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_ClearFlag_nCTS",
+      "name": "LL_USART_ClearFlag_nCTS",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec7",
+      "prototype": "void LL_USART_ClearFlag_nCTS(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear CTS Interrupt Flag",
+      "briefZh": "清除 USART 的 CTS 信号变化标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_UART_HWFLOW_INSTANCE(USARTx) can be used to check whether or not Hardware Flow control feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2053,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_EnableIT_IDLE",
+      "name": "LL_USART_EnableIT_IDLE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec8",
+      "prototype": "void LL_USART_EnableIT_IDLE(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable IDLE Interrupt",
+      "briefZh": "使能 USART 的空闲线路中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2072,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_EnableIT_RXNE",
+      "name": "LL_USART_EnableIT_RXNE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec8",
+      "prototype": "void LL_USART_EnableIT_RXNE(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable RX Not Empty Interrupt",
+      "briefZh": "使能 USART 的接收数据寄存器非空中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2083,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_EnableIT_TC",
+      "name": "LL_USART_EnableIT_TC",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec8",
+      "prototype": "void LL_USART_EnableIT_TC(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable Transmission Complete Interrupt",
+      "briefZh": "使能 USART 的传输完成中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2094,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_EnableIT_TXE",
+      "name": "LL_USART_EnableIT_TXE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec8",
+      "prototype": "void LL_USART_EnableIT_TXE(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable TX Empty Interrupt",
+      "briefZh": "使能 USART 的发送数据寄存器空中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2105,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_EnableIT_PE",
+      "name": "LL_USART_EnableIT_PE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec8",
+      "prototype": "void LL_USART_EnableIT_PE(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable Parity Error Interrupt",
+      "briefZh": "使能 USART 的校验错误中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2116,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_EnableIT_LBD",
+      "name": "LL_USART_EnableIT_LBD",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec8",
+      "prototype": "void LL_USART_EnableIT_LBD(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable LIN Break Detection Interrupt",
+      "briefZh": "使能 USART 的 LIN 检测到断路中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_UART_LIN_INSTANCE(USARTx) can be used to check whether or not LIN feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2129,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_EnableIT_ERROR",
+      "name": "LL_USART_EnableIT_ERROR",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec8",
+      "prototype": "void LL_USART_EnableIT_ERROR(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable Error Interrupt",
+      "briefZh": "使能 USART 的错误中断（帧错误、噪声、溢出）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "When set, Error Interrupt Enable Bit is enabling interrupt generation in case of a framing error, overrun error or noise flag (FE=1 or ORE=1 or NF=1 in the USARTx_SR register). 0: Interrupt is inhibited 1: An interrupt is generated when FE=1 or ORE=1 or NF=1 in the USARTx_SR register."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2144,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_EnableIT_CTS",
+      "name": "LL_USART_EnableIT_CTS",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec8",
+      "prototype": "void LL_USART_EnableIT_CTS(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable CTS Interrupt",
+      "briefZh": "使能 USART 的 CTS 引脚变化中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_UART_HWFLOW_INSTANCE(USARTx) can be used to check whether or not Hardware Flow control feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2157,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_DisableIT_IDLE",
+      "name": "LL_USART_DisableIT_IDLE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec8",
+      "prototype": "void LL_USART_DisableIT_IDLE(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable IDLE Interrupt",
+      "briefZh": "失能 USART 的空闲线路中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2168,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_DisableIT_RXNE",
+      "name": "LL_USART_DisableIT_RXNE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec8",
+      "prototype": "void LL_USART_DisableIT_RXNE(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable RX Not Empty Interrupt",
+      "briefZh": "失能 USART 的接收数据寄存器非空中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2179,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_DisableIT_TC",
+      "name": "LL_USART_DisableIT_TC",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec8",
+      "prototype": "void LL_USART_DisableIT_TC(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable Transmission Complete Interrupt",
+      "briefZh": "失能 USART 的传输完成中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2190,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_DisableIT_TXE",
+      "name": "LL_USART_DisableIT_TXE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec8",
+      "prototype": "void LL_USART_DisableIT_TXE(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable TX Empty Interrupt",
+      "briefZh": "失能 USART 的发送数据寄存器空中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2201,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_DisableIT_PE",
+      "name": "LL_USART_DisableIT_PE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec8",
+      "prototype": "void LL_USART_DisableIT_PE(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable Parity Error Interrupt",
+      "briefZh": "失能 USART 的校验错误中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2212,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_DisableIT_LBD",
+      "name": "LL_USART_DisableIT_LBD",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec8",
+      "prototype": "void LL_USART_DisableIT_LBD(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable LIN Break Detection Interrupt",
+      "briefZh": "失能 USART 的 LIN 检测到断路中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_UART_LIN_INSTANCE(USARTx) can be used to check whether or not LIN feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2225,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_DisableIT_ERROR",
+      "name": "LL_USART_DisableIT_ERROR",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec8",
+      "prototype": "void LL_USART_DisableIT_ERROR(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable Error Interrupt",
+      "briefZh": "关闭 USART 的错误中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "When set, Error Interrupt Enable Bit is enabling interrupt generation in case of a framing error, overrun error or noise flag (FE=1 or ORE=1 or NF=1 in the USARTx_SR register). 0: Interrupt is inhibited 1: An interrupt is generated when FE=1 or ORE=1 or NF=1 in the USARTx_SR register."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2240,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_DisableIT_CTS",
+      "name": "LL_USART_DisableIT_CTS",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec8",
+      "prototype": "void LL_USART_DisableIT_CTS(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable CTS Interrupt",
+      "briefZh": "关闭 USART 的 CTS 引脚变化中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_UART_HWFLOW_INSTANCE(USARTx) can be used to check whether or not Hardware Flow control feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2253,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsEnabledIT_IDLE",
+      "name": "LL_USART_IsEnabledIT_IDLE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec8",
+      "prototype": "uint32_t LL_USART_IsEnabledIT_IDLE(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the USART IDLE Interrupt source is enabled or disabled.",
+      "briefZh": "查询 USART 的空闲线路中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2264,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsEnabledIT_RXNE",
+      "name": "LL_USART_IsEnabledIT_RXNE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec8",
+      "prototype": "uint32_t LL_USART_IsEnabledIT_RXNE(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the USART RX Not Empty Interrupt is enabled or disabled.",
+      "briefZh": "查询 USART 的接收数据寄存器非空中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2275,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsEnabledIT_TC",
+      "name": "LL_USART_IsEnabledIT_TC",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec8",
+      "prototype": "uint32_t LL_USART_IsEnabledIT_TC(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the USART Transmission Complete Interrupt is enabled or disabled.",
+      "briefZh": "查询 USART 的传输完成中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2286,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsEnabledIT_TXE",
+      "name": "LL_USART_IsEnabledIT_TXE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec8",
+      "prototype": "uint32_t LL_USART_IsEnabledIT_TXE(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the USART TX Empty Interrupt is enabled or disabled.",
+      "briefZh": "查询 USART 的发送数据寄存器空中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2297,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsEnabledIT_PE",
+      "name": "LL_USART_IsEnabledIT_PE",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec8",
+      "prototype": "uint32_t LL_USART_IsEnabledIT_PE(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the USART Parity Error Interrupt is enabled or disabled.",
+      "briefZh": "查询 USART 的校验错误中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2308,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsEnabledIT_LBD",
+      "name": "LL_USART_IsEnabledIT_LBD",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec8",
+      "prototype": "uint32_t LL_USART_IsEnabledIT_LBD(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the USART LIN Break Detection Interrupt is enabled or disabled.",
+      "briefZh": "查询 USART 的 LIN 检测到断路中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_UART_LIN_INSTANCE(USARTx) can be used to check whether or not LIN feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2321,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsEnabledIT_ERROR",
+      "name": "LL_USART_IsEnabledIT_ERROR",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec8",
+      "prototype": "uint32_t LL_USART_IsEnabledIT_ERROR(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the USART Error Interrupt is enabled or disabled.",
+      "briefZh": "查询 USART 的错误中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2332,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsEnabledIT_CTS",
+      "name": "LL_USART_IsEnabledIT_CTS",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec8",
+      "prototype": "uint32_t LL_USART_IsEnabledIT_CTS(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if the USART CTS Interrupt is enabled or disabled.",
+      "briefZh": "查询 USART 的 CTS 引脚变化中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Macro IS_UART_HWFLOW_INSTANCE(USARTx) can be used to check whether or not Hardware Flow control feature is supported by the USARTx instance."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2345,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_EnableDMAReq_RX",
+      "name": "LL_USART_EnableDMAReq_RX",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec9",
+      "prototype": "void LL_USART_EnableDMAReq_RX(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable DMA Mode for reception",
+      "briefZh": "使能 USART 的接收 DMA 请求。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2364,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_DisableDMAReq_RX",
+      "name": "LL_USART_DisableDMAReq_RX",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec9",
+      "prototype": "void LL_USART_DisableDMAReq_RX(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable DMA Mode for reception",
+      "briefZh": "失能 USART 的接收 DMA 请求。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2375,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsEnabledDMAReq_RX",
+      "name": "LL_USART_IsEnabledDMAReq_RX",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec9",
+      "prototype": "uint32_t LL_USART_IsEnabledDMAReq_RX(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if DMA Mode is enabled for reception",
+      "briefZh": "查询 USART 的接收 DMA 请求是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2386,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_EnableDMAReq_TX",
+      "name": "LL_USART_EnableDMAReq_TX",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec9",
+      "prototype": "void LL_USART_EnableDMAReq_TX(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable DMA Mode for transmission",
+      "briefZh": "使能 USART 的发送 DMA 请求。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2397,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_DisableDMAReq_TX",
+      "name": "LL_USART_DisableDMAReq_TX",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec9",
+      "prototype": "void LL_USART_DisableDMAReq_TX(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable DMA Mode for transmission",
+      "briefZh": "失能 USART 的发送 DMA 请求。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2408,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_IsEnabledDMAReq_TX",
+      "name": "LL_USART_IsEnabledDMAReq_TX",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec9",
+      "prototype": "uint32_t LL_USART_IsEnabledDMAReq_TX(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if DMA Mode is enabled for transmission",
+      "briefZh": "查询 USART 的发送 DMA 请求是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2419,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_DMA_GetRegAddr",
+      "name": "LL_USART_DMA_GetRegAddr",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec9",
+      "prototype": "uint32_t LL_USART_DMA_GetRegAddr(const USART_TypeDef * USARTx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "Address of data register",
+      "returnDescZh": "",
+      "briefEn": "Get the data register address used for DMA transfer",
+      "briefZh": "返回 USART 数据寄存器（DR）地址，供 DMA 搬运时使用。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Address of Data Register is valid for both Transmit and Receive transfers."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2431,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_ReceiveData8",
+      "name": "LL_USART_ReceiveData8",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec10",
+      "prototype": "uint8_t LL_USART_ReceiveData8(const USART_TypeDef * USARTx);",
+      "returnType": "uint8_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "Value between Min_Data=0x00 and Max_Data=0xFF",
+      "returnDescZh": "",
+      "briefEn": "Read Receiver Data register (Receive Data value, 8 bits)",
+      "briefZh": "从数据寄存器读一个字节（8 位模式）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2451,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_ReceiveData9",
+      "name": "LL_USART_ReceiveData9",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec10",
+      "prototype": "uint16_t LL_USART_ReceiveData9(const USART_TypeDef * USARTx);",
+      "returnType": "uint16_t",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "const USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "Value between Min_Data=0x00 and Max_Data=0x1FF",
+      "returnDescZh": "",
+      "briefEn": "Read Receiver Data register (Receive Data value, 9 bits)",
+      "briefZh": "从数据寄存器读 9 位数据（9 位数据模式）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2462,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_TransmitData8",
+      "name": "LL_USART_TransmitData8",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec10",
+      "prototype": "void LL_USART_TransmitData8(USART_TypeDef * USARTx, uint8_t Value);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        },
+        {
+          "name": "Value",
+          "type": "uint8_t",
+          "descEn": "between Min_Data=0x00 and Max_Data=0xFF",
+          "descZh": "要设置的数值（含义随函数而定，如计数值、比较值、阈值）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Write in Transmitter Data Register (Transmit Data value, 8 bits)",
+      "briefZh": "向数据寄存器写一个字节（8 位模式）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2474,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_TransmitData9",
+      "name": "LL_USART_TransmitData9",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec10",
+      "prototype": "void LL_USART_TransmitData9(USART_TypeDef * USARTx, uint16_t Value);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        },
+        {
+          "name": "Value",
+          "type": "uint16_t",
+          "descEn": "between Min_Data=0x00 and Max_Data=0x1FF",
+          "descZh": "要设置的数值（含义随函数而定，如计数值、比较值、阈值）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Write in Transmitter Data Register (Transmit Data value, 9 bits)",
+      "briefZh": "向数据寄存器写 9 位数据（9 位数据模式）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2486,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_RequestBreakSending",
+      "name": "LL_USART_RequestBreakSending",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec11",
+      "prototype": "void LL_USART_RequestBreakSending(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Request Break sending",
+      "briefZh": "请求发送一个断路（Break）字符。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2505,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_RequestEnterMuteMode",
+      "name": "LL_USART_RequestEnterMuteMode",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec11",
+      "prototype": "void LL_USART_RequestEnterMuteMode(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Put USART in Mute mode",
+      "briefZh": "请求进入静默模式（只接收地址帧）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2516,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_USART_RequestExitMuteMode",
+      "name": "LL_USART_RequestExitMuteMode",
+      "peripheral": "USART",
+      "library": "ll",
+      "sectionId": "USART@ll#sec11",
+      "prototype": "void LL_USART_RequestExitMuteMode(USART_TypeDef * USARTx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "USARTx",
+          "type": "USART_TypeDef *",
+          "descEn": "USART Instance",
+          "descZh": "串口实例指针，如 USART1 / USART2 / USART3。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Put USART in Active mode",
+      "briefZh": "请求退出静默模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "USARTx_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2527,
+      "definedIn": "stm32f1xx_ll_usart.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

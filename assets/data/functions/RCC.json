@@ -6,7 +6,7 @@
       "id": "RCC_DeInit",
       "name": "RCC_DeInit",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec1",
+      "sectionId": "RCC@spl#sec1",
       "prototype": "void RCC_DeInit(void);",
       "returnType": "void",
       "params": [],
@@ -56,7 +56,7 @@
       "id": "RCC_HSEConfig",
       "name": "RCC_HSEConfig",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec2",
+      "sectionId": "RCC@spl#sec2",
       "prototype": "void RCC_HSEConfig(uint32_t RCC_HSE);",
       "returnType": "void",
       "params": [
@@ -117,7 +117,7 @@
       "id": "RCC_WaitForHSEStartUp",
       "name": "RCC_WaitForHSEStartUp",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec3",
+      "sectionId": "RCC@spl#sec3",
       "prototype": "ErrorStatus RCC_WaitForHSEStartUp(void);",
       "returnType": "ErrorStatus",
       "params": [],
@@ -171,7 +171,7 @@
       "id": "RCC_AdjustHSICalibrationValue",
       "name": "RCC_AdjustHSICalibrationValue",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec3",
+      "sectionId": "RCC@spl#sec3",
       "prototype": "void RCC_AdjustHSICalibrationValue(uint8_t HSICalibrationValue);",
       "returnType": "void",
       "params": [
@@ -217,7 +217,7 @@
       "id": "RCC_HSICmd",
       "name": "RCC_HSICmd",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec4",
+      "sectionId": "RCC@spl#sec4",
       "prototype": "void RCC_HSICmd(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -270,7 +270,7 @@
       "id": "RCC_PLLConfig",
       "name": "RCC_PLLConfig",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec2",
+      "sectionId": "RCC@spl#sec2",
       "prototype": "void RCC_PLLConfig(uint32_t RCC_PLLSource, uint32_t RCC_PLLMul);",
       "returnType": "void",
       "params": [
@@ -350,7 +350,7 @@
       "id": "RCC_PLLCmd",
       "name": "RCC_PLLCmd",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec4",
+      "sectionId": "RCC@spl#sec4",
       "prototype": "void RCC_PLLCmd(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -410,7 +410,7 @@
       "id": "RCC_PREDIV1Config",
       "name": "RCC_PREDIV1Config",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec2",
+      "sectionId": "RCC@spl#sec2",
       "prototype": "void RCC_PREDIV1Config(uint32_t RCC_PREDIV1_Source, uint32_t RCC_PREDIV1_Div);",
       "returnType": "void",
       "params": [
@@ -470,7 +470,7 @@
       "id": "RCC_PREDIV2Config",
       "name": "RCC_PREDIV2Config",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec2",
+      "sectionId": "RCC@spl#sec2",
       "prototype": "void RCC_PREDIV2Config(uint32_t RCC_PREDIV2_Div);",
       "returnType": "void",
       "params": [
@@ -520,7 +520,7 @@
       "id": "RCC_PLL2Config",
       "name": "RCC_PLL2Config",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec2",
+      "sectionId": "RCC@spl#sec2",
       "prototype": "void RCC_PLL2Config(uint32_t RCC_PLL2Mul);",
       "returnType": "void",
       "params": [
@@ -570,7 +570,7 @@
       "id": "RCC_PLL2Cmd",
       "name": "RCC_PLL2Cmd",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec4",
+      "sectionId": "RCC@spl#sec4",
       "prototype": "void RCC_PLL2Cmd(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -623,7 +623,7 @@
       "id": "RCC_PLL3Config",
       "name": "RCC_PLL3Config",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec2",
+      "sectionId": "RCC@spl#sec2",
       "prototype": "void RCC_PLL3Config(uint32_t RCC_PLL3Mul);",
       "returnType": "void",
       "params": [
@@ -673,7 +673,7 @@
       "id": "RCC_PLL3Cmd",
       "name": "RCC_PLL3Cmd",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec4",
+      "sectionId": "RCC@spl#sec4",
       "prototype": "void RCC_PLL3Cmd(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -726,7 +726,7 @@
       "id": "RCC_SYSCLKConfig",
       "name": "RCC_SYSCLKConfig",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec2",
+      "sectionId": "RCC@spl#sec2",
       "prototype": "void RCC_SYSCLKConfig(uint32_t RCC_SYSCLKSource);",
       "returnType": "void",
       "params": [
@@ -786,7 +786,7 @@
       "id": "RCC_GetSYSCLKSource",
       "name": "RCC_GetSYSCLKSource",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec5",
+      "sectionId": "RCC@spl#sec5",
       "prototype": "uint8_t RCC_GetSYSCLKSource(void);",
       "returnType": "uint8_t",
       "params": [],
@@ -829,7 +829,7 @@
       "id": "RCC_HCLKConfig",
       "name": "RCC_HCLKConfig",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec2",
+      "sectionId": "RCC@spl#sec2",
       "prototype": "void RCC_HCLKConfig(uint32_t RCC_SYSCLK);",
       "returnType": "void",
       "params": [
@@ -884,7 +884,7 @@
       "id": "RCC_PCLK1Config",
       "name": "RCC_PCLK1Config",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec2",
+      "sectionId": "RCC@spl#sec2",
       "prototype": "void RCC_PCLK1Config(uint32_t RCC_HCLK);",
       "returnType": "void",
       "params": [
@@ -948,7 +948,7 @@
       "id": "RCC_PCLK2Config",
       "name": "RCC_PCLK2Config",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec2",
+      "sectionId": "RCC@spl#sec2",
       "prototype": "void RCC_PCLK2Config(uint32_t RCC_HCLK);",
       "returnType": "void",
       "params": [
@@ -1010,7 +1010,7 @@
       "id": "RCC_ITConfig",
       "name": "RCC_ITConfig",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec6",
+      "sectionId": "RCC@spl#sec6",
       "prototype": "void RCC_ITConfig(uint8_t RCC_IT, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1081,7 +1081,7 @@
       "id": "RCC_USBCLKConfig",
       "name": "RCC_USBCLKConfig",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec2",
+      "sectionId": "RCC@spl#sec2",
       "prototype": "void RCC_USBCLKConfig(uint32_t RCC_USBCLKSource);",
       "returnType": "void",
       "params": [
@@ -1136,7 +1136,7 @@
       "id": "RCC_OTGFSCLKConfig",
       "name": "RCC_OTGFSCLKConfig",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec2",
+      "sectionId": "RCC@spl#sec2",
       "prototype": "void RCC_OTGFSCLKConfig(uint32_t RCC_OTGFSCLKSource);",
       "returnType": "void",
       "params": [
@@ -1183,7 +1183,7 @@
       "id": "RCC_ADCCLKConfig",
       "name": "RCC_ADCCLKConfig",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec2",
+      "sectionId": "RCC@spl#sec2",
       "prototype": "void RCC_ADCCLKConfig(uint32_t RCC_PCLK2);",
       "returnType": "void",
       "params": [
@@ -1243,7 +1243,7 @@
       "id": "RCC_I2S2CLKConfig",
       "name": "RCC_I2S2CLKConfig",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec2",
+      "sectionId": "RCC@spl#sec2",
       "prototype": "void RCC_I2S2CLKConfig(uint32_t RCC_I2S2CLKSource);",
       "returnType": "void",
       "params": [
@@ -1292,7 +1292,7 @@
       "id": "RCC_I2S3CLKConfig",
       "name": "RCC_I2S3CLKConfig",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec2",
+      "sectionId": "RCC@spl#sec2",
       "prototype": "void RCC_I2S3CLKConfig(uint32_t RCC_I2S3CLKSource);",
       "returnType": "void",
       "params": [
@@ -1341,7 +1341,7 @@
       "id": "RCC_LSEConfig",
       "name": "RCC_LSEConfig",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec2",
+      "sectionId": "RCC@spl#sec2",
       "prototype": "void RCC_LSEConfig(uint8_t RCC_LSE);",
       "returnType": "void",
       "params": [
@@ -1409,7 +1409,7 @@
       "id": "RCC_LSICmd",
       "name": "RCC_LSICmd",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec4",
+      "sectionId": "RCC@spl#sec4",
       "prototype": "void RCC_LSICmd(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1468,7 +1468,7 @@
       "id": "RCC_RTCCLKConfig",
       "name": "RCC_RTCCLKConfig",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec2",
+      "sectionId": "RCC@spl#sec2",
       "prototype": "void RCC_RTCCLKConfig(uint32_t RCC_RTCCLKSource);",
       "returnType": "void",
       "params": [
@@ -1540,7 +1540,7 @@
       "id": "RCC_RTCCLKCmd",
       "name": "RCC_RTCCLKCmd",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec4",
+      "sectionId": "RCC@spl#sec4",
       "prototype": "void RCC_RTCCLKCmd(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1599,7 +1599,7 @@
       "id": "RCC_GetClocksFreq",
       "name": "RCC_GetClocksFreq",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec5",
+      "sectionId": "RCC@spl#sec5",
       "prototype": "void RCC_GetClocksFreq(RCC_ClocksTypeDef* RCC_Clocks);",
       "returnType": "void",
       "params": [
@@ -1655,7 +1655,7 @@
       "id": "RCC_AHBPeriphClockCmd",
       "name": "RCC_AHBPeriphClockCmd",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec4",
+      "sectionId": "RCC@spl#sec4",
       "prototype": "void RCC_AHBPeriphClockCmd(uint32_t RCC_AHBPeriph, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1723,7 +1723,7 @@
       "id": "RCC_APB2PeriphClockCmd",
       "name": "RCC_APB2PeriphClockCmd",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec4",
+      "sectionId": "RCC@spl#sec4",
       "prototype": "void RCC_APB2PeriphClockCmd(uint32_t RCC_APB2Periph, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1804,7 +1804,7 @@
       "id": "RCC_APB1PeriphClockCmd",
       "name": "RCC_APB1PeriphClockCmd",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec4",
+      "sectionId": "RCC@spl#sec4",
       "prototype": "void RCC_APB1PeriphClockCmd(uint32_t RCC_APB1Periph, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1885,7 +1885,7 @@
       "id": "RCC_AHBPeriphResetCmd",
       "name": "RCC_AHBPeriphResetCmd",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec4",
+      "sectionId": "RCC@spl#sec4",
       "prototype": "void RCC_AHBPeriphResetCmd(uint32_t RCC_AHBPeriph, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1946,7 +1946,7 @@
       "id": "RCC_APB2PeriphResetCmd",
       "name": "RCC_APB2PeriphResetCmd",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec4",
+      "sectionId": "RCC@spl#sec4",
       "prototype": "void RCC_APB2PeriphResetCmd(uint32_t RCC_APB2Periph, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -2006,7 +2006,7 @@
       "id": "RCC_APB1PeriphResetCmd",
       "name": "RCC_APB1PeriphResetCmd",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec4",
+      "sectionId": "RCC@spl#sec4",
       "prototype": "void RCC_APB1PeriphResetCmd(uint32_t RCC_APB1Periph, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -2065,7 +2065,7 @@
       "id": "RCC_BackupResetCmd",
       "name": "RCC_BackupResetCmd",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec4",
+      "sectionId": "RCC@spl#sec4",
       "prototype": "void RCC_BackupResetCmd(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -2127,7 +2127,7 @@
       "id": "RCC_ClockSecuritySystemCmd",
       "name": "RCC_ClockSecuritySystemCmd",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec4",
+      "sectionId": "RCC@spl#sec4",
       "prototype": "void RCC_ClockSecuritySystemCmd(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -2187,7 +2187,7 @@
       "id": "RCC_MCOConfig",
       "name": "RCC_MCOConfig",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec2",
+      "sectionId": "RCC@spl#sec2",
       "prototype": "void RCC_MCOConfig(uint8_t RCC_MCO);",
       "returnType": "void",
       "params": [
@@ -2256,7 +2256,7 @@
       "id": "RCC_GetFlagStatus",
       "name": "RCC_GetFlagStatus",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec7",
+      "sectionId": "RCC@spl#sec7",
       "prototype": "FlagStatus RCC_GetFlagStatus(uint8_t RCC_FLAG);",
       "returnType": "FlagStatus",
       "params": [
@@ -2323,7 +2323,7 @@
       "id": "RCC_ClearFlag",
       "name": "RCC_ClearFlag",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec7",
+      "sectionId": "RCC@spl#sec7",
       "prototype": "void RCC_ClearFlag(void);",
       "returnType": "void",
       "params": [],
@@ -2375,7 +2375,7 @@
       "id": "RCC_GetITStatus",
       "name": "RCC_GetITStatus",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec6",
+      "sectionId": "RCC@spl#sec6",
       "prototype": "ITStatus RCC_GetITStatus(uint8_t RCC_IT);",
       "returnType": "ITStatus",
       "params": [
@@ -2441,7 +2441,7 @@
       "id": "RCC_ClearITPendingBit",
       "name": "RCC_ClearITPendingBit",
       "peripheral": "RCC",
-      "sectionId": "RCC#sec6",
+      "sectionId": "RCC@spl#sec6",
       "prototype": "void RCC_ClearITPendingBit(uint8_t RCC_IT);",
       "returnType": "void",
       "params": [

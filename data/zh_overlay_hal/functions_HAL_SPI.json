@@ -1,0 +1,373 @@
+{
+  "HAL_I2S_DMAPause": {
+    "briefZh": "暂停 DMA 传输（保留当前进度，可 Resume 继续）。",
+    "paramsZh": {
+      "hi2s": "I2S 句柄指针（与 SPI 共用硬件外设，配置不同）。"
+    }
+  },
+  "HAL_I2S_DMAResume": {
+    "briefZh": "恢复之前暂停的 DMA 传输。",
+    "paramsZh": {
+      "hi2s": "I2S 句柄指针（与 SPI 共用硬件外设，配置不同）。"
+    }
+  },
+  "HAL_I2S_DMAStop": {
+    "briefZh": "终止 DMA 传输并清理状态。",
+    "paramsZh": {
+      "hi2s": "I2S 句柄指针（与 SPI 共用硬件外设，配置不同）。"
+    }
+  },
+  "HAL_I2S_DeInit": {
+    "briefZh": "把 I2S 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+    "paramsZh": {
+      "hi2s": "I2S 句柄指针（与 SPI 共用硬件外设，配置不同）。"
+    }
+  },
+  "HAL_I2S_ErrorCallback": {
+    "briefZh": "错误回调（__weak 空实现，需自己重写）。溢出、噪声、帧错误等异常会走到这里。",
+    "paramsZh": {
+      "hi2s": "I2S 句柄指针（与 SPI 共用硬件外设，配置不同）。"
+    }
+  },
+  "HAL_I2S_GetError": {
+    "briefZh": "读取 I2S 累计的错误码位掩码。",
+    "paramsZh": {
+      "hi2s": "I2S 句柄指针（与 SPI 共用硬件外设，配置不同）。"
+    }
+  },
+  "HAL_I2S_GetState": {
+    "briefZh": "读取 I2S 的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+    "paramsZh": {
+      "hi2s": "I2S 句柄指针（与 SPI 共用硬件外设，配置不同）。"
+    }
+  },
+  "HAL_I2S_IRQHandler": {
+    "briefZh": "I2S 的中断统一入口。在 stm32f1xx_it.c 的对应 IRQHandler 里调用，内部会清标志并分派到各回调。",
+    "paramsZh": {
+      "hi2s": "I2S 句柄指针（与 SPI 共用硬件外设，配置不同）。"
+    }
+  },
+  "HAL_I2S_Init": {
+    "briefZh": "按 InitTypeDef 中的参数初始化 I2S，并完成状态机初始化。",
+    "paramsZh": {
+      "hi2s": "I2S 句柄指针（与 SPI 共用硬件外设，配置不同）。"
+    }
+  },
+  "HAL_I2S_MspDeInit": {
+    "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+    "paramsZh": {
+      "hi2s": "I2S 句柄指针（与 SPI 共用硬件外设，配置不同）。"
+    }
+  },
+  "HAL_I2S_MspInit": {
+    "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+    "paramsZh": {
+      "hi2s": "I2S 句柄指针（与 SPI 共用硬件外设，配置不同）。"
+    }
+  },
+  "HAL_I2S_Receive": {
+    "briefZh": "以阻塞方式接收一批数据。函数返回时已收满指定长度（或超时）。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hi2s": "I2S 句柄指针（与 SPI 共用硬件外设，配置不同）。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2S_Receive_DMA": {
+    "briefZh": "以 DMA 方式接收一批数据，非阻塞。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hi2s": "I2S 句柄指针（与 SPI 共用硬件外设，配置不同）。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2S_Receive_IT": {
+    "briefZh": "以中断方式接收一批数据，非阻塞。收满后进 RxCpltCallback，注意中断方式收满后会停，需要在回调里再次调用。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hi2s": "I2S 句柄指针（与 SPI 共用硬件外设，配置不同）。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2S_RegisterCallback": {
+    "briefZh": "为 I2S 注册指定事件的回调，替代默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "hi2s": "I2S 句柄指针（与 SPI 共用硬件外设，配置不同）。",
+      "pCallback": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+    }
+  },
+  "HAL_I2S_RxCpltCallback": {
+    "briefZh": "接收完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hi2s": "I2S 句柄指针（与 SPI 共用硬件外设，配置不同）。"
+    }
+  },
+  "HAL_I2S_RxHalfCpltCallback": {
+    "briefZh": "接收过半回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hi2s": "I2S 句柄指针（与 SPI 共用硬件外设，配置不同）。"
+    }
+  },
+  "HAL_I2S_Transmit": {
+    "briefZh": "以阻塞方式发送一批数据。函数返回时数据已全部发出（或超时）。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hi2s": "I2S 句柄指针（与 SPI 共用硬件外设，配置不同）。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2S_Transmit_DMA": {
+    "briefZh": "以 DMA 方式发送一批数据，非阻塞。发送完成进 TxCpltCallback。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hi2s": "I2S 句柄指针（与 SPI 共用硬件外设，配置不同）。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2S_Transmit_IT": {
+    "briefZh": "以中断方式发送一批数据，非阻塞。发送完成进 TxCpltCallback。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hi2s": "I2S 句柄指针（与 SPI 共用硬件外设，配置不同）。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_I2S_TxCpltCallback": {
+    "briefZh": "发送完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hi2s": "I2S 句柄指针（与 SPI 共用硬件外设，配置不同）。"
+    }
+  },
+  "HAL_I2S_TxHalfCpltCallback": {
+    "briefZh": "发送过半回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hi2s": "I2S 句柄指针（与 SPI 共用硬件外设，配置不同）。"
+    }
+  },
+  "HAL_I2S_UnRegisterCallback": {
+    "briefZh": "注销 I2S 已注册的回调，恢复成默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "hi2s": "I2S 句柄指针（与 SPI 共用硬件外设，配置不同）。"
+    }
+  },
+  "HAL_SPI_Abort": {
+    "briefZh": "中止正在进行的传输（阻塞式，等外设真正停下才返回）。",
+    "paramsZh": {
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。"
+    }
+  },
+  "HAL_SPI_AbortCpltCallback": {
+    "briefZh": "中止完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。"
+    }
+  },
+  "HAL_SPI_Abort_IT": {
+    "briefZh": "以中断方式中止传输，中止完成后回调 AbortCpltCallback。",
+    "paramsZh": {
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。"
+    }
+  },
+  "HAL_SPI_DMAPause": {
+    "briefZh": "暂停 DMA 传输（保留当前进度，可 Resume 继续）。",
+    "paramsZh": {
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。"
+    }
+  },
+  "HAL_SPI_DMAResume": {
+    "briefZh": "恢复之前暂停的 DMA 传输。",
+    "paramsZh": {
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。"
+    }
+  },
+  "HAL_SPI_DMAStop": {
+    "briefZh": "终止 DMA 传输并清理状态。",
+    "paramsZh": {
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。"
+    }
+  },
+  "HAL_SPI_DeInit": {
+    "briefZh": "把 SPI 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+    "paramsZh": {
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。"
+    }
+  },
+  "HAL_SPI_ErrorCallback": {
+    "briefZh": "错误回调（__weak 空实现，需自己重写）。溢出、噪声、帧错误等异常会走到这里。",
+    "paramsZh": {
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。"
+    }
+  },
+  "HAL_SPI_GetError": {
+    "briefZh": "读取 SPI 累计的错误码位掩码。",
+    "paramsZh": {
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。"
+    }
+  },
+  "HAL_SPI_GetState": {
+    "briefZh": "读取 SPI 的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+    "paramsZh": {
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。"
+    }
+  },
+  "HAL_SPI_IRQHandler": {
+    "briefZh": "SPI 的中断统一入口。在 stm32f1xx_it.c 的对应 IRQHandler 里调用，内部会清标志并分派到各回调。",
+    "paramsZh": {
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。"
+    }
+  },
+  "HAL_SPI_Init": {
+    "briefZh": "按 InitTypeDef 中的参数初始化 SPI，并完成状态机初始化。",
+    "paramsZh": {
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。"
+    },
+    "exampleCode": "SPI_HandleTypeDef hspi1;\n\nhspi1.Instance               = SPI1;\nhspi1.Init.Mode              = SPI_MODE_MASTER;\nhspi1.Init.Direction         = SPI_DIRECTION_2LINES;\nhspi1.Init.DataSize          = SPI_DATASIZE_8BIT;\nhspi1.Init.CLKPolarity       = SPI_POLARITY_LOW;    /* CPOL=0 */\nhspi1.Init.CLKPhase          = SPI_PHASE_1EDGE;    /* CPHA=0 → 模式 0 */\nhspi1.Init.NSS               = SPI_NSS_SOFT;\nhspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_8;  /* 72MHz/8=9MHz */\nhspi1.Init.FirstBit          = SPI_FIRSTBIT_MSB;\nhspi1.Init.TIMode            = SPI_TIMODE_DISABLE;\nhspi1.Init.CRCCalculation    = SPI_CRCCALCULATION_DISABLE;\nif (HAL_SPI_Init(&hspi1) != HAL_OK)\n{\n  Error_Handler();\n}"
+  },
+  "HAL_SPI_MspDeInit": {
+    "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+    "paramsZh": {
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。"
+    }
+  },
+  "HAL_SPI_MspInit": {
+    "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+    "paramsZh": {
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。"
+    }
+  },
+  "HAL_SPI_Receive": {
+    "briefZh": "以阻塞方式接收一批数据。函数返回时已收满指定长度（或超时）。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_SPI_Receive_DMA": {
+    "briefZh": "以 DMA 方式接收一批数据，非阻塞。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_SPI_Receive_IT": {
+    "briefZh": "以中断方式接收一批数据，非阻塞。收满后进 RxCpltCallback，注意中断方式收满后会停，需要在回调里再次调用。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_SPI_RegisterCallback": {
+    "briefZh": "为 SPI 注册指定事件的回调，替代默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。",
+      "pCallback": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+    }
+  },
+  "HAL_SPI_RxCpltCallback": {
+    "briefZh": "接收完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。"
+    }
+  },
+  "HAL_SPI_RxHalfCpltCallback": {
+    "briefZh": "接收过半回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。"
+    }
+  },
+  "HAL_SPI_Transmit": {
+    "briefZh": "以阻塞方式发送一批数据。函数返回时数据已全部发出（或超时）。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    },
+    "exampleCode": "uint8_t cmd[2] = {0x9F, 0x00};   /* 读 JEDEC ID */\n\nHAL_GPIO_WritePin(CS_GPIO_Port, CS_Pin, GPIO_PIN_RESET);\nHAL_SPI_Transmit(&hspi1, cmd, 2, HAL_MAX_DELAY);\nHAL_GPIO_WritePin(CS_GPIO_Port, CS_Pin, GPIO_PIN_SET);"
+  },
+  "HAL_SPI_TransmitReceive": {
+    "briefZh": "以阻塞方式同时收发（全双工）。发的同时就在收，适合读写 SPI 从机寄存器。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。",
+      "pRxData": "接收缓冲区指针。只调用 Transmit 时收到的数据会被丢弃。",
+      "pTxData": "发送缓冲区指针。SPI 全双工，发的同时必须也提供一个接收缓冲区（用 TransmitReceive 系列）。"
+    },
+    "exampleCode": "/* 读从机寄存器：必须用 TransmitReceive，\n   因为 SPI 是全双工，发命令的同时就在收数据 */\nuint8_t tx[2] = {0x80 | reg, 0x00};\nuint8_t rx[2] = {0};\n\nHAL_GPIO_WritePin(CS_GPIO_Port, CS_Pin, GPIO_PIN_RESET);\nHAL_SPI_TransmitReceive(&hspi1, tx, rx, 2, HAL_MAX_DELAY);\nHAL_GPIO_WritePin(CS_GPIO_Port, CS_Pin, GPIO_PIN_SET);\n\n/* rx[1] 才是寄存器内容，rx[0] 是发命令时收到的垃圾 */\nreturn rx[1];"
+  },
+  "HAL_SPI_TransmitReceive_DMA": {
+    "briefZh": "以 DMA 方式同时收发，非阻塞。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。",
+      "pRxData": "接收缓冲区指针。只调用 Transmit 时收到的数据会被丢弃。",
+      "pTxData": "发送缓冲区指针。SPI 全双工，发的同时必须也提供一个接收缓冲区（用 TransmitReceive 系列）。"
+    }
+  },
+  "HAL_SPI_TransmitReceive_IT": {
+    "briefZh": "以中断方式同时收发，非阻塞。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。",
+      "pRxData": "接收缓冲区指针。只调用 Transmit 时收到的数据会被丢弃。",
+      "pTxData": "发送缓冲区指针。SPI 全双工，发的同时必须也提供一个接收缓冲区（用 TransmitReceive 系列）。"
+    }
+  },
+  "HAL_SPI_Transmit_DMA": {
+    "briefZh": "以 DMA 方式发送一批数据，非阻塞。发送完成进 TxCpltCallback。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_SPI_Transmit_IT": {
+    "briefZh": "以中断方式发送一批数据，非阻塞。发送完成进 TxCpltCallback。",
+    "paramsZh": {
+      "Size": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。",
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。",
+      "pData": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+    }
+  },
+  "HAL_SPI_TxCpltCallback": {
+    "briefZh": "发送完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。"
+    }
+  },
+  "HAL_SPI_TxHalfCpltCallback": {
+    "briefZh": "发送过半回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。"
+    }
+  },
+  "HAL_SPI_TxRxCpltCallback": {
+    "briefZh": "收发同时完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。"
+    }
+  },
+  "HAL_SPI_TxRxHalfCpltCallback": {
+    "briefZh": "收发过半回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。"
+    }
+  },
+  "HAL_SPI_UnRegisterCallback": {
+    "briefZh": "注销 SPI 已注册的回调，恢复成默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "hspi": "SPI 句柄指针，Instance 指向 SPI1/SPI2 等。"
+    }
+  }
+}

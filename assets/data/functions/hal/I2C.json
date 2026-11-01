@@ -1,0 +1,3608 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "I2C",
+  "library": "hal",
+  "functions": [
+    {
+      "id": "HAL_I2C_Init",
+      "name": "HAL_I2C_Init",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Init(I2C_HandleTypeDef *hi2c);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Initializes the I2C according to the specified parameters in the I2C_InitTypeDef and initialize the associated handle.",
+      "briefZh": "按 InitTypeDef 中的参数初始化 I2C，并完成状态机初始化。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_I2C_MasterTxCpltCallback",
+        "HAL_I2C_MasterRxCpltCallback",
+        "HAL_I2C_SlaveTxCpltCallback",
+        "HAL_I2C_SlaveRxCpltCallback",
+        "HAL_I2C_ListenCpltCallback",
+        "HAL_I2C_MemTxCpltCallback",
+        "HAL_I2C_MemRxCpltCallback",
+        "HAL_I2C_ErrorCallback",
+        "HAL_I2C_AbortCpltCallback",
+        "HAL_I2C_AddrCallback",
+        "HAL_I2C_MspInit",
+        "HAL_RCC_GetPCLK1Freq"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "I2C_InitTypeDef",
+        "HAL_ERROR",
+        "IS_I2C_CLOCK_SPEED",
+        "IS_I2C_DUTY_CYCLE",
+        "IS_I2C_OWN_ADDRESS1",
+        "IS_I2C_ADDRESSING_MODE",
+        "IS_I2C_DUAL_ADDRESS",
+        "IS_I2C_OWN_ADDRESS2",
+        "IS_I2C_GENERAL_CALL",
+        "IS_I2C_NO_STRETCH",
+        "HAL_I2C_STATE_RESET",
+        "HAL_UNLOCKED",
+        "MasterTxCpltCallback",
+        "MspInitCallback",
+        "__HAL_I2C_DISABLE",
+        "I2C_MIN_PCLK_FREQ",
+        "I2C_FREQRANGE",
+        "I2C_RISE_TIME",
+        "I2C_SPEED",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "HAL_I2C_MODE_NONE",
+        "HAL_OK"
+      ],
+      "headerLine": 541,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 463,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_DeInit",
+      "name": "HAL_I2C_DeInit",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_DeInit(I2C_HandleTypeDef *hi2c);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "DeInitialize the I2C peripheral.",
+      "briefZh": "把 I2C 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_I2C_MspDeInit"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "HAL_ERROR",
+        "__HAL_I2C_DISABLE",
+        "HAL_I2C_ERROR_NONE",
+        "HAL_I2C_STATE_RESET",
+        "HAL_I2C_MODE_NONE",
+        "__HAL_UNLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 542,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 578,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_MspInit",
+      "name": "HAL_I2C_MspInit",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec1",
+      "prototype": "void HAL_I2C_MspInit(I2C_HandleTypeDef *hi2c);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Initialize the I2C MSP.",
+      "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "I2C_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 543,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 624,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_MspDeInit",
+      "name": "HAL_I2C_MspDeInit",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec1",
+      "prototype": "void HAL_I2C_MspDeInit(I2C_HandleTypeDef *hi2c);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "DeInitialize the I2C MSP.",
+      "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "I2C_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 544,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 640,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_RegisterCallback",
+      "name": "HAL_I2C_RegisterCallback",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_RegisterCallback(I2C_HandleTypeDef *hi2c, HAL_I2C_CallbackIDTypeDef CallbackID, pI2C_CallbackTypeDef pCallback);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "CallbackID",
+          "type": "HAL_I2C_CallbackIDTypeDef",
+          "descEn": "ID of the callback to be registered This parameter can be one of the following values:",
+          "descZh": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。"
+        },
+        {
+          "name": "pCallback",
+          "type": "pI2C_CallbackTypeDef",
+          "descEn": "pointer to the Callback function",
+          "descZh": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Register a User I2C Callback To be used instead of the weak predefined callback",
+      "briefZh": "为 I2C 注册指定事件的回调，替代默认的 __weak 空实现。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "HAL_I2C_CallbackIDTypeDef",
+        "pI2C_CallbackTypeDef",
+        "HAL_OK",
+        "HAL_I2C_ERROR_INVALID_CALLBACK",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "HAL_I2C_MASTER_TX_COMPLETE_CB_ID",
+        "MasterTxCpltCallback",
+        "MspInitCallback",
+        "HAL_I2C_STATE_RESET",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 548,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 672,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_UnRegisterCallback",
+      "name": "HAL_I2C_UnRegisterCallback",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_UnRegisterCallback(I2C_HandleTypeDef *hi2c, HAL_I2C_CallbackIDTypeDef CallbackID);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "CallbackID",
+          "type": "HAL_I2C_CallbackIDTypeDef",
+          "descEn": "ID of the callback to be unregistered This parameter can be one of the following values: This parameter can be one of the following values:",
+          "descZh": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Unregister an I2C Callback I2C callback is redirected to the weak predefined callback",
+      "briefZh": "注销 I2C 已注册的回调，恢复成默认的 __weak 空实现。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_I2C_MasterTxCpltCallback",
+        "HAL_I2C_MasterRxCpltCallback",
+        "HAL_I2C_SlaveTxCpltCallback",
+        "HAL_I2C_SlaveRxCpltCallback",
+        "HAL_I2C_ListenCpltCallback",
+        "HAL_I2C_MemTxCpltCallback",
+        "HAL_I2C_MemRxCpltCallback",
+        "HAL_I2C_ErrorCallback",
+        "HAL_I2C_AbortCpltCallback",
+        "HAL_I2C_MspInit",
+        "HAL_I2C_MspDeInit"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "HAL_I2C_CallbackIDTypeDef",
+        "HAL_OK",
+        "__HAL_LOCK",
+        "HAL_I2C_MASTER_TX_COMPLETE_CB_ID",
+        "MasterTxCpltCallback",
+        "MspInitCallback",
+        "HAL_I2C_ERROR_INVALID_CALLBACK",
+        "HAL_ERROR",
+        "HAL_I2C_STATE_RESET",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 549,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 799,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_RegisterAddrCallback",
+      "name": "HAL_I2C_RegisterAddrCallback",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_RegisterAddrCallback(I2C_HandleTypeDef *hi2c, pI2C_AddrCallbackTypeDef pCallback);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "pCallback",
+          "type": "pI2C_AddrCallbackTypeDef",
+          "descEn": "pointer to the Address Match Callback function",
+          "descZh": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Register the Slave Address Match I2C Callback To be used instead of the weak HAL_I2C_AddrCallback() predefined callback",
+      "briefZh": "注册从机地址匹配回调，替代默认的 __weak 版本。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "pI2C_AddrCallbackTypeDef",
+        "HAL_OK",
+        "HAL_I2C_ERROR_INVALID_CALLBACK",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 551,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 906,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_UnRegisterAddrCallback",
+      "name": "HAL_I2C_UnRegisterAddrCallback",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_UnRegisterAddrCallback(I2C_HandleTypeDef *hi2c);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "UnRegister the Slave Address Match I2C Callback Info Ready I2C Callback is redirected to the weak HAL_I2C_AddrCallback() predefined callback",
+      "briefZh": "注销从机地址匹配回调。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_I2C_AddrCallback"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "HAL_OK",
+        "__HAL_LOCK",
+        "HAL_I2C_ERROR_INVALID_CALLBACK",
+        "HAL_ERROR",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 552,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 945,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Master_Transmit",
+      "name": "HAL_I2C_Master_Transmit",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Master_Transmit(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t Timeout);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "DevAddress",
+          "type": "uint16_t",
+          "descEn": "Target device address: The device 7 bits address value in datasheet must be shifted to the left before calling the interface",
+          "descZh": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        },
+        {
+          "name": "Timeout",
+          "type": "uint32_t",
+          "descEn": "Timeout duration",
+          "descZh": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Transmits in master mode an amount of data in blocking mode.",
+      "briefZh": "主机模式阻塞发送一批数据。每传 1 字节 CPU 都要等，适合低速小数据量；大批量用 DMA 版本。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "uint8_t cmd[2] = {0x01, 0x02};\n\n/* 主机阻塞发送，DevAddress 同样要左移一位 */\nHAL_I2C_Master_Transmit(&hi2c1, 0x50 << 1, cmd, sizeof(cmd), 100);",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "I2C_FLAG_BUSY",
+        "HAL_OK",
+        "HAL_BUSY",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "HAL_ERROR",
+        "__HAL_I2C_CLEAR_ADDRFLAG",
+        "HAL_I2C_ERROR_AF",
+        "__HAL_I2C_GET_FLAG",
+        "I2C_FLAG_BTF",
+        "HAL_I2C_MODE_NONE",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 563,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 1074,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Master_Receive",
+      "name": "HAL_I2C_Master_Receive",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Master_Receive(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t Timeout);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "DevAddress",
+          "type": "uint16_t",
+          "descEn": "Target device address: The device 7 bits address value in datasheet must be shifted to the left before calling the interface",
+          "descZh": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        },
+        {
+          "name": "Timeout",
+          "type": "uint32_t",
+          "descEn": "Timeout duration",
+          "descZh": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Receives in master mode an amount of data in blocking mode.",
+      "briefZh": "主机模式阻塞接收一批数据。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "I2C_FLAG_BUSY",
+        "HAL_OK",
+        "HAL_BUSY",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "HAL_ERROR",
+        "__HAL_I2C_CLEAR_ADDRFLAG",
+        "I2C_FLAG_BTF",
+        "HAL_I2C_MODE_NONE",
+        "HAL_I2C_ERROR_TIMEOUT",
+        "__HAL_UNLOCK",
+        "__HAL_I2C_GET_FLAG"
+      ],
+      "headerLine": 564,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 1195,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Slave_Transmit",
+      "name": "HAL_I2C_Slave_Transmit",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        },
+        {
+          "name": "Timeout",
+          "type": "uint32_t",
+          "descEn": "Timeout duration",
+          "descZh": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Transmits in slave mode an amount of data in blocking mode.",
+      "briefZh": "从机模式阻塞发送数据（等待主机来读）。注意从机发送没有超时兜底，主机不来读会一直等。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "I2C_FLAG_ADDR",
+        "HAL_OK",
+        "__HAL_I2C_CLEAR_ADDRFLAG",
+        "I2C_ADDRESSINGMODE_10BIT",
+        "__HAL_I2C_GET_FLAG",
+        "I2C_FLAG_BTF",
+        "I2C_FLAG_AF",
+        "__HAL_I2C_CLEAR_FLAG",
+        "HAL_I2C_MODE_NONE",
+        "__HAL_UNLOCK",
+        "HAL_BUSY"
+      ],
+      "headerLine": 565,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 1493,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Slave_Receive",
+      "name": "HAL_I2C_Slave_Receive",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Slave_Receive(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        },
+        {
+          "name": "Timeout",
+          "type": "uint32_t",
+          "descEn": "Timeout duration",
+          "descZh": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Receive in slave mode an amount of data in blocking mode",
+      "briefZh": "从机模式阻塞接收数据（等待主机写入）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "I2C_FLAG_ADDR",
+        "HAL_OK",
+        "__HAL_I2C_CLEAR_ADDRFLAG",
+        "__HAL_I2C_GET_FLAG",
+        "I2C_FLAG_BTF",
+        "__HAL_I2C_CLEAR_STOPFLAG",
+        "HAL_I2C_MODE_NONE",
+        "__HAL_UNLOCK",
+        "HAL_BUSY"
+      ],
+      "headerLine": 566,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 1623,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Master_Transmit_IT",
+      "name": "HAL_I2C_Master_Transmit_IT",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Master_Transmit_IT(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "DevAddress",
+          "type": "uint16_t",
+          "descEn": "Target device address: The device 7 bits address value in datasheet must be shifted to the left before calling the interface",
+          "descZh": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Transmit in master mode an amount of data in non-blocking mode with Interrupt",
+      "briefZh": "主机模式以中断方式发送，非阻塞，完成后进 MasterTxCpltCallback。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "HAL_I2C_MODE_NONE",
+        "HAL_I2C_ERROR_TIMEOUT",
+        "HAL_BUSY",
+        "__HAL_I2C_GET_FLAG",
+        "I2C_FLAG_BUSY",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "__HAL_UNLOCK",
+        "__HAL_I2C_ENABLE_IT",
+        "I2C_IT_EVT",
+        "I2C_IT_BUF",
+        "I2C_IT_ERR",
+        "HAL_OK"
+      ],
+      "headerLine": 572,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 1744,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Master_Receive_IT",
+      "name": "HAL_I2C_Master_Receive_IT",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Master_Receive_IT(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "DevAddress",
+          "type": "uint16_t",
+          "descEn": "Target device address: The device 7 bits address value in datasheet must be shifted to the left before calling the interface",
+          "descZh": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Receive in master mode an amount of data in non-blocking mode with Interrupt",
+      "briefZh": "主机模式以中断方式接收，非阻塞，完成后进 MasterRxCpltCallback。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "HAL_I2C_MODE_NONE",
+        "HAL_I2C_ERROR_TIMEOUT",
+        "HAL_BUSY",
+        "__HAL_I2C_GET_FLAG",
+        "I2C_FLAG_BUSY",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "__HAL_UNLOCK",
+        "__HAL_I2C_ENABLE_IT",
+        "I2C_IT_EVT",
+        "I2C_IT_BUF",
+        "I2C_IT_ERR",
+        "HAL_OK"
+      ],
+      "headerLine": 573,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 1821,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Slave_Transmit_IT",
+      "name": "HAL_I2C_Slave_Transmit_IT",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Slave_Transmit_IT(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Transmit in slave mode an amount of data in non-blocking mode with Interrupt",
+      "briefZh": "从机模式以中断方式发送。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "__HAL_UNLOCK",
+        "__HAL_I2C_ENABLE_IT",
+        "I2C_IT_EVT",
+        "I2C_IT_BUF",
+        "I2C_IT_ERR",
+        "HAL_OK",
+        "HAL_BUSY"
+      ],
+      "headerLine": 574,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 1901,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Slave_Receive_IT",
+      "name": "HAL_I2C_Slave_Receive_IT",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Slave_Receive_IT(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Receive in slave mode an amount of data in non-blocking mode with Interrupt",
+      "briefZh": "从机模式以中断方式接收。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "__HAL_UNLOCK",
+        "__HAL_I2C_ENABLE_IT",
+        "I2C_IT_EVT",
+        "I2C_IT_BUF",
+        "I2C_IT_ERR",
+        "HAL_OK",
+        "HAL_BUSY"
+      ],
+      "headerLine": 575,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 1963,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Master_Transmit_DMA",
+      "name": "HAL_I2C_Master_Transmit_DMA",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Master_Transmit_DMA(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "DevAddress",
+          "type": "uint16_t",
+          "descEn": "Target device address: The device 7 bits address value in datasheet must be shifted to the left before calling the interface",
+          "descZh": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Transmit in master mode an amount of data in non-blocking mode with DMA",
+      "briefZh": "主机模式以 DMA 方式发送，非阻塞，完成后进 MasterTxCpltCallback。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_DMA_Start_IT"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "HAL_I2C_MODE_NONE",
+        "HAL_I2C_ERROR_TIMEOUT",
+        "HAL_BUSY",
+        "__HAL_I2C_GET_FLAG",
+        "I2C_FLAG_BUSY",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "XferCpltCallback",
+        "HAL_I2C_ERROR_DMA_PARAM",
+        "__HAL_UNLOCK",
+        "HAL_ERROR",
+        "HAL_OK",
+        "__HAL_I2C_ENABLE_IT",
+        "I2C_IT_EVT",
+        "I2C_IT_ERR",
+        "HAL_I2C_ERROR_DMA",
+        "I2C_IT_BUF"
+      ],
+      "headerLine": 588,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 2027,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Master_Receive_DMA",
+      "name": "HAL_I2C_Master_Receive_DMA",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Master_Receive_DMA(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "DevAddress",
+          "type": "uint16_t",
+          "descEn": "Target device address: The device 7 bits address value in datasheet must be shifted to the left before calling the interface",
+          "descZh": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Receive in master mode an amount of data in non-blocking mode with DMA",
+      "briefZh": "主机模式以 DMA 方式接收。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_DMA_Start_IT"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "HAL_I2C_MODE_NONE",
+        "HAL_I2C_ERROR_TIMEOUT",
+        "HAL_BUSY",
+        "__HAL_I2C_GET_FLAG",
+        "I2C_FLAG_BUSY",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "XferCpltCallback",
+        "HAL_I2C_ERROR_DMA_PARAM",
+        "__HAL_UNLOCK",
+        "HAL_ERROR",
+        "HAL_OK",
+        "__HAL_I2C_ENABLE_IT",
+        "I2C_IT_EVT",
+        "I2C_IT_ERR",
+        "HAL_I2C_ERROR_DMA",
+        "I2C_IT_BUF"
+      ],
+      "headerLine": 589,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 2180,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Slave_Transmit_DMA",
+      "name": "HAL_I2C_Slave_Transmit_DMA",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Slave_Transmit_DMA(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Transmit in slave mode an amount of data in non-blocking mode with DMA",
+      "briefZh": "从机模式以 DMA 方式发送。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_DMA_Start_IT"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "XferCpltCallback",
+        "HAL_I2C_MODE_NONE",
+        "HAL_I2C_ERROR_DMA_PARAM",
+        "__HAL_UNLOCK",
+        "HAL_OK",
+        "__HAL_I2C_ENABLE_IT",
+        "I2C_IT_EVT",
+        "I2C_IT_ERR",
+        "HAL_I2C_ERROR_DMA",
+        "HAL_BUSY"
+      ],
+      "headerLine": 590,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 2331,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Slave_Receive_DMA",
+      "name": "HAL_I2C_Slave_Receive_DMA",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Slave_Receive_DMA(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Receive in slave mode an amount of data in non-blocking mode with DMA",
+      "briefZh": "从机模式以 DMA 方式接收。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_DMA_Start_IT"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "XferCpltCallback",
+        "HAL_I2C_MODE_NONE",
+        "HAL_I2C_ERROR_DMA_PARAM",
+        "__HAL_UNLOCK",
+        "HAL_OK",
+        "__HAL_I2C_ENABLE_IT",
+        "I2C_IT_EVT",
+        "I2C_IT_ERR",
+        "HAL_I2C_ERROR_DMA",
+        "HAL_BUSY"
+      ],
+      "headerLine": 591,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 2443,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Mem_Write",
+      "name": "HAL_I2C_Mem_Write",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Mem_Write(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint16_t MemAddress, uint16_t MemAddSize, uint8_t *pData, uint16_t Size, uint32_t Timeout);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "DevAddress",
+          "type": "uint16_t",
+          "descEn": "Target device address: The device 7 bits address value in datasheet must be shifted to the left before calling the interface",
+          "descZh": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。"
+        },
+        {
+          "name": "MemAddress",
+          "type": "uint16_t",
+          "descEn": "Internal memory address",
+          "descZh": "器件内部寄存器/存储器地址。"
+        },
+        {
+          "name": "MemAddSize",
+          "type": "uint16_t",
+          "descEn": "Size of internal memory address",
+          "descZh": "寄存器地址位宽：I2C_MEMADD_SIZE_8BIT 或 I2C_MEMADD_SIZE_16BIT。填错会读到错位的数据。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        },
+        {
+          "name": "Timeout",
+          "type": "uint32_t",
+          "descEn": "Timeout duration",
+          "descZh": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Write an amount of data in blocking mode to a specific memory address",
+      "briefZh": "向从机器件的指定寄存器地址写一批数据。先用 MemAddressSize 指定地址位宽（8 位或 16 位），再发数据——这是读写 EEPROM、传感器寄存器的标准写法。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "/* 向器件 0x50 的寄存器 0x10 写 2 字节 */\nuint8_t data[2] = {0xAA, 0xBB};\n\nHAL_I2C_Mem_Write(&hi2c1,\n                  0x50 << 1,                  /* 7 位地址要左移一位 */\n                  0x10,                        /* 寄存器地址 */\n                  I2C_MEMADD_SIZE_8BIT,        /* 地址宽度 */\n                  data, sizeof(data),\n                  100);                        /* 超时 ms */",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "IS_I2C_MEMADD_SIZE",
+        "I2C_FLAG_BUSY",
+        "HAL_OK",
+        "HAL_BUSY",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "HAL_ERROR",
+        "HAL_I2C_ERROR_AF",
+        "__HAL_I2C_GET_FLAG",
+        "I2C_FLAG_BTF",
+        "HAL_I2C_MODE_NONE",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 567,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 2560,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Mem_Read",
+      "name": "HAL_I2C_Mem_Read",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Mem_Read(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint16_t MemAddress, uint16_t MemAddSize, uint8_t *pData, uint16_t Size, uint32_t Timeout);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "DevAddress",
+          "type": "uint16_t",
+          "descEn": "Target device address: The device 7 bits address value in datasheet must be shifted to the left before calling the interface",
+          "descZh": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。"
+        },
+        {
+          "name": "MemAddress",
+          "type": "uint16_t",
+          "descEn": "Internal memory address",
+          "descZh": "器件内部寄存器/存储器地址。"
+        },
+        {
+          "name": "MemAddSize",
+          "type": "uint16_t",
+          "descEn": "Size of internal memory address",
+          "descZh": "寄存器地址位宽：I2C_MEMADD_SIZE_8BIT 或 I2C_MEMADD_SIZE_16BIT。填错会读到错位的数据。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        },
+        {
+          "name": "Timeout",
+          "type": "uint32_t",
+          "descEn": "Timeout duration",
+          "descZh": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Read an amount of data in blocking mode from a specific memory address",
+      "briefZh": "从从机器件的指定寄存器地址读一批数据。内部流程是「写地址 → 重复起始 → 读数据」，不需要你手动拼接。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "uint8_t buf[2] = {0};\n\nHAL_I2C_Mem_Read(&hi2c1,\n                 0x50 << 1,\n                 0x10,\n                 I2C_MEMADD_SIZE_8BIT,\n                 buf, sizeof(buf),\n                 100);",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "IS_I2C_MEMADD_SIZE",
+        "I2C_FLAG_BUSY",
+        "HAL_OK",
+        "HAL_BUSY",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "HAL_ERROR",
+        "__HAL_I2C_CLEAR_ADDRFLAG",
+        "I2C_FLAG_BTF",
+        "HAL_I2C_MODE_NONE",
+        "HAL_I2C_ERROR_TIMEOUT",
+        "__HAL_UNLOCK",
+        "__HAL_I2C_GET_FLAG"
+      ],
+      "headerLine": 568,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 2683,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Mem_Write_IT",
+      "name": "HAL_I2C_Mem_Write_IT",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Mem_Write_IT(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint16_t MemAddress, uint16_t MemAddSize, uint8_t *pData, uint16_t Size);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "DevAddress",
+          "type": "uint16_t",
+          "descEn": "Target device address: The device 7 bits address value in datasheet must be shifted to the left before calling the interface",
+          "descZh": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。"
+        },
+        {
+          "name": "MemAddress",
+          "type": "uint16_t",
+          "descEn": "Internal memory address",
+          "descZh": "器件内部寄存器/存储器地址。"
+        },
+        {
+          "name": "MemAddSize",
+          "type": "uint16_t",
+          "descEn": "Size of internal memory address",
+          "descZh": "寄存器地址位宽：I2C_MEMADD_SIZE_8BIT 或 I2C_MEMADD_SIZE_16BIT。填错会读到错位的数据。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Write an amount of data in non-blocking mode with Interrupt to a specific memory address",
+      "briefZh": "以中断方式向器件寄存器写数据，非阻塞，完成后进 MemTxCpltCallback。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "IS_I2C_MEMADD_SIZE",
+        "HAL_I2C_MODE_NONE",
+        "HAL_I2C_ERROR_TIMEOUT",
+        "HAL_BUSY",
+        "__HAL_I2C_GET_FLAG",
+        "I2C_FLAG_BUSY",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "__HAL_UNLOCK",
+        "__HAL_I2C_ENABLE_IT",
+        "I2C_IT_EVT",
+        "I2C_IT_BUF",
+        "I2C_IT_ERR",
+        "HAL_OK"
+      ],
+      "headerLine": 576,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 2984,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Mem_Read_IT",
+      "name": "HAL_I2C_Mem_Read_IT",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Mem_Read_IT(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint16_t MemAddress, uint16_t MemAddSize, uint8_t *pData, uint16_t Size);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "DevAddress",
+          "type": "uint16_t",
+          "descEn": "Target device address",
+          "descZh": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。"
+        },
+        {
+          "name": "MemAddress",
+          "type": "uint16_t",
+          "descEn": "Internal memory address",
+          "descZh": "器件内部寄存器/存储器地址。"
+        },
+        {
+          "name": "MemAddSize",
+          "type": "uint16_t",
+          "descEn": "Size of internal memory address",
+          "descZh": "寄存器地址位宽：I2C_MEMADD_SIZE_8BIT 或 I2C_MEMADD_SIZE_16BIT。填错会读到错位的数据。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Read an amount of data in non-blocking mode with Interrupt from a specific memory address",
+      "briefZh": "以中断方式从器件寄存器读数据，非阻塞，完成后进 MemRxCpltCallback。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "IS_I2C_MEMADD_SIZE",
+        "HAL_I2C_MODE_NONE",
+        "HAL_I2C_ERROR_TIMEOUT",
+        "HAL_BUSY",
+        "__HAL_I2C_GET_FLAG",
+        "I2C_FLAG_BUSY",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "__HAL_UNLOCK",
+        "__HAL_I2C_ENABLE_IT",
+        "I2C_IT_EVT",
+        "I2C_IT_BUF",
+        "I2C_IT_ERR",
+        "HAL_OK"
+      ],
+      "headerLine": 577,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 3069,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Mem_Write_DMA",
+      "name": "HAL_I2C_Mem_Write_DMA",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Mem_Write_DMA(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint16_t MemAddress, uint16_t MemAddSize, uint8_t *pData, uint16_t Size);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "DevAddress",
+          "type": "uint16_t",
+          "descEn": "Target device address: The device 7 bits address value in datasheet must be shifted to the left before calling the interface",
+          "descZh": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。"
+        },
+        {
+          "name": "MemAddress",
+          "type": "uint16_t",
+          "descEn": "Internal memory address",
+          "descZh": "器件内部寄存器/存储器地址。"
+        },
+        {
+          "name": "MemAddSize",
+          "type": "uint16_t",
+          "descEn": "Size of internal memory address",
+          "descZh": "寄存器地址位宽：I2C_MEMADD_SIZE_8BIT 或 I2C_MEMADD_SIZE_16BIT。填错会读到错位的数据。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Write an amount of data in non-blocking mode with DMA to a specific memory address",
+      "briefZh": "以 DMA 方式向器件寄存器写数据。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick",
+        "HAL_DMA_Start_IT",
+        "HAL_DMA_Abort_IT"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "IS_I2C_MEMADD_SIZE",
+        "HAL_I2C_MODE_NONE",
+        "HAL_I2C_ERROR_TIMEOUT",
+        "HAL_BUSY",
+        "__HAL_I2C_GET_FLAG",
+        "I2C_FLAG_BUSY",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "XferCpltCallback",
+        "HAL_I2C_ERROR_DMA_PARAM",
+        "__HAL_UNLOCK",
+        "HAL_ERROR",
+        "HAL_OK",
+        "UNUSED",
+        "__HAL_I2C_DISABLE",
+        "__HAL_I2C_CLEAR_ADDRFLAG",
+        "__HAL_I2C_ENABLE_IT",
+        "I2C_IT_ERR",
+        "HAL_I2C_ERROR_DMA",
+        "HAL_I2C_ERROR_SIZE"
+      ],
+      "headerLine": 592,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 3160,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Mem_Read_DMA",
+      "name": "HAL_I2C_Mem_Read_DMA",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Mem_Read_DMA(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint16_t MemAddress, uint16_t MemAddSize, uint8_t *pData, uint16_t Size);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "DevAddress",
+          "type": "uint16_t",
+          "descEn": "Target device address: The device 7 bits address value in datasheet must be shifted to the left before calling the interface",
+          "descZh": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。"
+        },
+        {
+          "name": "MemAddress",
+          "type": "uint16_t",
+          "descEn": "Internal memory address",
+          "descZh": "器件内部寄存器/存储器地址。"
+        },
+        {
+          "name": "MemAddSize",
+          "type": "uint16_t",
+          "descEn": "Size of internal memory address",
+          "descZh": "寄存器地址位宽：I2C_MEMADD_SIZE_8BIT 或 I2C_MEMADD_SIZE_16BIT。填错会读到错位的数据。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be read",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Reads an amount of data in non-blocking mode with DMA from a specific memory address.",
+      "briefZh": "以 DMA 方式从器件寄存器读数据。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick",
+        "HAL_DMA_Start_IT",
+        "HAL_DMA_Abort_IT"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "IS_I2C_MEMADD_SIZE",
+        "HAL_I2C_MODE_NONE",
+        "HAL_I2C_ERROR_TIMEOUT",
+        "HAL_BUSY",
+        "__HAL_I2C_GET_FLAG",
+        "I2C_FLAG_BUSY",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "XferCpltCallback",
+        "HAL_I2C_ERROR_DMA_PARAM",
+        "__HAL_UNLOCK",
+        "HAL_ERROR",
+        "HAL_OK",
+        "UNUSED",
+        "__HAL_I2C_DISABLE",
+        "__HAL_I2C_CLEAR_ADDRFLAG",
+        "__HAL_I2C_ENABLE_IT",
+        "I2C_IT_ERR",
+        "HAL_I2C_ERROR_DMA"
+      ],
+      "headerLine": 593,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 3340,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_IsDeviceReady",
+      "name": "HAL_I2C_IsDeviceReady",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_IsDeviceReady(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint32_t Trials, uint32_t Timeout);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "DevAddress",
+          "type": "uint16_t",
+          "descEn": "Target device address: The device 7 bits address value in datasheet must be shifted to the left before calling the interface",
+          "descZh": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。"
+        },
+        {
+          "name": "Trials",
+          "type": "uint32_t",
+          "descEn": "Number of trials",
+          "descZh": "探测重试次数。器件刚上电时需要一段时间就绪，建议给 3 次以上。"
+        },
+        {
+          "name": "Timeout",
+          "type": "uint32_t",
+          "descEn": "Timeout duration",
+          "descZh": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Checks if target device is ready for communication.",
+      "briefZh": "探测目标器件是否应答，返回 HAL_OK 表示在线。比直接收发更容易定位问题。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [
+        "This function is used with Memory devices"
+      ],
+      "notesZh": [],
+      "exampleCode": "/* 先探测器件在不在，比直接收发更容易定位问题 */\nif (HAL_I2C_IsDeviceReady(&hi2c1, 0x50 << 1, 3, 100) == HAL_OK)\n{\n  /* 器件在线 */\n}\nelse\n{\n  /* 没应答：查接线、上拉电阻、地址 */\n}",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "I2C_FLAG_BUSY",
+        "HAL_OK",
+        "HAL_BUSY",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "I2C_FLAG_SB",
+        "HAL_I2C_WRONG_START",
+        "HAL_TIMEOUT",
+        "I2C_7BIT_ADD_WRITE",
+        "__HAL_I2C_GET_FLAG",
+        "I2C_FLAG_ADDR",
+        "I2C_FLAG_AF",
+        "__HAL_I2C_CLEAR_ADDRFLAG",
+        "HAL_ERROR",
+        "__HAL_UNLOCK",
+        "__HAL_I2C_CLEAR_FLAG"
+      ],
+      "headerLine": 569,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 3534,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Master_Seq_Transmit_IT",
+      "name": "HAL_I2C_Master_Seq_Transmit_IT",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Master_Seq_Transmit_IT(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t XferOptions);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "DevAddress",
+          "type": "uint16_t",
+          "descEn": "Target device address: The device 7 bits address value in datasheet must be shifted to the left before calling the interface",
+          "descZh": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        },
+        {
+          "name": "XferOptions",
+          "type": "uint32_t",
+          "descEn": "Options of Transfer, value of @ref I2C_XferOptions_definition",
+          "descZh": "续传选项（I2C_FIRST_FRAME / NEXT_FRAME / FIRST_AND_LAST_FRAME 等），用于控制是否产生 STOP。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Sequential transmit in master I2C mode an amount of data in non-blocking mode with Interrupt.",
+      "briefZh": "主机模式以中断方式做「续传」发送：不产生 STOP，可在多次调用之间保持总线占用（用于带重复起始的复杂时序）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "This interface allow to manage repeated start condition when a direction change during transfer"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "IS_I2C_TRANSFER_OPTIONS_REQUEST",
+        "I2C_FIRST_AND_LAST_FRAME",
+        "I2C_FIRST_FRAME",
+        "HAL_I2C_MODE_NONE",
+        "HAL_I2C_ERROR_TIMEOUT",
+        "HAL_BUSY",
+        "__HAL_I2C_GET_FLAG",
+        "I2C_FLAG_BUSY",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "IS_I2C_TRANSFER_OTHER_OPTIONS_REQUEST",
+        "__HAL_UNLOCK",
+        "__HAL_I2C_ENABLE_IT",
+        "I2C_IT_EVT",
+        "I2C_IT_BUF",
+        "I2C_IT_ERR",
+        "HAL_OK"
+      ],
+      "headerLine": 579,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 3670,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Master_Seq_Transmit_DMA",
+      "name": "HAL_I2C_Master_Seq_Transmit_DMA",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Master_Seq_Transmit_DMA(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t XferOptions);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "DevAddress",
+          "type": "uint16_t",
+          "descEn": "Target device address: The device 7 bits address value in datasheet must be shifted to the left before calling the interface",
+          "descZh": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        },
+        {
+          "name": "XferOptions",
+          "type": "uint32_t",
+          "descEn": "Options of Transfer, value of @ref I2C_XferOptions_definition",
+          "descZh": "续传选项（I2C_FIRST_FRAME / NEXT_FRAME / FIRST_AND_LAST_FRAME 等），用于控制是否产生 STOP。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Sequential transmit in master I2C mode an amount of data in non-blocking mode with DMA.",
+      "briefZh": "主机模式以 DMA 方式做续传发送。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_DMA_Start_IT"
+      ],
+      "remarks": [
+        "This interface allow to manage repeated start condition when a direction change during transfer"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "IS_I2C_TRANSFER_OPTIONS_REQUEST",
+        "I2C_FIRST_AND_LAST_FRAME",
+        "I2C_FIRST_FRAME",
+        "HAL_I2C_MODE_NONE",
+        "HAL_I2C_ERROR_TIMEOUT",
+        "HAL_BUSY",
+        "__HAL_I2C_GET_FLAG",
+        "I2C_FLAG_BUSY",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "XferCpltCallback",
+        "HAL_I2C_ERROR_DMA_PARAM",
+        "__HAL_UNLOCK",
+        "HAL_ERROR",
+        "HAL_OK",
+        "IS_I2C_TRANSFER_OTHER_OPTIONS_REQUEST",
+        "I2C_NEXT_FRAME",
+        "I2C_LAST_FRAME",
+        "I2C_LAST_FRAME_NO_STOP",
+        "__HAL_I2C_ENABLE_IT",
+        "I2C_IT_EVT",
+        "I2C_IT_ERR",
+        "HAL_I2C_ERROR_DMA",
+        "I2C_IT_BUF"
+      ],
+      "headerLine": 595,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 3765,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Master_Seq_Receive_IT",
+      "name": "HAL_I2C_Master_Seq_Receive_IT",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Master_Seq_Receive_IT(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t XferOptions);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "DevAddress",
+          "type": "uint16_t",
+          "descEn": "Target device address: The device 7 bits address value in datasheet must be shifted to the left before calling the interface",
+          "descZh": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        },
+        {
+          "name": "XferOptions",
+          "type": "uint32_t",
+          "descEn": "Options of Transfer, value of @ref I2C_XferOptions_definition",
+          "descZh": "续传选项（I2C_FIRST_FRAME / NEXT_FRAME / FIRST_AND_LAST_FRAME 等），用于控制是否产生 STOP。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Sequential receive in master I2C mode an amount of data in non-blocking mode with Interrupt",
+      "briefZh": "主机模式以中断方式做续传接收。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "This interface allow to manage repeated start condition when a direction change during transfer"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "I2C_IT_EVT",
+        "I2C_IT_BUF",
+        "I2C_IT_ERR",
+        "IS_I2C_TRANSFER_OPTIONS_REQUEST",
+        "I2C_FIRST_AND_LAST_FRAME",
+        "I2C_FIRST_FRAME",
+        "HAL_I2C_MODE_NONE",
+        "HAL_I2C_ERROR_TIMEOUT",
+        "HAL_BUSY",
+        "__HAL_I2C_GET_FLAG",
+        "I2C_FLAG_BUSY",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "I2C_LAST_FRAME",
+        "I2C_LAST_FRAME_NO_STOP",
+        "IS_I2C_TRANSFER_OTHER_OPTIONS_REQUEST",
+        "__HAL_UNLOCK",
+        "__HAL_I2C_ENABLE_IT",
+        "HAL_OK"
+      ],
+      "headerLine": 580,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 3945,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Master_Seq_Receive_DMA",
+      "name": "HAL_I2C_Master_Seq_Receive_DMA",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Master_Seq_Receive_DMA(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t XferOptions);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "DevAddress",
+          "type": "uint16_t",
+          "descEn": "Target device address: The device 7 bits address value in datasheet must be shifted to the left before calling the interface",
+          "descZh": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        },
+        {
+          "name": "XferOptions",
+          "type": "uint32_t",
+          "descEn": "Options of Transfer, value of @ref I2C_XferOptions_definition",
+          "descZh": "续传选项（I2C_FIRST_FRAME / NEXT_FRAME / FIRST_AND_LAST_FRAME 等），用于控制是否产生 STOP。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Sequential receive in master mode an amount of data in non-blocking mode with DMA",
+      "briefZh": "主机模式以 DMA 方式做续传接收。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_DMA_Start_IT"
+      ],
+      "remarks": [
+        "This interface allow to manage repeated start condition when a direction change during transfer"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "I2C_IT_EVT",
+        "I2C_IT_BUF",
+        "I2C_IT_ERR",
+        "IS_I2C_TRANSFER_OPTIONS_REQUEST",
+        "I2C_FIRST_AND_LAST_FRAME",
+        "I2C_FIRST_FRAME",
+        "HAL_I2C_MODE_NONE",
+        "HAL_I2C_ERROR_TIMEOUT",
+        "HAL_BUSY",
+        "__HAL_I2C_GET_FLAG",
+        "I2C_FLAG_BUSY",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "I2C_LAST_FRAME",
+        "I2C_LAST_FRAME_NO_STOP",
+        "I2C_OTHER_AND_LAST_FRAME",
+        "XferCpltCallback",
+        "HAL_I2C_ERROR_DMA_PARAM",
+        "__HAL_UNLOCK",
+        "HAL_ERROR",
+        "HAL_OK",
+        "IS_I2C_TRANSFER_OTHER_OPTIONS_REQUEST",
+        "I2C_NEXT_FRAME",
+        "__HAL_I2C_ENABLE_IT",
+        "HAL_I2C_ERROR_DMA"
+      ],
+      "headerLine": 596,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 4066,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Slave_Seq_Transmit_IT",
+      "name": "HAL_I2C_Slave_Seq_Transmit_IT",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Slave_Seq_Transmit_IT(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t XferOptions);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        },
+        {
+          "name": "XferOptions",
+          "type": "uint32_t",
+          "descEn": "Options of Transfer, value of @ref I2C_XferOptions_definition",
+          "descZh": "续传选项（I2C_FIRST_FRAME / NEXT_FRAME / FIRST_AND_LAST_FRAME 等），用于控制是否产生 STOP。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Sequential transmit in slave mode an amount of data in non-blocking mode with Interrupt",
+      "briefZh": "从机模式以中断方式做续传发送。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "This interface allow to manage repeated start condition when a direction change during transfer"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "IS_I2C_TRANSFER_OPTIONS_REQUEST",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "__HAL_I2C_CLEAR_ADDRFLAG",
+        "__HAL_UNLOCK",
+        "__HAL_I2C_ENABLE_IT",
+        "I2C_IT_EVT",
+        "I2C_IT_BUF",
+        "I2C_IT_ERR",
+        "HAL_OK",
+        "HAL_BUSY"
+      ],
+      "headerLine": 581,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 4281,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Slave_Seq_Transmit_DMA",
+      "name": "HAL_I2C_Slave_Seq_Transmit_DMA",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Slave_Seq_Transmit_DMA(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t XferOptions);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        },
+        {
+          "name": "XferOptions",
+          "type": "uint32_t",
+          "descEn": "Options of Transfer, value of @ref I2C_XferOptions_definition",
+          "descZh": "续传选项（I2C_FIRST_FRAME / NEXT_FRAME / FIRST_AND_LAST_FRAME 等），用于控制是否产生 STOP。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Sequential transmit in slave mode an amount of data in non-blocking mode with DMA",
+      "briefZh": "从机模式以 DMA 方式做续传发送。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_DMA_Abort_IT",
+        "HAL_DMA_Start_IT"
+      ],
+      "remarks": [
+        "This interface allow to manage repeated start condition when a direction change during transfer"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "IS_I2C_TRANSFER_OPTIONS_REQUEST",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "__HAL_I2C_DISABLE_IT",
+        "I2C_IT_EVT",
+        "I2C_IT_ERR",
+        "HAL_OK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "XferCpltCallback",
+        "HAL_I2C_MODE_NONE",
+        "HAL_I2C_ERROR_DMA_PARAM",
+        "__HAL_UNLOCK",
+        "__HAL_I2C_CLEAR_ADDRFLAG",
+        "__HAL_I2C_ENABLE_IT",
+        "HAL_I2C_ERROR_DMA",
+        "HAL_BUSY"
+      ],
+      "headerLine": 597,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 4347,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Slave_Seq_Receive_IT",
+      "name": "HAL_I2C_Slave_Seq_Receive_IT",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Slave_Seq_Receive_IT(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t XferOptions);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        },
+        {
+          "name": "XferOptions",
+          "type": "uint32_t",
+          "descEn": "Options of Transfer, value of @ref I2C_XferOptions_definition",
+          "descZh": "续传选项（I2C_FIRST_FRAME / NEXT_FRAME / FIRST_AND_LAST_FRAME 等），用于控制是否产生 STOP。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Sequential receive in slave mode an amount of data in non-blocking mode with Interrupt",
+      "briefZh": "从机模式以中断方式做续传接收。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "This interface allow to manage repeated start condition when a direction change during transfer"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "IS_I2C_TRANSFER_OPTIONS_REQUEST",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "__HAL_I2C_CLEAR_ADDRFLAG",
+        "__HAL_UNLOCK",
+        "__HAL_I2C_ENABLE_IT",
+        "I2C_IT_EVT",
+        "I2C_IT_BUF",
+        "I2C_IT_ERR",
+        "HAL_OK",
+        "HAL_BUSY"
+      ],
+      "headerLine": 582,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 4521,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Slave_Seq_Receive_DMA",
+      "name": "HAL_I2C_Slave_Seq_Receive_DMA",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Slave_Seq_Receive_DMA(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t XferOptions);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to data buffer",
+          "descZh": "数据缓冲区指针。发送用 const uint8_t*（不修改数据），接收用 uint8_t*。缓冲区必须在传输期间保持有效——中断/DMA 方式下函数会立刻返回，此时还不能改动这个缓冲区。"
+        },
+        {
+          "name": "Size",
+          "type": "uint16_t",
+          "descEn": "Amount of data to be sent",
+          "descZh": "要传输的数据长度，单位是字节（不是元素个数）。最大 65535（uint16_t）。"
+        },
+        {
+          "name": "XferOptions",
+          "type": "uint32_t",
+          "descEn": "Options of Transfer, value of @ref I2C_XferOptions_definition",
+          "descZh": "续传选项（I2C_FIRST_FRAME / NEXT_FRAME / FIRST_AND_LAST_FRAME 等），用于控制是否产生 STOP。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Sequential receive in slave mode an amount of data in non-blocking mode with DMA",
+      "briefZh": "从机模式以 DMA 方式做续传接收。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_DMA_Abort_IT",
+        "HAL_DMA_Start_IT"
+      ],
+      "remarks": [
+        "This interface allow to manage repeated start condition when a direction change during transfer"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "IS_I2C_TRANSFER_OPTIONS_REQUEST",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "__HAL_I2C_DISABLE_IT",
+        "I2C_IT_EVT",
+        "I2C_IT_ERR",
+        "HAL_OK",
+        "__HAL_I2C_ENABLE",
+        "HAL_I2C_ERROR_NONE",
+        "XferCpltCallback",
+        "HAL_I2C_MODE_NONE",
+        "HAL_I2C_ERROR_DMA_PARAM",
+        "__HAL_UNLOCK",
+        "__HAL_I2C_CLEAR_ADDRFLAG",
+        "__HAL_I2C_ENABLE_IT",
+        "HAL_I2C_ERROR_DMA",
+        "HAL_BUSY"
+      ],
+      "headerLine": 598,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 4587,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_EnableListen_IT",
+      "name": "HAL_I2C_EnableListen_IT",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_EnableListen_IT(I2C_HandleTypeDef *hi2c);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Enable the Address listen mode with Interrupt.",
+      "briefZh": "以中断方式进入地址监听模式（从机等待主机寻址）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "__HAL_I2C_ENABLE",
+        "__HAL_I2C_ENABLE_IT",
+        "I2C_IT_EVT",
+        "I2C_IT_ERR",
+        "HAL_OK",
+        "HAL_BUSY"
+      ],
+      "headerLine": 583,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 4757,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_DisableListen_IT",
+      "name": "HAL_I2C_DisableListen_IT",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_DisableListen_IT(I2C_HandleTypeDef *hi2c);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Disable the Address listen mode with Interrupt.",
+      "briefZh": "退出地址监听模式。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "HAL_I2C_MODE_NONE",
+        "__HAL_I2C_DISABLE_IT",
+        "I2C_IT_EVT",
+        "I2C_IT_ERR",
+        "HAL_OK",
+        "HAL_BUSY"
+      ],
+      "headerLine": 584,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 4790,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_Master_Abort_IT",
+      "name": "HAL_I2C_Master_Abort_IT",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_I2C_Master_Abort_IT(I2C_HandleTypeDef *hi2c, uint16_t DevAddress);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "DevAddress",
+          "type": "uint16_t",
+          "descEn": "Target device address: The device 7 bits address value in datasheet must be shifted to the left before calling the interface",
+          "descZh": "从机器件地址，**要左移一位**（7 位地址 0x50 写成 0xA0）。少移一位是最常见的错误。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Abort a master or memory I2C IT or DMA process communication with Interrupt.",
+      "briefZh": "以中断方式中止主机模式的传输。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "I2C_HandleTypeDef",
+        "HAL_I2C_ModeTypeDef",
+        "UNUSED",
+        "__HAL_I2C_GET_FLAG",
+        "I2C_FLAG_BUSY",
+        "__HAL_LOCK",
+        "__HAL_I2C_DISABLE_IT",
+        "I2C_IT_EVT",
+        "I2C_IT_BUF",
+        "I2C_IT_ERR",
+        "__HAL_UNLOCK",
+        "HAL_OK",
+        "HAL_ERROR"
+      ],
+      "headerLine": 585,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 4825,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_EV_IRQHandler",
+      "name": "HAL_I2C_EV_IRQHandler",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec3",
+      "prototype": "void HAL_I2C_EV_IRQHandler(I2C_HandleTypeDef *hi2c);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "This function handles I2C event interrupt request.",
+      "briefZh": "I2C 事件中断的入口，内部处理地址/数据阶段的状态机并分派回调。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "I2C_HandleTypeDef",
+        "HAL_I2C_ModeTypeDef",
+        "HAL_I2C_StateTypeDef",
+        "I2C_CHECK_FLAG",
+        "I2C_FLAG_SB",
+        "IS_I2C_TRANSFER_OTHER_OPTIONS_REQUEST",
+        "I2C_CHECK_IT_SOURCE",
+        "I2C_IT_EVT",
+        "I2C_FLAG_ADD10",
+        "I2C_FLAG_ADDR",
+        "I2C_FLAG_TRA",
+        "I2C_FLAG_TXE",
+        "I2C_IT_BUF",
+        "I2C_FLAG_BTF",
+        "I2C_FLAG_RXNE",
+        "HAL_I2C_ERROR_NONE",
+        "I2C_FLAG_STOPF"
+      ],
+      "headerLine": 607,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 4885,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_ER_IRQHandler",
+      "name": "HAL_I2C_ER_IRQHandler",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec3",
+      "prototype": "void HAL_I2C_ER_IRQHandler(I2C_HandleTypeDef *hi2c);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "This function handles I2C error interrupt request.",
+      "briefZh": "I2C 错误中断的入口，处理 NACK、总线错误、仲裁丢失、溢出等异常。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "I2C_HandleTypeDef",
+        "HAL_I2C_ModeTypeDef",
+        "HAL_I2C_StateTypeDef",
+        "HAL_I2C_ERROR_NONE",
+        "I2C_CHECK_FLAG",
+        "I2C_FLAG_BERR",
+        "I2C_CHECK_IT_SOURCE",
+        "I2C_IT_ERR",
+        "HAL_I2C_ERROR_BERR",
+        "__HAL_I2C_CLEAR_FLAG",
+        "I2C_FLAG_ARLO",
+        "HAL_I2C_ERROR_ARLO",
+        "I2C_FLAG_AF",
+        "HAL_I2C_ERROR_AF",
+        "I2C_FLAG_OVR",
+        "HAL_I2C_ERROR_OVR"
+      ],
+      "headerLine": 608,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 5054,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_MasterTxCpltCallback",
+      "name": "HAL_I2C_MasterTxCpltCallback",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec3",
+      "prototype": "void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Master Tx Transfer completed callback.",
+      "briefZh": "主机发送完成回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "I2C_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 609,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 5137,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_MasterRxCpltCallback",
+      "name": "HAL_I2C_MasterRxCpltCallback",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec3",
+      "prototype": "void HAL_I2C_MasterRxCpltCallback(I2C_HandleTypeDef *hi2c);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Master Rx Transfer completed callback.",
+      "briefZh": "主机接收完成回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "I2C_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 610,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 5153,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_SlaveTxCpltCallback",
+      "name": "HAL_I2C_SlaveTxCpltCallback",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec3",
+      "prototype": "void HAL_I2C_SlaveTxCpltCallback(I2C_HandleTypeDef *hi2c);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Slave Tx Transfer completed callback.",
+      "briefZh": "从机发送完成回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "I2C_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 611,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 5168,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_SlaveRxCpltCallback",
+      "name": "HAL_I2C_SlaveRxCpltCallback",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec3",
+      "prototype": "void HAL_I2C_SlaveRxCpltCallback(I2C_HandleTypeDef *hi2c);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Slave Rx Transfer completed callback.",
+      "briefZh": "从机接收完成回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "I2C_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 612,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 5184,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_AddrCallback",
+      "name": "HAL_I2C_AddrCallback",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec3",
+      "prototype": "void HAL_I2C_AddrCallback(I2C_HandleTypeDef *hi2c, uint8_t TransferDirection, uint16_t AddrMatchCode);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        },
+        {
+          "name": "TransferDirection",
+          "type": "uint8_t",
+          "descEn": "Master request Transfer Direction (Write/Read), value of @ref I2C_XferDirection_definition",
+          "descZh": "传输方向：I2C_DIRECTION_TRANSMIT 或 I2C_DIRECTION_RECEIVE。"
+        },
+        {
+          "name": "AddrMatchCode",
+          "type": "uint16_t",
+          "descEn": "Address Match Code",
+          "descZh": "从机地址匹配码（双地址模式下的第二个地址）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Slave Address Match callback.",
+      "briefZh": "从机地址匹配回调（__weak 空实现，需自己重写）。主机来寻址时触发。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "I2C_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 613,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 5202,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_ListenCpltCallback",
+      "name": "HAL_I2C_ListenCpltCallback",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec3",
+      "prototype": "void HAL_I2C_ListenCpltCallback(I2C_HandleTypeDef *hi2c);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Listen Complete callback.",
+      "briefZh": "监听完成回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "I2C_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 614,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 5220,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_MemTxCpltCallback",
+      "name": "HAL_I2C_MemTxCpltCallback",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec3",
+      "prototype": "void HAL_I2C_MemTxCpltCallback(I2C_HandleTypeDef *hi2c);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Memory Tx Transfer completed callback.",
+      "briefZh": "存储器写完成回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "I2C_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 615,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 5236,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_MemRxCpltCallback",
+      "name": "HAL_I2C_MemRxCpltCallback",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec3",
+      "prototype": "void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Memory Rx Transfer completed callback.",
+      "briefZh": "存储器读完成回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "I2C_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 616,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 5252,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_ErrorCallback",
+      "name": "HAL_I2C_ErrorCallback",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec3",
+      "prototype": "void HAL_I2C_ErrorCallback(I2C_HandleTypeDef *hi2c);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "I2C error callback.",
+      "briefZh": "错误回调（__weak 空实现，需自己重写）。溢出、噪声、帧错误等异常会走到这里。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "I2C_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 617,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 5268,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_AbortCpltCallback",
+      "name": "HAL_I2C_AbortCpltCallback",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec3",
+      "prototype": "void HAL_I2C_AbortCpltCallback(I2C_HandleTypeDef *hi2c);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "I2C abort callback.",
+      "briefZh": "中止完成回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "I2C_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 618,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 5284,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_GetState",
+      "name": "HAL_I2C_GetState",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec4",
+      "prototype": "HAL_I2C_StateTypeDef HAL_I2C_GetState(I2C_HandleTypeDef *hi2c);",
+      "returnType": "HAL_I2C_StateTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL state",
+      "returnDescZh": "",
+      "briefEn": "Return the I2C handle state.",
+      "briefZh": "读取 I2C 的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_I2C_StateTypeDef",
+        "I2C_HandleTypeDef"
+      ],
+      "headerLine": 627,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 5319,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_GetMode",
+      "name": "HAL_I2C_GetMode",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec4",
+      "prototype": "HAL_I2C_ModeTypeDef HAL_I2C_GetMode(I2C_HandleTypeDef *hi2c);",
+      "returnType": "HAL_I2C_ModeTypeDef",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for I2C module",
+          "descZh": "I2C 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL mode",
+      "returnDescZh": "",
+      "briefEn": "Returns the I2C Master, Slave, Memory or no mode.",
+      "briefZh": "读取当前工作模式（主机 / 从机 / 存储器 / 空闲）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_I2C_ModeTypeDef",
+        "I2C_HandleTypeDef"
+      ],
+      "headerLine": 628,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 5331,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_I2C_GetError",
+      "name": "HAL_I2C_GetError",
+      "peripheral": "I2C",
+      "library": "hal",
+      "sectionId": "I2C@hal#sec4",
+      "prototype": "uint32_t HAL_I2C_GetError(I2C_HandleTypeDef *hi2c);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hi2c",
+          "type": "I2C_HandleTypeDef *",
+          "descEn": "Pointer to a I2C_HandleTypeDef structure that contains the configuration information for the specified I2C.",
+          "descZh": "I2C 句柄指针。"
+        }
+      ],
+      "returnDescEn": "I2C Error Code",
+      "returnDescZh": "",
+      "briefEn": "Return the I2C error code.",
+      "briefZh": "读取 I2C 累计的错误码位掩码。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "I2C_HandleTypeDef"
+      ],
+      "headerLine": 629,
+      "definedIn": "stm32f1xx_hal_i2c.h",
+      "sourceLine": 5342,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

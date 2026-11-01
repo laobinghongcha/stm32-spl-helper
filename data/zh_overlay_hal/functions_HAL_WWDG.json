@@ -1,0 +1,77 @@
+{
+  "HAL_WWDG_EarlyWakeupCallback": {
+    "briefZh": "WWDG 早期唤醒中断的用户回调，__weak 空实现，需自己重写。",
+    "usageZh": "在窗口看门狗即将复位前（计数值到 0x40）被调用，是保存现场的最后机会。",
+    "notesZh": [
+      "回调在中断上下文，只能做很短的写寄存器操作",
+      "不要在这里喂狗试图逃避复位——能进这个回调说明时序已经出问题了"
+    ],
+    "paramsZh": {
+      "hwwdg": "WWDG 句柄指针。Init 里 Prescaler/Window/Counter/EWIMode 决定窗口与超时。"
+    }
+  },
+  "HAL_WWDG_IRQHandler": {
+    "briefZh": "WWDG 早期唤醒中断的统一入口，清标志后调用 HAL_WWDG_EarlyWakeupCallback。",
+    "usageZh": "在 WWDG_IRQHandler 里调用。中断里适合做紧急收尾（把关键数据写进 Flash 或备份寄存器），因为紧接着就会复位。",
+    "paramsZh": {
+      "hwwdg": "WWDG 句柄。"
+    },
+    "prerequisites": [
+      "初始化时 EWIMode 打开，并在 NVIC 使能 WWDG_IRQn"
+    ]
+  },
+  "HAL_WWDG_Init": {
+    "briefZh": "按 WWDG_InitTypeDef 初始化窗口看门狗（预分频、窗口值、初始计数值、EWI 中断）。",
+    "usageZh": "WWDG 是「窗口」看门狗：喂狗太早也会复位，用来发现「程序跑得异常快」（比如某个循环失控、任务被跳过）。它挂在 APB1 上，时钟来自 PCLK1，所以主时钟跑偏时它也跟着偏——这是它不如 IWDG 可靠的地方，但换来了「喂早了也报警」的能力。",
+    "paramsZh": {
+      "hwwdg": "WWDG 句柄，Init 里 Prescaler（1/2/4/8 分频）、Window（窗口值，喂狗时计数值必须小于它）、Counter（初始计数值）、EWIMode（是否开早期唤醒中断）。"
+    },
+    "notesZh": [
+      "喂狗必须落在「计数值 < Window」且「计数值 > 0x40」的窗口内；太早（计数值还大于 Window）会直接复位",
+      "计数器是 7 位，值降到 0x3F 时触发复位，所以有效窗口是 0x40~0x7F",
+      "PCLK1=36MHz 时，Prescaler=8 的计数周期约 910ns，据此估算超时",
+      "EWI 早期唤醒中断在计数值降到 0x40 时触发，可以在中断里做紧急保存，然后等复位"
+    ],
+    "prerequisites": [
+      "已调用 __HAL_RCC_WWDG_CLK_ENABLE() 使能 WWDG 时钟"
+    ]
+  },
+  "HAL_WWDG_MspInit": {
+    "briefZh": "WWDG 的底层初始化回调，__weak 空实现，用于放时钟使能和 NVIC 配置。",
+    "usageZh": "CubeMX 会把 __HAL_RCC_WWDG_CLK_ENABLE() 和 NVIC 配置生成在这里。手写代码时要么重写它，要么在调用 HAL_WWDG_Init 前自己开时钟。",
+    "notesZh": [
+      "写成 static 会导致链接到 HAL 的空实现，时钟就永远开不了——这是很常见的踩坑点"
+    ],
+    "paramsZh": {
+      "hwwdg": "WWDG 句柄指针。Init 里 Prescaler/Window/Counter/EWIMode 决定窗口与超时。"
+    }
+  },
+  "HAL_WWDG_Refresh": {
+    "briefZh": "喂窗口看门狗，把计数值重装为 Counter。",
+    "usageZh": "必须在窗口期内调用。太早（当前计数值 > Window）或太晚（已降到 0x3F）都会触发复位，这是 WWDG 与 IWDG 最大的用法差异。",
+    "paramsZh": {
+      "hwwdg": "WWDG 句柄。"
+    },
+    "notesZh": [
+      "首次喂狗前要确保计数值已经降到 Window 以下，否则会立刻复位",
+      "喂狗点最好放在固定节拍的任务里，让「喂狗时机」本身成为程序时序是否正常的判据"
+    ]
+  },
+  "HAL_WWDG_RegisterCallback": {
+    "briefZh": "为 WWDG 注册回调函数。",
+    "usageZh": "想在不重写 __weak 函数的前提下挂钩子时用，适合把看门狗逻辑封装进独立模块。",
+    "paramsZh": {
+      "CallbackID": "回调类型，如 HAL_WWDG_EARLYWAKEUP_CB_ID。",
+      "hwwdg": "WWDG 句柄。",
+      "pCallback": "回调函数指针，签名 void (*)(WWDG_HandleTypeDef *hwwdg)。"
+    }
+  },
+  "HAL_WWDG_UnRegisterCallback": {
+    "briefZh": "注销 WWDG 回调，恢复默认空实现。",
+    "usageZh": "模块卸载或恢复默认行为时用；传 HAL_WWDG_EARLYWAKEUP_CB_ID 只注销对应那一个。",
+    "paramsZh": {
+      "CallbackID": "要注销的回调类型。",
+      "hwwdg": "WWDG 句柄。"
+    }
+  }
+}

@@ -1,0 +1,230 @@
+{
+  "HAL_RTCEx_BKUPRead": {
+    "briefZh": "读备份寄存器。",
+    "paramsZh": {
+      "BackupRegister": "备份寄存器编号，取 RTC_BKP_DR1 ~ RTC_BKP_DR10（F1 有 10 个）。",
+      "hrtc": "RTC 句柄指针。"
+    }
+  },
+  "HAL_RTCEx_BKUPWrite": {
+    "briefZh": "写备份寄存器（复位与待机唤醒后内容保留，常用来跨复位传状态）。",
+    "paramsZh": {
+      "BackupRegister": "备份寄存器编号，取 RTC_BKP_DR1 ~ RTC_BKP_DR10（F1 有 10 个）。",
+      "Data": "要写入备份寄存器的 32 位数据。",
+      "hrtc": "RTC 句柄指针。"
+    }
+  },
+  "HAL_RTCEx_DeactivateSecond": {
+    "briefZh": "关闭秒中断。",
+    "paramsZh": {
+      "hrtc": "RTC 句柄指针。"
+    }
+  },
+  "HAL_RTCEx_DeactivateTamper": {
+    "briefZh": "关闭篡改检测。",
+    "paramsZh": {
+      "Tamper": "篡改检测引脚编号：RTC_TAMPER_1。",
+      "hrtc": "RTC 句柄指针。"
+    }
+  },
+  "HAL_RTCEx_PollForTamper1Event": {
+    "briefZh": "轮询等待篡改 1 事件，带超时。",
+    "paramsZh": {
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hrtc": "RTC 句柄指针。"
+    }
+  },
+  "HAL_RTCEx_RTCEventCallback": {
+    "briefZh": "RTC 事件回调（__weak 空实现，需自己重写），秒中断走这里。",
+    "paramsZh": {
+      "hrtc": "RTC 句柄指针。"
+    }
+  },
+  "HAL_RTCEx_RTCEventErrorCallback": {
+    "briefZh": "RTC 事件错误回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hrtc": "RTC 句柄指针。"
+    }
+  },
+  "HAL_RTCEx_RTCIRQHandler": {
+    "briefZh": "RTC 全局中断（秒/闹钟/溢出）的统一入口。",
+    "paramsZh": {
+      "hrtc": "RTC 句柄指针。"
+    }
+  },
+  "HAL_RTCEx_SetSecond_IT": {
+    "briefZh": "使能秒中断，每秒进一次 RTCEventCallback。",
+    "paramsZh": {
+      "hrtc": "RTC 句柄指针。"
+    }
+  },
+  "HAL_RTCEx_SetSmoothCalib": {
+    "briefZh": "设置 RTC 平滑数字校准值，用于微调走时精度。",
+    "paramsZh": {
+      "SmoothCalibPeriod": "平滑校准周期（1s / 2s / 4s / 8s / 16s）。",
+      "SmoothCalibPlusPulses": "校准脉冲的加减方向设置。",
+      "SmouthCalibMinusPulsesValue": "每次校准要减去的脉冲数（0~511）。",
+      "hrtc": "RTC 句柄指针。"
+    }
+  },
+  "HAL_RTCEx_SetTamper": {
+    "briefZh": "配置篡改检测引脚（有效电平、触发后是否清除备份寄存器）。",
+    "paramsZh": {
+      "hrtc": "RTC 句柄指针。",
+      "sTamper": "篡改检测配置结构体：Tamper（用哪个引脚）、Trigger（触发边沿）、NoErase（触发后是否清除备份寄存器）。"
+    }
+  },
+  "HAL_RTCEx_SetTamper_IT": {
+    "briefZh": "配置篡改检测并以中断方式触发。",
+    "paramsZh": {
+      "hrtc": "RTC 句柄指针。",
+      "sTamper": "篡改检测配置结构体：Tamper（用哪个引脚）、Trigger（触发边沿）、NoErase（触发后是否清除备份寄存器）。"
+    }
+  },
+  "HAL_RTCEx_Tamper1EventCallback": {
+    "briefZh": "篡改 1 事件回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hrtc": "RTC 句柄指针。"
+    }
+  },
+  "HAL_RTCEx_TamperIRQHandler": {
+    "briefZh": "篡改中断的统一入口。",
+    "paramsZh": {
+      "hrtc": "RTC 句柄指针。"
+    }
+  },
+  "HAL_RTC_AlarmAEventCallback": {
+    "briefZh": "闹钟 A 触发回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hrtc": "RTC 句柄指针。"
+    }
+  },
+  "HAL_RTC_AlarmIRQHandler": {
+    "briefZh": "闹钟中断的统一入口。",
+    "paramsZh": {
+      "hrtc": "RTC 句柄指针。"
+    }
+  },
+  "HAL_RTC_DeInit": {
+    "briefZh": "把 RTC 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+    "paramsZh": {
+      "hrtc": "RTC 句柄指针。"
+    }
+  },
+  "HAL_RTC_DeactivateAlarm": {
+    "briefZh": "关闭闹钟。",
+    "paramsZh": {
+      "Alarm": "闹钟标识：RTC_ALARM_A 或 RTC_ALARM_B。",
+      "hrtc": "RTC 句柄指针。"
+    }
+  },
+  "HAL_RTC_GetAlarm": {
+    "briefZh": "读取已设置的闹钟值。",
+    "paramsZh": {
+      "Alarm": "闹钟标识：RTC_ALARM_A 或 RTC_ALARM_B。",
+      "Format": "时间格式：RTC_HOURFORMAT_24 或 RTC_HOURFORMAT_12。",
+      "hrtc": "RTC 句柄指针。",
+      "sAlarm": "闹钟结构体：Alarm（时间）、AlarmDate（可选日期）、AlarmMask（屏蔽哪些字段）。"
+    }
+  },
+  "HAL_RTC_GetDate": {
+    "briefZh": "读取 RTC 当前日期（BCD 格式）。",
+    "paramsZh": {
+      "Format": "时间格式：RTC_HOURFORMAT_24 或 RTC_HOURFORMAT_12。",
+      "hrtc": "RTC 句柄指针。",
+      "sDate": "日期结构体（RTC_DateTypeDef），同样是 BCD 格式，包含年、月、日、星期。"
+    }
+  },
+  "HAL_RTC_GetState": {
+    "briefZh": "读取 RTC 的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+    "paramsZh": {
+      "hrtc": "RTC 句柄指针。"
+    }
+  },
+  "HAL_RTC_GetTime": {
+    "briefZh": "读取 RTC 当前时间（BCD 格式）。必须与 HAL_RTC_GetDate 成对调用，只读时间不读日期会导致时间停止更新。",
+    "paramsZh": {
+      "Format": "时间格式：RTC_HOURFORMAT_24 或 RTC_HOURFORMAT_12。",
+      "hrtc": "RTC 句柄指针。",
+      "sTime": "时间结构体（RTC_TimeTypeDef），字段是 **BCD 格式**：0x30 表示 30 秒，不要写十进制。"
+    }
+  },
+  "HAL_RTC_Init": {
+    "briefZh": "按 RTC_InitTypeDef 初始化 RTC（异步/同步预分频、小时格式）。",
+    "paramsZh": {
+      "hrtc": "RTC 句柄指针。"
+    }
+  },
+  "HAL_RTC_MspDeInit": {
+    "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+    "paramsZh": {
+      "hrtc": "RTC 句柄指针。"
+    }
+  },
+  "HAL_RTC_MspInit": {
+    "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+    "paramsZh": {
+      "hrtc": "RTC 句柄指针。"
+    }
+  },
+  "HAL_RTC_PollForAlarmAEvent": {
+    "briefZh": "轮询等待闹钟 A 事件，带超时。",
+    "paramsZh": {
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hrtc": "RTC 句柄指针。"
+    }
+  },
+  "HAL_RTC_RegisterCallback": {
+    "briefZh": "为 RTC 注册指定事件的回调，替代默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "hrtc": "RTC 句柄指针。",
+      "pCallback": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+    }
+  },
+  "HAL_RTC_SetAlarm": {
+    "briefZh": "设置闹钟并启动（阻塞配置，本身不等待事件）。",
+    "paramsZh": {
+      "Format": "时间格式：RTC_HOURFORMAT_24 或 RTC_HOURFORMAT_12。",
+      "hrtc": "RTC 句柄指针。",
+      "sAlarm": "闹钟结构体：Alarm（时间）、AlarmDate（可选日期）、AlarmMask（屏蔽哪些字段）。"
+    }
+  },
+  "HAL_RTC_SetAlarm_IT": {
+    "briefZh": "设置闹钟并以中断方式启动，到点后进 AlarmAEventCallback。",
+    "paramsZh": {
+      "Format": "时间格式：RTC_HOURFORMAT_24 或 RTC_HOURFORMAT_12。",
+      "hrtc": "RTC 句柄指针。",
+      "sAlarm": "闹钟结构体：Alarm（时间）、AlarmDate（可选日期）、AlarmMask（屏蔽哪些字段）。"
+    }
+  },
+  "HAL_RTC_SetDate": {
+    "briefZh": "设置 RTC 当前日期（BCD 格式）。",
+    "paramsZh": {
+      "Format": "时间格式：RTC_HOURFORMAT_24 或 RTC_HOURFORMAT_12。",
+      "hrtc": "RTC 句柄指针。",
+      "sDate": "日期结构体（RTC_DateTypeDef），同样是 BCD 格式，包含年、月、日、星期。"
+    }
+  },
+  "HAL_RTC_SetTime": {
+    "briefZh": "设置 RTC 当前时间。结构体字段是 BCD 格式（0x30 表示 30 秒），不要直接写十进制。",
+    "paramsZh": {
+      "Format": "时间格式：RTC_HOURFORMAT_24 或 RTC_HOURFORMAT_12。",
+      "hrtc": "RTC 句柄指针。",
+      "sTime": "时间结构体（RTC_TimeTypeDef），字段是 **BCD 格式**：0x30 表示 30 秒，不要写十进制。"
+    }
+  },
+  "HAL_RTC_UnRegisterCallback": {
+    "briefZh": "注销 RTC 已注册的回调，恢复成默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "hrtc": "RTC 句柄指针。"
+    }
+  },
+  "HAL_RTC_WaitForSynchro": {
+    "briefZh": "等待 RTC 寄存器同步完成。读写 RTC 前必须先同步，否则读数可能是旧的。",
+    "paramsZh": {
+      "hrtc": "RTC 句柄指针。"
+    }
+  }
+}

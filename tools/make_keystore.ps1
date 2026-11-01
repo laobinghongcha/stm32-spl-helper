@@ -1,4 +1,4 @@
-#!/usr/bin/env pwsh
+﻿#!/usr/bin/env pwsh
 # 生成发布签名密钥库并写好 android/key.properties。
 #
 # 用法（在项目根目录执行）：

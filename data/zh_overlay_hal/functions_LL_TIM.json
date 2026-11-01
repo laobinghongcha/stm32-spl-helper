@@ -1,0 +1,1121 @@
+{
+  "LL_TIM_CC_DisableChannel": {
+    "briefZh": "关闭指定的捕获/比较通道。",
+    "paramsZh": {
+      "Channels": "通道掩码，可位或一次指定多个通道。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_CC_DisablePreload": {
+    "briefZh": "失能 TIM 捕获/比较的预装载。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_CC_EnableChannel": {
+    "briefZh": "使能指定的捕获/比较通道（可位或一次开多个）。",
+    "paramsZh": {
+      "Channels": "通道掩码，可位或一次指定多个通道。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_CC_EnablePreload": {
+    "briefZh": "使能 TIM 捕获/比较的预装载。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_CC_GetDMAReqTrigger": {
+    "briefZh": "读取 TIM 捕获/比较的 DMA 请求触发源。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_CC_IsEnabledChannel": {
+    "briefZh": "查询指定的捕获/比较通道是否已使能。",
+    "paramsZh": {
+      "Channels": "通道掩码，可位或一次指定多个通道。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_CC_IsEnabledPreload": {
+    "briefZh": "查询 TIM 捕获/比较是否已使能。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_CC_SetDMAReqTrigger": {
+    "briefZh": "设置 TIM 捕获/比较的 DMA 请求触发源。",
+    "paramsZh": {
+      "DMAReqTrigger": "DMA 请求的触发源。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_CC_SetLockLevel": {
+    "briefZh": "设置寄存器锁定等级，防止误改已配置好的位。",
+    "paramsZh": {
+      "LockLevel": "寄存器锁定等级，防止误改已配置好的位。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_CC_SetUpdate": {
+    "briefZh": "设置捕获/比较控制位（CCxE、CCxNE、OCxM）的更新时机（立即生效 / 下一个更新事件）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_ClearFlag_BRK": {
+    "briefZh": "清除 TIM 的刹车输入标志位。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_ClearFlag_CC1": {
+    "briefZh": "清除 TIM 的捕获/比较通道 1 标志位。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_ClearFlag_CC1OVR": {
+    "briefZh": "清除 TIM 的通道 1 捕获溢出标志位。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_ClearFlag_CC2": {
+    "briefZh": "清除 TIM 的捕获/比较通道 2 标志位。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_ClearFlag_CC2OVR": {
+    "briefZh": "清除 TIM 的通道 2 捕获溢出标志位。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_ClearFlag_CC3": {
+    "briefZh": "清除 TIM 的捕获/比较通道 3 标志位。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_ClearFlag_CC3OVR": {
+    "briefZh": "清除 TIM 的通道 3 捕获溢出标志位。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_ClearFlag_CC4": {
+    "briefZh": "清除 TIM 的捕获/比较通道 4 标志位。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_ClearFlag_CC4OVR": {
+    "briefZh": "清除 TIM 的通道 4 捕获溢出标志位。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_ClearFlag_COM": {
+    "briefZh": "清除 TIM 的换相标志位。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_ClearFlag_TRIG": {
+    "briefZh": "清除 TIM 的触发标志位。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_ClearFlag_UPDATE": {
+    "briefZh": "清除 TIM 的更新标志位。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_ConfigBRK": {
+    "briefZh": "配置刹车输入的极性、滤波与滤波采样频率。",
+    "paramsZh": {
+      "BreakPolarity": "刹车输入极性。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_ConfigDMABurst": {
+    "briefZh": "配置 DMA 突发传输的起始寄存器地址与突发长度。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_ConfigETR": {
+    "briefZh": "配置外部触发输入（ETR）的极性、预分频与滤波。",
+    "paramsZh": {
+      "ETRFilter": "外部触发滤波系数。",
+      "ETRPolarity": "外部触发极性。",
+      "ETRPrescaler": "外部触发预分频：不分频 / 2 / 4 / 8。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_DisableARRPreload": {
+    "briefZh": "失能 TIM 的 ARR 预装载。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_DisableAllOutputs": {
+    "briefZh": "关闭所有输出通道（清 MOE 位），引脚立即进入空闲状态。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_DisableAutomaticOutput": {
+    "briefZh": "失能 TIM 的自动输出（AOE）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_DisableBRK": {
+    "briefZh": "关闭刹车输入。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_DisableCounter": {
+    "briefZh": "停止定时器计数器。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_DisableDMAReq_CC1": {
+    "briefZh": "失能 TIM 的捕获/比较通道 1DMA 请求。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_DisableDMAReq_CC2": {
+    "briefZh": "失能 TIM 的捕获/比较通道 2DMA 请求。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_DisableDMAReq_CC3": {
+    "briefZh": "失能 TIM 的捕获/比较通道 3DMA 请求。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_DisableDMAReq_CC4": {
+    "briefZh": "失能 TIM 的捕获/比较通道 4DMA 请求。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_DisableDMAReq_COM": {
+    "briefZh": "失能 TIM 的换相 DMA 请求。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_DisableDMAReq_TRIG": {
+    "briefZh": "失能 TIM 的触发 DMA 请求。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_DisableDMAReq_UPDATE": {
+    "briefZh": "失能 TIM 的更新 DMA 请求。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_DisableExternalClock": {
+    "briefZh": "关闭外部时钟模式 2。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_DisableIT_BRK": {
+    "briefZh": "失能 TIM 的刹车输入中断。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_DisableIT_CC1": {
+    "briefZh": "失能 TIM 的捕获/比较通道 1 中断。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_DisableIT_CC2": {
+    "briefZh": "失能 TIM 的捕获/比较通道 2 中断。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_DisableIT_CC3": {
+    "briefZh": "失能 TIM 的捕获/比较通道 3 中断。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_DisableIT_CC4": {
+    "briefZh": "失能 TIM 的捕获/比较通道 4 中断。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_DisableIT_COM": {
+    "briefZh": "失能 TIM 的换相中断。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_DisableIT_TRIG": {
+    "briefZh": "失能 TIM 的触发中断。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_DisableIT_UPDATE": {
+    "briefZh": "失能 TIM 的更新中断。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_DisableMasterSlaveMode": {
+    "briefZh": "关闭主从模式。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_DisableUpdateEvent": {
+    "briefZh": "失能 TIM 的更新事件。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_EnableARRPreload": {
+    "briefZh": "使能 TIM 的 ARR 预装载。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_EnableAllOutputs": {
+    "briefZh": "使能所有输出通道（置 MOE 位）。高级定时器 TIM1 输出 PWM 前必须打开。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_EnableAutomaticOutput": {
+    "briefZh": "使能 TIM 的自动输出（AOE）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_EnableBRK": {
+    "briefZh": "使能刹车输入（BRK）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_EnableCounter": {
+    "briefZh": "启动定时器计数器（置 CEN 位），定时器开始计数。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_EnableDMAReq_CC1": {
+    "briefZh": "使能 TIM 的捕获/比较通道 1DMA 请求。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_EnableDMAReq_CC2": {
+    "briefZh": "使能 TIM 的捕获/比较通道 2DMA 请求。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_EnableDMAReq_CC3": {
+    "briefZh": "使能 TIM 的捕获/比较通道 3DMA 请求。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_EnableDMAReq_CC4": {
+    "briefZh": "使能 TIM 的捕获/比较通道 4DMA 请求。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_EnableDMAReq_COM": {
+    "briefZh": "使能 TIM 的换相 DMA 请求。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_EnableDMAReq_TRIG": {
+    "briefZh": "使能 TIM 的触发 DMA 请求。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_EnableDMAReq_UPDATE": {
+    "briefZh": "使能 TIM 的更新 DMA 请求。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_EnableExternalClock": {
+    "briefZh": "使能外部时钟模式 2（计数时钟来自 ETR 引脚）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_EnableIT_BRK": {
+    "briefZh": "使能 TIM 的刹车输入中断。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_EnableIT_CC1": {
+    "briefZh": "使能 TIM 的捕获/比较通道 1 中断。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_EnableIT_CC2": {
+    "briefZh": "使能 TIM 的捕获/比较通道 2 中断。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_EnableIT_CC3": {
+    "briefZh": "使能 TIM 的捕获/比较通道 3 中断。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_EnableIT_CC4": {
+    "briefZh": "使能 TIM 的捕获/比较通道 4 中断。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_EnableIT_COM": {
+    "briefZh": "使能 TIM 的换相中断。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_EnableIT_TRIG": {
+    "briefZh": "使能 TIM 的触发中断。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_EnableIT_UPDATE": {
+    "briefZh": "使能 TIM 的更新中断。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_EnableMasterSlaveMode": {
+    "briefZh": "使能主从模式，允许 TRGO 与 TRGI 联动。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_EnableUpdateEvent": {
+    "briefZh": "使能 TIM 的更新事件。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_GenerateEvent_BRK": {
+    "briefZh": "软件产生刹车事件（置 BG 位）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_GenerateEvent_CC1": {
+    "briefZh": "软件产生捕获/比较 1 事件（置 CC1G 位）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_GenerateEvent_CC2": {
+    "briefZh": "软件产生捕获/比较 2 事件（置 CC2G 位）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_GenerateEvent_CC3": {
+    "briefZh": "软件产生捕获/比较 3 事件（置 CC3G 位）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_GenerateEvent_CC4": {
+    "briefZh": "软件产生捕获/比较 4 事件（置 CC4G 位）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_GenerateEvent_COM": {
+    "briefZh": "软件产生换相事件（置 COMG 位），用于高级定时器的换相控制。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_GenerateEvent_TRIG": {
+    "briefZh": "软件产生触发事件（置 TG 位），用于从模式定时器的触发输入。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_GenerateEvent_UPDATE": {
+    "briefZh": "软件产生更新事件（置 UG 位），立即重载预分频与 ARR。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_GetAutoReload": {
+    "briefZh": "读取当前自动重装载值（ARR）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_GetClockDivision": {
+    "briefZh": "读取 TIM 的时钟分频（CKD，用于滤波采样率）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_GetCounter": {
+    "briefZh": "读取计数器当前值（CNT）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_GetCounterMode": {
+    "briefZh": "读取 TIM 的计数模式。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_GetDirection": {
+    "briefZh": "读取当前计数方向（向上 / 向下）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_GetOnePulseMode": {
+    "briefZh": "读取 TIM 的单脉冲模式。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_GetPrescaler": {
+    "briefZh": "读取当前预分频值（PSC）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_GetRepetitionCounter": {
+    "briefZh": "读取重复计数次数（RCR）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_GetUpdateSource": {
+    "briefZh": "读取 TIM 的更新事件来源。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IC_Config": {
+    "briefZh": "一次性配置输入捕获的通道映射、极性、预分频与滤波。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "Configuration": "配置值，具体取值域随函数而定。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IC_DisableXORCombination": {
+    "briefZh": "失能 TIM 输入捕获的三通道异或组合。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IC_EnableXORCombination": {
+    "briefZh": "使能 TIM 输入捕获的三通道异或组合。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IC_GetActiveInput": {
+    "briefZh": "读取 TIM 输入捕获的有效输入通道。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IC_GetCaptureCH1": {
+    "briefZh": "读取通道 1 的输入捕获值（CCR1）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IC_GetCaptureCH2": {
+    "briefZh": "读取通道 2 的输入捕获值（CCR2）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IC_GetCaptureCH3": {
+    "briefZh": "读取通道 3 的输入捕获值（CCR3）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IC_GetCaptureCH4": {
+    "briefZh": "读取通道 4 的输入捕获值（CCR4）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IC_GetFilter": {
+    "briefZh": "读取 TIM 输入捕获的输入滤波系数。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IC_GetPolarity": {
+    "briefZh": "读取 TIM 输入捕获的极性。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IC_GetPrescaler": {
+    "briefZh": "读取 TIM 输入捕获的预分频。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IC_IsEnabledXORCombination": {
+    "briefZh": "查询 TIM 输入捕获是否已使能。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IC_SetActiveInput": {
+    "briefZh": "设置 TIM 输入捕获的有效输入通道。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IC_SetFilter": {
+    "briefZh": "设置 TIM 输入捕获的输入滤波系数。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "ICFilter": "输入滤波系数（0~15），数值越大能滤掉的毛刺越宽。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IC_SetPolarity": {
+    "briefZh": "设置 TIM 输入捕获的极性。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "ICPolarity": "捕获极性：上升沿 / 下降沿 / 双边沿。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IC_SetPrescaler": {
+    "briefZh": "设置 TIM 输入捕获的预分频。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "ICPrescaler": "输入捕获预分频：每次捕获 N+1 个边沿才记录一次。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsActiveFlag_BRK": {
+    "briefZh": "查询 TIM 的刹车输入标志位是否置位。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsActiveFlag_CC1": {
+    "briefZh": "查询 TIM 的捕获/比较通道 1 标志位是否置位。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsActiveFlag_CC1OVR": {
+    "briefZh": "查询 TIM 的通道 1 捕获溢出标志位是否置位。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsActiveFlag_CC2": {
+    "briefZh": "查询 TIM 的捕获/比较通道 2 标志位是否置位。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsActiveFlag_CC2OVR": {
+    "briefZh": "查询 TIM 的通道 2 捕获溢出标志位是否置位。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsActiveFlag_CC3": {
+    "briefZh": "查询 TIM 的捕获/比较通道 3 标志位是否置位。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsActiveFlag_CC3OVR": {
+    "briefZh": "查询 TIM 的通道 3 捕获溢出标志位是否置位。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsActiveFlag_CC4": {
+    "briefZh": "查询 TIM 的捕获/比较通道 4 标志位是否置位。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsActiveFlag_CC4OVR": {
+    "briefZh": "查询 TIM 的通道 4 捕获溢出标志位是否置位。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsActiveFlag_COM": {
+    "briefZh": "查询 TIM 的换相标志位是否置位。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsActiveFlag_TRIG": {
+    "briefZh": "查询 TIM 的触发标志位是否置位。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsActiveFlag_UPDATE": {
+    "briefZh": "查询 TIM 的更新标志位是否置位。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsEnabledARRPreload": {
+    "briefZh": "查询 TIM 是否已使能。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsEnabledAllOutputs": {
+    "briefZh": "查询所有输出通道是否已使能（MOE 位状态）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsEnabledAutomaticOutput": {
+    "briefZh": "查询 TIM 是否已使能。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsEnabledCounter": {
+    "briefZh": "查询定时器计数器是否正在运行。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsEnabledDMAReq_CC1": {
+    "briefZh": "查询 TIM 的捕获/比较通道 1DMA 请求是否已使能。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsEnabledDMAReq_CC2": {
+    "briefZh": "查询 TIM 的捕获/比较通道 2DMA 请求是否已使能。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsEnabledDMAReq_CC3": {
+    "briefZh": "查询 TIM 的捕获/比较通道 3DMA 请求是否已使能。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsEnabledDMAReq_CC4": {
+    "briefZh": "查询 TIM 的捕获/比较通道 4DMA 请求是否已使能。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsEnabledDMAReq_COM": {
+    "briefZh": "查询 TIM 的换相 DMA 请求是否已使能。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsEnabledDMAReq_TRIG": {
+    "briefZh": "查询 TIM 的触发 DMA 请求是否已使能。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsEnabledDMAReq_UPDATE": {
+    "briefZh": "查询 TIM 的更新 DMA 请求是否已使能。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsEnabledExternalClock": {
+    "briefZh": "查询外部时钟模式 2 是否已使能。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsEnabledIT_BRK": {
+    "briefZh": "查询 TIM 的刹车输入中断是否已使能。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsEnabledIT_CC1": {
+    "briefZh": "查询 TIM 的捕获/比较通道 1 中断是否已使能。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsEnabledIT_CC2": {
+    "briefZh": "查询 TIM 的捕获/比较通道 2 中断是否已使能。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsEnabledIT_CC3": {
+    "briefZh": "查询 TIM 的捕获/比较通道 3 中断是否已使能。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsEnabledIT_CC4": {
+    "briefZh": "查询 TIM 的捕获/比较通道 4 中断是否已使能。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsEnabledIT_COM": {
+    "briefZh": "查询 TIM 的换相中断是否已使能。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsEnabledIT_TRIG": {
+    "briefZh": "查询 TIM 的触发中断是否已使能。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsEnabledIT_UPDATE": {
+    "briefZh": "查询 TIM 的更新中断是否已使能。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsEnabledMasterSlaveMode": {
+    "briefZh": "查询主从模式是否已使能。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_IsEnabledUpdateEvent": {
+    "briefZh": "查询 TIM 是否已使能。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_ConfigOutput": {
+    "briefZh": "一次性配置输出比较通道的模式、极性与空闲电平。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "Configuration": "配置值，具体取值域随函数而定。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_DisableClear": {
+    "briefZh": "失能 TIM 输出比较的输出比较清零。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_DisableFast": {
+    "briefZh": "失能 TIM 输出比较的快速输出模式。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_DisablePreload": {
+    "briefZh": "失能 TIM 输出比较的预装载。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_EnableClear": {
+    "briefZh": "使能 TIM 输出比较的输出比较清零。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_EnableFast": {
+    "briefZh": "使能 TIM 输出比较的快速输出模式。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_EnablePreload": {
+    "briefZh": "使能 TIM 输出比较的预装载。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_GetCompareCH1": {
+    "briefZh": "读取通道 1 的比较值（CCR1）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_GetCompareCH2": {
+    "briefZh": "读取通道 2 的比较值（CCR2）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_GetCompareCH3": {
+    "briefZh": "读取通道 3 的比较值（CCR3）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_GetCompareCH4": {
+    "briefZh": "读取通道 4 的比较值（CCR4）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_GetIdleState": {
+    "briefZh": "读取 TIM 输出比较的空闲时的输出电平。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_GetMode": {
+    "briefZh": "读取 TIM 输出比较的工作模式。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_GetPolarity": {
+    "briefZh": "读取 TIM 输出比较的极性。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_IsEnabledClear": {
+    "briefZh": "查询 TIM 输出比较是否已使能。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_IsEnabledFast": {
+    "briefZh": "查询 TIM 输出比较是否已使能。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_IsEnabledPreload": {
+    "briefZh": "查询 TIM 输出比较是否已使能。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_SetCompareCH1": {
+    "briefZh": "设置通道 1 的比较值（CCR1），决定 PWM 占空比。",
+    "paramsZh": {
+      "CompareValue": "比较值（CCR），决定 PWM 占空比或输出比较的翻转点。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_SetCompareCH2": {
+    "briefZh": "设置通道 2 的比较值（CCR2），决定 PWM 占空比。",
+    "paramsZh": {
+      "CompareValue": "比较值（CCR），决定 PWM 占空比或输出比较的翻转点。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_SetCompareCH3": {
+    "briefZh": "设置通道 3 的比较值（CCR3），决定 PWM 占空比。",
+    "paramsZh": {
+      "CompareValue": "比较值（CCR），决定 PWM 占空比或输出比较的翻转点。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_SetCompareCH4": {
+    "briefZh": "设置通道 4 的比较值（CCR4），决定 PWM 占空比。",
+    "paramsZh": {
+      "CompareValue": "比较值（CCR），决定 PWM 占空比或输出比较的翻转点。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_SetDeadTime": {
+    "briefZh": "设置 TIM 输出比较的死区时间。",
+    "paramsZh": {
+      "DeadTime": "死区时间（0~255），实际延时与具体数值的换算见参考手册。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_SetIdleState": {
+    "briefZh": "设置 TIM 输出比较的空闲时的输出电平。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_SetMode": {
+    "briefZh": "设置输出比较模式（冻结 / 匹配时置有效 / 匹配时置无效 / 翻转 / PWM1 / PWM2）。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "Mode": "模式取值，如 LL_GPIO_MODE_OUTPUT / LL_GPIO_MODE_INPUT / LL_GPIO_MODE_ALTERNATE / LL_GPIO_MODE_ANALOG。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_OC_SetPolarity": {
+    "briefZh": "设置 TIM 输出比较的极性。",
+    "paramsZh": {
+      "Channel": "通道编号：LL_ADC_CHANNEL_x / LL_TIM_CHANNEL_CHx / LL_DAC_CHANNEL_x 等，具体取值域随外设而定。",
+      "Polarity": "极性：高有效或低有效。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_SetAutoReload": {
+    "briefZh": "设置自动重装载值（ARR）。配合预分频决定定时周期。",
+    "paramsZh": {
+      "AutoReload": "自动重装载值（ARR）。配合预分频决定定时周期。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_SetClockDivision": {
+    "briefZh": "设置 TIM 的时钟分频（CKD，用于滤波采样率）。",
+    "paramsZh": {
+      "ClockDivision": "时钟分频（CKD），只影响输入滤波的采样率：LL_TIM_CLOCKDIVISION_DIV1/2/4。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_SetClockSource": {
+    "briefZh": "设置 TIM 的时钟源。",
+    "paramsZh": {
+      "ClockSource": "时钟源选择。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_SetCounter": {
+    "briefZh": "直接写入计数器当前值（CNT）。",
+    "paramsZh": {
+      "Counter": "计数器数值（CNT）。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_SetCounterMode": {
+    "briefZh": "设置 TIM 的计数模式。",
+    "paramsZh": {
+      "CounterMode": "计数模式：LL_TIM_COUNTERMODE_UP / DOWN / CENTER_ALIGNED1~3。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_SetEncoderMode": {
+    "briefZh": "设置编码器接口的计数模式（按 A/B 相计数与方向判断方式）。",
+    "paramsZh": {
+      "EncoderMode": "编码器模式：LL_TIM_ENCODERMODE_X2_TI1 / X2_TI2 / X4_TI1TI2。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_SetOffStates": {
+    "briefZh": "设置输出空闲状态（OSSI/OSSR）：关闭时输出是高阻还是强制为无效电平。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_SetOnePulseMode": {
+    "briefZh": "设置单脉冲模式：计数器溢出一次后自动停止。",
+    "paramsZh": {
+      "OnePulseMode": "单脉冲模式：LL_TIM_ONEPULSEMODE_SINGLE / REPETITIVE。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_SetPrescaler": {
+    "briefZh": "设置预分频值（PSC）。计数频率 = 定时器时钟 / (PSC + 1)。",
+    "paramsZh": {
+      "Prescaler": "预分频值。计数频率 = 输入时钟 / (Prescaler + 1)。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_SetRepetitionCounter": {
+    "briefZh": "设置重复计数次数（RCR），仅高级定时器 TIM1 有。每 N+1 次溢出才产生一次更新事件。",
+    "paramsZh": {
+      "RepetitionCounter": "重复计数次数（RCR），仅 TIM1 有。每 N+1 次溢出才产生一次更新事件。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_SetSlaveMode": {
+    "briefZh": "设置从模式（复位 / 门控 / 触发 / 外部时钟等）。",
+    "paramsZh": {
+      "SlaveMode": "从模式：LL_TIM_SLAVEMODE_DISABLED / RESET / GATED / TRIGGER / EXTERNAL1。",
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_SetTriggerInput": {
+    "briefZh": "选择触发输入源（TRGI）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_SetTriggerOutput": {
+    "briefZh": "选择触发输出（TRGO）的信号源，用于同步其它定时器或外设。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。"
+    }
+  },
+  "LL_TIM_SetUpdateSource": {
+    "briefZh": "选择更新事件的来源（溢出 / 仅 UG 位）。",
+    "paramsZh": {
+      "TIMx": "定时器实例指针，如 TIM1 / TIM2 / TIM3 / TIM4。",
+      "UpdateSource": "更新事件来源：LL_TIM_UPDATESOURCE_REGULAR（溢出）或 LL_TIM_UPDATESOURCE_COUNTER。"
+    }
+  }
+}

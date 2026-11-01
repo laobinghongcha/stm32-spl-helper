@@ -102,26 +102,58 @@ def main() -> int:
     symbols = symbols_bundle["symbols"] + registers_bundle.get("symbols", [])
 
     # ---- 读各外设函数文件 ----
+    #
+    # v1：functions/<外设>.json（只有 SPL）
+    # v2：functions/<外设>.json + functions/{hal,ll,reg}/<外设>.json
+    # 这里统一成 {(库, 外设): [函数]}，v1 数据只有 ("spl", pid) 一项。
+    schema = int(manifest.get("schemaVersion") or 1)
+    function_dirs: dict[str, str] = {"spl": "functions/"}
+    function_dirs.update(manifest.get("functionDirs") or {})
+    if schema < 2:
+        function_dirs = {"spl": "functions/"}
+
     functions: list[dict[str, Any]] = []
     functions_by_periph: dict[str, list[dict[str, Any]]] = {}
-    for per in peripherals:
-        pid = per["id"]
-        fpath = data_dir / "functions" / f"{pid}.json"
-        if not fpath.is_file():
-            c.error(f"外设 {pid} 的函数文件不存在：{fpath}")
+    functions_by_lib: dict[tuple[str, str], list[dict[str, Any]]] = {}
+    for lib, rel in function_dirs.items():
+        d = data_dir / rel
+        if not d.is_dir():
             continue
-        bundle = load(fpath)
-        functions_by_periph[pid] = bundle["functions"]
-        functions.extend(bundle["functions"])
+        for fpath in sorted(d.glob("*.json")):
+            pid = fpath.stem
+            try:
+                bundle = load(fpath)
+            except json.JSONDecodeError as exc:
+                c.error(f"{fpath} 不是合法 JSON：{exc}")
+                continue
+            items = bundle.get("functions") or []
+            if lib == "spl":
+                functions_by_periph.setdefault(pid, []).extend(items)
+            functions_by_lib[(lib, pid)] = items
+            functions.extend(items)
+
+    # v2 的符号集合要含 symbols_hal.json（HAL/LL 的宏、枚举、结构体）
+    if schema >= 2:
+        sp0 = data_dir / (
+            manifest.get("files", {}).get("symbolsHal") or "symbols_hal.json"
+        )
+        if sp0.is_file():
+            extra = load(sp0).get("symbols") or []
+            symbols = symbols + extra
 
     function_ids = {f["id"] for f in functions}
     symbol_ids = {s["name"] for s in symbols}
     peripheral_ids = {p["id"] for p in peripherals}
 
     # ---- 1. id 唯一性 ----
+    #
+    # 符号按 `(名字, 库)` 去重，不能只看名字：v2.0.1 起，HAL/LL 与 SPL
+    # 各有一套同名但成员不同的结构体（GPIO_InitTypeDef 的
+    # Pin/Mode/Pull/Speed vs GPIO_Pin/GPIO_Speed/GPIO_Mode），
+    # 两者靠「库限定 id」共存，名字相同是**预期**的。
+    # 同一库里出现同名才是真问题（说明有重复定义漏了去重）。
     for label, items, key in (
         ("函数", functions, "id"),
-        ("符号", symbols, "name"),
         ("外设", peripherals, "id"),
     ):
         seen: dict[str, int] = {}
@@ -133,6 +165,15 @@ def main() -> int:
             preview = list(dup.items())[:10]
             c.error(f"{label} id 重复 {len(dup)} 个：{preview}")
 
+    seen_sym: dict[tuple[str, str], int] = {}
+    for s in symbols:
+        k = (s["name"], s.get("library") or "spl")
+        seen_sym[k] = seen_sym.get(k, 0) + 1
+    dup_sym = {k: v for k, v in seen_sym.items() if v > 1}
+    if dup_sym:
+        preview = list(dup_sym.items())[:10]
+        c.error(f"符号在同一库内重复 {len(dup_sym)} 个：{preview}")
+
     # 引脚号唯一
     if pinout:
         nums = [p["number"] for p in pinout["pins"]]
@@ -142,23 +183,49 @@ def main() -> int:
     if len(err_ids) != len(set(err_ids)):
         c.error("编译错误 id 有重复")
 
-    # ---- 2. 分组与函数互为子集 ----
+    # ---- 2. 分组与函数互为子集（v2 按库分别校验）----
     for per in peripherals:
         pid = per["id"]
-        actual = {f["id"] for f in functions_by_periph.get(pid, [])}
-        listed: list[str] = []
+        by_lib: dict[str, set[str]] = {}
         for sec in per["sections"]:
-            listed.extend(sec["functionIds"])
-        listed_set = set(listed)
+            lib = sec.get("library")
+            if not lib:
+                # v1 的 section 没有 library 字段；v2 里 `X@lib#secN` 从 id 推
+                m2 = re.search(r"@(\w+)#", str(sec.get("id", "")))
+                lib = m2.group(1) if m2 else "spl"
+            by_lib.setdefault(lib, set()).update(sec["functionIds"])
 
-        if len(listed) != len(listed_set):
+        for lib in ("spl", "hal", "ll", "reg"):
+            if lib not in function_dirs:
+                continue
+            actual = {f["id"] for f in functions_by_lib.get((lib, pid), [])}
+            listed_set = by_lib.get(lib, set())
+            if lib == "spl":
+                # v1 数据没有 library 字段，全部算 spl
+                listed_set = by_lib.get("spl", set()) | by_lib.get("", set())
+            if not actual and not listed_set:
+                continue
+            orphan = actual - listed_set
+            dangling = listed_set - actual
+            if orphan:
+                c.error(
+                    f"{pid}@{lib} 有 {len(orphan)} 个函数未归入任何分组："
+                    f"{sorted(orphan)[:8]}"
+                )
+            if dangling:
+                c.error(
+                    f"{pid}@{lib} 的分组引用了不存在的函数：{sorted(dangling)[:8]}"
+                )
+        all_listed = [fid for sec in per["sections"] for fid in sec["functionIds"]]
+        if len(all_listed) != len(set(all_listed)):
             c.error(f"{pid} 的 sections 里有函数被重复列出")
-        orphan = actual - listed_set
-        dangling = listed_set - actual
-        if orphan:
-            c.error(f"{pid} 有 {len(orphan)} 个函数未归入任何分组：{sorted(orphan)[:8]}")
-        if dangling:
-            c.error(f"{pid} 的分组引用了不存在的函数：{sorted(dangling)[:8]}")
+
+        # 契约 §3：section id 与 library 字段必须一致
+        for sec in per["sections"]:
+            sid = str(sec.get("id", ""))
+            lib = sec.get("library")
+            if lib and "@" in sid and f"@{lib}#" not in sid:
+                c.error(f"{pid} 的 section {sid} 与 library={lib} 不一致")
 
     # ---- 3. 交叉引用可解析 ----
     bad_ref = 0
@@ -220,20 +287,43 @@ def main() -> int:
                 if name not in symbol_ids:
                     missing_types.setdefault(name, []).append(s["name"])
     if missing_types:
+        # 已知的两个是解析器的边界情况，不影响使用（详情页显示为纯文本，
+        # 不会断链、也不会报错）：
+        #   * ADC_Common_TypeDef —— 定义在 CMSIS 的 stm32f103xb.h 里，
+        #     属于寄存器层，本 APP 不为它建 HAL 符号；
+        #   * NOR_HandleTypeDef —— 用 `typedef struct __NOR_HandleTypeDef
+        #     #else typedef struct #endif {...}` 这种条件编译写法，
+        #     且 NOR 在本型号上不适用（无外部 NOR Flash 控制器引出）。
+        known_ok = {"ADC_Common_TypeDef", "NOR_HandleTypeDef"}
         for name, users in sorted(missing_types.items())[:15]:
+            if name in known_ok:
+                continue
             c.warn(
                 f"类型 {name} 没有对应的符号条目"
                 f"（被 {len(users)} 处引用，如 {users[:3]}），详情页里它会显示为纯文本"
             )
 
     # ---- 5. functionCount 一致 ----
+    #
+    # v1：顶层 functionCount == 该外设函数文件条数
+    # v2：顶层取「主库」值，逐库计数在 libraries.<lib>.functionCount 里
     for per in peripherals:
         pid = per["id"]
-        actual = len(functions_by_periph.get(pid, []))
-        if per.get("functionCount") != actual:
-            c.error(
-                f"{pid}.functionCount={per.get('functionCount')} 与实际 {actual} 不符"
-            )
+        libs = per.get("libraries")
+        if isinstance(libs, dict) and libs:
+            for lib, info in libs.items():
+                if not isinstance(info, dict):
+                    continue
+                actual = len(functions_by_lib.get((lib, pid), []))
+                declared = info.get("functionCount")
+                if declared is not None and declared != actual:
+                    c.error(f"{pid}@{lib}.functionCount={declared} 与实际 {actual} 不符")
+        else:
+            actual = len(functions_by_periph.get(pid, []))
+            if per.get("functionCount") != actual:
+                c.error(
+                    f"{pid}.functionCount={per.get('functionCount')} 与实际 {actual} 不符"
+                )
 
     # ---- 6/7. 引脚数据 ----
     if pinout:
@@ -262,16 +352,33 @@ def main() -> int:
 
     # ---- 8. stats 一致 ----
     stats = manifest.get("stats", {})
+    # v2 里 symbolCount 是四库合计（symbols 此时已含 symbols_hal）
     checks = [
         ("peripheralCount", len(peripherals)),
         ("functionCount", len(functions)),
-        ("symbolCount", len(symbols)),
         ("pinCount", len(pinout["pins"]) if pinout else 0),
         ("compileErrorCount", len(errors_bundle.get("errors", []))),
     ]
     for key, actual in checks:
         if key in stats and stats[key] != actual:
             c.error(f"manifest.stats.{key}={stats[key]} 与实际 {actual} 不符")
+
+    # symbolCount 的口径随 schema 变：
+    #   v1 = apiSymbolCount + registerSymbolCount（SPL 拆两个文件）
+    #   v2 = sum(librarySymbolCounts)，其中 spl 仍是上面那两个之和
+    if "symbolCount" in stats:
+        if schema >= 2 and isinstance(stats.get("librarySymbolCounts"), dict):
+            expect = sum(int(v) for v in stats["librarySymbolCounts"].values())
+            if stats["symbolCount"] != expect:
+                c.error(
+                    f"manifest.stats.symbolCount={stats['symbolCount']} "
+                    f"与 librarySymbolCounts 合计 {expect} 不符"
+                )
+        elif stats["symbolCount"] != len(symbols):
+            c.error(
+                f"manifest.stats.symbolCount={stats['symbolCount']} "
+                f"与实际 {len(symbols)} 不符"
+            )
 
     # ---- 附加：中文覆盖率统计（提示性质）----
     zh_funcs = sum(1 for f in functions if f.get("briefZh"))

@@ -1,0 +1,178 @@
+{
+  "HAL_RCCEx_DisablePLL2": {
+    "briefZh": "关闭第二路 PLL（PLL2）。",
+    "usageZh": "不再需要时关闭省电。"
+  },
+  "HAL_RCCEx_DisablePLLI2S": {
+    "briefZh": "关闭 I2S 专用 PLL。",
+    "usageZh": "不再用 I2S 时关闭以省电。"
+  },
+  "HAL_RCCEx_EnablePLL2": {
+    "briefZh": "使能第二路 PLL（PLL2），供 I2S 等外设使用。",
+    "usageZh": "大容量型号才有。用法与 PLLI2S 类似，用于需要额外时钟域的场合。",
+    "paramsZh": {
+      "PLL2Init": "结构体：PLL2M / PLL2N / PLL2P / PLL2R 决定输出频率。"
+    }
+  },
+  "HAL_RCCEx_EnablePLLI2S": {
+    "briefZh": "使能 I2S 专用 PLL（PLLI2S），为 I2S 提供音频主时钟。",
+    "usageZh": "F1 只有大容量型号带 I2S 专用 PLL。要把 I2S 配到 44.1kHz/48kHz 采样率时用它。",
+    "paramsZh": {
+      "PLLI2SInit": "结构体：PLLI2SM / PLLI2SN / PLLI2SR 决定 I2S 时钟频率。"
+    },
+    "notesZh": [
+      "普通 F103C8T6 的中容量芯片没有 I2S PLL，这个函数对它无意义"
+    ]
+  },
+  "HAL_RCCEx_GetPeriphCLKConfig": {
+    "briefZh": "把外设专用时钟的当前配置读回到结构体里。",
+    "usageZh": "核对 ADC/USB/RTC 的时钟源到底被设成了什么，排查「ADC 读数偏小」「USB 枚举不上」这类问题时必用。",
+    "paramsZh": {
+      "PeriphClkInit": "输出参数，接收当前的外设时钟配置。"
+    }
+  },
+  "HAL_RCCEx_GetPeriphCLKFreq": {
+    "briefZh": "返回指定外设时钟的实际频率（单位 Hz）。",
+    "usageZh": "算 ADC 采样时间、USB 时序、I2S 分频时直接取真实值，比手算可靠。",
+    "paramsZh": {
+      "PeriphClk": "外设时钟标识，如 RCC_PERIPHCLK_ADC、RCC_PERIPHCLK_USB、RCC_PERIPHCLK_RTC。"
+    }
+  },
+  "HAL_RCCEx_PeriphCLKConfig": {
+    "briefZh": "配置外设专用时钟源：ADC 预分频、USB 分频、RTC 时钟源、I2S 时钟源。",
+    "usageZh": "F1 里这些外设挂的不是普通总线时钟，需要单独选源与分频。最常用的是给 RTC 选 LSE、给 ADC 设 /6 分频让 ADC 时钟不超过 14MHz。",
+    "paramsZh": {
+      "PeriphClkInit": "结构体：PeriphClockSelection 选要配哪一项（RCC_PERIPHCLK_ADC / USB / RTC / I2S）；AdcClockSelection 取 RCC_ADCPCLK2_DIV2/4/6/8；RTCClockSelection 取 RCC_RTCCLKSOURCE_LSE/LSI/HSE_RTC；UsbClockSelection 取 RCC_USBCLKSOURCE_PLL_DIV1_5。"
+    },
+    "notesZh": [
+      "ADC 时钟不能超过 14MHz，72MHz 下至少 /6（12MHz）",
+      "USB 要求精确 48MHz，只能用 PLL/1.5",
+      "改 RTC 时钟源前要先 HAL_RCC_DisableRTC 并备份域可写"
+    ],
+    "prerequisites": [
+      "对应的源时钟（LSE/HSE）已由 HAL_RCC_OscConfig 打开"
+    ]
+  },
+  "HAL_RCC_CSSCallback": {
+    "briefZh": "时钟安全系统的用户回调，__weak 空实现，HSE 失效时被调用。",
+    "usageZh": "在这里做降级处理：把外设全部停掉、重新按 HSI 8MHz 配置时钟、必要时点亮故障灯或记录日志。",
+    "notesZh": [
+      "此时 PLL 已自动关闭，系统跑在 HSI 8MHz，所有按 72MHz 算的波特率/定时器参数都要重配",
+      "回调在 NMI 上下文，不要调用 HAL_Delay"
+    ]
+  },
+  "HAL_RCC_ClockConfig": {
+    "briefZh": "配置 SYSCLK 来源、AHB/APB1/APB2 分频，并同时设置对应的 Flash 等待周期。",
+    "usageZh": "系统时钟初始化的第二步，在 HAL_RCC_OscConfig 之后调用。它把 SYSCLK 从 HSI 切到 PLL，并按分频算出 HCLK/PCLK1/PCLK2。**Flash 等待周期（FLatency）也在这一步设**，72MHz 必须传 FLASH_LATENCY_2，传少了会跑飞、传多了只是慢一点。",
+    "paramsZh": {
+      "FLatency": "Flash 等待周期：24MHz 以下用 FLASH_LATENCY_0，24~48MHz 用 1，48~72MHz 用 2。F1 最高 72MHz 所以最常见是 2。",
+      "RCC_ClkInitStruct": "ClockType 选择要配哪些（SYSCLK|HCLK|PCLK1|PCLK2 位或）；SYSCLKSource 选 RCC_SYSCLKSOURCE_PLLCLK；AHBCLKDivider 通常用 RCC_SYSCLK_DIV1；APB1CLKDivider 用 RCC_HCLK_DIV2（APB1 上限 36MHz）；APB2CLKDivider 用 RCC_HCLK_DIV1。"
+    },
+    "notesZh": [
+      "APB1 最高只能 36MHz，分频配成 DIV1 跑 72MHz 会读数异常甚至死机",
+      "调完必须调 SystemCoreClockUpdate()，否则 HAL_Delay 之外的很多基于 SystemCoreClock 的计算（串口波特率、定时器分频）全部错",
+      "FLatency 与主频不匹配是最隐蔽的错误：表现为偶发死机或读 Flash 数据错乱"
+    ],
+    "exampleCode": "RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};\n\nRCC_ClkInitStruct.ClockType      = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK\n                                 | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;\nRCC_ClkInitStruct.SYSCLKSource   = RCC_SYSCLKSOURCE_PLLCLK;\nRCC_ClkInitStruct.AHBCLKDivider  = RCC_SYSCLK_DIV1;\nRCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;   /* 36MHz 上限 */\nRCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;   /* 72MHz */\nHAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2);\n\n/* 关键：把 SystemCoreClock 变量同步成实际频率 */\nSystemCoreClockUpdate();",
+    "prerequisites": [
+      "已用 HAL_RCC_OscConfig 打开 HSE 并配置好 PLL"
+    ]
+  },
+  "HAL_RCC_DeInit": {
+    "briefZh": "把 RCC 配置恢复成复位默认状态（HSI 作 SYSCLK、所有分频复位、外设时钟关闭）。",
+    "usageZh": "想在运行时彻底重配时钟树、或者从 STOP 模式回来后要完全重来一遍时用。会把 PLL 关掉、SYSCLK 切回 HSI。",
+    "notesZh": [
+      "调完系统就跑在 8MHz HSI 上了，所有依赖主频的配置（波特率、定时器）都要重算",
+      "通常只在特殊情况用；正常初始化不需要先 DeInit"
+    ]
+  },
+  "HAL_RCC_DisableCSS": {
+    "briefZh": "关闭时钟安全系统。",
+    "usageZh": "调试阶段不想被 NMI 打断时临时关掉；量产代码建议保持开启。"
+  },
+  "HAL_RCC_EnableCSS": {
+    "briefZh": "使能时钟安全系统（CSS）：HSE 一旦失效自动切回 HSI 并触发 NMI 中断。",
+    "usageZh": "产品级代码的保护措施。晶振因振动、虚焊、温漂停振时，CSS 能保证系统继续跑（切到内部 8MHz RC），而不是直接死机。使能后要重写 HAL_RCC_CSSCallback 在 NMI 里做降级处理。",
+    "notesZh": [
+      "CSS 中断是 NMI（不可屏蔽），优先级最高，回调里不能做耗时操作",
+      "触发后 PLL 也被关掉，系统退到 HSI 8MHz，需要重新配置时钟",
+      "只在 HSE 作为系统时钟源时有意义"
+    ]
+  },
+  "HAL_RCC_GetClockConfig": {
+    "briefZh": "把当前的 SYSCLK 源与各总线分频读回到结构体里。",
+    "usageZh": "和 HAL_RCC_GetOscConfig 配合，能完整还原时钟树配置。STOP 模式唤醒后常先读一次再决定怎么恢复。",
+    "paramsZh": {
+      "RCC_ClkInitStruct": "输出参数，接收 SYSCLKSource 与各分频值。",
+      "pFLatency": "输出参数，接收当前 Flash 等待周期。"
+    }
+  },
+  "HAL_RCC_GetHCLKFreq": {
+    "briefZh": "返回 AHB 总线（HCLK）频率，即内核实际运行的频率。",
+    "usageZh": "算 SysTick、DWT 周期计数、以及任何「每周期多少」的场合都用它。"
+  },
+  "HAL_RCC_GetOscConfig": {
+    "briefZh": "把当前 RCC 振荡器与 PLL 的实际配置读回到结构体里。",
+    "usageZh": "想在运行时复制一份时钟配置（比如做低功耗前后对比、或者把配置打印出来核对）时用，避免手动逐位解析寄存器。",
+    "paramsZh": {
+      "RCC_OscInitStruct": "输出参数，传入结构体地址由函数填回当前配置。"
+    }
+  },
+  "HAL_RCC_GetPCLK1Freq": {
+    "briefZh": "返回 APB1 总线频率（PCLK1）。",
+    "usageZh": "配置挂在 APB1 上的外设（USART2/3、TIM2~7、I2C、SPI2、PWR、BKP）时需要用它算波特率或定时器时基。",
+    "notesZh": [
+      "注意定时器时钟不是 PCLK1：APB 分频不为 1 时，定时器时钟是 PCLK1 × 2"
+    ]
+  },
+  "HAL_RCC_GetPCLK2Freq": {
+    "briefZh": "返回 APB2 总线频率（PCLK2）。",
+    "usageZh": "配置 USART1、SPI1、ADC1、GPIO、TIM1、AFIO 这些 APB2 外设时用它算分频。"
+  },
+  "HAL_RCC_GetSysClockFreq": {
+    "briefZh": "返回当前 SYSCLK 的实际频率（单位 Hz）。",
+    "usageZh": "写通用驱动（尤其是需要按主频算波特率/定时器分频的库）时用它取实际频率，比硬编码 72000000 更稳妥。"
+  },
+  "HAL_RCC_MCOConfig": {
+    "briefZh": "把内部时钟信号从 MCO 引脚（PA8）输出，用于示波器测量实际频率。",
+    "usageZh": "验证时钟树是否真的跑在你以为的频率上——这是最直接的调试手段。可以选输出 SYSCLK、HSI、HSE 或 PLL/2。",
+    "paramsZh": {
+      "RCC_MCODiv": "输出分频，RCC_MCODIV_1 ~ RCC_MCODIV_4。频率太高示波器探头会失真，建议至少 /2。",
+      "RCC_MCOSource": "要输出的时钟源：RCC_MCO1SOURCE_SYSCLK / HSI / HSE / PLLCLK_DIV2。",
+      "RCC_MCOx": "MCO 输出引脚，F1 上只有 RCC_MCO1（PA8）。"
+    },
+    "notesZh": [
+      "PA8 被 MCO 占用后不能再当普通 GPIO 用；测完记得关掉"
+    ],
+    "prerequisites": [
+      "PA8 已配成复用推挽输出（GPIO_MODE_AF_PP）"
+    ]
+  },
+  "HAL_RCC_NMI_IRQHandler": {
+    "briefZh": "CSS（时钟安全系统）中断的服务程序，内部清 CSS 标志并调用 HAL_RCC_CSSCallback。",
+    "usageZh": "在 NMI_Handler() 里调用它。必须重写 HAL_RCC_CSSCallback 才有实际动作，否则 HSE 挂了系统会静默降频到 8MHz。",
+    "notesZh": [
+      "NMI 优先级最高且不可屏蔽，回调里只能做很短的降级处理"
+    ],
+    "prerequisites": [
+      "已 HAL_RCC_EnableCSS() 使能 CSS"
+    ]
+  },
+  "HAL_RCC_OscConfig": {
+    "briefZh": "配置时钟振荡器：选 HSE/HSI/LSE/LSI 的开关与旁路，并配置 PLL 的倍频与来源。",
+    "usageZh": "系统时钟初始化的第一步。整个 72MHz 配置的核心就在这里——把 HSE 打开并等它稳定，再把 PLL 源设为 HSE、倍频设为 9。函数内部会自己做「等待起振」的轮询（带超时），所以不需要像 SPL 那样手动 while 等 RCC_WaitForHSEStartUp。",
+    "paramsZh": {
+      "RCC_OscInitStruct": "振荡器配置结构体：OscillatorType 选择要配置哪些源（RCC_OSCILLATORTYPE_HSE|HSI|LSE|LSI 位或）；HSEState / HSICalibrationValue / LSEState / LSIState 各自开关；PLL.PLLState 决定是否配置 PLL，PLL.PLLSource 选 PLLSOURCE_HSE 或 PLLSOURCE_HSI_DIV2，PLL.PLLMUL 选 RCC_PLL_MUL9 等倍频。"
+    },
+    "notesZh": [
+      "F1 的 PLL 输入只有 HSE 或 HSI/2 两种（没有 F4 的 PLLM），8MHz HSE 想上 72MHz 就是 PLLMUL=9",
+      "HSE 起振失败会返回 HAL_ERROR，实际原因多半是晶振没接、负载电容不对、或者板子上根本没焊晶振——此时应回退到 HSI",
+      "F1 的 HSE 还有 HSEPredivValue（2 分频选项），用 16MHz 晶振时要设成 RCC_HSE_PREDIV_DIV2 才能得到 8MHz 进 PLL",
+      "调 PLL 前必须先切回 HSI 做 SYSCLK，否则会死机；一般来说 HAL_RCC_ClockConfig 会处理好，但手动改 PLL 参数时要自己先切"
+    ],
+    "exampleCode": "RCC_OscInitTypeDef RCC_OscInitStruct = {0};\n\n/* HSE 8MHz 晶振 + PLL 9 倍频 = 72MHz */\nRCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;\nRCC_OscInitStruct.HSEState       = RCC_HSE_ON;\nRCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;\nRCC_OscInitStruct.PLL.PLLState   = RCC_PLL_ON;\nRCC_OscInitStruct.PLL.PLLSource  = RCC_PLLSOURCE_HSE;\nRCC_OscInitStruct.PLL.PLLMUL     = RCC_PLL_MUL9;\nif (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)\n{\n  Error_Handler();   /* 晶振没起振或参数非法 */\n}",
+    "prerequisites": [
+      "HAL_Init() 已完成（SysTick 与优先级分组就绪）"
+    ]
+  }
+}

@@ -1,0 +1,2377 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "ADC",
+  "library": "reg",
+  "functions": [
+    {
+      "id": "REG_ADC_CR1",
+      "name": "ADC_CR1",
+      "peripheral": "ADC",
+      "library": "reg",
+      "sectionId": "ADC@reg#sec3",
+      "prototype": "ADC1->CR1",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADC_CR1_AWDCH",
+          "type": "bits[4:0]（整个位域）",
+          "descEn": "ADC analog watchdog 1 monitored channel selection",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_EOSIE",
+          "type": "bit 5（整个位域）",
+          "descEn": "ADC group regular end of sequence conversions interrupt",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_AWDIE",
+          "type": "bit 6（整个位域）",
+          "descEn": "ADC analog watchdog 1 interrupt",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_JEOSIE",
+          "type": "bit 7（整个位域）",
+          "descEn": "ADC group injected end of sequence conversions interrupt",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_SCAN",
+          "type": "bit 8（整个位域）",
+          "descEn": "ADC scan mode",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_AWDSGL",
+          "type": "bit 9（整个位域）",
+          "descEn": "ADC analog watchdog 1 monitoring a single channel or all channels",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_JAUTO",
+          "type": "bit 10（整个位域）",
+          "descEn": "ADC group injected automatic trigger mode",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_DISCEN",
+          "type": "bit 11（整个位域）",
+          "descEn": "ADC group regular sequencer discontinuous mode",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_JDISCEN",
+          "type": "bit 12（整个位域）",
+          "descEn": "ADC group injected sequencer discontinuous mode",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_DISCNUM",
+          "type": "bits[15:13]（整个位域）",
+          "descEn": "ADC group regular sequencer discontinuous number of ranks",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_DUALMOD",
+          "type": "bits[19:16]（整个位域）",
+          "descEn": "ADC multimode mode selection",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_JAWDEN",
+          "type": "bit 22（整个位域）",
+          "descEn": "ADC analog watchdog 1 enable on scope ADC group injected",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_AWDEN",
+          "type": "bit 23（整个位域）",
+          "descEn": "ADC analog watchdog 1 enable on scope ADC group regular",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_AWDCH_0",
+          "type": "bit 0",
+          "descEn": "0x00000001",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_AWDCH_1",
+          "type": "bit 1",
+          "descEn": "0x00000002",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_AWDCH_2",
+          "type": "bit 2",
+          "descEn": "0x00000004",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_AWDCH_3",
+          "type": "bit 3",
+          "descEn": "0x00000008",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_AWDCH_4",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_DISCNUM_0",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_DISCNUM_1",
+          "type": "bit 14",
+          "descEn": "0x00004000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_DISCNUM_2",
+          "type": "bit 15",
+          "descEn": "0x00008000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_DUALMOD_0",
+          "type": "bit 16",
+          "descEn": "0x00010000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_DUALMOD_1",
+          "type": "bit 17",
+          "descEn": "0x00020000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_DUALMOD_2",
+          "type": "bit 18",
+          "descEn": "0x00040000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_DUALMOD_3",
+          "type": "bit 19",
+          "descEn": "0x00080000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_EOCIE",
+          "type": "(ADC_CR1_EOSIE)",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR1_JEOCIE",
+          "type": "(ADC_CR1_JEOSIE)",
+          "descEn": "",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "ADC analog watchdog 1 monitored channel selection",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADC_CR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ADC_TypeDef.CR1，偏移 0x04"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ADC1->CR1;  /* 读回当前值 */\nv &= ~ADC_CR1_AWDCH_Msk;  /* 先清掉 ADC_CR1_AWDCH：bits[4:0]（整个位域） */\nv |= (1u << ADC_CR1_AWDCH_Pos) & ADC_CR1_AWDCH_Msk;  /* 置位，实际取值看参考手册 */\nADC1->CR1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3311,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ADC_CR2",
+      "name": "ADC_CR2",
+      "peripheral": "ADC",
+      "library": "reg",
+      "sectionId": "ADC@reg#sec3",
+      "prototype": "ADC1->CR2",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADC_CR2_ADON",
+          "type": "bit 0（整个位域）",
+          "descEn": "ADC enable",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR2_CONT",
+          "type": "bit 1（整个位域）",
+          "descEn": "ADC group regular continuous conversion mode",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR2_CAL",
+          "type": "bit 2（整个位域）",
+          "descEn": "ADC calibration start",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR2_RSTCAL",
+          "type": "bit 3（整个位域）",
+          "descEn": "ADC calibration reset",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR2_DMA",
+          "type": "bit 8（整个位域）",
+          "descEn": "ADC DMA transfer enable",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR2_ALIGN",
+          "type": "bit 11（整个位域）",
+          "descEn": "ADC data alignment",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR2_JEXTSEL",
+          "type": "bits[14:12]（整个位域）",
+          "descEn": "ADC group injected external trigger source",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR2_JEXTTRIG",
+          "type": "bit 15（整个位域）",
+          "descEn": "ADC group injected external trigger enable",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR2_EXTSEL",
+          "type": "bits[19:17]（整个位域）",
+          "descEn": "ADC group regular external trigger source",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR2_EXTTRIG",
+          "type": "bit 20（整个位域）",
+          "descEn": "ADC group regular external trigger enable",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR2_JSWSTART",
+          "type": "bit 21（整个位域）",
+          "descEn": "ADC group injected conversion start",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR2_SWSTART",
+          "type": "bit 22（整个位域）",
+          "descEn": "ADC group regular conversion start",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR2_TSVREFE",
+          "type": "bit 23（整个位域）",
+          "descEn": "ADC internal path to VrefInt and temperature sensor enable",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR2_JEXTSEL_0",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR2_JEXTSEL_1",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR2_JEXTSEL_2",
+          "type": "bit 14",
+          "descEn": "0x00004000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR2_EXTSEL_0",
+          "type": "bit 17",
+          "descEn": "0x00020000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR2_EXTSEL_1",
+          "type": "bit 18",
+          "descEn": "0x00040000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_CR2_EXTSEL_2",
+          "type": "bit 19",
+          "descEn": "0x00080000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "ADC enable",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADC_CR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ADC_TypeDef.CR2，偏移 0x08"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ADC1->CR2;  /* 读回当前值 */\nv &= ~ADC_CR2_ADON_Msk;  /* 先清掉 ADC_CR2_ADON：bit 0（整个位域） */\nv |= (1u << ADC_CR2_ADON_Pos) & ADC_CR2_ADON_Msk;  /* 置位，实际取值看参考手册 */\nADC1->CR2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3372,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ADC_DR",
+      "name": "ADC_DR",
+      "peripheral": "ADC",
+      "library": "reg",
+      "sectionId": "ADC@reg#sec2",
+      "prototype": "ADC1->DR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADC_DR_DATA",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "ADC group regular conversion data",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_DR_ADC2DATA",
+          "type": "bits[31:16]（整个位域）",
+          "descEn": "ADC group regular conversion data for ADC slave, in multimode",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "ADC group regular conversion data",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADC_DR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ADC_TypeDef.DR，偏移 0x4C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ADC1->DR;  /* 读回当前值 */\nv &= ~ADC_DR_DATA_Msk;  /* 先清掉 ADC_DR_DATA：bits[15:0]（整个位域） */\nv |= (1u << ADC_DR_DATA_Pos) & ADC_DR_DATA_Msk;  /* 置位，实际取值看参考手册 */\nADC1->DR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3799,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ADC_HTR",
+      "name": "ADC_HTR",
+      "peripheral": "ADC",
+      "library": "reg",
+      "sectionId": "ADC@reg#sec3",
+      "prototype": "ADC1->HTR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADC_HTR_HT",
+          "type": "bits[11:0]（整个位域）",
+          "descEn": "ADC analog watchdog 1 threshold high",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "ADC analog watchdog 1 threshold high",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADC_HTR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ADC_TypeDef.HTR，偏移 0x24"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ADC1->HTR;  /* 读回当前值 */\nv &= ~ADC_HTR_HT_Msk;  /* 先清掉 ADC_HTR_HT：bits[11:0]（整个位域） */\nv |= (1u << ADC_HTR_HT_Pos) & ADC_HTR_HT_Msk;  /* 置位，实际取值看参考手册 */\nADC1->HTR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3571,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ADC_JDR1",
+      "name": "ADC_JDR1",
+      "peripheral": "ADC",
+      "library": "reg",
+      "sectionId": "ADC@reg#sec3",
+      "prototype": "ADC1->JDR1",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADC_JDR1_JDATA",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "ADC group injected sequencer rank 1 conversion data",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "ADC group injected sequencer rank 1 conversion data",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADC_JDR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ADC_TypeDef.JDR1，偏移 0x3C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ADC1->JDR1;  /* 读回当前值 */\nv &= ~ADC_JDR1_JDATA_Msk;  /* 先清掉 ADC_JDR1_JDATA：bits[15:0]（整个位域） */\nv |= (1u << ADC_JDR1_JDATA_Pos) & ADC_JDR1_JDATA_Msk;  /* 置位，实际取值看参考手册 */\nADC1->JDR1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3779,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ADC_JDR2",
+      "name": "ADC_JDR2",
+      "peripheral": "ADC",
+      "library": "reg",
+      "sectionId": "ADC@reg#sec3",
+      "prototype": "ADC1->JDR2",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADC_JDR2_JDATA",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "ADC group injected sequencer rank 2 conversion data",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "ADC group injected sequencer rank 2 conversion data",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADC_JDR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ADC_TypeDef.JDR2，偏移 0x40"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ADC1->JDR2;  /* 读回当前值 */\nv &= ~ADC_JDR2_JDATA_Msk;  /* 先清掉 ADC_JDR2_JDATA：bits[15:0]（整个位域） */\nv |= (1u << ADC_JDR2_JDATA_Pos) & ADC_JDR2_JDATA_Msk;  /* 置位，实际取值看参考手册 */\nADC1->JDR2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3784,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ADC_JDR3",
+      "name": "ADC_JDR3",
+      "peripheral": "ADC",
+      "library": "reg",
+      "sectionId": "ADC@reg#sec3",
+      "prototype": "ADC1->JDR3",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADC_JDR3_JDATA",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "ADC group injected sequencer rank 3 conversion data",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "ADC group injected sequencer rank 3 conversion data",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADC_JDR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ADC_TypeDef.JDR3，偏移 0x44"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ADC1->JDR3;  /* 读回当前值 */\nv &= ~ADC_JDR3_JDATA_Msk;  /* 先清掉 ADC_JDR3_JDATA：bits[15:0]（整个位域） */\nv |= (1u << ADC_JDR3_JDATA_Pos) & ADC_JDR3_JDATA_Msk;  /* 置位，实际取值看参考手册 */\nADC1->JDR3 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3789,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ADC_JDR4",
+      "name": "ADC_JDR4",
+      "peripheral": "ADC",
+      "library": "reg",
+      "sectionId": "ADC@reg#sec3",
+      "prototype": "ADC1->JDR4",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADC_JDR4_JDATA",
+          "type": "bits[15:0]（整个位域）",
+          "descEn": "ADC group injected sequencer rank 4 conversion data",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "ADC group injected sequencer rank 4 conversion data",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADC_JDR4"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ADC_TypeDef.JDR4，偏移 0x48"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ADC1->JDR4;  /* 读回当前值 */\nv &= ~ADC_JDR4_JDATA_Msk;  /* 先清掉 ADC_JDR4_JDATA：bits[15:0]（整个位域） */\nv |= (1u << ADC_JDR4_JDATA_Pos) & ADC_JDR4_JDATA_Msk;  /* 置位，实际取值看参考手册 */\nADC1->JDR4 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3794,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ADC_JOFR1",
+      "name": "ADC_JOFR1",
+      "peripheral": "ADC",
+      "library": "reg",
+      "sectionId": "ADC@reg#sec3",
+      "prototype": "ADC1->JOFR1",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADC_JOFR1_JOFFSET1",
+          "type": "bits[11:0]（整个位域）",
+          "descEn": "ADC group injected sequencer rank 1 offset value",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "ADC group injected sequencer rank 1 offset value",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADC_JOFR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ADC_TypeDef.JOFR1，偏移 0x14"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ADC1->JOFR1;  /* 读回当前值 */\nv &= ~ADC_JOFR1_JOFFSET1_Msk;  /* 先清掉 ADC_JOFR1_JOFFSET1：bits[11:0]（整个位域） */\nv |= (1u << ADC_JOFR1_JOFFSET1_Pos) & ADC_JOFR1_JOFFSET1_Msk;  /* 置位，实际取值看参考手册 */\nADC1->JOFR1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3551,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ADC_JOFR2",
+      "name": "ADC_JOFR2",
+      "peripheral": "ADC",
+      "library": "reg",
+      "sectionId": "ADC@reg#sec3",
+      "prototype": "ADC1->JOFR2",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADC_JOFR2_JOFFSET2",
+          "type": "bits[11:0]（整个位域）",
+          "descEn": "ADC group injected sequencer rank 2 offset value",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "ADC group injected sequencer rank 2 offset value",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADC_JOFR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ADC_TypeDef.JOFR2，偏移 0x18"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ADC1->JOFR2;  /* 读回当前值 */\nv &= ~ADC_JOFR2_JOFFSET2_Msk;  /* 先清掉 ADC_JOFR2_JOFFSET2：bits[11:0]（整个位域） */\nv |= (1u << ADC_JOFR2_JOFFSET2_Pos) & ADC_JOFR2_JOFFSET2_Msk;  /* 置位，实际取值看参考手册 */\nADC1->JOFR2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3556,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ADC_JOFR3",
+      "name": "ADC_JOFR3",
+      "peripheral": "ADC",
+      "library": "reg",
+      "sectionId": "ADC@reg#sec3",
+      "prototype": "ADC1->JOFR3",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADC_JOFR3_JOFFSET3",
+          "type": "bits[11:0]（整个位域）",
+          "descEn": "ADC group injected sequencer rank 3 offset value",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "ADC group injected sequencer rank 3 offset value",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADC_JOFR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ADC_TypeDef.JOFR3，偏移 0x1C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ADC1->JOFR3;  /* 读回当前值 */\nv &= ~ADC_JOFR3_JOFFSET3_Msk;  /* 先清掉 ADC_JOFR3_JOFFSET3：bits[11:0]（整个位域） */\nv |= (1u << ADC_JOFR3_JOFFSET3_Pos) & ADC_JOFR3_JOFFSET3_Msk;  /* 置位，实际取值看参考手册 */\nADC1->JOFR3 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3561,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ADC_JOFR4",
+      "name": "ADC_JOFR4",
+      "peripheral": "ADC",
+      "library": "reg",
+      "sectionId": "ADC@reg#sec3",
+      "prototype": "ADC1->JOFR4",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADC_JOFR4_JOFFSET4",
+          "type": "bits[11:0]（整个位域）",
+          "descEn": "ADC group injected sequencer rank 4 offset value",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "ADC group injected sequencer rank 4 offset value",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADC_JOFR4"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ADC_TypeDef.JOFR4，偏移 0x20"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ADC1->JOFR4;  /* 读回当前值 */\nv &= ~ADC_JOFR4_JOFFSET4_Msk;  /* 先清掉 ADC_JOFR4_JOFFSET4：bits[11:0]（整个位域） */\nv |= (1u << ADC_JOFR4_JOFFSET4_Pos) & ADC_JOFR4_JOFFSET4_Msk;  /* 置位，实际取值看参考手册 */\nADC1->JOFR4 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3566,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ADC_JSQR",
+      "name": "ADC_JSQR",
+      "peripheral": "ADC",
+      "library": "reg",
+      "sectionId": "ADC@reg#sec3",
+      "prototype": "ADC1->JSQR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADC_JSQR_JSQ1",
+          "type": "bits[4:0]（整个位域）",
+          "descEn": "ADC group injected sequencer rank 1",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JSQ2",
+          "type": "bits[9:5]（整个位域）",
+          "descEn": "ADC group injected sequencer rank 2",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JSQ3",
+          "type": "bits[14:10]（整个位域）",
+          "descEn": "ADC group injected sequencer rank 3",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JSQ4",
+          "type": "bits[19:15]（整个位域）",
+          "descEn": "ADC group injected sequencer rank 4",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JL",
+          "type": "bits[21:20]（整个位域）",
+          "descEn": "ADC group injected sequencer scan length",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JSQ1_0",
+          "type": "bit 0",
+          "descEn": "0x00000001",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JSQ1_1",
+          "type": "bit 1",
+          "descEn": "0x00000002",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JSQ1_2",
+          "type": "bit 2",
+          "descEn": "0x00000004",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JSQ1_3",
+          "type": "bit 3",
+          "descEn": "0x00000008",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JSQ1_4",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JSQ2_0",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JSQ2_1",
+          "type": "bit 6",
+          "descEn": "0x00000040",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JSQ2_2",
+          "type": "bit 7",
+          "descEn": "0x00000080",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JSQ2_3",
+          "type": "bit 8",
+          "descEn": "0x00000100",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JSQ2_4",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JSQ3_0",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JSQ3_1",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JSQ3_2",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JSQ3_3",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JSQ3_4",
+          "type": "bit 14",
+          "descEn": "0x00004000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JSQ4_0",
+          "type": "bit 15",
+          "descEn": "0x00008000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JSQ4_1",
+          "type": "bit 16",
+          "descEn": "0x00010000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JSQ4_2",
+          "type": "bit 17",
+          "descEn": "0x00020000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JSQ4_3",
+          "type": "bit 18",
+          "descEn": "0x00040000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JSQ4_4",
+          "type": "bit 19",
+          "descEn": "0x00080000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JL_0",
+          "type": "bit 20",
+          "descEn": "0x00100000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_JSQR_JL_1",
+          "type": "bit 21",
+          "descEn": "0x00200000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "ADC group injected sequencer rank 1",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADC_JSQR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ADC_TypeDef.JSQR，偏移 0x38"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ADC1->JSQR;  /* 读回当前值 */\nv &= ~ADC_JSQR_JSQ1_Msk;  /* 先清掉 ADC_JSQR_JSQ1：bits[4:0]（整个位域） */\nv |= (1u << ADC_JSQR_JSQ1_Pos) & ADC_JSQR_JSQ1_Msk;  /* 置位，实际取值看参考手册 */\nADC1->JSQR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3736,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ADC_LTR",
+      "name": "ADC_LTR",
+      "peripheral": "ADC",
+      "library": "reg",
+      "sectionId": "ADC@reg#sec3",
+      "prototype": "ADC1->LTR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADC_LTR_LT",
+          "type": "bits[11:0]（整个位域）",
+          "descEn": "ADC analog watchdog 1 threshold low",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "ADC analog watchdog 1 threshold low",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADC_LTR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ADC_TypeDef.LTR，偏移 0x28"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ADC1->LTR;  /* 读回当前值 */\nv &= ~ADC_LTR_LT_Msk;  /* 先清掉 ADC_LTR_LT：bits[11:0]（整个位域） */\nv |= (1u << ADC_LTR_LT_Pos) & ADC_LTR_LT_Msk;  /* 置位，实际取值看参考手册 */\nADC1->LTR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3576,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ADC_SMPR1",
+      "name": "ADC_SMPR1",
+      "peripheral": "ADC",
+      "library": "reg",
+      "sectionId": "ADC@reg#sec3",
+      "prototype": "ADC1->SMPR1",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADC_SMPR1_SMP10",
+          "type": "bits[2:0]（整个位域）",
+          "descEn": "ADC channel 10 sampling time selection",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP11",
+          "type": "bits[5:3]（整个位域）",
+          "descEn": "ADC channel 11 sampling time selection",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP12",
+          "type": "bits[8:6]（整个位域）",
+          "descEn": "ADC channel 12 sampling time selection",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP13",
+          "type": "bits[11:9]（整个位域）",
+          "descEn": "ADC channel 13 sampling time selection",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP14",
+          "type": "bits[14:12]（整个位域）",
+          "descEn": "ADC channel 14 sampling time selection",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP15",
+          "type": "bits[17:15]（整个位域）",
+          "descEn": "ADC channel 15 sampling time selection",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP16",
+          "type": "bits[20:18]（整个位域）",
+          "descEn": "ADC channel 16 sampling time selection",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP17",
+          "type": "bits[23:21]（整个位域）",
+          "descEn": "ADC channel 17 sampling time selection",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP10_0",
+          "type": "bit 0",
+          "descEn": "0x00000001",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP10_1",
+          "type": "bit 1",
+          "descEn": "0x00000002",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP10_2",
+          "type": "bit 2",
+          "descEn": "0x00000004",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP11_0",
+          "type": "bit 3",
+          "descEn": "0x00000008",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP11_1",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP11_2",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP12_0",
+          "type": "bit 6",
+          "descEn": "0x00000040",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP12_1",
+          "type": "bit 7",
+          "descEn": "0x00000080",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP12_2",
+          "type": "bit 8",
+          "descEn": "0x00000100",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP13_0",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP13_1",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP13_2",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP14_0",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP14_1",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP14_2",
+          "type": "bit 14",
+          "descEn": "0x00004000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP15_0",
+          "type": "bit 15",
+          "descEn": "0x00008000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP15_1",
+          "type": "bit 16",
+          "descEn": "0x00010000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP15_2",
+          "type": "bit 17",
+          "descEn": "0x00020000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP16_0",
+          "type": "bit 18",
+          "descEn": "0x00040000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP16_1",
+          "type": "bit 19",
+          "descEn": "0x00080000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP16_2",
+          "type": "bit 20",
+          "descEn": "0x00100000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP17_0",
+          "type": "bit 21",
+          "descEn": "0x00200000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP17_1",
+          "type": "bit 22",
+          "descEn": "0x00400000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR1_SMP17_2",
+          "type": "bit 23",
+          "descEn": "0x00800000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "ADC channel 10 sampling time selection",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADC_SMPR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ADC_TypeDef.SMPR1，偏移 0x0C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ADC1->SMPR1;  /* 读回当前值 */\nv &= ~ADC_SMPR1_SMP10_Msk;  /* 先清掉 ADC_SMPR1_SMP10：bits[2:0]（整个位域） */\nv |= (1u << ADC_SMPR1_SMP10_Pos) & ADC_SMPR1_SMP10_Msk;  /* 置位，实际取值看参考手册 */\nADC1->SMPR1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3423,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ADC_SMPR2",
+      "name": "ADC_SMPR2",
+      "peripheral": "ADC",
+      "library": "reg",
+      "sectionId": "ADC@reg#sec3",
+      "prototype": "ADC1->SMPR2",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADC_SMPR2_SMP0",
+          "type": "bits[2:0]（整个位域）",
+          "descEn": "ADC channel 0 sampling time selection",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP1",
+          "type": "bits[5:3]（整个位域）",
+          "descEn": "ADC channel 1 sampling time selection",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP2",
+          "type": "bits[8:6]（整个位域）",
+          "descEn": "ADC channel 2 sampling time selection",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP3",
+          "type": "bits[11:9]（整个位域）",
+          "descEn": "ADC channel 3 sampling time selection",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP4",
+          "type": "bits[14:12]（整个位域）",
+          "descEn": "ADC channel 4 sampling time selection",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP5",
+          "type": "bits[17:15]（整个位域）",
+          "descEn": "ADC channel 5 sampling time selection",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP6",
+          "type": "bits[20:18]（整个位域）",
+          "descEn": "ADC channel 6 sampling time selection",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP7",
+          "type": "bits[23:21]（整个位域）",
+          "descEn": "ADC channel 7 sampling time selection",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP8",
+          "type": "bits[26:24]（整个位域）",
+          "descEn": "ADC channel 8 sampling time selection",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP9",
+          "type": "bits[29:27]（整个位域）",
+          "descEn": "ADC channel 9 sampling time selection",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP0_0",
+          "type": "bit 0",
+          "descEn": "0x00000001",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP0_1",
+          "type": "bit 1",
+          "descEn": "0x00000002",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP0_2",
+          "type": "bit 2",
+          "descEn": "0x00000004",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP1_0",
+          "type": "bit 3",
+          "descEn": "0x00000008",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP1_1",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP1_2",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP2_0",
+          "type": "bit 6",
+          "descEn": "0x00000040",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP2_1",
+          "type": "bit 7",
+          "descEn": "0x00000080",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP2_2",
+          "type": "bit 8",
+          "descEn": "0x00000100",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP3_0",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP3_1",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP3_2",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP4_0",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP4_1",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP4_2",
+          "type": "bit 14",
+          "descEn": "0x00004000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP5_0",
+          "type": "bit 15",
+          "descEn": "0x00008000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP5_1",
+          "type": "bit 16",
+          "descEn": "0x00010000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP5_2",
+          "type": "bit 17",
+          "descEn": "0x00020000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP6_0",
+          "type": "bit 18",
+          "descEn": "0x00040000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP6_1",
+          "type": "bit 19",
+          "descEn": "0x00080000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP6_2",
+          "type": "bit 20",
+          "descEn": "0x00100000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP7_0",
+          "type": "bit 21",
+          "descEn": "0x00200000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP7_1",
+          "type": "bit 22",
+          "descEn": "0x00400000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP7_2",
+          "type": "bit 23",
+          "descEn": "0x00800000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP8_0",
+          "type": "bit 24",
+          "descEn": "0x01000000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP8_1",
+          "type": "bit 25",
+          "descEn": "0x02000000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP8_2",
+          "type": "bit 26",
+          "descEn": "0x04000000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP9_0",
+          "type": "bit 27",
+          "descEn": "0x08000000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP9_1",
+          "type": "bit 28",
+          "descEn": "0x10000000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SMPR2_SMP9_2",
+          "type": "bit 29",
+          "descEn": "0x20000000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "ADC channel 0 sampling time selection",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADC_SMPR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ADC_TypeDef.SMPR2，偏移 0x10"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ADC1->SMPR2;  /* 读回当前值 */\nv &= ~ADC_SMPR2_SMP0_Msk;  /* 先清掉 ADC_SMPR2_SMP0：bits[2:0]（整个位域） */\nv |= (1u << ADC_SMPR2_SMP0_Pos) & ADC_SMPR2_SMP0_Msk;  /* 置位，实际取值看参考手册 */\nADC1->SMPR2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3480,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ADC_SQR1",
+      "name": "ADC_SQR1",
+      "peripheral": "ADC",
+      "library": "reg",
+      "sectionId": "ADC@reg#sec3",
+      "prototype": "ADC1->SQR1",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADC_SQR1_SQ13",
+          "type": "bits[4:0]（整个位域）",
+          "descEn": "ADC group regular sequencer rank 13",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_SQ14",
+          "type": "bits[9:5]（整个位域）",
+          "descEn": "ADC group regular sequencer rank 14",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_SQ15",
+          "type": "bits[14:10]（整个位域）",
+          "descEn": "ADC group regular sequencer rank 15",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_SQ16",
+          "type": "bits[19:15]（整个位域）",
+          "descEn": "ADC group regular sequencer rank 16",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_L",
+          "type": "bits[23:20]（整个位域）",
+          "descEn": "ADC group regular sequencer scan length",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_SQ13_0",
+          "type": "bit 0",
+          "descEn": "0x00000001",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_SQ13_1",
+          "type": "bit 1",
+          "descEn": "0x00000002",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_SQ13_2",
+          "type": "bit 2",
+          "descEn": "0x00000004",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_SQ13_3",
+          "type": "bit 3",
+          "descEn": "0x00000008",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_SQ13_4",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_SQ14_0",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_SQ14_1",
+          "type": "bit 6",
+          "descEn": "0x00000040",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_SQ14_2",
+          "type": "bit 7",
+          "descEn": "0x00000080",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_SQ14_3",
+          "type": "bit 8",
+          "descEn": "0x00000100",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_SQ14_4",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_SQ15_0",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_SQ15_1",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_SQ15_2",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_SQ15_3",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_SQ15_4",
+          "type": "bit 14",
+          "descEn": "0x00004000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_SQ16_0",
+          "type": "bit 15",
+          "descEn": "0x00008000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_SQ16_1",
+          "type": "bit 16",
+          "descEn": "0x00010000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_SQ16_2",
+          "type": "bit 17",
+          "descEn": "0x00020000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_SQ16_3",
+          "type": "bit 18",
+          "descEn": "0x00040000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_SQ16_4",
+          "type": "bit 19",
+          "descEn": "0x00080000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_L_0",
+          "type": "bit 20",
+          "descEn": "0x00100000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_L_1",
+          "type": "bit 21",
+          "descEn": "0x00200000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_L_2",
+          "type": "bit 22",
+          "descEn": "0x00400000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR1_L_3",
+          "type": "bit 23",
+          "descEn": "0x00800000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "ADC group regular sequencer rank 13",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADC_SQR1"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ADC_TypeDef.SQR1，偏移 0x2C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ADC1->SQR1;  /* 读回当前值 */\nv &= ~ADC_SQR1_SQ13_Msk;  /* 先清掉 ADC_SQR1_SQ13：bits[4:0]（整个位域） */\nv |= (1u << ADC_SQR1_SQ13_Pos) & ADC_SQR1_SQ13_Msk;  /* 置位，实际取值看参考手册 */\nADC1->SQR1 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3581,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ADC_SQR2",
+      "name": "ADC_SQR2",
+      "peripheral": "ADC",
+      "library": "reg",
+      "sectionId": "ADC@reg#sec3",
+      "prototype": "ADC1->SQR2",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADC_SQR2_SQ7",
+          "type": "bits[4:0]（整个位域）",
+          "descEn": "ADC group regular sequencer rank 7",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ8",
+          "type": "bits[9:5]（整个位域）",
+          "descEn": "ADC group regular sequencer rank 8",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ9",
+          "type": "bits[14:10]（整个位域）",
+          "descEn": "ADC group regular sequencer rank 9",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ10",
+          "type": "bits[19:15]（整个位域）",
+          "descEn": "ADC group regular sequencer rank 10",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ11",
+          "type": "bits[24:20]（整个位域）",
+          "descEn": "ADC group regular sequencer rank 1",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ12",
+          "type": "bits[29:25]（整个位域）",
+          "descEn": "ADC group regular sequencer rank 12",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ7_0",
+          "type": "bit 0",
+          "descEn": "0x00000001",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ7_1",
+          "type": "bit 1",
+          "descEn": "0x00000002",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ7_2",
+          "type": "bit 2",
+          "descEn": "0x00000004",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ7_3",
+          "type": "bit 3",
+          "descEn": "0x00000008",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ7_4",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ8_0",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ8_1",
+          "type": "bit 6",
+          "descEn": "0x00000040",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ8_2",
+          "type": "bit 7",
+          "descEn": "0x00000080",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ8_3",
+          "type": "bit 8",
+          "descEn": "0x00000100",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ8_4",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ9_0",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ9_1",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ9_2",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ9_3",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ9_4",
+          "type": "bit 14",
+          "descEn": "0x00004000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ10_0",
+          "type": "bit 15",
+          "descEn": "0x00008000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ10_1",
+          "type": "bit 16",
+          "descEn": "0x00010000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ10_2",
+          "type": "bit 17",
+          "descEn": "0x00020000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ10_3",
+          "type": "bit 18",
+          "descEn": "0x00040000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ10_4",
+          "type": "bit 19",
+          "descEn": "0x00080000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ11_0",
+          "type": "bit 20",
+          "descEn": "0x00100000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ11_1",
+          "type": "bit 21",
+          "descEn": "0x00200000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ11_2",
+          "type": "bit 22",
+          "descEn": "0x00400000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ11_3",
+          "type": "bit 23",
+          "descEn": "0x00800000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ11_4",
+          "type": "bit 24",
+          "descEn": "0x01000000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ12_0",
+          "type": "bit 25",
+          "descEn": "0x02000000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ12_1",
+          "type": "bit 26",
+          "descEn": "0x04000000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ12_2",
+          "type": "bit 27",
+          "descEn": "0x08000000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ12_3",
+          "type": "bit 28",
+          "descEn": "0x10000000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR2_SQ12_4",
+          "type": "bit 29",
+          "descEn": "0x20000000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "ADC group regular sequencer rank 7",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADC_SQR2"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ADC_TypeDef.SQR2，偏移 0x30"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ADC1->SQR2;  /* 读回当前值 */\nv &= ~ADC_SQR2_SQ7_Msk;  /* 先清掉 ADC_SQR2_SQ7：bits[4:0]（整个位域） */\nv |= (1u << ADC_SQR2_SQ7_Pos) & ADC_SQR2_SQ7_Msk;  /* 置位，实际取值看参考手册 */\nADC1->SQR2 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3626,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ADC_SQR3",
+      "name": "ADC_SQR3",
+      "peripheral": "ADC",
+      "library": "reg",
+      "sectionId": "ADC@reg#sec3",
+      "prototype": "ADC1->SQR3",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADC_SQR3_SQ1",
+          "type": "bits[4:0]（整个位域）",
+          "descEn": "ADC group regular sequencer rank 1",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ2",
+          "type": "bits[9:5]（整个位域）",
+          "descEn": "ADC group regular sequencer rank 2",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ3",
+          "type": "bits[14:10]（整个位域）",
+          "descEn": "ADC group regular sequencer rank 3",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ4",
+          "type": "bits[19:15]（整个位域）",
+          "descEn": "ADC group regular sequencer rank 4",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ5",
+          "type": "bits[24:20]（整个位域）",
+          "descEn": "ADC group regular sequencer rank 5",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ6",
+          "type": "bits[29:25]（整个位域）",
+          "descEn": "ADC group regular sequencer rank 6",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ1_0",
+          "type": "bit 0",
+          "descEn": "0x00000001",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ1_1",
+          "type": "bit 1",
+          "descEn": "0x00000002",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ1_2",
+          "type": "bit 2",
+          "descEn": "0x00000004",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ1_3",
+          "type": "bit 3",
+          "descEn": "0x00000008",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ1_4",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ2_0",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ2_1",
+          "type": "bit 6",
+          "descEn": "0x00000040",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ2_2",
+          "type": "bit 7",
+          "descEn": "0x00000080",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ2_3",
+          "type": "bit 8",
+          "descEn": "0x00000100",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ2_4",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ3_0",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ3_1",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ3_2",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ3_3",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ3_4",
+          "type": "bit 14",
+          "descEn": "0x00004000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ4_0",
+          "type": "bit 15",
+          "descEn": "0x00008000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ4_1",
+          "type": "bit 16",
+          "descEn": "0x00010000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ4_2",
+          "type": "bit 17",
+          "descEn": "0x00020000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ4_3",
+          "type": "bit 18",
+          "descEn": "0x00040000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ4_4",
+          "type": "bit 19",
+          "descEn": "0x00080000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ5_0",
+          "type": "bit 20",
+          "descEn": "0x00100000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ5_1",
+          "type": "bit 21",
+          "descEn": "0x00200000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ5_2",
+          "type": "bit 22",
+          "descEn": "0x00400000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ5_3",
+          "type": "bit 23",
+          "descEn": "0x00800000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ5_4",
+          "type": "bit 24",
+          "descEn": "0x01000000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ6_0",
+          "type": "bit 25",
+          "descEn": "0x02000000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ6_1",
+          "type": "bit 26",
+          "descEn": "0x04000000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ6_2",
+          "type": "bit 27",
+          "descEn": "0x08000000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ6_3",
+          "type": "bit 28",
+          "descEn": "0x10000000",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SQR3_SQ6_4",
+          "type": "bit 29",
+          "descEn": "0x20000000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "ADC group regular sequencer rank 1",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADC_SQR3"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ADC_TypeDef.SQR3，偏移 0x34"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ADC1->SQR3;  /* 读回当前值 */\nv &= ~ADC_SQR3_SQ1_Msk;  /* 先清掉 ADC_SQR3_SQ1：bits[4:0]（整个位域） */\nv |= (1u << ADC_SQR3_SQ1_Pos) & ADC_SQR3_SQ1_Msk;  /* 置位，实际取值看参考手册 */\nADC1->SQR3 = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3681,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_ADC_SR",
+      "name": "ADC_SR",
+      "peripheral": "ADC",
+      "library": "reg",
+      "sectionId": "ADC@reg#sec1",
+      "prototype": "ADC1->SR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "ADC_SR_AWD",
+          "type": "bit 0（整个位域）",
+          "descEn": "ADC analog watchdog 1 flag",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SR_EOS",
+          "type": "bit 1（整个位域）",
+          "descEn": "ADC group regular end of sequence conversions flag",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SR_JEOS",
+          "type": "bit 2（整个位域）",
+          "descEn": "ADC group injected end of sequence conversions flag",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SR_JSTRT",
+          "type": "bit 3（整个位域）",
+          "descEn": "ADC group injected conversion start flag",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SR_STRT",
+          "type": "bit 4（整个位域）",
+          "descEn": "ADC group regular conversion start flag",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SR_EOC",
+          "type": "(ADC_SR_EOS)",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "ADC_SR_JEOC",
+          "type": "(ADC_SR_JEOS)",
+          "descEn": "",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "ADC analog watchdog 1 flag",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "ADC_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 ADC_TypeDef.SR，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = ADC1->SR;  /* 读回当前值 */\nv &= ~ADC_SR_AWD_Msk;  /* 先清掉 ADC_SR_AWD：bit 0（整个位域） */\nv |= (1u << ADC_SR_AWD_Pos) & ADC_SR_AWD_Msk;  /* 置位，实际取值看参考手册 */\nADC1->SR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 3290,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    }
+  ]
+}

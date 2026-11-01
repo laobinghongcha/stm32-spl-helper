@@ -1,0 +1,1249 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "RCC",
+  "library": "reg",
+  "functions": [
+    {
+      "id": "REG_RCC_AHBENR",
+      "name": "RCC_AHBENR",
+      "peripheral": "RCC",
+      "library": "reg",
+      "sectionId": "RCC@reg#sec2",
+      "prototype": "RCC->AHBENR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RCC_AHBENR_DMA1EN",
+          "type": "bit 0（整个位域）",
+          "descEn": "DMA1 clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_AHBENR_SRAMEN",
+          "type": "bit 2（整个位域）",
+          "descEn": "SRAM interface clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_AHBENR_FLITFEN",
+          "type": "bit 4（整个位域）",
+          "descEn": "FLITF clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_AHBENR_CRCEN",
+          "type": "bit 6（整个位域）",
+          "descEn": "CRC clock enable",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "DMA1 clock enable",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RCC_AHBENR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 RCC_TypeDef.AHBENR，偏移 0x14"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = RCC->AHBENR;  /* 读回当前值 */\nv &= ~RCC_AHBENR_DMA1EN_Msk;  /* 先清掉 RCC_AHBENR_DMA1EN：bit 0（整个位域） */\nv |= (1u << RCC_AHBENR_DMA1EN_Pos) & RCC_AHBENR_DMA1EN_Msk;  /* 置位，实际取值看参考手册 */\nRCC->AHBENR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1262,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_RCC_APB1ENR",
+      "name": "RCC_APB1ENR",
+      "peripheral": "RCC",
+      "library": "reg",
+      "sectionId": "RCC@reg#sec2",
+      "prototype": "RCC->APB1ENR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RCC_APB1ENR_TIM2EN",
+          "type": "bit 0（整个位域）",
+          "descEn": "Timer 2 clock enabled",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB1ENR_TIM3EN",
+          "type": "bit 1（整个位域）",
+          "descEn": "Timer 3 clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB1ENR_WWDGEN",
+          "type": "bit 11（整个位域）",
+          "descEn": "Window Watchdog clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB1ENR_USART2EN",
+          "type": "bit 17（整个位域）",
+          "descEn": "USART 2 clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB1ENR_I2C1EN",
+          "type": "bit 21（整个位域）",
+          "descEn": "I2C 1 clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB1ENR_CAN1EN",
+          "type": "bit 25（整个位域）",
+          "descEn": "CAN1 clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB1ENR_BKPEN",
+          "type": "bit 27（整个位域）",
+          "descEn": "Backup interface clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB1ENR_PWREN",
+          "type": "bit 28（整个位域）",
+          "descEn": "Power interface clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB1ENR_TIM4EN",
+          "type": "bit 2（整个位域）",
+          "descEn": "Timer 4 clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB1ENR_SPI2EN",
+          "type": "bit 14（整个位域）",
+          "descEn": "SPI 2 clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB1ENR_USART3EN",
+          "type": "bit 18（整个位域）",
+          "descEn": "USART 3 clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB1ENR_I2C2EN",
+          "type": "bit 22（整个位域）",
+          "descEn": "I2C 2 clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB1ENR_USBEN",
+          "type": "bit 23（整个位域）",
+          "descEn": "USB Device clock enable",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Timer 2 clock enabled",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RCC_APB1ENR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 RCC_TypeDef.APB1ENR，偏移 0x1C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = RCC->APB1ENR;  /* 读回当前值 */\nv &= ~RCC_APB1ENR_TIM2EN_Msk;  /* 先清掉 RCC_APB1ENR_TIM2EN：bit 0（整个位域） */\nv |= (1u << RCC_APB1ENR_TIM2EN_Pos) & RCC_APB1ENR_TIM2EN_Msk;  /* 置位，实际取值看参考手册 */\nRCC->APB1ENR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1321,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_RCC_APB1RSTR",
+      "name": "RCC_APB1RSTR",
+      "peripheral": "RCC",
+      "library": "reg",
+      "sectionId": "RCC@reg#sec2",
+      "prototype": "RCC->APB1RSTR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RCC_APB1RSTR_TIM2RST",
+          "type": "bit 0（整个位域）",
+          "descEn": "Timer 2 reset",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB1RSTR_TIM3RST",
+          "type": "bit 1（整个位域）",
+          "descEn": "Timer 3 reset",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB1RSTR_WWDGRST",
+          "type": "bit 11（整个位域）",
+          "descEn": "Window Watchdog reset",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB1RSTR_USART2RST",
+          "type": "bit 17（整个位域）",
+          "descEn": "USART 2 reset",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB1RSTR_I2C1RST",
+          "type": "bit 21（整个位域）",
+          "descEn": "I2C 1 reset",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB1RSTR_CAN1RST",
+          "type": "bit 25（整个位域）",
+          "descEn": "CAN1 reset",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB1RSTR_BKPRST",
+          "type": "bit 27（整个位域）",
+          "descEn": "Backup interface reset",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB1RSTR_PWRRST",
+          "type": "bit 28（整个位域）",
+          "descEn": "Power interface reset",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB1RSTR_TIM4RST",
+          "type": "bit 2（整个位域）",
+          "descEn": "Timer 4 reset",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB1RSTR_SPI2RST",
+          "type": "bit 14（整个位域）",
+          "descEn": "SPI 2 reset",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB1RSTR_USART3RST",
+          "type": "bit 18（整个位域）",
+          "descEn": "USART 3 reset",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB1RSTR_I2C2RST",
+          "type": "bit 22（整个位域）",
+          "descEn": "I2C 2 reset",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB1RSTR_USBRST",
+          "type": "bit 23（整个位域）",
+          "descEn": "USB Device reset",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Timer 2 reset",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RCC_APB1RSTR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 RCC_TypeDef.APB1RSTR，偏移 0x10"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = RCC->APB1RSTR;  /* 读回当前值 */\nv &= ~RCC_APB1RSTR_TIM2RST_Msk;  /* 先清掉 RCC_APB1RSTR_TIM2RST：bit 0（整个位域） */\nv |= (1u << RCC_APB1RSTR_TIM2RST_Pos) & RCC_APB1RSTR_TIM2RST_Msk;  /* 置位，实际取值看参考手册 */\nRCC->APB1RSTR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1212,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_RCC_APB2ENR",
+      "name": "RCC_APB2ENR",
+      "peripheral": "RCC",
+      "library": "reg",
+      "sectionId": "RCC@reg#sec2",
+      "prototype": "RCC->APB2ENR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RCC_APB2ENR_AFIOEN",
+          "type": "bit 0（整个位域）",
+          "descEn": "Alternate Function I/O clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB2ENR_IOPAEN",
+          "type": "bit 2（整个位域）",
+          "descEn": "I/O port A clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB2ENR_IOPBEN",
+          "type": "bit 3（整个位域）",
+          "descEn": "I/O port B clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB2ENR_IOPCEN",
+          "type": "bit 4（整个位域）",
+          "descEn": "I/O port C clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB2ENR_IOPDEN",
+          "type": "bit 5（整个位域）",
+          "descEn": "I/O port D clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB2ENR_ADC1EN",
+          "type": "bit 9（整个位域）",
+          "descEn": "ADC 1 interface clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB2ENR_ADC2EN",
+          "type": "bit 10（整个位域）",
+          "descEn": "ADC 2 interface clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB2ENR_TIM1EN",
+          "type": "bit 11（整个位域）",
+          "descEn": "TIM1 Timer clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB2ENR_SPI1EN",
+          "type": "bit 12（整个位域）",
+          "descEn": "SPI 1 clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB2ENR_USART1EN",
+          "type": "bit 14（整个位域）",
+          "descEn": "USART1 clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB2ENR_IOPEEN",
+          "type": "bit 6（整个位域）",
+          "descEn": "I/O port E clock enable",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Alternate Function I/O clock enable",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RCC_APB2ENR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 RCC_TypeDef.APB2ENR，偏移 0x18"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = RCC->APB2ENR;  /* 读回当前值 */\nv &= ~RCC_APB2ENR_AFIOEN_Msk;  /* 先清掉 RCC_APB2ENR_AFIOEN：bit 0（整个位域） */\nv |= (1u << RCC_APB2ENR_AFIOEN_Pos) & RCC_APB2ENR_AFIOEN_Msk;  /* 置位，实际取值看参考手册 */\nRCC->APB2ENR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1279,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_RCC_APB2RSTR",
+      "name": "RCC_APB2RSTR",
+      "peripheral": "RCC",
+      "library": "reg",
+      "sectionId": "RCC@reg#sec2",
+      "prototype": "RCC->APB2RSTR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RCC_APB2RSTR_AFIORST",
+          "type": "bit 0（整个位域）",
+          "descEn": "Alternate Function I/O reset",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB2RSTR_IOPARST",
+          "type": "bit 2（整个位域）",
+          "descEn": "I/O port A reset",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB2RSTR_IOPBRST",
+          "type": "bit 3（整个位域）",
+          "descEn": "I/O port B reset",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB2RSTR_IOPCRST",
+          "type": "bit 4（整个位域）",
+          "descEn": "I/O port C reset",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB2RSTR_IOPDRST",
+          "type": "bit 5（整个位域）",
+          "descEn": "I/O port D reset",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB2RSTR_ADC1RST",
+          "type": "bit 9（整个位域）",
+          "descEn": "ADC 1 interface reset",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB2RSTR_ADC2RST",
+          "type": "bit 10（整个位域）",
+          "descEn": "ADC 2 interface reset",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB2RSTR_TIM1RST",
+          "type": "bit 11（整个位域）",
+          "descEn": "TIM1 Timer reset",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB2RSTR_SPI1RST",
+          "type": "bit 12（整个位域）",
+          "descEn": "SPI 1 reset",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB2RSTR_USART1RST",
+          "type": "bit 14（整个位域）",
+          "descEn": "USART1 reset",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_APB2RSTR_IOPERST",
+          "type": "bit 6（整个位域）",
+          "descEn": "I/O port E reset",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Alternate Function I/O reset",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RCC_APB2RSTR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 RCC_TypeDef.APB2RSTR，偏移 0x0C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = RCC->APB2RSTR;  /* 读回当前值 */\nv &= ~RCC_APB2RSTR_AFIORST_Msk;  /* 先清掉 RCC_APB2RSTR_AFIORST：bit 0（整个位域） */\nv |= (1u << RCC_APB2RSTR_AFIORST_Pos) & RCC_APB2RSTR_AFIORST_Msk;  /* 置位，实际取值看参考手册 */\nRCC->APB2RSTR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1170,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_RCC_BDCR",
+      "name": "RCC_BDCR",
+      "peripheral": "RCC",
+      "library": "reg",
+      "sectionId": "RCC@reg#sec2",
+      "prototype": "RCC->BDCR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RCC_BDCR_LSEON",
+          "type": "bit 0（整个位域）",
+          "descEn": "External Low Speed oscillator enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_BDCR_LSERDY",
+          "type": "bit 1（整个位域）",
+          "descEn": "External Low Speed oscillator Ready",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_BDCR_LSEBYP",
+          "type": "bit 2（整个位域）",
+          "descEn": "External Low Speed oscillator Bypass",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_BDCR_RTCSEL",
+          "type": "bits[9:8]（整个位域）",
+          "descEn": "RTCSEL[1:0] bits (RTC clock source selection)",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_BDCR_RTCEN",
+          "type": "bit 15（整个位域）",
+          "descEn": "RTC clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_BDCR_BDRST",
+          "type": "bit 16（整个位域）",
+          "descEn": "Backup domain software reset",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_BDCR_RTCSEL_0",
+          "type": "bit 8",
+          "descEn": "0x00000100",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_BDCR_RTCSEL_1",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "External Low Speed oscillator enable",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RCC_BDCR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 RCC_TypeDef.BDCR，偏移 0x20"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = RCC->BDCR;  /* 读回当前值 */\nv &= ~RCC_BDCR_LSEON_Msk;  /* 先清掉 RCC_BDCR_LSEON：bit 0（整个位域） */\nv |= (1u << RCC_BDCR_LSEON_Pos) & RCC_BDCR_LSEON_Msk;  /* 置位，实际取值看参考手册 */\nRCC->BDCR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1371,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_RCC_CFGR",
+      "name": "RCC_CFGR",
+      "peripheral": "RCC",
+      "library": "reg",
+      "sectionId": "RCC@reg#sec2",
+      "prototype": "RCC->CFGR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RCC_CFGR_SW",
+          "type": "bits[1:0]（整个位域）",
+          "descEn": "SW[1:0] bits (System clock Switch)",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_HPRE",
+          "type": "bits[7:4]（整个位域）",
+          "descEn": "HPRE[3:0] bits (AHB prescaler)",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PPRE1",
+          "type": "bits[10:8]（整个位域）",
+          "descEn": "PRE1[2:0] bits (APB1 prescaler)",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PPRE2",
+          "type": "bits[13:11]（整个位域）",
+          "descEn": "PRE2[2:0] bits (APB2 prescaler)",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_ADCPRE",
+          "type": "bits[15:14]（整个位域）",
+          "descEn": "ADCPRE[1:0] bits (ADC prescaler)",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PLLSRC",
+          "type": "bit 16（整个位域）",
+          "descEn": "PLL entry clock source",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PLLXTPRE",
+          "type": "bit 17（整个位域）",
+          "descEn": "HSE divider for PLL entry",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PLLMULL",
+          "type": "bits[21:18]（整个位域）",
+          "descEn": "PLLMUL[3:0] bits (PLL multiplication factor)",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PLLMULL3",
+          "type": "bit 18（整个位域）",
+          "descEn": "PLL input clock*3",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PLLMULL4",
+          "type": "bit 19（整个位域）",
+          "descEn": "PLL input clock*4",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PLLMULL5",
+          "type": "bits[19:18]（整个位域）",
+          "descEn": "PLL input clock*5",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PLLMULL6",
+          "type": "bit 20（整个位域）",
+          "descEn": "PLL input clock*6",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PLLMULL7",
+          "type": "0x00140000（整个位域）",
+          "descEn": "PLL input clock*7",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PLLMULL8",
+          "type": "bits[20:19]（整个位域）",
+          "descEn": "PLL input clock*8",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PLLMULL9",
+          "type": "bits[20:18]（整个位域）",
+          "descEn": "PLL input clock*9",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PLLMULL10",
+          "type": "bit 21（整个位域）",
+          "descEn": "PLL input clock10",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PLLMULL11",
+          "type": "0x00240000（整个位域）",
+          "descEn": "PLL input clock*11",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PLLMULL12",
+          "type": "0x00280000（整个位域）",
+          "descEn": "PLL input clock*12",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PLLMULL13",
+          "type": "0x002C0000（整个位域）",
+          "descEn": "PLL input clock*13",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PLLMULL14",
+          "type": "bits[21:20]（整个位域）",
+          "descEn": "PLL input clock*14",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PLLMULL15",
+          "type": "0x00340000（整个位域）",
+          "descEn": "PLL input clock*15",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PLLMULL16",
+          "type": "bits[21:19]（整个位域）",
+          "descEn": "PLL input clock*16",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_USBPRE",
+          "type": "bit 22（整个位域）",
+          "descEn": "USB Device prescaler",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_MCO",
+          "type": "bits[26:24]（整个位域）",
+          "descEn": "MCO[2:0] bits (Microcontroller Clock Output)",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_SW_0",
+          "type": "bit 0",
+          "descEn": "0x00000001",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_SW_1",
+          "type": "bit 1",
+          "descEn": "0x00000002",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_HPRE_0",
+          "type": "bit 4",
+          "descEn": "0x00000010",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_HPRE_1",
+          "type": "bit 5",
+          "descEn": "0x00000020",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_HPRE_2",
+          "type": "bit 6",
+          "descEn": "0x00000040",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_HPRE_3",
+          "type": "bit 7",
+          "descEn": "0x00000080",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PPRE1_0",
+          "type": "bit 8",
+          "descEn": "0x00000100",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PPRE1_1",
+          "type": "bit 9",
+          "descEn": "0x00000200",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PPRE1_2",
+          "type": "bit 10",
+          "descEn": "0x00000400",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PPRE2_0",
+          "type": "bit 11",
+          "descEn": "0x00000800",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PPRE2_1",
+          "type": "bit 12",
+          "descEn": "0x00001000",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PPRE2_2",
+          "type": "bit 13",
+          "descEn": "0x00002000",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_ADCPRE_0",
+          "type": "bit 14",
+          "descEn": "0x00004000",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_ADCPRE_1",
+          "type": "bit 15",
+          "descEn": "0x00008000",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PLLMULL_0",
+          "type": "bit 18",
+          "descEn": "0x00040000",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PLLMULL_1",
+          "type": "bit 19",
+          "descEn": "0x00080000",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PLLMULL_2",
+          "type": "bit 20",
+          "descEn": "0x00100000",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PLLMULL_3",
+          "type": "bit 21",
+          "descEn": "0x00200000",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_PLLMULL2",
+          "type": "0x00000000",
+          "descEn": "PLL input clock*2",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_MCO_0",
+          "type": "bit 24",
+          "descEn": "0x01000000",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_MCO_1",
+          "type": "bit 25",
+          "descEn": "0x02000000",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CFGR_MCO_2",
+          "type": "bit 26",
+          "descEn": "0x04000000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "SW[1:0] bits (System clock Switch)",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RCC_CFGR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 RCC_TypeDef.CFGR，偏移 0x04"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = RCC->CFGR;  /* 读回当前值 */\nv &= ~RCC_CFGR_SW_Msk;  /* 先清掉 RCC_CFGR_SW：bits[1:0]（整个位域） */\nv |= (1u << RCC_CFGR_SW_Pos) & RCC_CFGR_SW_Msk;  /* 置位，实际取值看参考手册 */\nRCC->CFGR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 943,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_RCC_CIR",
+      "name": "RCC_CIR",
+      "peripheral": "RCC",
+      "library": "reg",
+      "sectionId": "RCC@reg#sec2",
+      "prototype": "RCC->CIR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RCC_CIR_LSIRDYF",
+          "type": "bit 0（整个位域）",
+          "descEn": "LSI Ready Interrupt flag",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CIR_LSERDYF",
+          "type": "bit 1（整个位域）",
+          "descEn": "LSE Ready Interrupt flag",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CIR_HSIRDYF",
+          "type": "bit 2（整个位域）",
+          "descEn": "HSI Ready Interrupt flag",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CIR_HSERDYF",
+          "type": "bit 3（整个位域）",
+          "descEn": "HSE Ready Interrupt flag",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CIR_PLLRDYF",
+          "type": "bit 4（整个位域）",
+          "descEn": "PLL Ready Interrupt flag",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CIR_CSSF",
+          "type": "bit 7（整个位域）",
+          "descEn": "Clock Security System Interrupt flag",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CIR_LSIRDYIE",
+          "type": "bit 8（整个位域）",
+          "descEn": "LSI Ready Interrupt Enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CIR_LSERDYIE",
+          "type": "bit 9（整个位域）",
+          "descEn": "LSE Ready Interrupt Enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CIR_HSIRDYIE",
+          "type": "bit 10（整个位域）",
+          "descEn": "HSI Ready Interrupt Enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CIR_HSERDYIE",
+          "type": "bit 11（整个位域）",
+          "descEn": "HSE Ready Interrupt Enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CIR_PLLRDYIE",
+          "type": "bit 12（整个位域）",
+          "descEn": "PLL Ready Interrupt Enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CIR_LSIRDYC",
+          "type": "bit 16（整个位域）",
+          "descEn": "LSI Ready Interrupt Clear",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CIR_LSERDYC",
+          "type": "bit 17（整个位域）",
+          "descEn": "LSE Ready Interrupt Clear",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CIR_HSIRDYC",
+          "type": "bit 18（整个位域）",
+          "descEn": "HSI Ready Interrupt Clear",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CIR_HSERDYC",
+          "type": "bit 19（整个位域）",
+          "descEn": "HSE Ready Interrupt Clear",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CIR_PLLRDYC",
+          "type": "bit 20（整个位域）",
+          "descEn": "PLL Ready Interrupt Clear",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CIR_CSSC",
+          "type": "bit 23（整个位域）",
+          "descEn": "Clock Security System Interrupt Clear",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "LSI Ready Interrupt flag",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RCC_CIR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 RCC_TypeDef.CIR，偏移 0x08"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = RCC->CIR;  /* 读回当前值 */\nv &= ~RCC_CIR_LSIRDYF_Msk;  /* 先清掉 RCC_CIR_LSIRDYF：bit 0（整个位域） */\nv |= (1u << RCC_CIR_LSIRDYF_Pos) & RCC_CIR_LSIRDYF_Msk;  /* 置位，实际取值看参考手册 */\nRCC->CIR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1116,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_RCC_CR",
+      "name": "RCC_CR",
+      "peripheral": "RCC",
+      "library": "reg",
+      "sectionId": "RCC@reg#sec2",
+      "prototype": "RCC->CR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RCC_CR_HSION",
+          "type": "bit 0（整个位域）",
+          "descEn": "Internal High Speed clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CR_HSIRDY",
+          "type": "bit 1（整个位域）",
+          "descEn": "Internal High Speed clock ready flag",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CR_HSITRIM",
+          "type": "bits[7:3]（整个位域）",
+          "descEn": "Internal High Speed clock trimming",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CR_HSICAL",
+          "type": "bits[15:8]（整个位域）",
+          "descEn": "Internal High Speed clock Calibration",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CR_HSEON",
+          "type": "bit 16（整个位域）",
+          "descEn": "External High Speed clock enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CR_HSERDY",
+          "type": "bit 17（整个位域）",
+          "descEn": "External High Speed clock ready flag",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CR_HSEBYP",
+          "type": "bit 18（整个位域）",
+          "descEn": "External High Speed clock Bypass",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CR_CSSON",
+          "type": "bit 19（整个位域）",
+          "descEn": "Clock Security System enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CR_PLLON",
+          "type": "bit 24（整个位域）",
+          "descEn": "PLL enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CR_PLLRDY",
+          "type": "bit 25（整个位域）",
+          "descEn": "PLL clock ready flag",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Internal High Speed clock enable",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RCC_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 RCC_TypeDef.CR，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = RCC->CR;  /* 读回当前值 */\nv &= ~RCC_CR_HSION_Msk;  /* 先清掉 RCC_CR_HSION：bit 0（整个位域） */\nv |= (1u << RCC_CR_HSION_Pos) & RCC_CR_HSION_Msk;  /* 置位，实际取值看参考手册 */\nRCC->CR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 909,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_RCC_CSR",
+      "name": "RCC_CSR",
+      "peripheral": "RCC",
+      "library": "reg",
+      "sectionId": "RCC@reg#sec1",
+      "prototype": "RCC->CSR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "RCC_CSR_LSION",
+          "type": "bit 0（整个位域）",
+          "descEn": "Internal Low Speed oscillator enable",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CSR_LSIRDY",
+          "type": "bit 1（整个位域）",
+          "descEn": "Internal Low Speed oscillator Ready",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CSR_RMVF",
+          "type": "bit 24（整个位域）",
+          "descEn": "Remove reset flag",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CSR_PINRSTF",
+          "type": "bit 26（整个位域）",
+          "descEn": "PIN reset flag",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CSR_PORRSTF",
+          "type": "bit 27（整个位域）",
+          "descEn": "POR/PDR reset flag",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CSR_SFTRSTF",
+          "type": "bit 28（整个位域）",
+          "descEn": "Software Reset flag",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CSR_IWDGRSTF",
+          "type": "bit 29（整个位域）",
+          "descEn": "Independent Watchdog reset flag",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CSR_WWDGRSTF",
+          "type": "bit 30（整个位域）",
+          "descEn": "Window watchdog reset flag",
+          "descZh": ""
+        },
+        {
+          "name": "RCC_CSR_LPWRRSTF",
+          "type": "bit 31（整个位域）",
+          "descEn": "Low-Power reset flag",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Internal Low Speed oscillator enable",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "RCC_CSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 RCC_TypeDef.CSR，偏移 0x24"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = RCC->CSR;  /* 读回当前值 */\nv &= ~RCC_CSR_LSION_Msk;  /* 先清掉 RCC_CSR_LSION：bit 0（整个位域） */\nv |= (1u << RCC_CSR_LSION_Pos) & RCC_CSR_LSION_Msk;  /* 置位，实际取值看参考手册 */\nRCC->CSR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 1401,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    }
+  ]
+}

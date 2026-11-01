@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../models/library_kind.dart';
 import '../pages/function_detail_page.dart';
 import '../pages/symbol_detail_page.dart';
 import '../providers/app_providers.dart';
@@ -32,6 +33,12 @@ class KeywordText extends ConsumerWidget {
   /// 文本对齐
   final TextAlign? textAlign;
 
+  /// 当前阅读上下文所属的库（v2.0.1 新增）。
+  ///
+  /// 决定点击同名符号时打开哪一份定义：在 HAL 函数页里点
+  /// `GPIO_InitTypeDef` 应该给 HAL 的结构体，而不是 SPL 的。
+  final LibraryKind? library;
+
   const KeywordText(
     this.text, {
     super.key,
@@ -40,6 +47,7 @@ class KeywordText extends ConsumerWidget {
     this.maxLines,
     this.overflow,
     this.textAlign,
+    this.library,
   });
 
   @override
@@ -87,7 +95,8 @@ class KeywordText extends ConsumerWidget {
                 text: seg.text,
                 style: linkStyle,
                 recognizer: TapGestureRecognizer()
-                  ..onTap = () => openSymbol(context, ref, seg.name!),
+                  ..onTap = () =>
+                      openSymbol(context, ref, seg.name!, preferredLib: library),
               )
             else
               TextSpan(text: seg.text, style: base),
@@ -104,7 +113,18 @@ class KeywordText extends ConsumerWidget {
 ///
 /// 抽成顶层函数，供 KeywordText、参数表、代码块、相关函数列表共用。
 /// 用 Navigator.push 保证"点进去能返回原位置"（需求 5.3）。
-void openSymbol(BuildContext context, WidgetRef ref, String name) {
+///
+/// [preferredLib] 是**当前阅读上下文所属的库**（v2.0.1 新增）。
+/// 传入它才能解决「HAL 与 SPL 同名不同类型」的歧义：
+/// 正在读 `HAL_GPIO_Init` 时点 `GPIO_InitTypeDef`，必须打开 HAL 那份
+/// （成员是 Pin/Mode/Pull/Speed），而不是 SPL 那份
+/// （成员是 GPIO_Pin/GPIO_Speed/GPIO_Mode）——后者会把人带偏。
+void openSymbol(
+  BuildContext context,
+  WidgetRef ref,
+  String name, {
+  LibraryKind? preferredLib,
+}) {
   final data = ref.read(splDataProvider).valueOrNull;
   if (data == null) return;
 
@@ -117,10 +137,13 @@ void openSymbol(BuildContext context, WidgetRef ref, String name) {
     );
     return;
   }
-  if (data.isKnownSymbol(name)) {
+
+  // 符号：按库上下文解析出真正的 id
+  final symbol = data.symbolOf(name, preferredLib: preferredLib);
+  if (symbol != null) {
     Navigator.of(context).push(
       MaterialPageRoute<void>(
-        builder: (_) => SymbolDetailPage(symbolId: name),
+        builder: (_) => SymbolDetailPage(symbolId: symbol.id),
       ),
     );
     return;
@@ -141,6 +164,7 @@ List<InlineSpan> buildKeywordSpans(
   String text, {
   Set<String>? whitelist,
   TextStyle? style,
+  LibraryKind? library,
 }) {
   final matcher = ref.read(symbolMatcherProvider);
   final base = style ?? DefaultTextStyle.of(context).style;
@@ -164,7 +188,8 @@ List<InlineSpan> buildKeywordSpans(
           text: seg.text,
           style: linkStyle,
           recognizer: TapGestureRecognizer()
-            ..onTap = () => openSymbol(context, ref, seg.name!),
+            ..onTap = () =>
+                openSymbol(context, ref, seg.name!, preferredLib: library),
         )
       else
         TextSpan(text: seg.text, style: base),

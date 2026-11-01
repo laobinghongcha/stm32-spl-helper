@@ -9,7 +9,7 @@
       3. 不声明任何其它权限（存储、位置、网络状态等一律不需要）。
     -->
     <application
-        android:label="STM32 标准库助手"
+        android:label="STM32 库函数助手"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher"

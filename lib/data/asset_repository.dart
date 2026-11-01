@@ -6,6 +6,7 @@ import 'package:flutter/services.dart' show rootBundle;
 import '../models/chip.dart';
 import '../models/compile_error.dart';
 import '../models/function_item.dart';
+import '../models/library_kind.dart';
 import '../models/manifest.dart';
 import '../models/peripheral.dart';
 import '../models/pin.dart';
@@ -56,10 +57,11 @@ Map<String, dynamic> _decodeMap(String source) =>
 /// 静态数据仓库。
 ///
 /// 分层加载策略（需求：JSON 一次性加载进内存，不要每次进页面都重新读文件）：
-///   - [loadCore]     启动时调用，读 manifest / peripherals / chip / symbols /
-///                    pinout / compile_errors，构建全部内存索引
-///   - [loadFunctions] 进外设详情页时按需读，读过的缓存在内存里
-///   - [loadRegisters] 查看寄存器位域时才读（2.7 MB，不拖慢首屏）
+///   - [loadCore]      启动时调用，读 manifest / peripherals / chip / symbols /
+///                     pinout / compile_errors，构建全部内存索引
+///   - [loadFunctionsOf] 进外设详情页时按需读「某外设 + 某库」的函数
+///   - [loadHalSymbols]  需要 HAL/LL 符号时读 symbols_hal.json
+///   - [loadRegisterSymbols] 查看寄存器位域时才读（2.7 MB，不拖慢首屏）
 ///
 /// 所有读过的数据都缓存，重复调用不会重复读文件。
 class AssetRepository {
@@ -70,11 +72,14 @@ class AssetRepository {
   /// 阈值取 200 KB：小文件直接解析更快（省掉 isolate 启动开销）。
   static const int _computeThreshold = 200 * 1024;
 
-  /// 函数文件缓存：外设 id → 函数包
+  /// 函数文件缓存：键为 `"${lib.raw}:$peripheralId"`（如 "hal:GPIO"）
   final Map<String, FunctionBundle> _functionCache = {};
 
   /// 寄存器位定义符号缓存（整包读一次）
   List<SymbolItem>? _registerSymbols;
+
+  /// HAL/LL 符号缓存（用 null 表示"没读过"，与"读过但为空"区分开）
+  List<SymbolItem>? _halSymbols;
 
   /// 首屏核心数据缓存
   SplData? _core;
@@ -84,6 +89,10 @@ class AssetRepository {
 
   /// 已缓存的函数包数量（调试用）
   int get cachedFunctionBundleCount => _functionCache.length;
+
+  /// 函数缓存键：库 + 外设
+  static String _cacheKey(String peripheralId, LibraryKind lib) =>
+      '${lib.raw}:$peripheralId';
 
   // ---- 路径拼接 ----
 
@@ -122,6 +131,18 @@ class AssetRepository {
     }
   }
 
+  /// 尝试读取；文件不存在等任何失败都返回 null（不抛）。
+  ///
+  /// 用于「可能没有」的增强数据（HAL/LL/reg 函数文件、symbols_hal.json）。
+  Future<Map<String, dynamic>?> _tryLoadJson(String relative) async {
+    try {
+      return await _loadJson(relative);
+    } on AssetLoadException catch (e) {
+      debugPrint('[AssetRepository] 可选数据缺失，跳过：$e');
+      return null;
+    }
+  }
+
   // ---- 核心数据 ----
 
   /// 加载首屏所需的全部核心数据并构建内存索引。
@@ -153,6 +174,27 @@ class AssetRepository {
     // 符号（API 符号，首屏就要建搜索索引）
     final symbolBundle =
         SymbolBundle.fromJson(await _loadJson('symbols.json'));
+
+    // HAL/LL 符号（3.77 MB）。
+    //
+    // 必须在这里加载，不能留成"按需"：搜索索引、关键词跳转、函数详情页的
+    // 参数类型跳转、同名类型切换全都要用。早先 `loadHalSymbols()` 写好了
+    // 但**全项目无人调用**，于是运行时 halSymbols 恒为空——
+    // 表现就是搜不到 `ADC_HandleTypeDef`、HAL 函数里的类型名点不动、
+    // `GPIO_InitTypeDef` 永远只显示 SPL 那份。
+    //
+    // 3.77 MB 走 compute 在独立 isolate 解析，不阻塞 UI；
+    // 相比"功能静默失效"，这点启动开销是值得的。
+    List<SymbolItem> halSymbols = const <SymbolItem>[];
+    final halSymbolPath = manifest.fileOf('symbolsHal', fallback: 'symbols_hal.json');
+    try {
+      final halBundle =
+          SymbolBundle.fromJson(await _loadJson(halSymbolPath));
+      halSymbols = halBundle.symbols;
+    } catch (e) {
+      // v1 数据没有这个文件；缺失时降级为空，不影响 SPL 部分可用
+      debugPrint('[AssetRepository] HAL 符号加载失败，降级为空：$e');
+    }
 
     // 引脚
     final pinoutPath = manifest.fileOf('pinout', fallback: 'pinout_f103c8t6.json');
@@ -192,13 +234,14 @@ class AssetRepository {
       });
 
     // 函数详情不在这里加载（按需读），所以核心数据的 functions 先为空，
-    // 索引里只放外设、符号、引脚、编译错误。
+    // 索引里放外设、符号（SPL + HAL/LL）、引脚、编译错误。
     final data = SplData(
       manifest: manifest,
       chip: chip,
       peripherals: peripherals,
       functions: const [],
       symbols: symbolBundle.symbols,
+      halSymbols: halSymbols,
       pinout: pinout,
       compileErrors: compileErrors,
     );
@@ -208,23 +251,69 @@ class AssetRepository {
 
   // ---- 按需数据 ----
 
-  /// 读取某个外设的函数详情，带缓存。
-  Future<FunctionBundle> loadFunctions(String peripheralId) async {
-    final cached = _functionCache[peripheralId];
+  /// 读取某个外设的 SPL 函数详情，带缓存。
+  ///
+  /// **这是一个可覆写的接缝（seam）**：SPL 是 v1 时代唯一的库，既有测试替身
+  /// 都通过覆写本方法来注入内存数据。所以 [loadFunctionsOf] 遇到 spl 时会
+  /// 走这里而不是直接读文件——否则覆写了本方法的替身会失效，
+  /// 老测试会去读真实 assets 而挂住。
+  Future<FunctionBundle> loadFunctions(String peripheralId) =>
+      _readFunctionsOf(peripheralId, LibraryKind.spl);
+
+  /// 读取「某外设 + 某库」的函数详情，带缓存。
+  ///
+  /// 路径由 manifest.functionDirs 决定（契约 §6）：
+  /// `functions/{外设}.json` 或 `functions/{lib}/{外设}.json`。
+  ///
+  /// spl 走 [loadFunctions]，保证 v1 时代覆写该方法的替身依然生效；
+  /// 其余库直接读文件。
+  ///
+  /// HAL/LL/reg 的文件**可能不存在**（该外设没这个库的实现，这是常态）。
+  /// 此时返回 [FunctionBundle.empty] 而不是抛异常：外设详情页切到该库时
+  /// 应该显示"该外设暂无 HAL 库函数"，不是弹一个加载失败。
+  Future<FunctionBundle> loadFunctionsOf(
+    String peripheralId,
+    LibraryKind lib,
+  ) {
+    if (lib == LibraryKind.spl) return loadFunctions(peripheralId);
+    return _readFunctionsOf(peripheralId, lib);
+  }
+
+  /// 真正的读取实现（含缓存）。
+  Future<FunctionBundle> _readFunctionsOf(
+    String peripheralId,
+    LibraryKind lib,
+  ) async {
+    final key = _cacheKey(peripheralId, lib);
+    final cached = _functionCache[key];
     if (cached != null) return cached;
 
-    final core = _core;
-    // 优先用 manifest 里登记的函数目录
-    final dir = core?.manifest.fileOf('functions', fallback: 'functions/') ??
-        'functions/';
+    final dir = _core?.manifest.functionDirOf(lib) ?? _resolveLegacyDir(lib);
     final path = _join(dir, peripheralId, '.json');
 
-    final bundle = FunctionBundle.fromJson(await _loadJson(path));
-    _functionCache[peripheralId] = bundle;
+    final json = await _tryLoadJson(path);
+    if (json == null) {
+      final empty = FunctionBundle.empty(peripheral: peripheralId, library: lib);
+      _functionCache[key] = empty;
+      return empty;
+    }
+
+    final bundle = FunctionBundle.fromJson(json);
+    _functionCache[key] = bundle;
     return bundle;
   }
 
-  /// 读取寄存器位定义符号（2.7 MB，只在需要时读一次）。
+  /// 核心数据还没加载时（例如单测直接调 loadFunctionsOf）猜一下目录。
+  ///
+  /// spl 与 v1 数据都在 `functions/`；其它库按契约固定为 `functions/<lib>/`。
+  static String _resolveLegacyDir(LibraryKind lib) =>
+      lib == LibraryKind.spl ? 'functions/' : 'functions/${lib.raw}/';
+
+  /// 某外设某库的函数是否已经读过（避免重复读文件）。
+  bool hasFunctionsOf(String peripheralId, LibraryKind lib) =>
+      _functionCache.containsKey(_cacheKey(peripheralId, lib));
+
+  /// 读取 SPL 寄存器位定义符号（2.7 MB，只在需要时读一次）。
   Future<List<SymbolItem>> loadRegisterSymbols() async {
     final cached = _registerSymbols;
     if (cached != null) return cached;
@@ -242,10 +331,36 @@ class AssetRepository {
     return _registerSymbols!;
   }
 
+  /// 读取 HAL/LL 符号（`symbols_hal.json`），带缓存。
+  ///
+  /// 文件不存在（v1 数据、或生成器还没产出）时降级为空列表，不抛异常：
+  /// 它只是让关键词跳转多认几个名字，缺失不该让页面崩。
+  Future<List<SymbolItem>> loadHalSymbols() async {
+    final cached = _halSymbols;
+    if (cached != null) return cached;
+
+    final path =
+        _core?.manifest.fileOf('symbolsHal', fallback: 'symbols_hal.json') ??
+            'symbols_hal.json';
+    final json = await _tryLoadJson(path);
+    if (json == null) {
+      _halSymbols = const <SymbolItem>[];
+      return _halSymbols!;
+    }
+    try {
+      _halSymbols = SymbolBundle.fromJson(json).symbols;
+    } catch (e) {
+      debugPrint('[AssetRepository] HAL 符号解析失败，降级为空：$e');
+      _halSymbols = const <SymbolItem>[];
+    }
+    return _halSymbols!;
+  }
+
   /// 清空缓存（设置页"重新加载数据"用）。
   void clearCache() {
     _functionCache.clear();
     _registerSymbols = null;
+    _halSymbols = null;
     _core = null;
   }
 }

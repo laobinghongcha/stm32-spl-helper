@@ -6,7 +6,7 @@
       "id": "DAC_DeInit",
       "name": "DAC_DeInit",
       "peripheral": "DAC",
-      "sectionId": "DAC#sec1",
+      "sectionId": "DAC@spl#sec1",
       "prototype": "void DAC_DeInit(void);",
       "returnType": "void",
       "params": [],
@@ -67,7 +67,7 @@
       "id": "DAC_Init",
       "name": "DAC_Init",
       "peripheral": "DAC",
-      "sectionId": "DAC#sec1",
+      "sectionId": "DAC@spl#sec1",
       "prototype": "void DAC_Init(uint32_t DAC_Channel, DAC_InitTypeDef* DAC_InitStruct);",
       "returnType": "void",
       "params": [
@@ -175,7 +175,7 @@
       "id": "DAC_StructInit",
       "name": "DAC_StructInit",
       "peripheral": "DAC",
-      "sectionId": "DAC#sec1",
+      "sectionId": "DAC@spl#sec1",
       "prototype": "void DAC_StructInit(DAC_InitTypeDef* DAC_InitStruct);",
       "returnType": "void",
       "params": [
@@ -231,7 +231,7 @@
       "id": "DAC_Cmd",
       "name": "DAC_Cmd",
       "peripheral": "DAC",
-      "sectionId": "DAC#sec2",
+      "sectionId": "DAC@spl#sec2",
       "prototype": "void DAC_Cmd(uint32_t DAC_Channel, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -300,7 +300,7 @@
       "id": "DAC_ITConfig",
       "name": "DAC_ITConfig",
       "peripheral": "DAC",
-      "sectionId": "DAC#sec3",
+      "sectionId": "DAC@spl#sec3",
       "prototype": "void DAC_ITConfig(uint32_t DAC_Channel, uint32_t DAC_IT, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -386,7 +386,7 @@
       "id": "DAC_DMACmd",
       "name": "DAC_DMACmd",
       "peripheral": "DAC",
-      "sectionId": "DAC#sec2",
+      "sectionId": "DAC@spl#sec2",
       "prototype": "void DAC_DMACmd(uint32_t DAC_Channel, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -481,7 +481,7 @@
       "id": "DAC_SoftwareTriggerCmd",
       "name": "DAC_SoftwareTriggerCmd",
       "peripheral": "DAC",
-      "sectionId": "DAC#sec2",
+      "sectionId": "DAC@spl#sec2",
       "prototype": "void DAC_SoftwareTriggerCmd(uint32_t DAC_Channel, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -559,7 +559,7 @@
       "id": "DAC_DualSoftwareTriggerCmd",
       "name": "DAC_DualSoftwareTriggerCmd",
       "peripheral": "DAC",
-      "sectionId": "DAC#sec2",
+      "sectionId": "DAC@spl#sec2",
       "prototype": "void DAC_DualSoftwareTriggerCmd(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -629,7 +629,7 @@
       "id": "DAC_WaveGenerationCmd",
       "name": "DAC_WaveGenerationCmd",
       "peripheral": "DAC",
-      "sectionId": "DAC#sec2",
+      "sectionId": "DAC@spl#sec2",
       "prototype": "void DAC_WaveGenerationCmd(uint32_t DAC_Channel, uint32_t DAC_Wave, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -720,7 +720,7 @@
       "id": "DAC_SetChannel1Data",
       "name": "DAC_SetChannel1Data",
       "peripheral": "DAC",
-      "sectionId": "DAC#sec4",
+      "sectionId": "DAC@spl#sec4",
       "prototype": "void DAC_SetChannel1Data(uint32_t DAC_Align, uint16_t Data);",
       "returnType": "void",
       "params": [
@@ -802,7 +802,7 @@
       "id": "DAC_SetChannel2Data",
       "name": "DAC_SetChannel2Data",
       "peripheral": "DAC",
-      "sectionId": "DAC#sec4",
+      "sectionId": "DAC@spl#sec4",
       "prototype": "void DAC_SetChannel2Data(uint32_t DAC_Align, uint16_t Data);",
       "returnType": "void",
       "params": [
@@ -881,7 +881,7 @@
       "id": "DAC_SetDualChannelData",
       "name": "DAC_SetDualChannelData",
       "peripheral": "DAC",
-      "sectionId": "DAC#sec4",
+      "sectionId": "DAC@spl#sec4",
       "prototype": "void DAC_SetDualChannelData(uint32_t DAC_Align, uint16_t Data2, uint16_t Data1);",
       "returnType": "void",
       "params": [
@@ -964,7 +964,7 @@
       "id": "DAC_GetDataOutputValue",
       "name": "DAC_GetDataOutputValue",
       "peripheral": "DAC",
-      "sectionId": "DAC#sec5",
+      "sectionId": "DAC@spl#sec5",
       "prototype": "uint16_t DAC_GetDataOutputValue(uint32_t DAC_Channel);",
       "returnType": "uint16_t",
       "params": [
@@ -1028,7 +1028,7 @@
       "id": "DAC_GetFlagStatus",
       "name": "DAC_GetFlagStatus",
       "peripheral": "DAC",
-      "sectionId": "DAC#sec6",
+      "sectionId": "DAC@spl#sec6",
       "prototype": "FlagStatus DAC_GetFlagStatus(uint32_t DAC_Channel, uint32_t DAC_FLAG);",
       "returnType": "FlagStatus",
       "params": [
@@ -1097,7 +1097,7 @@
       "id": "DAC_ClearFlag",
       "name": "DAC_ClearFlag",
       "peripheral": "DAC",
-      "sectionId": "DAC#sec6",
+      "sectionId": "DAC@spl#sec6",
       "prototype": "void DAC_ClearFlag(uint32_t DAC_Channel, uint32_t DAC_FLAG);",
       "returnType": "void",
       "params": [
@@ -1162,7 +1162,7 @@
       "id": "DAC_GetITStatus",
       "name": "DAC_GetITStatus",
       "peripheral": "DAC",
-      "sectionId": "DAC#sec3",
+      "sectionId": "DAC@spl#sec3",
       "prototype": "ITStatus DAC_GetITStatus(uint32_t DAC_Channel, uint32_t DAC_IT);",
       "returnType": "ITStatus",
       "params": [
@@ -1232,7 +1232,7 @@
       "id": "DAC_ClearITPendingBit",
       "name": "DAC_ClearITPendingBit",
       "peripheral": "DAC",
-      "sectionId": "DAC#sec3",
+      "sectionId": "DAC@spl#sec3",
       "prototype": "void DAC_ClearITPendingBit(uint32_t DAC_Channel, uint32_t DAC_IT);",
       "returnType": "void",
       "params": [

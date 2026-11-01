@@ -1,0 +1,1615 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "EXTI",
+  "library": "reg",
+  "functions": [
+    {
+      "id": "REG_EXTI_EMR",
+      "name": "EXTI_EMR",
+      "peripheral": "EXTI",
+      "library": "reg",
+      "sectionId": "EXTI@reg#sec1",
+      "prototype": "EXTI->EMR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "EXTI_EMR_MR0",
+          "type": "bit 0（整个位域）",
+          "descEn": "Event Mask on line 0",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_MR1",
+          "type": "bit 1（整个位域）",
+          "descEn": "Event Mask on line 1",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_MR2",
+          "type": "bit 2（整个位域）",
+          "descEn": "Event Mask on line 2",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_MR3",
+          "type": "bit 3（整个位域）",
+          "descEn": "Event Mask on line 3",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_MR4",
+          "type": "bit 4（整个位域）",
+          "descEn": "Event Mask on line 4",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_MR5",
+          "type": "bit 5（整个位域）",
+          "descEn": "Event Mask on line 5",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_MR6",
+          "type": "bit 6（整个位域）",
+          "descEn": "Event Mask on line 6",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_MR7",
+          "type": "bit 7（整个位域）",
+          "descEn": "Event Mask on line 7",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_MR8",
+          "type": "bit 8（整个位域）",
+          "descEn": "Event Mask on line 8",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_MR9",
+          "type": "bit 9（整个位域）",
+          "descEn": "Event Mask on line 9",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_MR10",
+          "type": "bit 10（整个位域）",
+          "descEn": "Event Mask on line 10",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_MR11",
+          "type": "bit 11（整个位域）",
+          "descEn": "Event Mask on line 11",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_MR12",
+          "type": "bit 12（整个位域）",
+          "descEn": "Event Mask on line 12",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_MR13",
+          "type": "bit 13（整个位域）",
+          "descEn": "Event Mask on line 13",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_MR14",
+          "type": "bit 14（整个位域）",
+          "descEn": "Event Mask on line 14",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_MR15",
+          "type": "bit 15（整个位域）",
+          "descEn": "Event Mask on line 15",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_MR16",
+          "type": "bit 16（整个位域）",
+          "descEn": "Event Mask on line 16",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_MR17",
+          "type": "bit 17（整个位域）",
+          "descEn": "Event Mask on line 17",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_MR18",
+          "type": "bit 18（整个位域）",
+          "descEn": "Event Mask on line 18",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_EM0",
+          "type": "EXTI_EMR_MR0",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_EM1",
+          "type": "EXTI_EMR_MR1",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_EM2",
+          "type": "EXTI_EMR_MR2",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_EM3",
+          "type": "EXTI_EMR_MR3",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_EM4",
+          "type": "EXTI_EMR_MR4",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_EM5",
+          "type": "EXTI_EMR_MR5",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_EM6",
+          "type": "EXTI_EMR_MR6",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_EM7",
+          "type": "EXTI_EMR_MR7",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_EM8",
+          "type": "EXTI_EMR_MR8",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_EM9",
+          "type": "EXTI_EMR_MR9",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_EM10",
+          "type": "EXTI_EMR_MR10",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_EM11",
+          "type": "EXTI_EMR_MR11",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_EM12",
+          "type": "EXTI_EMR_MR12",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_EM13",
+          "type": "EXTI_EMR_MR13",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_EM14",
+          "type": "EXTI_EMR_MR14",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_EM15",
+          "type": "EXTI_EMR_MR15",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_EM16",
+          "type": "EXTI_EMR_MR16",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_EM17",
+          "type": "EXTI_EMR_MR17",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_EMR_EM18",
+          "type": "EXTI_EMR_MR18",
+          "descEn": "",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Event Mask on line 0",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "EXTI_EMR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 EXTI_TypeDef.EMR，偏移 0x04"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = EXTI->EMR;  /* 读回当前值 */\nv &= ~EXTI_EMR_MR0_Msk;  /* 先清掉 EXTI_EMR_MR0：bit 0（整个位域） */\nv |= (1u << EXTI_EMR_MR0_Pos) & EXTI_EMR_MR0_Msk;  /* 置位，实际取值看参考手册 */\nEXTI->EMR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2638,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_EXTI_FTSR",
+      "name": "EXTI_FTSR",
+      "peripheral": "EXTI",
+      "library": "reg",
+      "sectionId": "EXTI@reg#sec2",
+      "prototype": "EXTI->FTSR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "EXTI_FTSR_TR0",
+          "type": "bit 0（整个位域）",
+          "descEn": "Falling trigger event configuration bit of line 0",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_TR1",
+          "type": "bit 1（整个位域）",
+          "descEn": "Falling trigger event configuration bit of line 1",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_TR2",
+          "type": "bit 2（整个位域）",
+          "descEn": "Falling trigger event configuration bit of line 2",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_TR3",
+          "type": "bit 3（整个位域）",
+          "descEn": "Falling trigger event configuration bit of line 3",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_TR4",
+          "type": "bit 4（整个位域）",
+          "descEn": "Falling trigger event configuration bit of line 4",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_TR5",
+          "type": "bit 5（整个位域）",
+          "descEn": "Falling trigger event configuration bit of line 5",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_TR6",
+          "type": "bit 6（整个位域）",
+          "descEn": "Falling trigger event configuration bit of line 6",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_TR7",
+          "type": "bit 7（整个位域）",
+          "descEn": "Falling trigger event configuration bit of line 7",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_TR8",
+          "type": "bit 8（整个位域）",
+          "descEn": "Falling trigger event configuration bit of line 8",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_TR9",
+          "type": "bit 9（整个位域）",
+          "descEn": "Falling trigger event configuration bit of line 9",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_TR10",
+          "type": "bit 10（整个位域）",
+          "descEn": "Falling trigger event configuration bit of line 10",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_TR11",
+          "type": "bit 11（整个位域）",
+          "descEn": "Falling trigger event configuration bit of line 11",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_TR12",
+          "type": "bit 12（整个位域）",
+          "descEn": "Falling trigger event configuration bit of line 12",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_TR13",
+          "type": "bit 13（整个位域）",
+          "descEn": "Falling trigger event configuration bit of line 13",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_TR14",
+          "type": "bit 14（整个位域）",
+          "descEn": "Falling trigger event configuration bit of line 14",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_TR15",
+          "type": "bit 15（整个位域）",
+          "descEn": "Falling trigger event configuration bit of line 15",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_TR16",
+          "type": "bit 16（整个位域）",
+          "descEn": "Falling trigger event configuration bit of line 16",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_TR17",
+          "type": "bit 17（整个位域）",
+          "descEn": "Falling trigger event configuration bit of line 17",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_TR18",
+          "type": "bit 18（整个位域）",
+          "descEn": "Falling trigger event configuration bit of line 18",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_FT0",
+          "type": "EXTI_FTSR_TR0",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_FT1",
+          "type": "EXTI_FTSR_TR1",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_FT2",
+          "type": "EXTI_FTSR_TR2",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_FT3",
+          "type": "EXTI_FTSR_TR3",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_FT4",
+          "type": "EXTI_FTSR_TR4",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_FT5",
+          "type": "EXTI_FTSR_TR5",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_FT6",
+          "type": "EXTI_FTSR_TR6",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_FT7",
+          "type": "EXTI_FTSR_TR7",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_FT8",
+          "type": "EXTI_FTSR_TR8",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_FT9",
+          "type": "EXTI_FTSR_TR9",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_FT10",
+          "type": "EXTI_FTSR_TR10",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_FT11",
+          "type": "EXTI_FTSR_TR11",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_FT12",
+          "type": "EXTI_FTSR_TR12",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_FT13",
+          "type": "EXTI_FTSR_TR13",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_FT14",
+          "type": "EXTI_FTSR_TR14",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_FT15",
+          "type": "EXTI_FTSR_TR15",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_FT16",
+          "type": "EXTI_FTSR_TR16",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_FT17",
+          "type": "EXTI_FTSR_TR17",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_FTSR_FT18",
+          "type": "EXTI_FTSR_TR18",
+          "descEn": "",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Falling trigger event configuration bit of line 0",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "EXTI_FTSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 EXTI_TypeDef.FTSR，偏移 0x0C"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = EXTI->FTSR;  /* 读回当前值 */\nv &= ~EXTI_FTSR_TR0_Msk;  /* 先清掉 EXTI_FTSR_TR0：bit 0（整个位域） */\nv |= (1u << EXTI_FTSR_TR0_Pos) & EXTI_FTSR_TR0_Msk;  /* 置位，实际取值看参考手册 */\nEXTI->FTSR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2798,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_EXTI_IMR",
+      "name": "EXTI_IMR",
+      "peripheral": "EXTI",
+      "library": "reg",
+      "sectionId": "EXTI@reg#sec1",
+      "prototype": "EXTI->IMR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "EXTI_IMR_MR0",
+          "type": "bit 0（整个位域）",
+          "descEn": "Interrupt Mask on line 0",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_MR1",
+          "type": "bit 1（整个位域）",
+          "descEn": "Interrupt Mask on line 1",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_MR2",
+          "type": "bit 2（整个位域）",
+          "descEn": "Interrupt Mask on line 2",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_MR3",
+          "type": "bit 3（整个位域）",
+          "descEn": "Interrupt Mask on line 3",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_MR4",
+          "type": "bit 4（整个位域）",
+          "descEn": "Interrupt Mask on line 4",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_MR5",
+          "type": "bit 5（整个位域）",
+          "descEn": "Interrupt Mask on line 5",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_MR6",
+          "type": "bit 6（整个位域）",
+          "descEn": "Interrupt Mask on line 6",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_MR7",
+          "type": "bit 7（整个位域）",
+          "descEn": "Interrupt Mask on line 7",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_MR8",
+          "type": "bit 8（整个位域）",
+          "descEn": "Interrupt Mask on line 8",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_MR9",
+          "type": "bit 9（整个位域）",
+          "descEn": "Interrupt Mask on line 9",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_MR10",
+          "type": "bit 10（整个位域）",
+          "descEn": "Interrupt Mask on line 10",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_MR11",
+          "type": "bit 11（整个位域）",
+          "descEn": "Interrupt Mask on line 11",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_MR12",
+          "type": "bit 12（整个位域）",
+          "descEn": "Interrupt Mask on line 12",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_MR13",
+          "type": "bit 13（整个位域）",
+          "descEn": "Interrupt Mask on line 13",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_MR14",
+          "type": "bit 14（整个位域）",
+          "descEn": "Interrupt Mask on line 14",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_MR15",
+          "type": "bit 15（整个位域）",
+          "descEn": "Interrupt Mask on line 15",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_MR16",
+          "type": "bit 16（整个位域）",
+          "descEn": "Interrupt Mask on line 16",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_MR17",
+          "type": "bit 17（整个位域）",
+          "descEn": "Interrupt Mask on line 17",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_MR18",
+          "type": "bit 18（整个位域）",
+          "descEn": "Interrupt Mask on line 18",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_IM0",
+          "type": "EXTI_IMR_MR0",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_IM1",
+          "type": "EXTI_IMR_MR1",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_IM2",
+          "type": "EXTI_IMR_MR2",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_IM3",
+          "type": "EXTI_IMR_MR3",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_IM4",
+          "type": "EXTI_IMR_MR4",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_IM5",
+          "type": "EXTI_IMR_MR5",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_IM6",
+          "type": "EXTI_IMR_MR6",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_IM7",
+          "type": "EXTI_IMR_MR7",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_IM8",
+          "type": "EXTI_IMR_MR8",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_IM9",
+          "type": "EXTI_IMR_MR9",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_IM10",
+          "type": "EXTI_IMR_MR10",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_IM11",
+          "type": "EXTI_IMR_MR11",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_IM12",
+          "type": "EXTI_IMR_MR12",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_IM13",
+          "type": "EXTI_IMR_MR13",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_IM14",
+          "type": "EXTI_IMR_MR14",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_IM15",
+          "type": "EXTI_IMR_MR15",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_IM16",
+          "type": "EXTI_IMR_MR16",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_IM17",
+          "type": "EXTI_IMR_MR17",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_IM18",
+          "type": "EXTI_IMR_MR18",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_IMR_IM",
+          "type": "bits[18:0]",
+          "descEn": "Interrupt Mask All",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Interrupt Mask on line 0",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "EXTI_IMR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 EXTI_TypeDef.IMR，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = EXTI->IMR;  /* 读回当前值 */\nv &= ~EXTI_IMR_MR0_Msk;  /* 先清掉 EXTI_IMR_MR0：bit 0（整个位域） */\nv |= (1u << EXTI_IMR_MR0_Pos) & EXTI_IMR_MR0_Msk;  /* 置位，实际取值看参考手册 */\nEXTI->IMR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2557,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_EXTI_PR",
+      "name": "EXTI_PR",
+      "peripheral": "EXTI",
+      "library": "reg",
+      "sectionId": "EXTI@reg#sec1",
+      "prototype": "EXTI->PR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "EXTI_PR_PR0",
+          "type": "bit 0（整个位域）",
+          "descEn": "Pending bit for line 0",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PR1",
+          "type": "bit 1（整个位域）",
+          "descEn": "Pending bit for line 1",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PR2",
+          "type": "bit 2（整个位域）",
+          "descEn": "Pending bit for line 2",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PR3",
+          "type": "bit 3（整个位域）",
+          "descEn": "Pending bit for line 3",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PR4",
+          "type": "bit 4（整个位域）",
+          "descEn": "Pending bit for line 4",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PR5",
+          "type": "bit 5（整个位域）",
+          "descEn": "Pending bit for line 5",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PR6",
+          "type": "bit 6（整个位域）",
+          "descEn": "Pending bit for line 6",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PR7",
+          "type": "bit 7（整个位域）",
+          "descEn": "Pending bit for line 7",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PR8",
+          "type": "bit 8（整个位域）",
+          "descEn": "Pending bit for line 8",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PR9",
+          "type": "bit 9（整个位域）",
+          "descEn": "Pending bit for line 9",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PR10",
+          "type": "bit 10（整个位域）",
+          "descEn": "Pending bit for line 10",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PR11",
+          "type": "bit 11（整个位域）",
+          "descEn": "Pending bit for line 11",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PR12",
+          "type": "bit 12（整个位域）",
+          "descEn": "Pending bit for line 12",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PR13",
+          "type": "bit 13（整个位域）",
+          "descEn": "Pending bit for line 13",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PR14",
+          "type": "bit 14（整个位域）",
+          "descEn": "Pending bit for line 14",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PR15",
+          "type": "bit 15（整个位域）",
+          "descEn": "Pending bit for line 15",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PR16",
+          "type": "bit 16（整个位域）",
+          "descEn": "Pending bit for line 16",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PR17",
+          "type": "bit 17（整个位域）",
+          "descEn": "Pending bit for line 17",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PR18",
+          "type": "bit 18（整个位域）",
+          "descEn": "Pending bit for line 18",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PIF0",
+          "type": "EXTI_PR_PR0",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PIF1",
+          "type": "EXTI_PR_PR1",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PIF2",
+          "type": "EXTI_PR_PR2",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PIF3",
+          "type": "EXTI_PR_PR3",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PIF4",
+          "type": "EXTI_PR_PR4",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PIF5",
+          "type": "EXTI_PR_PR5",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PIF6",
+          "type": "EXTI_PR_PR6",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PIF7",
+          "type": "EXTI_PR_PR7",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PIF8",
+          "type": "EXTI_PR_PR8",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PIF9",
+          "type": "EXTI_PR_PR9",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PIF10",
+          "type": "EXTI_PR_PR10",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PIF11",
+          "type": "EXTI_PR_PR11",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PIF12",
+          "type": "EXTI_PR_PR12",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PIF13",
+          "type": "EXTI_PR_PR13",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PIF14",
+          "type": "EXTI_PR_PR14",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PIF15",
+          "type": "EXTI_PR_PR15",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PIF16",
+          "type": "EXTI_PR_PR16",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PIF17",
+          "type": "EXTI_PR_PR17",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_PR_PIF18",
+          "type": "EXTI_PR_PR18",
+          "descEn": "",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Pending bit for line 0",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "EXTI_PR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 EXTI_TypeDef.PR，偏移 0x14"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = EXTI->PR;  /* 读回当前值 */\nv &= ~EXTI_PR_PR0_Msk;  /* 先清掉 EXTI_PR_PR0：bit 0（整个位域） */\nv |= (1u << EXTI_PR_PR0_Pos) & EXTI_PR_PR0_Msk;  /* 置位，实际取值看参考手册 */\nEXTI->PR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2958,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_EXTI_RTSR",
+      "name": "EXTI_RTSR",
+      "peripheral": "EXTI",
+      "library": "reg",
+      "sectionId": "EXTI@reg#sec2",
+      "prototype": "EXTI->RTSR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "EXTI_RTSR_TR0",
+          "type": "bit 0（整个位域）",
+          "descEn": "Rising trigger event configuration bit of line 0",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_TR1",
+          "type": "bit 1（整个位域）",
+          "descEn": "Rising trigger event configuration bit of line 1",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_TR2",
+          "type": "bit 2（整个位域）",
+          "descEn": "Rising trigger event configuration bit of line 2",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_TR3",
+          "type": "bit 3（整个位域）",
+          "descEn": "Rising trigger event configuration bit of line 3",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_TR4",
+          "type": "bit 4（整个位域）",
+          "descEn": "Rising trigger event configuration bit of line 4",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_TR5",
+          "type": "bit 5（整个位域）",
+          "descEn": "Rising trigger event configuration bit of line 5",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_TR6",
+          "type": "bit 6（整个位域）",
+          "descEn": "Rising trigger event configuration bit of line 6",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_TR7",
+          "type": "bit 7（整个位域）",
+          "descEn": "Rising trigger event configuration bit of line 7",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_TR8",
+          "type": "bit 8（整个位域）",
+          "descEn": "Rising trigger event configuration bit of line 8",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_TR9",
+          "type": "bit 9（整个位域）",
+          "descEn": "Rising trigger event configuration bit of line 9",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_TR10",
+          "type": "bit 10（整个位域）",
+          "descEn": "Rising trigger event configuration bit of line 10",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_TR11",
+          "type": "bit 11（整个位域）",
+          "descEn": "Rising trigger event configuration bit of line 11",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_TR12",
+          "type": "bit 12（整个位域）",
+          "descEn": "Rising trigger event configuration bit of line 12",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_TR13",
+          "type": "bit 13（整个位域）",
+          "descEn": "Rising trigger event configuration bit of line 13",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_TR14",
+          "type": "bit 14（整个位域）",
+          "descEn": "Rising trigger event configuration bit of line 14",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_TR15",
+          "type": "bit 15（整个位域）",
+          "descEn": "Rising trigger event configuration bit of line 15",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_TR16",
+          "type": "bit 16（整个位域）",
+          "descEn": "Rising trigger event configuration bit of line 16",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_TR17",
+          "type": "bit 17（整个位域）",
+          "descEn": "Rising trigger event configuration bit of line 17",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_TR18",
+          "type": "bit 18（整个位域）",
+          "descEn": "Rising trigger event configuration bit of line 18",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_RT0",
+          "type": "EXTI_RTSR_TR0",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_RT1",
+          "type": "EXTI_RTSR_TR1",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_RT2",
+          "type": "EXTI_RTSR_TR2",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_RT3",
+          "type": "EXTI_RTSR_TR3",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_RT4",
+          "type": "EXTI_RTSR_TR4",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_RT5",
+          "type": "EXTI_RTSR_TR5",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_RT6",
+          "type": "EXTI_RTSR_TR6",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_RT7",
+          "type": "EXTI_RTSR_TR7",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_RT8",
+          "type": "EXTI_RTSR_TR8",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_RT9",
+          "type": "EXTI_RTSR_TR9",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_RT10",
+          "type": "EXTI_RTSR_TR10",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_RT11",
+          "type": "EXTI_RTSR_TR11",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_RT12",
+          "type": "EXTI_RTSR_TR12",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_RT13",
+          "type": "EXTI_RTSR_TR13",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_RT14",
+          "type": "EXTI_RTSR_TR14",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_RT15",
+          "type": "EXTI_RTSR_TR15",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_RT16",
+          "type": "EXTI_RTSR_TR16",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_RT17",
+          "type": "EXTI_RTSR_TR17",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_RTSR_RT18",
+          "type": "EXTI_RTSR_TR18",
+          "descEn": "",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Rising trigger event configuration bit of line 0",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "EXTI_RTSR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 EXTI_TypeDef.RTSR，偏移 0x08"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = EXTI->RTSR;  /* 读回当前值 */\nv &= ~EXTI_RTSR_TR0_Msk;  /* 先清掉 EXTI_RTSR_TR0：bit 0（整个位域） */\nv |= (1u << EXTI_RTSR_TR0_Pos) & EXTI_RTSR_TR0_Msk;  /* 置位，实际取值看参考手册 */\nEXTI->RTSR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2718,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_EXTI_SWIER",
+      "name": "EXTI_SWIER",
+      "peripheral": "EXTI",
+      "library": "reg",
+      "sectionId": "EXTI@reg#sec2",
+      "prototype": "EXTI->SWIER",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "EXTI_SWIER_SWIER0",
+          "type": "bit 0（整个位域）",
+          "descEn": "Software Interrupt on line 0",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWIER1",
+          "type": "bit 1（整个位域）",
+          "descEn": "Software Interrupt on line 1",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWIER2",
+          "type": "bit 2（整个位域）",
+          "descEn": "Software Interrupt on line 2",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWIER3",
+          "type": "bit 3（整个位域）",
+          "descEn": "Software Interrupt on line 3",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWIER4",
+          "type": "bit 4（整个位域）",
+          "descEn": "Software Interrupt on line 4",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWIER5",
+          "type": "bit 5（整个位域）",
+          "descEn": "Software Interrupt on line 5",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWIER6",
+          "type": "bit 6（整个位域）",
+          "descEn": "Software Interrupt on line 6",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWIER7",
+          "type": "bit 7（整个位域）",
+          "descEn": "Software Interrupt on line 7",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWIER8",
+          "type": "bit 8（整个位域）",
+          "descEn": "Software Interrupt on line 8",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWIER9",
+          "type": "bit 9（整个位域）",
+          "descEn": "Software Interrupt on line 9",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWIER10",
+          "type": "bit 10（整个位域）",
+          "descEn": "Software Interrupt on line 10",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWIER11",
+          "type": "bit 11（整个位域）",
+          "descEn": "Software Interrupt on line 11",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWIER12",
+          "type": "bit 12（整个位域）",
+          "descEn": "Software Interrupt on line 12",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWIER13",
+          "type": "bit 13（整个位域）",
+          "descEn": "Software Interrupt on line 13",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWIER14",
+          "type": "bit 14（整个位域）",
+          "descEn": "Software Interrupt on line 14",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWIER15",
+          "type": "bit 15（整个位域）",
+          "descEn": "Software Interrupt on line 15",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWIER16",
+          "type": "bit 16（整个位域）",
+          "descEn": "Software Interrupt on line 16",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWIER17",
+          "type": "bit 17（整个位域）",
+          "descEn": "Software Interrupt on line 17",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWIER18",
+          "type": "bit 18（整个位域）",
+          "descEn": "Software Interrupt on line 18",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWI0",
+          "type": "EXTI_SWIER_SWIER0",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWI1",
+          "type": "EXTI_SWIER_SWIER1",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWI2",
+          "type": "EXTI_SWIER_SWIER2",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWI3",
+          "type": "EXTI_SWIER_SWIER3",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWI4",
+          "type": "EXTI_SWIER_SWIER4",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWI5",
+          "type": "EXTI_SWIER_SWIER5",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWI6",
+          "type": "EXTI_SWIER_SWIER6",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWI7",
+          "type": "EXTI_SWIER_SWIER7",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWI8",
+          "type": "EXTI_SWIER_SWIER8",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWI9",
+          "type": "EXTI_SWIER_SWIER9",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWI10",
+          "type": "EXTI_SWIER_SWIER10",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWI11",
+          "type": "EXTI_SWIER_SWIER11",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWI12",
+          "type": "EXTI_SWIER_SWIER12",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWI13",
+          "type": "EXTI_SWIER_SWIER13",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWI14",
+          "type": "EXTI_SWIER_SWIER14",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWI15",
+          "type": "EXTI_SWIER_SWIER15",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWI16",
+          "type": "EXTI_SWIER_SWIER16",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWI17",
+          "type": "EXTI_SWIER_SWIER17",
+          "descEn": "",
+          "descZh": ""
+        },
+        {
+          "name": "EXTI_SWIER_SWI18",
+          "type": "EXTI_SWIER_SWIER18",
+          "descEn": "",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Software Interrupt on line 0",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "EXTI_SWIER"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 EXTI_TypeDef.SWIER，偏移 0x10"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = EXTI->SWIER;  /* 读回当前值 */\nv &= ~EXTI_SWIER_SWIER0_Msk;  /* 先清掉 EXTI_SWIER_SWIER0：bit 0（整个位域） */\nv |= (1u << EXTI_SWIER_SWIER0_Pos) & EXTI_SWIER_SWIER0_Msk;  /* 置位，实际取值看参考手册 */\nEXTI->SWIER = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 2878,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    }
+  ]
+}

@@ -1,0 +1,448 @@
+{
+  "HAL_NAND_Address_Inc": {
+    "briefZh": "把地址结构体递增到下一个页/块。",
+    "paramsZh": {
+      "hnand": "NAND 句柄指针。",
+      "pAddress": "地址结构体：Page、Block、Plane、Zone，以及块/页内的偏移。"
+    }
+  },
+  "HAL_NAND_ConfigDevice": {
+    "briefZh": "配置器件参数（页大小、块数等）。",
+    "paramsZh": {
+      "hnand": "NAND 句柄指针。",
+      "pDeviceConfig": "器件参数结构体：页大小、块数、平面数、页内备用区大小。必须与实际芯片手册一致，否则读写会错位。"
+    }
+  },
+  "HAL_NAND_DeInit": {
+    "briefZh": "把 NAND Flash 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+    "paramsZh": {
+      "hnand": "NAND 句柄指针。"
+    }
+  },
+  "HAL_NAND_ECC_Disable": {
+    "briefZh": "关闭 ECC 硬件校验。",
+    "paramsZh": {
+      "hnand": "NAND 句柄指针。"
+    }
+  },
+  "HAL_NAND_ECC_Enable": {
+    "briefZh": "使能 ECC 硬件校验。",
+    "paramsZh": {
+      "hnand": "NAND 句柄指针。"
+    }
+  },
+  "HAL_NAND_Erase_Block": {
+    "briefZh": "擦除一个块。",
+    "paramsZh": {
+      "hnand": "NAND 句柄指针。",
+      "pAddress": "地址结构体：Page、Block、Plane、Zone，以及块/页内的偏移。"
+    }
+  },
+  "HAL_NAND_GetECC": {
+    "briefZh": "读取 ECC 校验结果。",
+    "paramsZh": {
+      "ECCval": "输出参数，接收 ECC 校验值。",
+      "Timeout": "超时毫秒数。",
+      "hnand": "NAND 句柄指针。"
+    }
+  },
+  "HAL_NAND_GetState": {
+    "briefZh": "读取 NAND Flash 的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+    "paramsZh": {
+      "hnand": "NAND 句柄指针。"
+    }
+  },
+  "HAL_NAND_IRQHandler": {
+    "briefZh": "NAND Flash 的中断统一入口。在 stm32f1xx_it.c 的对应 IRQHandler 里调用，内部会清标志并分派到各回调。",
+    "paramsZh": {
+      "hnand": "NAND 句柄指针。"
+    }
+  },
+  "HAL_NAND_ITCallback": {
+    "briefZh": "中断回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hnand": "NAND 句柄指针。"
+    }
+  },
+  "HAL_NAND_Init": {
+    "briefZh": "按 InitTypeDef 中的参数初始化 NAND Flash，并完成状态机初始化。",
+    "paramsZh": {
+      "AttSpace_Timing": "地址锁存（ALE）阶段的时序参数。",
+      "ComSpace_Timing": "命令锁存（CLE）阶段的时序参数。",
+      "hnand": "NAND 句柄指针。"
+    }
+  },
+  "HAL_NAND_MspDeInit": {
+    "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+    "paramsZh": {
+      "hnand": "NAND 句柄指针。"
+    }
+  },
+  "HAL_NAND_MspInit": {
+    "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+    "paramsZh": {
+      "hnand": "NAND 句柄指针。"
+    }
+  },
+  "HAL_NAND_Read_ID": {
+    "briefZh": "读取器件的 ID 信息。",
+    "paramsZh": {
+      "hnand": "NAND 句柄指针。",
+      "pNAND_ID": "输出参数，接收 NAND 的 ID 信息（制造商、器件号、页大小等）。"
+    }
+  },
+  "HAL_NAND_Read_Page_16b": {
+    "briefZh": "按 16 位数据宽度读取一页。",
+    "paramsZh": {
+      "NumPageToRead": "要读取的页数。",
+      "hnand": "NAND 句柄指针。",
+      "pAddress": "地址结构体：Page、Block、Plane、Zone，以及块/页内的偏移。",
+      "pBuffer": "数据缓冲区指针。"
+    }
+  },
+  "HAL_NAND_Read_Page_8b": {
+    "briefZh": "按 8 位数据宽度读取一页。",
+    "paramsZh": {
+      "NumPageToRead": "要读取的页数。",
+      "hnand": "NAND 句柄指针。",
+      "pAddress": "地址结构体：Page、Block、Plane、Zone，以及块/页内的偏移。",
+      "pBuffer": "数据缓冲区指针。"
+    }
+  },
+  "HAL_NAND_Read_SpareArea_16b": {
+    "briefZh": "读取备用区（OOB），16 位宽度。",
+    "paramsZh": {
+      "NumSpareAreaToRead": "要读取的备用区（OOB）个数。",
+      "hnand": "NAND 句柄指针。",
+      "pAddress": "地址结构体：Page、Block、Plane、Zone，以及块/页内的偏移。",
+      "pBuffer": "数据缓冲区指针。"
+    }
+  },
+  "HAL_NAND_Read_SpareArea_8b": {
+    "briefZh": "读取备用区（OOB），8 位宽度。",
+    "paramsZh": {
+      "NumSpareAreaToRead": "要读取的备用区（OOB）个数。",
+      "hnand": "NAND 句柄指针。",
+      "pAddress": "地址结构体：Page、Block、Plane、Zone，以及块/页内的偏移。",
+      "pBuffer": "数据缓冲区指针。"
+    }
+  },
+  "HAL_NAND_Read_Status": {
+    "briefZh": "读取器件状态寄存器。",
+    "paramsZh": {
+      "hnand": "NAND 句柄指针。"
+    }
+  },
+  "HAL_NAND_RegisterCallback": {
+    "briefZh": "为 NAND Flash 注册指定事件的回调，替代默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackId": "回调事件编号，取对应的 CallbackIDTypeDef 枚举值。",
+      "hnand": "NAND 句柄指针。",
+      "pCallback": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+    }
+  },
+  "HAL_NAND_Reset": {
+    "briefZh": "复位器件。",
+    "paramsZh": {
+      "hnand": "NAND 句柄指针。"
+    }
+  },
+  "HAL_NAND_UnRegisterCallback": {
+    "briefZh": "注销 NAND Flash 已注册的回调，恢复成默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackId": "回调事件编号，取对应的 CallbackIDTypeDef 枚举值。",
+      "hnand": "NAND 句柄指针。"
+    }
+  },
+  "HAL_NAND_Write_Page_16b": {
+    "briefZh": "按 16 位数据宽度写入一页。",
+    "paramsZh": {
+      "NumPageToWrite": "要写入的页数。",
+      "hnand": "NAND 句柄指针。",
+      "pAddress": "地址结构体：Page、Block、Plane、Zone，以及块/页内的偏移。",
+      "pBuffer": "数据缓冲区指针。"
+    }
+  },
+  "HAL_NAND_Write_Page_8b": {
+    "briefZh": "按 8 位数据宽度写入一页。",
+    "paramsZh": {
+      "NumPageToWrite": "要写入的页数。",
+      "hnand": "NAND 句柄指针。",
+      "pAddress": "地址结构体：Page、Block、Plane、Zone，以及块/页内的偏移。",
+      "pBuffer": "数据缓冲区指针。"
+    }
+  },
+  "HAL_NAND_Write_SpareArea_16b": {
+    "briefZh": "写入备用区（OOB），16 位宽度。",
+    "paramsZh": {
+      "NumSpareAreaTowrite": "要写入的备用区（OOB）个数。",
+      "hnand": "NAND 句柄指针。",
+      "pAddress": "地址结构体：Page、Block、Plane、Zone，以及块/页内的偏移。",
+      "pBuffer": "数据缓冲区指针。"
+    }
+  },
+  "HAL_NAND_Write_SpareArea_8b": {
+    "briefZh": "写入备用区（OOB），8 位宽度。",
+    "paramsZh": {
+      "NumSpareAreaTowrite": "要写入的备用区（OOB）个数。",
+      "hnand": "NAND 句柄指针。",
+      "pAddress": "地址结构体：Page、Block、Plane、Zone，以及块/页内的偏移。",
+      "pBuffer": "数据缓冲区指针。"
+    }
+  },
+  "HAL_NOR_DeInit": {
+    "briefZh": "把 NOR Flash 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+    "paramsZh": {
+      "hnor": "NOR Flash 句柄指针。"
+    }
+  },
+  "HAL_NOR_Erase_Block": {
+    "briefZh": "擦除一个块。",
+    "paramsZh": {
+      "Address": "器件内地址偏移。",
+      "BlockAddress": "块地址（块号）。",
+      "hnor": "NOR Flash 句柄指针。"
+    }
+  },
+  "HAL_NOR_Erase_Chip": {
+    "briefZh": "整片擦除（很慢，且不可恢复，慎用）。",
+    "paramsZh": {
+      "Address": "器件内地址偏移。",
+      "hnor": "NOR Flash 句柄指针。"
+    }
+  },
+  "HAL_NOR_GetState": {
+    "briefZh": "读取 NOR Flash 的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+    "paramsZh": {
+      "hnor": "NOR Flash 句柄指针。"
+    }
+  },
+  "HAL_NOR_GetStatus": {
+    "briefZh": "读取器件当前状态。",
+    "paramsZh": {
+      "Address": "器件内地址偏移。",
+      "Timeout": "超时毫秒数。",
+      "hnor": "NOR Flash 句柄指针。"
+    }
+  },
+  "HAL_NOR_Init": {
+    "briefZh": "按 InitTypeDef 中的参数初始化 NOR Flash，并完成状态机初始化。",
+    "paramsZh": {
+      "ExtTiming": "扩展模式下的写操作时序参数（与读时序分开配置）。",
+      "Timing": "读操作时序参数：地址建立时间、数据建立时间等。",
+      "hnor": "NOR Flash 句柄指针。"
+    }
+  },
+  "HAL_NOR_MspDeInit": {
+    "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+    "paramsZh": {
+      "hnor": "NOR Flash 句柄指针。"
+    }
+  },
+  "HAL_NOR_MspInit": {
+    "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+    "paramsZh": {
+      "hnor": "NOR Flash 句柄指针。"
+    }
+  },
+  "HAL_NOR_MspWait": {
+    "briefZh": "MSP 层等待回调（__weak 空实现）：实现 NOR 操作所需的延时。",
+    "paramsZh": {
+      "Timeout": "超时毫秒数。",
+      "hnor": "NOR Flash 句柄指针。"
+    }
+  },
+  "HAL_NOR_Program": {
+    "briefZh": "按指定的编程宽度向目标地址写入数据。目标地址必须是已擦除状态（0xFFFF）。",
+    "paramsZh": {
+      "hnor": "NOR Flash 句柄指针。",
+      "pAddress": "地址结构体：Page、Block、Plane、Zone，以及块/页内的偏移。",
+      "pData": "数据缓冲区指针。"
+    }
+  },
+  "HAL_NOR_ProgramBuffer": {
+    "briefZh": "把缓冲区数据连续编程到器件。",
+    "paramsZh": {
+      "hnor": "NOR Flash 句柄指针。",
+      "pData": "数据缓冲区指针。",
+      "uwAddress": "器件内地址（相对基地址的偏移）。",
+      "uwBufferSize": "数据字节数。"
+    }
+  },
+  "HAL_NOR_Read": {
+    "briefZh": "从指定地址读取一个数据。",
+    "paramsZh": {
+      "hnor": "NOR Flash 句柄指针。",
+      "pAddress": "地址结构体：Page、Block、Plane、Zone，以及块/页内的偏移。",
+      "pData": "数据缓冲区指针。"
+    }
+  },
+  "HAL_NOR_ReadBuffer": {
+    "briefZh": "从器件连续读取一段数据到缓冲区。",
+    "paramsZh": {
+      "hnor": "NOR Flash 句柄指针。",
+      "pData": "数据缓冲区指针。",
+      "uwAddress": "器件内地址（相对基地址的偏移）。",
+      "uwBufferSize": "数据字节数。"
+    }
+  },
+  "HAL_NOR_Read_CFI": {
+    "briefZh": "读取 CFI（Common Flash Interface）信息，用于识别 NOR 器件参数。",
+    "paramsZh": {
+      "hnor": "NOR Flash 句柄指针。",
+      "pNOR_CFI": "输出参数，接收 CFI（Common Flash Interface）查询结果，用于识别器件参数。"
+    }
+  },
+  "HAL_NOR_Read_ID": {
+    "briefZh": "读取器件的 ID 信息。",
+    "paramsZh": {
+      "hnor": "NOR Flash 句柄指针。",
+      "pNOR_ID": "输出参数，接收 NOR 的 ID 信息（制造商 ID、器件 ID）。"
+    }
+  },
+  "HAL_NOR_RegisterCallback": {
+    "briefZh": "为 NOR Flash 注册指定事件的回调，替代默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackId": "回调事件编号，取对应的 CallbackIDTypeDef 枚举值。",
+      "hnor": "NOR Flash 句柄指针。",
+      "pCallback": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+    }
+  },
+  "HAL_NOR_ReturnToReadMode": {
+    "briefZh": "让 NOR Flash 从编程/擦除状态回到读模式。",
+    "paramsZh": {
+      "hnor": "NOR Flash 句柄指针。"
+    }
+  },
+  "HAL_NOR_UnRegisterCallback": {
+    "briefZh": "注销 NOR Flash 已注册的回调，恢复成默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackId": "回调事件编号，取对应的 CallbackIDTypeDef 枚举值。",
+      "hnor": "NOR Flash 句柄指针。"
+    }
+  },
+  "HAL_NOR_WriteOperation_Disable": {
+    "briefZh": "关闭写操作。",
+    "paramsZh": {
+      "hnor": "NOR Flash 句柄指针。"
+    }
+  },
+  "HAL_NOR_WriteOperation_Enable": {
+    "briefZh": "使能写操作（NOR 需要先解锁写保护）。",
+    "paramsZh": {
+      "hnor": "NOR Flash 句柄指针。"
+    }
+  },
+  "HAL_PCCARD_DeInit": {
+    "briefZh": "把 PC 卡的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+    "paramsZh": {
+      "hpccard": "PC 卡句柄指针。"
+    }
+  },
+  "HAL_PCCARD_Erase_Sector": {
+    "briefZh": "擦除一个扇区。",
+    "paramsZh": {
+      "SectorAddress": "扇区地址。",
+      "hpccard": "PC 卡句柄指针。",
+      "pStatus": "输出参数，接收 PC 卡的状态字节。"
+    }
+  },
+  "HAL_PCCARD_GetState": {
+    "briefZh": "读取 PC 卡的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+    "paramsZh": {
+      "hpccard": "PC 卡句柄指针。"
+    }
+  },
+  "HAL_PCCARD_GetStatus": {
+    "briefZh": "读取器件当前状态。",
+    "paramsZh": {
+      "hpccard": "PC 卡句柄指针。"
+    }
+  },
+  "HAL_PCCARD_IRQHandler": {
+    "briefZh": "PC 卡的中断统一入口。在 stm32f1xx_it.c 的对应 IRQHandler 里调用，内部会清标志并分派到各回调。",
+    "paramsZh": {
+      "hpccard": "PC 卡句柄指针。"
+    }
+  },
+  "HAL_PCCARD_ITCallback": {
+    "briefZh": "中断回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hpccard": "PC 卡句柄指针。"
+    }
+  },
+  "HAL_PCCARD_Init": {
+    "briefZh": "按 InitTypeDef 中的参数初始化 PC 卡，并完成状态机初始化。",
+    "paramsZh": {
+      "AttSpaceTiming": "地址阶段的时序参数。",
+      "ComSpaceTiming": "命令阶段的时序参数。",
+      "IOSpaceTiming": "数据总线阶段的时序参数。",
+      "hpccard": "PC 卡句柄指针。"
+    }
+  },
+  "HAL_PCCARD_MspDeInit": {
+    "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+    "paramsZh": {
+      "hpccard": "PC 卡句柄指针。"
+    }
+  },
+  "HAL_PCCARD_MspInit": {
+    "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+    "paramsZh": {
+      "hpccard": "PC 卡句柄指针。"
+    }
+  },
+  "HAL_PCCARD_ReadStatus": {
+    "briefZh": "读取 PC 卡状态。",
+    "paramsZh": {
+      "hpccard": "PC 卡句柄指针。"
+    }
+  },
+  "HAL_PCCARD_Read_ID": {
+    "briefZh": "读取器件的 ID 信息。",
+    "paramsZh": {
+      "CompactFlash_ID": "输出参数，接收 CompactFlash 卡的 ID 信息数组。",
+      "hpccard": "PC 卡句柄指针。",
+      "pStatus": "输出参数，接收 PC 卡的状态字节。"
+    }
+  },
+  "HAL_PCCARD_Read_Sector": {
+    "briefZh": "读取一个扇区。",
+    "paramsZh": {
+      "SectorAddress": "扇区地址。",
+      "hpccard": "PC 卡句柄指针。",
+      "pBuffer": "数据缓冲区指针。",
+      "pStatus": "输出参数，接收 PC 卡的状态字节。"
+    }
+  },
+  "HAL_PCCARD_RegisterCallback": {
+    "briefZh": "为 PC 卡注册指定事件的回调，替代默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackId": "回调事件编号，取对应的 CallbackIDTypeDef 枚举值。",
+      "hpccard": "PC 卡句柄指针。",
+      "pCallback": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+    }
+  },
+  "HAL_PCCARD_Reset": {
+    "briefZh": "复位器件。",
+    "paramsZh": {
+      "hpccard": "PC 卡句柄指针。"
+    }
+  },
+  "HAL_PCCARD_UnRegisterCallback": {
+    "briefZh": "注销 PC 卡已注册的回调，恢复成默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackId": "回调事件编号，取对应的 CallbackIDTypeDef 枚举值。",
+      "hpccard": "PC 卡句柄指针。"
+    }
+  },
+  "HAL_PCCARD_Write_Sector": {
+    "briefZh": "写入一个扇区。",
+    "paramsZh": {
+      "SectorAddress": "扇区地址。",
+      "hpccard": "PC 卡句柄指针。",
+      "pBuffer": "数据缓冲区指针。",
+      "pStatus": "输出参数，接收 PC 卡的状态字节。"
+    }
+  }
+}

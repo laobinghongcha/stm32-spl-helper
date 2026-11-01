@@ -1,0 +1,1909 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "CORTEX",
+  "library": "hal",
+  "functions": [
+    {
+      "id": "HAL_Init",
+      "name": "HAL_Init",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_Init(void);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "This function is used to initialize the HAL Library; it must be the first instruction to be executed in the main program (before to call any other HAL function), it performs the following: Configure the Flash prefetch. Configures the SysTick to generate an interrupt each 1 millisecond, which is clocked by the HSI (at this stage, the clock is not yet configured and thus the system is running from the internal HSI at 16 MHz). Set NVIC Group Priority to 4. Calls the HAL_MspInit() callback function defined in user file \"stm32f1xx_hal_msp.c\" to do the global low level hardware initialization",
+      "briefZh": "初始化 HAL 库：配置 Flash 预取、设置 NVIC 优先级分组、启动 SysTick 节拍中断，并调用 HAL_MspInit() 让用户补底层初始化。",
+      "usageZh": "main() 里的**第一句**（在 SystemInit 之后、任何外设初始化之前）。不调它的话 HAL_Delay/HAL_GetTick 不会走（节拍中断没起来），所有 xxx_Init 里的超时判断都会立刻失败。",
+      "prerequisites": [
+        "系统时钟已由 SystemInit() / 启动文件建立（HAL_Init 在它之后调用）"
+      ],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_NVIC_SetPriorityGrouping",
+        "HAL_InitTick",
+        "HAL_MspInit"
+      ],
+      "remarks": [
+        "SysTick is used as time base for the HAL_Delay() function, the application need to ensure that the SysTick time base is always set to 1 millisecond to have correct HAL operation."
+      ],
+      "notesZh": [
+        "HAL_Init 只做通用初始化，具体的时钟/引脚要在 HAL_MspInit() 或之后自己配。",
+        "CubeMX 生成的代码已经帮你调了，手写工程千万不能忘。",
+        "默认节拍 1ms（HAL_TICK_FREQ_DEFAULT），要改就重写 HAL_InitTick()。"
+      ],
+      "exampleCode": "int main(void)\n{\n  HAL_Init();                       /* 必须最先调用 */\n  SystemClock_Config();             /* 配置 72MHz 主频 */\n  MX_GPIO_Init();\n  while (1) { }\n}",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "__HAL_FLASH_PREFETCH_BUFFER_ENABLE",
+        "NVIC_PRIORITYGROUP_4",
+        "HAL_OK"
+      ],
+      "headerLine": 282,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 142,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DeInit",
+      "name": "HAL_DeInit",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_DeInit(void);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "This function de-Initializes common part of the HAL and stops the systick. of time base.",
+      "briefZh": "把 HAL 恢复到复位后的状态：关 SysTick 节拍、复位 NVIC 优先级分组，并调用 HAL_MspDeInit()。",
+      "usageZh": "几乎只在「软件复位前」或「把 MCU 交给别的固件（如 bootloader 跳转）」时用。正常应用不需要调。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_MspDeInit"
+      ],
+      "remarks": [
+        "This function is optional."
+      ],
+      "notesZh": [
+        "调完之后 HAL_Delay/HAL_GetTick 都不可用，除非重新 HAL_Init()。"
+      ],
+      "exampleCode": "/* 跳转到 bootloader 之前把 HAL 收干净 */\nHAL_DeInit();\n__disable_irq();\nJumpToBootloader();",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "__HAL_RCC_APB1_FORCE_RESET",
+        "__HAL_RCC_APB1_RELEASE_RESET",
+        "__HAL_RCC_APB2_FORCE_RESET",
+        "__HAL_RCC_APB2_RELEASE_RESET",
+        "__HAL_RCC_AHB_FORCE_RESET",
+        "__HAL_RCC_AHB_RELEASE_RESET",
+        "HAL_OK"
+      ],
+      "headerLine": 283,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 175,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MspInit",
+      "name": "HAL_MspInit",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec1",
+      "prototype": "void HAL_MspInit(void);",
+      "returnType": "__weak void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Initialize the MSP.",
+      "briefZh": "MSP 底层初始化回调（__weak 空实现）：由 HAL_Init() 自动调用，用来放与芯片/板级相关的初始化。",
+      "usageZh": "在用户代码里**重新实现同名函数**（不要改库文件），把 SysTick 时钟源、AFIO 时钟、EXTI 时钟这类「HAL 不知道、但你的板子需要」的初始化写进去。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "库里的实现是 __weak 空的，不重写就等于什么都没做。",
+        "CubeMX 会把它生成到 stm32f1xx_hal_msp.c 里。"
+      ],
+      "exampleCode": "void HAL_MspInit(void)\n{\n  __HAL_RCC_AFIO_CLK_ENABLE();\n  __HAL_RCC_PWR_CLK_ENABLE();\n  /* 关掉 JTAG 保留 SWD，释放 PA15/PB3/PB4 作普通 IO */\n  __HAL_AFIO_REMAP_SWJ_NOJTAG();\n}",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak"
+      ],
+      "headerLine": 284,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 200,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MspDeInit",
+      "name": "HAL_MspDeInit",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec1",
+      "prototype": "void HAL_MspDeInit(void);",
+      "returnType": "__weak void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "DeInitializes the MSP.",
+      "briefZh": "MSP 底层反初始化回调（__weak 空实现）：由 HAL_DeInit() 调用，用来撤销 HAL_MspInit() 做的事。",
+      "usageZh": "一般不用实现。只有在需要把外设资源完全交还给别的固件时才重写。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak"
+      ],
+      "headerLine": 285,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 211,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_InitTick",
+      "name": "HAL_InitTick",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority);",
+      "returnType": "__weak HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "TickPriority",
+          "type": "uint32_t",
+          "descEn": "Tick interrupt priority.",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "This function configures the source of the time base. The time source is configured to have 1ms time base with a dedicated Tick interrupt priority.",
+      "briefZh": "配置 HAL 的 1ms 节拍来源（默认用 SysTick），是 HAL_Delay / HAL_GetTick 能用起来的前提。",
+      "usageZh": "由 HAL_Init() 自动调用。若要改用 TIM 做节拍源、或改节拍频率，就重写本函数。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_SYSTICK_Config",
+        "HAL_NVIC_SetPriority"
+      ],
+      "remarks": [
+        "This function is called automatically at the beginning of program after reset by HAL_Init() or at any time when clock is reconfigured by HAL_RCC_ClockConfig().",
+        "In the default implementation, SysTick timer is the source of time base. It is used to generate interrupts at regular time intervals. Care must be taken if HAL_Delay() is called from a peripheral ISR process, The SysTick interrupt must have higher priority (numerically lower) than the peripheral interrupt. Otherwise the caller ISR process will be blocked. The function is declared as __weak to be overwritten in case of other implementation in user file."
+      ],
+      "notesZh": [
+        "重写后必须在函数末尾调用 HAL_SYSTICK_Config() 或自行启动定时器，否则节拍不走。",
+        "改了主频之后要重新调本函数（否则 1ms 不再是 1ms）。"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "HAL_StatusTypeDef",
+        "HAL_ERROR",
+        "HAL_OK"
+      ],
+      "headerLine": 286,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 234,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_IncTick",
+      "name": "HAL_IncTick",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec2",
+      "prototype": "void HAL_IncTick(void);",
+      "returnType": "__weak void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "This function is called to increment a global variable \"uwTick\" used as application time base.",
+      "briefZh": "把 HAL 的毫秒计数加一，由 SysTick 中断（SysTick_Handler）自动调用。",
+      "usageZh": "正常不用手动调。只有当你把 HAL 节拍改成用别的定时器时，才需要在那个定时器的中断里调它。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "In the default implementation, this variable is incremented each 1ms in SysTick ISR.",
+        "This function is declared as __weak to be overwritten in case of other implementations in user file."
+      ],
+      "notesZh": [
+        "在中断里调用，不要在里面做耗时操作。"
+      ],
+      "exampleCode": "/* 自定义节拍源时，在定时器中断里补这一句 */\nvoid TIM6_IRQHandler(void)\n{\n  HAL_TIM_IRQHandler(&htim6);\n  HAL_IncTick();\n}",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak"
+      ],
+      "headerLine": 295,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 293,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_GetTick",
+      "name": "HAL_GetTick",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec2",
+      "prototype": "uint32_t HAL_GetTick(void);",
+      "returnType": "__weak uint32_t",
+      "params": [],
+      "returnDescEn": "tick value",
+      "returnDescZh": "",
+      "briefEn": "Provides a tick value in millisecond.",
+      "briefZh": "返回开机以来的毫秒数（由 SysTick 中断累加）。",
+      "usageZh": "写非阻塞延时、做超时判断的标准做法：记一个起点，循环里比较 `HAL_GetTick() - start > timeout`。比 HAL_Delay 好在不会卡住 CPU。",
+      "prerequisites": [
+        "HAL_Init() 已调用，SysTick 节拍在跑"
+      ],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "This function is declared as __weak to be overwritten in case of other implementations in user file."
+      ],
+      "notesZh": [
+        "计数是 32 位，约 49.7 天溢出一次；用「差值」比较就不会被溢出坑到。",
+        "节拍没起来（没调 HAL_Init）时它永远返回 0。"
+      ],
+      "exampleCode": "uint32_t start = HAL_GetTick();\nwhile (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_RESET) {\n  if (HAL_GetTick() - start > 500) { /* 超时 500ms */ break; }\n}",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak"
+      ],
+      "headerLine": 297,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 304,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_GetTickPrio",
+      "name": "HAL_GetTickPrio",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec2",
+      "prototype": "uint32_t HAL_GetTickPrio(void);",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "tick priority",
+      "returnDescZh": "",
+      "briefEn": "This function returns a tick priority.",
+      "briefZh": "返回节拍中断（SysTick）当前配置的中断优先级。",
+      "usageZh": "排查中断优先级分组问题时用：可以确认节拍中断的优先级是否高于/低于你的外设中断。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 298,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 313,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SetTickFreq",
+      "name": "HAL_SetTickFreq",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_SetTickFreq(HAL_TickFreqTypeDef Freq);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "Freq",
+          "type": "HAL_TickFreqTypeDef",
+          "descEn": "",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "status",
+      "returnDescZh": "",
+      "briefEn": "Set new tick Freq.",
+      "briefZh": "改变 HAL 节拍频率（如从 1kHz 改到 100Hz），会重新配置 SysTick。",
+      "usageZh": "需要降低 SysTick 中断开销时用（比如做低功耗，1ms 一次太频繁）。改完要重新调 HAL_InitTick() 才真正生效。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_InitTick"
+      ],
+      "remarks": [],
+      "notesZh": [
+        "改频率后所有基于 HAL_GetTick 的超时时间语义随之改变，注意换算。"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "HAL_TickFreqTypeDef",
+        "HAL_OK",
+        "IS_TICKFREQ"
+      ],
+      "headerLine": 299,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 322,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_GetTickFreq",
+      "name": "HAL_GetTickFreq",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec2",
+      "prototype": "HAL_TickFreqTypeDef HAL_GetTickFreq(void);",
+      "returnType": "HAL_TickFreqTypeDef",
+      "params": [],
+      "returnDescEn": "Tick frequency. Value of @ref HAL_TickFreqTypeDef.",
+      "returnDescZh": "",
+      "briefEn": "Return tick frequency.",
+      "briefZh": "返回当前 HAL 节拍频率（HAL_TICK_FREQ_10HZ / 100HZ / 1KHZ）。",
+      "usageZh": "读回 HAL_SetTickFreq() 设置的值，做超时换算时确认节拍单位。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_TickFreqTypeDef"
+      ],
+      "headerLine": 300,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 355,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_Delay",
+      "name": "HAL_Delay",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec2",
+      "prototype": "void HAL_Delay(uint32_t Delay);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "Delay",
+          "type": "uint32_t",
+          "descEn": "specifies the delay time length, in milliseconds.",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "This function provides minimum delay (in milliseconds) based on variable incremented.",
+      "briefZh": "忙等延时指定毫秒数（基于 SysTick 节拍）。",
+      "usageZh": "简单场景直接用。但它**是阻塞的**：延时期间 CPU 干不了别的，也进不了低功耗。中断里绝对不要调（节拍中断被自己挡住会死等）。",
+      "prerequisites": [
+        "HAL_Init() 已调用，SysTick 节拍在跑"
+      ],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [
+        "In the default implementation , SysTick timer is the source of time base. It is used to generate interrupts at regular time intervals where uwTick is incremented.",
+        "This function is declared as __weak to be overwritten in case of other implementations in user file."
+      ],
+      "notesZh": [
+        "在中断服务函数里调用会导致死循环——节拍中断优先级低于当前中断时永远走不动。",
+        "要同时干别的就用 HAL_GetTick() 做非阻塞计时。",
+        "延时精度是 1ms 量级，需要微秒级用 DWT->CYCCNT 或定时器。"
+      ],
+      "exampleCode": "HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);\nHAL_Delay(500);                       /* 亮 500ms（阻塞） */\nHAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "HAL_MAX_DELAY"
+      ],
+      "headerLine": 296,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 371,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SuspendTick",
+      "name": "HAL_SuspendTick",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec2",
+      "prototype": "void HAL_SuspendTick(void);",
+      "returnType": "__weak void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Suspend Tick increment.",
+      "briefZh": "暂停 SysTick 节拍中断（不关 SysTick 本身，只是不让它进中断）。",
+      "usageZh": "进低功耗或临界区前临时停掉节拍中断，减少唤醒次数；配合 HAL_ResumeTick() 恢复。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "In the default implementation , SysTick timer is the source of time base. It is used to generate interrupts at regular time intervals. Once HAL_SuspendTick() is called, the SysTick interrupt will be disabled and so Tick increment is suspended.",
+        "This function is declared as __weak to be overwritten in case of other implementations in user file."
+      ],
+      "notesZh": [
+        "暂停期间 HAL_GetTick 不再增长，HAL_Delay 会卡住。"
+      ],
+      "exampleCode": "HAL_SuspendTick();\n__WFI();\nHAL_ResumeTick();",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak"
+      ],
+      "headerLine": 301,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 397,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_ResumeTick",
+      "name": "HAL_ResumeTick",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec2",
+      "prototype": "void HAL_ResumeTick(void);",
+      "returnType": "__weak void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Resume Tick increment.",
+      "briefZh": "恢复被 HAL_SuspendTick() 暂停的 SysTick 节拍中断。",
+      "usageZh": "与 HAL_SuspendTick() 成对使用，退出低功耗后调一次。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "In the default implementation , SysTick timer is the source of time base. It is used to generate interrupts at regular time intervals. Once HAL_ResumeTick() is called, the SysTick interrupt will be enabled and so Tick increment is resumed.",
+        "This function is declared as __weak to be overwritten in case of other implementations in user file."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak"
+      ],
+      "headerLine": 302,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 413,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_GetHalVersion",
+      "name": "HAL_GetHalVersion",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec2",
+      "prototype": "uint32_t HAL_GetHalVersion(void);",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "version 0xXYZR (8bits for each decimal, R for RC)",
+      "returnDescZh": "",
+      "briefEn": "Returns the HAL revision",
+      "briefZh": "返回 HAL 库的版本号（形如 0x01080007，即 1.8.7）。",
+      "usageZh": "排查「代码是按新版 HAL 写的、实际链接的是旧版」这类问题时用；也可以打印出来确认工程依赖的库版本。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "版本号是 24 位打包的，用 (v>>24).(v>>16 & 0xFF).(v & 0xFFFF) 拆开看。"
+      ],
+      "exampleCode": "uint32_t v = HAL_GetHalVersion();\nprintf(\"HAL %d.%d.%d\\n\", v >> 24, (v >> 16) & 0xFF, v & 0xFFFF);",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 303,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 423,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_GetREVID",
+      "name": "HAL_GetREVID",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec2",
+      "prototype": "uint32_t HAL_GetREVID(void);",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "Device revision identifier",
+      "returnDescZh": "",
+      "briefEn": "Returns the device revision identifier. Note: On devices STM32F10xx8 and STM32F10xxB, STM32F101xC/D/E and STM32F103xC/D/E, STM32F101xF/G and STM32F103xF/G STM32F10xx4 and STM32F10xx6 Debug registers DBGMCU_IDCODE and DBGMCU_CR are accessible only in debug mode (not accessible by the user software in normal mode). Refer to errata sheet of these devices for more details.",
+      "briefZh": "返回芯片的修订版本号（Revision ID），可以据此区分 A/B/C/D 等不同批次。",
+      "usageZh": "遇到「同一份代码在旧批次芯片上异常」时，用来确认手上的片子是哪一版。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "值是从 DBGMCU->IDCODE 里取的。"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 304,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 439,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_GetDEVID",
+      "name": "HAL_GetDEVID",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec2",
+      "prototype": "uint32_t HAL_GetDEVID(void);",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "Device identifier",
+      "returnDescZh": "",
+      "briefEn": "Returns the device identifier. Note: On devices STM32F10xx8 and STM32F10xxB, STM32F101xC/D/E and STM32F103xC/D/E, STM32F101xF/G and STM32F103xF/G STM32F10xx4 and STM32F10xx6 Debug registers DBGMCU_IDCODE and DBGMCU_CR are accessible only in debug mode (not accessible by the user software in normal mode). Refer to errata sheet of these devices for more details.",
+      "briefZh": "返回芯片的器件 ID（Device ID），可用来识别具体型号（如 0x410 对应 F103 中容量）。",
+      "usageZh": "写通用固件时做运行时型号判断。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 305,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 455,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_GetUIDw0",
+      "name": "HAL_GetUIDw0",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec2",
+      "prototype": "uint32_t HAL_GetUIDw0(void);",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "Device identifier",
+      "returnDescZh": "",
+      "briefEn": "Returns first word of the unique device identifier (UID based on 96 bits)",
+      "briefZh": "返回芯片唯一 ID 的第 0 个字（共 96 位的 32 位低段）。",
+      "usageZh": "生成设备唯一序列号、做授权绑定：把 UIDw0/w1/w2 三个字拼起来就是 96 位全球唯一 ID。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "同一颗芯片读多少次都一样，不同芯片必然不同，很适合做设备指纹。"
+      ],
+      "exampleCode": "uint32_t uid[3] = { HAL_GetUIDw0(), HAL_GetUIDw1(), HAL_GetUIDw2() };",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 306,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 464,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_GetUIDw1",
+      "name": "HAL_GetUIDw1",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec2",
+      "prototype": "uint32_t HAL_GetUIDw1(void);",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "Device identifier",
+      "returnDescZh": "",
+      "briefEn": "Returns second word of the unique device identifier (UID based on 96 bits)",
+      "briefZh": "返回芯片唯一 ID 的第 1 个字（96 位里的中段 32 位）。",
+      "usageZh": "与 HAL_GetUIDw0 / HAL_GetUIDw2 拼成完整 96 位 UID。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 307,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 473,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_GetUIDw2",
+      "name": "HAL_GetUIDw2",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec2",
+      "prototype": "uint32_t HAL_GetUIDw2(void);",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "Device identifier",
+      "returnDescZh": "",
+      "briefEn": "Returns third word of the unique device identifier (UID based on 96 bits)",
+      "briefZh": "返回芯片唯一 ID 的第 2 个字（96 位里的高段 32 位）。",
+      "usageZh": "与 HAL_GetUIDw0 / HAL_GetUIDw1 拼成完整 96 位 UID。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 308,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 482,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DBGMCU_EnableDBGSleepMode",
+      "name": "HAL_DBGMCU_EnableDBGSleepMode",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec2",
+      "prototype": "void HAL_DBGMCU_EnableDBGSleepMode(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable the Debug Module during SLEEP mode",
+      "briefZh": "让调试器在 Sleep 低功耗模式下仍能保持连接（休眠时不断开 SWD）。",
+      "usageZh": "单步调试低功耗代码时打开，否则一进 Sleep 调试器就掉线、无法继续单步。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "会增加 Sleep 模式下的功耗，量产固件里不要留着。"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 309,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 491,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DBGMCU_DisableDBGSleepMode",
+      "name": "HAL_DBGMCU_DisableDBGSleepMode",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec2",
+      "prototype": "void HAL_DBGMCU_DisableDBGSleepMode(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable the Debug Module during SLEEP mode Note: On devices STM32F10xx8 and STM32F10xxB, STM32F101xC/D/E and STM32F103xC/D/E, STM32F101xF/G and STM32F103xF/G STM32F10xx4 and STM32F10xx6 Debug registers DBGMCU_IDCODE and DBGMCU_CR are accessible only in debug mode (not accessible by the user software in normal mode). Refer to errata sheet of these devices for more details.",
+      "briefZh": "恢复默认：进入 Sleep 模式时暂停调试（省电，但调试器会掉线）。",
+      "usageZh": "调试完低功耗代码后调回来，或量产固件里保持默认。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 310,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 507,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DBGMCU_EnableDBGStopMode",
+      "name": "HAL_DBGMCU_EnableDBGStopMode",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec2",
+      "prototype": "void HAL_DBGMCU_EnableDBGStopMode(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable the Debug Module during STOP mode Note: On devices STM32F10xx8 and STM32F10xxB, STM32F101xC/D/E and STM32F103xC/D/E, STM32F101xF/G and STM32F103xF/G STM32F10xx4 and STM32F10xx6 Debug registers DBGMCU_IDCODE and DBGMCU_CR are accessible only in debug mode (not accessible by the user software in normal mode). Refer to errata sheet of these devices for more details. Note: On all STM32F1 devices: If the system tick timer interrupt is enabled during the Stop mode debug (DBG_STOP bit set in the DBGMCU_CR register ), it will wakeup the system from Stop mode. Workaround: To debug the Stop mode, disable the system tick timer interrupt. Refer to errata sheet of these devices for more details. Note: On all STM32F1 devices: If the system tick timer interrupt is enabled during the Stop mode debug (DBG_STOP bit set in the DBGMCU_CR register ), it will wakeup the system from Stop mode. Workaround: To debug the Stop mode, disable the system tick timer interrupt. Refer to errata sheet of these devices for more details.",
+      "briefZh": "让调试器在 Stop 模式下仍能保持连接。",
+      "usageZh": "调试 Stop 低功耗时打开。Stop 模式会关掉大部分时钟，不开这个基本没法调。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "显著增加 Stop 模式功耗。"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 311,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 537,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DBGMCU_DisableDBGStopMode",
+      "name": "HAL_DBGMCU_DisableDBGStopMode",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec2",
+      "prototype": "void HAL_DBGMCU_DisableDBGStopMode(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable the Debug Module during STOP mode Note: On devices STM32F10xx8 and STM32F10xxB, STM32F101xC/D/E and STM32F103xC/D/E, STM32F101xF/G and STM32F103xF/G STM32F10xx4 and STM32F10xx6 Debug registers DBGMCU_IDCODE and DBGMCU_CR are accessible only in debug mode (not accessible by the user software in normal mode). Refer to errata sheet of these devices for more details.",
+      "briefZh": "恢复默认：进入 Stop 模式时断开调试。",
+      "usageZh": "调试完成后调回来。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 312,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 553,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DBGMCU_EnableDBGStandbyMode",
+      "name": "HAL_DBGMCU_EnableDBGStandbyMode",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec2",
+      "prototype": "void HAL_DBGMCU_EnableDBGStandbyMode(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable the Debug Module during STANDBY mode Note: On devices STM32F10xx8 and STM32F10xxB, STM32F101xC/D/E and STM32F103xC/D/E, STM32F101xF/G and STM32F103xF/G STM32F10xx4 and STM32F10xx6 Debug registers DBGMCU_IDCODE and DBGMCU_CR are accessible only in debug mode (not accessible by the user software in normal mode). Refer to errata sheet of these devices for more details.",
+      "briefZh": "让调试器在 Standby 模式下仍能保持连接。",
+      "usageZh": "Standby 唤醒后程序从头跑（相当于复位），调试时打开可以观察唤醒过程。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "Standby 下调试体验仍然受限，多数情况还是靠串口打日志。"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 313,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 569,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_DBGMCU_DisableDBGStandbyMode",
+      "name": "HAL_DBGMCU_DisableDBGStandbyMode",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec2",
+      "prototype": "void HAL_DBGMCU_DisableDBGStandbyMode(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable the Debug Module during STANDBY mode Note: On devices STM32F10xx8 and STM32F10xxB, STM32F101xC/D/E and STM32F103xC/D/E, STM32F101xF/G and STM32F103xF/G STM32F10xx4 and STM32F10xx6 Debug registers DBGMCU_IDCODE and DBGMCU_CR are accessible only in debug mode (not accessible by the user software in normal mode). Refer to errata sheet of these devices for more details.",
+      "briefZh": "恢复默认：进入 Standby 模式时断开调试。",
+      "usageZh": "调试完成后调回来。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 314,
+      "definedIn": "stm32f1xx_hal.h",
+      "sourceLine": 585,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NVIC_SetPriorityGrouping",
+      "name": "HAL_NVIC_SetPriorityGrouping",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec3",
+      "prototype": "void HAL_NVIC_SetPriorityGrouping(uint32_t PriorityGroup);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "PriorityGroup",
+          "type": "uint32_t",
+          "descEn": "The priority grouping bits length. This parameter can be one of the following values:",
+          "descZh": "分组编号 0~4。数字越大抢占级越多：GROUP_0 全子优先级（不可嵌套），GROUP_4 全抢占优先级（可 16 级嵌套）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Sets the priority grouping field (preemption priority and subpriority) using the required unlock sequence.",
+      "briefZh": "设置中断优先级分组，决定抢占优先级和子优先级各占几位。",
+      "usageZh": "整个程序只该在 main 开头调一次，之后**不能再改**——改分组会重新解释所有已配置中断的优先级位，行为变得不可预测。HAL 默认（CubeMX 生成的 HAL_Init 里）用的是 NVIC_PRIORITYGROUP_4，即 4 位全给抢占优先级、没有子优先级，这也是最常用、最好理解的选择。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "When the NVIC_PriorityGroup_0 is selected, IRQ preemption is no more possible. The pending IRQ priority will be managed only by the subpriority."
+      ],
+      "notesZh": [
+        "F1 系列只有 4 位优先级位宽，所以最多 16 级抢占优先级",
+        "CubeMX 里在 NVIC 配置页选的分组就是这一项；改这里等于改全工程的优先级语义",
+        "必须在任何 HAL_NVIC_SetPriority 之前调用"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "IS_NVIC_PRIORITY_GROUP"
+      ],
+      "headerLine": 261,
+      "definedIn": "stm32f1xx_hal_cortex.h",
+      "sourceLine": 142,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NVIC_SetPriority",
+      "name": "HAL_NVIC_SetPriority",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec3",
+      "prototype": "void HAL_NVIC_SetPriority(IRQn_Type IRQn, uint32_t PreemptPriority, uint32_t SubPriority);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "IRQn",
+          "type": "IRQn_Type",
+          "descEn": "External interrupt number. This parameter can be an enumerator of IRQn_Type enumeration (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSIS device file (stm32f10xx.h))",
+          "descZh": "中断号，取 xxx_IRQn 枚举，如 EXTI15_10_IRQn、USART1_IRQn。"
+        },
+        {
+          "name": "PreemptPriority",
+          "type": "uint32_t",
+          "descEn": "The preemption priority for the IRQn channel. This parameter can be a value between 0 and 15 A lower priority value indicates a higher priority",
+          "descZh": "抢占优先级，0~15（受当前分组限制）。数值越小越优先。"
+        },
+        {
+          "name": "SubPriority",
+          "type": "uint32_t",
+          "descEn": "the subpriority level for the IRQ channel. This parameter can be a value between 0 and 15 A lower priority value indicates a higher priority.",
+          "descZh": "子优先级，仅在同一抢占级内比较先后，不能嵌套。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Sets the priority of an interrupt.",
+      "briefZh": "设置某个中断的抢占优先级与子优先级。",
+      "usageZh": "每个用到的中断都要调一次，否则默认优先级是 0（最高）。抢占优先级决定能不能打断正在执行的中断：数值小的优先级高、可以打断数值大的。被 FreeRTOS 等 RTOS 接管时，优先级数值还要满足 `configMAX_SYSCALL_INTERRUPT_PRIORITY` 的约束，否则在中断里调 RTOS API 会崩。",
+      "prerequisites": [
+        "已调用 HAL_NVIC_SetPriorityGrouping 设定分组"
+      ],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "只设优先级不会让中断生效，还要调 HAL_NVIC_EnableIRQ",
+        "SysTick 的优先级在 HAL_Init 里已经设过（默认最低），一般不用再动",
+        "RTOS 下把会调用 RTOS API 的中断优先级数值设得比 configMAX_SYSCALL_INTERRUPT_PRIORITY 大（即优先级更低）"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "IS_NVIC_SUB_PRIORITY",
+        "IS_NVIC_PREEMPTION_PRIORITY"
+      ],
+      "headerLine": 262,
+      "definedIn": "stm32f1xx_hal_cortex.h",
+      "sourceLine": 164,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NVIC_EnableIRQ",
+      "name": "HAL_NVIC_EnableIRQ",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec3",
+      "prototype": "void HAL_NVIC_EnableIRQ(IRQn_Type IRQn);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "IRQn",
+          "type": "IRQn_Type",
+          "descEn": "External interrupt number. This parameter can be an enumerator of IRQn_Type enumeration (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSIS device file (stm32f10xxx.h))",
+          "descZh": "中断号，如 USART1_IRQn、TIM2_IRQn。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enables a device specific interrupt in the NVIC interrupt controller.",
+      "briefZh": "在 NVIC 里使能指定中断，允许它向 CPU 发中断请求。",
+      "usageZh": "外设自己开了中断使能位还不够，NVIC 这一层也必须打开，中断才会真正进 CPU。CubeMX 会在 MX_xxx_Init 里自动生成这一句，手写代码时最容易漏的就是它——现象是外设标志位明明置了，就是不进中断。",
+      "prerequisites": [
+        "已用 HAL_NVIC_SetPriority 设好优先级"
+      ],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "To configure interrupts priority correctly, the NVIC_PriorityGroupConfig() function should be called before."
+      ],
+      "notesZh": [
+        "和 HAL_NVIC_DisableIRQ 配对使用；进入 STOP 模式前常需要关掉不必要的中断"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "IS_NVIC_DEVICE_IRQ"
+      ],
+      "headerLine": 263,
+      "definedIn": "stm32f1xx_hal_cortex.h",
+      "sourceLine": 186,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NVIC_DisableIRQ",
+      "name": "HAL_NVIC_DisableIRQ",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec3",
+      "prototype": "void HAL_NVIC_DisableIRQ(IRQn_Type IRQn);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "IRQn",
+          "type": "IRQn_Type",
+          "descEn": "External interrupt number. This parameter can be an enumerator of IRQn_Type enumeration (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSIS device file (stm32f10xxx.h))",
+          "descZh": "要关闭的中断号。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disables a device specific interrupt in the NVIC interrupt controller.",
+      "briefZh": "在 NVIC 里关闭指定中断，该中断不再进入 CPU。",
+      "usageZh": "低功耗前、或者临时不希望某中断响应时用。关掉的是 NVIC 这一层的使能，外设内部的使能位不受影响——重新打开后，此前悬挂的标志仍会立刻触发一次中断，所以常需要先清标志再使能。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "重新使能前建议先清掉外设的挂起标志，否则会立刻补进一次中断",
+        "不是线程安全的「临界区」手段，只是关了一个中断源"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "IS_NVIC_DEVICE_IRQ"
+      ],
+      "headerLine": 264,
+      "definedIn": "stm32f1xx_hal_cortex.h",
+      "sourceLine": 202,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NVIC_SystemReset",
+      "name": "HAL_NVIC_SystemReset",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec3",
+      "prototype": "void HAL_NVIC_SystemReset(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Initiates a system reset request to reset the MCU.",
+      "briefZh": "触发软件复位，效果等同按复位键（保留备份域寄存器和 RCC 复位标志）。",
+      "usageZh": "程序检测到不可恢复的错误（看门狗超时前的兜底、固件校验失败、通信彻底失联）时主动重启。调用后不会返回，函数内部是 __DSB + 写 AIRCR.SYSRESETREQ 的死循环。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "复位原因可以从 __HAL_RCC_GET_FLAG(RCC_FLAG_IWDGRST) / PORRST / PINRST 等标志判断，写在 main 开头便于定位重启来源",
+        "备份域（RTC + BKP 寄存器）内容会保留，可以用 BKP 寄存器跨复位传状态",
+        "调用了但没重启，通常是中断被关死或 HardFault 卡在了更前面"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 265,
+      "definedIn": "stm32f1xx_hal_cortex.h",
+      "sourceLine": 215,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SYSTICK_Config",
+      "name": "HAL_SYSTICK_Config",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec3",
+      "prototype": "uint32_t HAL_SYSTICK_Config(uint32_t TicksNumb);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "TicksNumb",
+          "type": "uint32_t",
+          "descEn": "Specifies the ticks Number of ticks between two interrupts.",
+          "descZh": "重装载值，等于「时基频率 / 目标频率」。HCLK=72MHz 时传 72000 得到 1ms。"
+        }
+      ],
+      "returnDescEn": "status: - 0 Function succeeded. - 1 Function failed.",
+      "returnDescZh": "",
+      "briefEn": "Initializes the System Timer and its interrupt, and starts the System Tick Timer. Counter is in free running mode to generate periodic interrupts.",
+      "briefZh": "配置 SysTick 的重装载值并启动，用它产生 1ms（或指定周期）的系统时基。",
+      "usageZh": "HAL_Init 内部会调它把 SysTick 配成 1ms，从而让 HAL_Delay / HAL_GetTick 可用。一般**不需要自己调用**，除非要改时基周期或接管 SysTick。调用会把 SysTick 的时钟源设为 HCLK，并清空计数值。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "F1 的 SysTick 时钟源固定为 HCLK（不像 F4 可选 HCLK/8），所以计算时直接用 SystemCoreClock",
+        "改了这个值后 HAL_Delay 的毫秒含义就变了，除非你同时改 uwTickFreq",
+        "被 RTOS 接管时不要调，SysTick 归调度器所有"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 266,
+      "definedIn": "stm32f1xx_hal_cortex.h",
+      "sourceLine": 228,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MPU_Disable",
+      "name": "HAL_MPU_Disable",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec4",
+      "prototype": "void HAL_MPU_Disable(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disables the MPU",
+      "briefZh": "关闭 MPU，所有内存访问不再做权限检查。",
+      "usageZh": "调试 MPU 配置时先把保护关掉，等区域规则调通了再打开。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "关闭后不再产生 MemManage 故障，栈溢出之类的错误会变成更难查的数据损坏"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 287,
+      "definedIn": "stm32f1xx_hal_cortex.h",
+      "sourceLine": 257,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MPU_Enable",
+      "name": "HAL_MPU_Enable",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec4",
+      "prototype": "void HAL_MPU_Enable(uint32_t MPU_Control);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "MPU_Control",
+          "type": "uint32_t",
+          "descEn": "Specifies the control mode of the MPU during hard fault, NMI, FAULTMASK and privileged access to the default memory This parameter can be one of the following values:",
+          "descZh": "控制位组合，如 MPU_PRIVILEGED_DEFAULT / MPU_HARDFAULT_NMI。决定特权/非特权访问策略与 MemManage 故障行为。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable the MPU.",
+      "briefZh": "使能 MPU（内存保护单元），按预设属性保护内存区域。",
+      "usageZh": "F1 的 Cortex-M3 带 MPU，可以做栈溢出检测、把只读数据区设为不可写、把外设区设为不可执行等。使能前必须先用 HAL_MPU_ConfigRegion 配好区域，否则所有访问都按默认背景区属性走（通常是全部允许）。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "配错区域会立刻触发 MemManage 故障，表现为一上电就 HardFault——先关 MPU 再逐步打开",
+        "MPU 区域必须按 32 字节对齐、大小是 2 的幂"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 286,
+      "definedIn": "stm32f1xx_hal_cortex.h",
+      "sourceLine": 280,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MPU_EnableRegion",
+      "name": "HAL_MPU_EnableRegion",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec4",
+      "prototype": "void HAL_MPU_EnableRegion(uint32_t RegionNumber);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "RegionNumber",
+          "type": "uint32_t",
+          "descEn": "",
+          "descZh": "MPU 区域编号 0~7，编号越大优先级越高（区域重叠时小编号被覆盖）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable the MPU Region.",
+      "briefZh": "使能一个已经配置好的 MPU 区域。",
+      "usageZh": "HAL_MPU_ConfigRegion 之后调用，让该区域的规则真正参与检查。需要在 HAL_MPU_Enable 之后（或之前）按顺序安排好。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "IS_MPU_REGION_NUMBER"
+      ],
+      "headerLine": 288,
+      "definedIn": "stm32f1xx_hal_cortex.h",
+      "sourceLine": 297,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MPU_DisableRegion",
+      "name": "HAL_MPU_DisableRegion",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec4",
+      "prototype": "void HAL_MPU_DisableRegion(uint32_t RegionNumber);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "RegionNumber",
+          "type": "uint32_t",
+          "descEn": "",
+          "descZh": "MPU 区域编号 0~7，编号越大优先级越高（区域重叠时小编号被覆盖）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable the MPU Region.",
+      "briefZh": "关闭某个 MPU 区域，该区域不再受保护。",
+      "usageZh": "临时放开某段内存的访问限制，或者调试时逐个关掉区域以定位是哪个区域配错了。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "IS_MPU_REGION_NUMBER"
+      ],
+      "headerLine": 289,
+      "definedIn": "stm32f1xx_hal_cortex.h",
+      "sourceLine": 313,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MPU_ConfigRegion",
+      "name": "HAL_MPU_ConfigRegion",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec4",
+      "prototype": "void HAL_MPU_ConfigRegion(MPU_Region_InitTypeDef *MPU_Init);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "MPU_Init",
+          "type": "MPU_Region_InitTypeDef *",
+          "descEn": "Pointer to a MPU_Region_InitTypeDef structure that contains the initialization and configuration information.",
+          "descZh": "MPU 区域配置结构体：Number、BaseAddress、Size（用 MPU_REGION_SIZE_x 枚举）、SubRegionDisable、AccessPermission、DisableExec 等。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Initializes and configures the Region and the memory to be protected.",
+      "briefZh": "配置一个 MPU 区域的基地址、大小、访问权限与可执行属性。",
+      "usageZh": "MPU 的核心配置函数。区域编号 0~7，编号越大优先级越高（重叠时小编号被覆盖）。配完还要调 HAL_MPU_EnableRegion 让该区域生效。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "基地址必须按区域大小对齐，否则配置无效（HAL 不报错）",
+        "DisableExec 置 1 可以防止在数据区执行代码，是防溢出攻击的常用手段",
+        "区域大小必须是 2 的幂且 >= 32 字节"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "MPU_Region_InitTypeDef",
+        "IS_MPU_REGION_NUMBER",
+        "IS_MPU_REGION_ENABLE",
+        "IS_MPU_INSTRUCTION_ACCESS",
+        "IS_MPU_REGION_PERMISSION_ATTRIBUTE",
+        "IS_MPU_TEX_LEVEL",
+        "IS_MPU_ACCESS_SHAREABLE",
+        "IS_MPU_ACCESS_CACHEABLE",
+        "IS_MPU_ACCESS_BUFFERABLE",
+        "IS_MPU_SUB_REGION_DISABLE",
+        "IS_MPU_REGION_SIZE"
+      ],
+      "headerLine": 290,
+      "definedIn": "stm32f1xx_hal_cortex.h",
+      "sourceLine": 331,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NVIC_GetPriorityGrouping",
+      "name": "HAL_NVIC_GetPriorityGrouping",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec4",
+      "prototype": "uint32_t HAL_NVIC_GetPriorityGrouping(void);",
+      "returnType": "uint32_t",
+      "params": [],
+      "returnDescEn": "Priority grouping field (SCB->AIRCR [10:8] PRIGROUP field)",
+      "returnDescZh": "",
+      "briefEn": "Gets the priority grouping field from the NVIC Interrupt Controller.",
+      "briefZh": "读回当前的优先级分组编号（0~4）。",
+      "usageZh": "排查优先级行为异常时用，或者写通用驱动库时用来校验调用方设置的上下文。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 275,
+      "definedIn": "stm32f1xx_hal_cortex.h",
+      "sourceLine": 369,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NVIC_GetPriority",
+      "name": "HAL_NVIC_GetPriority",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec4",
+      "prototype": "void HAL_NVIC_GetPriority(IRQn_Type IRQn, uint32_t PriorityGroup, uint32_t* pPreemptPriority, uint32_t* pSubPriority);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "IRQn",
+          "type": "IRQn_Type",
+          "descEn": "External interrupt number. This parameter can be an enumerator of IRQn_Type enumeration (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSIS device file (stm32f10xxx.h))",
+          "descZh": "要查询的中断号。"
+        },
+        {
+          "name": "PriorityGroup",
+          "type": "uint32_t",
+          "descEn": "the priority grouping bits length. This parameter can be one of the following values:",
+          "descZh": "优先级分组 0~4。数字越大抢占级越多：GROUP_4 是 4 位全给抢占优先级（最常用）。"
+        },
+        {
+          "name": "pPreemptPriority",
+          "type": "uint32_t *",
+          "descEn": "Pointer on the Preemptive priority value (starting from 0).",
+          "descZh": "输出参数，接收该中断当前的抢占优先级。"
+        },
+        {
+          "name": "pSubPriority",
+          "type": "uint32_t *",
+          "descEn": "Pointer on the Subpriority value (starting from 0).",
+          "descZh": "输出参数，接收该中断当前的子优先级。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Gets the priority of an interrupt.",
+      "briefZh": "读回某个中断当前的抢占优先级与子优先级。",
+      "usageZh": "调试优先级冲突（预期能嵌套却没嵌套、或者莫名被抢占）时最直接的检查手段。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "两个都是输出参数，必须传有效地址，不能传 NULL"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "IS_NVIC_PRIORITY_GROUP"
+      ],
+      "headerLine": 276,
+      "definedIn": "stm32f1xx_hal_cortex.h",
+      "sourceLine": 396,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NVIC_SetPendingIRQ",
+      "name": "HAL_NVIC_SetPendingIRQ",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec4",
+      "prototype": "void HAL_NVIC_SetPendingIRQ(IRQn_Type IRQn);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "IRQn",
+          "type": "IRQn_Type",
+          "descEn": "External interrupt number This parameter can be an enumerator of IRQn_Type enumeration (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSIS device file (stm32f10xxx.h))",
+          "descZh": "要触发的中断号。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Sets Pending bit of an external interrupt.",
+      "briefZh": "软件触发指定中断进入挂起状态，等效于该中断条件成立。",
+      "usageZh": "调试中断服务程序时不必真的去制造硬件条件，直接软件触发就能单步进中断。也可以在自检代码里验证 ISR 是否被正确链接。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "只是把挂起位置 1，中断仍需在 NVIC 里使能才会进入",
+        "若该中断被 disable 了，恢复使能后会立刻执行一次"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "IS_NVIC_DEVICE_IRQ"
+      ],
+      "headerLine": 278,
+      "definedIn": "stm32f1xx_hal_cortex.h",
+      "sourceLine": 411,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NVIC_GetPendingIRQ",
+      "name": "HAL_NVIC_GetPendingIRQ",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec4",
+      "prototype": "uint32_t HAL_NVIC_GetPendingIRQ(IRQn_Type IRQn);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "IRQn",
+          "type": "IRQn_Type",
+          "descEn": "External interrupt number. This parameter can be an enumerator of IRQn_Type enumeration (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSIS device file (stm32f10xxx.h))",
+          "descZh": "要查询的中断号。"
+        }
+      ],
+      "returnDescEn": "status: - 0 Interrupt status is not pending. - 1 Interrupt status is pending.",
+      "returnDescZh": "",
+      "briefEn": "Gets Pending Interrupt (reads the pending register in the NVIC and returns the pending bit for the specified interrupt).",
+      "briefZh": "查询指定中断当前是否处于挂起（已请求、尚未被响应）状态。",
+      "usageZh": "定位「中断为什么没进」：挂起为 1 却进不去，说明 NVIC 没使能或者全局中断被关；挂起为 0，说明硬件条件根本没触发。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "IS_NVIC_DEVICE_IRQ"
+      ],
+      "headerLine": 277,
+      "definedIn": "stm32f1xx_hal_cortex.h",
+      "sourceLine": 429,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NVIC_ClearPendingIRQ",
+      "name": "HAL_NVIC_ClearPendingIRQ",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec4",
+      "prototype": "void HAL_NVIC_ClearPendingIRQ(IRQn_Type IRQn);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "IRQn",
+          "type": "IRQn_Type",
+          "descEn": "External interrupt number. This parameter can be an enumerator of IRQn_Type enumeration (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSIS device file (stm32f10xxx.h))",
+          "descZh": "要清除的中断号。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clears the pending bit of an external interrupt.",
+      "briefZh": "清除指定中断的挂起标志。",
+      "usageZh": "关中断/重配置时用，避免重新使能后立刻补触发一次。也用于清掉误触发的残留请求。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "只清 NVIC 的挂起位，外设自己的标志（如 USART_SR 的 RXNE）不受影响，两边都要清"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "IS_NVIC_DEVICE_IRQ"
+      ],
+      "headerLine": 279,
+      "definedIn": "stm32f1xx_hal_cortex.h",
+      "sourceLine": 445,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_NVIC_GetActive",
+      "name": "HAL_NVIC_GetActive",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec4",
+      "prototype": "uint32_t HAL_NVIC_GetActive(IRQn_Type IRQn);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "IRQn",
+          "type": "IRQn_Type",
+          "descEn": "External interrupt number This parameter can be an enumerator of IRQn_Type enumeration (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSIS device file (stm32f10xxx.h))",
+          "descZh": "要查询的中断号。"
+        }
+      ],
+      "returnDescEn": "status: - 0 Interrupt status is not pending. - 1 Interrupt status is pending.",
+      "returnDescZh": "",
+      "briefEn": "Gets active interrupt ( reads the active register in NVIC and returns the active bit).",
+      "briefZh": "查询指定中断当前是否正在执行（活跃状态）。",
+      "usageZh": "在中断嵌套排查、或者想在 ISR 外判断某中断是否正在运行时用。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "IS_NVIC_DEVICE_IRQ"
+      ],
+      "headerLine": 280,
+      "definedIn": "stm32f1xx_hal_cortex.h",
+      "sourceLine": 462,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SYSTICK_CLKSourceConfig",
+      "name": "HAL_SYSTICK_CLKSourceConfig",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec4",
+      "prototype": "void HAL_SYSTICK_CLKSourceConfig(uint32_t CLKSource);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "CLKSource",
+          "type": "uint32_t",
+          "descEn": "specifies the SysTick clock source. This parameter can be one of the following values:",
+          "descZh": "SYSTICK_CLKSOURCE_HCLK 或 SYSTICK_CLKSOURCE_HCLK_DIV8。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Configures the SysTick clock source.",
+      "briefZh": "选择 SysTick 的时钟源：内核时钟 HCLK 或 HCLK/8。",
+      "usageZh": "F1 上 SysTick 支持 HCLK 和 HCLK/8 两种源。用 HCLK/8 可以让重装载值小一些（72MHz/8=9MHz，1ms 只需 9000），调试时更直观。改了时钟源必须同步改 HAL_SYSTICK_Config 的重装载值，否则时基就不准了。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "改时钟源之后 HAL_Delay 的时基会错，除非重算 TicksNumb"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "IS_SYSTICK_CLK_SOURCE",
+        "SYSTICK_CLKSOURCE_HCLK"
+      ],
+      "headerLine": 281,
+      "definedIn": "stm32f1xx_hal_cortex.h",
+      "sourceLine": 479,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SYSTICK_IRQHandler",
+      "name": "HAL_SYSTICK_IRQHandler",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec4",
+      "prototype": "void HAL_SYSTICK_IRQHandler(void);",
+      "returnType": "void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "This function handles SYSTICK interrupt request.",
+      "briefZh": "SysTick 中断的处理入口，内部累加 uwTick 并调用 HAL_SYSTICK_Callback。",
+      "usageZh": "在 SysTick_Handler 里调用（CubeMX 生成的代码会调 HAL_IncTick，等价效果）。它是 HAL_Delay / HAL_GetTick 的时间基准来源，**不能删**，删了延时函数会永远卡住。",
+      "prerequisites": [
+        "SysTick 已由 HAL_Init 或 HAL_SYSTICK_Config 启动"
+      ],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_SYSTICK_Callback"
+      ],
+      "remarks": [],
+      "notesZh": [
+        "uwTick 是 32 位毫秒计数，约 49.7 天回绕；跨回绕的差值计算要用无符号减法",
+        "这里的代码每 1ms 执行一次，不要放耗时逻辑"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 282,
+      "definedIn": "stm32f1xx_hal_cortex.h",
+      "sourceLine": 497,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SYSTICK_Callback",
+      "name": "HAL_SYSTICK_Callback",
+      "peripheral": "CORTEX",
+      "library": "hal",
+      "sectionId": "CORTEX@hal#sec4",
+      "prototype": "void HAL_SYSTICK_Callback(void);",
+      "returnType": "__weak void",
+      "params": [],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "SYSTICK callback.",
+      "briefZh": "SysTick 中断的用户回调，__weak 空实现，重写后可做 1ms 周期的任务。",
+      "usageZh": "想跑一个固定 1ms 的软定时任务（按键扫描、软件 PWM、超时计数）时重写它，比自己再开一个定时器省资源。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "中断上下文，只做标志累加这类轻量操作",
+        "重写时不要加 static；函数名必须完全一致",
+        "耗时操作会直接拉长整个系统时基的抖动，影响 HAL_Delay 精度"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak"
+      ],
+      "headerLine": 283,
+      "definedIn": "stm32f1xx_hal_cortex.h",
+      "sourceLine": 506,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

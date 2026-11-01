@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "CRC",
+  "library": "hal",
+  "functions": [
+    {
+      "id": "HAL_CRC_Init",
+      "name": "HAL_CRC_Init",
+      "peripheral": "CRC",
+      "library": "hal",
+      "sectionId": "CRC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_CRC_Init(CRC_HandleTypeDef *hcrc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcrc",
+          "type": "CRC_HandleTypeDef *",
+          "descEn": "CRC handle",
+          "descZh": "CRC 句柄，只需把 Instance 指向 CRC 即可。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Initialize the CRC according to the specified parameters in the CRC_InitTypeDef and create the associated handle.",
+      "briefZh": "初始化 CRC 计算单元（F1 上 CRC 配置项很少，主要是使能外设时钟并复位计算单元）。",
+      "usageZh": "F1 的 CRC 只支持固定多项式 0x04C11DB7、32 位输入输出，没有可配的多项式或初始值，所以这个函数基本只是完成状态机初始化。真正的计算靠 HAL_CRC_Calculate / HAL_CRC_Accumulate。",
+      "prerequisites": [
+        "已调用 __HAL_RCC_CRC_CLK_ENABLE() 使能 CRC 时钟"
+      ],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_CRC_MspInit"
+      ],
+      "remarks": [],
+      "notesZh": [
+        "F1 的 CRC 多项式不可配置，和 F4 之后支持可编程多项式的版本用法不同",
+        "计算结果是「按字节/半字/字依次异或进 CRC_DR」得到的，与软件按位实现的结果一致，但不能指定初始值"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CRC_HandleTypeDef",
+        "HAL_ERROR",
+        "HAL_CRC_STATE_RESET",
+        "HAL_UNLOCKED",
+        "HAL_OK"
+      ],
+      "headerLine": 138,
+      "definedIn": "stm32f1xx_hal_crc.h",
+      "sourceLine": 95,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CRC_DeInit",
+      "name": "HAL_CRC_DeInit",
+      "peripheral": "CRC",
+      "library": "hal",
+      "sectionId": "CRC@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_CRC_DeInit(CRC_HandleTypeDef *hcrc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hcrc",
+          "type": "CRC_HandleTypeDef *",
+          "descEn": "CRC handle",
+          "descZh": "CRC 句柄。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "DeInitialize the CRC peripheral.",
+      "briefZh": "复位 CRC 外设，把数据寄存器清回 0xFFFFFFFF。",
+      "usageZh": "开始一轮全新的 CRC 计算前想要确定初值时用。注意 HAL_CRC_Calculate 本身会先写初始值，通常不需要手动 DeInit。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_CRC_MspDeInit"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "CRC_HandleTypeDef",
+        "HAL_ERROR",
+        "HAL_BUSY",
+        "__HAL_CRC_DR_RESET",
+        "__HAL_CRC_SET_IDR",
+        "HAL_CRC_STATE_RESET",
+        "__HAL_UNLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 139,
+      "definedIn": "stm32f1xx_hal_crc.h",
+      "sourceLine": 126,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CRC_MspInit",
+      "name": "HAL_CRC_MspInit",
+      "peripheral": "CRC",
+      "library": "hal",
+      "sectionId": "CRC@hal#sec1",
+      "prototype": "void HAL_CRC_MspInit(CRC_HandleTypeDef *hcrc);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hcrc",
+          "type": "CRC_HandleTypeDef *",
+          "descEn": "CRC handle",
+          "descZh": "CRC 句柄指针，Instance 指向 CRC。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Initializes the CRC MSP.",
+      "briefZh": "CRC 的底层初始化回调，__weak 空实现，用来放 __HAL_RCC_CRC_CLK_ENABLE()。",
+      "usageZh": "CubeMX 生成的代码会自动填好。手写时重写它，或在 HAL_CRC_Init 之前自己开时钟。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "CRC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 140,
+      "definedIn": "stm32f1xx_hal_crc.h",
+      "sourceLine": 170,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CRC_MspDeInit",
+      "name": "HAL_CRC_MspDeInit",
+      "peripheral": "CRC",
+      "library": "hal",
+      "sectionId": "CRC@hal#sec1",
+      "prototype": "void HAL_CRC_MspDeInit(CRC_HandleTypeDef *hcrc);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hcrc",
+          "type": "CRC_HandleTypeDef *",
+          "descEn": "CRC handle",
+          "descZh": "CRC 句柄指针，Instance 指向 CRC。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "DeInitialize the CRC MSP.",
+      "briefZh": "CRC 的底层反初始化回调，__weak 空实现，用来关闭 CRC 时钟。",
+      "usageZh": "低功耗前释放外设时钟时重写它。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "CRC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 141,
+      "definedIn": "stm32f1xx_hal_crc.h",
+      "sourceLine": 185,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CRC_Accumulate",
+      "name": "HAL_CRC_Accumulate",
+      "peripheral": "CRC",
+      "library": "hal",
+      "sectionId": "CRC@hal#sec2",
+      "prototype": "uint32_t HAL_CRC_Accumulate(CRC_HandleTypeDef *hcrc, uint32_t pBuffer[], uint32_t BufferLength);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hcrc",
+          "type": "CRC_HandleTypeDef *",
+          "descEn": "CRC handle",
+          "descZh": "CRC 句柄。"
+        },
+        {
+          "name": "pBuffer",
+          "type": "uint32_t []",
+          "descEn": "pointer to the input data buffer.",
+          "descZh": "数据缓冲区首地址。"
+        },
+        {
+          "name": "BufferLength",
+          "type": "uint32_t",
+          "descEn": "input data buffer length (number of uint32_t words).",
+          "descZh": "数据长度（32 位字的个数）。"
+        }
+      ],
+      "returnDescEn": "uint32_t CRC (returned value LSBs for CRC shorter than 32 bits)",
+      "returnDescZh": "",
+      "briefEn": "Compute the 32-bit CRC value of a 32-bit data buffer starting with the previously computed CRC as initialization value.",
+      "briefZh": "在已有 CRC 结果的基础上继续累加计算，不重置数据寄存器。",
+      "usageZh": "分包/分块校验时用：第一块用 Calculate，后续块用 Accumulate，最后得到整段数据的总 CRC。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "CRC_HandleTypeDef"
+      ],
+      "headerLine": 150,
+      "definedIn": "stm32f1xx_hal_crc.h",
+      "sourceLine": 227,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CRC_Calculate",
+      "name": "HAL_CRC_Calculate",
+      "peripheral": "CRC",
+      "library": "hal",
+      "sectionId": "CRC@hal#sec2",
+      "prototype": "uint32_t HAL_CRC_Calculate(CRC_HandleTypeDef *hcrc, uint32_t pBuffer[], uint32_t BufferLength);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hcrc",
+          "type": "CRC_HandleTypeDef *",
+          "descEn": "CRC handle",
+          "descZh": "CRC 句柄。"
+        },
+        {
+          "name": "pBuffer",
+          "type": "uint32_t []",
+          "descEn": "pointer to the input data buffer.",
+          "descZh": "数据缓冲区首地址。"
+        },
+        {
+          "name": "BufferLength",
+          "type": "uint32_t",
+          "descEn": "input data buffer length (number of uint32_t words).",
+          "descZh": "数据长度（单位是 32 位字，不是字节）。传字节数会算错。"
+        }
+      ],
+      "returnDescEn": "uint32_t CRC (returned value LSBs for CRC shorter than 32 bits)",
+      "returnDescZh": "",
+      "briefEn": "Compute the 32-bit CRC value of a 32-bit data buffer starting with hcrc->Instance->INIT as initialization value.",
+      "briefZh": "对指定缓冲区重新开始计算 CRC（先复位再算），返回 32 位结果。",
+      "usageZh": "算一帧数据的校验和时用它。内部先把 CRC_DR 复位成 0xFFFFFFFF，所以每次调用都是**独立**的一次计算。要在一段已有结果上接着算（分包校验），用 HAL_CRC_Accumulate。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [
+        "BufferLength 单位是 uint32_t 个数：字节数组要写成 (len + 3) / 4 并把缓冲区按 4 字节对齐",
+        "缓冲区地址必须 4 字节对齐，否则在 Cortex-M3 上可能触发 HardFault（UNALIGNED 位没开时）"
+      ],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "CRC_HandleTypeDef",
+        "__HAL_CRC_DR_RESET"
+      ],
+      "headerLine": 151,
+      "definedIn": "stm32f1xx_hal_crc.h",
+      "sourceLine": 257,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_CRC_GetState",
+      "name": "HAL_CRC_GetState",
+      "peripheral": "CRC",
+      "library": "hal",
+      "sectionId": "CRC@hal#sec3",
+      "prototype": "HAL_CRC_StateTypeDef HAL_CRC_GetState(const CRC_HandleTypeDef *hcrc);",
+      "returnType": "HAL_CRC_StateTypeDef",
+      "params": [
+        {
+          "name": "hcrc",
+          "type": "const CRC_HandleTypeDef *",
+          "descEn": "CRC handle",
+          "descZh": "CRC 句柄。"
+        }
+      ],
+      "returnDescEn": "HAL state",
+      "returnDescZh": "",
+      "briefEn": "Return the CRC handle state.",
+      "briefZh": "读取 CRC 外设的状态机状态。",
+      "usageZh": "判断 CRC 是否初始化完成，写健壮性代码时做前置检查。",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_CRC_StateTypeDef",
+        "CRC_HandleTypeDef"
+      ],
+      "headerLine": 160,
+      "definedIn": "stm32f1xx_hal_crc.h",
+      "sourceLine": 306,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

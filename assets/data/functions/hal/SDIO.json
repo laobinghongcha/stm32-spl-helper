@@ -1,0 +1,3496 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "SDIO",
+  "library": "hal",
+  "functions": [
+    {
+      "id": "HAL_MMC_Init",
+      "name": "HAL_MMC_Init",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_MMC_Init(MMC_HandleTypeDef *hmmc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "Pointer to the MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Initializes the MMC according to the specified parameters in the MMC_HandleTypeDef and create the associated handle.",
+      "briefZh": "初始化 eMMC 器件。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_MMC_TxCpltCallback",
+        "HAL_MMC_RxCpltCallback",
+        "HAL_MMC_ErrorCallback",
+        "HAL_MMC_AbortCallback",
+        "HAL_MMC_MspInit",
+        "HAL_MMC_InitCard",
+        "HAL_MMC_ConfigWideBusOperation"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "MMC_HandleTypeDef",
+        "HAL_ERROR",
+        "HAL_MMC_STATE_RESET",
+        "HAL_UNLOCKED",
+        "TxCpltCallback",
+        "MspInitCallback",
+        "HAL_MMC_ERROR_NONE",
+        "MMC_CONTEXT_NONE",
+        "HAL_OK"
+      ],
+      "headerLine": 586,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 352,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_InitCard",
+      "name": "HAL_MMC_InitCard",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_MMC_InitCard(MMC_HandleTypeDef *hmmc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "Pointer to MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Initializes the MMC Card.",
+      "briefZh": "在 Init 之后完成卡的身份识别与初始化。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_Delay"
+      ],
+      "remarks": [
+        "This function initializes the MMC card. It could be used when a card re-initialization is needed."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "MMC_HandleTypeDef",
+        "MMC_InitTypeDef",
+        "HAL_ERROR",
+        "__HAL_MMC_DISABLE",
+        "__HAL_MMC_ENABLE",
+        "HAL_MMC_ERROR_NONE",
+        "MMC_BLOCKSIZE",
+        "__HAL_MMC_CLEAR_FLAG",
+        "HAL_OK"
+      ],
+      "headerLine": 587,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 429,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_DeInit",
+      "name": "HAL_MMC_DeInit",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec1",
+      "prototype": "HAL_StatusTypeDef HAL_MMC_DeInit (MMC_HandleTypeDef *hmmc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "Pointer to MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "De-Initializes the MMC card.",
+      "briefZh": "把 eMMC 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_MMC_MspDeInit"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "MMC_HandleTypeDef",
+        "HAL_ERROR",
+        "HAL_MMC_ERROR_NONE",
+        "HAL_MMC_STATE_RESET",
+        "HAL_OK"
+      ],
+      "headerLine": 588,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 503,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_MspInit",
+      "name": "HAL_MMC_MspInit",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec1",
+      "prototype": "void HAL_MMC_MspInit(MMC_HandleTypeDef *hmmc);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "Pointer to MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Initializes the MMC MSP.",
+      "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "MMC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 589,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 544,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_MspDeInit",
+      "name": "HAL_MMC_MspDeInit",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec1",
+      "prototype": "void HAL_MMC_MspDeInit(MMC_HandleTypeDef *hmmc);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "Pointer to MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "De-Initialize MMC MSP.",
+      "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "MMC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 590,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 559,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_ReadBlocks",
+      "name": "HAL_MMC_ReadBlocks",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_MMC_ReadBlocks(MMC_HandleTypeDef *hmmc, uint8_t *pData, uint32_t BlockAdd, uint32_t NumberOfBlocks, uint32_t Timeout);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "Pointer to MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "pointer to the buffer that will contain the received data",
+          "descZh": "数据缓冲区指针。"
+        },
+        {
+          "name": "BlockAdd",
+          "type": "uint32_t",
+          "descEn": "Block Address from where data is to be read",
+          "descZh": "起始块号。"
+        },
+        {
+          "name": "NumberOfBlocks",
+          "type": "uint32_t",
+          "descEn": "Number of MMC blocks to read",
+          "descZh": "要读写的块数。"
+        },
+        {
+          "name": "Timeout",
+          "type": "uint32_t",
+          "descEn": "Specify timeout value",
+          "descZh": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Reads block(s) from a specified address in a card. The Data transfer is managed by polling mode.",
+      "briefZh": "按块读取数据（阻塞）。blockAddr 是块号不是字节偏移。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [
+        "This API should be followed by a check on the card state through HAL_MMC_GetCardState()."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "MMC_HandleTypeDef",
+        "HAL_MMC_ERROR_PARAM",
+        "HAL_ERROR",
+        "HAL_MMC_ERROR_NONE",
+        "HAL_MMC_ERROR_ADDR_OUT_OF_RANGE",
+        "MMC_HIGH_CAPACITY_CARD",
+        "MMC_BLOCKSIZE",
+        "MMC_CONTEXT_READ_MULTIPLE_BLOCK",
+        "MMC_CONTEXT_READ_SINGLE_BLOCK",
+        "__HAL_MMC_CLEAR_FLAG",
+        "__HAL_MMC_GET_FLAG",
+        "HAL_MMC_ERROR_TIMEOUT",
+        "HAL_TIMEOUT",
+        "HAL_MMC_ERROR_DATA_TIMEOUT",
+        "HAL_MMC_ERROR_DATA_CRC_FAIL",
+        "HAL_MMC_ERROR_RX_OVERRUN",
+        "HAL_OK",
+        "HAL_MMC_ERROR_BUSY"
+      ],
+      "headerLine": 600,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 600,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_WriteBlocks",
+      "name": "HAL_MMC_WriteBlocks",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_MMC_WriteBlocks(MMC_HandleTypeDef *hmmc, uint8_t *pData, uint32_t BlockAdd, uint32_t NumberOfBlocks, uint32_t Timeout);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "Pointer to MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "pointer to the buffer that will contain the data to transmit",
+          "descZh": "数据缓冲区指针。"
+        },
+        {
+          "name": "BlockAdd",
+          "type": "uint32_t",
+          "descEn": "Block Address where data will be written",
+          "descZh": "起始块号。"
+        },
+        {
+          "name": "NumberOfBlocks",
+          "type": "uint32_t",
+          "descEn": "Number of MMC blocks to write",
+          "descZh": "要读写的块数。"
+        },
+        {
+          "name": "Timeout",
+          "type": "uint32_t",
+          "descEn": "Specify timeout value",
+          "descZh": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Allows to write block(s) to a specified address in a card. The Data transfer is managed by polling mode.",
+      "briefZh": "按块写入数据（阻塞）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [
+        "This API should be followed by a check on the card state through HAL_MMC_GetCardState()."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "MMC_HandleTypeDef",
+        "HAL_MMC_ERROR_PARAM",
+        "HAL_ERROR",
+        "HAL_MMC_ERROR_NONE",
+        "HAL_MMC_ERROR_ADDR_OUT_OF_RANGE",
+        "MMC_HIGH_CAPACITY_CARD",
+        "MMC_CONTEXT_WRITE_MULTIPLE_BLOCK",
+        "MMC_CONTEXT_WRITE_SINGLE_BLOCK",
+        "__HAL_MMC_CLEAR_FLAG",
+        "MMC_BLOCKSIZE",
+        "__HAL_MMC_GET_FLAG",
+        "HAL_TIMEOUT",
+        "HAL_MMC_ERROR_DATA_TIMEOUT",
+        "HAL_MMC_ERROR_DATA_CRC_FAIL",
+        "HAL_MMC_ERROR_TX_UNDERRUN",
+        "HAL_OK",
+        "HAL_MMC_ERROR_BUSY"
+      ],
+      "headerLine": 601,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 801,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_ReadBlocks_IT",
+      "name": "HAL_MMC_ReadBlocks_IT",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_MMC_ReadBlocks_IT(MMC_HandleTypeDef *hmmc, uint8_t *pData, uint32_t BlockAdd, uint32_t NumberOfBlocks);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "Pointer to MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to the buffer that will contain the received data",
+          "descZh": "数据缓冲区指针。"
+        },
+        {
+          "name": "BlockAdd",
+          "type": "uint32_t",
+          "descEn": "Block Address from where data is to be read",
+          "descZh": "起始块号。"
+        },
+        {
+          "name": "NumberOfBlocks",
+          "type": "uint32_t",
+          "descEn": "Number of blocks to read.",
+          "descZh": "要读写的块数。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Reads block(s) from a specified address in a card. The Data transfer is managed in interrupt mode.",
+      "briefZh": "以中断方式按块读取。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "This API should be followed by a check on the card state through HAL_MMC_GetCardState().",
+        "You could also check the IT transfer process through the MMC Rx interrupt event."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "MMC_HandleTypeDef",
+        "HAL_MMC_ERROR_PARAM",
+        "HAL_ERROR",
+        "HAL_MMC_ERROR_NONE",
+        "HAL_MMC_ERROR_ADDR_OUT_OF_RANGE",
+        "MMC_BLOCKSIZE",
+        "__HAL_MMC_ENABLE_IT",
+        "MMC_HIGH_CAPACITY_CARD",
+        "MMC_CONTEXT_READ_MULTIPLE_BLOCK",
+        "MMC_CONTEXT_IT",
+        "MMC_CONTEXT_READ_SINGLE_BLOCK",
+        "__HAL_MMC_CLEAR_FLAG",
+        "HAL_OK",
+        "HAL_BUSY"
+      ],
+      "headerLine": 604,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 976,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_WriteBlocks_IT",
+      "name": "HAL_MMC_WriteBlocks_IT",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_MMC_WriteBlocks_IT(MMC_HandleTypeDef *hmmc, uint8_t *pData, uint32_t BlockAdd, uint32_t NumberOfBlocks);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "Pointer to MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to the buffer that will contain the data to transmit",
+          "descZh": "数据缓冲区指针。"
+        },
+        {
+          "name": "BlockAdd",
+          "type": "uint32_t",
+          "descEn": "Block Address where data will be written",
+          "descZh": "起始块号。"
+        },
+        {
+          "name": "NumberOfBlocks",
+          "type": "uint32_t",
+          "descEn": "Number of blocks to write",
+          "descZh": "要读写的块数。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Writes block(s) to a specified address in a card. The Data transfer is managed in interrupt mode.",
+      "briefZh": "以中断方式按块写入。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "This API should be followed by a check on the card state through HAL_MMC_GetCardState().",
+        "You could also check the IT transfer process through the MMC Tx interrupt event."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "MMC_HandleTypeDef",
+        "HAL_MMC_ERROR_PARAM",
+        "HAL_ERROR",
+        "HAL_MMC_ERROR_NONE",
+        "HAL_MMC_ERROR_ADDR_OUT_OF_RANGE",
+        "MMC_BLOCKSIZE",
+        "__HAL_MMC_ENABLE_IT",
+        "MMC_HIGH_CAPACITY_CARD",
+        "MMC_CONTEXT_WRITE_MULTIPLE_BLOCK",
+        "MMC_CONTEXT_IT",
+        "MMC_CONTEXT_WRITE_SINGLE_BLOCK",
+        "__HAL_MMC_CLEAR_FLAG",
+        "HAL_OK",
+        "HAL_BUSY"
+      ],
+      "headerLine": 605,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 1068,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_ReadBlocks_DMA",
+      "name": "HAL_MMC_ReadBlocks_DMA",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_MMC_ReadBlocks_DMA(MMC_HandleTypeDef *hmmc, uint8_t *pData, uint32_t BlockAdd, uint32_t NumberOfBlocks);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "Pointer MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to the buffer that will contain the received data",
+          "descZh": "数据缓冲区指针。"
+        },
+        {
+          "name": "BlockAdd",
+          "type": "uint32_t",
+          "descEn": "Block Address from where data is to be read",
+          "descZh": "起始块号。"
+        },
+        {
+          "name": "NumberOfBlocks",
+          "type": "uint32_t",
+          "descEn": "Number of blocks to read.",
+          "descZh": "要读写的块数。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Reads block(s) from a specified address in a card. The Data transfer is managed by DMA mode.",
+      "briefZh": "以 DMA 方式按块读取。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "Instance_CCR"
+      ],
+      "relatedFunctions": [
+        "HAL_DMA_Start_IT"
+      ],
+      "remarks": [
+        "This API should be followed by a check on the card state through HAL_MMC_GetCardState().",
+        "You could also check the DMA transfer process through the MMC Rx interrupt event."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "MMC_HandleTypeDef",
+        "HAL_MMC_ERROR_PARAM",
+        "HAL_ERROR",
+        "HAL_MMC_ERROR_NONE",
+        "HAL_MMC_ERROR_ADDR_OUT_OF_RANGE",
+        "__HAL_MMC_ENABLE_IT",
+        "XferCpltCallback",
+        "MMC_HIGH_CAPACITY_CARD",
+        "DMA_PERIPH_TO_MEMORY",
+        "MMC_BLOCKSIZE",
+        "HAL_OK",
+        "__HAL_MMC_DISABLE_IT",
+        "__HAL_MMC_CLEAR_FLAG",
+        "HAL_MMC_ERROR_DMA",
+        "__HAL_MMC_DMA_ENABLE",
+        "MMC_CONTEXT_READ_MULTIPLE_BLOCK",
+        "MMC_CONTEXT_DMA",
+        "MMC_CONTEXT_READ_SINGLE_BLOCK",
+        "HAL_BUSY"
+      ],
+      "headerLine": 607,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 1160,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_WriteBlocks_DMA",
+      "name": "HAL_MMC_WriteBlocks_DMA",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_MMC_WriteBlocks_DMA(MMC_HandleTypeDef *hmmc, uint8_t *pData, uint32_t BlockAdd, uint32_t NumberOfBlocks);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "Pointer to MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to the buffer that will contain the data to transmit",
+          "descZh": "数据缓冲区指针。"
+        },
+        {
+          "name": "BlockAdd",
+          "type": "uint32_t",
+          "descEn": "Block Address where data will be written",
+          "descZh": "起始块号。"
+        },
+        {
+          "name": "NumberOfBlocks",
+          "type": "uint32_t",
+          "descEn": "Number of blocks to write",
+          "descZh": "要读写的块数。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Writes block(s) to a specified address in a card. The Data transfer is managed by DMA mode.",
+      "briefZh": "以 DMA 方式按块写入。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "Instance_CCR"
+      ],
+      "relatedFunctions": [
+        "HAL_DMA_Start_IT"
+      ],
+      "remarks": [
+        "This API should be followed by a check on the card state through HAL_MMC_GetCardState().",
+        "You could also check the DMA transfer process through the MMC Tx interrupt event."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "MMC_HandleTypeDef",
+        "HAL_MMC_ERROR_PARAM",
+        "HAL_ERROR",
+        "HAL_MMC_ERROR_NONE",
+        "HAL_MMC_ERROR_ADDR_OUT_OF_RANGE",
+        "__HAL_MMC_ENABLE_IT",
+        "XferCpltCallback",
+        "MMC_HIGH_CAPACITY_CARD",
+        "MMC_CONTEXT_WRITE_MULTIPLE_BLOCK",
+        "MMC_CONTEXT_DMA",
+        "MMC_CONTEXT_WRITE_SINGLE_BLOCK",
+        "__HAL_MMC_CLEAR_FLAG",
+        "__HAL_MMC_DISABLE_IT",
+        "__HAL_MMC_DMA_ENABLE",
+        "DMA_MEMORY_TO_PERIPH",
+        "MMC_BLOCKSIZE",
+        "HAL_OK",
+        "HAL_MMC_ERROR_DMA",
+        "HAL_BUSY"
+      ],
+      "headerLine": 608,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 1277,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_Erase",
+      "name": "HAL_MMC_Erase",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_MMC_Erase(MMC_HandleTypeDef *hmmc, uint32_t BlockStartAdd, uint32_t BlockEndAdd);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "Pointer to MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        },
+        {
+          "name": "BlockStartAdd",
+          "type": "uint32_t",
+          "descEn": "Start Block address",
+          "descZh": "起始块号（擦除操作）。"
+        },
+        {
+          "name": "BlockEndAdd",
+          "type": "uint32_t",
+          "descEn": "End Block address",
+          "descZh": "结束块号（含）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Erases the specified memory area of the given MMC card.",
+      "briefZh": "擦除指定页/扇区。擦除的最小单位是整页，会丢掉该页原有数据。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "This API should be followed by a check on the card state through HAL_MMC_GetCardState()."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "MMC_HandleTypeDef",
+        "HAL_MMC_ERROR_NONE",
+        "HAL_MMC_ERROR_PARAM",
+        "HAL_ERROR",
+        "HAL_MMC_ERROR_ADDR_OUT_OF_RANGE",
+        "__HAL_MMC_CLEAR_FLAG",
+        "HAL_MMC_ERROR_REQUEST_NOT_APPLICABLE",
+        "HAL_MMC_ERROR_LOCK_UNLOCK_FAILED",
+        "MMC_HIGH_CAPACITY_CARD",
+        "HAL_OK",
+        "HAL_BUSY"
+      ],
+      "headerLine": 602,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 1392,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_IRQHandler",
+      "name": "HAL_MMC_IRQHandler",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "void HAL_MMC_IRQHandler(MMC_HandleTypeDef *hmmc);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "Pointer to MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "This function handles MMC card interrupt request.",
+      "briefZh": "eMMC 的中断统一入口。在 stm32f1xx_it.c 的对应 IRQHandler 里调用，内部会清标志并分派到各回调。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_MMC_ErrorCallback",
+        "HAL_MMC_TxCpltCallback",
+        "HAL_MMC_RxCpltCallback",
+        "HAL_DMA_Abort_IT",
+        "HAL_MMC_AbortCallback"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "MMC_HandleTypeDef",
+        "__HAL_MMC_GET_FLAG",
+        "MMC_CONTEXT_IT",
+        "__HAL_MMC_CLEAR_FLAG",
+        "__HAL_MMC_DISABLE_IT",
+        "MMC_CONTEXT_DMA",
+        "MMC_CONTEXT_WRITE_MULTIPLE_BLOCK",
+        "HAL_MMC_ERROR_NONE",
+        "MMC_CONTEXT_READ_SINGLE_BLOCK",
+        "MMC_CONTEXT_READ_MULTIPLE_BLOCK",
+        "TxCpltCallback",
+        "HAL_MMC_ERROR_DATA_CRC_FAIL",
+        "HAL_MMC_ERROR_DATA_TIMEOUT",
+        "HAL_MMC_ERROR_RX_OVERRUN",
+        "HAL_MMC_ERROR_TX_UNDERRUN",
+        "HAL_OK"
+      ],
+      "headerLine": 610,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 1489,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_GetState",
+      "name": "HAL_MMC_GetState",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "HAL_MMC_StateTypeDef HAL_MMC_GetState(MMC_HandleTypeDef *hmmc);",
+      "returnType": "HAL_MMC_StateTypeDef",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "Pointer to mmc handle",
+          "descZh": "eMMC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL state",
+      "returnDescZh": "",
+      "briefEn": "return the MMC state",
+      "briefZh": "读取 eMMC 的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_MMC_StateTypeDef",
+        "MMC_HandleTypeDef"
+      ],
+      "headerLine": 650,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 1678,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_GetError",
+      "name": "HAL_MMC_GetError",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "uint32_t HAL_MMC_GetError(MMC_HandleTypeDef *hmmc);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "Pointer to a MMC_HandleTypeDef structure that contains the configuration information.",
+          "descZh": "eMMC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "MMC Error Code",
+      "returnDescZh": "",
+      "briefEn": "Return the MMC error code",
+      "briefZh": "读取 eMMC 累计的错误码位掩码。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "MMC_HandleTypeDef"
+      ],
+      "headerLine": 651,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 1689,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_TxCpltCallback",
+      "name": "HAL_MMC_TxCpltCallback",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "void HAL_MMC_TxCpltCallback(MMC_HandleTypeDef *hmmc);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "Pointer to MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Tx Transfer completed callbacks",
+      "briefZh": "发送完成回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "MMC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 613,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 1699,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_RxCpltCallback",
+      "name": "HAL_MMC_RxCpltCallback",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "void HAL_MMC_RxCpltCallback(MMC_HandleTypeDef *hmmc);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "Pointer MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Rx Transfer completed callbacks",
+      "briefZh": "接收完成回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "MMC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 614,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 1714,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_ErrorCallback",
+      "name": "HAL_MMC_ErrorCallback",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "void HAL_MMC_ErrorCallback(MMC_HandleTypeDef *hmmc);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "Pointer MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "MMC error callbacks",
+      "briefZh": "错误回调（__weak 空实现，需自己重写）。溢出、噪声、帧错误等异常会走到这里。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "MMC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 615,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 1729,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_AbortCallback",
+      "name": "HAL_MMC_AbortCallback",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "void HAL_MMC_AbortCallback(MMC_HandleTypeDef *hmmc);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "Pointer MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "MMC Abort callbacks",
+      "briefZh": "中止完成回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "MMC_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 616,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 1744,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_RegisterCallback",
+      "name": "HAL_MMC_RegisterCallback",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_MMC_RegisterCallback  (MMC_HandleTypeDef *hmmc, HAL_MMC_CallbackIDTypeDef CallbackId, pMMC_CallbackTypeDef pCallback);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        },
+        {
+          "name": "CallbackId",
+          "type": "HAL_MMC_CallbackIDTypeDef",
+          "descEn": "ID of the callback to be registered This parameter can be one of the following values:",
+          "descZh": "回调事件编号，取对应的 CallbackIDTypeDef 枚举值。"
+        },
+        {
+          "name": "pCallback",
+          "type": "pMMC_CallbackTypeDef",
+          "descEn": "pointer to the Callback function",
+          "descZh": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+        }
+      ],
+      "returnDescEn": "status",
+      "returnDescZh": "",
+      "briefEn": "Register a User MMC Callback To be used instead of the weak (surcharged) predefined callback",
+      "briefZh": "为 eMMC 注册指定事件的回调，替代默认的 __weak 空实现。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "MMC_HandleTypeDef",
+        "HAL_MMC_CallbackIDTypeDef",
+        "pMMC_CallbackTypeDef",
+        "HAL_OK",
+        "HAL_MMC_ERROR_INVALID_CALLBACK",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "HAL_MMC_TX_CPLT_CB_ID",
+        "TxCpltCallback",
+        "MspInitCallback",
+        "HAL_MMC_STATE_RESET",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 620,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 1770,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_UnRegisterCallback",
+      "name": "HAL_MMC_UnRegisterCallback",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_MMC_UnRegisterCallback(MMC_HandleTypeDef *hmmc, HAL_MMC_CallbackIDTypeDef CallbackId);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        },
+        {
+          "name": "CallbackId",
+          "type": "HAL_MMC_CallbackIDTypeDef",
+          "descEn": "ID of the callback to be unregistered This parameter can be one of the following values:",
+          "descZh": "回调事件编号，取对应的 CallbackIDTypeDef 枚举值。"
+        }
+      ],
+      "returnDescEn": "status",
+      "returnDescZh": "",
+      "briefEn": "Unregister a User MMC Callback MMC Callback is redirected to the weak (surcharged) predefined callback",
+      "briefZh": "注销 eMMC 已注册的回调，恢复成默认的 __weak 空实现。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_MMC_TxCpltCallback",
+        "HAL_MMC_RxCpltCallback",
+        "HAL_MMC_ErrorCallback",
+        "HAL_MMC_AbortCallback",
+        "HAL_MMC_MspInit",
+        "HAL_MMC_MspDeInit"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "MMC_HandleTypeDef",
+        "HAL_MMC_CallbackIDTypeDef",
+        "HAL_OK",
+        "__HAL_LOCK",
+        "HAL_MMC_TX_CPLT_CB_ID",
+        "TxCpltCallback",
+        "MspInitCallback",
+        "HAL_MMC_ERROR_INVALID_CALLBACK",
+        "HAL_ERROR",
+        "HAL_MMC_STATE_RESET",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 621,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 1859,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_GetCardCID",
+      "name": "HAL_MMC_GetCardCID",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_MMC_GetCardCID(MMC_HandleTypeDef *hmmc, HAL_MMC_CardCIDTypeDef *pCID);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "Pointer to MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        },
+        {
+          "name": "pCID",
+          "type": "HAL_MMC_CardCIDTypeDef *",
+          "descEn": "Pointer to a HAL_MMC_CIDTypedef structure that contains all CID register parameters",
+          "descZh": "输出参数，接收卡/器件的 CID 信息。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Returns information the information of the card which are stored on the CID register.",
+      "briefZh": "读取卡的 CID 寄存器（制造商、序列号等信息）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "MMC_HandleTypeDef",
+        "HAL_MMC_CardCIDTypeDef",
+        "HAL_OK"
+      ],
+      "headerLine": 639,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 1955,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_GetCardCSD",
+      "name": "HAL_MMC_GetCardCSD",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_MMC_GetCardCSD(MMC_HandleTypeDef *hmmc, HAL_MMC_CardCSDTypeDef *pCSD);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "Pointer to MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        },
+        {
+          "name": "pCSD",
+          "type": "HAL_MMC_CardCSDTypeDef *",
+          "descEn": "Pointer to a HAL_MMC_CardCSDTypeDef structure that contains all CSD register parameters",
+          "descZh": "输出参数，接收卡/器件的 CSD 信息。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Returns information the information of the card which are stored on the CSD register.",
+      "briefZh": "读取卡的 CSD 寄存器（容量、块大小、速度等信息）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "MMC_HandleTypeDef",
+        "HAL_MMC_CardCSDTypeDef",
+        "HAL_OK",
+        "HAL_ERROR",
+        "MMC_LOW_CAPACITY_CARD",
+        "MMC_HIGH_CAPACITY_CARD",
+        "__HAL_MMC_CLEAR_FLAG",
+        "HAL_MMC_ERROR_UNSUPPORTED_FEATURE"
+      ],
+      "headerLine": 640,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 1988,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_GetCardInfo",
+      "name": "HAL_MMC_GetCardInfo",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_MMC_GetCardInfo(MMC_HandleTypeDef *hmmc, HAL_MMC_CardInfoTypeDef *pCardInfo);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "Pointer to MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        },
+        {
+          "name": "pCardInfo",
+          "type": "HAL_MMC_CardInfoTypeDef *",
+          "descEn": "Pointer to the HAL_MMC_CardInfoTypeDef structure that will contain the MMC card status information",
+          "descZh": "输出参数，接收容量与块大小等汇总信息。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Gets the MMC card info.",
+      "briefZh": "把卡的容量、块大小等信息读入结构体。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "MMC_HandleTypeDef",
+        "HAL_MMC_CardInfoTypeDef",
+        "HAL_OK"
+      ],
+      "headerLine": 641,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 2105,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_GetCardExtCSD",
+      "name": "HAL_MMC_GetCardExtCSD",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_MMC_GetCardExtCSD(MMC_HandleTypeDef *hmmc, uint32_t *pExtCSD, uint32_t Timeout);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "Pointer to MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        },
+        {
+          "name": "pExtCSD",
+          "type": "uint32_t *",
+          "descEn": "Pointer to a memory area (512 bytes) that contains all Extended CSD register parameters",
+          "descZh": "输出参数，接收 eMMC 扩展 CSD 数据（512 字节缓冲区）。"
+        },
+        {
+          "name": "Timeout",
+          "type": "uint32_t",
+          "descEn": "Specify timeout value",
+          "descZh": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Returns information the information of the card which are stored on the Extended CSD register.",
+      "briefZh": "读取 eMMC 扩展 CSD 寄存器。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "MMC_HandleTypeDef",
+        "HAL_MMC_ERROR_PARAM",
+        "HAL_ERROR",
+        "HAL_MMC_ERROR_NONE",
+        "__HAL_MMC_CLEAR_FLAG",
+        "__HAL_MMC_GET_FLAG",
+        "HAL_MMC_ERROR_TIMEOUT",
+        "HAL_TIMEOUT",
+        "HAL_MMC_ERROR_DATA_TIMEOUT",
+        "HAL_MMC_ERROR_DATA_CRC_FAIL",
+        "HAL_MMC_ERROR_RX_OVERRUN",
+        "HAL_OK"
+      ],
+      "headerLine": 642,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 2127,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_ConfigWideBusOperation",
+      "name": "HAL_MMC_ConfigWideBusOperation",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_MMC_ConfigWideBusOperation(MMC_HandleTypeDef *hmmc, uint32_t WideMode);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "Pointer to MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        },
+        {
+          "name": "WideMode",
+          "type": "uint32_t",
+          "descEn": "Specifies the MMC card wide bus mode This parameter can be one of the following values:",
+          "descZh": "总线宽度：MMC_BUS_WIDE_1B / 4B / 8B。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Enables wide bus operation for the requested card if supported by card.",
+      "briefZh": "配置数据总线宽度（1 位 / 4 位 / 8 位）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "MMC_HandleTypeDef",
+        "HAL_MMC_ERROR_NONE",
+        "HAL_MMC_ERROR_PARAM",
+        "__HAL_MMC_CLEAR_FLAG",
+        "HAL_ERROR",
+        "HAL_OK"
+      ],
+      "headerLine": 630,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 2245,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_GetCardState",
+      "name": "HAL_MMC_GetCardState",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec3",
+      "prototype": "HAL_MMC_CardStateTypeDef HAL_MMC_GetCardState(MMC_HandleTypeDef *hmmc);",
+      "returnType": "HAL_MMC_CardStateTypeDef",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "pointer to MMC handle",
+          "descZh": "eMMC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "Card state",
+      "returnDescZh": "",
+      "briefEn": "Gets the current mmc card data state.",
+      "briefZh": "读取卡当前的状态（idle / ready / transfer 等）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_MMC_CardStateTypeDef",
+        "MMC_HandleTypeDef",
+        "HAL_MMC_ERROR_NONE"
+      ],
+      "headerLine": 638,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 2344,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_Abort",
+      "name": "HAL_MMC_Abort",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_MMC_Abort(MMC_HandleTypeDef *hmmc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "pointer to a MMC_HandleTypeDef structure that contains the configuration information for MMC module.",
+          "descZh": "eMMC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Abort the current transfer and disable the MMC.",
+      "briefZh": "中止正在进行的传输（阻塞式，等外设真正停下才返回）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_DMA_Abort",
+        "HAL_MMC_GetCardState"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "MMC_HandleTypeDef",
+        "HAL_MMC_CardStateTypeDef",
+        "__HAL_MMC_DISABLE_IT",
+        "__HAL_MMC_CLEAR_FLAG",
+        "HAL_OK",
+        "HAL_MMC_ERROR_DMA",
+        "MMC_CONTEXT_NONE",
+        "HAL_MMC_CARD_RECEIVING",
+        "HAL_MMC_CARD_SENDING",
+        "HAL_MMC_ERROR_NONE",
+        "HAL_ERROR"
+      ],
+      "headerLine": 659,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 2367,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_MMC_Abort_IT",
+      "name": "HAL_MMC_Abort_IT",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_MMC_Abort_IT(MMC_HandleTypeDef *hmmc);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hmmc",
+          "type": "MMC_HandleTypeDef *",
+          "descEn": "pointer to a MMC_HandleTypeDef structure that contains the configuration information for MMC module.",
+          "descZh": "eMMC 句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Abort the current transfer and disable the MMC (IT mode).",
+      "briefZh": "以中断方式中止传输，中止完成后回调 AbortCpltCallback。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_DMA_Abort_IT",
+        "HAL_MMC_GetCardState",
+        "HAL_MMC_AbortCallback"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "MMC_HandleTypeDef",
+        "HAL_MMC_CardStateTypeDef",
+        "__HAL_MMC_DISABLE_IT",
+        "__HAL_MMC_CLEAR_FLAG",
+        "HAL_OK",
+        "HAL_MMC_CARD_RECEIVING",
+        "HAL_MMC_CARD_SENDING",
+        "HAL_MMC_ERROR_NONE",
+        "HAL_ERROR"
+      ],
+      "headerLine": 660,
+      "definedIn": "stm32f1xx_hal_mmc.h",
+      "sourceLine": 2424,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_Init",
+      "name": "HAL_SD_Init",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec4",
+      "prototype": "HAL_StatusTypeDef HAL_SD_Init(SD_HandleTypeDef *hsd);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "Pointer to the SD handle",
+          "descZh": "SD 卡句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Initializes the SD according to the specified parameters in the SD_HandleTypeDef and create the associated handle.",
+      "briefZh": "初始化 SD 卡（时钟、卡识别、总线宽度）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_SD_TxCpltCallback",
+        "HAL_SD_RxCpltCallback",
+        "HAL_SD_ErrorCallback",
+        "HAL_SD_AbortCallback",
+        "HAL_SD_MspInit",
+        "HAL_SD_InitCard"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "SD_HandleTypeDef",
+        "HAL_ERROR",
+        "HAL_SD_STATE_RESET",
+        "HAL_UNLOCKED",
+        "TxCpltCallback",
+        "MspInitCallback",
+        "HAL_OK",
+        "HAL_SD_ERROR_NONE",
+        "SD_CONTEXT_NONE"
+      ],
+      "headerLine": 595,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 335,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_InitCard",
+      "name": "HAL_SD_InitCard",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec4",
+      "prototype": "HAL_StatusTypeDef HAL_SD_InitCard(SD_HandleTypeDef *hsd);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "Pointer to SD handle",
+          "descZh": "SD 卡句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Initializes the SD Card.",
+      "briefZh": "在 Init 之后完成卡的身份识别与初始化。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_Delay"
+      ],
+      "remarks": [
+        "This function initializes the SD card. It could be used when a card re-initialization is needed."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "SD_HandleTypeDef",
+        "SD_InitTypeDef",
+        "__HAL_SD_DISABLE",
+        "__HAL_SD_ENABLE",
+        "HAL_SD_ERROR_NONE",
+        "HAL_ERROR",
+        "BLOCKSIZE",
+        "__HAL_SD_CLEAR_FLAG",
+        "HAL_OK"
+      ],
+      "headerLine": 596,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 403,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_DeInit",
+      "name": "HAL_SD_DeInit",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec4",
+      "prototype": "HAL_StatusTypeDef HAL_SD_DeInit (SD_HandleTypeDef *hsd);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "Pointer to SD handle",
+          "descZh": "SD 卡句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "De-Initializes the SD card.",
+      "briefZh": "把 SD 卡的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_SD_MspDeInit"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "SD_HandleTypeDef",
+        "HAL_ERROR",
+        "HAL_SD_ERROR_NONE",
+        "HAL_SD_STATE_RESET",
+        "HAL_OK"
+      ],
+      "headerLine": 597,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 468,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_MspInit",
+      "name": "HAL_SD_MspInit",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec4",
+      "prototype": "void HAL_SD_MspInit(SD_HandleTypeDef *hsd);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "Pointer to SD handle",
+          "descZh": "SD 卡句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Initializes the SD MSP.",
+      "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "SD_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 598,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 509,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_MspDeInit",
+      "name": "HAL_SD_MspDeInit",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec4",
+      "prototype": "void HAL_SD_MspDeInit(SD_HandleTypeDef *hsd);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "Pointer to SD handle",
+          "descZh": "SD 卡句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "De-Initialize SD MSP.",
+      "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "SD_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 599,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 524,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_ReadBlocks",
+      "name": "HAL_SD_ReadBlocks",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_SD_ReadBlocks(SD_HandleTypeDef *hsd, uint8_t *pData, uint32_t BlockAdd, uint32_t NumberOfBlocks, uint32_t Timeout);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "Pointer to SD handle",
+          "descZh": "SD 卡句柄指针。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "pointer to the buffer that will contain the received data",
+          "descZh": "数据缓冲区指针，长度必须是块大小的整数倍。"
+        },
+        {
+          "name": "BlockAdd",
+          "type": "uint32_t",
+          "descEn": "Block Address from where data is to be read",
+          "descZh": "起始块号（不是字节偏移！块大小通常是 512 字节）。"
+        },
+        {
+          "name": "NumberOfBlocks",
+          "type": "uint32_t",
+          "descEn": "Number of SD blocks to read",
+          "descZh": "要读写的块数。"
+        },
+        {
+          "name": "Timeout",
+          "type": "uint32_t",
+          "descEn": "Specify timeout value",
+          "descZh": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Reads block(s) from a specified address in a card. The Data transfer is managed by polling mode.",
+      "briefZh": "按块读取数据（阻塞）。blockAddr 是块号不是字节偏移。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [
+        "This API should be followed by a check on the card state through HAL_SD_GetCardState()."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "SD_HandleTypeDef",
+        "HAL_SD_ERROR_PARAM",
+        "HAL_ERROR",
+        "HAL_SD_ERROR_NONE",
+        "HAL_SD_ERROR_ADDR_OUT_OF_RANGE",
+        "CARD_SDHC_SDXC",
+        "BLOCKSIZE",
+        "SD_CONTEXT_READ_MULTIPLE_BLOCK",
+        "SD_CONTEXT_READ_SINGLE_BLOCK",
+        "__HAL_SD_CLEAR_FLAG",
+        "SD_CONTEXT_NONE",
+        "__HAL_SD_GET_FLAG",
+        "HAL_SD_ERROR_TIMEOUT",
+        "HAL_TIMEOUT",
+        "CARD_SECURED",
+        "HAL_SD_ERROR_DATA_TIMEOUT",
+        "HAL_SD_ERROR_DATA_CRC_FAIL",
+        "HAL_SD_ERROR_RX_OVERRUN",
+        "HAL_OK",
+        "HAL_SD_ERROR_BUSY"
+      ],
+      "headerLine": 608,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 565,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_WriteBlocks",
+      "name": "HAL_SD_WriteBlocks",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_SD_WriteBlocks(SD_HandleTypeDef *hsd, uint8_t *pData, uint32_t BlockAdd, uint32_t NumberOfBlocks, uint32_t Timeout);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "Pointer to SD handle",
+          "descZh": "SD 卡句柄指针。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "pointer to the buffer that will contain the data to transmit",
+          "descZh": "数据缓冲区指针，长度必须是块大小的整数倍。"
+        },
+        {
+          "name": "BlockAdd",
+          "type": "uint32_t",
+          "descEn": "Block Address where data will be written",
+          "descZh": "起始块号（不是字节偏移！块大小通常是 512 字节）。"
+        },
+        {
+          "name": "NumberOfBlocks",
+          "type": "uint32_t",
+          "descEn": "Number of SD blocks to write",
+          "descZh": "要读写的块数。"
+        },
+        {
+          "name": "Timeout",
+          "type": "uint32_t",
+          "descEn": "Specify timeout value",
+          "descZh": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Allows to write block(s) to a specified address in a card. The Data transfer is managed by polling mode.",
+      "briefZh": "按块写入数据（阻塞）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_GetTick"
+      ],
+      "remarks": [
+        "This API should be followed by a check on the card state through HAL_SD_GetCardState()."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "SD_HandleTypeDef",
+        "HAL_SD_ERROR_PARAM",
+        "HAL_ERROR",
+        "HAL_SD_ERROR_NONE",
+        "HAL_SD_ERROR_ADDR_OUT_OF_RANGE",
+        "CARD_SDHC_SDXC",
+        "BLOCKSIZE",
+        "SD_CONTEXT_WRITE_MULTIPLE_BLOCK",
+        "SD_CONTEXT_WRITE_SINGLE_BLOCK",
+        "__HAL_SD_CLEAR_FLAG",
+        "SD_CONTEXT_NONE",
+        "__HAL_SD_GET_FLAG",
+        "HAL_TIMEOUT",
+        "CARD_SECURED",
+        "HAL_SD_ERROR_DATA_TIMEOUT",
+        "HAL_SD_ERROR_DATA_CRC_FAIL",
+        "HAL_SD_ERROR_TX_UNDERRUN",
+        "HAL_OK",
+        "HAL_SD_ERROR_BUSY"
+      ],
+      "headerLine": 609,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 776,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_ReadBlocks_IT",
+      "name": "HAL_SD_ReadBlocks_IT",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_SD_ReadBlocks_IT(SD_HandleTypeDef *hsd, uint8_t *pData, uint32_t BlockAdd, uint32_t NumberOfBlocks);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "Pointer to SD handle",
+          "descZh": "SD 卡句柄指针。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to the buffer that will contain the received data",
+          "descZh": "数据缓冲区指针，长度必须是块大小的整数倍。"
+        },
+        {
+          "name": "BlockAdd",
+          "type": "uint32_t",
+          "descEn": "Block Address from where data is to be read",
+          "descZh": "起始块号（不是字节偏移！块大小通常是 512 字节）。"
+        },
+        {
+          "name": "NumberOfBlocks",
+          "type": "uint32_t",
+          "descEn": "Number of blocks to read.",
+          "descZh": "要读写的块数。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Reads block(s) from a specified address in a card. The Data transfer is managed in interrupt mode.",
+      "briefZh": "以中断方式按块读取。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "This API should be followed by a check on the card state through HAL_SD_GetCardState().",
+        "You could also check the IT transfer process through the SD Rx interrupt event."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "SD_HandleTypeDef",
+        "HAL_SD_ERROR_PARAM",
+        "HAL_ERROR",
+        "HAL_SD_ERROR_NONE",
+        "HAL_SD_ERROR_ADDR_OUT_OF_RANGE",
+        "BLOCKSIZE",
+        "__HAL_SD_ENABLE_IT",
+        "CARD_SDHC_SDXC",
+        "SD_CONTEXT_READ_MULTIPLE_BLOCK",
+        "SD_CONTEXT_IT",
+        "SD_CONTEXT_READ_SINGLE_BLOCK",
+        "__HAL_SD_CLEAR_FLAG",
+        "SD_CONTEXT_NONE",
+        "HAL_OK",
+        "HAL_BUSY"
+      ],
+      "headerLine": 612,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 960,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_WriteBlocks_IT",
+      "name": "HAL_SD_WriteBlocks_IT",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_SD_WriteBlocks_IT(SD_HandleTypeDef *hsd, uint8_t *pData, uint32_t BlockAdd, uint32_t NumberOfBlocks);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "Pointer to SD handle",
+          "descZh": "SD 卡句柄指针。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to the buffer that will contain the data to transmit",
+          "descZh": "数据缓冲区指针，长度必须是块大小的整数倍。"
+        },
+        {
+          "name": "BlockAdd",
+          "type": "uint32_t",
+          "descEn": "Block Address where data will be written",
+          "descZh": "起始块号（不是字节偏移！块大小通常是 512 字节）。"
+        },
+        {
+          "name": "NumberOfBlocks",
+          "type": "uint32_t",
+          "descEn": "Number of blocks to write",
+          "descZh": "要读写的块数。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Writes block(s) to a specified address in a card. The Data transfer is managed in interrupt mode.",
+      "briefZh": "以中断方式按块写入。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "This API should be followed by a check on the card state through HAL_SD_GetCardState().",
+        "You could also check the IT transfer process through the SD Tx interrupt event."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "SD_HandleTypeDef",
+        "HAL_SD_ERROR_PARAM",
+        "HAL_ERROR",
+        "HAL_SD_ERROR_NONE",
+        "HAL_SD_ERROR_ADDR_OUT_OF_RANGE",
+        "BLOCKSIZE",
+        "__HAL_SD_ENABLE_IT",
+        "CARD_SDHC_SDXC",
+        "SD_CONTEXT_WRITE_MULTIPLE_BLOCK",
+        "SD_CONTEXT_IT",
+        "SD_CONTEXT_WRITE_SINGLE_BLOCK",
+        "__HAL_SD_CLEAR_FLAG",
+        "SD_CONTEXT_NONE",
+        "HAL_OK",
+        "HAL_BUSY"
+      ],
+      "headerLine": 613,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 1052,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_ReadBlocks_DMA",
+      "name": "HAL_SD_ReadBlocks_DMA",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_SD_ReadBlocks_DMA(SD_HandleTypeDef *hsd, uint8_t *pData, uint32_t BlockAdd, uint32_t NumberOfBlocks);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "Pointer SD handle",
+          "descZh": "SD 卡句柄指针。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to the buffer that will contain the received data",
+          "descZh": "数据缓冲区指针，长度必须是块大小的整数倍。"
+        },
+        {
+          "name": "BlockAdd",
+          "type": "uint32_t",
+          "descEn": "Block Address from where data is to be read",
+          "descZh": "起始块号（不是字节偏移！块大小通常是 512 字节）。"
+        },
+        {
+          "name": "NumberOfBlocks",
+          "type": "uint32_t",
+          "descEn": "Number of blocks to read.",
+          "descZh": "要读写的块数。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Reads block(s) from a specified address in a card. The Data transfer is managed by DMA mode.",
+      "briefZh": "以 DMA 方式按块读取。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "Instance_CCR"
+      ],
+      "relatedFunctions": [
+        "HAL_DMA_Start_IT"
+      ],
+      "remarks": [
+        "This API should be followed by a check on the card state through HAL_SD_GetCardState().",
+        "You could also check the DMA transfer process through the SD Rx interrupt event."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "SD_HandleTypeDef",
+        "HAL_SD_ERROR_PARAM",
+        "HAL_ERROR",
+        "HAL_SD_ERROR_NONE",
+        "HAL_SD_ERROR_ADDR_OUT_OF_RANGE",
+        "__HAL_SD_ENABLE_IT",
+        "XferCpltCallback",
+        "DMA_PERIPH_TO_MEMORY",
+        "BLOCKSIZE",
+        "HAL_OK",
+        "__HAL_SD_DISABLE_IT",
+        "__HAL_SD_CLEAR_FLAG",
+        "HAL_SD_ERROR_DMA",
+        "__HAL_SD_DMA_ENABLE",
+        "CARD_SDHC_SDXC",
+        "SD_CONTEXT_READ_MULTIPLE_BLOCK",
+        "SD_CONTEXT_DMA",
+        "SD_CONTEXT_READ_SINGLE_BLOCK",
+        "SD_CONTEXT_NONE",
+        "HAL_BUSY"
+      ],
+      "headerLine": 615,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 1145,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_WriteBlocks_DMA",
+      "name": "HAL_SD_WriteBlocks_DMA",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_SD_WriteBlocks_DMA(SD_HandleTypeDef *hsd, uint8_t *pData, uint32_t BlockAdd, uint32_t NumberOfBlocks);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "Pointer to SD handle",
+          "descZh": "SD 卡句柄指针。"
+        },
+        {
+          "name": "pData",
+          "type": "uint8_t *",
+          "descEn": "Pointer to the buffer that will contain the data to transmit",
+          "descZh": "数据缓冲区指针，长度必须是块大小的整数倍。"
+        },
+        {
+          "name": "BlockAdd",
+          "type": "uint32_t",
+          "descEn": "Block Address where data will be written",
+          "descZh": "起始块号（不是字节偏移！块大小通常是 512 字节）。"
+        },
+        {
+          "name": "NumberOfBlocks",
+          "type": "uint32_t",
+          "descEn": "Number of blocks to write",
+          "descZh": "要读写的块数。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Writes block(s) to a specified address in a card. The Data transfer is managed by DMA mode.",
+      "briefZh": "以 DMA 方式按块写入。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "Instance_CCR"
+      ],
+      "relatedFunctions": [
+        "HAL_DMA_Start_IT"
+      ],
+      "remarks": [
+        "This API should be followed by a check on the card state through HAL_SD_GetCardState().",
+        "You could also check the DMA transfer process through the SD Tx interrupt event."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "SD_HandleTypeDef",
+        "HAL_SD_ERROR_PARAM",
+        "HAL_ERROR",
+        "HAL_SD_ERROR_NONE",
+        "HAL_SD_ERROR_ADDR_OUT_OF_RANGE",
+        "__HAL_SD_ENABLE_IT",
+        "XferCpltCallback",
+        "CARD_SDHC_SDXC",
+        "SD_CONTEXT_WRITE_MULTIPLE_BLOCK",
+        "SD_CONTEXT_DMA",
+        "SD_CONTEXT_WRITE_SINGLE_BLOCK",
+        "__HAL_SD_CLEAR_FLAG",
+        "SD_CONTEXT_NONE",
+        "__HAL_SD_DMA_ENABLE",
+        "DMA_MEMORY_TO_PERIPH",
+        "BLOCKSIZE",
+        "HAL_OK",
+        "__HAL_SD_DISABLE_IT",
+        "HAL_SD_ERROR_DMA",
+        "HAL_BUSY"
+      ],
+      "headerLine": 616,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 1262,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_Erase",
+      "name": "HAL_SD_Erase",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_SD_Erase(SD_HandleTypeDef *hsd, uint32_t BlockStartAdd, uint32_t BlockEndAdd);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "Pointer to SD handle",
+          "descZh": "SD 卡句柄指针。"
+        },
+        {
+          "name": "BlockStartAdd",
+          "type": "uint32_t",
+          "descEn": "Start Block address",
+          "descZh": "起始块号（擦除操作）。"
+        },
+        {
+          "name": "BlockEndAdd",
+          "type": "uint32_t",
+          "descEn": "End Block address",
+          "descZh": "结束块号（含），擦除从 BlockStartAdd 到 BlockEndAdd 的所有块。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Erases the specified memory area of the given SD card.",
+      "briefZh": "擦除指定页/扇区。擦除的最小单位是整页，会丢掉该页原有数据。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [
+        "This API should be followed by a check on the card state through HAL_SD_GetCardState()."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "SD_HandleTypeDef",
+        "HAL_SD_ERROR_NONE",
+        "HAL_SD_ERROR_PARAM",
+        "HAL_ERROR",
+        "HAL_SD_ERROR_ADDR_OUT_OF_RANGE",
+        "__HAL_SD_CLEAR_FLAG",
+        "HAL_SD_ERROR_REQUEST_NOT_APPLICABLE",
+        "HAL_SD_ERROR_LOCK_UNLOCK_FAILED",
+        "CARD_SDHC_SDXC",
+        "CARD_SECURED",
+        "HAL_OK",
+        "HAL_BUSY"
+      ],
+      "headerLine": 610,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 1377,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_IRQHandler",
+      "name": "HAL_SD_IRQHandler",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "void HAL_SD_IRQHandler(SD_HandleTypeDef *hsd);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "Pointer to SD handle",
+          "descZh": "SD 卡句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "This function handles SD card interrupt request.",
+      "briefZh": "SD 卡的中断统一入口。在 stm32f1xx_it.c 的对应 IRQHandler 里调用，内部会清标志并分派到各回调。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_SD_ErrorCallback",
+        "HAL_SD_RxCpltCallback",
+        "HAL_SD_TxCpltCallback",
+        "HAL_DMA_Abort_IT",
+        "HAL_SD_AbortCallback"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "SD_HandleTypeDef",
+        "__HAL_SD_GET_FLAG",
+        "SD_CONTEXT_IT",
+        "__HAL_SD_CLEAR_FLAG",
+        "__HAL_SD_DISABLE_IT",
+        "SD_CONTEXT_READ_MULTIPLE_BLOCK",
+        "SD_CONTEXT_WRITE_MULTIPLE_BLOCK",
+        "HAL_SD_ERROR_NONE",
+        "SD_CONTEXT_NONE",
+        "SD_CONTEXT_READ_SINGLE_BLOCK",
+        "TxCpltCallback",
+        "SD_CONTEXT_DMA",
+        "HAL_SD_ERROR_DATA_CRC_FAIL",
+        "HAL_SD_ERROR_DATA_TIMEOUT",
+        "HAL_SD_ERROR_RX_OVERRUN",
+        "HAL_SD_ERROR_TX_UNDERRUN",
+        "SD_CONTEXT_WRITE_SINGLE_BLOCK",
+        "HAL_OK"
+      ],
+      "headerLine": 618,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 1479,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_GetState",
+      "name": "HAL_SD_GetState",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "HAL_SD_StateTypeDef HAL_SD_GetState(SD_HandleTypeDef *hsd);",
+      "returnType": "HAL_SD_StateTypeDef",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "Pointer to sd handle",
+          "descZh": "SD 卡句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL state",
+      "returnDescZh": "",
+      "briefEn": "return the SD state",
+      "briefZh": "读取 SD 卡的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_SD_StateTypeDef",
+        "SD_HandleTypeDef"
+      ],
+      "headerLine": 660,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 1670,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_GetError",
+      "name": "HAL_SD_GetError",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "uint32_t HAL_SD_GetError(SD_HandleTypeDef *hsd);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "Pointer to a SD_HandleTypeDef structure that contains the configuration information.",
+          "descZh": "SD 卡句柄指针。"
+        }
+      ],
+      "returnDescEn": "SD Error Code",
+      "returnDescZh": "",
+      "briefEn": "Return the SD error code",
+      "briefZh": "读取 SD 卡累计的错误码位掩码。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "SD_HandleTypeDef"
+      ],
+      "headerLine": 661,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 1681,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_TxCpltCallback",
+      "name": "HAL_SD_TxCpltCallback",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "void HAL_SD_TxCpltCallback(SD_HandleTypeDef *hsd);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "Pointer to SD handle",
+          "descZh": "SD 卡句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Tx Transfer completed callbacks",
+      "briefZh": "发送完成回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "SD_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 621,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 1691,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_RxCpltCallback",
+      "name": "HAL_SD_RxCpltCallback",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "void HAL_SD_RxCpltCallback(SD_HandleTypeDef *hsd);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "Pointer SD handle",
+          "descZh": "SD 卡句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Rx Transfer completed callbacks",
+      "briefZh": "接收完成回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "SD_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 622,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 1706,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_ErrorCallback",
+      "name": "HAL_SD_ErrorCallback",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "void HAL_SD_ErrorCallback(SD_HandleTypeDef *hsd);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "Pointer SD handle",
+          "descZh": "SD 卡句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "SD error callbacks",
+      "briefZh": "错误回调（__weak 空实现，需自己重写）。溢出、噪声、帧错误等异常会走到这里。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "SD_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 623,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 1721,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_AbortCallback",
+      "name": "HAL_SD_AbortCallback",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "void HAL_SD_AbortCallback(SD_HandleTypeDef *hsd);",
+      "returnType": "__weak void",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "Pointer SD handle",
+          "descZh": "SD 卡句柄指针。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "SD Abort callbacks",
+      "briefZh": "中止完成回调（__weak 空实现，需自己重写）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "__weak",
+        "SD_HandleTypeDef",
+        "UNUSED"
+      ],
+      "headerLine": 624,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 1736,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_RegisterCallback",
+      "name": "HAL_SD_RegisterCallback",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_SD_RegisterCallback  (SD_HandleTypeDef *hsd, HAL_SD_CallbackIDTypeDef CallbackId, pSD_CallbackTypeDef pCallback);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "SD handle",
+          "descZh": "SD 卡句柄指针。"
+        },
+        {
+          "name": "CallbackID",
+          "type": "HAL_SD_CallbackIDTypeDef",
+          "descEn": "ID of the callback to be registered This parameter can be one of the following values:",
+          "descZh": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。"
+        },
+        {
+          "name": "pCallback",
+          "type": "pSD_CallbackTypeDef",
+          "descEn": "pointer to the Callback function",
+          "descZh": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+        }
+      ],
+      "returnDescEn": "status",
+      "returnDescZh": "",
+      "briefEn": "Register a User SD Callback To be used instead of the weak (surcharged) predefined callback",
+      "briefZh": "为 SD 卡注册指定事件的回调，替代默认的 __weak 空实现。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "SD_HandleTypeDef",
+        "HAL_SD_CallbackIDTypeDef",
+        "pSD_CallbackTypeDef",
+        "HAL_OK",
+        "HAL_SD_ERROR_INVALID_CALLBACK",
+        "HAL_ERROR",
+        "__HAL_LOCK",
+        "HAL_SD_TX_CPLT_CB_ID",
+        "TxCpltCallback",
+        "MspInitCallback",
+        "HAL_SD_STATE_RESET",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 628,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 1762,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_UnRegisterCallback",
+      "name": "HAL_SD_UnRegisterCallback",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec2",
+      "prototype": "HAL_StatusTypeDef HAL_SD_UnRegisterCallback(SD_HandleTypeDef *hsd, HAL_SD_CallbackIDTypeDef CallbackId);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "SD handle",
+          "descZh": "SD 卡句柄指针。"
+        },
+        {
+          "name": "CallbackID",
+          "type": "HAL_SD_CallbackIDTypeDef",
+          "descEn": "ID of the callback to be unregistered This parameter can be one of the following values:",
+          "descZh": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。"
+        }
+      ],
+      "returnDescEn": "status",
+      "returnDescZh": "",
+      "briefEn": "Unregister a User SD Callback SD Callback is redirected to the weak (surcharged) predefined callback",
+      "briefZh": "注销 SD 卡已注册的回调，恢复成默认的 __weak 空实现。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_SD_TxCpltCallback",
+        "HAL_SD_RxCpltCallback",
+        "HAL_SD_ErrorCallback",
+        "HAL_SD_AbortCallback",
+        "HAL_SD_MspInit",
+        "HAL_SD_MspDeInit"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "SD_HandleTypeDef",
+        "HAL_SD_CallbackIDTypeDef",
+        "HAL_OK",
+        "__HAL_LOCK",
+        "HAL_SD_TX_CPLT_CB_ID",
+        "TxCpltCallback",
+        "MspInitCallback",
+        "HAL_SD_ERROR_INVALID_CALLBACK",
+        "HAL_ERROR",
+        "HAL_SD_STATE_RESET",
+        "__HAL_UNLOCK"
+      ],
+      "headerLine": 629,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 1851,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_GetCardCID",
+      "name": "HAL_SD_GetCardCID",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec3",
+      "prototype": "HAL_StatusTypeDef       HAL_SD_GetCardCID(SD_HandleTypeDef *hsd, HAL_SD_CardCIDTypeDef *pCID);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "Pointer to SD handle",
+          "descZh": "SD 卡句柄指针。"
+        },
+        {
+          "name": "pCID",
+          "type": "HAL_SD_CardCIDTypeDef *",
+          "descEn": "Pointer to a HAL_SD_CardCIDTypeDef structure that contains all CID register parameters",
+          "descZh": "输出参数，接收卡的 CID 信息（制造商、序列号等）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Returns information the information of the card which are stored on the CID register.",
+      "briefZh": "读取卡的 CID 寄存器（制造商、序列号等信息）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "SD_HandleTypeDef",
+        "HAL_SD_CardCIDTypeDef",
+        "HAL_OK"
+      ],
+      "headerLine": 649,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 1947,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_GetCardCSD",
+      "name": "HAL_SD_GetCardCSD",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec3",
+      "prototype": "HAL_StatusTypeDef       HAL_SD_GetCardCSD(SD_HandleTypeDef *hsd, HAL_SD_CardCSDTypeDef *pCSD);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "Pointer to SD handle",
+          "descZh": "SD 卡句柄指针。"
+        },
+        {
+          "name": "pCSD",
+          "type": "HAL_SD_CardCSDTypeDef *",
+          "descEn": "Pointer to a HAL_SD_CardCSDTypeDef structure that contains all CSD register parameters",
+          "descZh": "输出参数，接收卡的 CSD 信息（容量、块大小、速度）。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Returns information the information of the card which are stored on the CSD register.",
+      "briefZh": "读取卡的 CSD 寄存器（容量、块大小、速度等信息）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "SD_HandleTypeDef",
+        "HAL_SD_CardCSDTypeDef",
+        "CARD_SDSC",
+        "CARD_SDHC_SDXC",
+        "__HAL_SD_CLEAR_FLAG",
+        "HAL_SD_ERROR_UNSUPPORTED_FEATURE",
+        "HAL_ERROR",
+        "HAL_OK"
+      ],
+      "headerLine": 650,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 1980,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_GetCardStatus",
+      "name": "HAL_SD_GetCardStatus",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec3",
+      "prototype": "HAL_StatusTypeDef       HAL_SD_GetCardStatus(SD_HandleTypeDef *hsd, HAL_SD_CardStatusTypeDef *pStatus);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "Pointer to SD handle",
+          "descZh": "SD 卡句柄指针。"
+        },
+        {
+          "name": "pStatus",
+          "type": "HAL_SD_CardStatusTypeDef *",
+          "descEn": "Pointer to the HAL_SD_CardStatusTypeDef structure that will contain the SD card status information",
+          "descZh": "输出参数，接收状态信息。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Gets the SD status info.",
+      "briefZh": "读取 SD 卡的当前状态寄存器。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "SD_HandleTypeDef",
+        "HAL_SD_CardStatusTypeDef",
+        "HAL_OK",
+        "HAL_SD_ERROR_NONE",
+        "__HAL_SD_CLEAR_FLAG",
+        "HAL_ERROR",
+        "BLOCKSIZE"
+      ],
+      "headerLine": 651,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 2094,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_GetCardInfo",
+      "name": "HAL_SD_GetCardInfo",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec3",
+      "prototype": "HAL_StatusTypeDef       HAL_SD_GetCardInfo(SD_HandleTypeDef *hsd, HAL_SD_CardInfoTypeDef *pCardInfo);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "Pointer to SD handle",
+          "descZh": "SD 卡句柄指针。"
+        },
+        {
+          "name": "pCardInfo",
+          "type": "HAL_SD_CardInfoTypeDef *",
+          "descEn": "Pointer to the HAL_SD_CardInfoTypeDef structure that will contain the SD card status information",
+          "descZh": "输出参数，接收卡的容量与块大小等汇总信息。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Gets the SD card info.",
+      "briefZh": "把卡的容量、块大小等信息读入结构体。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "SD_HandleTypeDef",
+        "HAL_SD_CardInfoTypeDef",
+        "HAL_OK"
+      ],
+      "headerLine": 652,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 2154,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_ConfigWideBusOperation",
+      "name": "HAL_SD_ConfigWideBusOperation",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_SD_ConfigWideBusOperation(SD_HandleTypeDef *hsd, uint32_t WideMode);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "Pointer to SD handle",
+          "descZh": "SD 卡句柄指针。"
+        },
+        {
+          "name": "WideMode",
+          "type": "uint32_t",
+          "descEn": "Specifies the SD card wide bus mode This parameter can be one of the following values:",
+          "descZh": "总线宽度：SDIO_BUS_WIDE_1B / 4B / 8B。4 位模式速度更高但需要板上四根数据线都接通。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Enables wide bus operation for the requested card if supported by card.",
+      "briefZh": "配置数据总线宽度（1 位 / 4 位 / 8 位）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "SD_HandleTypeDef",
+        "HAL_OK",
+        "CARD_SECURED",
+        "HAL_SD_ERROR_UNSUPPORTED_FEATURE",
+        "HAL_SD_ERROR_PARAM",
+        "HAL_SD_ERROR_NONE",
+        "__HAL_SD_CLEAR_FLAG",
+        "HAL_ERROR",
+        "BLOCKSIZE"
+      ],
+      "headerLine": 639,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 2179,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_GetCardState",
+      "name": "HAL_SD_GetCardState",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec3",
+      "prototype": "HAL_SD_CardStateTypeDef HAL_SD_GetCardState(SD_HandleTypeDef *hsd);",
+      "returnType": "HAL_SD_CardStateTypeDef",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "pointer to SD handle",
+          "descZh": "SD 卡句柄指针。"
+        }
+      ],
+      "returnDescEn": "Card state",
+      "returnDescZh": "",
+      "briefEn": "Gets the current sd card data state.",
+      "briefZh": "读取卡当前的状态（idle / ready / transfer 等）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_SD_CardStateTypeDef",
+        "SD_HandleTypeDef",
+        "HAL_SD_ERROR_NONE"
+      ],
+      "headerLine": 648,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 2261,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_Abort",
+      "name": "HAL_SD_Abort",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_SD_Abort(SD_HandleTypeDef *hsd);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "pointer to a SD_HandleTypeDef structure that contains the configuration information for SD module.",
+          "descZh": "SD 卡句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Abort the current transfer and disable the SD.",
+      "briefZh": "中止正在进行的传输（阻塞式，等外设真正停下才返回）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_DMA_Abort",
+        "HAL_SD_GetCardState"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "SD_HandleTypeDef",
+        "HAL_SD_CardStateTypeDef",
+        "__HAL_SD_DISABLE_IT",
+        "__HAL_SD_CLEAR_FLAG",
+        "SD_CONTEXT_DMA",
+        "SD_CONTEXT_WRITE_SINGLE_BLOCK",
+        "SD_CONTEXT_WRITE_MULTIPLE_BLOCK",
+        "HAL_OK",
+        "HAL_SD_ERROR_DMA",
+        "SD_CONTEXT_READ_SINGLE_BLOCK",
+        "SD_CONTEXT_READ_MULTIPLE_BLOCK",
+        "SD_CONTEXT_NONE",
+        "HAL_SD_CARD_RECEIVING",
+        "HAL_SD_CARD_SENDING",
+        "HAL_SD_ERROR_NONE",
+        "HAL_ERROR"
+      ],
+      "headerLine": 669,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 2284,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "HAL_SD_Abort_IT",
+      "name": "HAL_SD_Abort_IT",
+      "peripheral": "SDIO",
+      "library": "hal",
+      "sectionId": "SDIO@hal#sec3",
+      "prototype": "HAL_StatusTypeDef HAL_SD_Abort_IT(SD_HandleTypeDef *hsd);",
+      "returnType": "HAL_StatusTypeDef",
+      "params": [
+        {
+          "name": "hsd",
+          "type": "SD_HandleTypeDef *",
+          "descEn": "pointer to a SD_HandleTypeDef structure that contains the configuration information for SD module.",
+          "descZh": "SD 卡句柄指针。"
+        }
+      ],
+      "returnDescEn": "HAL status",
+      "returnDescZh": "",
+      "briefEn": "Abort the current transfer and disable the SD (IT mode).",
+      "briefZh": "以中断方式中止传输，中止完成后回调 AbortCpltCallback。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [],
+      "relatedFunctions": [
+        "HAL_DMA_Abort_IT",
+        "HAL_SD_GetCardState",
+        "HAL_SD_AbortCallback"
+      ],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "HAL_StatusTypeDef",
+        "SD_HandleTypeDef",
+        "HAL_SD_CardStateTypeDef",
+        "__HAL_SD_DISABLE_IT",
+        "SD_CONTEXT_DMA",
+        "SD_CONTEXT_WRITE_SINGLE_BLOCK",
+        "SD_CONTEXT_WRITE_MULTIPLE_BLOCK",
+        "HAL_OK",
+        "SD_CONTEXT_READ_SINGLE_BLOCK",
+        "SD_CONTEXT_READ_MULTIPLE_BLOCK",
+        "__HAL_SD_CLEAR_FLAG",
+        "SD_CONTEXT_NONE",
+        "HAL_SD_CARD_RECEIVING",
+        "HAL_SD_CARD_SENDING",
+        "HAL_SD_ERROR_NONE",
+        "HAL_ERROR"
+      ],
+      "headerLine": 670,
+      "definedIn": "stm32f1xx_hal_sd.h",
+      "sourceLine": 2348,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

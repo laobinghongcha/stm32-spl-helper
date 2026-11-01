@@ -1,0 +1,289 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "DBGMCU",
+  "library": "reg",
+  "functions": [
+    {
+      "id": "REG_DBGMCU_CR",
+      "name": "DBGMCU_CR",
+      "peripheral": "DBGMCU",
+      "library": "reg",
+      "sectionId": "DBGMCU@reg#sec1",
+      "prototype": "DBGMCU->CR",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DBGMCU_CR_DBG_SLEEP",
+          "type": "bit 0（整个位域）",
+          "descEn": "Debug Sleep Mode",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_CR_DBG_STOP",
+          "type": "bit 1（整个位域）",
+          "descEn": "Debug Stop Mode",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_CR_DBG_STANDBY",
+          "type": "bit 2（整个位域）",
+          "descEn": "Debug Standby mode",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_CR_TRACE_IOEN",
+          "type": "bit 5（整个位域）",
+          "descEn": "Trace Pin Assignment Control",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_CR_TRACE_MODE",
+          "type": "bits[7:6]（整个位域）",
+          "descEn": "TRACE_MODE[1:0] bits (Trace Pin Assignment Control)",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_CR_DBG_IWDG_STOP",
+          "type": "bit 8（整个位域）",
+          "descEn": "Debug Independent Watchdog stopped when Core is halted",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_CR_DBG_WWDG_STOP",
+          "type": "bit 9（整个位域）",
+          "descEn": "Debug Window Watchdog stopped when Core is halted",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_CR_DBG_TIM1_STOP",
+          "type": "bit 10（整个位域）",
+          "descEn": "TIM1 counter stopped when core is halted",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_CR_DBG_TIM2_STOP",
+          "type": "bit 11（整个位域）",
+          "descEn": "TIM2 counter stopped when core is halted",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_CR_DBG_TIM3_STOP",
+          "type": "bit 12（整个位域）",
+          "descEn": "TIM3 counter stopped when core is halted",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_CR_DBG_TIM4_STOP",
+          "type": "bit 13（整个位域）",
+          "descEn": "TIM4 counter stopped when core is halted",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_CR_DBG_CAN1_STOP",
+          "type": "bit 14（整个位域）",
+          "descEn": "Debug CAN1 stopped when Core is halted",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_CR_DBG_I2C1_SMBUS_TIMEOUT",
+          "type": "bit 15（整个位域）",
+          "descEn": "SMBUS timeout mode stopped when Core is halted",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_CR_DBG_I2C2_SMBUS_TIMEOUT",
+          "type": "bit 16（整个位域）",
+          "descEn": "SMBUS timeout mode stopped when Core is halted",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_CR_TRACE_MODE_0",
+          "type": "bit 6",
+          "descEn": "0x00000040",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_CR_TRACE_MODE_1",
+          "type": "bit 7",
+          "descEn": "0x00000080",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Debug Sleep Mode",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DBGMCU_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DBGMCU_TypeDef.CR，偏移 0x04"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DBGMCU->CR;  /* 读回当前值 */\nv &= ~DBGMCU_CR_DBG_SLEEP_Msk;  /* 先清掉 DBGMCU_CR_DBG_SLEEP：bit 0（整个位域） */\nv |= (1u << DBGMCU_CR_DBG_SLEEP_Pos) & DBGMCU_CR_DBG_SLEEP_Msk;  /* 置位，实际取值看参考手册 */\nDBGMCU->CR = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9632,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    },
+    {
+      "id": "REG_DBGMCU_IDCODE",
+      "name": "DBGMCU_IDCODE",
+      "peripheral": "DBGMCU",
+      "library": "reg",
+      "sectionId": "DBGMCU@reg#sec1",
+      "prototype": "DBGMCU->IDCODE",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "DBGMCU_IDCODE_DEV_ID",
+          "type": "bits[11:0]（整个位域）",
+          "descEn": "Device Identifier",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_IDCODE_REV_ID",
+          "type": "bits[31:16]（整个位域）",
+          "descEn": "REV_ID[15:0] bits (Revision Identifier)",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_IDCODE_REV_ID_0",
+          "type": "bit 16",
+          "descEn": "0x00010000",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_IDCODE_REV_ID_1",
+          "type": "bit 17",
+          "descEn": "0x00020000",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_IDCODE_REV_ID_2",
+          "type": "bit 18",
+          "descEn": "0x00040000",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_IDCODE_REV_ID_3",
+          "type": "bit 19",
+          "descEn": "0x00080000",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_IDCODE_REV_ID_4",
+          "type": "bit 20",
+          "descEn": "0x00100000",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_IDCODE_REV_ID_5",
+          "type": "bit 21",
+          "descEn": "0x00200000",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_IDCODE_REV_ID_6",
+          "type": "bit 22",
+          "descEn": "0x00400000",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_IDCODE_REV_ID_7",
+          "type": "bit 23",
+          "descEn": "0x00800000",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_IDCODE_REV_ID_8",
+          "type": "bit 24",
+          "descEn": "0x01000000",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_IDCODE_REV_ID_9",
+          "type": "bit 25",
+          "descEn": "0x02000000",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_IDCODE_REV_ID_10",
+          "type": "bit 26",
+          "descEn": "0x04000000",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_IDCODE_REV_ID_11",
+          "type": "bit 27",
+          "descEn": "0x08000000",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_IDCODE_REV_ID_12",
+          "type": "bit 28",
+          "descEn": "0x10000000",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_IDCODE_REV_ID_13",
+          "type": "bit 29",
+          "descEn": "0x20000000",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_IDCODE_REV_ID_14",
+          "type": "bit 30",
+          "descEn": "0x40000000",
+          "descZh": ""
+        },
+        {
+          "name": "DBGMCU_IDCODE_REV_ID_15",
+          "type": "bit 31",
+          "descEn": "0x80000000",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "Register value",
+      "returnDescZh": "",
+      "briefEn": "Device Identifier",
+      "briefZh": "",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "DBGMCU_IDCODE"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "结构体成员 DBGMCU_TypeDef.IDCODE，偏移 0x00"
+      ],
+      "notesZh": [],
+      "exampleCode": "uint32_t v = DBGMCU->IDCODE;  /* 读回当前值 */\nv &= ~DBGMCU_IDCODE_DEV_ID_Msk;  /* 先清掉 DBGMCU_IDCODE_DEV_ID：bits[11:0]（整个位域） */\nv |= (1u << DBGMCU_IDCODE_DEV_ID_Pos) & DBGMCU_IDCODE_DEV_ID_Msk;  /* 置位，实际取值看参考手册 */\nDBGMCU->IDCODE = v;  /* 写回 */",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 9607,
+      "definedIn": "stm32f103xb.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": false,
+        "macroLike": true
+      },
+      "ai": null,
+      "zhSource": "base"
+    }
+  ]
+}

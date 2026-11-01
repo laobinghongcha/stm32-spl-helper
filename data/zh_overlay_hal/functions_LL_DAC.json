@@ -1,0 +1,266 @@
+{
+  "LL_DAC_ClearFlag_DMAUDR1": {
+    "briefZh": "清除 DAC 的通道 1 DMA 下溢标志位。",
+    "paramsZh": {
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_ClearFlag_DMAUDR2": {
+    "briefZh": "清除 DAC 的通道 2 DMA 下溢标志位。",
+    "paramsZh": {
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_ConvertData12LeftAligned": {
+    "briefZh": "按 12 位左对齐格式把数据写入 DAC 保持寄存器（高 12 位有效）。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。",
+      "Data": "要写入的数据值。"
+    }
+  },
+  "LL_DAC_ConvertData12RightAligned": {
+    "briefZh": "按 12 位右对齐格式把数据写入 DAC 保持寄存器（低 12 位有效）。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。",
+      "Data": "要写入的数据值。"
+    }
+  },
+  "LL_DAC_ConvertData8RightAligned": {
+    "briefZh": "按 8 位右对齐格式把数据写入 DAC 保持寄存器（低 8 位有效）。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。",
+      "Data": "要写入的数据值。"
+    }
+  },
+  "LL_DAC_ConvertDualData12LeftAligned": {
+    "briefZh": "按 12 位左对齐格式同时写入两个 DAC 通道。",
+    "paramsZh": {
+      "DACx": "DAC 实例指针，通常是 DAC1。",
+      "DataChannel1": "通道 1 的数据（双通道同步写入）。",
+      "DataChannel2": "通道 2 的数据。"
+    }
+  },
+  "LL_DAC_ConvertDualData12RightAligned": {
+    "briefZh": "按 12 位右对齐格式同时写入两个 DAC 通道（双通道模式用）。",
+    "paramsZh": {
+      "DACx": "DAC 实例指针，通常是 DAC1。",
+      "DataChannel1": "通道 1 的数据（双通道同步写入）。",
+      "DataChannel2": "通道 2 的数据。"
+    }
+  },
+  "LL_DAC_ConvertDualData8RightAligned": {
+    "briefZh": "按 8 位右对齐格式同时写入两个 DAC 通道。",
+    "paramsZh": {
+      "DACx": "DAC 实例指针，通常是 DAC1。",
+      "DataChannel1": "通道 1 的数据（双通道同步写入）。",
+      "DataChannel2": "通道 2 的数据。"
+    }
+  },
+  "LL_DAC_DMA_GetRegAddr": {
+    "briefZh": "返回 DAC 数据寄存器地址，供 DMA 搬运波形数据时作为目的地址。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。",
+      "Register": "寄存器编号（如备份寄存器、突发传输起始寄存器）。"
+    }
+  },
+  "LL_DAC_Disable": {
+    "briefZh": "失能 DAC。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_DisableDMAReq": {
+    "briefZh": "关闭该 DAC 通道的 DMA 传输请求。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_DisableIT_DMAUDR1": {
+    "briefZh": "失能 DAC 的通道 1 DMA 下溢中断。",
+    "paramsZh": {
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_DisableIT_DMAUDR2": {
+    "briefZh": "失能 DAC 的通道 2 DMA 下溢中断。",
+    "paramsZh": {
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_DisableTrigger": {
+    "briefZh": "关闭 DAC 通道的外部触发，改回软件写数据即输出。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_Enable": {
+    "briefZh": "使能 DAC。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_EnableDMAReq": {
+    "briefZh": "使能该 DAC 通道的 DMA 传输请求。做波形输出时必须打开。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_EnableIT_DMAUDR1": {
+    "briefZh": "使能 DAC 的通道 1 DMA 下溢中断。",
+    "paramsZh": {
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_EnableIT_DMAUDR2": {
+    "briefZh": "使能 DAC 的通道 2 DMA 下溢中断。",
+    "paramsZh": {
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_EnableTrigger": {
+    "briefZh": "使能 DAC 通道的外部触发，转换由触发信号启动。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_GetOutputBuffer": {
+    "briefZh": "读取 DAC 通道输出缓冲器的使能状态。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_GetTriggerSource": {
+    "briefZh": "读取 DAC 通道当前配置的触发源。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_GetWaveAutoGeneration": {
+    "briefZh": "读取 DAC 通道当前配置的波形自动生成模式。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_GetWaveNoiseLFSR": {
+    "briefZh": "读取噪声波形的 LFSR 参数。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_GetWaveTriangleAmplitude": {
+    "briefZh": "读取三角波形的幅度设置。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_IsActiveFlag_DMAUDR1": {
+    "briefZh": "查询 DAC 的通道 1 DMA 下溢标志位是否置位。",
+    "paramsZh": {
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_IsActiveFlag_DMAUDR2": {
+    "briefZh": "查询 DAC 的通道 2 DMA 下溢标志位是否置位。",
+    "paramsZh": {
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_IsDMAReqEnabled": {
+    "briefZh": "查询 DAC 的 DMA 请求是否已使能。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_IsEnabled": {
+    "briefZh": "查询 DAC 是否已使能。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_IsEnabledIT_DMAUDR1": {
+    "briefZh": "查询 DAC 的通道 1 DMA 下溢中断是否已使能。",
+    "paramsZh": {
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_IsEnabledIT_DMAUDR2": {
+    "briefZh": "查询 DAC 的通道 2 DMA 下溢中断是否已使能。",
+    "paramsZh": {
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_IsTriggerEnabled": {
+    "briefZh": "查询 DAC 通道的外部触发是否已使能。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_RetrieveOutputData": {
+    "briefZh": "读取 DAC 数据输出寄存器（DOR），即当前实际输出的数值。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_SetOutputBuffer": {
+    "briefZh": "设置 DAC 通道的输出缓冲器是否使能。缓冲器能提高驱动能力，但会限制输出范围（无法完全到 0V/VREF+）。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_SetTriggerSource": {
+    "briefZh": "设置 DAC 通道的触发源（定时器 TRGO / EXTI 等）。触发源决定何时把保持寄存器的值搬到输出。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。",
+      "TriggerSource": "触发源，取 LL_TIM_TS_* 系列（内部互联 ITR、TIx、ETR 等）。"
+    }
+  },
+  "LL_DAC_SetWaveAutoGeneration": {
+    "briefZh": "设置 DAC 通道的波形自动生成模式（三角波 / 噪声波）。生成波形后 DAC 数据由硬件自动推演，不需要软件写数据。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_SetWaveNoiseLFSR": {
+    "briefZh": "设置噪声波形的 LFSR 参数（噪声的「频率」由 LFSR 掩码与移位决定）。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_SetWaveTriangleAmplitude": {
+    "briefZh": "设置三角波形的幅度（决定三角波的最大值）。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  },
+  "LL_DAC_TrigSWConversion": {
+    "briefZh": "软件触发一次 DAC 转换（需先把触发源设为软件触发）。",
+    "paramsZh": {
+      "DAC_Channel": "DAC 通道：LL_DAC_CHANNEL_1 或 LL_DAC_CHANNEL_2。",
+      "DACx": "DAC 实例指针，通常是 DAC1。"
+    }
+  }
+}

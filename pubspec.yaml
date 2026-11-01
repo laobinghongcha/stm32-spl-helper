@@ -1,8 +1,8 @@
 name: stm32_spl_helper
-description: "STM32F103C8T6 标准外设库（SPL V3.5.0）离线查阅工具。完全离线，无任何网络请求。"
+description: "STM32F103C8T6 离线查阅工具：标准库（SPL V3.5.0）+ HAL 库（STM32CubeF1 V1.8.7）+ LL 库 + 寄存器直驱。完全离线，无任何网络请求。"
 publish_to: 'none'
 
-version: 1.0.3+5
+version: 2.0.3+9
 environment:
   sdk: ^3.13.5
 
@@ -60,7 +60,18 @@ flutter:
 
   # 静态数据。分层加载：manifest/peripherals/chips 首屏读，
   # functions/* 进外设页时按需读，registers.json 看寄存器时才读。
+  #
+  # 注意：Flutter 的 assets 目录声明**只包含该目录下的直接文件，不递归子目录**。
+  # v2.0.0 曾因为只写了 `assets/data/functions/`，导致
+  # functions/hal/、functions/ll/、functions/reg/ 三个子目录整个没进 APK——
+  # 装机后 HAL/LL/寄存器三个库全是 0 个函数（桌面/单元测试读的是文件系统，
+  # 绕过了资源打包，所以完全没发现）。v2.0.1 起每个子目录都必须单独列出，
+  # 并由 test/asset_bundle_test.dart 做「pubspec 声明 ↔ APK 实际内容」的回归校验。
   assets:
     - assets/data/
-    - assets/data/functions/
     - assets/data/chips/
+    - assets/data/functions/
+    # ---- v2 新增的三个库目录，必须逐个声明 ----
+    - assets/data/functions/hal/
+    - assets/data/functions/ll/
+    - assets/data/functions/reg/

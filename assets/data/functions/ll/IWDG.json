@@ -1,0 +1,502 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "IWDG",
+  "library": "ll",
+  "functions": [
+    {
+      "id": "LL_IWDG_Enable",
+      "name": "LL_IWDG_Enable",
+      "peripheral": "IWDG",
+      "library": "ll",
+      "sectionId": "IWDG@ll#sec1",
+      "prototype": "void LL_IWDG_Enable(IWDG_TypeDef * IWDGx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "IWDGx",
+          "type": "IWDG_TypeDef *",
+          "descEn": "IWDG Instance",
+          "descZh": "独立看门狗实例指针（F1 上固定是 IWDG）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Start the Independent Watchdog",
+      "briefZh": "使能独立看门狗（写 0xCCCC 到 KR）。调用后立即开始计数，必须按时喂狗。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "IWDGx_KR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Except if the hardware watchdog option is selected"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_IWDG_KEY_ENABLE"
+      ],
+      "headerLine": 140,
+      "definedIn": "stm32f1xx_ll_iwdg.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_IWDG_ReloadCounter",
+      "name": "LL_IWDG_ReloadCounter",
+      "peripheral": "IWDG",
+      "library": "ll",
+      "sectionId": "IWDG@ll#sec1",
+      "prototype": "void LL_IWDG_ReloadCounter(IWDG_TypeDef * IWDGx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "IWDGx",
+          "type": "IWDG_TypeDef *",
+          "descEn": "IWDG Instance",
+          "descZh": "独立看门狗实例指针（F1 上固定是 IWDG）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Reloads IWDG counter with value defined in the reload register",
+      "briefZh": "喂狗：把重装载值装入计数器（写 0xAAAA 到 KR）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "IWDGx_KR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_IWDG_KEY_RELOAD"
+      ],
+      "headerLine": 151,
+      "definedIn": "stm32f1xx_ll_iwdg.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_IWDG_EnableWriteAccess",
+      "name": "LL_IWDG_EnableWriteAccess",
+      "peripheral": "IWDG",
+      "library": "ll",
+      "sectionId": "IWDG@ll#sec1",
+      "prototype": "void LL_IWDG_EnableWriteAccess(IWDG_TypeDef * IWDGx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "IWDGx",
+          "type": "IWDG_TypeDef *",
+          "descEn": "IWDG Instance",
+          "descZh": "独立看门狗实例指针（F1 上固定是 IWDG）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable write access to IWDG_PR, IWDG_RLR and IWDG_WINR registers",
+      "briefZh": "打开 IWDG 的寄存器写访问（PR/RLR 才能改）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "IWDGx_KR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_IWDG_KEY_WR_ACCESS_ENABLE"
+      ],
+      "headerLine": 162,
+      "definedIn": "stm32f1xx_ll_iwdg.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_IWDG_DisableWriteAccess",
+      "name": "LL_IWDG_DisableWriteAccess",
+      "peripheral": "IWDG",
+      "library": "ll",
+      "sectionId": "IWDG@ll#sec1",
+      "prototype": "void LL_IWDG_DisableWriteAccess(IWDG_TypeDef * IWDGx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "IWDGx",
+          "type": "IWDG_TypeDef *",
+          "descEn": "IWDG Instance",
+          "descZh": "独立看门狗实例指针（F1 上固定是 IWDG）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Disable write access to IWDG_PR, IWDG_RLR and IWDG_WINR registers",
+      "briefZh": "关闭 IWDG 的寄存器写访问。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "IWDGx_KR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [
+        "LL_IWDG_KEY_WR_ACCESS_DISABLE"
+      ],
+      "headerLine": 173,
+      "definedIn": "stm32f1xx_ll_iwdg.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_IWDG_SetPrescaler",
+      "name": "LL_IWDG_SetPrescaler",
+      "peripheral": "IWDG",
+      "library": "ll",
+      "sectionId": "IWDG@ll#sec1",
+      "prototype": "void LL_IWDG_SetPrescaler(IWDG_TypeDef * IWDGx, uint32_t Prescaler);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "IWDGx",
+          "type": "IWDG_TypeDef *",
+          "descEn": "IWDG Instance",
+          "descZh": "独立看门狗实例指针（F1 上固定是 IWDG）。"
+        },
+        {
+          "name": "Prescaler",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "预分频值。计数频率 = 输入时钟 / (Prescaler + 1)。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Select the prescaler of the IWDG",
+      "briefZh": "设置 IWDG 预分频。只在 IWDG 尚未启动时有效。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "IWDGx_PR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 192,
+      "definedIn": "stm32f1xx_ll_iwdg.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_IWDG_GetPrescaler",
+      "name": "LL_IWDG_GetPrescaler",
+      "peripheral": "IWDG",
+      "library": "ll",
+      "sectionId": "IWDG@ll#sec1",
+      "prototype": "uint32_t LL_IWDG_GetPrescaler(const IWDG_TypeDef * IWDGx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "IWDGx",
+          "type": "const IWDG_TypeDef *",
+          "descEn": "IWDG Instance",
+          "descZh": "独立看门狗实例指针（F1 上固定是 IWDG）。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Get the selected prescaler of the IWDG",
+      "briefZh": "读取 IWDG 当前预分频值。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "IWDGx_PR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 210,
+      "definedIn": "stm32f1xx_ll_iwdg.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_IWDG_SetReloadCounter",
+      "name": "LL_IWDG_SetReloadCounter",
+      "peripheral": "IWDG",
+      "library": "ll",
+      "sectionId": "IWDG@ll#sec1",
+      "prototype": "void LL_IWDG_SetReloadCounter(IWDG_TypeDef * IWDGx, uint32_t Counter);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "IWDGx",
+          "type": "IWDG_TypeDef *",
+          "descEn": "IWDG Instance",
+          "descZh": "独立看门狗实例指针（F1 上固定是 IWDG）。"
+        },
+        {
+          "name": "Counter",
+          "type": "uint32_t",
+          "descEn": "Value between Min_Data=0 and Max_Data=0x0FFF",
+          "descZh": "计数器数值（CNT）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Specify the IWDG down-counter reload value",
+      "briefZh": "设置 IWDG 的重装载值（决定超时时间）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "IWDGx_RLR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 222,
+      "definedIn": "stm32f1xx_ll_iwdg.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_IWDG_GetReloadCounter",
+      "name": "LL_IWDG_GetReloadCounter",
+      "peripheral": "IWDG",
+      "library": "ll",
+      "sectionId": "IWDG@ll#sec1",
+      "prototype": "uint32_t LL_IWDG_GetReloadCounter(const IWDG_TypeDef * IWDGx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "IWDGx",
+          "type": "const IWDG_TypeDef *",
+          "descEn": "IWDG Instance",
+          "descZh": "独立看门狗实例指针（F1 上固定是 IWDG）。"
+        }
+      ],
+      "returnDescEn": "Value between Min_Data=0 and Max_Data=0x0FFF",
+      "returnDescZh": "",
+      "briefEn": "Get the specified IWDG down-counter reload value",
+      "briefZh": "读取 IWDG 的重装载值。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "IWDGx_RLR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 233,
+      "definedIn": "stm32f1xx_ll_iwdg.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_IWDG_IsActiveFlag_PVU",
+      "name": "LL_IWDG_IsActiveFlag_PVU",
+      "peripheral": "IWDG",
+      "library": "ll",
+      "sectionId": "IWDG@ll#sec2",
+      "prototype": "uint32_t LL_IWDG_IsActiveFlag_PVU(const IWDG_TypeDef * IWDGx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "IWDGx",
+          "type": "const IWDG_TypeDef *",
+          "descEn": "IWDG Instance",
+          "descZh": "独立看门狗实例指针（F1 上固定是 IWDG）。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if flag Prescaler Value Update is set or not",
+      "briefZh": "查询 IWDG 的预分频更新进行中标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "IWDGx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 252,
+      "definedIn": "stm32f1xx_ll_iwdg.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_IWDG_IsActiveFlag_RVU",
+      "name": "LL_IWDG_IsActiveFlag_RVU",
+      "peripheral": "IWDG",
+      "library": "ll",
+      "sectionId": "IWDG@ll#sec2",
+      "prototype": "uint32_t LL_IWDG_IsActiveFlag_RVU(const IWDG_TypeDef * IWDGx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "IWDGx",
+          "type": "const IWDG_TypeDef *",
+          "descEn": "IWDG Instance",
+          "descZh": "独立看门狗实例指针（F1 上固定是 IWDG）。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if flag Reload Value Update is set or not",
+      "briefZh": "查询 IWDG 的重装载值更新进行中标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "IWDGx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 263,
+      "definedIn": "stm32f1xx_ll_iwdg.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_IWDG_IsReady",
+      "name": "LL_IWDG_IsReady",
+      "peripheral": "IWDG",
+      "library": "ll",
+      "sectionId": "IWDG@ll#sec2",
+      "prototype": "uint32_t LL_IWDG_IsReady(const IWDG_TypeDef * IWDGx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "IWDGx",
+          "type": "const IWDG_TypeDef *",
+          "descEn": "IWDG Instance",
+          "descZh": "独立看门狗实例指针（F1 上固定是 IWDG）。"
+        }
+      ],
+      "returnDescEn": "State of bits (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if flags Prescaler & Reload Value Update are reset or not",
+      "briefZh": "查询 IWDG 的 PR/RLR 更新是否完成（PVU/RVU 标志）。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "IWDGx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 275,
+      "definedIn": "stm32f1xx_ll_iwdg.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}

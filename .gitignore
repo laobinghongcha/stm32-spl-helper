@@ -46,3 +46,36 @@ app.*.map.json
 
 # Widget Preview related
 .widget_preview/
+
+# ---------------------------------------------------------------------------
+# 发布产物不进仓库
+#
+# APK 走 GitHub Releases 分发，仓库里只留源码。原因：
+#   1. 单个 APK 约 57 MB，GitHub 单文件上限 100 MB，且仓库会迅速膨胀
+#      （历史上提交过的 APK 永远留在 .git 里，删不掉，只能重写历史）
+#   2. 二进制文件无法有效 diff / code review
+#   3. Releases 自带版本标签、下载统计与校验值，比塞在仓库里更合适
+#
+# 需要安装包请到 Releases 页面下载：
+#   https://github.com/laobinghongcha/stm32-spl-helper/releases
+# ---------------------------------------------------------------------------
+# dist/ 是 tools/make_github_release.ps1 的产出目录，整体不入库
+/dist/
+/release/*.apk
+/release/*.zip
+*.apk
+*.aab
+
+# 签名材料绝不入库（这是**安全**要求，不是体积问题）
+/android/key.properties
+/android/*.jks
+/android/*.keystore
+**/*.jks
+**/*.keystore
+
+# 构建与工具产物
+/build/
+/coverage/
+*.iml
+.dart_tool/
+

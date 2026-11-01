@@ -1,0 +1,411 @@
+{
+  "HAL_MMC_Abort": {
+    "briefZh": "中止正在进行的传输（阻塞式，等外设真正停下才返回）。",
+    "paramsZh": {
+      "hmmc": "eMMC 句柄指针。"
+    }
+  },
+  "HAL_MMC_AbortCallback": {
+    "briefZh": "中止完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hmmc": "eMMC 句柄指针。"
+    }
+  },
+  "HAL_MMC_Abort_IT": {
+    "briefZh": "以中断方式中止传输，中止完成后回调 AbortCpltCallback。",
+    "paramsZh": {
+      "hmmc": "eMMC 句柄指针。"
+    }
+  },
+  "HAL_MMC_ConfigWideBusOperation": {
+    "briefZh": "配置数据总线宽度（1 位 / 4 位 / 8 位）。",
+    "paramsZh": {
+      "WideMode": "总线宽度：MMC_BUS_WIDE_1B / 4B / 8B。",
+      "hmmc": "eMMC 句柄指针。"
+    }
+  },
+  "HAL_MMC_DeInit": {
+    "briefZh": "把 eMMC 的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+    "paramsZh": {
+      "hmmc": "eMMC 句柄指针。"
+    }
+  },
+  "HAL_MMC_Erase": {
+    "briefZh": "擦除指定页/扇区。擦除的最小单位是整页，会丢掉该页原有数据。",
+    "paramsZh": {
+      "BlockEndAdd": "结束块号（含）。",
+      "BlockStartAdd": "起始块号（擦除操作）。",
+      "hmmc": "eMMC 句柄指针。"
+    }
+  },
+  "HAL_MMC_ErrorCallback": {
+    "briefZh": "错误回调（__weak 空实现，需自己重写）。溢出、噪声、帧错误等异常会走到这里。",
+    "paramsZh": {
+      "hmmc": "eMMC 句柄指针。"
+    }
+  },
+  "HAL_MMC_GetCardCID": {
+    "briefZh": "读取卡的 CID 寄存器（制造商、序列号等信息）。",
+    "paramsZh": {
+      "hmmc": "eMMC 句柄指针。",
+      "pCID": "输出参数，接收卡/器件的 CID 信息。"
+    }
+  },
+  "HAL_MMC_GetCardCSD": {
+    "briefZh": "读取卡的 CSD 寄存器（容量、块大小、速度等信息）。",
+    "paramsZh": {
+      "hmmc": "eMMC 句柄指针。",
+      "pCSD": "输出参数，接收卡/器件的 CSD 信息。"
+    }
+  },
+  "HAL_MMC_GetCardExtCSD": {
+    "briefZh": "读取 eMMC 扩展 CSD 寄存器。",
+    "paramsZh": {
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hmmc": "eMMC 句柄指针。",
+      "pExtCSD": "输出参数，接收 eMMC 扩展 CSD 数据（512 字节缓冲区）。"
+    }
+  },
+  "HAL_MMC_GetCardInfo": {
+    "briefZh": "把卡的容量、块大小等信息读入结构体。",
+    "paramsZh": {
+      "hmmc": "eMMC 句柄指针。",
+      "pCardInfo": "输出参数，接收容量与块大小等汇总信息。"
+    }
+  },
+  "HAL_MMC_GetCardState": {
+    "briefZh": "读取卡当前的状态（idle / ready / transfer 等）。",
+    "paramsZh": {
+      "hmmc": "eMMC 句柄指针。"
+    }
+  },
+  "HAL_MMC_GetError": {
+    "briefZh": "读取 eMMC 累计的错误码位掩码。",
+    "paramsZh": {
+      "hmmc": "eMMC 句柄指针。"
+    }
+  },
+  "HAL_MMC_GetState": {
+    "briefZh": "读取 eMMC 的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+    "paramsZh": {
+      "hmmc": "eMMC 句柄指针。"
+    }
+  },
+  "HAL_MMC_IRQHandler": {
+    "briefZh": "eMMC 的中断统一入口。在 stm32f1xx_it.c 的对应 IRQHandler 里调用，内部会清标志并分派到各回调。",
+    "paramsZh": {
+      "hmmc": "eMMC 句柄指针。"
+    }
+  },
+  "HAL_MMC_Init": {
+    "briefZh": "初始化 eMMC 器件。",
+    "paramsZh": {
+      "hmmc": "eMMC 句柄指针。"
+    }
+  },
+  "HAL_MMC_InitCard": {
+    "briefZh": "在 Init 之后完成卡的身份识别与初始化。",
+    "paramsZh": {
+      "hmmc": "eMMC 句柄指针。"
+    }
+  },
+  "HAL_MMC_MspDeInit": {
+    "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+    "paramsZh": {
+      "hmmc": "eMMC 句柄指针。"
+    }
+  },
+  "HAL_MMC_MspInit": {
+    "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+    "paramsZh": {
+      "hmmc": "eMMC 句柄指针。"
+    }
+  },
+  "HAL_MMC_ReadBlocks": {
+    "briefZh": "按块读取数据（阻塞）。blockAddr 是块号不是字节偏移。",
+    "paramsZh": {
+      "BlockAdd": "起始块号。",
+      "NumberOfBlocks": "要读写的块数。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hmmc": "eMMC 句柄指针。",
+      "pData": "数据缓冲区指针。"
+    }
+  },
+  "HAL_MMC_ReadBlocks_DMA": {
+    "briefZh": "以 DMA 方式按块读取。",
+    "paramsZh": {
+      "BlockAdd": "起始块号。",
+      "NumberOfBlocks": "要读写的块数。",
+      "hmmc": "eMMC 句柄指针。",
+      "pData": "数据缓冲区指针。"
+    }
+  },
+  "HAL_MMC_ReadBlocks_IT": {
+    "briefZh": "以中断方式按块读取。",
+    "paramsZh": {
+      "BlockAdd": "起始块号。",
+      "NumberOfBlocks": "要读写的块数。",
+      "hmmc": "eMMC 句柄指针。",
+      "pData": "数据缓冲区指针。"
+    }
+  },
+  "HAL_MMC_RegisterCallback": {
+    "briefZh": "为 eMMC 注册指定事件的回调，替代默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackId": "回调事件编号，取对应的 CallbackIDTypeDef 枚举值。",
+      "hmmc": "eMMC 句柄指针。",
+      "pCallback": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+    }
+  },
+  "HAL_MMC_RxCpltCallback": {
+    "briefZh": "接收完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hmmc": "eMMC 句柄指针。"
+    }
+  },
+  "HAL_MMC_TxCpltCallback": {
+    "briefZh": "发送完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hmmc": "eMMC 句柄指针。"
+    }
+  },
+  "HAL_MMC_UnRegisterCallback": {
+    "briefZh": "注销 eMMC 已注册的回调，恢复成默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackId": "回调事件编号，取对应的 CallbackIDTypeDef 枚举值。",
+      "hmmc": "eMMC 句柄指针。"
+    }
+  },
+  "HAL_MMC_WriteBlocks": {
+    "briefZh": "按块写入数据（阻塞）。",
+    "paramsZh": {
+      "BlockAdd": "起始块号。",
+      "NumberOfBlocks": "要读写的块数。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hmmc": "eMMC 句柄指针。",
+      "pData": "数据缓冲区指针。"
+    }
+  },
+  "HAL_MMC_WriteBlocks_DMA": {
+    "briefZh": "以 DMA 方式按块写入。",
+    "paramsZh": {
+      "BlockAdd": "起始块号。",
+      "NumberOfBlocks": "要读写的块数。",
+      "hmmc": "eMMC 句柄指针。",
+      "pData": "数据缓冲区指针。"
+    }
+  },
+  "HAL_MMC_WriteBlocks_IT": {
+    "briefZh": "以中断方式按块写入。",
+    "paramsZh": {
+      "BlockAdd": "起始块号。",
+      "NumberOfBlocks": "要读写的块数。",
+      "hmmc": "eMMC 句柄指针。",
+      "pData": "数据缓冲区指针。"
+    }
+  },
+  "HAL_SD_Abort": {
+    "briefZh": "中止正在进行的传输（阻塞式，等外设真正停下才返回）。",
+    "paramsZh": {
+      "hsd": "SD 卡句柄指针。"
+    }
+  },
+  "HAL_SD_AbortCallback": {
+    "briefZh": "中止完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hsd": "SD 卡句柄指针。"
+    }
+  },
+  "HAL_SD_Abort_IT": {
+    "briefZh": "以中断方式中止传输，中止完成后回调 AbortCpltCallback。",
+    "paramsZh": {
+      "hsd": "SD 卡句柄指针。"
+    }
+  },
+  "HAL_SD_ConfigWideBusOperation": {
+    "briefZh": "配置数据总线宽度（1 位 / 4 位 / 8 位）。",
+    "paramsZh": {
+      "WideMode": "总线宽度：SDIO_BUS_WIDE_1B / 4B / 8B。4 位模式速度更高但需要板上四根数据线都接通。",
+      "hsd": "SD 卡句柄指针。"
+    }
+  },
+  "HAL_SD_DeInit": {
+    "briefZh": "把 SD 卡的寄存器恢复成复位默认值，并调用 MspDeInit 释放底层资源。",
+    "paramsZh": {
+      "hsd": "SD 卡句柄指针。"
+    }
+  },
+  "HAL_SD_Erase": {
+    "briefZh": "擦除指定页/扇区。擦除的最小单位是整页，会丢掉该页原有数据。",
+    "paramsZh": {
+      "BlockEndAdd": "结束块号（含），擦除从 BlockStartAdd 到 BlockEndAdd 的所有块。",
+      "BlockStartAdd": "起始块号（擦除操作）。",
+      "hsd": "SD 卡句柄指针。"
+    }
+  },
+  "HAL_SD_ErrorCallback": {
+    "briefZh": "错误回调（__weak 空实现，需自己重写）。溢出、噪声、帧错误等异常会走到这里。",
+    "paramsZh": {
+      "hsd": "SD 卡句柄指针。"
+    }
+  },
+  "HAL_SD_GetCardCID": {
+    "briefZh": "读取卡的 CID 寄存器（制造商、序列号等信息）。",
+    "paramsZh": {
+      "hsd": "SD 卡句柄指针。",
+      "pCID": "输出参数，接收卡的 CID 信息（制造商、序列号等）。"
+    }
+  },
+  "HAL_SD_GetCardCSD": {
+    "briefZh": "读取卡的 CSD 寄存器（容量、块大小、速度等信息）。",
+    "paramsZh": {
+      "hsd": "SD 卡句柄指针。",
+      "pCSD": "输出参数，接收卡的 CSD 信息（容量、块大小、速度）。"
+    }
+  },
+  "HAL_SD_GetCardInfo": {
+    "briefZh": "把卡的容量、块大小等信息读入结构体。",
+    "paramsZh": {
+      "hsd": "SD 卡句柄指针。",
+      "pCardInfo": "输出参数，接收卡的容量与块大小等汇总信息。"
+    }
+  },
+  "HAL_SD_GetCardState": {
+    "briefZh": "读取卡当前的状态（idle / ready / transfer 等）。",
+    "paramsZh": {
+      "hsd": "SD 卡句柄指针。"
+    }
+  },
+  "HAL_SD_GetCardStatus": {
+    "briefZh": "读取 SD 卡的当前状态寄存器。",
+    "paramsZh": {
+      "hsd": "SD 卡句柄指针。",
+      "pStatus": "输出参数，接收状态信息。"
+    }
+  },
+  "HAL_SD_GetError": {
+    "briefZh": "读取 SD 卡累计的错误码位掩码。",
+    "paramsZh": {
+      "hsd": "SD 卡句柄指针。"
+    }
+  },
+  "HAL_SD_GetState": {
+    "briefZh": "读取 SD 卡的状态机状态（RESET / READY / BUSY / TIMEOUT / ERROR）。",
+    "paramsZh": {
+      "hsd": "SD 卡句柄指针。"
+    }
+  },
+  "HAL_SD_IRQHandler": {
+    "briefZh": "SD 卡的中断统一入口。在 stm32f1xx_it.c 的对应 IRQHandler 里调用，内部会清标志并分派到各回调。",
+    "paramsZh": {
+      "hsd": "SD 卡句柄指针。"
+    }
+  },
+  "HAL_SD_Init": {
+    "briefZh": "初始化 SD 卡（时钟、卡识别、总线宽度）。",
+    "paramsZh": {
+      "hsd": "SD 卡句柄指针。"
+    }
+  },
+  "HAL_SD_InitCard": {
+    "briefZh": "在 Init 之后完成卡的身份识别与初始化。",
+    "paramsZh": {
+      "hsd": "SD 卡句柄指针。"
+    }
+  },
+  "HAL_SD_MspDeInit": {
+    "briefZh": "MSP 底层反初始化回调（__weak 空实现）：关闭时钟、释放引脚。",
+    "paramsZh": {
+      "hsd": "SD 卡句柄指针。"
+    }
+  },
+  "HAL_SD_MspInit": {
+    "briefZh": "MSP 底层初始化回调（__weak 空实现）：时钟使能、GPIO 与 NVIC 配置应写在这里。",
+    "paramsZh": {
+      "hsd": "SD 卡句柄指针。"
+    }
+  },
+  "HAL_SD_ReadBlocks": {
+    "briefZh": "按块读取数据（阻塞）。blockAddr 是块号不是字节偏移。",
+    "paramsZh": {
+      "BlockAdd": "起始块号（不是字节偏移！块大小通常是 512 字节）。",
+      "NumberOfBlocks": "要读写的块数。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hsd": "SD 卡句柄指针。",
+      "pData": "数据缓冲区指针，长度必须是块大小的整数倍。"
+    }
+  },
+  "HAL_SD_ReadBlocks_DMA": {
+    "briefZh": "以 DMA 方式按块读取。",
+    "paramsZh": {
+      "BlockAdd": "起始块号（不是字节偏移！块大小通常是 512 字节）。",
+      "NumberOfBlocks": "要读写的块数。",
+      "hsd": "SD 卡句柄指针。",
+      "pData": "数据缓冲区指针，长度必须是块大小的整数倍。"
+    }
+  },
+  "HAL_SD_ReadBlocks_IT": {
+    "briefZh": "以中断方式按块读取。",
+    "paramsZh": {
+      "BlockAdd": "起始块号（不是字节偏移！块大小通常是 512 字节）。",
+      "NumberOfBlocks": "要读写的块数。",
+      "hsd": "SD 卡句柄指针。",
+      "pData": "数据缓冲区指针，长度必须是块大小的整数倍。"
+    }
+  },
+  "HAL_SD_RegisterCallback": {
+    "briefZh": "为 SD 卡注册指定事件的回调，替代默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "hsd": "SD 卡句柄指针。",
+      "pCallback": "回调函数指针。签名必须与 HAL 里定义的 typedef 完全一致，否则编译能过但调用时会崩溃。"
+    }
+  },
+  "HAL_SD_RxCpltCallback": {
+    "briefZh": "接收完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hsd": "SD 卡句柄指针。"
+    }
+  },
+  "HAL_SD_TxCpltCallback": {
+    "briefZh": "发送完成回调（__weak 空实现，需自己重写）。",
+    "paramsZh": {
+      "hsd": "SD 卡句柄指针。"
+    }
+  },
+  "HAL_SD_UnRegisterCallback": {
+    "briefZh": "注销 SD 卡已注册的回调，恢复成默认的 __weak 空实现。",
+    "paramsZh": {
+      "CallbackID": "回调事件的编号，取 HAL_<外设>_CallbackIDTypeDef 里的枚举值（如 HAL_UART_TX_COMPLETE_CB_ID）。",
+      "hsd": "SD 卡句柄指针。"
+    }
+  },
+  "HAL_SD_WriteBlocks": {
+    "briefZh": "按块写入数据（阻塞）。",
+    "paramsZh": {
+      "BlockAdd": "起始块号（不是字节偏移！块大小通常是 512 字节）。",
+      "NumberOfBlocks": "要读写的块数。",
+      "Timeout": "超时时间，单位毫秒。传 HAL_MAX_DELAY 表示无限等待——注意阻塞模式下如果对方不发/不收，会永久卡死在这里。",
+      "hsd": "SD 卡句柄指针。",
+      "pData": "数据缓冲区指针，长度必须是块大小的整数倍。"
+    }
+  },
+  "HAL_SD_WriteBlocks_DMA": {
+    "briefZh": "以 DMA 方式按块写入。",
+    "paramsZh": {
+      "BlockAdd": "起始块号（不是字节偏移！块大小通常是 512 字节）。",
+      "NumberOfBlocks": "要读写的块数。",
+      "hsd": "SD 卡句柄指针。",
+      "pData": "数据缓冲区指针，长度必须是块大小的整数倍。"
+    }
+  },
+  "HAL_SD_WriteBlocks_IT": {
+    "briefZh": "以中断方式按块写入。",
+    "paramsZh": {
+      "BlockAdd": "起始块号（不是字节偏移！块大小通常是 512 字节）。",
+      "NumberOfBlocks": "要读写的块数。",
+      "hsd": "SD 卡句柄指针。",
+      "pData": "数据缓冲区指针，长度必须是块大小的整数倍。"
+    }
+  }
+}

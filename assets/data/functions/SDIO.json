@@ -6,7 +6,7 @@
       "id": "SDIO_DeInit",
       "name": "SDIO_DeInit",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec1",
+      "sectionId": "SDIO@spl#sec1",
       "prototype": "void SDIO_DeInit(void);",
       "returnType": "void",
       "params": [],
@@ -75,7 +75,7 @@
       "id": "SDIO_Init",
       "name": "SDIO_Init",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec1",
+      "sectionId": "SDIO@spl#sec1",
       "prototype": "void SDIO_Init(SDIO_InitTypeDef* SDIO_InitStruct);",
       "returnType": "void",
       "params": [
@@ -161,7 +161,7 @@
       "id": "SDIO_StructInit",
       "name": "SDIO_StructInit",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec1",
+      "sectionId": "SDIO@spl#sec1",
       "prototype": "void SDIO_StructInit(SDIO_InitTypeDef* SDIO_InitStruct);",
       "returnType": "void",
       "params": [
@@ -216,7 +216,7 @@
       "id": "SDIO_ClockCmd",
       "name": "SDIO_ClockCmd",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec2",
+      "sectionId": "SDIO@spl#sec2",
       "prototype": "void SDIO_ClockCmd(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -282,7 +282,7 @@
       "id": "SDIO_SetPowerState",
       "name": "SDIO_SetPowerState",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec3",
+      "sectionId": "SDIO@spl#sec3",
       "prototype": "void SDIO_SetPowerState(uint32_t SDIO_PowerState);",
       "returnType": "void",
       "params": [
@@ -348,7 +348,7 @@
       "id": "SDIO_GetPowerState",
       "name": "SDIO_GetPowerState",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec4",
+      "sectionId": "SDIO@spl#sec4",
       "prototype": "uint32_t SDIO_GetPowerState(void);",
       "returnType": "uint32_t",
       "params": [],
@@ -401,7 +401,7 @@
       "id": "SDIO_ITConfig",
       "name": "SDIO_ITConfig",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec5",
+      "sectionId": "SDIO@spl#sec5",
       "prototype": "void SDIO_ITConfig(uint32_t SDIO_IT, FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -497,7 +497,7 @@
       "id": "SDIO_DMACmd",
       "name": "SDIO_DMACmd",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec2",
+      "sectionId": "SDIO@spl#sec2",
       "prototype": "void SDIO_DMACmd(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -585,7 +585,7 @@
       "id": "SDIO_SendCommand",
       "name": "SDIO_SendCommand",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec6",
+      "sectionId": "SDIO@spl#sec6",
       "prototype": "void SDIO_SendCommand(SDIO_CmdInitTypeDef *SDIO_CmdInitStruct);",
       "returnType": "void",
       "params": [
@@ -683,7 +683,7 @@
       "id": "SDIO_CmdStructInit",
       "name": "SDIO_CmdStructInit",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec7",
+      "sectionId": "SDIO@spl#sec7",
       "prototype": "void SDIO_CmdStructInit(SDIO_CmdInitTypeDef* SDIO_CmdInitStruct);",
       "returnType": "void",
       "params": [
@@ -741,7 +741,7 @@
       "id": "SDIO_GetCommandResponse",
       "name": "SDIO_GetCommandResponse",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec4",
+      "sectionId": "SDIO@spl#sec4",
       "prototype": "uint8_t SDIO_GetCommandResponse(void);",
       "returnType": "uint8_t",
       "params": [],
@@ -798,7 +798,7 @@
       "id": "SDIO_GetResponse",
       "name": "SDIO_GetResponse",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec4",
+      "sectionId": "SDIO@spl#sec4",
       "prototype": "uint32_t SDIO_GetResponse(uint32_t SDIO_RESP);",
       "returnType": "uint32_t",
       "params": [
@@ -870,7 +870,7 @@
       "id": "SDIO_DataConfig",
       "name": "SDIO_DataConfig",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec8",
+      "sectionId": "SDIO@spl#sec8",
       "prototype": "void SDIO_DataConfig(SDIO_DataInitTypeDef* SDIO_DataInitStruct);",
       "returnType": "void",
       "params": [
@@ -964,7 +964,7 @@
       "id": "SDIO_DataStructInit",
       "name": "SDIO_DataStructInit",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec7",
+      "sectionId": "SDIO@spl#sec7",
       "prototype": "void SDIO_DataStructInit(SDIO_DataInitTypeDef* SDIO_DataInitStruct);",
       "returnType": "void",
       "params": [
@@ -1026,7 +1026,7 @@
       "id": "SDIO_GetDataCounter",
       "name": "SDIO_GetDataCounter",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec4",
+      "sectionId": "SDIO@spl#sec4",
       "prototype": "uint32_t SDIO_GetDataCounter(void);",
       "returnType": "uint32_t",
       "params": [],
@@ -1083,7 +1083,7 @@
       "id": "SDIO_ReadData",
       "name": "SDIO_ReadData",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec4",
+      "sectionId": "SDIO@spl#sec4",
       "prototype": "uint32_t SDIO_ReadData(void);",
       "returnType": "uint32_t",
       "params": [],
@@ -1148,7 +1148,7 @@
       "id": "SDIO_WriteData",
       "name": "SDIO_WriteData",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec3",
+      "sectionId": "SDIO@spl#sec3",
       "prototype": "void SDIO_WriteData(uint32_t Data);",
       "returnType": "void",
       "params": [
@@ -1220,7 +1220,7 @@
       "id": "SDIO_GetFIFOCount",
       "name": "SDIO_GetFIFOCount",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec4",
+      "sectionId": "SDIO@spl#sec4",
       "prototype": "uint32_t SDIO_GetFIFOCount(void);",
       "returnType": "uint32_t",
       "params": [],
@@ -1274,7 +1274,7 @@
       "id": "SDIO_StartSDIOReadWait",
       "name": "SDIO_StartSDIOReadWait",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec7",
+      "sectionId": "SDIO@spl#sec7",
       "prototype": "void SDIO_StartSDIOReadWait(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1342,7 +1342,7 @@
       "id": "SDIO_StopSDIOReadWait",
       "name": "SDIO_StopSDIOReadWait",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec7",
+      "sectionId": "SDIO@spl#sec7",
       "prototype": "void SDIO_StopSDIOReadWait(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1403,7 +1403,7 @@
       "id": "SDIO_SetSDIOReadWaitMode",
       "name": "SDIO_SetSDIOReadWaitMode",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec3",
+      "sectionId": "SDIO@spl#sec3",
       "prototype": "void SDIO_SetSDIOReadWaitMode(uint32_t SDIO_ReadWaitMode);",
       "returnType": "void",
       "params": [
@@ -1470,7 +1470,7 @@
       "id": "SDIO_SetSDIOOperation",
       "name": "SDIO_SetSDIOOperation",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec3",
+      "sectionId": "SDIO@spl#sec3",
       "prototype": "void SDIO_SetSDIOOperation(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1535,7 +1535,7 @@
       "id": "SDIO_SendSDIOSuspendCmd",
       "name": "SDIO_SendSDIOSuspendCmd",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec6",
+      "sectionId": "SDIO@spl#sec6",
       "prototype": "void SDIO_SendSDIOSuspendCmd(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1597,7 +1597,7 @@
       "id": "SDIO_CommandCompletionCmd",
       "name": "SDIO_CommandCompletionCmd",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec2",
+      "sectionId": "SDIO@spl#sec2",
       "prototype": "void SDIO_CommandCompletionCmd(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1659,7 +1659,7 @@
       "id": "SDIO_CEATAITCmd",
       "name": "SDIO_CEATAITCmd",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec2",
+      "sectionId": "SDIO@spl#sec2",
       "prototype": "void SDIO_CEATAITCmd(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1726,7 +1726,7 @@
       "id": "SDIO_SendCEATACmd",
       "name": "SDIO_SendCEATACmd",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec6",
+      "sectionId": "SDIO@spl#sec6",
       "prototype": "void SDIO_SendCEATACmd(FunctionalState NewState);",
       "returnType": "void",
       "params": [
@@ -1791,7 +1791,7 @@
       "id": "SDIO_GetFlagStatus",
       "name": "SDIO_GetFlagStatus",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec9",
+      "sectionId": "SDIO@spl#sec9",
       "prototype": "FlagStatus SDIO_GetFlagStatus(uint32_t SDIO_FLAG);",
       "returnType": "FlagStatus",
       "params": [
@@ -1888,7 +1888,7 @@
       "id": "SDIO_ClearFlag",
       "name": "SDIO_ClearFlag",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec9",
+      "sectionId": "SDIO@spl#sec9",
       "prototype": "void SDIO_ClearFlag(uint32_t SDIO_FLAG);",
       "returnType": "void",
       "params": [
@@ -1957,7 +1957,7 @@
       "id": "SDIO_GetITStatus",
       "name": "SDIO_GetITStatus",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec5",
+      "sectionId": "SDIO@spl#sec5",
       "prototype": "ITStatus SDIO_GetITStatus(uint32_t SDIO_IT);",
       "returnType": "ITStatus",
       "params": [
@@ -2027,7 +2027,7 @@
       "id": "SDIO_ClearITPendingBit",
       "name": "SDIO_ClearITPendingBit",
       "peripheral": "SDIO",
-      "sectionId": "SDIO#sec5",
+      "sectionId": "SDIO@spl#sec5",
       "prototype": "void SDIO_ClearITPendingBit(uint32_t SDIO_IT);",
       "returnType": "void",
       "params": [

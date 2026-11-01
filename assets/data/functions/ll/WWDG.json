@@ -1,0 +1,553 @@
+{
+  "schemaVersion": 2,
+  "peripheral": "WWDG",
+  "library": "ll",
+  "functions": [
+    {
+      "id": "LL_WWDG_Enable",
+      "name": "LL_WWDG_Enable",
+      "peripheral": "WWDG",
+      "library": "ll",
+      "sectionId": "WWDG@ll#sec1",
+      "prototype": "void LL_WWDG_Enable(WWDG_TypeDef * WWDGx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "WWDGx",
+          "type": "WWDG_TypeDef *",
+          "descEn": "WWDG Instance",
+          "descZh": "窗口看门狗实例指针（F1 上固定是 WWDG）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable Window Watchdog. The watchdog is always disabled after a reset.",
+      "briefZh": "使能窗口看门狗并开始计数。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "WWDGx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "It is enabled by setting the WDGA bit in the WWDG_CR register, then it cannot be disabled again except by a reset. This bit is set by software and only cleared by hardware after a reset. When WDGA = 1, the watchdog can generate a reset."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 123,
+      "definedIn": "stm32f1xx_ll_wwdg.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_WWDG_IsEnabled",
+      "name": "LL_WWDG_IsEnabled",
+      "peripheral": "WWDG",
+      "library": "ll",
+      "sectionId": "WWDG@ll#sec1",
+      "prototype": "uint32_t LL_WWDG_IsEnabled(const WWDG_TypeDef * WWDGx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "WWDGx",
+          "type": "const WWDG_TypeDef *",
+          "descEn": "WWDG Instance",
+          "descZh": "窗口看门狗实例指针（F1 上固定是 WWDG）。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Checks if Window Watchdog is enabled",
+      "briefZh": "查询 WWDG 是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "WWDGx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 134,
+      "definedIn": "stm32f1xx_ll_wwdg.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_WWDG_SetCounter",
+      "name": "LL_WWDG_SetCounter",
+      "peripheral": "WWDG",
+      "library": "ll",
+      "sectionId": "WWDG@ll#sec1",
+      "prototype": "void LL_WWDG_SetCounter(WWDG_TypeDef * WWDGx, uint32_t Counter);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "WWDGx",
+          "type": "WWDG_TypeDef *",
+          "descEn": "WWDG Instance",
+          "descZh": "窗口看门狗实例指针（F1 上固定是 WWDG）。"
+        },
+        {
+          "name": "Counter",
+          "type": "uint32_t",
+          "descEn": "0..0x7F (7 bit counter value)",
+          "descZh": "计数器数值（CNT）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set the Watchdog counter value to provided value (7-bits T[6:0])",
+      "briefZh": "设置窗口看门狗的计数值（同时就是喂狗动作）。太早或太晚喂都会复位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "WWDGx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "When writing to the WWDG_CR register, always write 1 in the MSB b6 to avoid generating an immediate reset This counter is decremented every (4096 x 2expWDGTB) PCLK cycles A reset is produced when it rolls over from 0x40 to 0x3F (bit T6 becomes cleared) Setting the counter lower then 0x40 causes an immediate reset (if WWDG enabled)"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 150,
+      "definedIn": "stm32f1xx_ll_wwdg.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_WWDG_GetCounter",
+      "name": "LL_WWDG_GetCounter",
+      "peripheral": "WWDG",
+      "library": "ll",
+      "sectionId": "WWDG@ll#sec1",
+      "prototype": "uint32_t LL_WWDG_GetCounter(const WWDG_TypeDef * WWDGx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "WWDGx",
+          "type": "const WWDG_TypeDef *",
+          "descEn": "WWDG Instance",
+          "descZh": "窗口看门狗实例指针（F1 上固定是 WWDG）。"
+        }
+      ],
+      "returnDescEn": "7 bit Watchdog Counter value",
+      "returnDescZh": "",
+      "briefEn": "Return current Watchdog Counter Value (7 bits counter value)",
+      "briefZh": "读取窗口看门狗当前计数值。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "WWDGx_CR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 161,
+      "definedIn": "stm32f1xx_ll_wwdg.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_WWDG_SetPrescaler",
+      "name": "LL_WWDG_SetPrescaler",
+      "peripheral": "WWDG",
+      "library": "ll",
+      "sectionId": "WWDG@ll#sec1",
+      "prototype": "void LL_WWDG_SetPrescaler(WWDG_TypeDef * WWDGx, uint32_t Prescaler);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "WWDGx",
+          "type": "WWDG_TypeDef *",
+          "descEn": "WWDG Instance",
+          "descZh": "窗口看门狗实例指针（F1 上固定是 WWDG）。"
+        },
+        {
+          "name": "Prescaler",
+          "type": "uint32_t",
+          "descEn": "This parameter can be one of the following values:",
+          "descZh": "预分频值。计数频率 = 输入时钟 / (Prescaler + 1)。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set the time base of the prescaler (WDGTB).",
+      "briefZh": "设置 WWDG 的预分频。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "WWDGx_CFR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "Prescaler is used to apply ratio on PCLK clock, so that Watchdog counter is decremented every (4096 x 2expWDGTB) PCLK cycles"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 179,
+      "definedIn": "stm32f1xx_ll_wwdg.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_WWDG_GetPrescaler",
+      "name": "LL_WWDG_GetPrescaler",
+      "peripheral": "WWDG",
+      "library": "ll",
+      "sectionId": "WWDG@ll#sec1",
+      "prototype": "uint32_t LL_WWDG_GetPrescaler(const WWDG_TypeDef * WWDGx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "WWDGx",
+          "type": "const WWDG_TypeDef *",
+          "descEn": "WWDG Instance",
+          "descZh": "窗口看门狗实例指针（F1 上固定是 WWDG）。"
+        }
+      ],
+      "returnDescEn": "Returned value can be one of the following values:",
+      "returnDescZh": "",
+      "briefEn": "Return current Watchdog Prescaler Value",
+      "briefZh": "读取 WWDG 的预分频。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "WWDGx_CFR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 194,
+      "definedIn": "stm32f1xx_ll_wwdg.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_WWDG_SetWindow",
+      "name": "LL_WWDG_SetWindow",
+      "peripheral": "WWDG",
+      "library": "ll",
+      "sectionId": "WWDG@ll#sec1",
+      "prototype": "void LL_WWDG_SetWindow(WWDG_TypeDef * WWDGx, uint32_t Window);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "WWDGx",
+          "type": "WWDG_TypeDef *",
+          "descEn": "WWDG Instance",
+          "descZh": "窗口看门狗实例指针（F1 上固定是 WWDG）。"
+        },
+        {
+          "name": "Window",
+          "type": "uint32_t",
+          "descEn": "0x00..0x7F (7 bit Window value)",
+          "descZh": ""
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Set the Watchdog Window value to be compared to the downcounter (7-bits W[6:0]).",
+      "briefZh": "设置窗口值。喂狗时计数值必须小于该值，否则视为喂得太早并复位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "WWDGx_CFR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This window value defines when write in the WWDG_CR register to program Watchdog counter is allowed. Watchdog counter value update must occur only when the counter value is lower than the Watchdog window register value. Otherwise, a MCU reset is generated if the 7-bit Watchdog counter value (in the control register) is refreshed before the downcounter has reached the watchdog window register value. Physically is possible to set the Window lower then 0x40 but it is not recommended. To generate an immediate reset, it is possible to set the Counter lower than 0x40."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 215,
+      "definedIn": "stm32f1xx_ll_wwdg.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_WWDG_GetWindow",
+      "name": "LL_WWDG_GetWindow",
+      "peripheral": "WWDG",
+      "library": "ll",
+      "sectionId": "WWDG@ll#sec1",
+      "prototype": "uint32_t LL_WWDG_GetWindow(const WWDG_TypeDef * WWDGx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "WWDGx",
+          "type": "const WWDG_TypeDef *",
+          "descEn": "WWDG Instance",
+          "descZh": "窗口看门狗实例指针（F1 上固定是 WWDG）。"
+        }
+      ],
+      "returnDescEn": "7 bit Watchdog Window value",
+      "returnDescZh": "",
+      "briefEn": "Return current Watchdog Window Value (7 bits value)",
+      "briefZh": "读取窗口值。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "WWDGx_CFR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 226,
+      "definedIn": "stm32f1xx_ll_wwdg.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_WWDG_IsActiveFlag_EWKUP",
+      "name": "LL_WWDG_IsActiveFlag_EWKUP",
+      "peripheral": "WWDG",
+      "library": "ll",
+      "sectionId": "WWDG@ll#sec2",
+      "prototype": "uint32_t LL_WWDG_IsActiveFlag_EWKUP(const WWDG_TypeDef * WWDGx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "WWDGx",
+          "type": "const WWDG_TypeDef *",
+          "descEn": "WWDG Instance",
+          "descZh": "窗口看门狗实例指针（F1 上固定是 WWDG）。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Indicates if the WWDG Early Wakeup Interrupt Flag is set or not.",
+      "briefZh": "查询 WWDG 的提前唤醒标志位是否置位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "WWDGx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "This bit is set by hardware when the counter has reached the value 0x40. It must be cleared by software by writing 0. A write of 1 has no effect. This bit is also set if the interrupt is not enabled."
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 247,
+      "definedIn": "stm32f1xx_ll_wwdg.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_WWDG_ClearFlag_EWKUP",
+      "name": "LL_WWDG_ClearFlag_EWKUP",
+      "peripheral": "WWDG",
+      "library": "ll",
+      "sectionId": "WWDG@ll#sec2",
+      "prototype": "void LL_WWDG_ClearFlag_EWKUP(WWDG_TypeDef * WWDGx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "WWDGx",
+          "type": "WWDG_TypeDef *",
+          "descEn": "WWDG Instance",
+          "descZh": "窗口看门狗实例指针（F1 上固定是 WWDG）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Clear WWDG Early Wakeup Interrupt Flag (EWIF)",
+      "briefZh": "清除 WWDG 的提前唤醒标志位。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "WWDGx_SR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 258,
+      "definedIn": "stm32f1xx_ll_wwdg.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_WWDG_EnableIT_EWKUP",
+      "name": "LL_WWDG_EnableIT_EWKUP",
+      "peripheral": "WWDG",
+      "library": "ll",
+      "sectionId": "WWDG@ll#sec3",
+      "prototype": "void LL_WWDG_EnableIT_EWKUP(WWDG_TypeDef * WWDGx);",
+      "returnType": "void",
+      "params": [
+        {
+          "name": "WWDGx",
+          "type": "WWDG_TypeDef *",
+          "descEn": "WWDG Instance",
+          "descZh": "窗口看门狗实例指针（F1 上固定是 WWDG）。"
+        }
+      ],
+      "returnDescEn": "None",
+      "returnDescZh": "",
+      "briefEn": "Enable the Early Wakeup Interrupt.",
+      "briefZh": "使能 WWDG 的提前唤醒中断。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "WWDGx_CFR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [
+        "When set, an interrupt occurs whenever the counter reaches value 0x40. This interrupt is only cleared by hardware after a reset"
+      ],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 278,
+      "definedIn": "stm32f1xx_ll_wwdg.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    },
+    {
+      "id": "LL_WWDG_IsEnabledIT_EWKUP",
+      "name": "LL_WWDG_IsEnabledIT_EWKUP",
+      "peripheral": "WWDG",
+      "library": "ll",
+      "sectionId": "WWDG@ll#sec3",
+      "prototype": "uint32_t LL_WWDG_IsEnabledIT_EWKUP(const WWDG_TypeDef * WWDGx);",
+      "returnType": "uint32_t",
+      "params": [
+        {
+          "name": "WWDGx",
+          "type": "const WWDG_TypeDef *",
+          "descEn": "WWDG Instance",
+          "descZh": "窗口看门狗实例指针（F1 上固定是 WWDG）。"
+        }
+      ],
+      "returnDescEn": "State of bit (1 or 0).",
+      "returnDescZh": "",
+      "briefEn": "Check if Early Wakeup Interrupt is enabled",
+      "briefZh": "查询 WWDG 的提前唤醒中断是否已使能。",
+      "usageZh": "",
+      "prerequisites": [],
+      "registers": [
+        "WWDGx_CFR"
+      ],
+      "relatedFunctions": [],
+      "remarks": [],
+      "notesZh": [],
+      "exampleCode": "",
+      "exampleLanguage": "c",
+      "symbolRefs": [],
+      "headerLine": 289,
+      "definedIn": "stm32f1xx_ll_wwdg.h",
+      "sourceLine": 0,
+      "flags": {
+        "deprecated": false,
+        "isrSafe": false,
+        "inline": true,
+        "macroLike": false
+      },
+      "ai": null,
+      "zhSource": "overlay"
+    }
+  ]
+}
